@@ -1,0 +1,24 @@
+% global setup
+
+% \input{\pGlobalSetup macros-global-equations}
+
+% space time
+\newcommand{\gMetricTensor}[0]				{\mat{crrr}{ 1 & \gzero & \gzero & \gzero \\ \gzero & -1 & \gzero & \gzero \\ \gzero & \gzero & -1 & \gzero \\ \gzero & \gzero & \gzero & -1 }}
+\newcommand{\gUp}[0]						{g_{\mu \nu}}
+\newcommand{\gDown}[0]						{g^{\mu \nu}}
+\newcommand{\xmu}[0]						{x^{\mu} = (t, \mathbf{x}) = (t, x, y, z)}
+\newcommand{\pmu}[0]						{p^{\mu} = (E, \mathbf{p}) = (E, p_{x}, p_{y}, p_{z})}
+\newcommand{\Efour}[0]						{E = \sqrt{\mathbf{p}^{2}c^{2} + m_{0}^{2}c^{4}}}
+%\newcommand{\gDown}[0]						{g^{\mu \nu}}
+%\newcommand{\gDown}[0]						{g^{\mu \nu}}
+
+% Griffiths, p. 225
+\newcommand{\cZero}[0]						{\multicolumn{1}{c}{0}}
+\newcommand{\fieldStrengthTensor}[0]			{F^{\mu\nu}}
+\newcommand{\fieldStrengthTensorMatrix}[0]		{\mat{rrrr}{ \cZero{} & -E_{1} & -E_{2} & -E_{3} \\ E_{1} & \cZero & -B_{3} & B_{2} \\ E_{2} & B_{3} & \cZero & -B_{1} \\ E_{3} & -B_{2} & B_{1} & \cZero}}
+\newcommand{\fieldStrengthTensorMatrixColor}[0]	{\mat{rrrr}{ \cZero{} & \rd{-E_{1}} & \rd{-E_{2}} & \rd{-E_{3}} \\ \bl{E_{1}} & \cZero & \rd{-B_{3}} & \bl{B_{2}} \\ \bl{E_{2}} & \bl{B_{3}} & \cZero & \rd{-B_{1}} \\ \bl{E_{3}} & \rd{-B_{2}} & \bl{B_{1}} & \cZero}}
+\newcommand{\fieldStrengthTensorEquation}[0]	{\fieldStrengthTensor = \fieldStrengthTensorMatrix}
+
+\newcommand{\fvJ}[0]						{J^{\mu} = c \rho, \jay{}}
+
+\endinput  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -

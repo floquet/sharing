@@ -1,0 +1,34 @@
+% \input{\pLocalComponents figures/fig-data-vector-resolution}
+
+\begin{table}[t]
+%\caption
+%[The \ft\  of Linear Algebra in pictures]
+%{The \ft\  of Linear Algebra in pictures. The general matrix $\aicmnr$, with $1\le\rho < \min{\paren{m,n}}$, is a map between the row space and of $n-$vectors the column space of $m-$vectors. More precisely, the matrix $\A{}$ $n-$vectors in the row space to the $m-$vectors in the range space of $\A{}$, $\brnga{}$. Conversely, $\A{*}$ maps $m-$vectors in the column space to the $n-$vectors in the range space of $\A{*}$, $\brnga{*}$.}
+	\begin{center}
+		\begin{tabular}{ccc}
+				%
+			Row space & Mapping & Column space \\\hline
+			Solution space && Measurement space \\
+			$n-$vectors &&  $m-$vectors \\
+				%
+			\multirow{6}{*}{\includegraphics[ width = 2.0in, trim={0 0.55cm 0 0.55cm},clip ]{\pLocalGraphics ftola/ftola-hyperplane} 
+			\put(-65, 50) {$\brnga{*}$} 
+			\put(-110, 107) {$\rnlla{}$}} 
+			
+			&& 
+			
+			\multirow{6}{*}{\includegraphics[ width = 1.75in, trim={0 0.55cm 0 0.55cm},clip ]{\pLocalGraphics ftola/ftola-hyperplane} 
+			\put(-65, 50) {$\brnga{}$} 
+			\put(-112, 100) {$\rnlla{*}$}} \\ & \\ & \\ & \\
+			
+			& $\A{}\colon\cmplx{n}\mapsto \brnga{}$ \\ & \\ & \\ & \\ & \\
+			& $ \brnga{*}\mapsfrom\cmplx{m}:\A{*}$ \\ & \\ & \\ & \\ & \\ & \\
+				%
+			$\cmplxn = \brnga{*} \oplus \rnlla{}$ &&
+						
+			$\cmplxm = \brnga{} \oplus \rnlla{*}$ \\
+				%
+		\end{tabular}
+	\end{center}
+\label{tab:ftola in pictures B}
+\end{table}

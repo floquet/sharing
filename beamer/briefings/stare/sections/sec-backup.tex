@@ -1,0 +1,213 @@
+% \input{\pathsections "sec-backup"}
+
+\section{Backup Slides}
+%     %     %     %     %     %     %     %     %
+\subsection{Images}
+
+\begin{frame}\frametitle{\href{https://www.science.org/}{Science}  -- \href{https://www.science.org/content/article/satellite-swarms-are-threatening-night-sky-creating-new-zone-environmental-conflict}{The Fault in Our Stars}}
+\center
+	\href{https://www.science.org/content/article/satellite-swarms-are-threatening-night-sky-creating-new-zone-environmental-conflict}{
+	\begin{overpic}[ scale = 0.15]
+		{\pLocalGraphics photos/science-03x}
+		\put(50,60) {\tiny{What the four largest swarm builders}}
+		\put(50,55) {\tiny{have so far submitted to regulators}}
+	\end{overpic}}
+\end{frame}
+
+\begin{frame}\frametitle{\href{https://www.science.org/}{Science}  -- \href{https://www.science.org/content/article/satellite-swarms-are-threatening-night-sky-creating-new-zone-environmental-conflict}{The Fault in Our Stars}}
+\center
+	\href{https://www.science.org/content/article/satellite-swarms-are-threatening-night-sky-creating-new-zone-environmental-conflict}{
+	\begin{overpic}[ scale = 0.25]
+		{\pLocalGraphics photos/science-starlink60}
+	\end{overpic}}
+	\\[5pt]
+	\tiny{The first flotilla of 60 Starlink satellites was released in May 2019 from a SpaceX rocket.}
+\end{frame}
+
+%     %     %     %     %     %     %     %     %
+\subsection{Mathematica}
+\begin{frame}\frametitle{\href{https://reference.wolfram.com/language/guide/ImageProcessing.html}{Mathematica Image Processing}}
+\center
+\begin{table}[htp]
+%\caption{default}
+\begin{center}
+\begin{tabular}{cccc}
+	%
+	original & edges & key points & backgound out \\
+	%
+	\begin{overpic}[ scale = 0.75]
+		{\pLocalGraphics mm/i0}
+	\end{overpic} &
+	%
+	\begin{overpic}[ scale = 0.75]
+		{\pLocalGraphics mm/i1}
+	\end{overpic} &
+	%
+	\begin{overpic}[ scale = 0.75]
+		{\pLocalGraphics mm/i2}
+	\end{overpic} &
+	%
+	\begin{overpic}[ scale = 0.75]
+		{\pLocalGraphics mm/i3}
+	\end{overpic}
+	%
+\end{tabular}
+\end{center}
+\label{tab:mm}
+\end{table}%
+Not so usefull...
+\end{frame}
+
+\begin{frame}\frametitle{\referenceWolfram \ \href{\urlmmSatellite}{Satellite} Tools}
+%\begin{frame}\frametitle{\referenceWolfram Groundtracks}
+\center
+	\href{\urlmmSatellite}{
+	\begin{overpic}[ scale = 0.25]
+		{\pLocalGraphics mm/iss-dataset}
+	\end{overpic}}
+	\\[2pt]
+	\tiny{First of 63 entries for International Space Station dataset}
+\end{frame}
+
+%\begin{frame}\frametitle{\referenceWolfram \ \href{\urlmmSatellite}{Satellite} Tools}
+%%\begin{frame}\frametitle{\referenceWolfram Groundtracks}
+%\center
+%	\href{\urlmmSatellite}{
+%	\begin{overpic}[ scale = 0.25]
+%		{\pLocalGraphics mm/iss-dataset-01}
+%	\end{overpic}}
+%	\\[2pt]
+%	\tiny{Additional entries for International Space Station dataset}
+%\end{frame}
+%
+%\begin{frame}\frametitle{\referenceWolfram \ \href{\urlmmSatellite}{Satellite} Tools}
+%%\begin{frame}\frametitle{\referenceWolfram Groundtracks}
+%\center
+%	\href{\urlmmSatellite}{
+%	\begin{overpic}[ scale = 0.35 ]
+%		{\pLocalGraphics mm/iss-track}
+%	\end{overpic}}
+%	\\[2pt]
+%	\tiny{Groundtracks for the International Space Station}
+%\end{frame}
+%
+%\begin{frame}\frametitle{\referenceWolfram \ \href{\urlmmGeoVisibleRegion}{GeoVisibleRegion} Tools}
+%%\begin{frame}\frametitle{\referenceWolfram Groundtracks}
+%\center
+%	\href{\urlmmSatellite}{
+%	\begin{overpic}[ scale = 0.275 ]
+%		{\pLocalGraphics mm/geographics-02}
+%	\end{overpic}}
+%	\\[2pt]
+%	\tiny{\qquad What's visible from altitude of 10000 m?}
+%\end{frame}
+%
+%\begin{frame}\frametitle{\referenceWolfram \ \href{\urlmmGeoVisibleRegion}{GeoVisibleRegion} Tools}
+%%\begin{frame}\frametitle{\referenceWolfram Groundtracks}
+%\center
+%	\href{\urlmmSatellite}{
+%	\begin{overpic}[ scale = 0.3 ]
+%		{\pLocalGraphics mm/geographics-01}
+%	\end{overpic}}
+%	\\[2pt]
+%	\tiny{\qquad What's visible from geostationary orbit?}
+%\end{frame}
+
+\begin{frame}\frametitle{\referenceWolfram \ \href{\urlmmSatellite}{Satellite} Tools}
+%\begin{frame}\frametitle{\referenceWolfram Groundtracks}
+\center
+	\footnotesize{Groundtracks, International Space Station} \\
+	\href{\urlmmSatellite}{
+	\begin{overpic}[ scale = 0.5 ]
+		{\pLocalGraphics mm/mm-iss-01}
+	\end{overpic}}
+	\\[10pt]
+	\tiny{\mg{\texttt{With[{data = 
+   EntityValue[
+    Entity["Satellite", "25544"], {"Position", "PositionLine"}]},
+ GeoGraphics[{Gray, Thickness[.005], 
+   Arrowheads[{{0.05, 0.4}, {0.05, 0.13}}], Arrow @@ data[[2]], Red, 
+   PointSize[.01], Point[data[[1]]], Opacity[.1], Black, 
+   GeoVisibleRegion[data[[1]]]}, GeoCenter -> data[[1]], 
+  GeoRange -> "World"]]]}}}
+\end{frame}
+
+\begin{frame}\frametitle{\referenceWolfram \ \href{\urlmmGeoVisibleRegion}{GeoVisibleRegion} Tools}
+%\begin{frame}\frametitle{\referenceWolfram Groundtracks}
+\center
+	\footnotesize{What's visible from 10,000 m over Albuquerque?}\\
+	\href{\urlmmSatellite}{
+	\begin{overpic}[ scale = 0.25 ]
+		{\pLocalGraphics mm/mm-geovis-01}
+	\end{overpic}}
+	\\[15pt]
+	\tiny{\mg{\texttt{GeoGraphics[GeoVisibleRegion[{35, -106, 10000}]]}}}
+\end{frame}
+
+\begin{frame}\frametitle{\referenceWolfram \ \href{\urlmmGeoVisibleRegion}{GeoVisibleRegion} Tools}
+%\begin{frame}\frametitle{\referenceWolfram Groundtracks}
+\center
+	\footnotesize{What's visible from geostationary orbit over Albuquerque?}
+	\href{\urlmmSatellite}{
+	\begin{overpic}[ scale = 0.5 ]
+		{\pLocalGraphics mm/mm-geovis-02}
+	\end{overpic}}
+	\\[15pt]
+	\tiny{\mg{\texttt{GeoGraphics[
+ GeoVisibleRegion[{35, -106, Quantity[35786, "Kilometers"]}], 
+ GeoRange -> "World"]}}}
+\end{frame}
+
+%     %     %     %     %     %     %     %     %
+\subsection{\href{https://www.mathworks.com/}{MATLAB}}
+\begin{frame}\frametitle{\href{https://www.mathworks.com/products/image-processing.html}{MATLAB Image Processing Toolbox: I}}
+\center
+\begin{table}[htp]
+%\caption{default}
+\begin{center}
+\begin{tabular}{ccc}
+		%
+	\href{https://www.mathworks.com/help/images/image-analysis.html}{\begin{overpic}[ scale = 0.25]
+		{\pLocalGraphics matlab-01}
+	\end{overpic}} &
+		%
+	\href{https://www.mathworks.com/help/images/image-segmentation.html}{\begin{overpic}[ scale = 0.25]
+		{\pLocalGraphics matlab-02}
+	\end{overpic}} &
+		%
+	\href{https://www.mathworks.com/help/images/hyperspectral-image-processing.html}{\begin{overpic}[ scale = 0.25]
+		{\pLocalGraphics matlab-03}
+	\end{overpic}}
+		%
+\end{tabular}
+\end{center}
+\label{tab:matlab-1}
+\end{table}%
+\end{frame}
+
+\begin{frame}\frametitle{\href{https://www.mathworks.com/products/image-processing.html}{MATLAB Image Processing Toolbox: II}}
+\center
+\begin{table}[htp]
+%\caption{default}
+\begin{center}
+\begin{tabular}{ccc}
+		%
+	\href{https://www.mathworks.com/help/images/deep-learning.html}{\begin{overpic}[ scale = 0.25]
+		{\pLocalGraphics matlab-04}
+	\end{overpic}} &
+		%
+	\href{https://www.mathworks.com/help/images/image-enhancement-and-restoration.html}{\begin{overpic}[ scale = 0.25]
+		{\pLocalGraphics matlab-05}
+	\end{overpic}} &
+		%
+	\href{https://www.mathworks.com/help/images/code-generation-and-gpu-support.html}{\begin{overpic}[ scale = 0.25]
+		{\pLocalGraphics matlab-06}
+	\end{overpic}}
+		%
+\end{tabular}
+\end{center}
+\label{tab:matlab-2}
+\end{table}%
+\end{frame}
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

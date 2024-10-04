@@ -1,0 +1,697 @@
+%% This BibTeX bibliography file was created using BibDesk.
+%% https://bibdesk.sourceforge.io/
+
+%% Created for Daniel M. Topa at 2024-09-27 12:09:51 -0600 
+
+
+%% Saved with string encoding Unicode (UTF-8) 
+
+
+
+@article{sang2019experiences,
+	abstract = {Modern graphics processing units (GPUs) offer much more computational
+power than recent CPUs by providing a vast number of simple, data-parallel, multithreaded cores. In this study, we focus on the use of a GPU to perform parallel
+discrete-event simulation. Our approach is to use a modified service time distribution
+function to allow more independent events to be processed in parallel. The
+implemen-tation issues and alternative strategies will be discussed in detail. We
+describe and compare our experience and results in using Thrust and CUB, two
+open-source paral-lel algorithms libraries which resemble the C++ Standard
+Template Library, to build our tool. The experimental results show that our
+implementation can be two orders of magnitude faster than the sequential simulation
+for large-scale simulation models.},
+	author = {Sang, Janche and Lee, Che-Rung and Rego, Vernon and King, Chung-Ta},
+	date-added = {2024-09-27 11:58:00 -0600},
+	date-modified = {2024-09-27 11:58:32 -0600},
+	journal = {The Journal of Supercomputing},
+	pages = {4132--4149},
+	publisher = {Springer},
+	title = {Experiences with implementing parallel discrete-event simulation on GPU},
+	volume = {75},
+	year = {2019}}
+
+@inproceedings{horn1997thaad,
+	abstract = {TISES is a non-real-time, discrete event, engineering design-level simulation of the Objective THAAD system. The purpose of TISES is to provide the THAAD Project Office with an analysis tool to support the end-to-end performance evaluation of the objective THAAD system effectiveness in a many-on-many environment. TISES is currently undergoing modifications required to support THAAD Milestone II analysis.
+By simulating the message interfaces and corresponding dynamic interdependencies between segments of the THAAD system, TISES provides the capability to support the spectrum of one-on-one and many-on-many analysis of the integrated THAAD system against TBMs under various battle conditions. TISES is being used to address critical THAAD issues. The presentation/paper will address the purpose of the simulation, types of input and outputs, and a brief summary of what is modeled within the simulation.},
+	author = {Horn, Dawn and Colvert, Phil and Scrip, Becky and Horn, Dawn and Colvert, Phil and Scrip, Becky},
+	booktitle = {Modeling and Simulation Technologies Conference},
+	date-added = {2024-09-27 11:24:06 -0600},
+	date-modified = {2024-09-27 11:24:45 -0600},
+	pages = {3522},
+	title = {THAAD integrated system effectiveness simulation (TISES)},
+	year = {1997}}
+
+@inproceedings{carothers1998towards,
+	abstract = {Parallel simulation uses multiple processors to reduce the execution time of a single simulation model. This technology enables off-line decision aide simulations to be transformed into real-time decision aides for time critical situations without loss of model accuracy.
+In this paper, we present a case study of our experiences in the parallelization of an existing large-scale Ada simulator called TISES. TISES stands for THAAD Integrated System Effectiveness Simulation and models all activities performed by a collection of THAAD missile batteries during an engagement scenario. TISES is approximately 300,000 lines of source code. Because of its enormous size and complexity, parallelization of the entire system was beyond the scope of our proof-of-concept effort. Instead, we selected a subcomponent of the simulation that performs threat evaluation and weapon assignment.},
+	author = {Carothers, Christopher D and Hybinette, Maria I and Fujimoto, Richard M},
+	booktitle = {Summer Computer Simulation Conference},
+	date-added = {2024-09-27 11:13:23 -0600},
+	date-modified = {2024-09-27 11:45:01 -0600},
+	organization = {Society for Computer Simulation, etc},
+	pages = {600--605},
+	title = {Towards Parallelization of Large-scale Ada Simulations Using Time Warp},
+	year = {1998}}
+
+@article{LI2020102067,
+	abstract = {Parallel Discrete Event Simulation (PDES) aims at providing high performance solutions for simulation with large and complex models. Like traditional multi-threaded applications, PDES applications are also confronted with large overhead produced by memory allocation. Especially, complex models and frequent inter-thread communications in PDES applications will lead to large amounts of memory allocation and deallocation requests. Inter-thread communications are implemented by sending and receiving events based on shared memory. Hence, an efficient memory allocator has great impact on the performance of such applications. Current well-known allocators are dedicated to be scalable and lock-free. However, they ignore the difference between thread local and shared memory and manage them in the same way, which cannot make good use of their own characteristics. To solve this problem, this paper proposes a high efficient multi-threaded memory allocator named HMalloc, which innovatively separates thread local memory from shared memory. Thus, local memory allocation and deallocation will not lead to false sharing and lock contention. Moreover, coalescence free is applied to free local memory blocks. Furthermore, a flag-based shared memory management method is proposed to achieve lock-free shared memory allocation and deallocation. Experimental results show that HMalloc can achieve significant performance improvement in both traditional memory allocation benchmarks and typical PDES benchmarks when compared with existing well-known memory allocators.},
+	author = {Tianlin Li and Yiping Yao and Wenjie Tang and Feng Zhu and Zhongwei Lin},
+	date-added = {2024-09-27 08:31:11 -0600},
+	date-modified = {2024-09-27 08:31:11 -0600},
+	doi = {https://doi.org/10.1016/j.simpat.2020.102067},
+	issn = {1569-190X},
+	journal = {Simulation Modelling Practice and Theory},
+	keywords = {Multi-threaded, Memory allocator, PDES},
+	pages = {102067},
+	title = {An efficient multi-threaded memory allocator for PDES applications},
+	url = {https://www.sciencedirect.com/science/article/pii/S1569190X20300010},
+	volume = {100},
+	year = {2020},
+	bdsk-url-1 = {https://www.sciencedirect.com/science/article/pii/S1569190X20300010},
+	bdsk-url-2 = {https://doi.org/10.1016/j.simpat.2020.102067}}
+
+@inproceedings{5066860,
+	abstract = {The development of computer processor has stepped into the era of multi-core, providing a good chance to spread the parallel discrete event simulation. The parallel programming model and synchronization problem during the parallelization of discrete event simulation on multi-core platform were discussed. A parallel discrete event simulator based on multi-core platform was designed and implemented using the optimistic synchronization algorithm. On an HP multi-core server with up to 8 cores, both the overheads of the parallel simulator and the effects of event granularity, process number, lookahead on the simulation performance were tested using the Phold model. The experiment results show that the optimistic parallel discrete event simulation based on multi-core platform could achieve good speedup for simulation applications with coarse-grained events.},
+	author = {Su, Nianle and Hou, Hongtao and Yang, Feng and Li, Qun and Wang, Weiping},
+	booktitle = {2009 International Conference on Complex, Intelligent and Software Intensive Systems},
+	date-added = {2024-09-27 08:11:11 -0600},
+	date-modified = {2024-09-27 08:11:11 -0600},
+	doi = {10.1109/CISIS.2009.59},
+	keywords = {Discrete event simulation;Performance analysis;Object oriented modeling;Computational modeling;Yarn;Multicore processing;Concurrent computing;Design optimization;Processor scheduling;Computer architecture},
+	month = {March},
+	pages = {675-680},
+	title = {Optimistic Parallel Discrete Event Simulation Based on Multi-core Platform and its Performance Analysis},
+	year = {2009},
+	bdsk-url-1 = {https://doi.org/10.1109/CISIS.2009.59}}
+
+@mastersthesis{jagtap2012multithreading,
+	abstract = {Existing parallel discrete event simulation (PDES) kernels use process-based implementations and rely on MPI communication library for message passing. The drawback of these implementations is their reliance on multiple message copying operations, even when the two communicating processes are running on multiple cores on the same chip. As the multicore processors become prevalent and the number of cores per chip rapidly increases, process-based communication model results in a highly suboptimal simulation performance.},
+	author = {Jagtap, Deepak A},
+	date-added = {2024-09-27 07:58:21 -0600},
+	date-modified = {2024-09-27 08:04:52 -0600},
+	school = {State University of New York at Binghamton},
+	title = {Multithreading for optimizing PDES on multicore platforms},
+	year = {2012}}
+
+@article{6574857,
+	author = {Wang, Jingjing and Jagtap, Deepak and Abu-Ghazaleh, Nael and Ponomarev, Dmitry},
+	date-added = {2024-09-27 07:52:57 -0600},
+	date-modified = {2024-09-27 07:52:57 -0600},
+	doi = {10.1109/TPDS.2013.193},
+	journal = {IEEE Transactions on Parallel and Distributed Systems},
+	keywords = {Message systems;Computational modeling;Optimization;Receivers;Multicore processing;Synchronization;PDES;multi-threaded;optimistic simulation;multi-core systems;optimization},
+	number = {6},
+	pages = {1574-1584},
+	title = {Parallel Discrete Event Simulation for Multi-Core Systems: Analysis and Optimization},
+	volume = {25},
+	year = {2014},
+	bdsk-url-1 = {https://doi.org/10.1109/TPDS.2013.193}}
+
+@inproceedings{jagtap2012optimization,
+	author = {Jagtap, Deepak and Abu-Ghazaleh, Nael and Ponomarev, Dmitry},
+	booktitle = {2012 IEEE 26th International Parallel and Distributed Processing Symposium},
+	date-added = {2024-09-27 07:49:19 -0600},
+	date-modified = {2024-09-27 07:49:19 -0600},
+	organization = {IEEE},
+	pages = {520--531},
+	title = {Optimization of parallel discrete event simulator for multi-core systems},
+	year = {2012}}
+
+@inproceedings{wieland1989implementing,
+	author = {Wieland, Frederick and Hawley, Lawrence and Feinberg, Abe},
+	booktitle = {Proceedings of the third conference on Hypercube concurrent computers and applications-Volume 2},
+	date-added = {2024-09-26 20:28:59 -0600},
+	date-modified = {2024-09-26 20:28:59 -0600},
+	pages = {1269--1276},
+	title = {Implementing a distributed combat simulation on the time warp operating system},
+	year = {1989}}
+
+@article{wieland1989performance,
+	author = {Wieland, Frederick and Hawley, Lawrence and Feinberg, Abe and Loreto, Mike Di and Blume, Leo and Ruffles, Joseph and Reiher, Peter and Beckman, Brian and Hontalas, Philip and Bellenot, Steven and others},
+	date-added = {2024-09-26 20:23:46 -0600},
+	date-modified = {2024-09-26 20:23:46 -0600},
+	journal = {Concurrency: Practice and Experience},
+	number = {1},
+	pages = {35--50},
+	publisher = {Wiley Online Library},
+	title = {The performance of a distributed combat simulation with the time warp operating system},
+	volume = {1},
+	year = {1989}}
+
+@inproceedings{Zeigler1989,
+	abstract = {This tutorial describes the features of DEVS-Scheme a knowledge based simulation environment for hierarchical, modular discrete event models. The attributes of DEVS-Scheme which distinguish it from conventional approaches are described in terms of a set of layers, each layer dependent on its predecessor to achieve its functionality.},
+	author = {B.P. Ziegler, and J.H. Hu, and J.W. Rosenblit},
+	booktitle = {WSC '89: Proceedings of the 21st conference on Winter simulation},
+	date-added = {2024-09-26 20:16:26 -0600},
+	date-modified = {2024-09-26 20:19:10 -0600},
+	doi = {Pages 84 - 89 https://doi-org/10.1145/76738.76749},
+	pages = {84-85},
+	title = {Hierarchical, modular modelling in DEVS-scheme},
+	year = {1989}}
+
+@inproceedings{492158,
+	abstract = {The Time Warp mechanism conceptually has the potential to speedup discrete event simulations on parallel platforms. However, practical implementations of optimistic mechanism have been hindered by several drawbacks, such as large memory usage, excessive rollbacks (instability), and wasted lookahead computation. Several optimizations and variations to the original Time Warp algorithm have been presented in the literature to optimistically synchronize parallel discrete event simulation. This paper uses a common simulation environment to present comparative performance results of several Time Warp optimizations in two different application domains, namely queuing model simulation and digital system simulation. The particular optimizations considered are: lowest-timestamp-first (LTSF) scheduling, periodic (fixed period) checkpointing, dynamic checkpointing, lazy cancellation and dynamic cancellation.},
+	author = {Radhakrishnan, R. and McBrayer, T.J. and Subramani, K. and Chetlur, M. and Balakrishnan, V. and Wilsey, P.A.},
+	booktitle = {Proceedings of the 29th Annual Simulation Symposium},
+	date-added = {2024-09-26 20:09:18 -0600},
+	date-modified = {2024-09-26 20:09:44 -0600},
+	doi = {10.1109/SIMSYM.1996.492158},
+	keywords = {Algorithm design and analysis;Analytical models;Time warp simulation;Kernel;Discrete event simulation;Computational modeling;Digital systems;Checkpointing;Project management;Computer simulation},
+	pages = {107-116},
+	title = {A comparative analysis of various Time Warp algorithms implemented in the WARPED simulation kernel},
+	year = {1996},
+	bdsk-url-1 = {https://doi.org/10.1109/SIMSYM.1996.492158}}
+
+@inproceedings{gilmer1988assessment,
+	author = {Gilmer Jr, John B},
+	booktitle = {SCS Multiconference on Distributed Simulation},
+	date-added = {2024-09-26 20:02:28 -0600},
+	date-modified = {2024-09-26 20:02:28 -0600},
+	pages = {45--49},
+	title = {An assessment of" Time Warp" parallel discrete event simulation algorithm performance.},
+	year = {1988}}
+
+@inproceedings{heidelberger1986statistical,
+	author = {Heidelberger, Philip},
+	booktitle = {Proceedings of the 18th conference on Winter simulation},
+	date-added = {2024-09-26 19:59:05 -0600},
+	date-modified = {2024-09-26 19:59:05 -0600},
+	pages = {290--295},
+	title = {Statistical analysis of parallel simulations},
+	year = {1986}}
+
+@article{chandy1979distributed,
+	author = {Chandy, K. Mani and Misra, Jayadev},
+	date-added = {2024-09-26 19:37:14 -0600},
+	date-modified = {2024-09-26 19:37:14 -0600},
+	journal = {IEEE Transactions on software engineering},
+	number = {5},
+	pages = {440--452},
+	publisher = {IEEE},
+	title = {Distributed simulation: A case study in design and verification of distributed programs},
+	year = {1979}}
+
+@techreport{10.5555/889797,
+	abstract = {Simulations of computer systems have traditionally been performed on a single sequential computer, even if the system to be simulated contains a number of components which operate concurrently. An alternative would be to simulate these systems on a network of processors. With this approach, each processor would simulate one component of the system, hence the component simulations would proceed concurrently. By exploiting the modularity and concurrency in the system to be simulated, the simulation would itself be modular and concurrent. An accurate simulation must model the time behavior of the system as well as its input-output behavior. In order to avoid real-time constraints on the processors and communication network in the simulation facility, the simulation timing must use a time-independent algorithm. That is, the simulated behavior of each component should not depend on the speed at which the simulation is performed. With this time-independent approach, additional coordination operations are required to prevent deadlock of the simulation. This coordination can be provided without any centralized control. Instead, the program for the simulation of each component is modified t simulations. Additional termination operations are also required to assure that the simulation will terminate under the exact same conditions that the system being simulated would terminate. These operations can also be provided without any centralization of control or real-time constraints. Furthermore a simulation which uses these coordination and termination operations is probably correct. That is, the simulation will accurately model both the time behavior and the input-output behavior of the system.},
+	address = {USA},
+	author = {Bryant, R. E.},
+	date-added = {2024-09-26 19:33:14 -0600},
+	date-modified = {2024-09-27 07:57:14 -0600},
+	publisher = {Massachusetts Institute of Technology},
+	title = {Simulation of packet communication architecture computer systems},
+	year = {1977}}
+
+@article{bryant1977simulation,
+	author = {Bryant, Randal R},
+	date-added = {2024-09-26 19:31:18 -0600},
+	date-modified = {2024-09-26 19:31:18 -0600},
+	title = {Simulation of packet communication architecture computer systems},
+	year = {1977}}
+
+@inproceedings{lindlan2000tool,
+	author = {Lindlan, Kathleen A and Cuny, Janice and Malony, Allen D and Shende, Sameer and Mohr, Bernd and Rivenburgh, Reid and Rasmussen, Craig},
+	booktitle = {SC'00: Proceedings of the 2000 ACM/IEEE Conference on Supercomputing},
+	date-added = {2024-09-25 21:49:35 -0600},
+	date-modified = {2024-09-25 21:49:35 -0600},
+	organization = {IEEE},
+	pages = {49--49},
+	title = {A tool framework for static and dynamic analysis of object-oriented software with templates},
+	year = {2000}}
+
+@article{bernholdt2006component,
+	author = {Bernholdt, David E and Allan, Benjamin A and Armstrong, Robert and Bertrand, Felipe and Chiu, Kenneth and Dahlgren, Tamara L and Damevski, Kostadin and Elwasif, Wael R and Epperly, Thomas GW and Govindaraju, Madhusudhan and others},
+	date-added = {2024-09-25 21:46:57 -0600},
+	date-modified = {2024-09-25 21:46:57 -0600},
+	journal = {The International Journal of High Performance Computing Applications},
+	number = {2},
+	pages = {163--202},
+	publisher = {Sage Publications Sage CA: Thousand Oaks, CA},
+	title = {A component architecture for high-performance scientific computing},
+	volume = {20},
+	year = {2006}}
+
+@article{malony2005performance,
+	author = {Malony, A and Shende, Sameer and Trebon, Nick and Ray, Jaideep and Armstrong, R and Rasmussen, Craig and Sottile, M},
+	date-added = {2024-09-25 21:43:40 -0600},
+	date-modified = {2024-09-25 21:43:40 -0600},
+	journal = {Concurrency and Computation: Practice and Experience},
+	number = {2-4},
+	pages = {117--141},
+	publisher = {Wiley Online Library},
+	title = {Performance technology for parallel and distributed component software},
+	volume = {17},
+	year = {2005}}
+
+@article{shende2006tau,
+	author = {Shende, Sameer S and Malony, Allen D},
+	date-added = {2024-09-25 21:39:47 -0600},
+	date-modified = {2024-09-25 21:39:47 -0600},
+	journal = {The International Journal of High Performance Computing Applications},
+	number = {2},
+	pages = {287--311},
+	publisher = {Sage Publications Sage CA: Thousand Oaks, CA},
+	title = {The TAU parallel performance system},
+	volume = {20},
+	year = {2006}}
+
+@inproceedings{hermannsson1994ec,
+	author = {Hermannsson, Gudjon and Li, Ai and Wittie, Larry},
+	booktitle = {1994 Proceedings of the Twenty-Seventh Hawaii International Conference on System Sciences},
+	date-added = {2024-09-25 13:41:49 -0600},
+	date-modified = {2024-09-25 13:41:49 -0600},
+	organization = {IEEE},
+	pages = {241--250},
+	title = {EC/DSIM: a frontend and simulator for huge parallel systems},
+	volume = {1},
+	year = {1994}}
+
+@techreport{goswami1990dsim,
+	author = {Goswami, Kumar K and Iyer, Ravishankar K},
+	date-added = {2024-09-25 13:41:30 -0600},
+	date-modified = {2024-09-25 13:41:30 -0600},
+	title = {DSIM: A distributed simulator},
+	year = {1990}}
+
+@webpage{Stathopoulos,
+	author = {Andreas Stathopoulos},
+	date-added = {2024-09-25 10:52:51 -0600},
+	date-modified = {2024-09-25 10:55:36 -0600},
+	lastchecked = {2024},
+	title = {Parallel discrete event simulation},
+	url = {https://www.cs.wm.edu/~andreas/umsa/lectures/cs-sim-pdes.pdf}}
+
+@inproceedings{ross2016visual,
+	abstract = {Parallel discrete-event simulation (PDES) is an important tool in the codesign of extreme-scale systems because PDES provides a cost-effective way to evaluate designs of highperformance computing systems. Optimistic synchronization algorithms for PDES, such as Time Warp, allow events to be processed without global synchronization among the processing elements. A rollback mechanism is provided when events are processed out of timestamp order. Although optimistic synchronization protocols enable the scalability of large-scale PDES, the performance of the simulations must be tuned to reduce the number of rollbacks and provide an improved simulation runtime. To enable efficient large-scale optimistic simulations, one has to gain insight into the factors that affect the rollback behavior and simulation performance. We developed a tool for ROSS model developers that gives them detailed metrics on the performance of their large-scale optimistic simulations at varying levels of simulation granularity. Model developers can use this information for parameter tuning of optimistic simulations in order to achieve better runtime and fewer rollbacks. In this work, we instrument the ROSS optimistic PDES framework to gather detailed statistics
+about the simulation engine. We have also developed an interactive visualization interface that uses the data collected by the ROSS instrumentation to understand the underlying behavior of the simulation engine. The interface connects real time to virtual
+time in the simulation and provides the ability to view simulation data at different granularities. We demonstrate the usefulness of our framework by performing a visual analysis of the dragonfly network topology model provided by the CODES simulation
+framework built on top of ROSS. The instrumentation needs to minimize overhead in order to accurately collect data about the simulation performance. To ensure that the instrumentation does not introduce unnecessary overhead, we perform a scaling
+study that compares instrumented ROSS simulations with their noninstrumented counterparts in order to determine the amount of perturbation when running at different simulation scales.},
+	author = {Ross, Caitlin and Carothers, Christopher D and Mubarak, Misbah and Carns, Philip and Ross, Robert and Li, Jianping Kelvin and Ma, Kwan-Liu},
+	booktitle = {2016 7th International Workshop on Performance Modeling, Benchmarking and Simulation of High Performance Computer Systems (PMBS)},
+	date-added = {2024-09-25 10:40:24 -0600},
+	date-modified = {2024-09-25 10:40:24 -0600},
+	organization = {IEEE},
+	pages = {87--97},
+	title = {Visual data-analytics of large-scale parallel discrete-event simulations},
+	year = {2016}}
+
+@mastersthesis{tanniru2014,
+	abstract = {Discrete Event Simulation on GPU's employing parallel heap data structure is the focus
+of this thesis. Two traditional algorithms, one being conservative and other being optimistic, for parallel discrete event simulation have been implemented on GPUs using CUDA. The first algorithm is the safe-window algorithm (conservative). It has produced expected performance when compared to sequential simulation. The second algorithm, known as SyncSim, is an optimistic simulation algorithm previously designed to be space efficient and reduce rollbacks. This algorithm is re-implemented on GPU platform with necessary changes on the logic simulator and the parallel heap implementation. The performance of the parallel heap when working with a logic simulator has also been validated against the results indicated in previous research paper on parallel heap without the logic simulator},
+	author = {Govardhan Tanniru },
+	date-added = {2024-09-25 10:40:24 -0600},
+	date-modified = {2024-09-25 10:40:24 -0600},
+	doi = {https://doi.org/10.57709/5544668},
+	school = {Georgia State University},
+	title = {Parallel Discrete Event Simulation on Many Core Platforms Using Parallel Heap Event Queues},
+	url = {https://scholarworks.gsu.edu/cs_theses/76/},
+	urldate = {2024},
+	year = {2014},
+	bdsk-url-1 = {https://scholarworks.gsu.edu/cs_theses/76/},
+	bdsk-url-2 = {https://doi.org/10.57709/5544668}}
+
+@unpublished{csu2019,
+	abstract = {Modern graphics processing units (GPUs) offer much more computational
+power than recent CPUs by providing a vast number of simple, data-parallel, multithreaded cores. In this study, we focus on the use of a GPU to perform parallel
+discrete-event simulation. Our approach is to use a modified service time distribution
+function to allow more independent events to be processed in parallel. The
+implemen-tation issues and alternative strategies will be discussed in detail. We
+describe and compare our experience and results in using Thrust and CUB, two
+open-source paral-lel algorithms libraries which resemble the C++ Standard
+Template Library, to build our tool. The experimental results show that our
+implementation can be two orders of magnitude faster than the sequential simulation
+for large-scale simulation models.},
+	author = {Janche Sang and Che-Rung Lee and Vernon Rego and Chung-Ta King},
+	date-added = {2024-09-25 10:39:43 -0600},
+	date-modified = {2024-09-25 10:39:43 -0600},
+	month = {2019},
+	note = {Electrical Engineering & Computer Science Faculty Publications},
+	title = {Experiences with Implementing Parallel Discrete-event Simulation on GPU},
+	year = {August}}
+
+@article{vee1999parallel,
+	author = {Vee, Voon-Yee and Hsu, Wen-Jing},
+	date-added = {2024-09-17 22:43:40 -0600},
+	date-modified = {2024-09-17 22:43:40 -0600},
+	journal = {Nanyang Technological University, Tech. Rep},
+	publisher = {Citeseer},
+	title = {Parallel discrete event simulation: A survey},
+	year = {1999}}
+
+@article{nutaro2003parallel,
+	author = {Nutaro, James Joseph},
+	date-added = {2024-09-17 22:38:47 -0600},
+	date-modified = {2024-09-17 22:38:47 -0600},
+	publisher = {The University of Arizona.},
+	title = {Parallel discrete event simulation with application to continuous systems},
+	year = {2003}}
+
+@inproceedings{sang2013fast,
+	author = {Sang, Janche and Lee, Che-Rung and Rego, Vernon and King, Chung-Ta},
+	booktitle = {Proceedings of the International Conference on Parallel and Distributed Processing Techniques and Applications (PDPTA)},
+	date-added = {2024-09-17 22:38:27 -0600},
+	date-modified = {2024-09-17 22:38:27 -0600},
+	organization = {The Steering Committee of The World Congress in Computer Science, Computer~{\ldots}},
+	pages = {501},
+	title = {A fast implementation of parallel discrete-event simulation on GPGPU},
+	year = {2013}}
+
+@inproceedings{toscano2012parallel,
+	author = {Toscano, Luca and D'Angelo, Gabriele and Marzolla, Moreno},
+	booktitle = {Proceedings of the 1st ACM SIGPLAN workshop on Functional high-performance computing},
+	date-added = {2024-09-17 22:37:58 -0600},
+	date-modified = {2024-09-17 22:37:58 -0600},
+	pages = {83--92},
+	title = {Parallel discrete event simulation with Erlang},
+	year = {2012}}
+
+@article{hou2013modeling,
+	author = {Hou, Bonan and Yao, Yiping and Wang, Bing and Liao, Dongsheng},
+	date-added = {2024-09-17 22:28:33 -0600},
+	date-modified = {2024-09-17 22:28:33 -0600},
+	journal = {Simulation},
+	number = {10},
+	pages = {1173--1183},
+	publisher = {Sage Publications Sage UK: London, England},
+	title = {Modeling and simulation of large-scale social networks using parallel discrete event simulation},
+	volume = {89},
+	year = {2013}}
+
+@book{10.5555/4428,
+	address = {USA},
+	author = {Zeigler, Bernard P.},
+	date-added = {2024-09-17 22:27:52 -0600},
+	date-modified = {2024-09-17 22:27:52 -0600},
+	isbn = {0127784500},
+	publisher = {Academic Press Professional, Inc.},
+	title = {Multifacetted modelling and discrete event simulation},
+	year = {1984}}
+
+@book{zeigler1984multifacetted,
+	author = {Zeigler, Bernard P},
+	date-added = {2024-09-17 22:27:22 -0600},
+	date-modified = {2024-09-17 22:27:22 -0600},
+	publisher = {Academic Press Professional, Inc.},
+	title = {Multifacetted modelling and discrete event simulation},
+	year = {1984}}
+
+@article{nicol1988parallel,
+	author = {Nicol, David M},
+	date-added = {2024-09-17 22:26:19 -0600},
+	date-modified = {2024-09-17 22:26:19 -0600},
+	journal = {ACM SIGPLAN Notices},
+	number = {9},
+	pages = {124--137},
+	publisher = {ACM New York, NY, USA},
+	title = {Parallel discrete-event simulation of FCFS stochastic queueing networks},
+	volume = {23},
+	year = {1988}}
+
+@book{banks2005discrete,
+	author = {Banks, Jerry},
+	date-added = {2024-09-17 22:24:52 -0600},
+	date-modified = {2024-09-17 22:24:52 -0600},
+	publisher = {Pearson Education India},
+	title = {Discrete event system simulation},
+	year = {2005}}
+
+@inproceedings{park2007scalable,
+	author = {Park, Alfred and Fujimoto, Richard},
+	booktitle = {2007 8th IEEE/ACM International Conference on Grid Computing},
+	date-added = {2024-09-17 22:23:17 -0600},
+	date-modified = {2024-09-17 22:23:17 -0600},
+	organization = {IEEE},
+	pages = {185--192},
+	title = {A scalable framework for parallel discrete event simulations on desktop grids},
+	year = {2007}}
+
+@article{lin1992parallelism,
+	author = {Lin, Yi-Bing},
+	date-added = {2024-09-17 22:18:42 -0600},
+	date-modified = {2024-09-17 22:18:42 -0600},
+	journal = {ACM Transactions on Modeling and Computer Simulation (TOMACS)},
+	number = {3},
+	pages = {239--264},
+	publisher = {ACM New York, NY, USA},
+	title = {Parallelism analyzers for parallel discrete event simulation},
+	volume = {2},
+	year = {1992}}
+
+@article{nicol2002composite,
+	author = {Nicol, David M and Liu, Jason},
+	date-added = {2024-09-17 22:18:28 -0600},
+	date-modified = {2024-09-17 22:18:28 -0600},
+	journal = {IEEE Transactions on Parallel and Distributed Systems},
+	number = {5},
+	pages = {433--446},
+	publisher = {IEEE},
+	title = {Composite synchronization in parallel discrete-event simulation},
+	volume = {13},
+	year = {2002}}
+
+@article{korniss2003suppressing,
+	author = {Korniss, Gy{\"o}rgy and Novotny, Mark A and Guclu, HASAN and Toroczkai, Zolt{\'a}n and Rikvold, Per Arne},
+	date-added = {2024-09-17 22:18:15 -0600},
+	date-modified = {2024-09-17 22:18:15 -0600},
+	journal = {Science},
+	number = {5607},
+	pages = {677--679},
+	publisher = {American Association for the Advancement of Science},
+	title = {Suppressing roughness of virtual times in parallel discrete-event simulations},
+	volume = {299},
+	year = {2003}}
+
+@article{chen2014out,
+	author = {Chen, Weiwei and Han, Xu and Chang, Che-Wei and Liu, Guantao and D{\"o}mer, Rainer},
+	date-added = {2024-09-17 22:18:03 -0600},
+	date-modified = {2024-09-17 22:18:03 -0600},
+	journal = {IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
+	number = {12},
+	pages = {1859--1872},
+	publisher = {IEEE},
+	title = {Out-of-order parallel discrete event simulation for transaction level models},
+	volume = {33},
+	year = {2014}}
+
+@inproceedings{rao1998unsynchronized,
+	author = {Rao, Dhananjai Madhava and Thondugulam, Narayanan V and Radhakrishnan, Radharamanan and Wilsey, Philip A},
+	booktitle = {1998 Winter Simulation Conference. Proceedings (Cat. No. 98CH36274)},
+	date-added = {2024-09-17 22:17:48 -0600},
+	date-modified = {2024-09-17 22:17:48 -0600},
+	organization = {IEEE},
+	pages = {1563--1570},
+	title = {Unsynchronized parallel discrete event simulation},
+	volume = {2},
+	year = {1998}}
+
+@inproceedings{das1996adaptive,
+	author = {Das, Samir R},
+	booktitle = {Proceedings of the 28th conference on Winter simulation},
+	date-added = {2024-09-17 22:17:32 -0600},
+	date-modified = {2024-09-17 22:17:32 -0600},
+	pages = {186--193},
+	title = {Adaptive protocols for parallel discrete event simulation},
+	year = {1996}}
+
+@inproceedings{xiao1999scheduling,
+	author = {Xiao, Zhonge and Unger, B and Simmonds, Rob and Cleary, John},
+	booktitle = {Proceedings Thirteenth Workshop on Parallel and Distributed Simulation. PADS 99.(Cat. No. PR00155)},
+	date-added = {2024-09-17 22:17:19 -0600},
+	date-modified = {2024-09-17 22:17:19 -0600},
+	organization = {IEEE},
+	pages = {20--28},
+	title = {Scheduling critical channels in conservative parallel discrete event simulation},
+	year = {1999}}
+
+@inproceedings{satyabudhi2008parallel,
+	author = {Satyabudhi, Bhakti and Onggo, Stephan},
+	booktitle = {2008 Winter Simulation Conference},
+	date-added = {2024-09-17 22:17:01 -0600},
+	date-modified = {2024-09-17 22:17:01 -0600},
+	organization = {IEEE},
+	pages = {1047--1054},
+	title = {Parallel discrete-event simulation of population dynamics},
+	year = {2008}}
+
+@inproceedings{kunz2012multi,
+	author = {Kunz, Georg and Schemmel, Daniel and Gross, James and Wehrle, Klaus},
+	booktitle = {2012 ACM/IEEE/SCS 26th Workshop on Principles of Advanced and Distributed Simulation},
+	date-added = {2024-09-17 22:10:51 -0600},
+	date-modified = {2024-09-17 22:10:51 -0600},
+	organization = {IEEE},
+	pages = {23--32},
+	title = {Multi-level parallelism for time-and cost-efficient parallel discrete event simulation on gpus},
+	year = {2012}}
+
+@article{heidelberger1988discrete,
+	author = {Heidelberger, Philip},
+	date-added = {2024-09-17 22:10:32 -0600},
+	date-modified = {2024-09-17 22:10:32 -0600},
+	journal = {SIAM Journal on Scientific and Statistical Computing},
+	number = {6},
+	pages = {1114--1132},
+	publisher = {SIAM},
+	title = {Discrete event simulations and parallel processing: statistical properties},
+	volume = {9},
+	year = {1988}}
+
+@inproceedings{overeinder1991parallel,
+	abstract = {Synchronous Parallel Environment for Emulation and Discrete-Event Simulation (SPEEDES) is a unified parallel simulation environment. It supports multiple-synchronization protocols without requiring users to recompile their code. When a SPEEDES simulation runs on one node, all the extra parallel overhead is removed automatically at run time. When the same executable runs in parallel, the user preselects the synchronization algorithm from a list of options. SPEEDES currently runs on UNIX networks and on the California Institute of Technology/Jet Propulsion Laboratory Mark III Hypercube. SPEEDES also supports interactive simulations. Featured in the SPEEDES environment is a new parallel synchronization approach called Breathing Time Buckets. This algorithm uses some of the conservative techniques found in Time Bucket synchronization, along with the optimism that characterizes the Time Warp approach. A mathematical model derived from first principles predicts the performance of Breathing Time Buckets. Along with the Breathing Time Buckets algorithm, this paper discusses the rules for processing events in SPEEDES, describes the implementation of various other synchronization protocols supported by SPEEDES, describes some new ones for the future, discusses interactive simulations, and then gives some performance results. },
+	author = {Overeinder, Benno and Hertzberger, LO and Sloot, Peter and others},
+	booktitle = {Third workshop on design and realisation of computersystems},
+	date-added = {2024-09-17 22:07:08 -0600},
+	date-modified = {2024-09-17 22:09:53 -0600},
+	osti = {https://www.osti.gov/biblio/5460299},
+	pages = {19--30},
+	title = {Parallel discrete event simulation},
+	year = {1991}}
+
+@article{reed1988parallel,
+	author = {Reed, Daniel A. and Malony, Allen D. and McCredie, Bradley D.},
+	date-added = {2024-09-17 22:05:22 -0600},
+	date-modified = {2024-09-17 22:05:37 -0600},
+	journal = {IEEE Transactions on Software Engineering},
+	number = {4},
+	pages = {541--553},
+	publisher = {IEEE},
+	title = {Parallel discrete event simulation using shared memory},
+	volume = {14},
+	year = {1988}}
+
+@incollection{kunz2010parallel,
+	abstract = {Ever since discrete event simulation has been adopted by a large research community, simulation developers have attempted to draw benefits from executing a simulation on multiple processing units in parallel. Hence, a wide range of research has been conducted on Parallel Discrete Event Simulation (PDES). In this chapter we give an overview of the challenges and approaches of parallel simulation. Furthermore, we present a survey of the parallelization capabilities of the network simulators OMNeT++, ns-2, DSIM and JiST.},
+	author = {Kunz, Georg},
+	booktitle = {Modeling and Tools for Network Simulation},
+	date-added = {2024-09-17 22:03:12 -0600},
+	date-modified = {2024-09-17 22:03:36 -0600},
+	pages = {121--131},
+	publisher = {Springer},
+	title = {Parallel discrete event simulation},
+	year = {2010}}
+
+@inproceedings{bachan2024devastator,
+	author = {Bachan, John and Ye, Jianlan and Jiang, Xuan and Nguyen, Tan and Natarajan, Mahesh and Bremer, Maximilian and Chan, Cy},
+	booktitle = {Proceedings of the 38th ACM SIGSIM Conference on Principles of Advanced Discrete Simulation},
+	date-added = {2024-09-17 21:58:08 -0600},
+	date-modified = {2024-09-17 21:58:08 -0600},
+	pages = {35--46},
+	title = {Devastator: A Scalable Parallel Discrete Event Simulation Framework for Modern C++},
+	year = {2024}}
+
+@inproceedings{wieland1995parallel,
+	abstract = {Can parallel simulations efficiently exploit a network of workstations? Why haven't PDES models followed standard modeling methodologies? Will the field of PDES survive, and if so, in what form? Researchers in the PDES field have addressed these questions and others in a series of papers published in the last few years. The purpose of this paper is to shed light on these questions, by documenting on actual case study of the development of an optimistically synchronized PDES application on a network of workstations. This paper is unique in that its focus is not necessarily on performance, but on the whole process of developing a model, from the physical system being simulated, through its conceptual design, validation, implementation, and, of course, its performance. This paper also presents the first reported performance results indicating the impact of risk on performance. The results suggest that the optimal value of risk is sensitive to the latency parameters of the communications network.},
+	author = {Wieland, Frederick and Blair, Eric and Zukas, Tony},
+	booktitle = {Proceedings of the ninth workshop on Parallel and distributed simulation},
+	date-added = {2024-09-17 21:56:50 -0600},
+	date-modified = {2024-09-17 21:57:21 -0600},
+	pages = {103--110},
+	title = {Parallel Discrete-Event Simulation (PDES) a case study in design, development, and performance using SPEEDES},
+	year = {1995}}
+
+@article{wang2013parallel,
+	author = {Wang, Jingjing and Jagtap, Deepak and Abu-Ghazaleh, Nael and Ponomarev, Dmitry},
+	date-added = {2024-09-17 21:52:00 -0600},
+	date-modified = {2024-09-17 21:52:00 -0600},
+	journal = {IEEE Transactions on Parallel and Distributed Systems},
+	number = {6},
+	pages = {1574--1584},
+	publisher = {IEEE},
+	title = {Parallel discrete event simulation for multi-core systems: Analysis and optimization},
+	volume = {25},
+	year = {2013}}
+
+@article{nicol1993cost,
+	author = {Nicol, David M},
+	date-added = {2024-09-17 21:51:42 -0600},
+	date-modified = {2024-09-17 21:51:42 -0600},
+	journal = {Journal of the ACM (JACM)},
+	number = {2},
+	pages = {304--333},
+	publisher = {ACM New York, NY, USA},
+	title = {The cost of conservative synchronization in parallel discrete event simulations},
+	volume = {40},
+	year = {1993}}
+
+@article{experiences,
+	abstract = {Modern graphics processing units (GPUs) offer much more computational
+power than recent CPUs by providing a vast number of simple, data-parallel, multithreaded cores. In this study, we focus on the use of a GPU to perform parallel
+discrete-event simulation. Our approach is to use a modified service time distribution
+function to allow more independent events to be processed in parallel. The
+implemen-tation issues and alternative strategies will be discussed in detail. We
+describe and compare our experience and results in using Thrust and CUB, two
+open-source paral-lel algorithms libraries which resemble the C++ Standard
+Template Library, to build our tool. The experimental results show that our
+implementation can be two orders of magnitude faster than the sequential simulation
+for large-scale simulation models.},
+	author = {Sang, Janche; Lee, Che-Rung; Rego, Vernon; and King, Chung-Ta,},
+	date-added = {2024-09-17 19:44:05 -0600},
+	date-modified = {2024-09-17 21:47:26 -0600},
+	journal = {Electrical Engineering & Computer Science Faculty Publications},
+	title = {Experiences with Implementing Parallel Discrete-event Simulation on GPU},
+	url = {https://engagedscholarship.csuohio.edu/enece_facpub/455?utm_source=engagedscholarship.csuohio.edu%2Fenece_facpub%2F455&utm_medium=PDF&utm_campaign=PDFCoverPages},
+	year = {2019}}
+
+@book{ferscha1998parallel,
+	author = {Ferscha, Alois and Tripathi, Satish K},
+	date-added = {2024-09-17 17:16:41 -0600},
+	date-modified = {2024-09-17 17:16:41 -0600},
+	publisher = {Citeseer},
+	title = {Parallel and distributed simulation of discrete event systems},
+	year = {1998}}
+
+@article{lin1996asynchronous,
+	author = {Lin, Yi-Bing and Fishwick, Paul A},
+	date-added = {2024-09-17 17:16:24 -0600},
+	date-modified = {2024-09-17 17:16:24 -0600},
+	journal = {IEEE Transactions on Systems, Man, and Cybernetics-Part A: Systems and Humans},
+	number = {4},
+	pages = {397--412},
+	publisher = {IEEE},
+	title = {Asynchronous parallel discrete event simulation},
+	volume = {26},
+	year = {1996}}
+
+@inproceedings{fujimoto2017parallel,
+	author = {Fujimoto, Richard M and Bagrodia, Rajive and Bryant, Randal E and Chandy, K Mani and Jefferson, David and Misra, Jayadev and Nicol, David and Unger, Brian},
+	booktitle = {2017 Winter Simulation Conference (WSC)},
+	date-added = {2024-09-17 17:16:06 -0600},
+	date-modified = {2024-09-17 17:16:06 -0600},
+	organization = {IEEE},
+	pages = {262--291},
+	title = {Parallel discrete event simulation: The making of a field},
+	year = {2017}}
+
+@article{fujimoto1993parallel,
+	abstract = {Despite over a decade and a half of research and several successes, technologies to use parallel computers to speed up the execution of discrete event simulation programs have not had a significant impact in the general simulation community. Unless new inroads are made in reducing the effort and expertise required to develop efficient parallel simulation models, the field will continue to have limited application, and will remain a specialized technique used by only a handful of researchers. The future success, or failure, of the parallel discrete event simulation field hinges on the extent to which this problem can be addressed. Moreover, failure to meet this challenge will ultimately limit the effectiveness of discrete event simulation, in general, as a tool for analyzing and understanding large-scale systems. Basic underlying principles and techniques that are used in parallel discrete event simulation are briefly reviewed. Taking a retrospective look at the field, several successes and failures in utilizing this technology are discussed. It is noted that past research has not paid adequate attention to the problem of developing simulation models for efficient parallel execution, highlighting the need for future research to pay more attention to this problem. A variety of approaches to make parallel discrete event simulation an effective tool are discussed.},
+	author = {Fujimoto, Richard M},
+	date-added = {2024-09-17 17:15:25 -0600},
+	date-modified = {2024-09-27 12:09:49 -0600},
+	journal = {ORSA Journal on Computing},
+	number = {3},
+	pages = {213--230},
+	publisher = {INFORMS},
+	title = {Parallel discrete event simulation: Will the field survive?},
+	volume = {5},
+	year = {1993}}
+
+@article{liu2009parallel,
+	author = {Liu, Jason},
+	date-added = {2024-09-17 17:15:04 -0600},
+	date-modified = {2024-09-17 17:15:04 -0600},
+	journal = {Wiley Online Library},
+	pages = {101},
+	publisher = {Citeseer},
+	title = {Parallel discrete-event simulation},
+	volume = {35},
+	year = {2009}}
+
+@article{fujimoto1990parallel,
+	author = {Fujimoto, Richard M},
+	date-added = {2024-09-17 17:12:40 -0600},
+	date-modified = {2024-09-17 17:12:40 -0600},
+	journal = {Communications of the ACM},
+	number = {10},
+	pages = {30--53},
+	publisher = {ACM New York, NY, USA},
+	title = {Parallel discrete event simulation},
+	volume = {33},
+	year = {1990}}

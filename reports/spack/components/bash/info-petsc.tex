@@ -1,0 +1,178 @@
+% \input{./components/bash/info-petsc}
+
+%\lstdefinelanguage{Bash}%
+%  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+%      end,export,false,for,function,immutable,import,importall,if,in,%
+%      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+%      using,while},%
+%   sensitive=true,%
+%   alsoother={$},%
+%   morecomment=[l]\#,%
+%   morecomment=[n]{\#=}{=\#},%
+%   morestring=[s]{"}{"},%
+%   morestring=[m]{'}{'},%
+%}[keywords,comments,strings]%
+%
+%\lstset{%
+%    language         = bash,
+%    basicstyle       = \ttfamily,
+%%    keywordstyle     = \bfseries\color{blue},
+%%    stringstyle      = \color{magenta},
+%%    commentstyle     = \color{ForestGreen},
+%keywordstyle=\color{textblue},
+%commentstyle=\color{textred},
+%stringstyle=\color{textgreen},
+%    showstringspaces = false,
+%}
+
+\small{
+\begin{lstlisting}[language=bash]
+$ spack info petsc
+Package:   petsc
+
+Description:
+    PETSc is a suite of data structures and routines for the scalable
+    (parallel) solution of scientific applications modeled by partial
+    differential equations.
+
+Homepage: https://petsc.org
+
+Preferred version:  
+    3.22.0    http://web.cels.anl.gov/projects/petsc/.../petsc-3.22.0.tar.gz
+
+Safe versions:  
+    main      [git] https://gitlab.com/petsc/petsc.git on branch main
+    3.22.0    http://web.cels.anl.gov/projects/petsc/.../petsc-3.22.0.tar.gz
+    3.21.6    http://web.cels.anl.gov/projects/petsc/.../petsc-3.21.6.tar.gz
+    
+    3.11.1    http://web.cels.anl.gov/projects/petsc/.../petsc-3.11.0.tar.gz
+
+Deprecated versions:  
+    None
+
+Variants:
+    X [false]                     false, true
+        Activate X support
+    batch [false]                 false, true
+        Enable when mpiexec is not available to run binaries
+    build_system [generic]        generic
+        Build systems supported by the package
+    cgns [false]                  false, true
+        Activates support for CGNS (only parallel)
+    clanguage [C]                 C, C++
+        Specify C (recommended) or C++ to compile PETSc
+    complex [false]               false, true
+        Build with complex numbers
+    cuda [false]                  false, true
+        Build with CUDA
+    debug [false]                 false, true
+        Compile in debug mode
+    double [true]                 false, true
+        Switches between single and double precision
+    exodusii [false]              false, true
+        Activates support for ExodusII (only parallel)
+    fftw [false]                  false, true
+        Activates support for FFTW (only parallel)
+    fortran [true]                false, true
+        Activates fortran support
+    giflib [false]                false, true
+        Activates support for GIF
+    hdf5 [true]                   false, true
+        Activates support for HDF5 (only parallel)
+    hpddm [false]                 false, true
+        Activates support for HPDDM (only parallel)
+    hwloc [false]                 false, true
+        Activates support for hwloc
+    hypre [true]                  false, true
+        Activates support for Hypre (only parallel)
+    int64 [false]                 false, true
+        Compile with 64bit indices
+    jpeg [false]                  false, true
+        Activates support for JPEG
+    knl [false]                   false, true
+        Build for KNL
+    kokkos [false]                false, true
+        Activates support for kokkos and kokkos-kernels
+    libpng [false]                false, true
+        Activates support for PNG
+    libyaml [false]               false, true
+        Activates support for YAML
+    memalign [none]               none, 16, 32, 4, 64, 8
+        Specify alignment of allocated arrays
+    memkind [false]               false, true
+        Activates support for Memkind
+    metis [true]                  false, true
+        Activates support for metis and parmetis
+    mkl-pardiso [false]           false, true
+        Activates support for MKL Pardiso
+    mmg [false]                   false, true
+        Activates support for MMG
+    moab [false]                  false, true
+        Acivates support for MOAB (only parallel)
+    mpfr [false]                  false, true
+        Activates support for MPFR
+    mpi [true]                    false, true
+        Activates MPI support
+    mumps [false]                 false, true
+        Activates support for MUMPS (only parallel)
+    openmp [false]                false, true
+        Activates support for openmp
+    p4est [false]                 false, true
+        Activates support for P4Est (only parallel)
+    parmmg [false]                false, true
+        Activates support for ParMMG (only parallel)
+    ptscotch [false]              false, true
+        Activates support for PTScotch (only parallel)
+    random123 [false]             false, true
+        Activates support for Random123
+    rocm [false]                  false, true
+        Enable ROCm support
+    saws [false]                  false, true
+        Activates support for Saws
+    shared [true]                 false, true
+        Enables the build of shared libraries
+    strumpack [false]             false, true
+        Activates support for Strumpack
+    suite-sparse [false]          false, true
+        Activates support for SuiteSparse
+    sycl [false]                  false, true
+        Enable sycl build
+    tetgen [false]                false, true
+        Activates support for Tetgen
+    trilinos [false]              false, true
+        Activates support for Trilinos (only parallel)
+    valgrind [false]              false, true
+        Enable Valgrind Client Request mechanism
+    zoltan [false]                false, true
+        Activates support for Zoltan
+
+    when +rocm
+      amdgpu_target [none]        none, gfx1010, gfx1011, gfx1012, gfx1013, gfx1030, gfx1031, gfx1032, gfx1033, gfx1034, gfx1035, gfx1036, gfx1100, gfx1101, gfx1102, gfx1103, gfx701, gfx801, gfx802, gfx803, gfx900, gfx900:xnack-, gfx902, gfx904, gfx906, gfx906:xnack-, gfx908, gfx908:xnack-, gfx909, gfx90a, gfx90a:xnack+, gfx90a:xnack-, gfx90c, gfx940, gfx941, gfx942
+          AMD GPU architecture
+
+    when +cuda
+      cuda_arch [none]            none, 10, 11, 12, 13, 20, 21, 30, 32, 35, 37, 50, 52, 53, 60, 61, 62, 70, 72, 75, 80, 86, 87, 89, 90, 90a
+          CUDA architecture
+
+    when +fortran
+      scalapack [false]           false, true
+          Activates support for Scalapack
+      superlu-dist [true]         false, true
+          Activates support for superlu-dist (only parallel)
+
+Build Dependencies:
+    blas  cuda       exodusii  giflib  gmp   hip      hipsolver  hsa-rocr-dev  hypre  kokkos          lapack  libx11   llvm-amdgpu  metis  mmg   mpfr  mumps     p4est            parmetis  python     rocblas    rocprim  rocsolver  rocthrust  scalapack  sowing     suite-sparse  tetgen    valgrind  zoltan
+    cgns  diffutils  fftw      gmake   hdf5  hipblas  hipsparse  hwloc         jpeg   kokkos-kernels  libpng  libyaml  memkind      mkl    moab  mpi   netcdf-c  parallel-netcdf  parmmg    random123  rocm-core  rocrand  rocsparse  saws       scotch     strumpack  superlu-dist  trilinos  zlib-api
+
+Link Dependencies:
+    blas  cuda      fftw    gmake  hdf5  hipblas    hipsparse     hwloc  jpeg    kokkos-kernels  libpng  libyaml      memkind  mkl  moab  mpi    netcdf-c  parallel-netcdf  parmmg     rocblas    rocprim  rocsolver  rocthrust  scalapack  sowing     suite-sparse  tetgen    valgrind  zoltan
+    cgns  exodusii  giflib  gmp    hip   hipsolver  hsa-rocr-dev  hypre  kokkos  lapack          libx11  llvm-amdgpu  metis    mmg  mpfr  mumps  p4est     parmetis         random123  rocm-core  rocrand  rocsparse  saws       scotch     strumpack  superlu-dist  trilinos  zlib-api
+
+Run Dependencies:
+    None
+
+Licenses: 
+    None
+\end{lstlisting}
+}
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

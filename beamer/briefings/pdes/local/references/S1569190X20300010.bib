@@ -1,0 +1,13 @@
+@article{LI2020102067,
+title = {An efficient multi-threaded memory allocator for PDES applications},
+journal = {Simulation Modelling Practice and Theory},
+volume = {100},
+pages = {102067},
+year = {2020},
+issn = {1569-190X},
+doi = {https://doi.org/10.1016/j.simpat.2020.102067},
+url = {https://www.sciencedirect.com/science/article/pii/S1569190X20300010},
+author = {Tianlin Li and Yiping Yao and Wenjie Tang and Feng Zhu and Zhongwei Lin},
+keywords = {Multi-threaded, Memory allocator, PDES},
+abstract = {Parallel Discrete Event Simulation (PDES) aims at providing high performance solutions for simulation with large and complex models. Like traditional multi-threaded applications, PDES applications are also confronted with large overhead produced by memory allocation. Especially, complex models and frequent inter-thread communications in PDES applications will lead to large amounts of memory allocation and deallocation requests. Inter-thread communications are implemented by sending and receiving events based on shared memory. Hence, an efficient memory allocator has great impact on the performance of such applications. Current well-known allocators are dedicated to be scalable and lock-free. However, they ignore the difference between thread local and shared memory and manage them in the same way, which cannot make good use of their own characteristics. To solve this problem, this paper proposes a high efficient multi-threaded memory allocator named HMalloc, which innovatively separates thread local memory from shared memory. Thus, local memory allocation and deallocation will not lead to false sharing and lock contention. Moreover, coalescence free is applied to free local memory blocks. Furthermore, a flag-based shared memory management method is proposed to achieve lock-free shared memory allocation and deallocation. Experimental results show that HMalloc can achieve significant performance improvement in both traditional memory allocation benchmarks and typical PDES benchmarks when compared with existing well-known memory allocators.}
+}

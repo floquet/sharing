@@ -1,0 +1,8 @@
+%tikz needed for each
+
+\def\CMDs{\pGlobal}  % list of commands I would like to loop over
+
+\foreach \cmd in \CMDs
+{
+    \expandafter\string\cmd = \cmd\par % should be name = value
+}

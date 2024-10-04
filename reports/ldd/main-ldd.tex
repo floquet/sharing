@@ -1,0 +1,105 @@
+\documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage{overpic}
+\usepackage{xcolor}
+
+\newcommand{\escapepercent}{\%}
+
+\usepackage{listings}
+	\definecolor{textblue}{rgb}{.2,.2,.7}
+	\definecolor{textred}{rgb}{0.54,0,0}
+	\definecolor{textgreen}{rgb}{0,0.43,0}
+
+\input{./setup/macros}
+\input{./setup/listings-bash}
+
+
+\title{Unix Tools for Probing Executable Files}
+\author{Daniel Topa\\HII-TSD\\\href{mailto:daniel.topa@hii-tsd.com}{daniel.topa@hii-tsd.com}}
+
+\begin{document}
+\maketitle
+\abstract{This article surveys Unix tools for the exploration of executable files, some of which depend upon the application being compiled with debug information. The \textt{man}ual pages are included, making this document usefull in siloed computing networks.}
+\tableofcontents
+
+\section{Overview}
+Here are several Unix commands for probing executable files. The following section shows sample useage for each command and the final section contains the information from the \textt{man}ual page.
+\begin{enumerate}
+	\item \hyperref[sec:ldd]{\ldd}
+	\item \hyperref[sec:ldd]{\lddconfig}
+	\item \hyperref[sec:locate]{\locate}
+	\item \hyperref[sec:objdump]{\objdump}
+	\item \hyperref[sec:lsof]{\lsof}
+	\item \hyperref[sec:readelf]{\readelf}
+	\item \hyperref[sec:nm]{\nm}
+	\item \hyperref[sec:strace]{\strace}
+	\item \hyperref[sec:strings]{\strings}
+\end{enumerate}
+
+The goal is to be able to resolve the workings of an executable file exploiting the \elf \ structure show in figures \ref{fig:elf}. The next figure, \ref{fig:elf-II}, shows the relationship between source files, header files, shared objects, and the executable program.
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+\centering
+	\href{https://camo.githubusercontent.com/00cd4e64df02caf11e9c7c8f67a4d7e9470ea03c244e6d5bce8444a674b9143c/68747470733a2f2f692e696d6775722e636f6d2f4169394f714f422e706e67}{
+	\begin{overpic}[ scale = 0.4 ]
+		{./local/graphics-local/elf-01}
+		%\put(50, 50)	{\colorbox{white}{$a+b$}}
+	\end{overpic}
+	}
+\caption{The structure of a Unix \elf \ file.}
+\label{fig:elf}
+\end{figure}
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+\centering
+	\href{https://camo.githubusercontent.com/94b1128b885c29e21c64fb3b247d0184c54f4248e4195462bd15671003afc319/68747470733a2f2f692e696d6775722e636f6d2f4c4e6464546d6b2e706e67}{
+	\begin{overpic}[ scale = 0.5 ]
+		{./local/graphics-local/elf-02}
+		%\put(50, 50)	{\colorbox{white}{$a+b$}}
+	\end{overpic}
+	}
+\caption{Connecting source files, object files, libraries, and bindary executables.}
+\label{fig:elf-II}
+\end{figure}
+
+\section{Command Examples}
+		\input{./sections/ssec-ldd}
+		\input{./sections/ssec-lddconfig}
+		\input{./sections/ssec-locate}
+		\input{./sections/ssec-losf}
+		\input{./sections/ssec-objdump}
+		\input{./sections/ssec-readelf}
+		\input{./sections/ssec-nm}
+		\input{./sections/ssec-strace}
+		\input{./sections/ssec-strings}
+
+\section{\href{\urlMan}{Manual Pages}}
+	\input{./components/man/man-ldd}
+	\input{./components/man/man-lddconfig}
+	\input{./components/man/man-locate}
+	\input{./components/man/man-lsof}
+	\input{./components/man/man-objdump}
+	\input{./components/man/man-readelf}
+	\input{./components/man/man-nm}
+	\input{./components/man/man-strace}
+	\input{./components/man/man-strings}
+	
+\end{document} 
+
+\tiny
+\scriptsize
+\footnotesize
+\small
+\normalsize
+\large
+\Large
+\huge
+\Huge

@@ -1,0 +1,79 @@
+https://www.dcscorp.com/home/what-we-do/afsim/
+
+IST are the original developers of AFSIM space capability and the space boxset in the AFSIM framework. IST has vast experience developing new model capabilities, data rich displays, and adaptable interfaces to meet modeling and simulation requirements for space assets as well as other emerging technologies.
+
+ 
+
+ 
+
+    AFSIM’s multi-domain modeling delivers significant and evolving capabilities to simulate key space mission areas
+        ISR, SDA, RPO, PNT, SATCOM, OPIR, launch-to-orbit
+
+ASTROLABE
+
+    Use astrolabe to create, verify, and visualize orbital mission events and sequences
+    Plan maneuvers constructively in Wizard
+    Execute tactical maneuvers in real-time with Warlock
+    Utilize a variety of supported orbital maneuver events
+        Rendezvous, intercept, target, match velocity
+        Normal, tangent, radial, plane change
+        Launch insertion, hohmann transfer, circularize
+    Optimize maneuvers based on time or delta-v and customize event constraints
+    Specify impulsive or finite maneuvering model
+
+CONSTELLATION MAKER
+
+    Rapidly prototype and study constellations targeting specific mission areas
+    Generate notional constellations via GUI or scripted option
+        Traditional walker delta and walker star types
+        Custom constellation types
+    Automatically create AFSIM scenario input files to facilitate design of experiments
+    Constellation members inherit all subsystems from their defining platform type
+    Customize specific constellation members via the advanced generator option
+
+RENDEZVOUS & PROXIMITY OPERATIONS (RPO)
+
+    Explore AFSIM’s expanded space-domain visualizations for RPO to mission plan and understand the playing field
+    Visualize relative orbit systems using tracks (perception) or truth
+    Compute relative metrics on the fly between a target HVA and chaser satellites
+    Tile radial, in-track, and cross-track (RIC) planes of interest relative to selected HVAs
+    Display dynamic data of concern on any satellite tether view window
+
+AFSIM COVERAGE
+
+    Study sensor coverage of notional or existing ISR constellations
+    Define coverage grids of various kinds (terrestrial, GEO belt)
+    Select coverage assets from existing platforms or platform templates
+    Collect a wide variety of measures of effectiveness
+        Including: coverage time, revisit time, asset coverage, access duration
+    Generate reports in multiple formats
+    Visualize results with integrated overlay in Wizard, Warlock, and Mystic
+
+SPACE ENVIRONMENT, SENSORS, & SIGNATURES
+
+    Simulate the space environment
+        Satellite signatures – RF, IR, and optical
+        Orbital conjunction prediction and avoidance
+        Collision and debris modeling
+    Conduct space domain awareness (SDA) analysis with expanded cislunar modeling
+        Model space surveillance network sensors
+        Use multi-type data fusion to track and update perceived states of space objects
+        Employ AFSIM’s flexible, extensible, and accurate integrating propagator
+        Create scenarios around central bodies other than earth
+
+MULTI-DOMAIN OPERATIONS
+
+    AFSIM’s modeling, simulation, analysis, and visualization capabilities span all domains
+    Seamlessly integrate space assets with surface, ground, and air platforms
+    Explore the interplay of TCPED and F2T2EA chains
+    Take a small step into space with AFSIM; achieve a giant leap in your analysis!
+
+UTILIZE AFSIM’S EXTENSIVE USER RESOURCES
+
+    Physics and API documentation
+    Satellite and space operations demos
+    DIY training with user’s guide
+    Hands-on, SME-guided AFSIM training
+        Space and basic user training
+        Developer training
+

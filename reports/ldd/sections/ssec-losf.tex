@@ -1,0 +1,100 @@
+% \input{./sections/ssec-losf}
+
+\subsection{\lsof}
+\label{sec:lsof}
+This command does an \textt{ls} on open files. The example show how to query both a user and a process id (\textt{pid}).
+		\subsubsection{\lsof \ on Process ID}
+The \refLsof \ command shows open files, here for the bash process with PID = 10932:
+{\footnotesize{
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{darkgray}{dantopa@92bc4c447e32:~}}$ ps
+{\color{darkgray}{  PID TTY          TIME CMD}}
+{\color{darkgray}{10932 pts/1    00:00:00 bash}}
+{\color{darkgray}{11152 pts/1    00:00:00 ps}}
+{\color{darkgray}{dantopa@92bc4c447e32:~}}$ lsof -p 10932
+{\color{darkgray}{COMMAND   PID    USER   FD   TYPE DEVICE SIZE/OFF     NODE NAME}}
+{\color{darkgray}{bash    10932 dantopa  cwd    DIR   0,71     4096  6820049 /home/dantopa}}
+{\color{darkgray}{bash    10932 dantopa  rtd    DIR   0,71     4096 61653409 /}}
+{\color{darkgray}{bash    10932 dantopa  txt    REG   0,71  1396520 62702252 /usr/bin/bash}}
+{\color{darkgray}{bash    10932 dantopa  mem    REG  254,1          62702252 /usr/bin/bash (path dev=0,71)}}
+{\color{darkgray}{bash    10932 dantopa  mem    REG  254,1          63095938 /usr/lib/x86_64-linux-gnu/libc.so.6 (path dev=0,71)}}
+{\color{darkgray}{bash    10932 dantopa  mem    REG  254,1           1190606 /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3 (path dev=0,71)}}
+{\color{darkgray}{bash    10932 dantopa  mem    REG  254,1          63095935 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 (path dev=0,71)}}
+{\color{darkgray}{bash    10932 dantopa    0u   CHR  136,1      0t0        4 /dev/pts/1}}
+{\color{darkgray}{bash    10932 dantopa    1u   CHR  136,1      0t0        4 /dev/pts/1}}
+{\color{darkgray}{bash    10932 dantopa    2u   CHR  136,1      0t0        4 /dev/pts/1}}
+{\color{darkgray}{bash    10932 dantopa  255u   CHR  136,1      0t0        4 /dev/pts/1}}
+\end{Verbatim}
+}
+		\subsubsection{\lsof \ on User}
+These are open files for user \textt{dantopa}:
+{\footnotesize{
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{darkgray}{dantopa@92bc4c447e32:~}}$ lsof -u dantopa
+{\color{darkgray}{COMMAND   PID    USER   FD   TYPE DEVICE SIZE/OFF     NODE NAME}}
+{\color{darkgray}{bash    10921 dantopa  cwd    DIR   0,71     4096 61653409 /}}
+{\color{darkgray}{bash    10921 dantopa  rtd    DIR   0,71     4096 61653409 /}}
+{\color{darkgray}{bash    10921 dantopa  txt    REG   0,71  1396520 62702252 /usr/bin/bash}}
+{\color{darkgray}{bash    10921 dantopa  mem    REG  254,1          62702252 /usr/bin/bash (path dev=0,71)}}
+{\color{darkgray}{bash    10921 dantopa  mem    REG  254,1          63095938 /usr/lib/x86_64-linux-gnu/libc.so.6 (path dev=0,71)}}
+{\color{darkgray}{bash    10921 dantopa  mem    REG  254,1           1190606 /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3 (path dev=0,71)}}
+{\color{darkgray}{bash    10921 dantopa  mem    REG  254,1          63095935 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 (path dev=0,71)}}
+{\color{darkgray}{bash    10921 dantopa    0u   CHR  136,0      0t0        3 /dev/pts/0}}
+{\color{darkgray}{bash    10921 dantopa    1u   CHR  136,0      0t0        3 /dev/pts/0}}
+{\color{darkgray}{bash    10921 dantopa    2u   CHR  136,0      0t0        3 /dev/pts/0}}
+{\color{darkgray}{bash    10921 dantopa  255u   CHR  136,0      0t0        3 /dev/pts/0}}
+{\color{darkgray}{bash    10932 dantopa  cwd    DIR   0,33      704     1572 /repos/github/vault-fortran/Xmodern-fortran/tau/apex}}
+{\color{darkgray}{bash    10932 dantopa  rtd    DIR   0,71     4096 61653409 /}}
+{\color{darkgray}{bash    10932 dantopa  txt    REG   0,71  1396520 62702252 /usr/bin/bash}}
+{\color{darkgray}{bash    10932 dantopa  mem    REG  254,1          62702252 /usr/bin/bash (path dev=0,71)}}
+{\color{darkgray}{bash    10932 dantopa  mem    REG  254,1          63095938 /usr/lib/x86_64-linux-gnu/libc.so.6 (path dev=0,71)}}
+{\color{darkgray}{bash    10932 dantopa  mem    REG  254,1           1190606 /usr/lib/x86_64-linux-gnu/libtinfo.so.6.3 (path dev=0,71)}}
+{\color{darkgray}{bash    10932 dantopa  mem    REG  254,1          63095935 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 (path dev=0,71)}}
+{\color{darkgray}{bash    10932 dantopa    0u   CHR  136,1      0t0        4 /dev/pts/1}}
+{\color{darkgray}{bash    10932 dantopa    1u   CHR  136,1      0t0        4 /dev/pts/1}}
+{\color{darkgray}{bash    10932 dantopa    2u   CHR  136,1      0t0        4 /dev/pts/1}}
+{\color{darkgray}{bash    10932 dantopa  255u   CHR  136,1      0t0        4 /dev/pts/1}}
+{\color{darkgray}{lsof    11139 dantopa  cwd    DIR   0,33      704     1572 /repos/github/vault-fortran/Xmodern-fortran/tau/apex}}
+{\color{darkgray}{lsof    11139 dantopa  rtd    DIR   0,71     4096 61653409 /}}
+{\color{darkgray}{lsof    11139 dantopa  txt    REG   0,71   167544   709329 /usr/bin/lsof}}
+{\color{darkgray}{lsof    11139 dantopa  mem    REG  254,1            709329 /usr/bin/lsof (path dev=0,71)}}
+{\color{darkgray}{lsof    11139 dantopa  mem    REG  254,1          63095951 /usr/lib/x86_64-linux-gnu/libresolv.so.2 (path dev=0,71)}}
+{\color{darkgray}{lsof    11139 dantopa  mem    REG  254,1           1190531 /usr/lib/x86_64-linux-gnu/libkeyutils.so.1.9 (path dev=0,71)}}
+{\color{darkgray}{lsof    11139 dantopa  mem    REG  254,1          63096020 /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1 (path dev=0,71)}}
+{\color{darkgray}{lsof    11139 dantopa  mem    REG  254,1          63096026 /usr/lib/x86_64-linux-gnu/libcom_err.so.2.1 (path dev=0,71)}}
+{\color{darkgray}{lsof    11139 dantopa  mem    REG  254,1          63096018 /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1 (path dev=0,71)}}
+{\color{darkgray}{lsof    11139 dantopa  mem    REG  254,1          63096022 /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3 (path dev=0,71)}}
+{\color{darkgray}{lsof    11139 dantopa  mem    REG  254,1           1190578 /usr/lib/x86_64-linux-gnu/libpcre2-8.so.0.10.4 (path dev=0,71)}}
+{\color{darkgray}{lsof    11139 dantopa  mem    REG  254,1          63096024 /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2 (path dev=0,71)}}
+{\color{darkgray}{lsof    11139 dantopa  mem    REG  254,1          63095938 /usr/lib/x86_64-linux-gnu/libc.so.6 (path dev=0,71)}}
+{\color{darkgray}{lsof    11139 dantopa  mem    REG  254,1           1190588 /usr/lib/x86_64-linux-gnu/libselinux.so.1 (path dev=0,71)}}
+{\color{darkgray}{lsof    11139 dantopa  mem    REG  254,1           1190608 /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0 (path dev=0,71)}}
+{\color{darkgray}{lsof    11139 dantopa  mem    REG  254,1          63095935 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 (path dev=0,71)}}
+{\color{darkgray}{lsof    11139 dantopa    0u   CHR  136,1      0t0        4 /dev/pts/1}}
+{\color{darkgray}{lsof    11139 dantopa    1u   CHR  136,1      0t0        4 /dev/pts/1}}
+{\color{darkgray}{lsof    11139 dantopa    2u   CHR  136,1      0t0        4 /dev/pts/1}}
+{\color{darkgray}{lsof    11139 dantopa    3r   DIR   0,74        0        1 /proc}}
+{\color{darkgray}{lsof    11139 dantopa    4r   DIR   0,74        7   123326 /proc/11139/fd}}
+{\color{darkgray}{lsof    11139 dantopa    5w  FIFO   0,11      0t0   123331 pipe}}
+{\color{darkgray}{lsof    11139 dantopa    6r  FIFO   0,11      0t0   123332 pipe}}
+{\color{darkgray}{lsof    11140 dantopa  cwd    DIR   0,33      704     1572 /repos/github/vault-fortran/Xmodern-fortran/tau/apex}}
+{\color{darkgray}{lsof    11140 dantopa  rtd    DIR   0,71     4096 61653409 /}}
+{\color{darkgray}{lsof    11140 dantopa  txt    REG   0,71   167544   709329 /usr/bin/lsof}}
+{\color{darkgray}{lsof    11140 dantopa  mem    REG  254,1            709329 /usr/bin/lsof (path dev=0,71)}}
+{\color{darkgray}{lsof    11140 dantopa  mem    REG  254,1          63095951 /usr/lib/x86_64-linux-gnu/libresolv.so.2 (path dev=0,71)}}
+{\color{darkgray}{lsof    11140 dantopa  mem    REG  254,1           1190531 /usr/lib/x86_64-linux-gnu/libkeyutils.so.1.9 (path dev=0,71)}}
+{\color{darkgray}{lsof    11140 dantopa  mem    REG  254,1          63096020 /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1 (path dev=0,71)}}
+{\color{darkgray}{lsof    11140 dantopa  mem    REG  254,1          63096026 /usr/lib/x86_64-linux-gnu/libcom_err.so.2.1 (path dev=0,71)}}
+{\color{darkgray}{lsof    11140 dantopa  mem    REG  254,1          63096018 /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1 (path dev=0,71)}}
+{\color{darkgray}{lsof    11140 dantopa  mem    REG  254,1          63096022 /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3 (path dev=0,71)}}
+{\color{darkgray}{lsof    11140 dantopa  mem    REG  254,1           1190578 /usr/lib/x86_64-linux-gnu/libpcre2-8.so.0.10.4 (path dev=0,71)}}
+{\color{darkgray}{lsof    11140 dantopa  mem    REG  254,1          63096024 /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2 (path dev=0,71)}}
+{\color{darkgray}{lsof    11140 dantopa  mem    REG  254,1          63095938 /usr/lib/x86_64-linux-gnu/libc.so.6 (path dev=0,71)}}
+{\color{darkgray}{lsof    11140 dantopa  mem    REG  254,1           1190588 /usr/lib/x86_64-linux-gnu/libselinux.so.1 (path dev=0,71)}}
+{\color{darkgray}{lsof    11140 dantopa  mem    REG  254,1           1190608 /usr/lib/x86_64-linux-gnu/libtirpc.so.3.0.0 (path dev=0,71)}}
+{\color{darkgray}{lsof    11140 dantopa  mem    REG  254,1          63095935 /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 (path dev=0,71)}}
+{\color{darkgray}{lsof    11140 dantopa    4r  FIFO   0,11      0t0   123331 pipe}}
+{\color{darkgray}{lsof    11140 dantopa    7w  FIFO   0,11      0t0   123332 pipe}}
+\end{Verbatim}
+}}
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

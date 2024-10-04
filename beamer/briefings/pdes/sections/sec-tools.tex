@@ -1,0 +1,162 @@
+% \input{\pSections "sec-tools"}
+
+%     %     %     %     %     %     %     %     %
+\section{Parallel Computation Tools}%: Streaks \& Satellites}
+
+\begin{frame}\frametitle{Parallelization Tools}
+\begin{enumerate}
+	\item File systems (\href{\urlLustre}{Lustre})
+	\item Performance Analysis Tools (Vampir, Tau, NVIDIA)
+	\item Data formats (\href{\urlHdf}{HDF})
+	\item Parallel databases 
+\end{enumerate}
+\end{frame}
+
+%     %     %     %     %     %     %     %     %
+\subsection{Lustre File System}
+\begin{frame}\frametitle{\refLustre}
+\center
+	\href{\urlLustre}{
+	\begin{overpic}[ scale = 0.5 ]
+		{\pLocalGraphics logo/lustre}
+		%\put(2,105) {\color{blue}{https://www.satobs.org/seesat/Aug-2010/0037.html}}
+	\end{overpic}}
+	\\[15pt]
+	{\small{\href{https://wiki.lustre.org/Main_Page}{Open-source, \bl{parallel file system}}}}
+\end{frame}
+
+\begin{frame}\frametitle{\refLustre\ \href{https://wiki.lustre.org/Main_Page85}{Wiki}}
+\center
+	\href{https://wiki.lustre.org/Introduction_to_Lustre}{
+	\begin{overpic}[ scale = 0.45 ]
+		{\pLocalGraphics Lustre_File_System_Overview_(DNE)_lowres_v1}
+		%\put(2,105) {\color{blue}{https://www.satobs.org/seesat/Aug-2010/0037.html}}
+	\end{overpic}}
+	%\\[15pt]
+	%{\small{Open-source, parallel file system}}
+\end{frame}
+
+%     %     %     %     %     %     %     %     %
+\subsection{HDF5}
+\begin{frame}\frametitle{\refHdf\ (HDF)}
+\center
+	\href{https://docs.hdfgroup.org/hdf5/v1_14/_intro_h_d_f5.html}{
+	\begin{overpic}[ scale = 0.5 ]
+		{\pLocalGraphics logo/hdf}
+		%\put(2,105) {\color{blue}{https://www.satobs.org/seesat/Aug-2010/0037.html}}
+	\end{overpic}}
+	\\[15pt]
+	{\small{Set of file formats designed to \bl{store} and \bl{organize}\\ \bl{large amounts} of \bl{data}}}
+\end{frame}
+
+%\begin{frame}\frametitle{\refHdf\ (HDF)}
+%\center
+%	%\href{run:../local/library/DeWitt and Gray - 1992 - Parallel database systems the future of high perf.pdf}{
+%	\href{run:../local/library/DeWittandGray-1992-Paralleldatabasesystemsthefutureofhighperf.pdf}{
+%	%\href{run:../local/library/X.pdf}{
+%	\begin{overpic}[ scale = 0.5 ]
+%		{\pLocalGraphics logo/hdf}
+%		%\put(2,105) {\color{blue}{https://www.satobs.org/seesat/Aug-2010/0037.html}}
+%	\end{overpic}}
+%	\\[15pt]
+%	{\small{Set of file formats designed to \bl{store} and \bl{organize}\\ \bl{large amounts} of \bl{data}}}
+%\end{frame}
+
+\begin{frame}\frametitle{\refHdf\ (HDF)}
+\center
+	\href{https://docs.hdfgroup.org/hdf5/v1_14/_intro_h_d_f5.html}{
+	\begin{overpic}[ scale = 0.275 ]
+		{\pLocalGraphics hdf5-wiki}
+		%\put(2,105) {\color{blue}{https://www.satobs.org/seesat/Aug-2010/0037.html}}
+	\end{overpic}}
+	\\[15pt]
+	{\small{Sharing data}}
+\end{frame}
+
+\begin{frame}\frametitle{\refHdf\ (HDF) Weekly Clinic}
+\center
+	\href{\urlHdf}{
+	\begin{overpic}[ scale = 0.175 ]
+		{\pLocalGraphics hdf-weekly}
+		%\put(2,105) {\color{blue}{https://www.satobs.org/seesat/Aug-2010/0037.html}}
+	\end{overpic}}
+	\\[15pt]
+	{\small{Tuesday, 11:20 Mountain}}
+\end{frame}
+
+%     %     %     %     %     %     %     %     %
+\subsection{\href{https://developer.nvidia.com/performance-analysis-tools}{NVIDIA Performance Analysis Tools}}
+\begin{frame}\frametitle{NVIDIA Performance Analysis Tools}
+\center
+	\href{https://developer.nvidia.com/performance-analysis-tools}{
+	\begin{overpic}[ scale = 0.225 ]
+		{\pLocalGraphics nvidia-tools}
+		%\put(2,105) {\color{blue}{https://www.satobs.org/seesat/Aug-2010/0037.html}}
+	\end{overpic}}
+	%\\
+	%{\small{Portable \bl{profiling} and \bl{tracing} toolkit for performance analysis of \bl{parallel programs} written in Fortran, C, C++, UPC, Java, Python}}
+\end{frame}
+
+\begin{frame}\frametitle{\href{https://vampir.eu/}{Vampir}}
+\center
+	\href{https://vampir.eu/}{
+	\begin{overpic}[ scale = 0.75 ]
+		{\pLocalGraphics logo/vampir}
+		%\put(2,105) {\color{blue}{https://www.satobs.org/seesat/Aug-2010/0037.html}}
+	\end{overpic}}
+	\\
+	{\small{Display and analyze \bl{arbitrary program behavior}\\ at \bl{any level of detail}}}
+\end{frame}
+
+
+%     %     %     %     %     %     %     %     %
+\subsection{TAU: Tuning and Analysis Utilities}
+\begin{frame}\frametitle{TAU: Tuning and Analysis Utilities}
+\center
+	\href{https://www.cs.uoregon.edu/research/tau/home.php}{
+	\begin{overpic}[ scale = 0.35 ]
+		{\pLocalGraphics logo/tau}
+		%\put(2,105) {\color{blue}{https://www.satobs.org/seesat/Aug-2010/0037.html}}
+	\end{overpic}}
+	\\
+	{\small{Portable \bl{profiling} and \bl{tracing} toolkit for performance analysis of \bl{parallel programs} written in Fortran, C, C++, UPC, Java, Python}}
+\end{frame}
+
+\begin{frame}\frametitle{TAU: Tuning and Analysis Utilities}
+\begin{enumerate}
+	\item \href{https://www.cs.uoregon.edu/research/paracomp/papers/ijhpca05.tau/ijhpca_tau.pdf}{\fullcite{shende2006tau}}
+	\item \href{http://www.cs.uoregon.edu/research/paracomp/papers/sc2000/sc00-paper.fmk.pdf.gz}{\fullcite{lindlan2000tool}}
+	\asuivre
+\end{enumerate}
+\end{frame}
+		%
+\begin{frame}\frametitle{TAU: Tuning and Analysis Utilities}
+\begin{enumerate}
+	\suite
+	\item \href{https://www.cs.uoregon.edu/research/paracomp/papers/cca_cpe04/cca_cpe04.pdf}{\fullcite{malony2005performance}}
+	\item \href{https://www.cs.uoregon.edu/research/paracomp/papers/ijhpca05.cca/ijhpca06.pdf}{\fullcite{bernholdt2006component}}
+\end{enumerate}
+\end{frame}
+
+%     %     %     %     %     %     %     %     %
+\subsection{Library: Thrust and CUB}
+\begin{frame}\frametitle{Thrust}
+\center
+	\href{https://www.cs.wm.edu/~andreas/umsa/lectures/cs-sim-pdes.pdf}{
+	\begin{overpic}[ scale =1 ]
+		{\pLocalGraphics logo/thrust}
+		%\put(2,105) {\color{blue}{https://www.satobs.org/seesat/Aug-2010/0037.html}}
+	\end{overpic}}
+	\\
+\begin{enumerate}
+	\item \href{https://github.com/}{GitHub--} \href{https://github.com/NVIDIA/cccl/tree/main/thrust}{Thrust: The C++ Parallel Algorithms Library}
+	\item \href{https://github.com/}{GitHub--} \href{https://github.com/NVIDIA/cccl/tree/main/cub}{About CUB}
+	\item \href{https://developer.nvidia.com/}{NVIDIA} \href{https://developer.nvidia.com/blog}{developer blog}: \href{https://developer.nvidia.com/blog/thrust-cub-1-11/}{Popular Open Source Thrust and CUB Libraries Updated}
+	\item \href{https://ion-thruster.medium.com/introduction-to-cuda-libraries-thrust-c49b04166dc5}{Introduction to CUDA Libraries : Thrust}
+\end{enumerate}
+
+\end{frame}
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
+

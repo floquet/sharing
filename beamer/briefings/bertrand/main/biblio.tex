@@ -1,0 +1,49 @@
+\documentclass[11pt]{amsart}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage[backend=biber, sorting=none]{biblatex}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\newcommand{\pGlobal}			{../../../global/}
+\newcommand{\pGlobalSetup}		{\pGlobal setup-global/}	
+\bibliography{../sections/bertrand.bib}
+%\printbibliography
+%\bibliography{\pSections bertrand.bib}
+
+\title{About Bertrand's Theorem}
+\author{Daniel Topa}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\cite{leenheer2023comprehensive}
+\cite{musgrove2020}, 
+\cite{zarmi2002bertrand}
+\cite{bertrand1873theoreme}
+\cite{santos2007english}
+\cite{santos2011english}
+\cite{goldstein2eclassical}
+%\cite{zagryadskii2012generalization}
+\cite{jovanovic2015note}
+\cite{chin2015truly}
+\cite{galbraith2019even}
+\cite{ortega2019proof}
+\cite{quilantan1995alternative}
+%\cite{verma2014more}
+\cite{tu2019pedagogical}
+\cite{coursenotes}
+\cite{Gerhard}
+\clearpage
+%\section{}
+%\subsection{}
+
+%\bibliographystyle{vancouver}
+%\bibliography{MonthlyReferences.bib}
+\printbibliography
+
+\end{document}  

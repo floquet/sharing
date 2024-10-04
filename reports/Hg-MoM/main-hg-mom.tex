@@ -1,0 +1,166 @@
+% typeset: Pdftex
+% Afterwards compile with pdflatex > bibtex > pdflatex > pdflatex.
+% in TeXShop preferences, changed edit from bibtex to biber
+% beamer likes biber
+% latex likes bibtex
+
+\documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage{overpic}
+\usepackage{pdfpages}
+\usepackage{xcolor}
+\usepackage[backend=bibtex,bibencoding=ascii,style=authoryear,sorting=none]{biblatex}
+\bibliography{./sections/radar.bib}
+%\addbibresource{radar.bib}
+%\bibliography{\pSections radar.bib}
+
+\input{./setup/macros}
+
+
+\title{Simulation of \\Radar Profiles for Satellites \\Using Mercury Method of Moments}
+\author{Daniel Topa\\HII-TSD\\\href{mailto:daniel.topa@hii-tsd.com}{daniel.topa@hii-tsd.com}}
+
+\begin{document}
+\maketitle
+\abstract{A brief survey of characterizing the three dimensional radar cross section of satellites.}
+\tableofcontents
+
+\section{Overview}
+\cite{topa20200303}
+Working with CAF files, producing output, compressing data.
+\cite{topa-4-20-2024}
+\cite{topa-4-20-2024}
+The goal is to be able to resolve the workings of an executable file exploiting the \elf \ structure show in figures \ref{fig:elf}. The next figure, \ref{fig:elf-II}, shows the relationship between source files, header files, shared objects, and the executable program.
+
+\section{Mercury Method of Moments}
+\subsection{Copyright Statement by the Author}
+\begin{quotation}
+{\footnotesize{
+\noindent
+==================================================\\
+    MERCURY MOM(TM) ( Copyrighted and Patents Issued) \\
+	MATRIX COMPRESSION TECHNOLOGIES, LLC \\[10pt]
+	For licensing information contact: \\
+	John Shaeffer\\
+	3278 Hunterdon Way\\
+	Marietta, Georgia 30067\\
+	770.952.3678 \\	
+	Copyright 2006 Matrix Compression Technologies, LLC.\\	[10pt]
+	This software was developed under NASA Contracts NAS1-02057, NAS1-02117, 
+	NNL08AA00B, and NNL13AA08B, and the U.S. Government retains certain rights.\\[10pt]
+	The Government, and others acting on its behalf, retain a paid-up, 
+	nonexclusive, irrevocable, worldwide license to reproduce, prepare 
+	derivative works, and perform publicly and display publicly (but not to 
+	distribute copies to the public) by or on behalf of the Government, without
+	any obligation of confidentiality on the part of the U.S. Government. Such
+	license extends to use by NASA contractors, and others working under 
+	agreements with the U.S. Government; provided that use of the software shall
+	not be allowed to any person or entity where such use is not in direct 
+	performance of a contract with the United States; and provided that such use
+	is not for internal research and development by the contractor or others 
+	that is not directly funded by the United States.
+==================================================
+}}
+\end{quotation}
+
+\subsection{Legal Statement}
+\includepdf[pages={-}, frame=true, scale=0.8]{./local/pdf/"MERCURY MOM Legal Notice"}
+
+\subsection{Obtaining Software and Documentation}
+\begin{figure}[htbp]
+\begin{center}
+	\includegraphics[ width = 3in ]{./local/graphics-local/"Hg Mom"}
+\caption{Contact information to request Mercury MoM Software and Documentations}
+\label{fig:kam-miller}
+\end{center}
+\end{figure}
+
+\subsection{Distribution Contents}
+\subsubsection{Executables}
+\begin{enumerate}
+	\item Linux 64-bit
+	\item Windows 64-bit
+\end{enumerate}
+
+\subsubsection{Documentation}
+The disctirubtion includes four documents in PDF:
+\begin{enumerate}
+	\item User's Guide
+	\item Pill Tutorial
+	\item Code Validation Report
+	\item Benchmark Tests
+\end{enumerate}
+
+\subsection{YouTube Videos}
+One can find useful didactic presentations and simulations on YouTube.
+\begin{enumerate}
+	\item \href{https://www.youtube.com/watch?v=ujyoJSzwmQw}{The Radar cross-section of backscattering objects}
+	\item \href{https://www.youtube.com/watch?v=0g5x4pXBid8}{Basic Concepts of Radar Cross Section (RCS)}
+	\item \href{https://www.youtube.com/watch?v=mM-QDN68ebc}{Mie scattering}
+	\item \href{https://www.youtube.com/watch?v=ayI6W6-ypUM&list=PLzD7pNQo-MGzkBnp1HVTGXaIQzWvkJ0M8}{Mie theory (BME51 Lecture 5)}
+	\item \href{https://www.youtube.com/shorts/ggMoo8wH1_o}{Mie Scattering}
+\end{enumerate}
+
+
+\section{Command Examples}
+		\input{./sections/ssec-ldd}
+
+
+\section{Further Reading}
+Radar rudiments
+\begin{enumerate}
+	\item \cite{peebles2007radar}
+	\item \cite{Handbook}
+	\item \cite{kolosov1987}
+\end{enumerate}
+Radar cross section
+\begin{enumerate}
+	\item \cite{yuan2009efficient}
+	\item \cite{fuhs1982radar}
+	\item \cite{knott2004radar}
+	\item \cite{crispin2013methods}
+	\item \cite{madheswaran2012estimation}
+\end{enumerate}
+Method of Moments
+\begin{enumerate}
+	\item \cite{gibson2021method}
+	\item \cite{lu2003comparison}
+	\item \cite{yuan2009efficient}
+\end{enumerate}
+Mercury MoM
+\begin{enumerate}
+	\item \cite{Topa-2020-07-07}
+	\item \cite{lu2003comparison}
+	\item \cite{yuan2009efficient}
+\end{enumerate}
+
+	\printbibliography
+%\nocite
+%\printbibliography
+%\bibliographystyle{thisjournal}
+%\include{bibliography} 
+%\bibliographystyle{vancouver}
+%\bibliography{MonthlyReferences.bib}
+%\bibliography{triangulation.bib}
+%\bibliography{triangulation.bib}
+
+
+\end{document} 
+
+\tiny
+\scriptsize
+\footnotesize
+\small
+\normalsize
+\large
+\Large
+\huge
+\Huge

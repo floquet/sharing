@@ -1,0 +1,72 @@
+% LaTeX macros to present a programming environment
+% https://latexcolor.com/
+\definecolor{brilliantlavender}{rgb}{0.96, 0.73, 1.0}
+\definecolor{brightube}{rgb}{0.82, 0.62, 0.91}
+\definecolor{darkorchid}{rgb}{0.6, 0.2, 0.8}
+\definecolor{darkpastelpurple}{rgb}{0.59, 0.44, 0.84}
+\definecolor{deepmagenta}{rgb}{0.8, 0.0, 0.8}
+\definecolor{internationalorange}{rgb}{1.0, 0.31, 0.0}
+\definecolor{goldenyellow}{rgb}{1.0, 0.87, 0.0}
+% Looks like a terminal session, colored text on black background
+\newcommand{\scru}[1]		{\bl   {\texttt{#1}}}
+\newcommand{\scrk}[1]		{\bk   {\texttt{#1}}}
+\newcommand{\scrg}[1]		{\gr   {\texttt{#1}}}
+\newcommand{\scrr}[1]		{\rd   {\texttt{#1}}}
+\newcommand{\scrv}[1]		{\dg   {\texttt{#1}}}
+\newcommand{\scrz}[1]		{\mg   {\texttt{#1}}}
+\newcommand{\scrc}[1]		{\textcolor{cyan}  {\texttt{#1}}}
+\newcommand{\scrp}[1]		{\textcolor{purple}{\texttt{#1}}}
+\newcommand{\scry}[1]		{\textcolor{yellow}{\texttt{#1}}}
+\newcommand{\scrw}[1]		{\textcolor{white} {\texttt{#1}}}
+%\newcommand{\scrl}[1]		{\textcolor{brilliantlavender} {\texttt{#1}}}
+\newcommand{\scrl}[1]		{\textcolor{deepmagenta} {\texttt{#1}}}
+
+\newcommand{\plus}[0]		{\textcolor{deepmagenta} { + }}
+\newcommand{\minus}[0]		{\textcolor{deepmagenta} { - }}
+\newcommand{\mult}[0]		{\textcolor{deepmagenta} { * }}
+\newcommand{\equals}[0]		{\textcolor{deepmagenta} { = }}
+\newcommand{\clrIndx}[1]		{\textcolor{goldenyellow} {#1}}
+
+% fortran syntax
+%\definecolor{Mulberry}{RGB}{77.25,29.41,54.9}
+\newcommand{\lego}[2]		{{\color{#1}{\texttt{#2}}}}
+\newcommand{\eqls}[0]		{ \lego{cyan}{=} }
+%\newcommand{\eqls}[1]		{{\textcolor{purple}{\texttt{ = }}}}
+\newcommand{\knd}[1]		{ \lego{white}{( kind}\eqls\rd{#1}\lego{white}{ ), } }
+\newcommand{\decl}[2]		{ \lego{cyan}{#1} \knd{rp} }
+%\newcommand{\knd}[1]		{{\textcolor{white}{\texttt{ ( kind }}}\eqls {\textcolor{red}{#1}}{\textcolor{white}{),}}}
+
+% \dec{real}{ip}{x}
+%\newcommand{\dec}[3]		{ {\textcolor{purple}{\texttt{ #1 }}\knd{#2} {\textcolor{purple}{ :: }} {\textcolor{red}{\texttt{#3}}} }
+
+%
+\newcommand{\mySize}[1]		{{\normalsize{#1}}}
+\newcommand{\myCanvas}[1]		{{\setbeamercolor{background canvas}{bg=black}{#1}}}
+\newcommand{\myRasa}[1]		{\myCanvas{\mySize{#1}}}
+\newcommand{\myFrame}[2]		{\myRasa{\begin{frame} \frametitle{#1} #2 \end{frame}}}
+\newcommand{\myFoo}[2]			{\myFrame{#1}  \program \ \\[10pt] #2 \eprogram}
+
+
+% tabs
+%\newcommand{\tab}[0]     {\phantom{mm}}
+\newcommand{\tab}[0]		{\ \ }
+\newcommand{\spacer}[0]		{\ps\text{::}\ps}
+\newcommand{\ps}[0]		{\phantom{m}}
+
+% is equal?
+\newcommand{\iseq}[0]		{ \overset{?}{=} }
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
+
+% https://engineering.purdue.edu/ECN/Support/KB/Docs/LaTeXChangingTheFont
+% \tiny
+% \scriptsize
+% \footnotesize
+% \small
+% \normalsize
+% \large
+% \Large
+% \LARGE
+% \huge
+% \Huge
