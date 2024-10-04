@@ -1,0 +1,60 @@
+\documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage{overpic}
+\usepackage{xcolor}
+
+\newcommand{\escapepercent}{\%}
+
+\usepackage{listings}
+	\definecolor{textblue}{rgb}{.2,.2,.7}
+	\definecolor{textred}{rgb}{0.54,0,0}
+	\definecolor{textgreen}{rgb}{0,0.43,0}
+
+\input{../local/setup-local/macros}
+\input{../local/setup-local/listings-bash}
+
+
+\title{Python Code Review:\\ Classical Orbital Elements\\by Chris}
+\author{Daniel Topa\\HII-TSD\\\href{mailto:daniel.topa@hii-tsd.com}{daniel.topa@hii-tsd.com}}
+
+\begin{document}
+\maketitle
+\abstract{This article surveys Unix tools for the exploration of executable files, some of which depend upon the application being compiled with debug information. The \textt{man}ual pages are included, making this document usefull in siloed computing networks.}
+\tableofcontents
+
+\section{Overview}
+Here are several Unix commands for probing executable files. The following section shows sample useage for each command and the final section contains the information from the \textt{man}ual page.
+\begin{enumerate}
+	\item \hyperref[sec:ldd]{\ldd}
+	\item \hyperref[sec:ldd]{\lddconfig}
+	\item \hyperref[sec:locate]{\locate}
+	\item \hyperref[sec:objdump]{\objdump}
+	\item \hyperref[sec:lsof]{\lsof}
+	\item \hyperref[sec:readelf]{\readelf}
+	\item \hyperref[sec:nm]{\nm}
+	\item \hyperref[sec:strace]{\strace}
+	\item \hyperref[sec:strings]{\strings}
+\end{enumerate}
+
+The goal is to be able to resolve the workings of an executable file exploiting the \elf \ structure show in figures \ref{fig:elf}. The next figure, \ref{fig:elf-II}, shows the relationship between source files, header files, shared objects, and the executable program.
+
+	
+\end{document} 
+
+\tiny
+\scriptsize
+\footnotesize
+\small
+\normalsize
+\large
+\Large
+\huge
+\Huge
