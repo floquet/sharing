@@ -1,0 +1,5 @@
+\begin{equation}
+    \begin{split}
+        f_{12}(\alpha) &= 17.631 - 3.849 \cos(\alpha) - 4.394 \cos(2\alpha) + 0.608 \cos(3\alpha) + 2.153 \cos(4\alpha)\\ &  + 3.010 \cos(5\alpha) - 1.531 \cos(6\alpha) + 0.200 \cos(7\alpha) + 8.295 \cos(8\alpha)\\ &  - 2.701 \cos(9\alpha) - 5.446 \cos(10\alpha) + 0.545 \cos(11\alpha) + 3.853 \cos(12\alpha)\\ &  + 0.461 \cos(13\alpha) - 1.621 \cos(14\alpha) + 0.254 \cos(15\alpha) + 2.272 \cos(16\alpha)
+    \end{split}
+\end{equation}

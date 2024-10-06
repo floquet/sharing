@@ -1,0 +1,40 @@
+% /Users/dantopa/primary-repos/bitbucket/fortran-alpha/rcs/writers/section/subsection.f08
+
+% 2020-05-17  6:31:56
+
+% \input{./sections/ssec elev=75-nu=22}
+
+% keep the images on common page
+\clearpage{}
+\break{}
+
+\subsection{$\nu = 22$ MHz, degree of fit $d = 24$}
+
+\begin{table}[h]
+    \begin{center}
+        \begin{tabular}{ccc}
+                %
+            Data and solution & \quad & Residual errors \\\hline
+                %
+            \includegraphics[ scale = 0.45 ]{./graphics/0p075-nu=22-d=24-A} &&
+            \includegraphics[ scale = 0.45 ]{./graphics/0p075-nu=22-d=24-B} \\[15pt]
+                %
+            Amplitudes with error bars && Amplitude signal--to--noise \\\hline
+                %
+            \includegraphics[ scale = 0.45 ]{./graphics/0p075-nu=22-d=24-C} &&
+            \includegraphics[ scale = 0.45 ]{./graphics/0p075-nu=22-d=24-D} \\[15pt]
+                %
+            Error spectrum $2-$norm && Error spectrum $\infty-$norm \\\hline
+                %
+            \includegraphics[ scale = 0.45 ]{./graphics/0p075-nu=22-d=24-E} &&
+            \includegraphics[ scale = 0.45 ]{./graphics/0p075-nu=22-d=24-F} \\[15pt]
+                %
+        \end{tabular}
+    \end{center}
+\label{fig:elev=75, nu=22}
+\end{table}
+
+% grab equation with amplitudes respecting significant digits
+\input{/Users/dantopa/primary-repos/bitbucket/fortran-alpha/rcs/writers/subsection/amplitudes/elev=75-nu=22-d=24-clean.txt}
+
+\endinput

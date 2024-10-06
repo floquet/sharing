@@ -1,0 +1,5 @@
+\begin{equation}
+    \begin{split}
+        f_{14}(\alpha) &= 26.364 - 4.39 \cos(\alpha) - 6.07 \cos(2\alpha) - 1.05 \cos(3\alpha) + 3.67 \cos(4\alpha)\\ &  + 2.07 \cos(5\alpha) + 0.91 \cos(6\alpha) + 3.98 \cos(7\alpha) + 7.75 \cos(8\alpha)\\ &  - 0.94 \cos(9\alpha) - 6.84 \cos(10\alpha) - 1.20 \cos(11\alpha) + 5.91 \cos(12\alpha)\\ &  + 0.47 \cos(13\alpha) - 1.03 \cos(14\alpha) + 0.59 \cos(15\alpha) + 2.16 \cos(16\alpha)
+    \end{split}
+\end{equation}

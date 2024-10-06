@@ -1,0 +1,74 @@
+# Find all source files, create a list of corresponding object files
+# https://stackoverflow.com/questions/8855896/specify-directory-where-gfortran-should-look-for-modules
+PROGRAM = sigma
+
+EXT = f08
+SRCS=$(wildcard *.$(EXT))
+OBJS=$(patsubst %.$(EXT),%.o,$(SRCS))
+
+# Ditto for mods (They will be in both lists)
+MODS=$(wildcard m_*.$(EXT))
+MOD_OBJS=$(patsubst %.$(EXT),%.o,$(MODS))
+
+# Compiler/Linker settings
+# https://stackoverflow.com/questions/42140832/automatic-array-allocation-upon-assignment-in-fortran
+# the command line option -fno-realloc-lhs disables this automatic (re-)allocation, making the compiler not Fortran 2003+ compliant
+FC = gfortran
+FCFLAGS = -g -c -Og -pedantic\
+-Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra \
+-fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived
+FLFLAGS = -g -framework accelerate -I/Users/dantopa/primary-repos/bitbucket/fortran-alpha/rcs/mom/beast/mods
+PRG_OBJ = $(PROGRAM).o
+
+# Clean the suffixes
+.SUFFIXES:
+
+# Set the suffixes we are interested in
+.SUFFIXES: .$(EXT) .o
+#all : apex
+# make without parameters will make first target found.
+default : $(PROGRAM)
+all     : $(PROGRAM)  # eclipse
+
+# Compiler steps for all objects
+%.o : %.$(EXT)
+	$(FC) $(FCFLAGS) -o $@ $<
+
+# Linker
+$(PROGRAM) : $(OBJS)
+	$(FC) $(FLFLAGS) -o $@ $^
+
+debug:
+	@echo "PROGRAM  = $(PROGRAM)"
+	@echo "PRG_OBJ  = $(PRG_OBJ)"
+	@echo "SRCS     = $(SRCS)"
+	@echo "OBJS     = $(OBJS)"
+	@echo "MODS     = $(MODS)"
+	@echo "MOD_OBJS = $(MOD_OBJS)"
+
+clean:
+	rm -rf $(OBJS) $(PROGRAM) $(patsubst %.o,%.mod,$(MOD_OBJS))
+	rm -f *.mod *.smod *.o
+
+.PHONY: debug default clean
+
+# Dependencies
+
+# Main program depends on all modules
+$(PRG_OBJ) : $(MOD_OBJS)
+
+# resolve module interdependencies
+# class modules
+m_allocations.o            : m_precision_definitions.o m_format_descriptors.o m_parameters_simulation.o
+m_build_A_fourier.o        : m_precision_definitions.o m_allocations.o
+m_file_handling.o          :
+m_format_descriptors.o     :
+m_lapack_errors.o          : m_precision_definitions.o m_format_descriptors.o
+#m_linear_sytem.o           : m_precision_definitions.o m_allocations.o m_matrix_writer.o m_format_descriptors.o m_parameters_simulation.o m_solution_normal.o
+#m_linear_sytem.o           : m_precision_definitions.o m_allocations.o
+m_matrix_writer.o          : m_precision_definitions.o m_file_handling.o
+m_parameters_simulation.o  : m_precision_definitions.o
+m_precision_definitions.o  :
+m_rcs_profile.o            : m_precision_definitions.o m_allocations.o m_file_handling.o m_format_descriptors.o m_matrix_writer.o m_parameters_simulation.o
+m_solution_normal.o        : m_precision_definitions.o m_allocations.o m_build_A_fourier.o m_matrix_writer.o m_lapack_errors.o
+m_test_routines.o          : m_precision_definitions.o m_allocations.o m_build_A_fourier.o m_format_descriptors.o m_matrix_writer.o m_parameters_simulation.o m_rcs_profile.o

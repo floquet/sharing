@@ -1,0 +1,7 @@
+{\scriptsize{
+\begin{equation}
+    \begin{split}
+        f_{29}(\alpha) &= 21.286 - 1.00 \cos(\alpha) - 4.06 \cos(2\alpha) + 2.56 \cos(3\alpha) + 3.76 \cos(4\alpha)\\ &  + 1.49 \cos(5\alpha) + 0.43 \cos(6\alpha) + 0.22 \cos(7\alpha) + 3.17 \cos(8\alpha)\\ &  + 1.72 \cos(9\alpha) - 0.57 \cos(10\alpha) - 0.67 \cos(11\alpha) + 3.11 \cos(12\alpha)\\ &  + 1.83 \cos(13\alpha) - 2.51 \cos(14\alpha) - 0.67 \cos(15\alpha) + 4.55 \cos(16\alpha)\\ &  - 0.71 \cos(17\alpha) - 2.07 \cos(18\alpha) + 0.52 \cos(19\alpha) + 2.87 \cos(20\alpha)\\ &  + 2.04 \cos(21\alpha) - 1.69 \cos(22\alpha) + 1.24 \cos(23\alpha) + 2.19 \cos(24\alpha)\\ &  - 0.64 \cos(25\alpha) - 0.24 \cos(26\alpha) - 1.69 \cos(27\alpha) + 1.17 \cos(28\alpha)\\ &  + 1.75 \cos(29\alpha) - 0.21 \cos(30\alpha) - 0.86 \cos(31\alpha) + 1.32 \cos(32\alpha)
+    \end{split}
+\end{equation}
+}}

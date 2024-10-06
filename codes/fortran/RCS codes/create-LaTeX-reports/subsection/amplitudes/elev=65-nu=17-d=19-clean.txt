@@ -1,0 +1,5 @@
+\begin{equation}
+    \begin{split}
+        f_{17}(\alpha) &= 22.158 - 1.11 \cos(\alpha) - 10.07 \cos(2\alpha) - 0.93 \cos(3\alpha) + 4.81 \cos(4\alpha)\\ &  + 0.03 \cos(5\alpha) - 4.21 \cos(6\alpha) - 1.66 \cos(7\alpha) + 6.57 \cos(8\alpha)\\ &  - 1.82 \cos(9\alpha) - 7.96 \cos(10\alpha) - 1.32 \cos(11\alpha) + 5.63 \cos(12\alpha)\\ &  + 0.45 \cos(13\alpha) - 5.51 \cos(14\alpha) - 0.75 \cos(15\alpha) + 1.46 \cos(16\alpha)\\ &  + 0.61 \cos(17\alpha) + 1.18 \cos(18\alpha) - 0.97 \cos(19\alpha)
+    \end{split}
+\end{equation}

@@ -1,0 +1,5 @@
+\begin{equation}
+    \begin{split}
+        f_{21}(\alpha) &= 15.791 - 0.39 \cos(\alpha) - 5.79 \cos(2\alpha) + 0.16 \cos(3\alpha) + 4.68 \cos(4\alpha)\\ &  + 0.30 \cos(5\alpha) - 0.49 \cos(6\alpha) + 0.46 \cos(7\alpha) + 2.41 \cos(8\alpha)\\ &  + 1.04 \cos(9\alpha) - 0.57 \cos(10\alpha) - 0.82 \cos(11\alpha) + 6.33 \cos(12\alpha)\\ &  + 1.33 \cos(13\alpha) - 1.34 \cos(14\alpha) - 0.13 \cos(15\alpha) + 3.43 \cos(16\alpha)\\ &  - 1.63 \cos(17\alpha) - 2.38 \cos(18\alpha) + 1.14 \cos(19\alpha) + 1.62 \cos(20\alpha)\\ &  - 0.58 \cos(21\alpha) - 1.47 \cos(22\alpha) + 0.54 \cos(23\alpha) + 2.50 \cos(24\alpha)
+    \end{split}
+\end{equation}

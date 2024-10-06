@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ObjFacetConversion", "ObjFacetConversion.pyproj", "{4080BD02-B251-41B9-B9DC-C94704471AE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4080BD02-B251-41B9-B9DC-C94704471AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4080BD02-B251-41B9-B9DC-C94704471AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0E7D234-9C71-4A42-9E3C-A21625A6EB0F}
+	EndGlobalSection
+EndGlobal

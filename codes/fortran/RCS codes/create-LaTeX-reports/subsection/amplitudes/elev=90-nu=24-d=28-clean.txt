@@ -1,0 +1,5 @@
+\begin{equation}
+    \begin{split}
+        f_{24}(\alpha) &= 12.489 - 1.12 \cos(\alpha) - 2.52 \cos(2\alpha) + 0.26 \cos(3\alpha) + 4.18 \cos(4\alpha)\\ &  - 0.44 \cos(5\alpha) - 3.53 \cos(6\alpha) + 0.56 \cos(7\alpha) + 4.47 \cos(8\alpha)\\ &  - 0.22 \cos(9\alpha) - 2.05 \cos(10\alpha) + 0.15 \cos(11\alpha) + 5.73 \cos(12\alpha)\\ &  - 1.01 \cos(13\alpha) - 2.34 \cos(14\alpha) - 1.88 \cos(15\alpha) + 2.04 \cos(16\alpha)\\ &  + 0.73 \cos(17\alpha) - 2.98 \cos(18\alpha) + 0.22 \cos(19\alpha) + 1.58 \cos(20\alpha)\\ &  - 0.39 \cos(21\alpha) - 1.67 \cos(22\alpha) - 0.97 \cos(23\alpha) + 1.59 \cos(24\alpha)\\ &  + 0.60 \cos(25\alpha) - 0.81 \cos(26\alpha) - 0.46 \cos(27\alpha) + 1.33 \cos(28\alpha)
+    \end{split}
+\end{equation}

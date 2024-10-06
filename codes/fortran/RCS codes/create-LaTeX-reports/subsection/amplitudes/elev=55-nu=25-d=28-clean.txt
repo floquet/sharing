@@ -1,0 +1,5 @@
+\begin{equation}
+    \begin{split}
+        f_{25}(\alpha) &= 20.262 - 2.03 \cos(\alpha) - 9.45 \cos(2\alpha) + 0.70 \cos(3\alpha) + 5.65 \cos(4\alpha)\\ &  + 1.44 \cos(5\alpha) - 2.48 \cos(6\alpha) + 0.67 \cos(7\alpha) + 3.97 \cos(8\alpha)\\ &  + 2.00 \cos(9\alpha) - 2.73 \cos(10\alpha) - 0.53 \cos(11\alpha) + 2.60 \cos(12\alpha)\\ &  - 1.40 \cos(13\alpha) - 2.94 \cos(14\alpha) + 1.82 \cos(15\alpha) + 1.83 \cos(16\alpha)\\ &  - 1.09 \cos(17\alpha) - 0.68 \cos(18\alpha) - 0.47 \cos(19\alpha) + 3.05 \cos(20\alpha)\\ &  + 1.10 \cos(21\alpha) - 2.16 \cos(22\alpha) + 1.79 \cos(23\alpha) + 2.64 \cos(24\alpha)\\ &  - 0.11 \cos(25\alpha) - 0.65 \cos(26\alpha) - 0.81 \cos(27\alpha) + 2.39 \cos(28\alpha)
+    \end{split}
+\end{equation}

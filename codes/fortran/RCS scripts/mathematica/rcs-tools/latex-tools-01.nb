@@ -1,0 +1,101 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2983,         93]
+NotebookOptionsPosition[      2379,         72]
+NotebookOutlinePosition[      2748,         88]
+CellTagsIndexPosition[      2705,         85]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["utilities", "Section",
+ CellChangeTimes->{{3.79744545375838*^9, 
+  3.7974454552764*^9}},ExpressionUUID->"b0328235-de88-4ce7-b3e3-5e782226badd"],
+
+Cell[CellGroupData[{
+
+Cell["tagger", "Subsection",
+ CellChangeTimes->{{3.797214705812166*^9, 
+  3.797214706645019*^9}},ExpressionUUID->"c93578e2-376e-48ce-b847-\
+9a5d7a3bc781"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Clear", "[", "tagSource", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tagSource", "[", 
+   RowBox[{"str_OutputStream", ",", "prefix_String"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"tag", " ", "Mathematica", " ", "file"}], " ", "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Write", "[", 
+      RowBox[{"str", ",", "prefix", ",", "nb"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Write", "[", 
+      RowBox[{"str", ",", "prefix", ",", "dirHome"}], "]"}], ";", 
+     "\[IndentingNewLine]", "mark", ";", "\[IndentingNewLine]", 
+     RowBox[{"Write", "[", 
+      RowBox[{
+      "str", ",", "prefix", ",", "\"\<user: \>\"", ",", "user", ",", 
+       "\"\<, CPU: \>\"", ",", "CPU", ",", "\"\<, MM v. \>\"", ",", "mmv"}], 
+      "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Write", "[", 
+      RowBox[{
+      "str", ",", "prefix", ",", "time", ",", "\"\< \>\"", ",", "date"}], 
+      "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Write", "[", 
+      RowBox[{"str", ",", "\"\<\>\""}], "]"}], ";"}]}], "\[IndentingNewLine]",
+    "]"}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.7972147116856613`*^9, 3.7972147695471582`*^9}, {
+  3.79744548501265*^9, 
+  3.797445517789803*^9}},ExpressionUUID->"967e2c72-eb5f-4b6a-8d11-\
+251f8b58a0d1"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{900, 860},
+WindowMargins->{{460, Automatic}, {Automatic, 25}},
+Magnification:>1.25 Inherited,
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 149, 2, 84, "Section",ExpressionUUID->"b0328235-de88-4ce7-b3e3-5e782226badd"],
+Cell[CellGroupData[{
+Cell[754, 28, 154, 3, 67, "Subsection",ExpressionUUID->"c93578e2-376e-48ce-b847-9a5d7a3bc781"],
+Cell[911, 33, 1440, 35, 292, "Input",ExpressionUUID->"967e2c72-eb5f-4b6a-8d11-251f8b58a0d1",
+ InitializationCell->True]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,5 @@
+\begin{equation}
+    \begin{split}
+        f_{23}(\alpha) &= 18.341 - 0.72 \cos(\alpha) - 6.40 \cos(2\alpha) + 1.16 \cos(3\alpha) + 7.72 \cos(4\alpha)\\ &  + 0.61 \cos(5\alpha) - 1.76 \cos(6\alpha) + 1.42 \cos(7\alpha) + 2.42 \cos(8\alpha)\\ &  + 0.94 \cos(9\alpha) - 0.77 \cos(10\alpha) - 0.36 \cos(11\alpha) + 3.87 \cos(12\alpha)\\ &  + 0.16 \cos(13\alpha) - 2.60 \cos(14\alpha) - 0.50 \cos(15\alpha) + 2.35 \cos(16\alpha)\\ &  - 1.00 \cos(17\alpha) - 1.05 \cos(18\alpha) + 0.24 \cos(19\alpha) + 2.96 \cos(20\alpha)\\ &  + 0.38 \cos(21\alpha) - 0.08 \cos(22\alpha) + 0.27 \cos(23\alpha) + 1.98 \cos(24\alpha)
+    \end{split}
+\end{equation}

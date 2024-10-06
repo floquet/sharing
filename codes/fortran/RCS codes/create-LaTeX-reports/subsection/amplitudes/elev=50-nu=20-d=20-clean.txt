@@ -1,0 +1,5 @@
+\begin{equation}
+    \begin{split}
+        f_{20}(\alpha) &= 23.859 + 1.00 \cos(\alpha) - 7.50 \cos(2\alpha) + 0.86 \cos(3\alpha) + 7.35 \cos(4\alpha)\\ &  + 0.10 \cos(5\alpha) - 4.06 \cos(6\alpha) - 0.28 \cos(7\alpha) + 8.00 \cos(8\alpha)\\ &  - 0.98 \cos(9\alpha) - 5.98 \cos(10\alpha) + 1.58 \cos(11\alpha) + 2.73 \cos(12\alpha)\\ &  - 0.10 \cos(13\alpha) - 3.57 \cos(14\alpha) - 0.85 \cos(15\alpha) + 3.09 \cos(16\alpha)\\ &  + 0.51 \cos(17\alpha) + 0.23 \cos(18\alpha) - 2.75 \cos(19\alpha) + 2.53 \cos(20\alpha)
+    \end{split}
+\end{equation}

@@ -1,0 +1,5 @@
+\begin{equation}
+    \begin{split}
+        f_{26}(\alpha) &= 16.168 - 2.75 \cos(\alpha) - 2.30 \cos(2\alpha) - 0.56 \cos(3\alpha) + 5.20 \cos(4\alpha)\\ &  - 0.70 \cos(5\alpha) - 2.47 \cos(6\alpha) - 0.42 \cos(7\alpha) + 3.33 \cos(8\alpha)\\ &  + 0.37 \cos(9\alpha) - 1.15 \cos(10\alpha) - 0.02 \cos(11\alpha) + 2.51 \cos(12\alpha)\\ &  - 0.72 \cos(13\alpha) - 4.53 \cos(14\alpha) - 0.49 \cos(15\alpha) + 3.36 \cos(16\alpha)\\ &  - 0.02 \cos(17\alpha) - 3.99 \cos(18\alpha) - 0.41 \cos(19\alpha) + 3.59 \cos(20\alpha)\\ &  - 1.57 \cos(21\alpha) - 0.60 \cos(22\alpha) - 0.49 \cos(23\alpha) + 0.59 \cos(24\alpha)\\ &  - 0.07 \cos(25\alpha) - 2.20 \cos(26\alpha) + 0.26 \cos(27\alpha) + 1.25 \cos(28\alpha)
+    \end{split}
+\end{equation}

@@ -1,0 +1,5 @@
+\begin{equation}
+    \begin{split}
+        f_{5}(\alpha) &= 27.015 + 4.774 \cos(\alpha) + 5.253 \cos(2\alpha) + 3.714 \cos(3\alpha) + 8.854 \cos(4\alpha)\\ &  + 1.239 \cos(5\alpha) - 2.548 \cos(6\alpha) - 1.044 \cos(7\alpha) - 2.811 \cos(8\alpha)
+    \end{split}
+\end{equation}

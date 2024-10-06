@@ -1,0 +1,40 @@
+% /Users/dantopa/primary-repos/bitbucket/fortran-alpha/rcs/writers/section/subsection.f08
+
+% 2020-05-17  6:31:56
+
+% \input{./sections/ssec elev=90-nu=5}
+
+% keep the images on common page
+\clearpage{}
+\break{}
+
+\subsection{$\nu = 5$ MHz, degree of fit $d = 5$}
+
+\begin{table}[h]
+    \begin{center}
+        \begin{tabular}{ccc}
+                %
+            Data and solution & \quad & Residual errors \\\hline
+                %
+            \includegraphics[ scale = 0.45 ]{./graphics/0p090-nu=05-d=05-A} &&
+            \includegraphics[ scale = 0.45 ]{./graphics/0p090-nu=05-d=05-B} \\[15pt]
+                %
+            Amplitudes with error bars && Amplitude signal--to--noise \\\hline
+                %
+            \includegraphics[ scale = 0.45 ]{./graphics/0p090-nu=05-d=05-C} &&
+            \includegraphics[ scale = 0.45 ]{./graphics/0p090-nu=05-d=05-D} \\[15pt]
+                %
+            Error spectrum $2-$norm && Error spectrum $\infty-$norm \\\hline
+                %
+            \includegraphics[ scale = 0.45 ]{./graphics/0p090-nu=05-d=05-E} &&
+            \includegraphics[ scale = 0.45 ]{./graphics/0p090-nu=05-d=05-F} \\[15pt]
+                %
+        \end{tabular}
+    \end{center}
+\label{fig:elev=90, nu=5}
+\end{table}
+
+% grab equation with amplitudes respecting significant digits
+\input{/Users/dantopa/primary-repos/bitbucket/fortran-alpha/rcs/writers/subsection/amplitudes/elev=90-nu=05-d=05-clean.txt}
+
+\endinput

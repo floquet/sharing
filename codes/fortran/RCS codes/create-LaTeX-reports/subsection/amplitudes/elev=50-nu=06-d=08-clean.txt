@@ -1,0 +1,5 @@
+\begin{equation}
+    \begin{split}
+        f_{6}(\alpha) &= 36.555 + 4.818 \cos(\alpha) + 4.797 \cos(2\alpha) + 1.986 \cos(3\alpha) + 1.976 \cos(4\alpha)\\ &  + 1.499 \cos(5\alpha) - 2.056 \cos(6\alpha) - 0.798 \cos(7\alpha) - 3.948 \cos(8\alpha)
+    \end{split}
+\end{equation}

@@ -1,0 +1,5 @@
+\begin{equation}
+    \begin{split}
+        f_{3}(\alpha) &= 42.074 + 0.102 \cos(\alpha) - 1.562 \cos(2\alpha) + 0.609 \cos(3\alpha) + 2.189 \cos(4\alpha)
+    \end{split}
+\end{equation}

@@ -1,0 +1,5 @@
+\begin{equation}
+    \begin{split}
+        f_{15}(\alpha) &= 19.458 + 0.01 \cos(\alpha) - 7.84 \cos(2\alpha) - 1.79 \cos(3\alpha) + 4.47 \cos(4\alpha)\\ &  + 0.77 \cos(5\alpha) - 3.95 \cos(6\alpha) + 0.52 \cos(7\alpha) + 8.41 \cos(8\alpha)\\ &  - 1.67 \cos(9\alpha) - 5.75 \cos(10\alpha) - 0.63 \cos(11\alpha) + 3.16 \cos(12\alpha)\\ &  + 0.41 \cos(13\alpha) - 4.33 \cos(14\alpha) - 0.57 \cos(15\alpha) + 1.15 \cos(16\alpha)\\ &  + 0.81 \cos(17\alpha) - 0.35 \cos(18\alpha) - 0.77 \cos(19\alpha) + 2.46 \cos(20\alpha)\\ &  - 0.23 \cos(21\alpha) - 1.21 \cos(22\alpha)
+    \end{split}
+\end{equation}
