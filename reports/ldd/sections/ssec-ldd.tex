@@ -2,15 +2,16 @@
 
 \subsection{\ldd}
 \label{sec:ldd}
-The command \refLdd \ prints shared object dependencies.
+The command \refLdd \ prints shared object dependencies, in this example, for the executable \texttt{bash}:
 {\footnotesize{
 \begin{Verbatim}[commandchars=\\\{\}]
 {\color{darkgray}{root@69cb14a32689:/}}# ldd /bin/bash
 {\color{darkgray}{	linux-vdso.so.1 (0x00007ffe64317000)}}
-{\color{darkgray}{	libtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6 (0x00007f842112d000)}}
-{\color{darkgray}{	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f8420f04000)}}
+{\color{darkgray}{	libtinfo.so.6 }{\color{blue}{=>}}\color{darkgray}{ /lib/x86_64-linux-gnu/libtinfo.so.6 (0x00007f842112d000)}}
+{\color{darkgray}{	libc.so.6 }{\color{blue}{=>}}\color{darkgray}{ /lib/x86_64-linux-gnu/libc.so.6 (0x00007f8420f04000)}}
 {\color{darkgray}{	/lib64/ld-linux-x86-64.so.2 (0x00007f84212e3000)}}
 \end{Verbatim}
 }}
+\href{https://en.wikipedia.org/wiki/Symbolic_link}{Symbolic link}s (symlinks) are highlighted with blue color.
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

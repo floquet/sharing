@@ -6,34 +6,41 @@
 \usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
 								% TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{amssymb}
+\usepackage[affil-it]{authblk}
 \usepackage{fancyvrb}
 \usepackage{hyperref}
 \usepackage{overpic}
 \usepackage{xcolor}
-
-\newcommand{\escapepercent}{\%}
-
+%
 \usepackage{listings}
 	\definecolor{textblue}{rgb}{.2,.2,.7}
 	\definecolor{textred}{rgb}{0.54,0,0}
 	\definecolor{textgreen}{rgb}{0,0.43,0}
 
-\input{./setup/macros}
-\input{./setup/listings-bash}
+% personalize environment
+\newcommand{\pGlobal}[0]			{../../../global/}
+\newcommand{\pGlobalSetup}[0]		{\pGlobal setup-global/}	
 
+\input{\pGlobalSetup setup-global-reports}
+\input{\pLocalSetup macros}
+
+\newcommand{\pManPages}[0]		{\pLocal man-pages/}
+\newcommand{\escapepercent}[0]	{\%}
 
 \title{Unix Tools for Probing Executable Files}
-\author{Daniel Topa\\HII-TSD\\\href{mailto:daniel.topa@hii-tsd.com}{daniel.topa@hii-tsd.com}}
+\author{Daniel Topa\\\href{mailto:daniel.topa@hii-tsd.com}{daniel.topa@hii-tsd.com}}
+\affil{\href{https://hii.com/what-we-do/divisions/mission-technologies/}{Mission Technologies}
+\\Huntington Ingalls Industries
+\\Kirtland AFB, NM}
 
 \begin{document}
 \maketitle
-\abstract{This article surveys Unix tools for the exploration of executable files, some of which depend upon the application being compiled with debug information. The \textt{man}ual pages are included, making this document usefull in siloed computing networks.}
+\abstract{This article surveys Unix tools for the exploration of executable files, some of which depend upon the application being compiled with debug information. The \textt{man}ual pages are included, making this document useful in siloed computing networks.}
 \tableofcontents
 
 \section{Overview}
-Here are several Unix commands for probing executable files. The following section shows sample useage for each command and the final section contains the information from the \textt{man}ual page.
+Unix provides powerful tools for probing executable files. The following section shows sample usage for each command and the final section contains the information from the \textt{man}ual page. The final element is the GNU debugger and not a formal element of Unix.
 \begin{enumerate}
-	\item gdb
 	\item \hyperref[sec:ldd]{\ldd}	
 	\item \hyperref[sec:ldd]{\lddconfig}
 	\item \hyperref[sec:locate]{\locate}
@@ -43,6 +50,7 @@ Here are several Unix commands for probing executable files. The following secti
 	\item \hyperref[sec:nm]{\nm}
 	\item \hyperref[sec:strace]{\strace}
 	\item \hyperref[sec:strings]{\strings}
+	\item \hyperref[sec:gdb]{\gdb}
 \end{enumerate}
 
 The goal is to be able to resolve the workings of an executable file exploiting the \elf \ structure show in figures \ref{fig:elf}. The next figure, \ref{fig:elf-II}, shows the relationship between source files, header files, shared objects, and the executable program.
@@ -51,7 +59,7 @@ The goal is to be able to resolve the workings of an executable file exploiting 
 \centering
 	\href{https://camo.githubusercontent.com/00cd4e64df02caf11e9c7c8f67a4d7e9470ea03c244e6d5bce8444a674b9143c/68747470733a2f2f692e696d6775722e636f6d2f4169394f714f422e706e67}{
 	\begin{overpic}[ scale = 0.4 ]
-		{./local/graphics-local/elf-01}
+		{../local/graphics-local/elf-01}
 		%\put(50, 50)	{\colorbox{white}{$a+b$}}
 	\end{overpic}
 	}
@@ -63,7 +71,7 @@ The goal is to be able to resolve the workings of an executable file exploiting 
 \centering
 	\href{https://camo.githubusercontent.com/94b1128b885c29e21c64fb3b247d0184c54f4248e4195462bd15671003afc319/68747470733a2f2f692e696d6775722e636f6d2f4c4e6464546d6b2e706e67}{
 	\begin{overpic}[ scale = 0.5 ]
-		{./local/graphics-local/elf-02}
+		{../local/graphics-local/elf-02}
 		%\put(50, 50)	{\colorbox{white}{$a+b$}}
 	\end{overpic}
 	}
@@ -72,26 +80,27 @@ The goal is to be able to resolve the workings of an executable file exploiting 
 \end{figure}
 
 \section{Command Examples}
-		\input{./sections/ssec-ldd}
-		\input{./sections/ssec-lddconfig}
-		\input{./sections/ssec-locate}
-		\input{./sections/ssec-losf}
-		\input{./sections/ssec-objdump}
-		\input{./sections/ssec-readelf}
-		\input{./sections/ssec-nm}
-		\input{./sections/ssec-strace}
-		\input{./sections/ssec-strings}
+		\input{\pSections ssec-ldd}
+		\input{\pSections ssec-lddconfig}
+		\input{\pSections ssec-locate}
+		\input{\pSections ssec-losf}
+		\input{\pSections ssec-objdump}
+		\input{\pSections ssec-readelf}
+		\input{\pSections ssec-nm}
+		\input{\pSections ssec-strace}
+		\input{\pSections ssec-strings}
+		\input{\pSections ssec-gdb}
 
 \section{\href{\urlMan}{Manual Pages}}
-	\input{./components/man/man-ldd}
-	\input{./components/man/man-lddconfig}
-	\input{./components/man/man-locate}
-	\input{./components/man/man-lsof}
-	\input{./components/man/man-objdump}
-	\input{./components/man/man-readelf}
-	\input{./components/man/man-nm}
-	\input{./components/man/man-strace}
-	\input{./components/man/man-strings}
+		\input{\pManPages man-ldd}
+		\input{\pManPages man-lddconfig}
+		\input{\pManPages man-locate}
+		\input{\pManPages man-lsof}
+		\input{\pManPages man-objdump}
+		\input{\pManPages man-readelf}
+		\input{\pManPages man-nm}
+		\input{\pManPages man-strace}
+		\input{\pManPages man-strings}
 	
 \end{document} 
 
