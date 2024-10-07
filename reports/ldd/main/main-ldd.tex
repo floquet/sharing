@@ -35,12 +35,13 @@
 
 \begin{document}
 \maketitle
-\abstract{This article surveys Unix tools for the exploration of executable files, some of which depend upon the application being compiled with debug information. The \textt{man}ual pages are included, making this document useful in siloed computing networks.}
+\abstract{Unix offers many tools for the exploration of executable files, some of which depend upon the application being compiled with debug information. A brief survey follows. The \textt{man}ual pages are included, making this document useful in siloed computing networks.}
 \tableofcontents
 
 \section{Overview}
 Unix provides powerful tools for probing executable files. The following section shows sample usage for each command and the final section contains the information from the \textt{man}ual page. The final element is the GNU debugger and not a formal element of Unix.
 \begin{enumerate}
+	\item \hyperref[sec:env]{\env}	
 	\item \hyperref[sec:ldd]{\ldd}	
 	\item \hyperref[sec:ldd]{\lddconfig}
 	\item \hyperref[sec:locate]{\locate}
@@ -80,6 +81,7 @@ The goal is to be able to resolve the workings of an executable file exploiting 
 \end{figure}
 
 \section{Command Examples}
+		\input{\pSections ssec-env}
 		\input{\pSections ssec-ldd}
 		\input{\pSections ssec-lddconfig}
 		\input{\pSections ssec-locate}

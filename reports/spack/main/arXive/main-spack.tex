@@ -1,0 +1,116 @@
+\documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\usepackage{listings}
+	\definecolor{textblue}{rgb}{.2,.2,.7}
+	\definecolor{textred}{rgb}{0.54,0,0}
+	\definecolor{textgreen}{rgb}{0,0.43,0}
+
+\input{./setup/macros}
+\input{./setup/listings-bash}
+
+
+\title{Package Managment With \texttt{Spack}}
+%\author{Daniel Topa\\HII-TSD\\\href{mailto:daniel.topa@hii-tsd.com}{daniel.topa@hii-tsd.com}}
+\author{Daniel Topa\\HII-TSD\\\href{mailto:daniel.topa@hii-tsd.com}{daniel.topa@hii-tsd.com}}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\abstract{Modern package managament. Unite under a compiler, a Python version, an MPI instance.}
+
+\section{Getting Started}
+Consider an example build of a powerful and complicated package, PETSc.
+
+\begin{quote}
+PETSc, the Portable, Extensible Toolkit for Scientific Computation,  is for the scalable (parallel) solution of scientific applications modeled by partial differential equations (PDEs). It has bindings for C, Fortran, and Python (via petsc4py). PETSc also contains TAO, the Toolkit for Advanced Optimization, software library. It supports MPI, and GPUs through CUDA, HIP, Kokkos, or OpenCL, as well as hybrid MPI-GPU parallelism; it also supports the NEC-SX Tsubasa Vector Engine
+\end{quote}
+
+\begin{enumerate}
+	\item download spack
+	\item initialize spack
+	\item find compilers
+	\item install PetSc
+\end{enumerate}
+
+\begin{verbatim}
+$ git clone https://github.com/spack/spack.git
+$ source spack/share/spack/setup-env.sh
+$ spack compiler find
+$ spack install petsc +fortran % gcc@14.2.0
+\end{verbatim}
+
+\subsection{How Does \spack \ Work?}
+\spack \ is a \emph{download}, not an {installation}. It was born at Livermore out a desire to liberate the scientists from the HPC bureaucracy and allow them to build the packages and versions needed. It started a tool for people with local admin privledges over their machines, and is now a recognized tool used by the HPC support staff to maintain the shared environments.
+
+\spack \ changes how developers interact with their uses. Instead of maintaining pages detailing install instructions for each hardware architecture and software enviroment, developers now maintain a single \spack \ instance and utilize the issue tracking inherent in \href{https://github.com/spack/spack}{\texttt{GitHub}}.
+
+
+Build systems
+
+In one sense, \spack \ is a database managing 
+\small{
+\begin{lstlisting}[language=bash]
+kpex76l openmpi@1.10.7%gcc
+vuijyrm     hwloc@1.11.13%gcc
+vlgsd6a         libxml2@2.10.3%gcc
+7ffbqyf             libiconv@1.17%gcc
+cejtv5p             pkgconf@1.8.0%gcc
+ydjmqn5             xz@5.4.1%gcc
+kgdj2w7         ncurses@6.4%gcc
+cbup2u4     openssh@9.1p1%gcc
+74ofkad         krb5@1.20.1%gcc
+gw3muwr             bison@3.8.2%gcc
+mbfdcbq                 m4@1.4.19%gcc
+ytuafo5                     libsigsegv@2.13%gcc
+fx3kvo3             diffutils@3.8%gcc
+g7g5rxm             gettext@0.21.1%gcc
+pirykzv                 bzip2@1.0.8%gcc
+lij4icg                 tar@1.34%gcc
+3tfa2za                     pigz@2.7%gcc
+hnuj2am                     zstd@1.5.2%gcc
+mf4yylc         libedit@3.1-20210216%gcc
+pnhvhts         libxcrypt@4.4.33%gcc
+cck5u3i             perl@5.34.0%gcc
+duhpddy         openssl@1.1.1t%gcc
+syyclam             ca-certificates-mozilla@2023-01-10%gcc
+ggaig6s         zlib@1.2.13%gcc
+lxwy7gr     perl@5.34.0%gcc
+kzdyfxk     pkgconf@1.8.0%gcc
+\end{lstlisting}
+}
+
+\spack \ handles combinatorial complexity. For example, consider 4 compilers: Intel, GCC, PGI, NAG. For each compiler maintain 4 different versions; for example gcc 14.2.0, 13.3.0, 12.4.0, 4.8.5. Provide 4 MPI providers: OpenMPI, Cray-MPICH, MVAPICH, Intel-Parallel studio. Maintain 4 versions of each of those. Maintain 4 Python versions for each packages. This represents $4^{5} = 1024$ instances, handled by \spack. 
+
+\subsection{\spack \ Users, Platforms}
+
+\begin{enumerate}
+	\item \href{https://ncar-hpc-docs.readthedocs.io/en/latest/environment-and-software/user-environment/spack/spack/}{NCAR} 
+	\item \href{https://www.hpc.iastate.edu/guides/using-spack-to-build-packages}{Iowa State HPC}
+	\item \href{https://github.com/HSF/hep-spack}{CERN}
+	\item \hre{https://ipv6.rs/tutorial/Windows\_11/Spack/}{Windows 11}
+	\item \href{https://ipv6.rs/tutorial/macOS/Spack/}{MacOS}
+	\item \href{https://en.wikipedia.org/wiki/ARM_architecture_family}{ARM}
+	\item \href{https://en.wikipedia.org/wiki/POWER8}{Power8, Power9}
+	\item \href{https://en.wikipedia.org/wiki/X86-64}{x86-64}
+	\item \href{https://en.wikipedia.org/wiki/IBM_Blue_Gene}{BlueGene}
+\end{enumerate}
+
+\section{Probe commands in \spack}
+
+\subsection{\texttt{spack info petsc}}
+The \texttt{spack} command \texttt{info} presents essential information about each package. The output starts with a brief descruption of the package and web site providing more information and a listing of available versions. Next is a list of variants and how to invoke them showing the user how to construct specific versions of the package -- which will all be managed by \texttt{spack}.  Users can easliy specify whether to use \texttt{C} or \texttt{C++} for the build, whether to use double or single precision, whether to use \texttt{MPI}\footnote{\spack \ allows users to chose between many flavors of \texttt{MPI}}, whether to use \openmp, and so on. The final sections lists dependencies for building, linking, and running. \spack \ will build these as needed.
+
+	\input{components/bash/info-petsc}
+
+
+
+\end{document} 

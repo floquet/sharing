@@ -1,0 +1,109 @@
+% \input{\pSections ssec-env}
+
+\subsection{\env}
+\label{sec:env}
+A good starting point in debugging is to list environment variables with the command \refEnv.
+{\footnotesize{
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{darkgray}{dantopa@Quaxolotl.local:~}} $ env
+{\color{darkgray}{build=23A344}}
+{\color{darkgray}{bold=}}
+{\color{darkgray}{d_python=/Volumes/T7-Touch/repos/github/python}}
+{\color{darkgray}{MAC=ac:de:48:00:11:22}}
+{\color{darkgray}{dirLsIo=/Users/dantopa/Mathematica_files/io/projects/least\ squares}}
+{\color{darkgray}{gf=/Volumes/T7-Touch/repos/github/f}}
+{\color{darkgray}{dbase=dantopa/base-centos:8.5}}
+{\color{darkgray}{TERM_PROGRAM=Apple_Terminal}}
+{\color{darkgray}{gflags=-g -ffpe-trap=denormal,invalid,zero -fbacktrace -Wall -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Og -pedantic -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -Wfunction-elimination -faggressive-function-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -fdiagnostics-color=auto  -Wconversion-extra -Wno-tabs  -finit-derived -fallocation-dce -fprofile-partial-training  -fanalyzer}}
+{\color{darkgray}{dirDockerLocker=}}
+{\color{darkgray}{centos_version=8.5}}
+{\color{darkgray}{my_log=/Users/dantopa/.info/modules-list.txt}}
+{\color{darkgray}{SHELL=/bin/bash}}
+{\color{darkgray}{TERM=xterm-256color}}
+{\color{darkgray}{machine=MacBookPro16,1}}
+{\color{darkgray}{cppflags=-g -Wall -Wextra -Og -pedantic -fmax-errors=5# -fdiagnostics-color=auto}}
+{\color{darkgray}{local_spack=/Volumes/T7-Touch/spacktivity/spack-quaxolotl-darwin}}
+{\color{darkgray}{TMPDIR=/var/folders/ld/z0sr6fhn0rz4tndl4nfm941m0000gn/T/}}
+{\color{darkgray}{reconstructor=/Volumes/T7-Touch/repos/github/reconstructor}}
+{\color{darkgray}{repo_results_docker=/Volumes/T7-Touch/repos/github/builds/results-docker}}
+{\color{darkgray}{drive_int=Macintosh HD}}
+{\color{darkgray}{TERM_PROGRAM_VERSION=453}}
+{\color{darkgray}{astra=/Volumes/T7-Touch/repos/github/astra-spack-mirror}}
+{\color{darkgray}{gitlab=/Volumes/T7-Touch/repos/gitlab}}
+{\color{darkgray}{TERM_SESSION_ID=178C575A-C566-4D30-90CD-2FEB7C9D4E30}}
+{\color{darkgray}{os=darwin}}
+{\color{darkgray}{gflags48=-g -ffpe-trap=denormal,invalid,zero -fbacktrace -Wall -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Og -pedantic -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -Wfunction-elimination -faggressive-function-elimination -Wc-binding-type -Wrealloc-lhs-all}}
+{\color{darkgray}{normal=}}
+{\color{darkgray}{USER=dantopa}}
+{\color{darkgray}{debian_version=11.3}}
+{\color{darkgray}{dir_config=MacBookPro16,1-(quaxolotl)/darwin-23.0.0/Sonoma-14.0.0}}
+{\color{darkgray}{jop=/Volumes/T7-Touch/repos/github/jop}}
+{\color{darkgray}{lrepos=/Users/dantopa/repos}}
+{\color{darkgray}{moniker=quaxolotl}}
+{\color{darkgray}{SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.XDYmj6zGeg/Listeners}}
+{\color{darkgray}{dcker=/Volumes/T7-Touch/repos/github/docker/unified}}
+{\color{darkgray}{repos_bitbucket= icons placemat}}
+{\color{darkgray}{bitbucket=/Volumes/T7-Touch/repos/bitbucket}}
+{\color{darkgray}{repo_scripts_spack=/Volumes/T7-Touch/repos/github/builds/scripts-spack}}
+{\color{darkgray}{drive_ext=T7-Touch}}
+{\color{darkgray}{gflags45=-g -ffpe-trap=denormal,invalid,zero -fbacktrace -Wall -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Og -pedantic -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens}}
+{\color{darkgray}{repo_build=/Volumes/T7-Touch/repos/github/builds}}
+{\color{darkgray}{PATH=/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/X11/bin:/Library/Apple/usr/bin:/Library/TeX/texbin:/opt/podman/bin:/Users/dantopa/.cabal/bin:/Users/dantopa/.ghcup/bin}}
+{\color{darkgray}{scratch=/Users/dantopa/scratch}}
+{\color{darkgray}{volume_ext=/Volumes/T7-Touch}}
+{\color{darkgray}{PWD=/Users/dantopa}}
+{\color{darkgray}{repo_results_spack=/Volumes/T7-Touch/repos/github/builds/results-spack}}
+{\color{darkgray}{mySpack=/Volumes/T7-Touch/spacktivity}}
+{\color{darkgray}{capulin_gitlab=dantopa@wtrw:cp-fe:/users/dantopa/repos/gitlab}}
+{\color{darkgray}{LANG=en_US.UTF-8}}
+{\color{darkgray}{github=/Volumes/T7-Touch/repos/github}}
+{\color{darkgray}{serial_num=C02CR18HMD6}}
+{\color{darkgray}{capulin=dantopa@wtrw:cp-fe:}}
+{\color{darkgray}{configuration=/Volumes/T7-Touch/repos/bitbucket/mac-configurations/MacBookPro16,1-(quaxolotl)/darwin-23.0.0/Sonoma-14.0.0/Quaxolotl.local}}
+{\color{darkgray}{repos_github= builds conferences gbs gf jop d_nursery python reconstructor}}
+{\color{darkgray}{bash_scripts=/Volumes/T7-Touch/repos/github/gitlab-bash-scripts}}
+{\color{darkgray}{XPC_FLAGS=0x0}}
+{\color{darkgray}{stools=/Volumes/T7-Touch/repos/bitbucket/spack-tools}}
+{\color{darkgray}{dirDropbox=/spacktivity/mirror}}
+{\color{darkgray}{platform=mac}}
+{\color{darkgray}{amzn_version=20230}}
+{\color{darkgray}{XPC_SERVICE_NAME=0}}
+{\color{darkgray}{llnl_ssh=ssh -l topa1 -X}}
+{\color{darkgray}{SHLVL=1}}
+{\color{darkgray}{HOME=/Users/dantopa}}
+{\color{darkgray}{allflags=-Wall -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived
+{\color{darkgray}{arXive_PATH=/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/X11/bin:/Library/Apple/usr/bin:/Library/TeX/texbin:/opt/podman/bin:/Users/dantopa/.cabal/bin:/Users/dantopa/.ghcup/bin}}
+{\color{darkgray}{big_spack_mirror=/Volumes/T7-Touch/spacktivity/mirror}}
+{\color{darkgray}{repos=/Volumes/T7-Touch/repos}}
+{\color{darkgray}{release=14.0.0}}
+{\color{darkgray}{dist=Sonoma}}
+cppflags45=-g -Wall -Wextra -Og -pedantic -fmax-errors=5#}}
+{\color{darkgray}{icons=/Volumes/T7-Touch/repos/bitbucket/icons}}
+{\color{darkgray}{dscience=dantopa/science-centos:8.5}}
+{\color{darkgray}{builds=/Volumes/T7-Touch/repos/github/builds}}
+{\color{darkgray}{LOGNAME=dantopa}}
+{\color{darkgray}{Wflags=-Wall -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra}}
+{\color{darkgray}{gflags8=-g -ffpe-trap=denormal,invalid,zero -fbacktrace -Wall -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Og -pedantic -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -Wfunction-elimination -faggressive-function-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -fdiagnostics-color=auto  -Wconversion-extra -Wno-tabs  -finit-derived}}
+{\color{darkgray}{locker=/Users/dantopa/.info}}
+{\color{darkgray}{firmware_v=1715.60.5.0.0 (iBridge: 19.16.10647.0.0,0)}}
+{\color{darkgray}{placemat=/Volumes/T7-Touch/repos/bitbucket/placemat}}
+{\color{darkgray}{core=/Volumes/T7-Touch/repos/github/gitlab-bash-scripts/core-scripts}}
+{\color{darkgray}{vrepos=/Volumes/T7-Touch/repos}}
+{\color{darkgray}{gbs=/Volumes/T7-Touch/repos/github/gitlab-bash-scripts}}
+{\color{darkgray}{ubuntu_version=22.04}}
+{\color{darkgray}{llnl_moniker=topa1}}
+{\color{darkgray}{file_docker_log=/Volumes/T7-Touch/repos/github/builds/results-docker/vm-log-book.txt}}
+{\color{darkgray}{DISPLAY=/private/tmp/com.apple.launchd.0JarZcoW6h/org.xquartz:0}}
+{\color{darkgray}{repo_scripts_docker=/Volumes/T7-Touch/repos/github/builds/scripts-docker}}
+{\color{darkgray}{d_nursery=/Volumes/T7-Touch/repos/github/nursery-slide-decks}}
+{\color{darkgray}{owner=native}}
+{\color{darkgray}{SECURITYSESSIONID=24745}}
+{\color{darkgray}{dirPyVirtualEnv=/Users/dantopa/scratch/python-virtual-environments}}
+{\color{darkgray}{dirPyTruth=/Users/dantopa/scratch/python-virtual-environments/truth}}
+{\color{darkgray}{bash_file=.quaxolotl.sh}}
+{\color{darkgray}{_=/usr/bin/env}}
+{\color{darkgray}{PS1=\textbackslash[\textbackslash 033[00;35m\textbackslash]\textbackslash u\textbackslash[\textbackslash 033[00m\textbackslash] @\textbackslash[\textbackslash 033[00;35m\textbackslash]\textbackslash H\textbackslash[\textbackslash 033[00m\textbackslash] :\textbackslash[\textbackslash 033[00;33m\textbackslash]\textbackslash W\textbackslash[\textbackslash 033[00m\textbackslash]  $\033[00;36m config_repo=/Volumes/T7-Touch/repos/bitbucket/mac-configurations/MacBookPro16,1-(quaxolotl)/darwin-23.0.0/Sonoma-14.0.0/Quaxolotl.local}}
+\end{Verbatim}
+}}
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

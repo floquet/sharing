@@ -1,8 +1,46 @@
-% \input{./sections/ssec-strace}
+% \input{\pSections ssec-strace}
 
 \subsection{\strace}
 \label{sec:strace}
-The \strace \ command is very powerful and the following examples.
+The \strace \ command can reveal how an executable is interacting with the operating system.
+
+		\subsubsection{Trace System From \href{https://web.archive.org/web/20230101034530/https://aws-labs.com/strace-lsof-track-process-hangs/}{\textt{HelloWorld}}}
+{\footnotesize{
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{darkgray}{[root@nickdev ~]$}} strace ./hello_world 
+{\color{darkgray}{execve("./hello_world", ["./hello_world"], [/* 50 vars */]) = 0}}
+{\color{darkgray}{brk(0)                                  = 0xa7e000}}
+{\color{darkgray}{access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)}}
+{\color{darkgray}{mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f7583380000}}
+{\color{darkgray}{access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)}}
+{\color{darkgray}{open("/etc/ld.so.cache", O_RDONLY)      = 3}}
+{\color{darkgray}{fstat(3, {st_mode=S_IFREG|0644, st_size=77737, ...}) = 0}}
+{\color{darkgray}{mmap(NULL, 77737, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f758336d000}}
+{\color{darkgray}{close(3)                                = 0}}
+{\color{darkgray}{access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)}}
+{\color{darkgray}{open("/lib/libc.so.6", O_RDONLY)        = 3}}
+{\color{darkgray}{read(3, "\textbackslash 177ELF\textbackslash 2\textbackslash 1\textbackslash 1\textbackslash 0\textbackslash 0\textbackslash 0\textbackslash 0\textbackslash 0\textbackslash 0\textbackslash 0\textbackslash 0\textbackslash 0\textbackslash 3\textbackslash 0>\textbackslash 0\textbackslash 1\textbackslash 0\textbackslash 0\textbackslash 0`\textbackslash 355\textbackslash 1\textbackslash 0\textbackslash 0\textbackslash 0\textbackslash 0\textbackslash 0"..., 832) = 832}}
+{\color{darkgray}{fstat(3, {st_mode=S_IFREG|0755, st_size=1432968, ...}) = 0}}
+{\color{darkgray}{mmap(NULL, 3541032, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f7582e04000}}
+{\color{darkgray}{mprotect(0x7f7582f5c000, 2093056, PROT_NONE) = 0}}
+{\color{darkgray}{mmap(0x7f758315b000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x157000) = 0x7f758315b000}}
+{\color{darkgray}{mmap(0x7f7583160000, 18472, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f7583160000}}
+{\color{darkgray}{close(3)                                = 0}}
+{\color{darkgray}{mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f758336c000}}
+{\color{darkgray}{mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f758336b000}}
+{\color{darkgray}{mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f758336a000}}
+{\color{darkgray}{arch_prctl(ARCH_SET_FS, 0x7f758336b700) = 0}}
+{\color{darkgray}{mprotect(0x7f758315b000, 16384, PROT_READ) = 0}}
+{\color{darkgray}{mprotect(0x7f7583382000, 4096, PROT_READ) = 0}}
+{\color{darkgray}{munmap(0x7f758336d000, 77737)           = 0}}
+{\color{darkgray}{fstat(1, {st_mode=S_IFCHR|0600, st_rdev=makedev(136, 6), ...}) = 0}}
+{\color{darkgray}{mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f758337f000}}
+{\color{darkgray}{write(1, "Hello, world\textbackslash n", 13Hello, world}}
+{\color{darkgray}{)          = 13}}
+{\color{darkgray}{exit_group(0)                           = ?}}
+\end{Verbatim}
+
+
 
 		\subsubsection{Trace System Calls To A Given Path}
 {\footnotesize{
