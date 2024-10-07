@@ -3,6 +3,156 @@
 \subsection{\strings}
 \label{sec:strings}
 
-Stub for \strings.
+Print the sequences of printable characters in files using \strings.
+
+		\subsubsection{Applied To Compiled Object File}
+{\footnotesize{
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{darkgray}{dantopa@Quaxolotl.local:vv}} $ strings -a m-precision-definitions.o
+{\color{darkgray}{GNU Fortran2008 12.1.0 -fPIC -feliminate-unused-debug-symbols -mmacosx-version-min=12.0.0 -mtune=core2 -g -Og -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -finit-derived -fintrinsic-modules-path /opt/local/lib/gcc12/gcc/x86_64-apple-darwin21/12.1.0/finclude m-precision-definitions.f08}}
+{\color{darkgray}{/Volumes/T7-Touch/repos/github/f/dtra/vv}}
+{\color{darkgray}{aint}}
+{\color{darkgray}{integer(kind=4)}}
+{\color{darkgray}{ascii}}
+{\color{darkgray}{kinda}}
+{\color{darkgray}{lint}}
+{\color{darkgray}{sint}}
+{\color{darkgray}{zint}}
+{\color{darkgray}{integer(kind=4)}}
+{\color{darkgray}{m-precision-definitions.f08}}
+\end{Verbatim}
+}}
+
+
+		\subsubsection{Applied To Object Class}
+{\footnotesize{
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{darkgray}{dantopa@Quaxolotl.local:bravo }}$ strings m-cl-soln-basic.o
+{\color{darkgray}{Error allocating %lu bytes}}
+{\color{darkgray}{In file 'm-cl-soln-basic.f08', around line 99}}
+{\color{darkgray}{Index '%ld' of dimension 1 of array 'sizes' above upper bound of %ld}}
+{\color{darkgray}{At line 98 of file m-cl-soln-basic.f08}}
+{\color{darkgray}{Loop iterates infinitely}}
+{\color{darkgray}{Index '%ld' of dimension 1 of array 'strides' below lower bound of %ld}}
+{\color{darkgray}{Index '%ld' of dimension 1 of array 'strides' above upper bound of %ld}}
+{\color{darkgray}{Index '%ld' of dimension 1 of array 'sizes' below lower bound of %ld}}
+{\color{darkgray}{Recursive call to nonrecursive procedure 'solnscalingparameter_sub'}}
+{\color{darkgray}{At line 69 of file m-cl-soln-basic.f08}}
+{\color{darkgray}{m-cl-soln-basic.f08}}
+{\color{darkgray}{Array bound mismatch for dimension 1 of array 'u' (%ld/%ld)}}
+{\color{darkgray}{At line 85 of file m-cl-soln-basic.f08}}
+{\color{darkgray}{Recursive call to nonrecursive procedure 'solncomputesigma_sub'}}
+{\color{darkgray}{At line 53 of file m-cl-soln-basic.f08}}
+{\color{darkgray}{Array bound mismatch for dimension 1 of array 'me' (%ld/%ld)}}
+{\color{darkgray}{At line 60 of file m-cl-soln-basic.f08}}
+{\color{darkgray}{Array bound mismatch for dimension 1 of array 'measurements' (%ld/%ld)}}
+{\color{darkgray}{At line 61 of file m-cl-soln-basic.f08}}
+{\color{darkgray}{Recursive call to nonrecursive procedure 'solnbasic_sub'}}
+{\color{darkgray}{At line 33 of file m-cl-soln-basic.f08}}
+{\color{darkgray}{Allocatable actual argument 'measurements' is not allocated}}
+{\color{darkgray}{At line 38 of file m-cl-soln-basic.f08}}
+{\color{darkgray}{Potential error: || u || = }}
+{\color{darkgray}{Subroutine: solnScalingParameter_sub}}
+{\color{darkgray}{Module:     mClassSolutionBasic}}
+{\color{darkgray}{Small size may magnifiy errors in solution parameter a}}
+{\color{darkgray}{GNU Fortran2008 13.2.0 -fPIC -feliminate-unused-debug-symbols -mmacosx-version-min=14.0.0 -mtune=core2 -g -Og -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -finit-derived -fintrinsic-modules-path /opt/local/lib/gcc13/gcc/x86_64-apple-darwin23/13.2.0/finclude}}
+{\color{darkgray}{m-cl-soln-basic.f08}}
+{\color{darkgray}{/Volumes/T7-Touch/repos/github/f/projects/fireball/bravo}}
+{\color{darkgray}{sigma}}
+{\color{darkgray}{count}}
+{\color{darkgray}{phimin}}
+{\color{darkgray}{phi2min}}
+{\color{darkgray}{sigmasc}}
+{\color{darkgray}{residualerror}}
+{\color{darkgray}{upsilon}}
+{\color{darkgray}{alloc}}
+{\color{darkgray}{real(kind=8)}}
+{\color{darkgray}{toolkitallocation}}
+{\color{darkgray}{requestedgb}}
+{\color{darkgray}{alloc_status}}
+{\color{darkgray}{sizeelementbits}}
+{\color{darkgray}{numelements}}
+{\color{darkgray}{numrows}}
+{\color{darkgray}{numcols}}
+{\color{darkgray}{alloc_message}}
+{\color{darkgray}{mykind}}
+{\color{darkgray}{integer(kind=4)}}
+{\color{darkgray}{__def_init_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{__mclasssolutionbasic_MOD___def_init_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{integer(kind=8)}}
+{\color{darkgray}{__vtype_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{_hash}}
+{\color{darkgray}{_size}}
+{\color{darkgray}{_extends}}
+{\color{darkgray}{_def_init}}
+{\color{darkgray}{_copy}}
+{\color{darkgray}{_final}}
+{\color{darkgray}{_deallocate}}
+{\color{darkgray}{solncomputesigma}}
+{\color{darkgray}{solnscalingparameter}}
+{\color{darkgray}{__class_mclasssolutionbasic_Solnbasic_t}}
+{\color{darkgray}{_data}}
+{\color{darkgray}{_vptr}}
+{\color{darkgray}{data}}
+{\color{darkgray}{maxradius}}
+{\color{darkgray}{time}}
+{\color{darkgray}{radius}}
+{\color{darkgray}{alloc}}
+{\color{darkgray}{__vtab_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{__mclasssolutionbasic_MOD___vtab_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{logical(kind=4)}}
+{\color{darkgray}{solnbasic_sub}}
+{\color{darkgray}{!#__mclasssolutionbasic_MOD_solnbasic_sub}}
+{\color{darkgray}{_descriptor}}
+{\color{darkgray}{solncomputesigma_sub}}
+{\color{darkgray}{5*__mclasssolutionbasic_MOD_solncomputesigma_sub}}
+{\color{darkgray}{solnscalingparameter_sub}}
+{\color{darkgray}{E.__mclasssolutionbasic_MOD_solnscalingparameter_sub}}
+{\color{darkgray}{normu}}
+{\color{darkgray}{__copy_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{__mclasssolutionbasic_MOD___copy_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{__final_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{__mclasssolutionbasic_MOD___final_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{array}}
+{\color{darkgray}{byte_stride}}
+{\color{darkgray}{fini_coarray}}
+{\color{darkgray}{idx2}}
+{\color{darkgray}{ignore}}
+{\color{darkgray}{is_contiguous}}
+{\color{darkgray}{nelem}}
+{\color{darkgray}{offset}}
+{\color{darkgray}{ptr2}}
+{\color{darkgray}{sizes}}
+{\color{darkgray}{strides}}
+{\color{darkgray}{__result___final_mclasssoluti}}
+l{\color{darkgray}{ogical(kind=1)}}
+{\color{darkgray}{?}}
+{\color{darkgray}{ 4}}
+{\color{darkgray}{__def_init_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{__vtab_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{__def_init_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{__vtab_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{solnbasic_sub}}
+{\color{darkgray}{solncomputesigma_sub}}
+{\color{darkgray}{solnscalingparameter_sub}}
+{\color{darkgray}{__copy_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{__final_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{real(kind=8)}}
+{\color{darkgray}{integer(kind=4)}}
+{\color{darkgray}{mclasssolutionbasic.toolkitallocation}}
+{\color{darkgray}{mclasssolutionbasic.solnbasic}}
+{\color{darkgray}{integer(kind=8)}}
+{\color{darkgray}{mclasssolutionbasic.__class_mclasssolutionbasic_Solnbasic_t}}
+{\color{darkgray}{mclasssolutionbasic.data}}
+{\color{darkgray}{mclasssolutionbasic.__vtype_mclasssolutionbasic_Solnbasic}}
+{\color{darkgray}{logical(kind=4)}}
+{\color{darkgray}{logical(kind=1)}}
+{\color{darkgray}{m-cl-soln-basic.f08}}
+{\color{darkgray}{measurements}}
+{\color{darkgray}{descriptor}}
+{\color{darkgray}{solnbasic}}
+\end{Verbatim}
+}}
+
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

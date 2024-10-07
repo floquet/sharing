@@ -3,6 +3,35 @@
 \subsection{\lddconfig}
 \label{sec:lddconfig}
 
-Stub for \refLddconfig \  In \textt{/sbin/lddconfig}. Configure dynamic linker run-time bindings.
+\refLddconfig: A tool to cnfigure run-time bindings for the dynamic linker. May reside in \textt{/sbin/lddconfig}.
+
+		\subsubsection{Display First Five Current Libraries In The Cache}
+{\footnotesize{
+\begin{Verbatim}[commandchars=\\\{\}]
+\href{https://linux.101hacks.com/unix/ldconfig/}{# ldconfig -p | head -5}
+{\color{darkgray}{916 libs found in cache `/etc/ld.so.cache'}}
+{\color{darkgray}{      libzephyr.so.4 (libc6) => /usr/lib/libzephyr.so.4}}
+{\color{darkgray}{      libzbar.so.0 (libc6) => /usr/lib/libzbar.so.0}}
+{\color{darkgray}{      libz.so.1 (libc6) => /lib/libz.so.1}}
+{\color{darkgray}{      libz.so (libc6) => /usr/lib/libz.so}}
+\end{Verbatim}
+}}
+
+		\subsubsection{Recursively Display Libraries For Each Directory}
+{\footnotesize{
+\begin{Verbatim}[commandchars=\\\{\}]
+\href{https://linux.101hacks.com/unix/ldconfig/}{# ldconfig -v | head}
+{\color{darkgray}{/usr/lib/mesa:}}
+{\color{darkgray}{      libGL.so.1 -> libGL.so.1.2}}
+{\color{darkgray}{/usr/lib/i686-linux-gnu:}}
+{\color{darkgray}{      liblouis.so.2 -> liblouis.so.2.2.0}}
+{\color{darkgray}{/usr/lib/alsa-lib:}}
+{\color{darkgray}{      libasound_module_ctl_oss.so -> libasound_module_ctl_oss.so}}
+{\color{darkgray}{      libasound_module_ctl_bluetooth.so -> libasound_module_ctl_bluetooth.so}}
+{\color{darkgray}{      libasound_module_pcm_bluetooth.so -> libasound_module_pcm_bluetooth.so}}
+{\color{darkgray}{      libasound_module_pcm_vdownmix.so -> libasound_module_pcm_vdownmix.so}}
+ {\color{darkgray}{     libasound_module_rate_speexrate.so -> libasound_module_rate_speexrate_medium.so}}
+\end{Verbatim}
+}}
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

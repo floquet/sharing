@@ -5,4 +5,40 @@
 
 The \refNm \ command shows dependent shared objects and executables; 
 
+		\subsubsection{Find Headers Only}
+{\footnotesize{
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{darkgray}{dantopa@Quaxolotl.local:z2-debug }}$ nm z2 | grep header
+{\color{darkgray}{0000000100000000 T __mh_execute_header}}
+\end{Verbatim}
+}}
+
+		\subsubsection{Find Everything}
+{\footnotesize{
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{darkgray}{dantopa@Quaxolotl.local:z2-debug }}$ nm z2
+{\color{darkgray}{000000010000323c T __Z6moveupPii}}
+{\color{darkgray}{000000010000346f T __Z6updatedPP7__sFILE}}
+{\color{darkgray}{00000001000032cd T __Z8movedownPii}}
+{\color{darkgray}{000000010000335d T __Z9coldstartv}}
+{\color{darkgray}{0000000100003e98 s __ZNSt8__detail30__integer_to_chars_is_unsignedIjEE}}
+{\color{darkgray}{0000000100003e99 s __ZNSt8__detail30__integer_to_chars_is_unsignedImEE}}
+{\color{darkgray}{0000000100003e9a s __ZNSt8__detail30__integer_to_chars_is_unsignedIyEE}}
+{\color{darkgray}{0000000100000000 T __mh_execute_header}}
+{\color{darkgray}{                 U _drand48}}
+{\color{darkgray}{                 U _exit}}
+{\color{darkgray}{                 U _exp}}
+{\color{darkgray}{                 U _fclose}}
+{\color{darkgray}{                 U _fopen}}
+{\color{darkgray}{                 U _getcwd}}
+{\color{darkgray}{0000000100008000 S _lnk}}
+{\color{darkgray}{0000000100003ae8 T _main}}
+{\color{darkgray}{                 U _perror}}
+{\color{darkgray}{                 U _printf}}
+{\color{darkgray}{                 U _srand48}}
+{\color{darkgray}{                 U mcount}}
+\end{Verbatim}
+}}
+
+
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

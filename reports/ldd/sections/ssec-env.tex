@@ -2,7 +2,7 @@
 
 \subsection{\env}
 \label{sec:env}
-A good starting point in debugging is to list environment variables with the command \refEnv.
+A good starting point in debugging is to list environment variables with the command \refEnv \ to show where your application is looking for files and libraries. Most prominent are \href{https://en.wikipedia.org/wiki/Rpath}{\textt{RPATH}} and \href{https://unix.stackexchange.com/questions/46614/how-to-export-ld-library-path-to-all-users-and-system-services}{\textt{LD\_LIBRARY\_PATH}}. These variables can be manipulated using \href{https://linux.die.net/man/1/chrpath}{\textt{chrpath}} or \href{https://github.com/NixOS/patchelf}{\textt{patchelf}}.
 {\footnotesize{
 \begin{Verbatim}[commandchars=\\\{\}]
 {\color{darkgray}{dantopa@Quaxolotl.local:~}} $ env
@@ -102,7 +102,7 @@ cppflags45=-g -Wall -Wextra -Og -pedantic -fmax-errors=5#}}
 {\color{darkgray}{dirPyTruth=/Users/dantopa/scratch/python-virtual-environments/truth}}
 {\color{darkgray}{bash_file=.quaxolotl.sh}}
 {\color{darkgray}{_=/usr/bin/env}}
-{\color{darkgray}{PS1=\textbackslash[\textbackslash 033[00;35m\textbackslash]\textbackslash u\textbackslash[\textbackslash 033[00m\textbackslash] @\textbackslash[\textbackslash 033[00;35m\textbackslash]\textbackslash H\textbackslash[\textbackslash 033[00m\textbackslash] :\textbackslash[\textbackslash 033[00;33m\textbackslash]\textbackslash W\textbackslash[\textbackslash 033[00m\textbackslash]  $\033[00;36m config_repo=/Volumes/T7-Touch/repos/bitbucket/mac-configurations/MacBookPro16,1-(quaxolotl)/darwin-23.0.0/Sonoma-14.0.0/Quaxolotl.local}}
+{\color{darkgray}{PS1=\textbackslash[\textbackslash 033[00;35m\textbackslash]\textbackslash u\textbackslash[\textbackslash 033[00m\textbackslash] @\textbackslash[\textbackslash 033[00;35m\textbackslash]\textbackslash H\textbackslash[\textbackslash 033[00m\textbackslash] :\textbackslash[\textbackslash 033[00;33m\textbackslash]\textbackslash W\textbackslash[\textbackslash 033[00m\textbackslash]  $\textbackslash 033[00;36m config_repo=/Volumes/T7-Touch/repos/bitbucket/mac-configurations/MacBookPro16,1-(quaxolotl)/darwin-23.0.0/Sonoma-14.0.0/Quaxolotl.local}}
 \end{Verbatim}
 }}
 
