@@ -1,0 +1,50 @@
+% \input{\pSections sec-math}
+
+\section{Mathematics}
+\label{sec:math}
+
+\subsection{Definitions}
+%%
+\begin{definition}[The ellipse]
+Given $\theta \in \angdom$, and parameters $a, b \in\mathbb{R}^{+}$ with $a>b$ the following parametric form defines an ellipse.
+\begin{equation}
+	\epsilon(\theta) = \paren{ a \cos \theta, b\sin \theta }
+\label{eq:ellipse}
+\end{equation}
+\end{definition}
+%%
+\begin{definition}[Eccentricity of the ellipse]
+The eccentricity is a scalar parameter $e \in \paren{0,1}$ and can be expressed in terms of fundamental parameters of the ellipse where $a > b$ as
+\begin{equation}
+	e = \frac{c}{a} = \sqrt{1 - \paren{\frac{b}{a}}^{2}}
+\label{eq:eccentricity}
+\end{equation}
+\end{definition}
+%%
+\begin{definition}[Mean anomaly]
+Kepler's Law\footnote{
+\cite[eq 4.5]{bate2020fundamentals}
+\cite[p.159]{moulton1970introduction}
+\cite[\S2.2]{vallado2022}, \cite[3-19]{kaula2013theory}} 
+defines the mean anomaly as the angular measure $M(e,E)\colon(0,1)\times \angdom \mapsto \angdom $ as
+\begin{equation}
+	M(e,E) = E - e \sin E
+\label{eq:mean anomaly}
+\end{equation}
+\end{definition}
+
+\begin{theorem}[Continuity of the mean anomaly]
+The mean anomaly as defined in definition \ref{eq:mean anomaly} is a continuous function.
+\begin{proof}
+To prove continuity show that for any two points $p$ and $q$ in the domain there exists a majorization constant $K$ such that
+\begin{equation}
+	M(p) - M(q) \le K \abs{p-q}
+\label{eq:continuous}
+\end{equation}
+Spoiler alert: the majorization constant is $2\pi$.
+\end{proof}
+\end{theorem}
+Observation: given the continuity of the mean anomaly, one may use Newton's method \cite[\S4.6]{gautschi2011numerical} to solve the nonlinear equation.
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

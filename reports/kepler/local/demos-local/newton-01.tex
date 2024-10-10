@@ -1,0 +1,46 @@
+% https://tex.stackexchange.com/questions/551160/plot-that-demonstrate-newtons-method
+% \documentclass[]{article}
+\documentclass[margin=5pt, varwidth]{standalone}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}
+
+\begin{document}
+% Input 1/2 =====
+\newcommand\fxshow{e^{0.9x}-x^2}
+\pgfmathsetlengthmacro\mywidth{8.9cm}
+
+\tikzset{trig format=rad, 
+declare function={
+% Input 2/2 =====
+f(\x)=exp(0.9*\x) -\x*\x;  
+xStart=2.6;
+Steps=4;
+% Calc ====
+xNew(\x)=\x-f(\x)/df(\x);
+dx=0.01;      
+df(\x)=( f(\x+dx) -f(\x) )/dx;
+},}
+
+% Start row
+\pgfmathsetmacro\xStart{xStart}
+\pgfmathsetmacro\fxnStart{f(xStart)}
+\pgfmathsetmacro\dfxnStart{df(xStart)}
+\pgfmathsetmacro\xNewStart{xNew(xStart)}
+\pgfplotstableread[header=false, col sep=comma,
+]{
+0, \xStart, \fxnStart, \dfxnStart,  \xNewStart
+}\newtontable
+
+% Further rows
+\pgfmathsetmacro\Steps{Steps}
+\pgfplotsforeachungrouped \n in {1,...,\Steps} {%%
+\ifnum\n=1 \pgfplotstablegetelem{0}{[index]4}\of\newtontable \else
+\pgfplotstablegetelem{0}{[index]4}\of\nextrow \fi
+\pgfmathsetmacro\xOld{\pgfplotsretval}
+%
+\pgfmathsetmacro\fxn{f(\xOld)}
+\pgfmathsetmacro\dfxn{df(\xOld)}
+\pgfmathsetmacro\xNew{xNew(\xOld)}
+%

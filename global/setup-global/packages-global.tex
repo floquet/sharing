@@ -2,7 +2,19 @@
 % \input{\pGlobalSetup packages-global.tex}
 
 % packages used by most briefings
-\usepackage{amsmath,amssymb,amsthm}
+\usepackage{amsmath, amssymb, amsthm}
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+
+\usepackage[affil-it]{authblk}
+\usepackage{fancyvrb}
+\usepackage{hyperref}
+\usepackage{overpic}
+\usepackage{xcolor}
 % Package keyval Error: ibidpage undefined
 %\usepackage[ backend=biber, style=numeric, citestyle=authoryear, ibidpage=true ]{biblatex}
 \usepackage[ backend=biber, style=numeric, citestyle=authoryear ]{biblatex}

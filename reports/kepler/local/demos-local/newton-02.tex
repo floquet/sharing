@@ -1,0 +1,37 @@
+% https://tex.stackexchange.com/questions/551160/plot-that-demonstrate-newtons-method
+\documentclass[border=0.1cm]{standalone}
+    
+\usepackage{tikz}
+\usetikzlibrary{intersections,calc}
+
+    
+\begin{document}
+
+\begin{tikzpicture}[thick,yscale=0.8]
+
+% Axes
+\draw[-latex,name path=xaxis] (-1,0) -- (12,0) node[above]{\large $x$};
+\draw[-latex] (0,-2) -- (0,8)node[right]{\large $y$};;
+
+% Function plot
+\draw[ultra thick, orange,name path=function]  plot[smooth,domain=1:9.5] (\x, {0.1*\x^2-1.5}) node[left]{$F(x)$};
+
+
+
+% plot tangent line
+\node[violet,right=0.2cm] at (8,4.9) {\large tangent};
+
+\draw[gray,thin,dotted] (8,0) -- (8,4.9) node[circle,fill,inner sep=2pt]{};
+\draw[dashed, violet,name path=Tfunction]  plot[smooth,domain=4.25:9.5] (\x, {1.6*\x-7.9});
+
+
+
+% x-axis labels
+\draw (8,0.1) -- (8,-0.1) node[below] {$x^{(k)}$};
+\draw [name intersections={of=Tfunction and xaxis}] ($(intersection-1)+(0,0.1)$) -- ++(0,-0.2) node[below,fill=white] {$x^{(k+1)}$} ;
+
+
+\end{tikzpicture}
+
+
+\end{document}

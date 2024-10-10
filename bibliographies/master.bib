@@ -1,12 +1,232 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Daniel M. Topa at 2024-10-08 08:48:16 -0600 
+%% Created for Daniel M. Topa at 2024-10-09 17:36:42 -0600 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
 
 
+
+@article{driscoll1994computing,
+	author = {Driscoll, James R and Healy, Dennis M},
+	date-added = {2024-10-09 17:36:42 -0600},
+	date-modified = {2024-10-09 17:36:42 -0600},
+	journal = {Advances in applied mathematics},
+	number = {2},
+	pages = {202--250},
+	publisher = {Elsevier},
+	title = {Computing Fourier transforms and convolutions on the 2-sphere},
+	volume = {15},
+	year = {1994}}
+
+@article{ritchie1999fast,
+	author = {Ritchie, David W and Kemp, Graham JL},
+	date-added = {2024-10-09 17:34:45 -0600},
+	date-modified = {2024-10-09 17:34:45 -0600},
+	journal = {Journal of Computational Chemistry},
+	number = {4},
+	pages = {383--395},
+	publisher = {Wiley Online Library},
+	title = {Fast computation, rotation, and comparison of low resolution spherical harmonic molecular surfaces},
+	volume = {20},
+	year = {1999}}
+
+@article{johansson2019computing,
+	author = {Johansson, Fredrik},
+	date-added = {2024-10-09 17:34:19 -0600},
+	date-modified = {2024-10-09 17:34:19 -0600},
+	journal = {ACM Transactions on Mathematical Software (TOMS)},
+	number = {3},
+	pages = {1--26},
+	publisher = {ACM New York, NY, USA},
+	title = {Computing hypergeometric functions rigorously},
+	volume = {45},
+	year = {2019}}
+
+@article{tygert2008fast,
+	author = {Tygert, Mark},
+	date-added = {2024-10-09 17:31:17 -0600},
+	date-modified = {2024-10-09 17:31:17 -0600},
+	journal = {Journal of Computational Physics},
+	number = {8},
+	pages = {4260--4279},
+	publisher = {Elsevier},
+	title = {Fast algorithms for spherical harmonic expansions, II},
+	volume = {227},
+	year = {2008}}
+
+@article{fukushima2012numerical,
+	author = {Fukushima, Toshio},
+	date-added = {2024-10-09 17:29:40 -0600},
+	date-modified = {2024-10-09 17:29:40 -0600},
+	journal = {Journal of Geodesy},
+	pages = {271--285},
+	publisher = {Springer},
+	title = {Numerical computation of spherical harmonics of arbitrary degree and order by extending exponent of floating point numbers},
+	volume = {86},
+	year = {2012}}
+
+@article{fukushima2014numerical,
+	author = {Fukushima, Toshio},
+	date-added = {2024-10-09 17:29:26 -0600},
+	date-modified = {2024-10-09 17:29:26 -0600},
+	journal = {Computers \& Geosciences},
+	pages = {17--21},
+	publisher = {Elsevier},
+	title = {Numerical computation of spherical harmonics of arbitrary degree and order by extending exponent of floating point numbers: III integral},
+	volume = {63},
+	year = {2014}}
+
+@book{ippolito2012radiowave,
+	author = {Ippolito, Louis J},
+	date-added = {2024-10-09 17:27:31 -0600},
+	date-modified = {2024-10-09 17:27:31 -0600},
+	publisher = {Springer Science \& Business Media},
+	title = {Radiowave propagation in satellite communications},
+	year = {2012}}
+
+@article{mccullough2015accuracy,
+	abstract = {The orbit determination process, such as that used for the Gravity Recovery and Climate Experiment, known as GRACE, is highly dependent upon the comparison of measured observables with computed values, derived from mathematical models relating the satellites' numerically integrated state to the observable. Significant errors in the computed state corrupt this comparison and induce errors in the least-squares estimate of the satellites' states, as well as the gravity field. Due to the high accuracy of the intersatellite ranging measurements from GRACE, numerical computations must mitigate errors to maintain a similar level of accuracy. One error source is the presence of roundoff errors in the computed intersatellite range-rate when integrating continuous, smoothly varying accelerations with double-precision arithmetic. These errors occur at approximately 8  pm/s  root mean square and limit the accuracy of numerically integrating background gravity field models to degrees/orders 260 and 410 for satellite pairs flying at altitudes of 500 and 300 km respectively. In addition, the integration of filtered, transient accelerations, which occur on timescales much smaller than the integration step size, induce errors at an approximately 10  nm/s
+ in range-rate, becoming a limitation as more advanced intersatellite measurement techniques approach this level of accuracy.},
+	author = {McCullough, Christopher and Bettadpur, Srinivas and McDonald, Karl},
+	date-added = {2024-10-09 17:07:59 -0600},
+	date-modified = {2024-10-09 17:09:13 -0600},
+	journal = {Journal of spacecraft and rockets},
+	number = {3},
+	pages = {766--775},
+	publisher = {American Institute of Aeronautics and Astronautics},
+	title = {Accuracy of numerical algorithms for satellite orbit propagation and gravity field determination},
+	volume = {52},
+	year = {2015}}
+
+@article{martinusi2015analytic,
+	author = {Martinusi, Vladimir and Dell'Elce, Lamberto and Kerschen, Ga{\"e}tan},
+	date-added = {2024-10-09 17:05:18 -0600},
+	date-modified = {2024-10-09 17:05:18 -0600},
+	journal = {Celestial Mechanics and Dynamical Astronomy},
+	pages = {85--103},
+	publisher = {Springer},
+	title = {Analytic propagation of near-circular satellite orbits in the atmosphere of an oblate planet},
+	volume = {123},
+	year = {2015}}
+
+@article{flores2021method,
+	abstract = {Fast and precise propagation of satellite orbits is required for mission design, orbit determination and payload data analysis. We present a method to improve the computational performance of numerical propagators and simultaneously maintain the accuracy level required by any
+particular application. This is achieved by determining the positional accuracy needed and the corresponding acceptable error in acceleration on the basis of the mission requirements, removing
+those perturbation forces whose effect is negligible compared to the accuracy requirement, implementing an efficient and precise algorithm for the harmonic synthesis of the geopotential gradient
+(i.e., the gravitational acceleration) and adjusting the tolerance of the numerical propagator to
+achieve the prescribed accuracy level with minimum cost. In particular, to achieve the optimum balance between accuracy and computational performance, the number of geopotential spherical harmonics to retain is adjusted during the integration on the basis of the accuracy requirement. The
+contribution of high-order harmonics decays rapidly with altitude, so the minimum expansion
+degree meeting the target accuracy decreases with height. The optimum degree for each altitude
+is determined by making the truncation error of the harmonic synthesis equal to the admissible
+acceleration error. This paper presents a detailed description of the technique and test cases highlighting its accuracy and efficiency},
+	author = {Flores, Roberto and Burhani, Burhani Makame and Fantino, Elena},
+	date-added = {2024-10-09 17:02:52 -0600},
+	date-modified = {2024-10-09 17:03:16 -0600},
+	journal = {Alexandria Engineering Journal},
+	number = {2},
+	pages = {2661--2676},
+	publisher = {Elsevier},
+	title = {A method for accurate and efficient propagation of satellite orbits: A case study for a Molniya orbit},
+	volume = {60},
+	year = {2021}}
+
+@article{roh2016numerical,
+	abstract = {We study the post-Newtonian perturbations in the orbit of a near-Earth satellite by integrating them with a high-fidelity orbit
+propagation software KASIOP. The perturbations of the orbital elements are evaluated for various cases from a low-Earth orbit to a
+geostationary one, and from an equatorial to a polar orbit. In particular, the numerical simulation is applied to the LARES-like satellite
+under a realistic orbital configuration. The relativistic perturbations include the Schwarzschild term, the effects of Lense-Thirring precession, and the post-Newtonian term due to the quadrupole moment of the Earth as well as the post-Newtonian gravitoelectric and
+gravitomagnetic forces, which are produced by the tidal potential of the solar system bodies, are also modeled. The latter three terms
+are usually ignored in most orbit-propagation software. The secular variations of the orbital elements are evaluated from the orbital
+positions propagated for a half year. For a medium altitude orbit like that of the LARES mission, the magnitude of the relativistic
+perturbations ranges from the order of 107 m/s2 by the Schwarzschild effect to 1015 m/s2 by the relativistic tidal effects. The orbital
+integration shows that the secular variations in three orbital elements -- the ascending node, the argument of perigee, and the mean
+anomaly at epoch -- are larger than the systematic error as results of the relativistic perturbations. The magnitudes of the secular variation
+are investigated in terms of the orbital altitude, inclination, and the size of each perturbation force. The numerical simulation rendered in
+this study shows that the secular post-Newtonian perturbations with the magnitude lying beyond the Schwarzschild and the
+Lense-Thirring effects need to be taken into account in current and upcoming space geodesy missions.},
+	author = {Roh, Kyoung-Min and Kopeikin, Sergei M and Cho, Jung-Ho},
+	date-added = {2024-10-09 17:00:43 -0600},
+	date-modified = {2024-10-09 17:01:13 -0600},
+	journal = {Advances in Space Research},
+	number = {11},
+	pages = {2255--2268},
+	publisher = {Elsevier},
+	title = {Numerical simulation of the post-Newtonian equations of motion for the near Earth satellite with an application to the LARES satellite},
+	volume = {58},
+	year = {2016}}
+
+@article{zanardi2016numerical,
+	abstract = {This paper presents the comparison between the numerical and analytical results of a spacecraft attitude propagation for a spin-stabilized satellite. Some external torques are introduced in the equations of the motion and the comparisons are done considering that these torques are acting together, which are: gravity gradient, aerodynamic, solar radiation, magnetic residual and eddy current. In the numerical approach it is used the quaternion to represent the attitude. This numerical approach can be applied for any kind of satellite. The analytical approach is applied directly for a spin-stabilized satellite and the equations of motion are described in terms of the spin velocity, spin axis right ascension and declination angles. An analytical solution of these equations is presented and valid for one orbit period. Applications are developed considering the Brazilian spin-stabilized satellites SCD1 and SCD2. The comparisons are important to validate some simplifications that are required in the analytical approach. The results show that the average components of the external torque are sufficient to observe the main influence of the considered torques.},
+	author = {Zanardi, MC and Orlando, V and Motta, GB and Pelosi, T and Silva, WR},
+	date-added = {2024-10-09 16:59:33 -0600},
+	date-modified = {2024-10-09 16:59:33 -0600},
+	journal = {Computational and Applied Mathematics},
+	pages = {937--949},
+	publisher = {Springer},
+	title = {Numerical and analytical approach for the spin-stabilized satellite attitude propagation},
+	volume = {35},
+	year = {2016}}
+
+@article{klokovcnik2013use,
+	abstract = {Dynamic resonance, arising from commensurate (orbital or rotational) periods
+of satellites or planets with each other, has been a strong force in the development of the solar system. The repetition of conditions over the commensurate periods can result in amplified long-term changes in the positions of the bodies involved. Such resonant phenomena driven by the commensurability between the mean motion of certain artificial Earth satellites and the Earth's rotation originally contributed to the evaluation and assessment of the Stokes parameters (harmonic geopotential coefficients) that specify the Earth's gravitational field. The technique constrains linear combinations of the harmonic coefficients that are of relevant resonant order (lumped coefficients). The attraction of the method eventually dwindled, but the very accurate orbits of CHAMP and GRACE have recently led to more general insights for commensurate orbits applied to satellite geodesy involving the best resolution for all coefficients, not just resonant ones. From the GRACE mission, we learnt how to explain and predict temporary decreases in the resolution and accuracy of derived geopotential parameters, due to passages through low-order commensurabilities, which lead to lowdensity ground-track patterns. For GOCE we suggest how to change a repeat orbit height slightly, to achieve the best feasible recovery of the field parameters derived from on-board gradiometric measurements by direct inversion from the measurements to the harmonic geopotential coefficients, not by the way of lumped coefficients. For orbiters of Mars, we have suggestions which orbits should be avoided. The slow rotation of Venus results in dense ground-tracks and excellent gravitational recovery for almost all orbiters.},
+	author = {Kloko{\v{c}}n{\'\i}k, J and Gooding, RH and Wagner, CA and Kosteleck{\`y}, J and Bezd{\v{e}}k, A},
+	date-added = {2024-10-09 16:55:47 -0600},
+	date-modified = {2024-10-09 16:55:47 -0600},
+	journal = {Surveys in Geophysics},
+	pages = {43--72},
+	publisher = {Springer},
+	title = {The use of resonant orbits in satellite geodesy: a review},
+	volume = {34},
+	year = {2013}}
+
+@article{dickman1990ocean,
+	author = {Dickman, SR},
+	date-added = {2024-10-09 16:50:39 -0600},
+	date-modified = {2024-10-09 16:50:39 -0600},
+	journal = {Marine Geodesy},
+	number = {1},
+	pages = {21--56},
+	publisher = {Taylor \& Francis},
+	title = {Ocean tides for satellite geodesy},
+	volume = {14},
+	year = {1990}}
+
+@book{svehla2018geometrical,
+	author = {Svehla, Drazen},
+	date-added = {2024-10-09 16:48:32 -0600},
+	date-modified = {2024-10-09 16:48:32 -0600},
+	publisher = {Springer},
+	title = {Geometrical theory of satellite orbits and gravity field},
+	year = {2018}}
+
+@article{sneeuw2006dynamic,
+	author = {Sneeuw, Nico},
+	date-added = {2024-10-09 16:47:12 -0600},
+	date-modified = {2024-10-09 16:47:12 -0600},
+	journal = {Lecture notes, Geod{\"a}tisches Institut, Universit{\"a}t Stuttgart},
+	title = {Dynamic satellite geodesy},
+	year = {2006}}
+
+@incollection{betti2005integrated,
+	author = {Betti, Barbara and Sans{\`o}, Fernando},
+	booktitle = {Theory of Satellite Geodesy and Gravity Field Determination},
+	date-added = {2024-10-09 16:46:21 -0600},
+	date-modified = {2024-10-09 16:46:21 -0600},
+	pages = {373--416},
+	publisher = {Springer},
+	title = {The integrated approach to satellite geodesy},
+	year = {2005}}
+
+@book{kaula2013theory,
+	author = {Kaula, William M},
+	date-added = {2024-10-09 16:40:28 -0600},
+	date-modified = {2024-10-09 16:40:28 -0600},
+	publisher = {Courier Corporation},
+	title = {Theory of satellite geodesy: applications of satellites to geodesy},
+	year = {2013}}
 
 @book{moulton1970introduction,
 	abstract = {An unrivaled text in the field of celestial mechanics, Moulton's theoretical work on the prediction and interpretation of celestial phenomena has not been superseded. By providing a general account of all parts of celestial mechanics without an over-full treatment of any single aspect, by stating all the problems in advance, and, where the transformations are long, giving an outline of the steps which must be made, and by noting all the places where assumptions have been introduced or unjustified methods employed, Moulton has insured that his work will be valuable to all who are interested in the subject.

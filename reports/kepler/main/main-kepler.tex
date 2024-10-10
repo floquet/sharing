@@ -1,21 +1,12 @@
+% Compile Pdftex
+% TeXShop > Settings... > Engine > BibTex engine > biber
+
 \documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
 \usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
 \geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
 %\geometry{landscape}                		% Activate for rotated page geometry
 %\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
-								% TeX will automatically convert eps --> pdf in pdflatex		
-\usepackage{amssymb}
-\usepackage[affil-it]{authblk}
-\usepackage{fancyvrb}
-\usepackage{hyperref}
-\usepackage{overpic}
-\usepackage{xcolor}
-%
-\usepackage{listings}
-	\definecolor{textblue}{rgb}{.2,.2,.7}
-	\definecolor{textred}{rgb}{0.54,0,0}
-	\definecolor{textgreen}{rgb}{0,0.43,0}
 
 % personalize environment
 \newcommand{\pGlobal}[0]			{../../../global/}
@@ -26,7 +17,13 @@
 
 %\usepackage[ backend=biber, bibencoding=ascii, style=authoryear, sorting=none ]{biblatex}
 \bibliography{\pGlobalBibliographies orbits.bib}
+%
+\usepackage{listings}
+	\definecolor{textblue}{rgb}{.2,.2,.7}
+	\definecolor{textred}{rgb}{0.54,0,0}
+	\definecolor{textgreen}{rgb}{0,0.43,0}
 
+\newcommand{\angdom}[0]			{\left[ 0, 2\pi \right.)}
 
 \title{Kepler's Law}
 \author{Daniel Topa\\\href{mailto:daniel.topa@hii-tsd.com}{daniel.topa@hii-tsd.com}}
@@ -39,8 +36,6 @@
 \abstract{Kepler's law is a cornerstone of orbital mechanics.}
 \tableofcontents
 
-\cite{bate2020fundamentals}
-
 \section{Overview}
 Kepler's law is a cornerstone of orbital mechanics.
 \begin{enumerate}
@@ -49,6 +44,7 @@ Kepler's law is a cornerstone of orbital mechanics.
 \end{enumerate}
 
 		\input{\pSections sec-geometry}
+		\input{\pSections sec-math}
 		
 		\printbibliography
 			
