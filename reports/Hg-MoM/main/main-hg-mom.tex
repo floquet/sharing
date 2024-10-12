@@ -1,0 +1,79 @@
+% typeset: Pdftex
+% Afterwards compile with pdflatex > bibtex > pdflatex > pdflatex.
+% in TeXShop preferences, changed edit from bibtex to biber
+% beamer likes biber
+% latex likes bibtex
+
+\documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{enumitem}  % list labels A, B, C
+\usepackage{pdfpages}
+
+\bibliography{./sections/radar.bib}
+%\addbibresource{radar.bib}
+%\bibliography{\pSections radar.bib}
+% personalize environment
+\newcommand{\pGlobal}[0]			{../../../global/}
+\newcommand{\pGlobalSetup}[0]		{\pGlobal setup-global/}	
+
+\input{\pGlobalSetup setup-global-reports}
+\input{\pLocalSetup macros}
+
+\addbibresource{\pGlobalBibliographies radar}
+
+
+
+\title{Simulation of \\Radar Profiles for Satellites \\Using Mercury Method of Moments}
+\author{Daniel Topa\\\TopaHIIEmail}
+\affil{\hiiafil}
+
+\begin{document}
+\maketitle
+\abstract{A brief survey of characterizing the three dimensional radar cross section of satellites.}
+\tableofcontents
+
+\section{Overview}
+\cite{topa20200303}
+Working with CAF files, producing output, compressing data.
+\cite{topa-4-20-2024}
+\cite{topa-4-20-2024}
+The goal is to be able to resolve the workings of an executable file exploiting the \elf \ structure show in figures \ref{fig:elf}. The next figure, \ref{fig:elf-II}, shows the relationship between source files, header files, shared objects, and the executable program.
+
+
+
+
+			\input{\pSections sec-overview}
+			%\input{\pSections sec-A-CAD-model}
+			%\input{\pSections sec-B-mesh-sealing}
+			%\input{\pSections sec-C-materials}
+			%\input{\pSections sec-overview}
+			\input{\pSections sec-hg-mom}
+			\input{\pSections sec-learn}
+
+	\printbibliography
+%\nocite
+%\printbibliography
+%\bibliographystyle{thisjournal}
+%\include{bibliography} 
+%\bibliographystyle{vancouver}
+%\bibliography{MonthlyReferences.bib}
+%\bibliography{triangulation.bib}
+%\bibliography{triangulation.bib}
+
+
+\end{document} 
+
+\tiny
+\scriptsize
+\footnotesize
+\small
+\normalsize
+\large
+\Large
+\huge
+\Huge
