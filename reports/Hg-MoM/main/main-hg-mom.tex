@@ -14,7 +14,6 @@
 \usepackage{enumitem}  % list labels A, B, C
 \usepackage{pdfpages}
 
-\bibliography{./sections/radar.bib}
 %\addbibresource{radar.bib}
 %\bibliography{\pSections radar.bib}
 % personalize environment
@@ -24,8 +23,8 @@
 \input{\pGlobalSetup setup-global-reports}
 \input{\pLocalSetup macros}
 
-\addbibresource{\pGlobalBibliographies radar}
-
+\bibliography{\pGlobalBibliographies radar.bib}
+%\addbibresource{\pGlobalBibliographies radar.bib}
 
 
 \title{Simulation of \\Radar Profiles for Satellites \\Using Mercury Method of Moments}
@@ -42,18 +41,15 @@
 Working with CAF files, producing output, compressing data.
 \cite{topa-4-20-2024}
 \cite{topa-4-20-2024}
-The goal is to be able to resolve the workings of an executable file exploiting the \elf \ structure show in figures \ref{fig:elf}. The next figure, \ref{fig:elf-II}, shows the relationship between source files, header files, shared objects, and the executable program.
-
-
-
 
 			\input{\pSections sec-overview}
 			%\input{\pSections sec-A-CAD-model}
 			%\input{\pSections sec-B-mesh-sealing}
 			%\input{\pSections sec-C-materials}
 			%\input{\pSections sec-overview}
-			\input{\pSections sec-hg-mom}
 			\input{\pSections sec-learn}
+			\appendix
+			\input{\pSections sec-hg-mom}
 
 	\printbibliography
 %\nocite
