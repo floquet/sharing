@@ -18,10 +18,22 @@
 %\usepackage[ backend=biber, style=numeric, citestyle=authoryear ]{biblatex}
 %\usepackage[ backend=biber, style=numeric, citestyle=authoryear ]{biblatex}
 \usepackage[ backend = biber,
-    style = authoryear,
-    citestyle = authoryear-ibid,
+	style = authoryear,
+	%citestyle = authoryear-ibid,
+	%citestyle = authoryear,
+	citestyle = ext-authoryear
 ]{biblatex}
-% /Volumes/T7-Touch/repos/github/nursery-slide-decks/beamer/dtra/briefings/z-nuclear-physics/main/nuclear-fission.tex
+\DeclareOuterCiteDelims{parencite}{\bibopenbracket}{\bibclosebracket}
+% https://tex.stackexchange.com/questions/24501/biblatex-enumerating-sorted-bibliography-using-authoryear-ibid-style
+\defbibenvironment{bibliography}
+  {\enumerate
+     {}
+     {\setlength{\leftmargin}{\bibhang}%
+      \setlength{\itemindent}{-\leftmargin}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}}
+  {\endenumerate}
+  {\item}
 %\usepackage{cancel}
 \usepackage{colortbl}
 \usepackage{graphicx}

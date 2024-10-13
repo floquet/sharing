@@ -1,0 +1,95 @@
+% \input{\pathsections "thm normal equations solution"}
+
+\begin{thm}[Equivalence of solutions]
+
+If $x_{N}$, a solution to normal equations exists, it must be equal to the least squares solution $x_{LS}$:
+\begin{equation*}
+	x_{LS} =  x_{N}.
+%\label{eq:}
+\end{equation*}
+\label{thm:normal equations}
+\end{thm}
+
+%   +   +   +   +   +   +   +   +   +   +
+
+\begin{proof}
+
+By construction, the least squares minimizers
+\begin{equation}
+	x_{LS} = \argmin_{x\in\mathbb{C}^{n}} \normt{\mathbf{A}\,x-b},
+\label{eq:definition xls}
+\end{equation}
+define the least total error,
+\begin{equation}
+	t^{2} = \normts{\mathbf{A}\,x_{LS} - b}.
+\end{equation}
+Using the last fact and the Art of the Propitious Zero ($\mathbf{A}x_{N} - \mathbf{A}x_{N} = \mathbf{0}$) to introduce $x_{N}$ thereby crafting one equation with both $x_{LS}$ and $x_{N}$.
+%
+\begin{equation*}
+	\begin{split}
+		t^{2} 
+		&= \normts{\mathbf{A}\,x_{LS} - b} \\
+		&= \normts{\mathbf{A}\,x_{LS} + \paren{ \mathbf{A}x_{N} - \mathbf{A}x_{N} } - b} 
+		= \normts{\mathbf{A} \paren{ x_{LS} - x_{N} } + \mathbf{A}x_{N} - b}.
+	\end{split}
+\end{equation*}
+%
+By Pythagoras,
+%
+\begin{equation*}
+	\begin{split}
+	t^{2} = &\normts{ \mathbf{A} \paren{ x_{LS} - x_{N} } } 
+		 + \normts{ \mathbf{A}x_{N} - b } \\
+		&+ \paren{ \mathbf{A} \paren{ x_{LS} - x_{N} } }^{*} \paren{ \mathbf{A}x_{N} - b }
+		 + \paren{ \mathbf{A}x_{N} - b }^{*} \paren{ \mathbf{A} \paren{ x_{LS} - x_{N} } }
+	\end{split}
+%\label{eq:}
+\end{equation*}
+The first cross term vanishes because of condition \eqref{eq:definition normal xn}:
+%
+\begin{equation*}
+	%\begin{split}
+	\paren{ \mathbf{A} \paren{ x_{LS} - x_{N} } }^{*} \paren{ \mathbf{A}x_{N} - b }
+	= \paren{ x_{LS} - x_{N} }^{*} \mathbf{A}^{*} \paren{ \mathbf{A}x_{N} - b } = \mathbf{0}.
+	%\end{split}
+%\label{eq:}
+\end{equation*}
+%
+Because $\mathbf{0}^{*} = \mathbf{0}$, showing that the conjugate of the second cross term is $\mathbf{0}$ implies that the term itself is $\mathbf{0}$:
+%
+\begin{equation*}
+	\paren{\paren{ \mathbf{A}x_{N} - b }^{*} \mathbf{A} \paren{ x_{LS} - x_{N} }}^{*}
+	= \paren{ x_{LS} - x_{N} }^{*} \mathbf{A}^{*} \paren{ \mathbf{A}x_{N} - b } = \mathbf{0}^{*} = \mathbf{0}
+%\label{eq:}
+\end{equation*}
+The least total squared error reduces to
+\begin{equation*}
+	\begin{split}
+	t^{2} = \normts{ \mathbf{A}x_{N} - b } + \normts{ \mathbf{A} \paren{ x_{LS} - x_{N} } } \\
+	\end{split}
+%\label{eq:}
+\end{equation*}
+%
+Argue that the right--hand side is the sum of two non-negative numbers. This constrains $\normts{ \mathbf{A}x_{N} - b }$ to the extremal value of $t^{2}$, which implies an equivalence between $x_{LS}$ and $x_{N}$ via equation \eqref{eq:definition xls}. But this is not an equality, as, for example, $x_{N}$ may have differing null space contributions. The desired equality follows from the second term
+%
+\begin{equation*}
+		\normts{ \mathbf{A} \paren{ x_{LS} - x_{N} } } = \mathbf{0} 
+		\qquad \implies \qquad 
+		x_{LS} - x_{N} = \mathbf{0}.
+%\label{eq:}
+\end{equation*}
+%
+%
+Therefore, we must have
+%
+\begin{equation*}
+	x_{LS} =  x_{N}.
+%\label{eq:}
+\end{equation*}
+%
+
+%
+\end{proof}
+
+
+\endinput %   =   =   =   =   =   =   =   =   =   =   =   =   =   =

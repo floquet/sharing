@@ -1,0 +1,22 @@
+% \input{\pSections "ssec-rcsharvester"}
+
+\subsection{\texttt{rcsharvester.f08}}
+\footnotesize{
+\texttt{! harvest the electric field values from the ASCII file *.4112.txt mixed text and numeric lines}\\
+\texttt{! compute the mean total RCS and write these values}\\
+}
+
+\subsubsection{Class Electric Fields: \texttt{m-class-electric-fields.f08}}
+
+\subsubsection{\texttt{m-class-electric-fields.f08}}
+The primary output of the simulation are the electric fields. The input electric field is resolved into two polarization axes: horizontal and vertical. Each of these fields are resolved into horizontal and vertical components creating four complex vectors (line 21) whose length matches the angular sample size.
+
+The class \texttt{m-class-electric-fields.f08} reads the text file and harvests the electric fields eventually passing back a composite value (lines 65-66) for all four components of the scattering return.
+		\input{\pLocal code/"mClassElectricField"}
+
+
+
+\subsubsection{Class Data File: \texttt{m-class-data-file.f08}}
+		\input{\pLocal code/"mClassDataFile"}
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

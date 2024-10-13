@@ -1,0 +1,305 @@
+% \input{\pathsections "sec fourier"}
+
+\section{Fourier Expansion}
+
+\subsection{Approximation Sequence}
+Table \ref{tab:sequence} presents a sequence of increasing order of Fourier approximation to a sample RCS curve $\paren{\nu = 3 \text{ MHz}}$. The last graph, shows a good match to the data set using only eight numbers. The errors are quantified and compared in table \ref{tab:norms}.
+\begin{table}
+	\begin{tabular}{ccc}
+		\includegraphics[ scale = 0.55 ]{\pathgraphics fit-rcs-cos-03-00} & \qquad \qquad &
+		\includegraphics[ scale = 0.55 ]{\pathgraphics fit-rcs-cos-03-01} \\[9pt]
+		\includegraphics[ scale = 0.55 ]{\pathgraphics fit-rcs-cos-03-02} &&
+		\includegraphics[ scale = 0.55 ]{\pathgraphics fit-rcs-cos-03-03} \\[9pt]
+		\includegraphics[ scale = 0.55 ]{\pathgraphics fit-rcs-cos-03-04} &&
+		\includegraphics[ scale = 0.55 ]{\pathgraphics fit-rcs-cos-03-05} \\[9pt]
+		\includegraphics[ scale = 0.55 ]{\pathgraphics fit-rcs-cos-03-06} &&
+		\includegraphics[ scale = 0.55 ]{\pathgraphics fit-rcs-cos-03-07} \\
+	\end{tabular}
+\caption{Approximation sequence for an RCS measurement at $\nu = 3$ MHz. The purple dots are RCS values computed with MoM; the blue line is the trigonometric approximation.}
+\label{tab:sequence}
+\end{table}
+
+\subsection{Why Fourier?}
+What is the best way to approximate information in the cross sections curves shown in figure \ref{tab:sigma-nu}? Given that the data is periodic over the unit circle, 
+\begin{equation}
+	\sigma_{\nu} \paren{\alpha, \beta} = \sigma_{\nu} \paren{\alpha+2\pi, \beta}
+\end{equation}
+an obvious choice is the \href{https://mathworld.wolfram.com/FourierSeries.html}{Fourier series}. For example, a $d$th order approximation can be written as
+\begin{equation}
+	\sigma_{\nu}\paren{\alpha,\beta_{0}=\tfrac{\pi}{12}}  \approx \dfrac{a_{0}}{2} + \sum_{k=1}^{d}a_{k}\cos k\alpha + b_{1}\sin k\alpha.
+\label{eq:model}
+\end{equation}
+This series represents a sequence of oscillations about the mean value.
+
+There are three powerful theoretical reasons which support this choice. The first is the convergence of the series. The \href{Weierstrass Approximation Theorem}{Weierstrass Approximation Theorem} \eqref{thm:Weierstrass} states that the polynomial approximation of smooth curves converges {\it{uniformly}}. That is, we can define a maximum error $\epsilon > 0$ and we are guaranteed the existence of $N \in \mathbb{Z}^{+}$ such that
+\begin{equation}
+	\normi{\sigma_{\nu}\paren{\alpha, \beta_{0}} -  \dfrac{a_{0}}{2} - \sum_{k=1}^{N}a_{k}\cos k\alpha + b_{k}\sin k\alpha} \le \epsilon.
+\end{equation}
+The ability to choice a maximum error is both remarkable and useful. However, the application to trigonometric polynomials, while valid, is not immediate and will be reported later.
+
+The second reason is the \href{https://en.wikipedia.org/wiki/Riesz–Fischer_theorem}{Riesz–Fischer theorem}, \eqref{thm:RieszFischer}. While often cited as foundation proof that the Lebesgue space $L^{2}$ is complete, it also establishes that an infinite series whose terms converge quadratically represents an $L^{2}$ function. And so the amplitudes, the $a$ and $b$ values, will eventually converge at least quadratically.
+
+The final reason is the often-overlooked fact that of all the orthogonal polynomials, only the trigonometric polynomials are topology in both the continuous topology of $L^{2}$ and and the discrete orthogonality of $l^{2}$. Having an orthogonal basis decouples the problem and can be solved mode-by--mode, obviating the need to solve a large linear system.
+
+\subsection{Orthogonality}
+Given non-zero integers $m$ and $n$, the \href{https://mathworld.wolfram.com/FourierSeries.html}{expression of orthogonality} in $L^{2}$ can be written as
+\begin{equation}
+	\begin{split}
+			%
+		\int_{-\pi}^{\pi} \sin \paren{mx} \sin \paren{nx}dx &= \pi \delta^{m}_{n}\\
+			%
+		\int_{-\pi}^{\pi} \cos \paren{mx} \cos \paren{nx} dx &= \pi \delta^{m}_{n}\\
+			%
+		\int_{-\pi}^{\pi} \cos \paren{mx} \sin \paren{nx} dx &= 0\\
+			%
+		\int_{-\pi}^{\pi} \sin \paren{mx} dx &= 0\\
+			%
+		\int_{-\pi}^{\pi} \cos \paren{mx}dx &= 0\\
+			%
+	\end{split}
+\label{eq:orthogonality}
+\end{equation}
+%
+where $\delta^{m}_{n}$ is the \href{https://mathworld.wolfram.com/KroneckerDelta.html}{Kronecker delta} tensor. To complete the toolkit to solve the linear system, recall that
+\begin{equation}
+	\int_{-\pi}^{\pi} 1 dx = 2\pi.
+\end{equation}
+
+The linear system decouples and amplitudes for each mode can be computed independently:
+\begin{equation}
+	\begin{split}
+			%
+		a_{0} &= \tfrac{1}{\pi} \int_{-\pi}^{\pi} f(x) dx \\
+			%
+		a_{k} &= \tfrac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos kx dx \\
+			%
+		b_{k} &= \tfrac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin kx dx \\
+			%
+	\end{split}
+\end{equation}
+where $k=1,2,3,\dots$.
+
+\subsection{Projection}
+Consider the low--order approximation 
+%
+\begin{equation}
+	f\paren{\varphi}  \approx \frac{a_{0}}{2}  + a_{1} \cos \varphi +  a_{2} \cos 2\varphi.
+\label{eq:model}
+\end{equation}
+%
+To compute the amplitudes $a=\left\{a_{0}, a_{1}, a_{2} \right\}$, use Hilbert's \href{https://en.wikipedia.org/wiki/Hilbert_projection_theorem}{projection theorem}, which is \href{http://www.kris-nimark.net/pdf/ProjectionTheorem.pdf}{tantamount} to using the method of least squares. Multiply both sides of the equation by $\cos j \varphi$ and integrate over the domain to isolate the contribution of $a_{j}$. For example, to isolate the component $a_{2}$,
+%
+\begin{equation}
+	\begin{split}
+				%
+		\int_{-\pi}^{\pi}{ f\paren{\varphi}  {\color{blue}{\cos 2\varphi }}} d\varphi  
+			&\approx \int_{-\pi}^{\pi}{ \paren{\frac{a_{0}}{2}  + a_{1} \cos \varphi +  a_{2} {\color{blue}{\cos 2\varphi}} } {\color{blue}{\cos 2\varphi}}} d\varphi. \\
+				%
+			&= a_{2} \int_{-\pi}^{\pi}{ \cos^{2} 2\varphi } d\varphi. \\
+				%
+	\end{split}
+\end{equation}
+%
+The general formula is
+\begin{equation}
+	a_{k} = \frac{1}{\pi} \int_{-\pi}^{\pi} f\paren{\varphi} \cos k\varphi d\varphi, \quad k=1,2,3,\dots
+\label{eq:linear system}
+\end{equation}
+Because the basis functions are orthogonal, the modes are decoupled and the amplitudes can be computed independently.
+
+\subsection{Discrete Topology}
+The continuum formulation in $L^{2}$ is useful for understanding the critical components of the theory and makes a natural starting point for discussing the discrete topology of $l^{2}$. The moment we discretize the problem in a computer code, we switch from the continuum to a discrete space. Out of all the known orthogonal polynomials, only two are orthogonal in both $L^{2}$ and $l^{2}$, and these are the sine and cosine functions. 
+
+However, because of sampling mesh that was used in Mercury MoM, the data vectors are {\it{not}} orthogonal and the amplitudes are found by solving a dense linear system.
+
+\subsection{\label{sec:special-case}Special Case: The Mean}
+The Fourier series resolves a function into successively higher oscillations about a constant value. This constant value is the mean, a least squares solution, and, a valuable bellwether. If the system is orthogonal, the the $a_{0}/2$ term will be the mean. But if the mesh precludes orthogonality, the $a_{0}$ will fluctuate in value for distinct fits.
+
+\subsubsection{The Method of Least Squares}
+Consider the least squares problem of representing a sequence of values by a single number. Intuitively, the number is the average. But it is also a solution to the least squares problem. Start by defining the sum of the squares of the residual errors,
+\begin{equation}
+	r^{2} = \sum_{k=1}^{m} \paren{ \sigma\paren{\alpha_{k},\beta_{0}} - \mu }^{2},
+\end{equation}
+and minimize this quantity with respect to the lone parameter, auspiciously named $\mu$. Using the calculus, the roots of the first derivative are defined as:\footnote{The root is guaranteed to be a minimum as the set of least squares minimizers is a convex set. See theorem \ref{thm:theory convex set}.}
+\begin{equation}
+	D_{\mu} r^{2} = -2 \sum_{k=1}^{m} \paren{ \sigma\paren{\alpha_{k},\beta_{0}} - \mu } = 0.
+\label{eq:min}
+\end{equation}
+Solving \eqref{eq:min} for $\mu$ produces
+\begin{equation}
+	\mu = m^{-1}\sum_{k=1}^{m} \sigma\paren{\alpha_{k},\beta_{0}}.
+\label{eq:mu}
+\end{equation}
+The least squares solution for the parameter $\mu$ is simply the average of the data, the arithmetic mean. Formally, we may think of the mean as the first and dominant term in the Fourier decomposition.
+
+\subsubsection{Moving from continuous topology to discrete topology}
+The continuum formulation translates to discrete spaces using the idea of the integral as a Riemann sum: 
+\begin{equation}
+	\int_{-\pi}^{\pi}{ \cos \paren{j\alpha_{k}} d\alpha } \quad \Rightarrow \quad \sum_{k=1}^{m} \cos \paren{j\alpha_{k}} \Delta_{k}.
+\end{equation}
+Here $\Delta_{k}$, the interval length, corresponds to the Riemann integration measure $d\alpha$. A basic result from the calculus is that the average $\langle f\paren{x} \rangle$ of an integrable function over a finite, ordered interval $G=[a,b]$ is
+\begin{equation}
+	\langle f\paren{x} \rangle = \frac{\int_{b}^{a} f(x) dx }{b-a},
+\end{equation}
+where the interval length $L=b-a$. 
+
+Next, consider the discretized interval $g=[a, b]$
+The connection to the discrete case is clear with the realization that the Mercury MoM results are spaced at regular intervals of $1^{\circ}$, that is,
+$$ \Delta_{k} = \Delta.$$ 
+Then the interval length is
+\begin{equation}
+	L = \sum_{k=1}^{m} \Delta_{k} = \sum_{k=1}^{m}  \Delta = m \Delta.
+\end{equation}
+The average function value is in the same form as the least squares solution in \eqref{eq:mu}:
+\begin{equation}
+	\begin{split}
+		\langle f\paren{x} \rangle_{G} &= \frac{\int_{b}^{a} f(x) dx }{L} ,\\
+		\langle f\paren{x} \rangle_{g} &= \frac{\sum_{k=1}^{m} f(x_{k}) \Delta}{m \Delta} =  m^{-1} \sum_{k=1}^{m} f(x_{k}) .
+	\end{split}
+\end{equation}
+
+\subsection{Linear Independence}
+In an orthogonal system, the frequency modes decouple allowing amplitudes for each frequency to be computed individually. And while the sampling locations (mesh) can be specified to enforce orthogonality, it was not. Without recourse to orthogonality, the solution relies instead upon linear independence. 
+
+Equation \eqref{eq:model} implies a sequence of $m$ equations:
+\begin{equation}
+	\begin{array}{cclclcl}
+			%
+		\frac{a_{0}}{2}  &+ &a_{1} \cos \alpha_{1} &+  &a_{2} \cos 2\alpha_{1} &= &\sigma\paren{\alpha_{1}, \beta_{0}} \\
+			%
+			\vdots && \multicolumn{1}{c}{\vdots} && \multicolumn{1}{c}{\vdots} && \multicolumn{1}{c}{\vdots} \\
+			%
+		\frac{a_{0}}{2}  &+ &a_{1} \cos \alpha_{m} &+  &a_{2} \cos 2\alpha_{m} &= &\sigma\paren{\alpha_{m}, \beta_{0}} \\
+			%
+	\end{array}
+\end{equation}
+
+\subsubsection{Forming the linear system}
+First pose the linear system:
+\begin{equation}
+	\begin{array}{cccc}
+			%
+	\mathbf{A} & a &= & \Sigma \\
+			%
+	\mat{cccc}{
+		1 & \cos \alpha_{1} & \cos 2\alpha_{1} \\
+		\vdots & \vdots & \vdots \\
+		1 & \cos \alpha_{m} & \cos 2\alpha_{m} }
+			%
+		&\mat{c}{ a_{0} \\ a_{1} \\ a_{2} } 
+			%
+		&=
+			%
+		&\mat{c}{ \sigma \paren{\alpha_{1}, \beta_{0}} \\ \vdots \\ \sigma \paren{\alpha_{m}, \beta_{0}} }.
+			%
+	\end{array}
+\end{equation}
+In the continuum, we can use projection ...
+\subsubsection{Posing the normal equations}
+For both $L^{2}$ and $l^{2}$ formulations, pose the normal equations:
+\begin{equation}
+	\mathbf{A}^{*}\mathbf{A} a = \mathbf{A}^{*}\Sigma
+\end{equation}
+where the product matrices are 
+\begin{equation}
+	\begin{split}
+			%
+		\mathbf{A}^{*}\mathbf{A} &=
+		\mat{rrr}{
+		\mathbf{1}\cdot \mathbf{1} & \mathbf{1}\cdot \paren{\cos \alpha} & \mathbf{1}\cdot \paren{\cos 2\alpha} \\
+		\paren{\cos \alpha} \cdot \mathbf{1}  & \paren{\cos \alpha} \cdot  \paren{\cos \alpha}   & \paren{\cos \alpha} \cdot  \paren{\cos 2\alpha} \\
+		\paren{\cos 2\alpha} \cdot \mathbf{1} & \paren{\cos 2\alpha} \cdot  \paren{\cos \alpha} & \paren{\cos 2\alpha} \cdot  \paren{\cos 2\alpha} }, \\
+			%
+		\mathbf{A}^{*}\Sigma &= 
+			%
+		\mat{r}{ \mathbf{1}\cdot \sigma \paren{\alpha, \beta_{0}} \\ 
+			\paren{\cos \alpha} \cdot \sigma \paren{\alpha, \beta_{0}} \\ 
+			\paren{\cos 2\alpha} \cdot \sigma \paren{\alpha, \beta_{0}}}.
+			%
+	\end{split}
+\label{eq:normal-matrices}
+\end{equation}
+The measurement vectors are, for example,
+\begin{equation}
+		\paren{\cos \alpha}^{T} = \paren{ \cos \alpha_{1}, \cos \alpha_{2}, \dots, \cos \alpha_{m}} ,
+\end{equation}
+while the data vector is
+\begin{equation}
+	\sigma \paren{\alpha, \beta_{0}}^{T} = \paren{ \sigma \paren{\alpha_{1}, \beta_{0}}, \sigma \paren{\alpha_{2}, \beta_{0}}, \cdots , \sigma \paren{\alpha_{m}, \beta_{0}} },
+\end{equation}
+and the vector of unit entries is
+\begin{equation}
+	\mathbf{1}^{T} = \underbrace{\paren{ 1, 1, \dots, 1}}_{m\text{ instances}}.
+\end{equation}
+Theorem \ref{thm:normal equations} establishes that if a solution to the normal equations exist, it will be equivalent to the least squares solution. 
+
+\subsection{Solution via the normal equations}
+If the mesh supported orthogonality, the off--diagonal terms would be zero, and the system would then be decoupled. But this was not the case of the data generated for the Sciacca airframe. The solution to the normal equations is 
+\begin{equation}
+	a = \paren{\mathbf{A}^{*}\mathbf{A}}^{-1}  \mathbf{A}^{*}\Sigma.
+\end{equation}
+
+\subsection{Error propagation}
+A great, and, too--often overlooked, power of the method of least squares is the quantitative error factors. In addition to computing the amplitudes, we may also propagate the measurement errors through the computation chain to determine how precisely the amplitudes are known. The general formula for the $\epsilon_{k}$, the error in the parameter $a_{k}$, is
+\begin{equation}
+	\epsilon_{k} = \sqrt{\frac{r\cdot r}{m-n}\paren{\mathbf{A}^{*}\mathbf{A}}^{-1}_{kk}}.
+\end{equation}
+The error depends upon the sum of the squares of the residual errors $(r\cdot r)$, the difference between the number of samples $(m)$, and, the number of fit parameters $(n)$ and the $k$th diagonal term of the inverse of the product matrix $\mathbf{A}^{*}\mathbf{A}$.
+
+Figure \ref{fig:error-bars-25} shows the value of the plotting error bars. Results are shown for a fit of order $d=25$. We can instantly see that the higher order modes, $a_{14}$ and beyond, are statistically indistinguishable from zero. Computer time spent on their computation has been wasted.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[ scale = 1 ]{\pathgraphics error-bars-25}
+	\end{center}
+\caption{A look at the amplitudes for a fit of order $d=25$ shows that the amplitudes $a_{14}$ and higher are statistically indistinguishable from zero. They make no appreciable contribution to the quality of decomposition.}
+\label{fig:error-bars-25}
+\end{figure}
+
+\subsection{Quality of Fit}
+How many nodes are needed to capture the information content of a cross section curve, such as the four shown in table \ref{tab:sigma-nu}? Ultimately the amplitudes will reach quadratic or sub--quadratic convergence which rapidly diminishes contributions from higher frequencies. However, numerical errors intrude which blur the resolution needed to resolve incremental improvements. There are four common ways to evaluate the quality of fit.
+\begin{enumerate}
+	\item Dominance of modes,
+	\item Maximum error, $\normi{r}$ (the norm of the Weierstrass theorem)
+	\item Total error, $\normts{r}$ (least squares)
+	\item error ratio, $a_{k}/\epsilon_{k}$ (signal--to--noise)
+\end{enumerate}
+The plots in table \ref{tab:norms} analyze the cross section at $\nu = 3$ MHz for orders $d=0,1,2 \dots 25$. The cross-hairs show the values used for $d=7$, the final figure for the Fourier decomposition sequence in table \ref{tab:sequence}.
+
+\subsubsection{Dominance of modes}
+Fourier decomposition excels at identifying the strength of the contributions of each term. In the example, the plot showing the strength of contribution for each term in figure \ref{fig:sample-data} will show strong dominance for the mean, and dominance for the $4\alpha$ and $2\alpha$ terms.
+
+\subsubsection{Maximum error}
+The promise of the Weierstrass theorem is uniform convergence to an arbitrary error level, a suggestion to evaluate $\normi{r}$. However, in the presence of numerical errors in the measurements, the error will typically plateau, or perhaps even exhibit a distinct minimum.
+
+\subsubsection{Total error}
+The total error is the quantity minimized in the least squares solution. In the ideal case, this would fall to zero. In following example, the two error norms, $\normi{r}$ and $\normt{r}$, tell nearly identical stories: computations above $d=10$ add little to quality of the fit.
+
+\subsubsection{Signal to noise}
+The error bars provide a measure of signal to noise. As a rapid way to compare modes across the decomposition sequence for $d=0$ to $d=25$, the plot considers the error in the highest mode. The gray shading in the plot is the region where the noise is stronger that the signal.
+
+\begin{table}[htp]
+	\begin{center}
+		\begin{tabular}{ccc}
+				%
+			metric & \qquad & cumulative plot \\\hline
+				%
+			\quad \\
+				%
+			\raisebox{2.7cm}{$\normts{r}$} &&
+				\includegraphics[ scale = 0.7 ]{\pathgraphics aggregate-total-error-03-25} \\[7pt]
+				%
+			\raisebox{2.7cm}{$\normi{r}$} &&
+				\includegraphics[ scale = 0.7 ]{\pathgraphics aggregate-max-error-03-25} \\[7pt]
+				%
+			\raisebox{2.7cm}{$\frac{ a_{d_{max}} }{ \epsilon_{d_{max}} }$} &&
+				\includegraphics[ scale = 0.7 ]{\pathgraphics aggregate-signal-to-noise-03-25}
+				%
+		\end{tabular}
+	\end{center}
+\caption{Graphical comparison of criteria for truncating the Fourier expansion. The crossed lines mark values at $d=7$, the final plot in table \ref{tab:sequence}.}
+\label{tab:norms}
+\end{table}%
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

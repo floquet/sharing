@@ -1,0 +1,91 @@
+root@50a6e4ead5ad:rcsHarvester $ date
+Wed Jun 10 02:05:03 MDT 2020
+root@50a6e4ead5ad:rcsHarvester $ pwd
+/home/dantopa/repos/di2e/rcs/codes/compiled/data-reduction/rcsHarvester
+root@50a6e4ead5ad:rcsHarvester $ make clean
+rm -rf m-text-file-utilities.o m-library-of-constants.o m-class-averages.o m-format-descriptors.o m-class-electric-fields.o m-precision-definitions.o m-class-mesh.o m-process-control.o m-class-data-file.o m-allocations.o m-get-command-line-arguments.o m-file-handling.o m-allocations-special.o rcsHarvester.o rcsHarvester m-text-file-utilities.mod m-library-of-constants.mod m-class-averages.mod m-format-descriptors.mod m-class-electric-fields.mod m-precision-definitions.mod m-class-mesh.mod m-process-control.mod m-class-data-file.mod m-allocations.mod m-get-command-line-arguments.mod m-file-handling.mod m-allocations-special.mod
+rm -f *.mod *.smod *.o *.dSYM # Cray and Mac boogers
+root@50a6e4ead5ad:rcsHarvester $ make debug
+PROGRAM  = rcsHarvester
+PRG_OBJ  = rcsHarvester.o
+SRCS     = m-text-file-utilities.f08 m-library-of-constants.f08 m-class-averages.f08 m-format-descriptors.f08 m-class-electric-fields.f08 m-precision-definitions.f08 m-class-mesh.f08 m-process-control.f08 m-class-data-file.f08 m-allocations.f08 m-get-command-line-arguments.f08 m-file-handling.f08 m-allocations-special.f08 rcsHarvester.f08
+OBJS     = m-text-file-utilities.o m-library-of-constants.o m-class-averages.o m-format-descriptors.o m-class-electric-fields.o m-precision-definitions.o m-class-mesh.o m-process-control.o m-class-data-file.o m-allocations.o m-get-command-line-arguments.o m-file-handling.o m-allocations-special.o rcsHarvester.o
+MODS     = m-text-file-utilities.f08 m-library-of-constants.f08 m-class-averages.f08 m-format-descriptors.f08 m-class-electric-fields.f08 m-precision-definitions.f08 m-class-mesh.f08 m-process-control.f08 m-class-data-file.f08 m-allocations.f08 m-get-command-line-arguments.f08 m-file-handling.f08 m-allocations-special.f08
+MOD_OBJS = m-text-file-utilities.o m-library-of-constants.o m-class-averages.o m-format-descriptors.o m-class-electric-fields.o m-precision-definitions.o m-class-mesh.o m-process-control.o m-class-data-file.o m-allocations.o m-get-command-line-arguments.o m-file-handling.o m-allocations-special.o
+root@50a6e4ead5ad:rcsHarvester $ make
+gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-file-handling.o m-file-handling.f08
+gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-format-descriptors.o m-format-descriptors.f08
+gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-precision-definitions.o m-precision-definitions.f08
+gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-library-of-constants.o m-library-of-constants.f08
+gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-text-file-utilities.o m-text-file-utilities.f08
+gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-allocations.o m-allocations.f08
+gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-class-averages.o m-class-averages.f08
+gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-class-electric-fields.o m-class-electric-fields.f08
+gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-class-mesh.o m-class-mesh.f08
+gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-allocations-special.o m-allocations-special.f08
+gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-class-data-file.o m-class-data-file.f08
+gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-process-control.o m-process-control.f08
+gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-get-command-line-arguments.o m-get-command-line-arguments.f08
+gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o rcsHarvester.o rcsHarvester.f08
+gfortran -g -o rcsHarvester m-text-file-utilities.o m-library-of-constants.o m-class-averages.o m-format-descriptors.o m-class-electric-fields.o m-precision-definitions.o m-class-mesh.o m-process-control.o m-class-data-file.o m-allocations.o m-get-command-line-arguments.o m-file-handling.o m-allocations-special.o rcsHarvester.o
+root@50a6e4ead5ad:rcsHarvester $ ./rcsHarvester PTW.4112.txt 
+looking for file = 'PTW.4112.txt'
+
+* Properties of frequency mesh:
+* minimum value = 3.00000000, maximum value = 30.0000000, length = 27.0000000
+* number of samples = 28, interval size = 1.00000000
+
+* Properties of azimuth   mesh:
+* minimum value = -180.000000, maximum value = 179.000000, length = 359.000000
+* number of samples = 359, interval size = 1.00279331
+
+#  #  Dimensions for RCS data container  #  #
+
+# Expected dimensions:
+# Number of radar frequencies scanned by MoM:   28
+# Number of azimuth   angles scanned by MoM:  359
+
+# Container MoM 4112.txt file: rcs_table
+# Free angle dimension = 359 indices run from 1 to 359
+# Frequency dimension  = 28 indices run from 1 to 28
+
+
+001. nu = 3.00000000, mean RCS = 34.9792328 +/- 5.10723639, min = 24.7734604, max = 43.0003891
+002. nu = 4.00000000, mean RCS = 19.7738819 +/- 8.44818115, min = 9.37674809, max = 38.2962112
+003. nu = 5.00000000, mean RCS = 17.3574200 +/- 10.2592402, min = 2.36286879, max = 42.9070320
+004. nu = 6.00000000, mean RCS = 17.1599903 +/- 9.95218182, min = 3.29021597, max = 42.5019569
+005. nu = 7.00000000, mean RCS = 17.3367081 +/- 8.16858768, min = 4.08317804, max = 33.2611084
+006. nu = 8.00000000, mean RCS = 17.6049347 +/- 8.81353188, min = 3.91480517, max = 37.6930656
+007. nu = 9.00000000, mean RCS = 18.9737129 +/- 8.64087391, min = 3.83048701, max = 40.5795441
+008. nu = 10.0000000, mean RCS = 19.1813145 +/- 8.98396397, min = 3.11521459, max = 40.0987778
+009. nu = 11.0000000, mean RCS = 18.1348076 +/- 9.70423508, min = 2.04725647, max = 42.9297676
+010. nu = 12.0000000, mean RCS = 16.6377831 +/- 9.59182358, min = 1.40513146, max = 45.8265343
+011. nu = 13.0000000, mean RCS = 15.2460938 +/- 9.99771214, min = 1.32784784, max = 49.6455498
+012. nu = 14.0000000, mean RCS = 15.1000309 +/- 10.5654287, min = 3.45790482, max = 54.1106415
+013. nu = 15.0000000, mean RCS = 16.1887951 +/- 10.5160027, min = 2.72467566, max = 57.6336060
+014. nu = 16.0000000, mean RCS = 15.6609602 +/- 10.7402334, min = 4.02744389, max = 58.9371300
+015. nu = 17.0000000, mean RCS = 14.5332041 +/- 10.6773024, min = 1.23466921, max = 56.9766998
+016. nu = 18.0000000, mean RCS = 14.8710403 +/- 9.79068756, min = 3.44516802, max = 53.0295334
+017. nu = 19.0000000, mean RCS = 14.8027716 +/- 8.30402374, min = 5.12848616, max = 49.2889481
+018. nu = 20.0000000, mean RCS = 13.7675619 +/- 8.29828835, min = 1.89307570, max = 47.1511612
+019. nu = 21.0000000, mean RCS = 13.9229898 +/- 8.05021572, min = 2.14474630, max = 46.9245529
+020. nu = 22.0000000, mean RCS = 13.6850882 +/- 7.94314003, min = 5.27641535, max = 47.7436523
+021. nu = 23.0000000, mean RCS = 12.4501944 +/- 8.07779884, min = 4.35099936, max = 48.5288925
+022. nu = 24.0000000, mean RCS = 12.7458601 +/- 8.26840591, min = 4.63831425, max = 49.5297089
+023. nu = 25.0000000, mean RCS = 13.1703053 +/- 8.83734131, min = 2.72305298, max = 51.7446899
+024. nu = 26.0000000, mean RCS = 12.7499523 +/- 8.84589100, min = 2.18437338, max = 54.5804138
+025. nu = 27.0000000, mean RCS = 12.5845108 +/- 9.26680851, min = 2.29281425, max = 56.0836716
+026. nu = 28.0000000, mean RCS = 13.0188522 +/- 9.05606461, min = 2.24808407, max = 55.6427231
+027. nu = 29.0000000, mean RCS = 12.5468473 +/- 8.55855942, min = 1.60190940, max = 55.1237144
+028. nu = 30.0000000, mean RCS = 12.3475437 +/- 8.86401463, min = 2.50587130, max = 57.0720596
+
+Aggregate for all RCS measurements: mean = 15.9475574 +/- 10.0444765, min = 1.23466921, max = 58.9371300
+
+ - - - - - - - - -
+
+  2020-06-10  2:05:49
+
+  compiler version: GCC version 10.1.0.
+  compiler options: -fdiagnostics-color=auto -mtune=generic -march=x86-64 -auxbase-strip rcsHarvester.o -g -Og -Wpedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -finit-derived.
+
+  STOP Successful run for "rcsHarvester.f08."

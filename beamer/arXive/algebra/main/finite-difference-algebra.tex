@@ -1,0 +1,215 @@
+\documentclass[10pt, oneside]{article}
+
+\usepackage						{amsmath}
+\usepackage						{amssymb}
+\usepackage						{colortbl}
+\usepackage						{geometry}
+	\geometry{letterpaper}
+\usepackage						{graphicx}
+\usepackage[parfill]					{parskip}
+\usepackage[bookmarksnumbered=true]	{hyperref}
+	\hypersetup{
+		colorlinks = true,
+		linkcolor = blue,
+		anchorcolor = blue,
+		citecolor = blue,
+		filecolor = blue,
+		urlcolor = blue}
+
+\usepackage[final]					{pdfpages}
+\usepackage[]						{xcolor}
+\usepackage[printwatermark]			{xwatermark}
+%	\newwatermark[allpages,color=red!10,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+
+% directory structure
+\newcommand{\pathgraphics}[0]	{../graphics/}
+\newcommand{\pathsections}[0]	{../sections/}
+\newcommand{\pathtables}[0]		{../tables/}
+\newcommand{\pathtext}[0]		{../text/}
+\newcommand{\pathpdf}[0]		{../pdf/}
+
+% shortcuts
+\newcommand{\brac}[1]			{ \left[  #1 \right] }
+\newcommand{\paren}[1]			{ \left(  #1 \right) }
+
+\title{Analysis of a Finite Difference Scheme for STC}
+\author{\href{mailto:daniel.topa@ertcorp.com}{Daniel Topa}\\\href{https://www.ertcorp.com/}{ERT Corp}\\Albuquerque, NM}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\abstract{A new finite difference scheme for the STC model is quickly analyzed to clarify the relationship between the discrete centered-difference derivative \texttt{nx1} and a reformulation \texttt{nx2}. Sufficient details are provided to make the report useful as an independent check.}
+
+\section{Finite Difference Scheme} % % %
+
+\subsection{Inputs} % %
+A finite difference scheme was recorded in the attached spreadsheet \texttt{finite-difference}. Unfortunately, the attachment excludes the algebraic relations between the columns. However, a Mathematica notebook was composed to recreate the algebra, and the attached file \texttt{log-01.nb} explicitly details the relationship between relevant parameters. The spreadsheet features explicit entries for $a$, $b$, $\Delta$, and, $x_{0}$ to allow for numerical experimentation.
+
+\subsection{Mesh} % %
+The mesh presented is an equipartition of the domain $x\in\brac{0,600}$ with an interval size of $\Delta = 15$. The domain is composed of the set of points
+\begin{equation}
+	x = \left\{x_{k}\right\} _{k=0}^{40 }= \left\{k \Delta \right\} _{k=0}^{40 }, \qquad k=0,1,2,\dots 40.
+\end{equation}
+
+\subsection{Functions of interest} % %
+The quantity \texttt{nx1} represents a centered difference formulation of the derivative $G'(x)$ while the quantity \texttt{nx2} is intended as a new formulation which suppresses large spikes in velocity. The foundation function is of Gaussian form:
+\begin{equation}
+	G(x) = a e^{-bx^{2}},
+\end{equation}
+with the parameters given as $a=10^{14}$ and $b=1/5000$. For clarity, the Gaussian quantity \texttt{nx1} is called $G(x)$.
+
+The goal of the analysis is to explore the relationship between the two putatively equivalent terms 
+$$ \frac{G\paren{x + \Delta} - G\paren{x - \Delta}}{(x + \Delta) - (x - \Delta)}  \qquad \text{and} \qquad 
+G\paren{x + \Delta}  \paren{\frac{\ln G\paren{x + \Delta} - \ln G\paren{x - \Delta}} {(x + \Delta) - (x - \Delta)}}$$
+which we will see has a leading order equivalence.
+
+Start by observing that the denominators evaluate to the same constant 
+$$(x + \Delta) - (x - \Delta) = 2\Delta,$$
+and then define the functions $\xi(x)$, the classic discrete derivative, and $\eta(x)$, the reformulation:
+\begin{equation}
+	\begin{split}
+		\xi (x) &= \frac {G\paren{x + \Delta} - G\paren{x - \Delta}} {2\Delta}, \\
+		\eta (x) &= \frac {G\paren{x + \Delta}} {2\Delta} \paren{\ln G\paren{x + \Delta} - \ln G\paren{x - \Delta}}.
+	\end{split}
+\label{eq:both}
+\end{equation}
+
+\section{Analysis} % % %
+The analysis entails computing series expansions for the two forms and comparing terms.
+
+\subsection{The Function $\xi(x)$}
+Using the identity 
+\begin{equation}
+	\paren{x \pm \Delta}^{2} = x^{2} \mp 2\Delta x + \Delta^{2},
+\end{equation}
+the first function becomes
+\begin{equation}
+	\begin{split}
+		\xi (x) &= \frac{G\paren{x + \Delta} - G\paren{x - \Delta}} {2\Delta} \\
+			&=  \frac{a}{\Delta} e^{-b\paren{x^{2} +\Delta^{2}}} \paren{ e^{-2b\Delta x} - e^{2b\Delta x} }.
+	\end{split}
+\end{equation}
+Simplification produces a form amenable to series expansion, a constant, an exponential function and the hyperbolic sine:
+\begin{equation}
+	\xi (x) = \paren{-\frac{2a}{\Delta} e^{-b\Delta^{2}}} e^{-bx^{2}} \sinh \paren{2\Delta x}
+\label{eq:xi}
+\end{equation}
+
+\subsection{The Function $\eta(x)$}
+The reformulation of the derivative uses the difference of the logarithmic terms:
+\begin{equation}
+	\begin{split}
+		\ln G\paren{x + \Delta} - \ln G\paren{x - \Delta} 
+			&= \paren{a - b \paren{x+\Delta}^{2}} - \paren{a - b \paren{x-\Delta}^{2}} \\
+			&= -b \paren{\paren{x+\Delta}^{2} - \paren{x-\Delta}^{2}} \\
+			&= -4b\Delta x
+	\end{split}
+\end{equation}
+Use this identity in \eqref{eq:both} and reduce the function to a constant multiplying an exponential function:
+\begin{equation}
+	\begin{split}
+		\eta ( x )  &= -4b\Delta x \frac {G\paren{x + \Delta}} {2\Delta} \\
+			&= -2abx e^{-b\paren{x^{2}+\Delta^{2}-2\Delta x}} \\
+			&= \paren{-2abx e^{-b\Delta^{2}}} e^{-b\paren{x^{2}-2\Delta x}}
+	\end{split}
+\label{eq:eta}
+\end{equation}
+
+\subsection{Series expansions}
+The equivalence of the two functions is determined by a term--by--term comparison of their respective expansions. Fortunately, we only need to recall a single series expansion, and it is
+\begin{equation}
+	e^{x} = 1 + x + \frac{1}{2!}x^{2} + \frac{1}{3!}x^{3} + \dots = 1 + \sum_{k=1}^{\infty} \frac{x^{k}}{k!}.
+\label{eq:primus}
+\end{equation}
+
+Two needed identities follow from this formulation. The first is the Gaussian function:
+\begin{equation}
+	e^{-b x^{2}} = 1 - bx^{2} + \frac{1}{2!}b^{2}x^{4} - \frac{1}{3!}b^{3}x^{6} + \dots = 1 + \sum_{k=1}^{\infty} (-1)^{k}\frac{b^{k}x^{2k}}{k!},
+\label{eq:secundus}
+\end{equation}
+the second, the hyperbolic sine function
+\begin{equation}
+	\begin{split}
+		\dfrac{1}{2} \paren{e^{x} - e^{-x}} 
+			&= \dfrac{1}{2} \paren{1 + x + \frac{1}{2!}x^{2} + \frac{1}{3!}x^{3} + \dots } - \dfrac{1}{2} \paren{1 - x + \frac{1}{2!}x^{2} - \frac{1}{3!}x^{3} + \dots} \\
+			&= x + \frac{x^{3}}{3!}  + \frac{x^{5}}{5!} + \dots \\
+			&= \sum_{k=1}^{\infty} \frac{x^{2k-1}}{\paren{2k-1}!}.
+	\end{split}
+\label{eq:tertius}
+\end{equation}
+
+\subsection{Comparing $\xi\paren{x}$ to $\eta\paren{x}$}
+To reduce algebraic clutter for both functions, define the constant
+\begin{equation}
+	\alpha = ab e^{-b\Delta^{2}}.
+\end{equation}
+
+\subsubsection{Leading order terms for $\xi(x)$}
+Continue with the form of $\xi(x)$ given in \eqref{eq:xi}. The two expansions to be multiplied are \eqref{eq:secundus} and \eqref{eq:tertius}:
+\begin{equation}
+	\begin{split}
+		\xi(x) &= -\frac{\alpha}{b\Delta}  e^{-bx^{2}}\sinh \paren{2b\Delta x}  \\
+			&= 	-\paren{ \frac{\alpha} {b\Delta} }
+				\paren{1 - bx^{2} + \frac{1}{2!}b^{2}x^{4} + \mathcal{O}\paren{x^{6}}}
+				\paren{2b\Delta x + \frac{8b^{3}\Delta^{3}}{3!}x^{3}  + \frac{32b^{5}\Delta^{5}}{5!}x^{5} + \mathcal{O}\paren{x^{7}}} \\
+			&=	-\paren{ \frac{\alpha} {b\Delta} } 
+				\paren{2b\Delta x - 2b^{2}\Delta x^{3} + \frac{4b^{3}\Delta^{3}}{3}x^{3} + \mathcal{O}\paren{x^{4}}} \\
+	\end{split}
+\label{eq:argon}
+\end{equation}
+which reduces to:
+\begin{equation}
+	\boxed{
+	\xi(x)  = -2 \alpha x + 2\alpha b \paren{1 - \tfrac{2}{3}b\Delta^{2}}x^{3} + \mathcal{O}\paren{x^{4}}
+	}
+\label{eq:xi-final}
+\end{equation}
+
+\subsubsection{Leading order terms for $\eta(x)$}
+Restate \eqref{eq:eta} using the parameter $\alpha$ and decompose the function into a product of basic expansions (\eqref{eq:primus} and \eqref{eq:secundus}):
+\begin{equation}
+	\begin{split}
+		\eta (x) &= -2\alpha x e^{-b\paren{x^{2}-2\Delta x}} \\
+				&= -2\alpha x \paren{e^{-bx^{2}}} \paren{e^{2b\Delta x}} \\
+				&= -2\alpha x
+					\paren{1 - bx^{2} + \frac{1}{2!}b^{2}x^{4} + \mathcal{O}\paren{x^{6}}}
+					\paren{1 + 2b\Delta x + 2b^{2}\Delta^{2} x^{2} + \frac{4}{3}b^{3}\Delta^{3}x^{3} + \mathcal{O}\paren{x^{4}}} \\
+				&= -2\alpha x \paren{1+2b\Delta x -bx^{2} + 2b^{2}\Delta^{2} x^{2} - 2\Delta b^{2}x^{3} + \frac{4}{3}b^{3}\Delta^{3}x^{3}} + \mathcal{O}\paren{x^{4}}.
+	\end{split}
+\end{equation}
+The leading order terms are
+\begin{equation}
+	\boxed{
+	\eta(x)  = -2 \alpha x + 4\alpha b \Delta x^{2}  + 2\alpha b \Delta \paren{1 - 2b\Delta^{2}} x^{3} + \mathcal{O}\paren{x^{4}}
+	}
+\label{eq:eta-final}
+\end{equation}
+
+\section{Results} % % %
+Equations \eqref{eq:xi-final} and \eqref{eq:eta-final} establish a leading order equivalence between the functions $\xi(x)$ and $\eta(x)$. The issue is when will the errors dominate. The leading terms in the error are
+\begin{equation}
+	\xi(x) - \eta(x) = -4 \alpha b \Delta x^{2} + \tfrac{8}{3} \alpha b^{2} \Delta^{2} x^{3} + \mathcal{O}(x^{4}).
+\label{eq:error}
+\end{equation}
+This functions is plotted in figure \ref{fig:example}
+
+The constant term
+\begin{equation}
+	\alpha = ab e^{-b\Delta^{2}} \approx 1.91199 \times 10^{10},
+\end{equation}
+and the factor $b$ controls the growth of the error term as the terms can be thought of as $\frac{ \Delta x^{2} } { 5000 }$. But the error will grow quickly if the maximum value of $x$ increases or $b$ decreases.
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+	\centering
+	\includegraphics[ width = 4in ]{\pathgraphics approximation-error} 
+	\caption{The error term in \eqref{eq:error}. Positive values are plotted in blue; the absolute value of the negative terms is plotted in red.}
+\label{fig:example}
+\end{figure}
+
+
+\section{PDF Attachments} % % %
+\includepdf[]{\pathpdf Finite-differences}
+\includepdf[pages=-]{\pathpdf log-01}
+
+
+\end{document}  

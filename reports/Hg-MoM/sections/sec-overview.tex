@@ -1,6 +1,54 @@
 % \input{\pSections "sec-gmat"}
 
-\section{Overview}
+\section{Overview: Modeling Radar Cross Section}
+
+%     %     %     %     %     %     %     %     %
+\subsection{Radar}
+Wave speed equation
+		%
+\begin{equation}
+	\lambda \nu = c
+\label{eq:wave-speed}
+\end{equation}
+		%
+
+\begin{table}[htp]
+\begin{center}
+\begin{tabular}{lcc
+}
+	%
+	band & \multicolumn{1}{c}{$\nu$} & \multicolumn{1}{c}{$\lambda$} \\\hline
+	%
+	HF & $3-30$ MHz & $10-1$ m\\
+	UHF & $30-300$ MHz & $0.1 - 0.01$ m\\
+	VHF & $300 - 1000$ MHz & $0.01 - 0.03$ m\\
+	L & $1 - 2$ GHz & $30 - 15$ mm \\
+	S & $2 - 4$ GHz & $15 - 7.5$ mm  \\
+	C & $4 - 8$ GHz & $7.5 - 3.7$ mm  \\
+	X & $8 - 12$ GHz & $3.7 - 2.5$ mm  \\
+	Ku & $12 - 18$ GHz & $2.5 - 1.7$ mm  \\
+	K & $18 - 27$ GHz & $1.7 - 1.1$ mm  \\
+	Ka & $27 - 40$ GHz & $1.1 - 0.75$ mm  \\
+	V & $40 - 75$ GHz & $0.75 - 0.4$ mm  \\
+	W & $75 - 110$ GHz & $0.4 - 0.27$ mm  \\
+	mm & $110 - 300$ GHz & $0.27 - 0.1$ mm  \\
+	%
+\end{tabular}
+\caption{IEEE Standard Designations for Radar Bands \cite{bruder2003ieee}.}
+\end{center}
+\label{tab:wavespeed}
+\end{table}%
+
+
+\begin{enumerate}[label=(\Alph*)]
+	\item Build a CAD model of the satellite \texttt(*.cad)
+	\item Seal the CAD mesh
+	\item Create geometry file \texttt(*.geo)
+	\item Irradiate object with Mercury MoM
+	\item Harvest backscatter
+	\item Construct RCS
+	\item Resolve RCS measurements into spherical harmonics
+\end{enumerate}
 
 %     %     %     %     %     %     %     %     %
 \subsection{About}

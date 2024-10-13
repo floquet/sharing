@@ -8,7 +8,7 @@
 \usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
 \geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
 %\geometry{landscape}                		% Activate for rotated page geometry
-\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
 								% TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{enumitem}  % list labels A, B, C
@@ -22,9 +22,30 @@
 
 \input{\pGlobalSetup setup-global-reports}
 \input{\pLocalSetup macros}
-
 \bibliography{\pGlobalBibliographies radar.bib}
 %\addbibresource{\pGlobalBibliographies radar.bib}
+%
+\usepackage{listings}
+	\definecolor{textblue}{rgb}{.2,.2,.7}
+	\definecolor{textred}{rgb}{0.54,0,0}
+	\definecolor{textgreen}{rgb}{0,0.43,0}
+
+
+\lstset{language=Fortran, 
+numbers=left, 
+numberstyle=\tiny, 
+stepnumber=1,
+numbersep=5pt, 
+tabsize=4,
+basicstyle=\ttfamily,
+keywordstyle=\color{textblue},
+commentstyle=\color{textred},   
+stringstyle=\color{textgreen},
+frame=none,                    
+columns=fullflexible,
+keepspaces=true,
+xleftmargin=\parindent,
+showstringspaces=false}
 
 
 \title{Simulation of \\Radar Profiles for Satellites \\Using Mercury Method of Moments}
@@ -37,10 +58,11 @@
 \tableofcontents
 
 \section{Overview}
-\cite{topa20200303}
+\autocite{topa20200303}
+\parencite{topa20200303}
 Working with CAF files, producing output, compressing data.
 \cite{topa-4-20-2024}
-\cite{topa-4-20-2024}
+\textcite{topa-4-20-2024}
 
 			\input{\pSections sec-overview}
 			%\input{\pSections sec-A-CAD-model}
@@ -50,7 +72,9 @@ Working with CAF files, producing output, compressing data.
 			\input{\pSections sec-learn}
 			\appendix
 			\input{\pSections sec-hg-mom}
-
+			\input{\pSections sec-hg-mom-data}
+			\input{\pSections "sec-hg-mom-tools"}
+			
 	\printbibliography
 %\nocite
 %\printbibliography

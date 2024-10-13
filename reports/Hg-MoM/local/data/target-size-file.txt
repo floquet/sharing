@@ -1,0 +1,26 @@
+--| MMoM runs on WAVENUMBER in 1/meters       :       0.0628754
+
+---| SURFACE SIE |---:
+
+---| SIE File                             :PTW.facet
+---| SIE File Type                        :        ACAD
+---| Input SIE Units                      :          MM
+---| Number of Triangles                  :        3544
+---| Area                                 :   1.632E+03
+---| Surface Area in square lambda        : 163.378E-03
+---| Edge Length in lambda (average)      :     0.01041
+---| RWG Edges per square lambda          :       32538
+---| Number of Tri with Area/sqWL < 5.E-5 :           0
+
+
+---| Model Size :
+---| vMin   (x,y,z) :  0.00     -20.9     -3.05
+---| vMax   (x,y,z) :  44.5      20.9      3.05
+---| vCenter(x,y,z) :  22.3      0.00    -0.346E-05
+---| BoxDiagonal    :  61.4
+
+
+---| Model Size in Lambda:
+---| vMin   (x,y,z) :  0.00    -0.209    -0.305E-01
+---| vMax   (x,y,z) : 0.445     0.209     0.305E-01
+---| BoxDiagonal    : 0.614

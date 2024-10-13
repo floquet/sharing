@@ -1,0 +1,75 @@
+% \input{\pathsections "sec foundation"}
+
+\section{Foundation}
+
+\subsection{Problem statement}
+One method to enhance probability of detection in the AFCAP dashboard is to improve the fidelity of the radar cross section (RCS). Currently, the  
+radar cross section is a the scalar value, a constant.\footnote{As seen in \S \ref{sec:special-case}, the offset term dominates in the least squares approximation sequence.} What is the best way to include a more detailed RCS computed from a numerical code such as Mercury MoM?
+
+\subsection{Simulation}
+To start the exploration, an elementary aircraft model, the Sciacca airframe, shown in figure \ref{fig:ptw}, was created for use in Mercury MoM. The simplicity of the model evinces the resolution of the radar frequencies of interest:  3 Mhz -- 30 MHz, corresponding to wavelengths of 100 m -- 10 m. 
+%
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[ width = 4.75in ]{\pathgraphics Sciacca-airframe}
+		\caption{Sciacca airframe for simplistic RCS modelling.}
+\end{center}
+\label{fig:ptw}
+\end{figure}
+%
+\subsection{Coordinate system}
+The coordinate system is based upon the \href{https://en.wikipedia.org/wiki/Aircraft_principal_axes}{aircraft principal axes}. The yaw angle is $\alpha$, the pitch angle $\beta$ as shown in table \ref{tab:yaw-pitch}. The pitch is also referred to as elevation, and will be fixed at $30^{\circ}$.
+%
+\begin{table}[htp]
+	\begin{center}
+		\begin{tabular}{cc}
+				%
+			Yaw, $\alpha$ & Pitch, $\beta$  \\\hline
+				%
+			\includegraphics[ scale = 1.0 ]{\pathgraphics alpha-disk} &
+			\includegraphics[ scale = 1.0 ]{\pathgraphics beta-disk} \\
+				%
+		\end{tabular}
+	\end{center}
+\caption{The aircraft principle angles showing yaw $\paren{\alpha}$ and pitch $\paren{\beta}$.}
+\label{tab:yaw-pitch}
+\end{table}%
+
+\subsection{Simulation results}
+Figure \ref{fig:mom} is a graphical depiction of the RCS computations from the Mercury MoM simulation for the Sciacca airframe. The simulation is based on the input frequency $\nu$ in MHz and was constrained to the integer sequence $\left\{ 3, 4, \dots, 30 \right\}$. 
+
+Physical intuition is aided by showing the corresponding wavelength range. The linear scale of the frequency $\paren{\nu}$ is connected to the hyperbolic scale of the wavelength  $\paren{\lambda}$ using:
+\begin{equation}
+	\lambda \nu = c.
+\end{equation}
+%
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[ width = 5.75in ]{\pathgraphics "ptw-rcs"}
+		\caption{A sample calculation in Mercury MoM showing the computed value for the mean total radar cross section as a function of frequency.}
+\end{center}
+\label{fig:mom}
+\end{figure}
+%
+%\begin{figure}[htbp]
+%	\begin{center}
+%		\includegraphics[ width = 5.75in ]{\pathgraphics optimumFrequencyMap}
+%		\caption{Current state of the dashboard showing RCS choices.}
+%\end{center}
+%\label{fig:dash}
+%\end{figure}
+
+Table \ref{tab:sigma-nu} shows the radar cross section for the aircraft at four different frequencies corresponding to wavelengths of 11, 50, 75, and, 100 meters. These individual curves are the targets of the ensuing Fourier decomposition.
+\begin{table}
+	\begin{tabular}{ccc}
+		\includegraphics[ scale = 0.55 ]{\pathgraphics "sigma ( nu = 03)"} &&
+		\includegraphics[ scale = 0.55 ]{\pathgraphics "sigma ( nu = 04)"} \\[10pt]
+		\includegraphics[ scale = 0.55 ]{\pathgraphics "sigma ( nu = 06)"} &&
+		\includegraphics[ scale = 0.55 ]{\pathgraphics "sigma ( nu = 28)"} \\
+	\end{tabular}
+\caption{A sampling of RCS computations for wavelengths of $100$ m (top left), $75$ m (top right), $50$ m (bottom left), $11$ m (bottom right). The line represents the mean value.}
+\label{tab:sigma-nu}
+\end{table}
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
