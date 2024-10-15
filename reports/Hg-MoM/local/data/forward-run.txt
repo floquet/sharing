@@ -1,0 +1,5057 @@
+root@30fa334cae35:bin $ . forward-sweep.sh 
+Wed May 13 06:32:20 UTC 2020 forward-sweep.sh
+cp ../inputs/PTW-Materials.lib .
+cp ../inputs/PTW.facet .
+
+
+Step 1: elevation angle = -179 deg from North Pole
+
+  Substep 1.1: cp ../inputs/PTW-elev-0n179.geo .
+
+  Substep 1.2: ./MMoM_4.1.12 PTW-elev-0n179.geo > ../outputs/PTW-elev-0n179.out
+sh: junk: command not found
+
+  Substep 1.3: mv *.4112.* ../outputs/.
+
+  Substep 1.4: rm PTW-elev-0n179.geo
+
+time used to run PTW-elev-0n179.geo = 132 s
+
+
+Step 2: elevation angle = -178 deg from North Pole
+
+  Substep 2.1: cp ../inputs/PTW-elev-0n178.geo .
+
+  Substep 2.2: ./MMoM_4.1.12 PTW-elev-0n178.geo > ../outputs/PTW-elev-0n178.out
+sh: junk: command not found
+
+  Substep 2.3: mv *.4112.* ../outputs/.
+
+  Substep 2.4: rm PTW-elev-0n178.geo
+
+time used to run PTW-elev-0n178.geo = 146 s
+
+
+Step 3: elevation angle = -177 deg from North Pole
+
+  Substep 3.1: cp ../inputs/PTW-elev-0n177.geo .
+
+  Substep 3.2: ./MMoM_4.1.12 PTW-elev-0n177.geo > ../outputs/PTW-elev-0n177.out
+sh: junk: command not found
+
+  Substep 3.3: mv *.4112.* ../outputs/.
+
+  Substep 3.4: rm PTW-elev-0n177.geo
+
+time used to run PTW-elev-0n177.geo = 134 s
+
+
+Step 4: elevation angle = -176 deg from North Pole
+
+  Substep 4.1: cp ../inputs/PTW-elev-0n176.geo .
+
+  Substep 4.2: ./MMoM_4.1.12 PTW-elev-0n176.geo > ../outputs/PTW-elev-0n176.out
+sh: junk: command not found
+
+  Substep 4.3: mv *.4112.* ../outputs/.
+
+  Substep 4.4: rm PTW-elev-0n176.geo
+
+time used to run PTW-elev-0n176.geo = 134 s
+
+
+Step 5: elevation angle = -175 deg from North Pole
+
+  Substep 5.1: cp ../inputs/PTW-elev-0n175.geo .
+
+  Substep 5.2: ./MMoM_4.1.12 PTW-elev-0n175.geo > ../outputs/PTW-elev-0n175.out
+sh: junk: command not found
+
+  Substep 5.3: mv *.4112.* ../outputs/.
+
+  Substep 5.4: rm PTW-elev-0n175.geo
+
+time used to run PTW-elev-0n175.geo = 136 s
+
+
+Step 6: elevation angle = -174 deg from North Pole
+
+  Substep 6.1: cp ../inputs/PTW-elev-0n174.geo .
+
+  Substep 6.2: ./MMoM_4.1.12 PTW-elev-0n174.geo > ../outputs/PTW-elev-0n174.out
+sh: junk: command not found
+
+  Substep 6.3: mv *.4112.* ../outputs/.
+
+  Substep 6.4: rm PTW-elev-0n174.geo
+
+time used to run PTW-elev-0n174.geo = 139 s
+
+
+Step 7: elevation angle = -173 deg from North Pole
+
+  Substep 7.1: cp ../inputs/PTW-elev-0n173.geo .
+
+  Substep 7.2: ./MMoM_4.1.12 PTW-elev-0n173.geo > ../outputs/PTW-elev-0n173.out
+sh: junk: command not found
+
+  Substep 7.3: mv *.4112.* ../outputs/.
+
+  Substep 7.4: rm PTW-elev-0n173.geo
+
+time used to run PTW-elev-0n173.geo = 136 s
+
+
+Step 8: elevation angle = -172 deg from North Pole
+
+  Substep 8.1: cp ../inputs/PTW-elev-0n172.geo .
+
+  Substep 8.2: ./MMoM_4.1.12 PTW-elev-0n172.geo > ../outputs/PTW-elev-0n172.out
+sh: junk: command not found
+
+  Substep 8.3: mv *.4112.* ../outputs/.
+
+  Substep 8.4: rm PTW-elev-0n172.geo
+
+time used to run PTW-elev-0n172.geo = 135 s
+
+
+Step 9: elevation angle = -171 deg from North Pole
+
+  Substep 9.1: cp ../inputs/PTW-elev-0n171.geo .
+
+  Substep 9.2: ./MMoM_4.1.12 PTW-elev-0n171.geo > ../outputs/PTW-elev-0n171.out
+sh: junk: command not found
+
+  Substep 9.3: mv *.4112.* ../outputs/.
+
+  Substep 9.4: rm PTW-elev-0n171.geo
+
+time used to run PTW-elev-0n171.geo = 137 s
+
+
+Step 10: elevation angle = -170 deg from North Pole
+
+  Substep 10.1: cp ../inputs/PTW-elev-0n170.geo .
+
+  Substep 10.2: ./MMoM_4.1.12 PTW-elev-0n170.geo > ../outputs/PTW-elev-0n170.out
+sh: junk: command not found
+
+  Substep 10.3: mv *.4112.* ../outputs/.
+
+  Substep 10.4: rm PTW-elev-0n170.geo
+
+time used to run PTW-elev-0n170.geo = 153 s
+
+
+Step 11: elevation angle = -169 deg from North Pole
+
+  Substep 11.1: cp ../inputs/PTW-elev-0n169.geo .
+
+  Substep 11.2: ./MMoM_4.1.12 PTW-elev-0n169.geo > ../outputs/PTW-elev-0n169.out
+sh: junk: command not found
+
+  Substep 11.3: mv *.4112.* ../outputs/.
+
+  Substep 11.4: rm PTW-elev-0n169.geo
+
+time used to run PTW-elev-0n169.geo = 142 s
+
+
+Step 12: elevation angle = -168 deg from North Pole
+
+  Substep 12.1: cp ../inputs/PTW-elev-0n168.geo .
+
+  Substep 12.2: ./MMoM_4.1.12 PTW-elev-0n168.geo > ../outputs/PTW-elev-0n168.out
+sh: junk: command not found
+
+  Substep 12.3: mv *.4112.* ../outputs/.
+
+  Substep 12.4: rm PTW-elev-0n168.geo
+
+time used to run PTW-elev-0n168.geo = 128 s
+
+
+Step 13: elevation angle = -167 deg from North Pole
+
+  Substep 13.1: cp ../inputs/PTW-elev-0n167.geo .
+
+  Substep 13.2: ./MMoM_4.1.12 PTW-elev-0n167.geo > ../outputs/PTW-elev-0n167.out
+sh: junk: command not found
+
+  Substep 13.3: mv *.4112.* ../outputs/.
+
+  Substep 13.4: rm PTW-elev-0n167.geo
+
+time used to run PTW-elev-0n167.geo = 150 s
+
+
+Step 14: elevation angle = -166 deg from North Pole
+
+  Substep 14.1: cp ../inputs/PTW-elev-0n166.geo .
+
+  Substep 14.2: ./MMoM_4.1.12 PTW-elev-0n166.geo > ../outputs/PTW-elev-0n166.out
+sh: junk: command not found
+
+  Substep 14.3: mv *.4112.* ../outputs/.
+
+  Substep 14.4: rm PTW-elev-0n166.geo
+
+time used to run PTW-elev-0n166.geo = 138 s
+
+
+Step 15: elevation angle = -165 deg from North Pole
+
+  Substep 15.1: cp ../inputs/PTW-elev-0n165.geo .
+
+  Substep 15.2: ./MMoM_4.1.12 PTW-elev-0n165.geo > ../outputs/PTW-elev-0n165.out
+sh: junk: command not found
+
+  Substep 15.3: mv *.4112.* ../outputs/.
+
+  Substep 15.4: rm PTW-elev-0n165.geo
+
+time used to run PTW-elev-0n165.geo = 138 s
+
+
+Step 16: elevation angle = -164 deg from North Pole
+
+  Substep 16.1: cp ../inputs/PTW-elev-0n164.geo .
+
+  Substep 16.2: ./MMoM_4.1.12 PTW-elev-0n164.geo > ../outputs/PTW-elev-0n164.out
+sh: junk: command not found
+
+  Substep 16.3: mv *.4112.* ../outputs/.
+
+  Substep 16.4: rm PTW-elev-0n164.geo
+
+time used to run PTW-elev-0n164.geo = 140 s
+
+
+Step 17: elevation angle = -163 deg from North Pole
+
+  Substep 17.1: cp ../inputs/PTW-elev-0n163.geo .
+
+  Substep 17.2: ./MMoM_4.1.12 PTW-elev-0n163.geo > ../outputs/PTW-elev-0n163.out
+sh: junk: command not found
+
+  Substep 17.3: mv *.4112.* ../outputs/.
+
+  Substep 17.4: rm PTW-elev-0n163.geo
+
+time used to run PTW-elev-0n163.geo = 142 s
+
+
+Step 18: elevation angle = -162 deg from North Pole
+
+  Substep 18.1: cp ../inputs/PTW-elev-0n162.geo .
+
+  Substep 18.2: ./MMoM_4.1.12 PTW-elev-0n162.geo > ../outputs/PTW-elev-0n162.out
+sh: junk: command not found
+
+  Substep 18.3: mv *.4112.* ../outputs/.
+
+  Substep 18.4: rm PTW-elev-0n162.geo
+
+time used to run PTW-elev-0n162.geo = 165 s
+
+
+Step 19: elevation angle = -161 deg from North Pole
+
+  Substep 19.1: cp ../inputs/PTW-elev-0n161.geo .
+
+  Substep 19.2: ./MMoM_4.1.12 PTW-elev-0n161.geo > ../outputs/PTW-elev-0n161.out
+sh: junk: command not found
+
+  Substep 19.3: mv *.4112.* ../outputs/.
+
+  Substep 19.4: rm PTW-elev-0n161.geo
+
+time used to run PTW-elev-0n161.geo = 163 s
+
+
+Step 20: elevation angle = -160 deg from North Pole
+
+  Substep 20.1: cp ../inputs/PTW-elev-0n160.geo .
+
+  Substep 20.2: ./MMoM_4.1.12 PTW-elev-0n160.geo > ../outputs/PTW-elev-0n160.out
+sh: junk: command not found
+
+  Substep 20.3: mv *.4112.* ../outputs/.
+
+  Substep 20.4: rm PTW-elev-0n160.geo
+
+time used to run PTW-elev-0n160.geo = 140 s
+
+
+Step 21: elevation angle = -159 deg from North Pole
+
+  Substep 21.1: cp ../inputs/PTW-elev-0n159.geo .
+
+  Substep 21.2: ./MMoM_4.1.12 PTW-elev-0n159.geo > ../outputs/PTW-elev-0n159.out
+sh: junk: command not found
+
+  Substep 21.3: mv *.4112.* ../outputs/.
+
+  Substep 21.4: rm PTW-elev-0n159.geo
+
+time used to run PTW-elev-0n159.geo = 139 s
+
+
+Step 22: elevation angle = -158 deg from North Pole
+
+  Substep 22.1: cp ../inputs/PTW-elev-0n158.geo .
+
+  Substep 22.2: ./MMoM_4.1.12 PTW-elev-0n158.geo > ../outputs/PTW-elev-0n158.out
+sh: junk: command not found
+
+  Substep 22.3: mv *.4112.* ../outputs/.
+
+  Substep 22.4: rm PTW-elev-0n158.geo
+
+time used to run PTW-elev-0n158.geo = 143 s
+
+
+Step 23: elevation angle = -157 deg from North Pole
+
+  Substep 23.1: cp ../inputs/PTW-elev-0n157.geo .
+
+  Substep 23.2: ./MMoM_4.1.12 PTW-elev-0n157.geo > ../outputs/PTW-elev-0n157.out
+sh: junk: command not found
+
+  Substep 23.3: mv *.4112.* ../outputs/.
+
+  Substep 23.4: rm PTW-elev-0n157.geo
+
+time used to run PTW-elev-0n157.geo = 135 s
+
+
+Step 24: elevation angle = -156 deg from North Pole
+
+  Substep 24.1: cp ../inputs/PTW-elev-0n156.geo .
+
+  Substep 24.2: ./MMoM_4.1.12 PTW-elev-0n156.geo > ../outputs/PTW-elev-0n156.out
+sh: junk: command not found
+
+  Substep 24.3: mv *.4112.* ../outputs/.
+
+  Substep 24.4: rm PTW-elev-0n156.geo
+
+time used to run PTW-elev-0n156.geo = 133 s
+
+
+Step 25: elevation angle = -155 deg from North Pole
+
+  Substep 25.1: cp ../inputs/PTW-elev-0n155.geo .
+
+  Substep 25.2: ./MMoM_4.1.12 PTW-elev-0n155.geo > ../outputs/PTW-elev-0n155.out
+sh: junk: command not found
+
+  Substep 25.3: mv *.4112.* ../outputs/.
+
+  Substep 25.4: rm PTW-elev-0n155.geo
+
+time used to run PTW-elev-0n155.geo = 137 s
+
+
+Step 26: elevation angle = -154 deg from North Pole
+
+  Substep 26.1: cp ../inputs/PTW-elev-0n154.geo .
+
+  Substep 26.2: ./MMoM_4.1.12 PTW-elev-0n154.geo > ../outputs/PTW-elev-0n154.out
+sh: junk: command not found
+
+  Substep 26.3: mv *.4112.* ../outputs/.
+
+  Substep 26.4: rm PTW-elev-0n154.geo
+
+time used to run PTW-elev-0n154.geo = 138 s
+
+
+Step 27: elevation angle = -153 deg from North Pole
+
+  Substep 27.1: cp ../inputs/PTW-elev-0n153.geo .
+
+  Substep 27.2: ./MMoM_4.1.12 PTW-elev-0n153.geo > ../outputs/PTW-elev-0n153.out
+sh: junk: command not found
+
+  Substep 27.3: mv *.4112.* ../outputs/.
+
+  Substep 27.4: rm PTW-elev-0n153.geo
+
+time used to run PTW-elev-0n153.geo = 131 s
+
+
+Step 28: elevation angle = -152 deg from North Pole
+
+  Substep 28.1: cp ../inputs/PTW-elev-0n152.geo .
+
+  Substep 28.2: ./MMoM_4.1.12 PTW-elev-0n152.geo > ../outputs/PTW-elev-0n152.out
+sh: junk: command not found
+
+  Substep 28.3: mv *.4112.* ../outputs/.
+
+  Substep 28.4: rm PTW-elev-0n152.geo
+
+time used to run PTW-elev-0n152.geo = 137 s
+
+
+Step 29: elevation angle = -151 deg from North Pole
+
+  Substep 29.1: cp ../inputs/PTW-elev-0n151.geo .
+
+  Substep 29.2: ./MMoM_4.1.12 PTW-elev-0n151.geo > ../outputs/PTW-elev-0n151.out
+sh: junk: command not found
+
+  Substep 29.3: mv *.4112.* ../outputs/.
+
+  Substep 29.4: rm PTW-elev-0n151.geo
+
+time used to run PTW-elev-0n151.geo = 135 s
+
+
+Step 30: elevation angle = -150 deg from North Pole
+
+  Substep 30.1: cp ../inputs/PTW-elev-0n150.geo .
+
+  Substep 30.2: ./MMoM_4.1.12 PTW-elev-0n150.geo > ../outputs/PTW-elev-0n150.out
+sh: junk: command not found
+
+  Substep 30.3: mv *.4112.* ../outputs/.
+
+  Substep 30.4: rm PTW-elev-0n150.geo
+
+time used to run PTW-elev-0n150.geo = 157 s
+
+
+Step 31: elevation angle = -149 deg from North Pole
+
+  Substep 31.1: cp ../inputs/PTW-elev-0n149.geo .
+
+  Substep 31.2: ./MMoM_4.1.12 PTW-elev-0n149.geo > ../outputs/PTW-elev-0n149.out
+sh: junk: command not found
+
+  Substep 31.3: mv *.4112.* ../outputs/.
+
+  Substep 31.4: rm PTW-elev-0n149.geo
+
+time used to run PTW-elev-0n149.geo = 143 s
+
+
+Step 32: elevation angle = -148 deg from North Pole
+
+  Substep 32.1: cp ../inputs/PTW-elev-0n148.geo .
+
+  Substep 32.2: ./MMoM_4.1.12 PTW-elev-0n148.geo > ../outputs/PTW-elev-0n148.out
+sh: junk: command not found
+
+  Substep 32.3: mv *.4112.* ../outputs/.
+
+  Substep 32.4: rm PTW-elev-0n148.geo
+
+time used to run PTW-elev-0n148.geo = 155 s
+
+
+Step 33: elevation angle = -147 deg from North Pole
+
+  Substep 33.1: cp ../inputs/PTW-elev-0n147.geo .
+
+  Substep 33.2: ./MMoM_4.1.12 PTW-elev-0n147.geo > ../outputs/PTW-elev-0n147.out
+sh: junk: command not found
+
+  Substep 33.3: mv *.4112.* ../outputs/.
+
+  Substep 33.4: rm PTW-elev-0n147.geo
+
+time used to run PTW-elev-0n147.geo = 133 s
+
+
+Step 34: elevation angle = -146 deg from North Pole
+
+  Substep 34.1: cp ../inputs/PTW-elev-0n146.geo .
+
+  Substep 34.2: ./MMoM_4.1.12 PTW-elev-0n146.geo > ../outputs/PTW-elev-0n146.out
+sh: junk: command not found
+
+  Substep 34.3: mv *.4112.* ../outputs/.
+
+  Substep 34.4: rm PTW-elev-0n146.geo
+
+time used to run PTW-elev-0n146.geo = 128 s
+
+
+Step 35: elevation angle = -145 deg from North Pole
+
+  Substep 35.1: cp ../inputs/PTW-elev-0n145.geo .
+
+  Substep 35.2: ./MMoM_4.1.12 PTW-elev-0n145.geo > ../outputs/PTW-elev-0n145.out
+sh: junk: command not found
+
+  Substep 35.3: mv *.4112.* ../outputs/.
+
+  Substep 35.4: rm PTW-elev-0n145.geo
+
+time used to run PTW-elev-0n145.geo = 127 s
+
+
+Step 36: elevation angle = -144 deg from North Pole
+
+  Substep 36.1: cp ../inputs/PTW-elev-0n144.geo .
+
+  Substep 36.2: ./MMoM_4.1.12 PTW-elev-0n144.geo > ../outputs/PTW-elev-0n144.out
+sh: junk: command not found
+
+  Substep 36.3: mv *.4112.* ../outputs/.
+
+  Substep 36.4: rm PTW-elev-0n144.geo
+
+time used to run PTW-elev-0n144.geo = 128 s
+
+
+Step 37: elevation angle = -143 deg from North Pole
+
+  Substep 37.1: cp ../inputs/PTW-elev-0n143.geo .
+
+  Substep 37.2: ./MMoM_4.1.12 PTW-elev-0n143.geo > ../outputs/PTW-elev-0n143.out
+sh: junk: command not found
+
+  Substep 37.3: mv *.4112.* ../outputs/.
+
+  Substep 37.4: rm PTW-elev-0n143.geo
+
+time used to run PTW-elev-0n143.geo = 133 s
+
+
+Step 38: elevation angle = -142 deg from North Pole
+
+  Substep 38.1: cp ../inputs/PTW-elev-0n142.geo .
+
+  Substep 38.2: ./MMoM_4.1.12 PTW-elev-0n142.geo > ../outputs/PTW-elev-0n142.out
+sh: junk: command not found
+
+  Substep 38.3: mv *.4112.* ../outputs/.
+
+  Substep 38.4: rm PTW-elev-0n142.geo
+
+time used to run PTW-elev-0n142.geo = 128 s
+
+
+Step 39: elevation angle = -141 deg from North Pole
+
+  Substep 39.1: cp ../inputs/PTW-elev-0n141.geo .
+
+  Substep 39.2: ./MMoM_4.1.12 PTW-elev-0n141.geo > ../outputs/PTW-elev-0n141.out
+sh: junk: command not found
+
+  Substep 39.3: mv *.4112.* ../outputs/.
+
+  Substep 39.4: rm PTW-elev-0n141.geo
+
+time used to run PTW-elev-0n141.geo = 126 s
+
+
+Step 40: elevation angle = -140 deg from North Pole
+
+  Substep 40.1: cp ../inputs/PTW-elev-0n140.geo .
+
+  Substep 40.2: ./MMoM_4.1.12 PTW-elev-0n140.geo > ../outputs/PTW-elev-0n140.out
+sh: junk: command not found
+
+  Substep 40.3: mv *.4112.* ../outputs/.
+
+  Substep 40.4: rm PTW-elev-0n140.geo
+
+time used to run PTW-elev-0n140.geo = 127 s
+
+
+Step 41: elevation angle = -139 deg from North Pole
+
+  Substep 41.1: cp ../inputs/PTW-elev-0n139.geo .
+
+  Substep 41.2: ./MMoM_4.1.12 PTW-elev-0n139.geo > ../outputs/PTW-elev-0n139.out
+sh: junk: command not found
+
+  Substep 41.3: mv *.4112.* ../outputs/.
+
+  Substep 41.4: rm PTW-elev-0n139.geo
+
+time used to run PTW-elev-0n139.geo = 155 s
+
+
+Step 42: elevation angle = -138 deg from North Pole
+
+  Substep 42.1: cp ../inputs/PTW-elev-0n138.geo .
+
+  Substep 42.2: ./MMoM_4.1.12 PTW-elev-0n138.geo > ../outputs/PTW-elev-0n138.out
+sh: junk: command not found
+
+  Substep 42.3: mv *.4112.* ../outputs/.
+
+  Substep 42.4: rm PTW-elev-0n138.geo
+
+time used to run PTW-elev-0n138.geo = 150 s
+
+
+Step 43: elevation angle = -137 deg from North Pole
+
+  Substep 43.1: cp ../inputs/PTW-elev-0n137.geo .
+
+  Substep 43.2: ./MMoM_4.1.12 PTW-elev-0n137.geo > ../outputs/PTW-elev-0n137.out
+sh: junk: command not found
+
+  Substep 43.3: mv *.4112.* ../outputs/.
+
+  Substep 43.4: rm PTW-elev-0n137.geo
+
+time used to run PTW-elev-0n137.geo = 163 s
+
+
+Step 44: elevation angle = -136 deg from North Pole
+
+  Substep 44.1: cp ../inputs/PTW-elev-0n136.geo .
+
+  Substep 44.2: ./MMoM_4.1.12 PTW-elev-0n136.geo > ../outputs/PTW-elev-0n136.out
+sh: junk: command not found
+
+  Substep 44.3: mv *.4112.* ../outputs/.
+
+  Substep 44.4: rm PTW-elev-0n136.geo
+
+time used to run PTW-elev-0n136.geo = 131 s
+
+
+Step 45: elevation angle = -135 deg from North Pole
+
+  Substep 45.1: cp ../inputs/PTW-elev-0n135.geo .
+
+  Substep 45.2: ./MMoM_4.1.12 PTW-elev-0n135.geo > ../outputs/PTW-elev-0n135.out
+sh: junk: command not found
+
+  Substep 45.3: mv *.4112.* ../outputs/.
+
+  Substep 45.4: rm PTW-elev-0n135.geo
+
+time used to run PTW-elev-0n135.geo = 152 s
+
+
+Step 46: elevation angle = -134 deg from North Pole
+
+  Substep 46.1: cp ../inputs/PTW-elev-0n134.geo .
+
+  Substep 46.2: ./MMoM_4.1.12 PTW-elev-0n134.geo > ../outputs/PTW-elev-0n134.out
+sh: junk: command not found
+
+  Substep 46.3: mv *.4112.* ../outputs/.
+
+  Substep 46.4: rm PTW-elev-0n134.geo
+
+time used to run PTW-elev-0n134.geo = 140 s
+
+
+Step 47: elevation angle = -133 deg from North Pole
+
+  Substep 47.1: cp ../inputs/PTW-elev-0n133.geo .
+
+  Substep 47.2: ./MMoM_4.1.12 PTW-elev-0n133.geo > ../outputs/PTW-elev-0n133.out
+sh: junk: command not found
+
+  Substep 47.3: mv *.4112.* ../outputs/.
+
+  Substep 47.4: rm PTW-elev-0n133.geo
+
+time used to run PTW-elev-0n133.geo = 174 s
+
+
+Step 48: elevation angle = -132 deg from North Pole
+
+  Substep 48.1: cp ../inputs/PTW-elev-0n132.geo .
+
+  Substep 48.2: ./MMoM_4.1.12 PTW-elev-0n132.geo > ../outputs/PTW-elev-0n132.out
+sh: junk: command not found
+
+  Substep 48.3: mv *.4112.* ../outputs/.
+
+  Substep 48.4: rm PTW-elev-0n132.geo
+
+time used to run PTW-elev-0n132.geo = 188 s
+
+
+Step 49: elevation angle = -131 deg from North Pole
+
+  Substep 49.1: cp ../inputs/PTW-elev-0n131.geo .
+
+  Substep 49.2: ./MMoM_4.1.12 PTW-elev-0n131.geo > ../outputs/PTW-elev-0n131.out
+sh: junk: command not found
+
+  Substep 49.3: mv *.4112.* ../outputs/.
+
+  Substep 49.4: rm PTW-elev-0n131.geo
+
+time used to run PTW-elev-0n131.geo = 145 s
+
+
+Step 50: elevation angle = -130 deg from North Pole
+
+  Substep 50.1: cp ../inputs/PTW-elev-0n130.geo .
+
+  Substep 50.2: ./MMoM_4.1.12 PTW-elev-0n130.geo > ../outputs/PTW-elev-0n130.out
+sh: junk: command not found
+
+  Substep 50.3: mv *.4112.* ../outputs/.
+
+  Substep 50.4: rm PTW-elev-0n130.geo
+
+time used to run PTW-elev-0n130.geo = 138 s
+
+
+Step 51: elevation angle = -129 deg from North Pole
+
+  Substep 51.1: cp ../inputs/PTW-elev-0n129.geo .
+
+  Substep 51.2: ./MMoM_4.1.12 PTW-elev-0n129.geo > ../outputs/PTW-elev-0n129.out
+sh: junk: command not found
+
+  Substep 51.3: mv *.4112.* ../outputs/.
+
+  Substep 51.4: rm PTW-elev-0n129.geo
+
+time used to run PTW-elev-0n129.geo = 134 s
+
+
+Step 52: elevation angle = -128 deg from North Pole
+
+  Substep 52.1: cp ../inputs/PTW-elev-0n128.geo .
+
+  Substep 52.2: ./MMoM_4.1.12 PTW-elev-0n128.geo > ../outputs/PTW-elev-0n128.out
+sh: junk: command not found
+
+  Substep 52.3: mv *.4112.* ../outputs/.
+
+  Substep 52.4: rm PTW-elev-0n128.geo
+
+time used to run PTW-elev-0n128.geo = 140 s
+
+
+Step 53: elevation angle = -127 deg from North Pole
+
+  Substep 53.1: cp ../inputs/PTW-elev-0n127.geo .
+
+  Substep 53.2: ./MMoM_4.1.12 PTW-elev-0n127.geo > ../outputs/PTW-elev-0n127.out
+sh: junk: command not found
+
+  Substep 53.3: mv *.4112.* ../outputs/.
+
+  Substep 53.4: rm PTW-elev-0n127.geo
+
+time used to run PTW-elev-0n127.geo = 134 s
+
+
+Step 54: elevation angle = -126 deg from North Pole
+
+  Substep 54.1: cp ../inputs/PTW-elev-0n126.geo .
+
+  Substep 54.2: ./MMoM_4.1.12 PTW-elev-0n126.geo > ../outputs/PTW-elev-0n126.out
+sh: junk: command not found
+
+  Substep 54.3: mv *.4112.* ../outputs/.
+
+  Substep 54.4: rm PTW-elev-0n126.geo
+
+time used to run PTW-elev-0n126.geo = 141 s
+
+
+Step 55: elevation angle = -125 deg from North Pole
+
+  Substep 55.1: cp ../inputs/PTW-elev-0n125.geo .
+
+  Substep 55.2: ./MMoM_4.1.12 PTW-elev-0n125.geo > ../outputs/PTW-elev-0n125.out
+sh: junk: command not found
+
+  Substep 55.3: mv *.4112.* ../outputs/.
+
+  Substep 55.4: rm PTW-elev-0n125.geo
+
+time used to run PTW-elev-0n125.geo = 144 s
+
+
+Step 56: elevation angle = -124 deg from North Pole
+
+  Substep 56.1: cp ../inputs/PTW-elev-0n124.geo .
+
+  Substep 56.2: ./MMoM_4.1.12 PTW-elev-0n124.geo > ../outputs/PTW-elev-0n124.out
+sh: junk: command not found
+
+  Substep 56.3: mv *.4112.* ../outputs/.
+
+  Substep 56.4: rm PTW-elev-0n124.geo
+
+time used to run PTW-elev-0n124.geo = 186 s
+
+
+Step 57: elevation angle = -123 deg from North Pole
+
+  Substep 57.1: cp ../inputs/PTW-elev-0n123.geo .
+
+  Substep 57.2: ./MMoM_4.1.12 PTW-elev-0n123.geo > ../outputs/PTW-elev-0n123.out
+sh: junk: command not found
+
+  Substep 57.3: mv *.4112.* ../outputs/.
+
+  Substep 57.4: rm PTW-elev-0n123.geo
+
+time used to run PTW-elev-0n123.geo = 186 s
+
+
+Step 58: elevation angle = -122 deg from North Pole
+
+  Substep 58.1: cp ../inputs/PTW-elev-0n122.geo .
+
+  Substep 58.2: ./MMoM_4.1.12 PTW-elev-0n122.geo > ../outputs/PTW-elev-0n122.out
+sh: junk: command not found
+
+  Substep 58.3: mv *.4112.* ../outputs/.
+
+  Substep 58.4: rm PTW-elev-0n122.geo
+
+time used to run PTW-elev-0n122.geo = 190 s
+
+
+Step 59: elevation angle = -121 deg from North Pole
+
+  Substep 59.1: cp ../inputs/PTW-elev-0n121.geo .
+
+  Substep 59.2: ./MMoM_4.1.12 PTW-elev-0n121.geo > ../outputs/PTW-elev-0n121.out
+sh: junk: command not found
+
+  Substep 59.3: mv *.4112.* ../outputs/.
+
+  Substep 59.4: rm PTW-elev-0n121.geo
+
+time used to run PTW-elev-0n121.geo = 186 s
+
+
+Step 60: elevation angle = -120 deg from North Pole
+
+  Substep 60.1: cp ../inputs/PTW-elev-0n120.geo .
+
+  Substep 60.2: ./MMoM_4.1.12 PTW-elev-0n120.geo > ../outputs/PTW-elev-0n120.out
+sh: junk: command not found
+
+  Substep 60.3: mv *.4112.* ../outputs/.
+
+  Substep 60.4: rm PTW-elev-0n120.geo
+
+time used to run PTW-elev-0n120.geo = 190 s
+
+
+Step 61: elevation angle = -119 deg from North Pole
+
+  Substep 61.1: cp ../inputs/PTW-elev-0n119.geo .
+
+  Substep 61.2: ./MMoM_4.1.12 PTW-elev-0n119.geo > ../outputs/PTW-elev-0n119.out
+sh: junk: command not found
+
+  Substep 61.3: mv *.4112.* ../outputs/.
+
+  Substep 61.4: rm PTW-elev-0n119.geo
+
+time used to run PTW-elev-0n119.geo = 354 s
+
+
+Step 62: elevation angle = -118 deg from North Pole
+
+  Substep 62.1: cp ../inputs/PTW-elev-0n118.geo .
+
+  Substep 62.2: ./MMoM_4.1.12 PTW-elev-0n118.geo > ../outputs/PTW-elev-0n118.out
+sh: junk: command not found
+
+  Substep 62.3: mv *.4112.* ../outputs/.
+
+  Substep 62.4: rm PTW-elev-0n118.geo
+
+time used to run PTW-elev-0n118.geo = 147 s
+
+
+Step 63: elevation angle = -117 deg from North Pole
+
+  Substep 63.1: cp ../inputs/PTW-elev-0n117.geo .
+
+  Substep 63.2: ./MMoM_4.1.12 PTW-elev-0n117.geo > ../outputs/PTW-elev-0n117.out
+sh: junk: command not found
+
+  Substep 63.3: mv *.4112.* ../outputs/.
+
+  Substep 63.4: rm PTW-elev-0n117.geo
+
+time used to run PTW-elev-0n117.geo = 130 s
+
+
+Step 64: elevation angle = -116 deg from North Pole
+
+  Substep 64.1: cp ../inputs/PTW-elev-0n116.geo .
+
+  Substep 64.2: ./MMoM_4.1.12 PTW-elev-0n116.geo > ../outputs/PTW-elev-0n116.out
+sh: junk: command not found
+
+  Substep 64.3: mv *.4112.* ../outputs/.
+
+  Substep 64.4: rm PTW-elev-0n116.geo
+
+time used to run PTW-elev-0n116.geo = 132 s
+
+
+Step 65: elevation angle = -115 deg from North Pole
+
+  Substep 65.1: cp ../inputs/PTW-elev-0n115.geo .
+
+  Substep 65.2: ./MMoM_4.1.12 PTW-elev-0n115.geo > ../outputs/PTW-elev-0n115.out
+sh: junk: command not found
+
+  Substep 65.3: mv *.4112.* ../outputs/.
+
+  Substep 65.4: rm PTW-elev-0n115.geo
+
+time used to run PTW-elev-0n115.geo = 135 s
+
+
+Step 66: elevation angle = -114 deg from North Pole
+
+  Substep 66.1: cp ../inputs/PTW-elev-0n114.geo .
+
+  Substep 66.2: ./MMoM_4.1.12 PTW-elev-0n114.geo > ../outputs/PTW-elev-0n114.out
+sh: junk: command not found
+
+  Substep 66.3: mv *.4112.* ../outputs/.
+
+  Substep 66.4: rm PTW-elev-0n114.geo
+
+time used to run PTW-elev-0n114.geo = 132 s
+
+
+Step 67: elevation angle = -113 deg from North Pole
+
+  Substep 67.1: cp ../inputs/PTW-elev-0n113.geo .
+
+  Substep 67.2: ./MMoM_4.1.12 PTW-elev-0n113.geo > ../outputs/PTW-elev-0n113.out
+sh: junk: command not found
+
+  Substep 67.3: mv *.4112.* ../outputs/.
+
+  Substep 67.4: rm PTW-elev-0n113.geo
+
+time used to run PTW-elev-0n113.geo = 136 s
+
+
+Step 68: elevation angle = -112 deg from North Pole
+
+  Substep 68.1: cp ../inputs/PTW-elev-0n112.geo .
+
+  Substep 68.2: ./MMoM_4.1.12 PTW-elev-0n112.geo > ../outputs/PTW-elev-0n112.out
+sh: junk: command not found
+
+  Substep 68.3: mv *.4112.* ../outputs/.
+
+  Substep 68.4: rm PTW-elev-0n112.geo
+
+time used to run PTW-elev-0n112.geo = 172 s
+
+
+Step 69: elevation angle = -111 deg from North Pole
+
+  Substep 69.1: cp ../inputs/PTW-elev-0n111.geo .
+
+  Substep 69.2: ./MMoM_4.1.12 PTW-elev-0n111.geo > ../outputs/PTW-elev-0n111.out
+sh: junk: command not found
+
+  Substep 69.3: mv *.4112.* ../outputs/.
+
+  Substep 69.4: rm PTW-elev-0n111.geo
+
+time used to run PTW-elev-0n111.geo = 153 s
+
+
+Step 70: elevation angle = -110 deg from North Pole
+
+  Substep 70.1: cp ../inputs/PTW-elev-0n110.geo .
+
+  Substep 70.2: ./MMoM_4.1.12 PTW-elev-0n110.geo > ../outputs/PTW-elev-0n110.out
+sh: junk: command not found
+
+  Substep 70.3: mv *.4112.* ../outputs/.
+
+  Substep 70.4: rm PTW-elev-0n110.geo
+
+time used to run PTW-elev-0n110.geo = 132 s
+
+
+Step 71: elevation angle = -109 deg from North Pole
+
+  Substep 71.1: cp ../inputs/PTW-elev-0n109.geo .
+
+  Substep 71.2: ./MMoM_4.1.12 PTW-elev-0n109.geo > ../outputs/PTW-elev-0n109.out
+sh: junk: command not found
+
+  Substep 71.3: mv *.4112.* ../outputs/.
+
+  Substep 71.4: rm PTW-elev-0n109.geo
+
+time used to run PTW-elev-0n109.geo = 133 s
+
+
+Step 72: elevation angle = -108 deg from North Pole
+
+  Substep 72.1: cp ../inputs/PTW-elev-0n108.geo .
+
+  Substep 72.2: ./MMoM_4.1.12 PTW-elev-0n108.geo > ../outputs/PTW-elev-0n108.out
+sh: junk: command not found
+
+  Substep 72.3: mv *.4112.* ../outputs/.
+
+  Substep 72.4: rm PTW-elev-0n108.geo
+
+time used to run PTW-elev-0n108.geo = 134 s
+
+
+Step 73: elevation angle = -107 deg from North Pole
+
+  Substep 73.1: cp ../inputs/PTW-elev-0n107.geo .
+
+  Substep 73.2: ./MMoM_4.1.12 PTW-elev-0n107.geo > ../outputs/PTW-elev-0n107.out
+sh: junk: command not found
+
+  Substep 73.3: mv *.4112.* ../outputs/.
+
+  Substep 73.4: rm PTW-elev-0n107.geo
+
+time used to run PTW-elev-0n107.geo = 136 s
+
+
+Step 74: elevation angle = -106 deg from North Pole
+
+  Substep 74.1: cp ../inputs/PTW-elev-0n106.geo .
+
+  Substep 74.2: ./MMoM_4.1.12 PTW-elev-0n106.geo > ../outputs/PTW-elev-0n106.out
+sh: junk: command not found
+
+  Substep 74.3: mv *.4112.* ../outputs/.
+
+  Substep 74.4: rm PTW-elev-0n106.geo
+
+time used to run PTW-elev-0n106.geo = 135 s
+
+
+Step 75: elevation angle = -105 deg from North Pole
+
+  Substep 75.1: cp ../inputs/PTW-elev-0n105.geo .
+
+  Substep 75.2: ./MMoM_4.1.12 PTW-elev-0n105.geo > ../outputs/PTW-elev-0n105.out
+sh: junk: command not found
+
+  Substep 75.3: mv *.4112.* ../outputs/.
+
+  Substep 75.4: rm PTW-elev-0n105.geo
+
+time used to run PTW-elev-0n105.geo = 136 s
+
+
+Step 76: elevation angle = -104 deg from North Pole
+
+  Substep 76.1: cp ../inputs/PTW-elev-0n104.geo .
+
+  Substep 76.2: ./MMoM_4.1.12 PTW-elev-0n104.geo > ../outputs/PTW-elev-0n104.out
+sh: junk: command not found
+
+  Substep 76.3: mv *.4112.* ../outputs/.
+
+  Substep 76.4: rm PTW-elev-0n104.geo
+
+time used to run PTW-elev-0n104.geo = 135 s
+
+
+Step 77: elevation angle = -103 deg from North Pole
+
+  Substep 77.1: cp ../inputs/PTW-elev-0n103.geo .
+
+  Substep 77.2: ./MMoM_4.1.12 PTW-elev-0n103.geo > ../outputs/PTW-elev-0n103.out
+sh: junk: command not found
+
+  Substep 77.3: mv *.4112.* ../outputs/.
+
+  Substep 77.4: rm PTW-elev-0n103.geo
+
+time used to run PTW-elev-0n103.geo = 138 s
+
+
+Step 78: elevation angle = -102 deg from North Pole
+
+  Substep 78.1: cp ../inputs/PTW-elev-0n102.geo .
+
+  Substep 78.2: ./MMoM_4.1.12 PTW-elev-0n102.geo > ../outputs/PTW-elev-0n102.out
+sh: junk: command not found
+
+  Substep 78.3: mv *.4112.* ../outputs/.
+
+  Substep 78.4: rm PTW-elev-0n102.geo
+
+time used to run PTW-elev-0n102.geo = 143 s
+
+
+Step 79: elevation angle = -101 deg from North Pole
+
+  Substep 79.1: cp ../inputs/PTW-elev-0n101.geo .
+
+  Substep 79.2: ./MMoM_4.1.12 PTW-elev-0n101.geo > ../outputs/PTW-elev-0n101.out
+sh: junk: command not found
+
+  Substep 79.3: mv *.4112.* ../outputs/.
+
+  Substep 79.4: rm PTW-elev-0n101.geo
+
+time used to run PTW-elev-0n101.geo = 135 s
+
+
+Step 80: elevation angle = -100 deg from North Pole
+
+  Substep 80.1: cp ../inputs/PTW-elev-0n100.geo .
+
+  Substep 80.2: ./MMoM_4.1.12 PTW-elev-0n100.geo > ../outputs/PTW-elev-0n100.out
+sh: junk: command not found
+
+  Substep 80.3: mv *.4112.* ../outputs/.
+
+  Substep 80.4: rm PTW-elev-0n100.geo
+
+time used to run PTW-elev-0n100.geo = 138 s
+
+
+Step 81: elevation angle = -99 deg from North Pole
+
+  Substep 81.1: cp ../inputs/PTW-elev-0n099.geo .
+
+  Substep 81.2: ./MMoM_4.1.12 PTW-elev-0n099.geo > ../outputs/PTW-elev-0n099.out
+sh: junk: command not found
+
+  Substep 81.3: mv *.4112.* ../outputs/.
+
+  Substep 81.4: rm PTW-elev-0n099.geo
+
+time used to run PTW-elev-0n099.geo = 135 s
+
+
+Step 82: elevation angle = -98 deg from North Pole
+
+  Substep 82.1: cp ../inputs/PTW-elev-0n098.geo .
+
+  Substep 82.2: ./MMoM_4.1.12 PTW-elev-0n098.geo > ../outputs/PTW-elev-0n098.out
+sh: junk: command not found
+
+  Substep 82.3: mv *.4112.* ../outputs/.
+
+  Substep 82.4: rm PTW-elev-0n098.geo
+
+time used to run PTW-elev-0n098.geo = 167 s
+
+
+Step 83: elevation angle = -97 deg from North Pole
+
+  Substep 83.1: cp ../inputs/PTW-elev-0n097.geo .
+
+  Substep 83.2: ./MMoM_4.1.12 PTW-elev-0n097.geo > ../outputs/PTW-elev-0n097.out
+sh: junk: command not found
+
+  Substep 83.3: mv *.4112.* ../outputs/.
+
+  Substep 83.4: rm PTW-elev-0n097.geo
+
+time used to run PTW-elev-0n097.geo = 183 s
+
+
+Step 84: elevation angle = -96 deg from North Pole
+
+  Substep 84.1: cp ../inputs/PTW-elev-0n096.geo .
+
+  Substep 84.2: ./MMoM_4.1.12 PTW-elev-0n096.geo > ../outputs/PTW-elev-0n096.out
+sh: junk: command not found
+
+  Substep 84.3: mv *.4112.* ../outputs/.
+
+  Substep 84.4: rm PTW-elev-0n096.geo
+
+time used to run PTW-elev-0n096.geo = 180 s
+
+
+Step 85: elevation angle = -95 deg from North Pole
+
+  Substep 85.1: cp ../inputs/PTW-elev-0n095.geo .
+
+  Substep 85.2: ./MMoM_4.1.12 PTW-elev-0n095.geo > ../outputs/PTW-elev-0n095.out
+sh: junk: command not found
+
+  Substep 85.3: mv *.4112.* ../outputs/.
+
+  Substep 85.4: rm PTW-elev-0n095.geo
+
+time used to run PTW-elev-0n095.geo = 172 s
+
+
+Step 86: elevation angle = -94 deg from North Pole
+
+  Substep 86.1: cp ../inputs/PTW-elev-0n094.geo .
+
+  Substep 86.2: ./MMoM_4.1.12 PTW-elev-0n094.geo > ../outputs/PTW-elev-0n094.out
+sh: junk: command not found
+
+  Substep 86.3: mv *.4112.* ../outputs/.
+
+  Substep 86.4: rm PTW-elev-0n094.geo
+
+time used to run PTW-elev-0n094.geo = 135 s
+
+
+Step 87: elevation angle = -93 deg from North Pole
+
+  Substep 87.1: cp ../inputs/PTW-elev-0n093.geo .
+
+  Substep 87.2: ./MMoM_4.1.12 PTW-elev-0n093.geo > ../outputs/PTW-elev-0n093.out
+sh: junk: command not found
+
+  Substep 87.3: mv *.4112.* ../outputs/.
+
+  Substep 87.4: rm PTW-elev-0n093.geo
+
+time used to run PTW-elev-0n093.geo = 131 s
+
+
+Step 88: elevation angle = -92 deg from North Pole
+
+  Substep 88.1: cp ../inputs/PTW-elev-0n092.geo .
+
+  Substep 88.2: ./MMoM_4.1.12 PTW-elev-0n092.geo > ../outputs/PTW-elev-0n092.out
+sh: junk: command not found
+
+  Substep 88.3: mv *.4112.* ../outputs/.
+
+  Substep 88.4: rm PTW-elev-0n092.geo
+
+time used to run PTW-elev-0n092.geo = 135 s
+
+
+Step 89: elevation angle = -91 deg from North Pole
+
+  Substep 89.1: cp ../inputs/PTW-elev-0n091.geo .
+
+  Substep 89.2: ./MMoM_4.1.12 PTW-elev-0n091.geo > ../outputs/PTW-elev-0n091.out
+sh: junk: command not found
+
+  Substep 89.3: mv *.4112.* ../outputs/.
+
+  Substep 89.4: rm PTW-elev-0n091.geo
+
+time used to run PTW-elev-0n091.geo = 138 s
+
+
+Step 90: elevation angle = -90 deg from North Pole
+
+  Substep 90.1: cp ../inputs/PTW-elev-0n090.geo .
+
+  Substep 90.2: ./MMoM_4.1.12 PTW-elev-0n090.geo > ../outputs/PTW-elev-0n090.out
+sh: junk: command not found
+
+  Substep 90.3: mv *.4112.* ../outputs/.
+
+  Substep 90.4: rm PTW-elev-0n090.geo
+
+time used to run PTW-elev-0n090.geo = 155 s
+
+
+Step 91: elevation angle = -89 deg from North Pole
+
+  Substep 91.1: cp ../inputs/PTW-elev-0n089.geo .
+
+  Substep 91.2: ./MMoM_4.1.12 PTW-elev-0n089.geo > ../outputs/PTW-elev-0n089.out
+sh: junk: command not found
+
+  Substep 91.3: mv *.4112.* ../outputs/.
+
+  Substep 91.4: rm PTW-elev-0n089.geo
+
+time used to run PTW-elev-0n089.geo = 154 s
+
+
+Step 92: elevation angle = -88 deg from North Pole
+
+  Substep 92.1: cp ../inputs/PTW-elev-0n088.geo .
+
+  Substep 92.2: ./MMoM_4.1.12 PTW-elev-0n088.geo > ../outputs/PTW-elev-0n088.out
+sh: junk: command not found
+
+  Substep 92.3: mv *.4112.* ../outputs/.
+
+  Substep 92.4: rm PTW-elev-0n088.geo
+
+time used to run PTW-elev-0n088.geo = 146 s
+
+
+Step 93: elevation angle = -87 deg from North Pole
+
+  Substep 93.1: cp ../inputs/PTW-elev-0n087.geo .
+
+  Substep 93.2: ./MMoM_4.1.12 PTW-elev-0n087.geo > ../outputs/PTW-elev-0n087.out
+sh: junk: command not found
+
+  Substep 93.3: mv *.4112.* ../outputs/.
+
+  Substep 93.4: rm PTW-elev-0n087.geo
+
+time used to run PTW-elev-0n087.geo = 133 s
+
+
+Step 94: elevation angle = -86 deg from North Pole
+
+  Substep 94.1: cp ../inputs/PTW-elev-0n086.geo .
+
+  Substep 94.2: ./MMoM_4.1.12 PTW-elev-0n086.geo > ../outputs/PTW-elev-0n086.out
+sh: junk: command not found
+
+  Substep 94.3: mv *.4112.* ../outputs/.
+
+  Substep 94.4: rm PTW-elev-0n086.geo
+
+time used to run PTW-elev-0n086.geo = 142 s
+
+
+Step 95: elevation angle = -85 deg from North Pole
+
+  Substep 95.1: cp ../inputs/PTW-elev-0n085.geo .
+
+  Substep 95.2: ./MMoM_4.1.12 PTW-elev-0n085.geo > ../outputs/PTW-elev-0n085.out
+sh: junk: command not found
+
+  Substep 95.3: mv *.4112.* ../outputs/.
+
+  Substep 95.4: rm PTW-elev-0n085.geo
+
+time used to run PTW-elev-0n085.geo = 139 s
+
+
+Step 96: elevation angle = -84 deg from North Pole
+
+  Substep 96.1: cp ../inputs/PTW-elev-0n084.geo .
+
+  Substep 96.2: ./MMoM_4.1.12 PTW-elev-0n084.geo > ../outputs/PTW-elev-0n084.out
+sh: junk: command not found
+
+  Substep 96.3: mv *.4112.* ../outputs/.
+
+  Substep 96.4: rm PTW-elev-0n084.geo
+
+time used to run PTW-elev-0n084.geo = 137 s
+
+
+Step 97: elevation angle = -83 deg from North Pole
+
+  Substep 97.1: cp ../inputs/PTW-elev-0n083.geo .
+
+  Substep 97.2: ./MMoM_4.1.12 PTW-elev-0n083.geo > ../outputs/PTW-elev-0n083.out
+sh: junk: command not found
+
+  Substep 97.3: mv *.4112.* ../outputs/.
+
+  Substep 97.4: rm PTW-elev-0n083.geo
+
+time used to run PTW-elev-0n083.geo = 138 s
+
+
+Step 98: elevation angle = -82 deg from North Pole
+
+  Substep 98.1: cp ../inputs/PTW-elev-0n082.geo .
+
+  Substep 98.2: ./MMoM_4.1.12 PTW-elev-0n082.geo > ../outputs/PTW-elev-0n082.out
+sh: junk: command not found
+
+  Substep 98.3: mv *.4112.* ../outputs/.
+
+  Substep 98.4: rm PTW-elev-0n082.geo
+
+time used to run PTW-elev-0n082.geo = 138 s
+
+
+Step 99: elevation angle = -81 deg from North Pole
+
+  Substep 99.1: cp ../inputs/PTW-elev-0n081.geo .
+
+  Substep 99.2: ./MMoM_4.1.12 PTW-elev-0n081.geo > ../outputs/PTW-elev-0n081.out
+sh: junk: command not found
+
+  Substep 99.3: mv *.4112.* ../outputs/.
+
+  Substep 99.4: rm PTW-elev-0n081.geo
+
+time used to run PTW-elev-0n081.geo = 138 s
+
+
+Step 100: elevation angle = -80 deg from North Pole
+
+  Substep 100.1: cp ../inputs/PTW-elev-0n080.geo .
+
+  Substep 100.2: ./MMoM_4.1.12 PTW-elev-0n080.geo > ../outputs/PTW-elev-0n080.out
+sh: junk: command not found
+
+  Substep 100.3: mv *.4112.* ../outputs/.
+
+  Substep 100.4: rm PTW-elev-0n080.geo
+
+time used to run PTW-elev-0n080.geo = 134 s
+
+
+Step 101: elevation angle = -79 deg from North Pole
+
+  Substep 101.1: cp ../inputs/PTW-elev-0n079.geo .
+
+  Substep 101.2: ./MMoM_4.1.12 PTW-elev-0n079.geo > ../outputs/PTW-elev-0n079.out
+sh: junk: command not found
+
+  Substep 101.3: mv *.4112.* ../outputs/.
+
+  Substep 101.4: rm PTW-elev-0n079.geo
+
+time used to run PTW-elev-0n079.geo = 140 s
+
+
+Step 102: elevation angle = -78 deg from North Pole
+
+  Substep 102.1: cp ../inputs/PTW-elev-0n078.geo .
+
+  Substep 102.2: ./MMoM_4.1.12 PTW-elev-0n078.geo > ../outputs/PTW-elev-0n078.out
+sh: junk: command not found
+
+  Substep 102.3: mv *.4112.* ../outputs/.
+
+  Substep 102.4: rm PTW-elev-0n078.geo
+
+time used to run PTW-elev-0n078.geo = 153 s
+
+
+Step 103: elevation angle = -77 deg from North Pole
+
+  Substep 103.1: cp ../inputs/PTW-elev-0n077.geo .
+
+  Substep 103.2: ./MMoM_4.1.12 PTW-elev-0n077.geo > ../outputs/PTW-elev-0n077.out
+sh: junk: command not found
+
+  Substep 103.3: mv *.4112.* ../outputs/.
+
+  Substep 103.4: rm PTW-elev-0n077.geo
+
+time used to run PTW-elev-0n077.geo = 188 s
+
+
+Step 104: elevation angle = -76 deg from North Pole
+
+  Substep 104.1: cp ../inputs/PTW-elev-0n076.geo .
+
+  Substep 104.2: ./MMoM_4.1.12 PTW-elev-0n076.geo > ../outputs/PTW-elev-0n076.out
+sh: junk: command not found
+
+  Substep 104.3: mv *.4112.* ../outputs/.
+
+  Substep 104.4: rm PTW-elev-0n076.geo
+
+time used to run PTW-elev-0n076.geo = 179 s
+
+
+Step 105: elevation angle = -75 deg from North Pole
+
+  Substep 105.1: cp ../inputs/PTW-elev-0n075.geo .
+
+  Substep 105.2: ./MMoM_4.1.12 PTW-elev-0n075.geo > ../outputs/PTW-elev-0n075.out
+sh: junk: command not found
+
+  Substep 105.3: mv *.4112.* ../outputs/.
+
+  Substep 105.4: rm PTW-elev-0n075.geo
+
+time used to run PTW-elev-0n075.geo = 185 s
+
+
+Step 106: elevation angle = -74 deg from North Pole
+
+  Substep 106.1: cp ../inputs/PTW-elev-0n074.geo .
+
+  Substep 106.2: ./MMoM_4.1.12 PTW-elev-0n074.geo > ../outputs/PTW-elev-0n074.out
+sh: junk: command not found
+
+  Substep 106.3: mv *.4112.* ../outputs/.
+
+  Substep 106.4: rm PTW-elev-0n074.geo
+
+time used to run PTW-elev-0n074.geo = 180 s
+
+
+Step 107: elevation angle = -73 deg from North Pole
+
+  Substep 107.1: cp ../inputs/PTW-elev-0n073.geo .
+
+  Substep 107.2: ./MMoM_4.1.12 PTW-elev-0n073.geo > ../outputs/PTW-elev-0n073.out
+sh: junk: command not found
+
+  Substep 107.3: mv *.4112.* ../outputs/.
+
+  Substep 107.4: rm PTW-elev-0n073.geo
+
+time used to run PTW-elev-0n073.geo = 134 s
+
+
+Step 108: elevation angle = -72 deg from North Pole
+
+  Substep 108.1: cp ../inputs/PTW-elev-0n072.geo .
+
+  Substep 108.2: ./MMoM_4.1.12 PTW-elev-0n072.geo > ../outputs/PTW-elev-0n072.out
+sh: junk: command not found
+
+  Substep 108.3: mv *.4112.* ../outputs/.
+
+  Substep 108.4: rm PTW-elev-0n072.geo
+
+time used to run PTW-elev-0n072.geo = 137 s
+
+
+Step 109: elevation angle = -71 deg from North Pole
+
+  Substep 109.1: cp ../inputs/PTW-elev-0n071.geo .
+
+  Substep 109.2: ./MMoM_4.1.12 PTW-elev-0n071.geo > ../outputs/PTW-elev-0n071.out
+sh: junk: command not found
+
+  Substep 109.3: mv *.4112.* ../outputs/.
+
+  Substep 109.4: rm PTW-elev-0n071.geo
+
+time used to run PTW-elev-0n071.geo = 134 s
+
+
+Step 110: elevation angle = -70 deg from North Pole
+
+  Substep 110.1: cp ../inputs/PTW-elev-0n070.geo .
+
+  Substep 110.2: ./MMoM_4.1.12 PTW-elev-0n070.geo > ../outputs/PTW-elev-0n070.out
+sh: junk: command not found
+
+  Substep 110.3: mv *.4112.* ../outputs/.
+
+  Substep 110.4: rm PTW-elev-0n070.geo
+
+time used to run PTW-elev-0n070.geo = 134 s
+
+
+Step 111: elevation angle = -69 deg from North Pole
+
+  Substep 111.1: cp ../inputs/PTW-elev-0n069.geo .
+
+  Substep 111.2: ./MMoM_4.1.12 PTW-elev-0n069.geo > ../outputs/PTW-elev-0n069.out
+sh: junk: command not found
+
+  Substep 111.3: mv *.4112.* ../outputs/.
+
+  Substep 111.4: rm PTW-elev-0n069.geo
+
+time used to run PTW-elev-0n069.geo = 138 s
+
+
+Step 112: elevation angle = -68 deg from North Pole
+
+  Substep 112.1: cp ../inputs/PTW-elev-0n068.geo .
+
+  Substep 112.2: ./MMoM_4.1.12 PTW-elev-0n068.geo > ../outputs/PTW-elev-0n068.out
+sh: junk: command not found
+
+  Substep 112.3: mv *.4112.* ../outputs/.
+
+  Substep 112.4: rm PTW-elev-0n068.geo
+
+time used to run PTW-elev-0n068.geo = 137 s
+
+
+Step 113: elevation angle = -67 deg from North Pole
+
+  Substep 113.1: cp ../inputs/PTW-elev-0n067.geo .
+
+  Substep 113.2: ./MMoM_4.1.12 PTW-elev-0n067.geo > ../outputs/PTW-elev-0n067.out
+sh: junk: command not found
+
+  Substep 113.3: mv *.4112.* ../outputs/.
+
+  Substep 113.4: rm PTW-elev-0n067.geo
+
+time used to run PTW-elev-0n067.geo = 149 s
+
+
+Step 114: elevation angle = -66 deg from North Pole
+
+  Substep 114.1: cp ../inputs/PTW-elev-0n066.geo .
+
+  Substep 114.2: ./MMoM_4.1.12 PTW-elev-0n066.geo > ../outputs/PTW-elev-0n066.out
+sh: junk: command not found
+
+  Substep 114.3: mv *.4112.* ../outputs/.
+
+  Substep 114.4: rm PTW-elev-0n066.geo
+
+time used to run PTW-elev-0n066.geo = 135 s
+
+
+Step 115: elevation angle = -65 deg from North Pole
+
+  Substep 115.1: cp ../inputs/PTW-elev-0n065.geo .
+
+  Substep 115.2: ./MMoM_4.1.12 PTW-elev-0n065.geo > ../outputs/PTW-elev-0n065.out
+sh: junk: command not found
+
+  Substep 115.3: mv *.4112.* ../outputs/.
+
+  Substep 115.4: rm PTW-elev-0n065.geo
+
+time used to run PTW-elev-0n065.geo = 136 s
+
+
+Step 116: elevation angle = -64 deg from North Pole
+
+  Substep 116.1: cp ../inputs/PTW-elev-0n064.geo .
+
+  Substep 116.2: ./MMoM_4.1.12 PTW-elev-0n064.geo > ../outputs/PTW-elev-0n064.out
+sh: junk: command not found
+
+  Substep 116.3: mv *.4112.* ../outputs/.
+
+  Substep 116.4: rm PTW-elev-0n064.geo
+
+time used to run PTW-elev-0n064.geo = 136 s
+
+
+Step 117: elevation angle = -63 deg from North Pole
+
+  Substep 117.1: cp ../inputs/PTW-elev-0n063.geo .
+
+  Substep 117.2: ./MMoM_4.1.12 PTW-elev-0n063.geo > ../outputs/PTW-elev-0n063.out
+sh: junk: command not found
+
+  Substep 117.3: mv *.4112.* ../outputs/.
+
+  Substep 117.4: rm PTW-elev-0n063.geo
+
+time used to run PTW-elev-0n063.geo = 144 s
+
+
+Step 118: elevation angle = -62 deg from North Pole
+
+  Substep 118.1: cp ../inputs/PTW-elev-0n062.geo .
+
+  Substep 118.2: ./MMoM_4.1.12 PTW-elev-0n062.geo > ../outputs/PTW-elev-0n062.out
+sh: junk: command not found
+
+  Substep 118.3: mv *.4112.* ../outputs/.
+
+  Substep 118.4: rm PTW-elev-0n062.geo
+
+time used to run PTW-elev-0n062.geo = 141 s
+
+
+Step 119: elevation angle = -61 deg from North Pole
+
+  Substep 119.1: cp ../inputs/PTW-elev-0n061.geo .
+
+  Substep 119.2: ./MMoM_4.1.12 PTW-elev-0n061.geo > ../outputs/PTW-elev-0n061.out
+sh: junk: command not found
+
+  Substep 119.3: mv *.4112.* ../outputs/.
+
+  Substep 119.4: rm PTW-elev-0n061.geo
+
+time used to run PTW-elev-0n061.geo = 140 s
+
+
+Step 120: elevation angle = -60 deg from North Pole
+
+  Substep 120.1: cp ../inputs/PTW-elev-0n060.geo .
+
+  Substep 120.2: ./MMoM_4.1.12 PTW-elev-0n060.geo > ../outputs/PTW-elev-0n060.out
+sh: junk: command not found
+
+  Substep 120.3: mv *.4112.* ../outputs/.
+
+  Substep 120.4: rm PTW-elev-0n060.geo
+
+time used to run PTW-elev-0n060.geo = 135 s
+
+
+Step 121: elevation angle = -59 deg from North Pole
+
+  Substep 121.1: cp ../inputs/PTW-elev-0n059.geo .
+
+  Substep 121.2: ./MMoM_4.1.12 PTW-elev-0n059.geo > ../outputs/PTW-elev-0n059.out
+sh: junk: command not found
+
+  Substep 121.3: mv *.4112.* ../outputs/.
+
+  Substep 121.4: rm PTW-elev-0n059.geo
+
+time used to run PTW-elev-0n059.geo = 133 s
+
+
+Step 122: elevation angle = -58 deg from North Pole
+
+  Substep 122.1: cp ../inputs/PTW-elev-0n058.geo .
+
+  Substep 122.2: ./MMoM_4.1.12 PTW-elev-0n058.geo > ../outputs/PTW-elev-0n058.out
+sh: junk: command not found
+
+  Substep 122.3: mv *.4112.* ../outputs/.
+
+  Substep 122.4: rm PTW-elev-0n058.geo
+
+time used to run PTW-elev-0n058.geo = 134 s
+
+
+Step 123: elevation angle = -57 deg from North Pole
+
+  Substep 123.1: cp ../inputs/PTW-elev-0n057.geo .
+
+  Substep 123.2: ./MMoM_4.1.12 PTW-elev-0n057.geo > ../outputs/PTW-elev-0n057.out
+sh: junk: command not found
+
+  Substep 123.3: mv *.4112.* ../outputs/.
+
+  Substep 123.4: rm PTW-elev-0n057.geo
+
+time used to run PTW-elev-0n057.geo = 133 s
+
+
+Step 124: elevation angle = -56 deg from North Pole
+
+  Substep 124.1: cp ../inputs/PTW-elev-0n056.geo .
+
+  Substep 124.2: ./MMoM_4.1.12 PTW-elev-0n056.geo > ../outputs/PTW-elev-0n056.out
+sh: junk: command not found
+
+  Substep 124.3: mv *.4112.* ../outputs/.
+
+  Substep 124.4: rm PTW-elev-0n056.geo
+
+time used to run PTW-elev-0n056.geo = 133 s
+
+
+Step 125: elevation angle = -55 deg from North Pole
+
+  Substep 125.1: cp ../inputs/PTW-elev-0n055.geo .
+
+  Substep 125.2: ./MMoM_4.1.12 PTW-elev-0n055.geo > ../outputs/PTW-elev-0n055.out
+sh: junk: command not found
+
+  Substep 125.3: mv *.4112.* ../outputs/.
+
+  Substep 125.4: rm PTW-elev-0n055.geo
+
+time used to run PTW-elev-0n055.geo = 133 s
+
+
+Step 126: elevation angle = -54 deg from North Pole
+
+  Substep 126.1: cp ../inputs/PTW-elev-0n054.geo .
+
+  Substep 126.2: ./MMoM_4.1.12 PTW-elev-0n054.geo > ../outputs/PTW-elev-0n054.out
+sh: junk: command not found
+
+  Substep 126.3: mv *.4112.* ../outputs/.
+
+  Substep 126.4: rm PTW-elev-0n054.geo
+
+time used to run PTW-elev-0n054.geo = 133 s
+
+
+Step 127: elevation angle = -53 deg from North Pole
+
+  Substep 127.1: cp ../inputs/PTW-elev-0n053.geo .
+
+  Substep 127.2: ./MMoM_4.1.12 PTW-elev-0n053.geo > ../outputs/PTW-elev-0n053.out
+sh: junk: command not found
+
+  Substep 127.3: mv *.4112.* ../outputs/.
+
+  Substep 127.4: rm PTW-elev-0n053.geo
+
+time used to run PTW-elev-0n053.geo = 146 s
+
+
+Step 128: elevation angle = -52 deg from North Pole
+
+  Substep 128.1: cp ../inputs/PTW-elev-0n052.geo .
+
+  Substep 128.2: ./MMoM_4.1.12 PTW-elev-0n052.geo > ../outputs/PTW-elev-0n052.out
+sh: junk: command not found
+
+  Substep 128.3: mv *.4112.* ../outputs/.
+
+  Substep 128.4: rm PTW-elev-0n052.geo
+
+time used to run PTW-elev-0n052.geo = 144 s
+
+
+Step 129: elevation angle = -51 deg from North Pole
+
+  Substep 129.1: cp ../inputs/PTW-elev-0n051.geo .
+
+  Substep 129.2: ./MMoM_4.1.12 PTW-elev-0n051.geo > ../outputs/PTW-elev-0n051.out
+sh: junk: command not found
+
+  Substep 129.3: mv *.4112.* ../outputs/.
+
+  Substep 129.4: rm PTW-elev-0n051.geo
+
+time used to run PTW-elev-0n051.geo = 134 s
+
+
+Step 130: elevation angle = -50 deg from North Pole
+
+  Substep 130.1: cp ../inputs/PTW-elev-0n050.geo .
+
+  Substep 130.2: ./MMoM_4.1.12 PTW-elev-0n050.geo > ../outputs/PTW-elev-0n050.out
+sh: junk: command not found
+
+  Substep 130.3: mv *.4112.* ../outputs/.
+
+  Substep 130.4: rm PTW-elev-0n050.geo
+
+time used to run PTW-elev-0n050.geo = 133 s
+
+
+Step 131: elevation angle = -49 deg from North Pole
+
+  Substep 131.1: cp ../inputs/PTW-elev-0n049.geo .
+
+  Substep 131.2: ./MMoM_4.1.12 PTW-elev-0n049.geo > ../outputs/PTW-elev-0n049.out
+sh: junk: command not found
+
+  Substep 131.3: mv *.4112.* ../outputs/.
+
+  Substep 131.4: rm PTW-elev-0n049.geo
+
+time used to run PTW-elev-0n049.geo = 134 s
+
+
+Step 132: elevation angle = -48 deg from North Pole
+
+  Substep 132.1: cp ../inputs/PTW-elev-0n048.geo .
+
+  Substep 132.2: ./MMoM_4.1.12 PTW-elev-0n048.geo > ../outputs/PTW-elev-0n048.out
+sh: junk: command not found
+
+  Substep 132.3: mv *.4112.* ../outputs/.
+
+  Substep 132.4: rm PTW-elev-0n048.geo
+
+time used to run PTW-elev-0n048.geo = 162 s
+
+
+Step 133: elevation angle = -47 deg from North Pole
+
+  Substep 133.1: cp ../inputs/PTW-elev-0n047.geo .
+
+  Substep 133.2: ./MMoM_4.1.12 PTW-elev-0n047.geo > ../outputs/PTW-elev-0n047.out
+sh: junk: command not found
+
+  Substep 133.3: mv *.4112.* ../outputs/.
+
+  Substep 133.4: rm PTW-elev-0n047.geo
+
+time used to run PTW-elev-0n047.geo = 138 s
+
+
+Step 134: elevation angle = -46 deg from North Pole
+
+  Substep 134.1: cp ../inputs/PTW-elev-0n046.geo .
+
+  Substep 134.2: ./MMoM_4.1.12 PTW-elev-0n046.geo > ../outputs/PTW-elev-0n046.out
+sh: junk: command not found
+
+  Substep 134.3: mv *.4112.* ../outputs/.
+
+  Substep 134.4: rm PTW-elev-0n046.geo
+
+time used to run PTW-elev-0n046.geo = 135 s
+
+
+Step 135: elevation angle = -45 deg from North Pole
+
+  Substep 135.1: cp ../inputs/PTW-elev-0n045.geo .
+
+  Substep 135.2: ./MMoM_4.1.12 PTW-elev-0n045.geo > ../outputs/PTW-elev-0n045.out
+sh: junk: command not found
+
+  Substep 135.3: mv *.4112.* ../outputs/.
+
+  Substep 135.4: rm PTW-elev-0n045.geo
+
+time used to run PTW-elev-0n045.geo = 133 s
+
+
+Step 136: elevation angle = -44 deg from North Pole
+
+  Substep 136.1: cp ../inputs/PTW-elev-0n044.geo .
+
+  Substep 136.2: ./MMoM_4.1.12 PTW-elev-0n044.geo > ../outputs/PTW-elev-0n044.out
+sh: junk: command not found
+
+  Substep 136.3: mv *.4112.* ../outputs/.
+
+  Substep 136.4: rm PTW-elev-0n044.geo
+
+time used to run PTW-elev-0n044.geo = 133 s
+
+
+Step 137: elevation angle = -43 deg from North Pole
+
+  Substep 137.1: cp ../inputs/PTW-elev-0n043.geo .
+
+  Substep 137.2: ./MMoM_4.1.12 PTW-elev-0n043.geo > ../outputs/PTW-elev-0n043.out
+sh: junk: command not found
+
+  Substep 137.3: mv *.4112.* ../outputs/.
+
+  Substep 137.4: rm PTW-elev-0n043.geo
+
+time used to run PTW-elev-0n043.geo = 134 s
+
+
+Step 138: elevation angle = -42 deg from North Pole
+
+  Substep 138.1: cp ../inputs/PTW-elev-0n042.geo .
+
+  Substep 138.2: ./MMoM_4.1.12 PTW-elev-0n042.geo > ../outputs/PTW-elev-0n042.out
+sh: junk: command not found
+
+  Substep 138.3: mv *.4112.* ../outputs/.
+
+  Substep 138.4: rm PTW-elev-0n042.geo
+
+time used to run PTW-elev-0n042.geo = 142 s
+
+
+Step 139: elevation angle = -41 deg from North Pole
+
+  Substep 139.1: cp ../inputs/PTW-elev-0n041.geo .
+
+  Substep 139.2: ./MMoM_4.1.12 PTW-elev-0n041.geo > ../outputs/PTW-elev-0n041.out
+sh: junk: command not found
+
+  Substep 139.3: mv *.4112.* ../outputs/.
+
+  Substep 139.4: rm PTW-elev-0n041.geo
+
+time used to run PTW-elev-0n041.geo = 140 s
+
+
+Step 140: elevation angle = -40 deg from North Pole
+
+  Substep 140.1: cp ../inputs/PTW-elev-0n040.geo .
+
+  Substep 140.2: ./MMoM_4.1.12 PTW-elev-0n040.geo > ../outputs/PTW-elev-0n040.out
+sh: junk: command not found
+
+  Substep 140.3: mv *.4112.* ../outputs/.
+
+  Substep 140.4: rm PTW-elev-0n040.geo
+
+time used to run PTW-elev-0n040.geo = 134 s
+
+
+Step 141: elevation angle = -39 deg from North Pole
+
+  Substep 141.1: cp ../inputs/PTW-elev-0n039.geo .
+
+  Substep 141.2: ./MMoM_4.1.12 PTW-elev-0n039.geo > ../outputs/PTW-elev-0n039.out
+sh: junk: command not found
+
+  Substep 141.3: mv *.4112.* ../outputs/.
+
+  Substep 141.4: rm PTW-elev-0n039.geo
+
+time used to run PTW-elev-0n039.geo = 140 s
+
+
+Step 142: elevation angle = -38 deg from North Pole
+
+  Substep 142.1: cp ../inputs/PTW-elev-0n038.geo .
+
+  Substep 142.2: ./MMoM_4.1.12 PTW-elev-0n038.geo > ../outputs/PTW-elev-0n038.out
+sh: junk: command not found
+
+  Substep 142.3: mv *.4112.* ../outputs/.
+
+  Substep 142.4: rm PTW-elev-0n038.geo
+
+time used to run PTW-elev-0n038.geo = 133 s
+
+
+Step 143: elevation angle = -37 deg from North Pole
+
+  Substep 143.1: cp ../inputs/PTW-elev-0n037.geo .
+
+  Substep 143.2: ./MMoM_4.1.12 PTW-elev-0n037.geo > ../outputs/PTW-elev-0n037.out
+sh: junk: command not found
+
+  Substep 143.3: mv *.4112.* ../outputs/.
+
+  Substep 143.4: rm PTW-elev-0n037.geo
+
+time used to run PTW-elev-0n037.geo = 139 s
+
+
+Step 144: elevation angle = -36 deg from North Pole
+
+  Substep 144.1: cp ../inputs/PTW-elev-0n036.geo .
+
+  Substep 144.2: ./MMoM_4.1.12 PTW-elev-0n036.geo > ../outputs/PTW-elev-0n036.out
+sh: junk: command not found
+
+  Substep 144.3: mv *.4112.* ../outputs/.
+
+  Substep 144.4: rm PTW-elev-0n036.geo
+
+time used to run PTW-elev-0n036.geo = 137 s
+
+
+Step 145: elevation angle = -35 deg from North Pole
+
+  Substep 145.1: cp ../inputs/PTW-elev-0n035.geo .
+
+  Substep 145.2: ./MMoM_4.1.12 PTW-elev-0n035.geo > ../outputs/PTW-elev-0n035.out
+sh: junk: command not found
+
+  Substep 145.3: mv *.4112.* ../outputs/.
+
+  Substep 145.4: rm PTW-elev-0n035.geo
+
+time used to run PTW-elev-0n035.geo = 133 s
+
+
+Step 146: elevation angle = -34 deg from North Pole
+
+  Substep 146.1: cp ../inputs/PTW-elev-0n034.geo .
+
+  Substep 146.2: ./MMoM_4.1.12 PTW-elev-0n034.geo > ../outputs/PTW-elev-0n034.out
+sh: junk: command not found
+
+  Substep 146.3: mv *.4112.* ../outputs/.
+
+  Substep 146.4: rm PTW-elev-0n034.geo
+
+time used to run PTW-elev-0n034.geo = 139 s
+
+
+Step 147: elevation angle = -33 deg from North Pole
+
+  Substep 147.1: cp ../inputs/PTW-elev-0n033.geo .
+
+  Substep 147.2: ./MMoM_4.1.12 PTW-elev-0n033.geo > ../outputs/PTW-elev-0n033.out
+sh: junk: command not found
+
+  Substep 147.3: mv *.4112.* ../outputs/.
+
+  Substep 147.4: rm PTW-elev-0n033.geo
+
+time used to run PTW-elev-0n033.geo = 137 s
+
+
+Step 148: elevation angle = -32 deg from North Pole
+
+  Substep 148.1: cp ../inputs/PTW-elev-0n032.geo .
+
+  Substep 148.2: ./MMoM_4.1.12 PTW-elev-0n032.geo > ../outputs/PTW-elev-0n032.out
+sh: junk: command not found
+
+  Substep 148.3: mv *.4112.* ../outputs/.
+
+  Substep 148.4: rm PTW-elev-0n032.geo
+
+time used to run PTW-elev-0n032.geo = 142 s
+
+
+Step 149: elevation angle = -31 deg from North Pole
+
+  Substep 149.1: cp ../inputs/PTW-elev-0n031.geo .
+
+  Substep 149.2: ./MMoM_4.1.12 PTW-elev-0n031.geo > ../outputs/PTW-elev-0n031.out
+sh: junk: command not found
+
+  Substep 149.3: mv *.4112.* ../outputs/.
+
+  Substep 149.4: rm PTW-elev-0n031.geo
+
+time used to run PTW-elev-0n031.geo = 147 s
+
+
+Step 150: elevation angle = -30 deg from North Pole
+
+  Substep 150.1: cp ../inputs/PTW-elev-0n030.geo .
+
+  Substep 150.2: ./MMoM_4.1.12 PTW-elev-0n030.geo > ../outputs/PTW-elev-0n030.out
+sh: junk: command not found
+
+  Substep 150.3: mv *.4112.* ../outputs/.
+
+  Substep 150.4: rm PTW-elev-0n030.geo
+
+time used to run PTW-elev-0n030.geo = 136 s
+
+
+Step 151: elevation angle = -29 deg from North Pole
+
+  Substep 151.1: cp ../inputs/PTW-elev-0n029.geo .
+
+  Substep 151.2: ./MMoM_4.1.12 PTW-elev-0n029.geo > ../outputs/PTW-elev-0n029.out
+sh: junk: command not found
+
+  Substep 151.3: mv *.4112.* ../outputs/.
+
+  Substep 151.4: rm PTW-elev-0n029.geo
+
+time used to run PTW-elev-0n029.geo = 142 s
+
+
+Step 152: elevation angle = -28 deg from North Pole
+
+  Substep 152.1: cp ../inputs/PTW-elev-0n028.geo .
+
+  Substep 152.2: ./MMoM_4.1.12 PTW-elev-0n028.geo > ../outputs/PTW-elev-0n028.out
+sh: junk: command not found
+
+  Substep 152.3: mv *.4112.* ../outputs/.
+
+  Substep 152.4: rm PTW-elev-0n028.geo
+
+time used to run PTW-elev-0n028.geo = 150 s
+
+
+Step 153: elevation angle = -27 deg from North Pole
+
+  Substep 153.1: cp ../inputs/PTW-elev-0n027.geo .
+
+  Substep 153.2: ./MMoM_4.1.12 PTW-elev-0n027.geo > ../outputs/PTW-elev-0n027.out
+sh: junk: command not found
+
+  Substep 153.3: mv *.4112.* ../outputs/.
+
+  Substep 153.4: rm PTW-elev-0n027.geo
+
+time used to run PTW-elev-0n027.geo = 155 s
+
+
+Step 154: elevation angle = -26 deg from North Pole
+
+  Substep 154.1: cp ../inputs/PTW-elev-0n026.geo .
+
+  Substep 154.2: ./MMoM_4.1.12 PTW-elev-0n026.geo > ../outputs/PTW-elev-0n026.out
+sh: junk: command not found
+
+  Substep 154.3: mv *.4112.* ../outputs/.
+
+  Substep 154.4: rm PTW-elev-0n026.geo
+
+time used to run PTW-elev-0n026.geo = 141 s
+
+
+Step 155: elevation angle = -25 deg from North Pole
+
+  Substep 155.1: cp ../inputs/PTW-elev-0n025.geo .
+
+  Substep 155.2: ./MMoM_4.1.12 PTW-elev-0n025.geo > ../outputs/PTW-elev-0n025.out
+sh: junk: command not found
+
+  Substep 155.3: mv *.4112.* ../outputs/.
+
+  Substep 155.4: rm PTW-elev-0n025.geo
+
+time used to run PTW-elev-0n025.geo = 135 s
+
+
+Step 156: elevation angle = -24 deg from North Pole
+
+  Substep 156.1: cp ../inputs/PTW-elev-0n024.geo .
+
+  Substep 156.2: ./MMoM_4.1.12 PTW-elev-0n024.geo > ../outputs/PTW-elev-0n024.out
+sh: junk: command not found
+
+  Substep 156.3: mv *.4112.* ../outputs/.
+
+  Substep 156.4: rm PTW-elev-0n024.geo
+
+time used to run PTW-elev-0n024.geo = 135 s
+
+
+Step 157: elevation angle = -23 deg from North Pole
+
+  Substep 157.1: cp ../inputs/PTW-elev-0n023.geo .
+
+  Substep 157.2: ./MMoM_4.1.12 PTW-elev-0n023.geo > ../outputs/PTW-elev-0n023.out
+sh: junk: command not found
+
+  Substep 157.3: mv *.4112.* ../outputs/.
+
+  Substep 157.4: rm PTW-elev-0n023.geo
+
+time used to run PTW-elev-0n023.geo = 133 s
+
+
+Step 158: elevation angle = -22 deg from North Pole
+
+  Substep 158.1: cp ../inputs/PTW-elev-0n022.geo .
+
+  Substep 158.2: ./MMoM_4.1.12 PTW-elev-0n022.geo > ../outputs/PTW-elev-0n022.out
+sh: junk: command not found
+
+  Substep 158.3: mv *.4112.* ../outputs/.
+
+  Substep 158.4: rm PTW-elev-0n022.geo
+
+time used to run PTW-elev-0n022.geo = 133 s
+
+
+Step 159: elevation angle = -21 deg from North Pole
+
+  Substep 159.1: cp ../inputs/PTW-elev-0n021.geo .
+
+  Substep 159.2: ./MMoM_4.1.12 PTW-elev-0n021.geo > ../outputs/PTW-elev-0n021.out
+sh: junk: command not found
+
+  Substep 159.3: mv *.4112.* ../outputs/.
+
+  Substep 159.4: rm PTW-elev-0n021.geo
+
+time used to run PTW-elev-0n021.geo = 135 s
+
+
+Step 160: elevation angle = -20 deg from North Pole
+
+  Substep 160.1: cp ../inputs/PTW-elev-0n020.geo .
+
+  Substep 160.2: ./MMoM_4.1.12 PTW-elev-0n020.geo > ../outputs/PTW-elev-0n020.out
+sh: junk: command not found
+
+  Substep 160.3: mv *.4112.* ../outputs/.
+
+  Substep 160.4: rm PTW-elev-0n020.geo
+
+time used to run PTW-elev-0n020.geo = 141 s
+
+
+Step 161: elevation angle = -19 deg from North Pole
+
+  Substep 161.1: cp ../inputs/PTW-elev-0n019.geo .
+
+  Substep 161.2: ./MMoM_4.1.12 PTW-elev-0n019.geo > ../outputs/PTW-elev-0n019.out
+sh: junk: command not found
+
+  Substep 161.3: mv *.4112.* ../outputs/.
+
+  Substep 161.4: rm PTW-elev-0n019.geo
+
+time used to run PTW-elev-0n019.geo = 131 s
+
+
+Step 162: elevation angle = -18 deg from North Pole
+
+  Substep 162.1: cp ../inputs/PTW-elev-0n018.geo .
+
+  Substep 162.2: ./MMoM_4.1.12 PTW-elev-0n018.geo > ../outputs/PTW-elev-0n018.out
+sh: junk: command not found
+
+  Substep 162.3: mv *.4112.* ../outputs/.
+
+  Substep 162.4: rm PTW-elev-0n018.geo
+
+time used to run PTW-elev-0n018.geo = 131 s
+
+
+Step 163: elevation angle = -17 deg from North Pole
+
+  Substep 163.1: cp ../inputs/PTW-elev-0n017.geo .
+
+  Substep 163.2: ./MMoM_4.1.12 PTW-elev-0n017.geo > ../outputs/PTW-elev-0n017.out
+sh: junk: command not found
+
+  Substep 163.3: mv *.4112.* ../outputs/.
+
+  Substep 163.4: rm PTW-elev-0n017.geo
+
+time used to run PTW-elev-0n017.geo = 144 s
+
+
+Step 164: elevation angle = -16 deg from North Pole
+
+  Substep 164.1: cp ../inputs/PTW-elev-0n016.geo .
+
+  Substep 164.2: ./MMoM_4.1.12 PTW-elev-0n016.geo > ../outputs/PTW-elev-0n016.out
+sh: junk: command not found
+
+  Substep 164.3: mv *.4112.* ../outputs/.
+
+  Substep 164.4: rm PTW-elev-0n016.geo
+
+time used to run PTW-elev-0n016.geo = 135 s
+
+
+Step 165: elevation angle = -15 deg from North Pole
+
+  Substep 165.1: cp ../inputs/PTW-elev-0n015.geo .
+
+  Substep 165.2: ./MMoM_4.1.12 PTW-elev-0n015.geo > ../outputs/PTW-elev-0n015.out
+sh: junk: command not found
+
+  Substep 165.3: mv *.4112.* ../outputs/.
+
+  Substep 165.4: rm PTW-elev-0n015.geo
+
+time used to run PTW-elev-0n015.geo = 143 s
+
+
+Step 166: elevation angle = -14 deg from North Pole
+
+  Substep 166.1: cp ../inputs/PTW-elev-0n014.geo .
+
+  Substep 166.2: ./MMoM_4.1.12 PTW-elev-0n014.geo > ../outputs/PTW-elev-0n014.out
+sh: junk: command not found
+
+  Substep 166.3: mv *.4112.* ../outputs/.
+
+  Substep 166.4: rm PTW-elev-0n014.geo
+
+time used to run PTW-elev-0n014.geo = 175 s
+
+
+Step 167: elevation angle = -13 deg from North Pole
+
+  Substep 167.1: cp ../inputs/PTW-elev-0n013.geo .
+
+  Substep 167.2: ./MMoM_4.1.12 PTW-elev-0n013.geo > ../outputs/PTW-elev-0n013.out
+sh: junk: command not found
+
+  Substep 167.3: mv *.4112.* ../outputs/.
+
+  Substep 167.4: rm PTW-elev-0n013.geo
+
+time used to run PTW-elev-0n013.geo = 195 s
+
+
+Step 168: elevation angle = -12 deg from North Pole
+
+  Substep 168.1: cp ../inputs/PTW-elev-0n012.geo .
+
+  Substep 168.2: ./MMoM_4.1.12 PTW-elev-0n012.geo > ../outputs/PTW-elev-0n012.out
+sh: junk: command not found
+
+  Substep 168.3: mv *.4112.* ../outputs/.
+
+  Substep 168.4: rm PTW-elev-0n012.geo
+
+time used to run PTW-elev-0n012.geo = 191 s
+
+
+Step 169: elevation angle = -11 deg from North Pole
+
+  Substep 169.1: cp ../inputs/PTW-elev-0n011.geo .
+
+  Substep 169.2: ./MMoM_4.1.12 PTW-elev-0n011.geo > ../outputs/PTW-elev-0n011.out
+sh: junk: command not found
+
+  Substep 169.3: mv *.4112.* ../outputs/.
+
+  Substep 169.4: rm PTW-elev-0n011.geo
+
+time used to run PTW-elev-0n011.geo = 176 s
+
+
+Step 170: elevation angle = -10 deg from North Pole
+
+  Substep 170.1: cp ../inputs/PTW-elev-0n010.geo .
+
+  Substep 170.2: ./MMoM_4.1.12 PTW-elev-0n010.geo > ../outputs/PTW-elev-0n010.out
+sh: junk: command not found
+
+  Substep 170.3: mv *.4112.* ../outputs/.
+
+  Substep 170.4: rm PTW-elev-0n010.geo
+
+time used to run PTW-elev-0n010.geo = 163 s
+
+
+Step 171: elevation angle = -9 deg from North Pole
+
+  Substep 171.1: cp ../inputs/PTW-elev-0n009.geo .
+
+  Substep 171.2: ./MMoM_4.1.12 PTW-elev-0n009.geo > ../outputs/PTW-elev-0n009.out
+sh: junk: command not found
+
+  Substep 171.3: mv *.4112.* ../outputs/.
+
+  Substep 171.4: rm PTW-elev-0n009.geo
+
+time used to run PTW-elev-0n009.geo = 129 s
+
+
+Step 172: elevation angle = -8 deg from North Pole
+
+  Substep 172.1: cp ../inputs/PTW-elev-0n008.geo .
+
+  Substep 172.2: ./MMoM_4.1.12 PTW-elev-0n008.geo > ../outputs/PTW-elev-0n008.out
+sh: junk: command not found
+
+  Substep 172.3: mv *.4112.* ../outputs/.
+
+  Substep 172.4: rm PTW-elev-0n008.geo
+
+time used to run PTW-elev-0n008.geo = 129 s
+
+
+Step 173: elevation angle = -7 deg from North Pole
+
+  Substep 173.1: cp ../inputs/PTW-elev-0n007.geo .
+
+  Substep 173.2: ./MMoM_4.1.12 PTW-elev-0n007.geo > ../outputs/PTW-elev-0n007.out
+sh: junk: command not found
+
+  Substep 173.3: mv *.4112.* ../outputs/.
+
+  Substep 173.4: rm PTW-elev-0n007.geo
+
+time used to run PTW-elev-0n007.geo = 132 s
+
+
+Step 174: elevation angle = -6 deg from North Pole
+
+  Substep 174.1: cp ../inputs/PTW-elev-0n006.geo .
+
+  Substep 174.2: ./MMoM_4.1.12 PTW-elev-0n006.geo > ../outputs/PTW-elev-0n006.out
+sh: junk: command not found
+
+  Substep 174.3: mv *.4112.* ../outputs/.
+
+  Substep 174.4: rm PTW-elev-0n006.geo
+
+time used to run PTW-elev-0n006.geo = 132 s
+
+
+Step 175: elevation angle = -5 deg from North Pole
+
+  Substep 175.1: cp ../inputs/PTW-elev-0n005.geo .
+
+  Substep 175.2: ./MMoM_4.1.12 PTW-elev-0n005.geo > ../outputs/PTW-elev-0n005.out
+sh: junk: command not found
+
+  Substep 175.3: mv *.4112.* ../outputs/.
+
+  Substep 175.4: rm PTW-elev-0n005.geo
+
+time used to run PTW-elev-0n005.geo = 144 s
+
+
+Step 176: elevation angle = -4 deg from North Pole
+
+  Substep 176.1: cp ../inputs/PTW-elev-0n004.geo .
+
+  Substep 176.2: ./MMoM_4.1.12 PTW-elev-0n004.geo > ../outputs/PTW-elev-0n004.out
+sh: junk: command not found
+
+  Substep 176.3: mv *.4112.* ../outputs/.
+
+  Substep 176.4: rm PTW-elev-0n004.geo
+
+time used to run PTW-elev-0n004.geo = 134 s
+
+
+Step 177: elevation angle = -3 deg from North Pole
+
+  Substep 177.1: cp ../inputs/PTW-elev-0n003.geo .
+
+  Substep 177.2: ./MMoM_4.1.12 PTW-elev-0n003.geo > ../outputs/PTW-elev-0n003.out
+sh: junk: command not found
+
+  Substep 177.3: mv *.4112.* ../outputs/.
+
+  Substep 177.4: rm PTW-elev-0n003.geo
+
+time used to run PTW-elev-0n003.geo = 136 s
+
+
+Step 178: elevation angle = -2 deg from North Pole
+
+  Substep 178.1: cp ../inputs/PTW-elev-0n002.geo .
+
+  Substep 178.2: ./MMoM_4.1.12 PTW-elev-0n002.geo > ../outputs/PTW-elev-0n002.out
+sh: junk: command not found
+
+  Substep 178.3: mv *.4112.* ../outputs/.
+
+  Substep 178.4: rm PTW-elev-0n002.geo
+
+time used to run PTW-elev-0n002.geo = 133 s
+
+
+Step 179: elevation angle = -1 deg from North Pole
+
+  Substep 179.1: cp ../inputs/PTW-elev-0n001.geo .
+
+  Substep 179.2: ./MMoM_4.1.12 PTW-elev-0n001.geo > ../outputs/PTW-elev-0n001.out
+sh: junk: command not found
+
+  Substep 179.3: mv *.4112.* ../outputs/.
+
+  Substep 179.4: rm PTW-elev-0n001.geo
+
+time used to run PTW-elev-0n001.geo = 136 s
+
+
+Step 180: elevation angle = 0 deg from North Pole
+
+  Substep 180.1: cp ../inputs/PTW-elev-0p000.geo .
+
+  Substep 180.2: ./MMoM_4.1.12 PTW-elev-0p000.geo > ../outputs/PTW-elev-0p000.out
+sh: junk: command not found
+
+  Substep 180.3: mv *.4112.* ../outputs/.
+
+  Substep 180.4: rm PTW-elev-0p000.geo
+
+time used to run PTW-elev-0p000.geo = 135 s
+
+
+Step 181: elevation angle = 1 deg from North Pole
+
+  Substep 181.1: cp ../inputs/PTW-elev-0p001.geo .
+
+  Substep 181.2: ./MMoM_4.1.12 PTW-elev-0p001.geo > ../outputs/PTW-elev-0p001.out
+sh: junk: command not found
+
+  Substep 181.3: mv *.4112.* ../outputs/.
+
+  Substep 181.4: rm PTW-elev-0p001.geo
+
+time used to run PTW-elev-0p001.geo = 136 s
+
+
+Step 182: elevation angle = 2 deg from North Pole
+
+  Substep 182.1: cp ../inputs/PTW-elev-0p002.geo .
+
+  Substep 182.2: ./MMoM_4.1.12 PTW-elev-0p002.geo > ../outputs/PTW-elev-0p002.out
+sh: junk: command not found
+
+  Substep 182.3: mv *.4112.* ../outputs/.
+
+  Substep 182.4: rm PTW-elev-0p002.geo
+
+time used to run PTW-elev-0p002.geo = 136 s
+
+
+Step 183: elevation angle = 3 deg from North Pole
+
+  Substep 183.1: cp ../inputs/PTW-elev-0p003.geo .
+
+  Substep 183.2: ./MMoM_4.1.12 PTW-elev-0p003.geo > ../outputs/PTW-elev-0p003.out
+sh: junk: command not found
+
+  Substep 183.3: mv *.4112.* ../outputs/.
+
+  Substep 183.4: rm PTW-elev-0p003.geo
+
+time used to run PTW-elev-0p003.geo = 135 s
+
+
+Step 184: elevation angle = 4 deg from North Pole
+
+  Substep 184.1: cp ../inputs/PTW-elev-0p004.geo .
+
+  Substep 184.2: ./MMoM_4.1.12 PTW-elev-0p004.geo > ../outputs/PTW-elev-0p004.out
+sh: junk: command not found
+
+  Substep 184.3: mv *.4112.* ../outputs/.
+
+  Substep 184.4: rm PTW-elev-0p004.geo
+
+time used to run PTW-elev-0p004.geo = 135 s
+
+
+Step 185: elevation angle = 5 deg from North Pole
+
+  Substep 185.1: cp ../inputs/PTW-elev-0p005.geo .
+
+  Substep 185.2: ./MMoM_4.1.12 PTW-elev-0p005.geo > ../outputs/PTW-elev-0p005.out
+sh: junk: command not found
+
+  Substep 185.3: mv *.4112.* ../outputs/.
+
+  Substep 185.4: rm PTW-elev-0p005.geo
+
+time used to run PTW-elev-0p005.geo = 135 s
+
+
+Step 186: elevation angle = 6 deg from North Pole
+
+  Substep 186.1: cp ../inputs/PTW-elev-0p006.geo .
+
+  Substep 186.2: ./MMoM_4.1.12 PTW-elev-0p006.geo > ../outputs/PTW-elev-0p006.out
+sh: junk: command not found
+
+  Substep 186.3: mv *.4112.* ../outputs/.
+
+  Substep 186.4: rm PTW-elev-0p006.geo
+
+time used to run PTW-elev-0p006.geo = 134 s
+
+
+Step 187: elevation angle = 7 deg from North Pole
+
+  Substep 187.1: cp ../inputs/PTW-elev-0p007.geo .
+
+  Substep 187.2: ./MMoM_4.1.12 PTW-elev-0p007.geo > ../outputs/PTW-elev-0p007.out
+sh: junk: command not found
+
+  Substep 187.3: mv *.4112.* ../outputs/.
+
+  Substep 187.4: rm PTW-elev-0p007.geo
+
+time used to run PTW-elev-0p007.geo = 140 s
+
+
+Step 188: elevation angle = 8 deg from North Pole
+
+  Substep 188.1: cp ../inputs/PTW-elev-0p008.geo .
+
+  Substep 188.2: ./MMoM_4.1.12 PTW-elev-0p008.geo > ../outputs/PTW-elev-0p008.out
+sh: junk: command not found
+
+  Substep 188.3: mv *.4112.* ../outputs/.
+
+  Substep 188.4: rm PTW-elev-0p008.geo
+
+time used to run PTW-elev-0p008.geo = 132 s
+
+
+Step 189: elevation angle = 9 deg from North Pole
+
+  Substep 189.1: cp ../inputs/PTW-elev-0p009.geo .
+
+  Substep 189.2: ./MMoM_4.1.12 PTW-elev-0p009.geo > ../outputs/PTW-elev-0p009.out
+sh: junk: command not found
+
+  Substep 189.3: mv *.4112.* ../outputs/.
+
+  Substep 189.4: rm PTW-elev-0p009.geo
+
+time used to run PTW-elev-0p009.geo = 132 s
+
+
+Step 190: elevation angle = 10 deg from North Pole
+
+  Substep 190.1: cp ../inputs/PTW-elev-0p010.geo .
+
+  Substep 190.2: ./MMoM_4.1.12 PTW-elev-0p010.geo > ../outputs/PTW-elev-0p010.out
+sh: junk: command not found
+
+  Substep 190.3: mv *.4112.* ../outputs/.
+
+  Substep 190.4: rm PTW-elev-0p010.geo
+
+time used to run PTW-elev-0p010.geo = 132 s
+
+
+Step 191: elevation angle = 11 deg from North Pole
+
+  Substep 191.1: cp ../inputs/PTW-elev-0p011.geo .
+
+  Substep 191.2: ./MMoM_4.1.12 PTW-elev-0p011.geo > ../outputs/PTW-elev-0p011.out
+sh: junk: command not found
+
+  Substep 191.3: mv *.4112.* ../outputs/.
+
+  Substep 191.4: rm PTW-elev-0p011.geo
+
+time used to run PTW-elev-0p011.geo = 131 s
+
+
+Step 192: elevation angle = 12 deg from North Pole
+
+  Substep 192.1: cp ../inputs/PTW-elev-0p012.geo .
+
+  Substep 192.2: ./MMoM_4.1.12 PTW-elev-0p012.geo > ../outputs/PTW-elev-0p012.out
+sh: junk: command not found
+
+  Substep 192.3: mv *.4112.* ../outputs/.
+
+  Substep 192.4: rm PTW-elev-0p012.geo
+
+time used to run PTW-elev-0p012.geo = 167 s
+
+
+Step 193: elevation angle = 13 deg from North Pole
+
+  Substep 193.1: cp ../inputs/PTW-elev-0p013.geo .
+
+  Substep 193.2: ./MMoM_4.1.12 PTW-elev-0p013.geo > ../outputs/PTW-elev-0p013.out
+sh: junk: command not found
+
+  Substep 193.3: mv *.4112.* ../outputs/.
+
+  Substep 193.4: rm PTW-elev-0p013.geo
+
+time used to run PTW-elev-0p013.geo = 128 s
+
+
+Step 194: elevation angle = 14 deg from North Pole
+
+  Substep 194.1: cp ../inputs/PTW-elev-0p014.geo .
+
+  Substep 194.2: ./MMoM_4.1.12 PTW-elev-0p014.geo > ../outputs/PTW-elev-0p014.out
+sh: junk: command not found
+
+  Substep 194.3: mv *.4112.* ../outputs/.
+
+  Substep 194.4: rm PTW-elev-0p014.geo
+
+time used to run PTW-elev-0p014.geo = 143 s
+
+
+Step 195: elevation angle = 15 deg from North Pole
+
+  Substep 195.1: cp ../inputs/PTW-elev-0p015.geo .
+
+  Substep 195.2: ./MMoM_4.1.12 PTW-elev-0p015.geo > ../outputs/PTW-elev-0p015.out
+sh: junk: command not found
+
+  Substep 195.3: mv *.4112.* ../outputs/.
+
+  Substep 195.4: rm PTW-elev-0p015.geo
+
+time used to run PTW-elev-0p015.geo = 136 s
+
+
+Step 196: elevation angle = 16 deg from North Pole
+
+  Substep 196.1: cp ../inputs/PTW-elev-0p016.geo .
+
+  Substep 196.2: ./MMoM_4.1.12 PTW-elev-0p016.geo > ../outputs/PTW-elev-0p016.out
+sh: junk: command not found
+
+  Substep 196.3: mv *.4112.* ../outputs/.
+
+  Substep 196.4: rm PTW-elev-0p016.geo
+
+time used to run PTW-elev-0p016.geo = 136 s
+
+
+Step 197: elevation angle = 17 deg from North Pole
+
+  Substep 197.1: cp ../inputs/PTW-elev-0p017.geo .
+
+  Substep 197.2: ./MMoM_4.1.12 PTW-elev-0p017.geo > ../outputs/PTW-elev-0p017.out
+sh: junk: command not found
+
+  Substep 197.3: mv *.4112.* ../outputs/.
+
+  Substep 197.4: rm PTW-elev-0p017.geo
+
+time used to run PTW-elev-0p017.geo = 136 s
+
+
+Step 198: elevation angle = 18 deg from North Pole
+
+  Substep 198.1: cp ../inputs/PTW-elev-0p018.geo .
+
+  Substep 198.2: ./MMoM_4.1.12 PTW-elev-0p018.geo > ../outputs/PTW-elev-0p018.out
+sh: junk: command not found
+
+  Substep 198.3: mv *.4112.* ../outputs/.
+
+  Substep 198.4: rm PTW-elev-0p018.geo
+
+time used to run PTW-elev-0p018.geo = 140 s
+
+
+Step 199: elevation angle = 19 deg from North Pole
+
+  Substep 199.1: cp ../inputs/PTW-elev-0p019.geo .
+
+  Substep 199.2: ./MMoM_4.1.12 PTW-elev-0p019.geo > ../outputs/PTW-elev-0p019.out
+sh: junk: command not found
+
+  Substep 199.3: mv *.4112.* ../outputs/.
+
+  Substep 199.4: rm PTW-elev-0p019.geo
+
+time used to run PTW-elev-0p019.geo = 137 s
+
+
+Step 200: elevation angle = 20 deg from North Pole
+
+  Substep 200.1: cp ../inputs/PTW-elev-0p020.geo .
+
+  Substep 200.2: ./MMoM_4.1.12 PTW-elev-0p020.geo > ../outputs/PTW-elev-0p020.out
+sh: junk: command not found
+
+  Substep 200.3: mv *.4112.* ../outputs/.
+
+  Substep 200.4: rm PTW-elev-0p020.geo
+
+time used to run PTW-elev-0p020.geo = 133 s
+
+
+Step 201: elevation angle = 21 deg from North Pole
+
+  Substep 201.1: cp ../inputs/PTW-elev-0p021.geo .
+
+  Substep 201.2: ./MMoM_4.1.12 PTW-elev-0p021.geo > ../outputs/PTW-elev-0p021.out
+sh: junk: command not found
+
+  Substep 201.3: mv *.4112.* ../outputs/.
+
+  Substep 201.4: rm PTW-elev-0p021.geo
+
+time used to run PTW-elev-0p021.geo = 130 s
+
+
+Step 202: elevation angle = 22 deg from North Pole
+
+  Substep 202.1: cp ../inputs/PTW-elev-0p022.geo .
+
+  Substep 202.2: ./MMoM_4.1.12 PTW-elev-0p022.geo > ../outputs/PTW-elev-0p022.out
+sh: junk: command not found
+
+  Substep 202.3: mv *.4112.* ../outputs/.
+
+  Substep 202.4: rm PTW-elev-0p022.geo
+
+time used to run PTW-elev-0p022.geo = 138 s
+
+
+Step 203: elevation angle = 23 deg from North Pole
+
+  Substep 203.1: cp ../inputs/PTW-elev-0p023.geo .
+
+  Substep 203.2: ./MMoM_4.1.12 PTW-elev-0p023.geo > ../outputs/PTW-elev-0p023.out
+sh: junk: command not found
+
+  Substep 203.3: mv *.4112.* ../outputs/.
+
+  Substep 203.4: rm PTW-elev-0p023.geo
+
+time used to run PTW-elev-0p023.geo = 139 s
+
+
+Step 204: elevation angle = 24 deg from North Pole
+
+  Substep 204.1: cp ../inputs/PTW-elev-0p024.geo .
+
+  Substep 204.2: ./MMoM_4.1.12 PTW-elev-0p024.geo > ../outputs/PTW-elev-0p024.out
+sh: junk: command not found
+
+  Substep 204.3: mv *.4112.* ../outputs/.
+
+  Substep 204.4: rm PTW-elev-0p024.geo
+
+time used to run PTW-elev-0p024.geo = 145 s
+
+
+Step 205: elevation angle = 25 deg from North Pole
+
+  Substep 205.1: cp ../inputs/PTW-elev-0p025.geo .
+
+  Substep 205.2: ./MMoM_4.1.12 PTW-elev-0p025.geo > ../outputs/PTW-elev-0p025.out
+sh: junk: command not found
+
+  Substep 205.3: mv *.4112.* ../outputs/.
+
+  Substep 205.4: rm PTW-elev-0p025.geo
+
+time used to run PTW-elev-0p025.geo = 147 s
+
+
+Step 206: elevation angle = 26 deg from North Pole
+
+  Substep 206.1: cp ../inputs/PTW-elev-0p026.geo .
+
+  Substep 206.2: ./MMoM_4.1.12 PTW-elev-0p026.geo > ../outputs/PTW-elev-0p026.out
+sh: junk: command not found
+
+  Substep 206.3: mv *.4112.* ../outputs/.
+
+  Substep 206.4: rm PTW-elev-0p026.geo
+
+time used to run PTW-elev-0p026.geo = 137 s
+
+
+Step 207: elevation angle = 27 deg from North Pole
+
+  Substep 207.1: cp ../inputs/PTW-elev-0p027.geo .
+
+  Substep 207.2: ./MMoM_4.1.12 PTW-elev-0p027.geo > ../outputs/PTW-elev-0p027.out
+sh: junk: command not found
+
+  Substep 207.3: mv *.4112.* ../outputs/.
+
+  Substep 207.4: rm PTW-elev-0p027.geo
+
+time used to run PTW-elev-0p027.geo = 141 s
+
+
+Step 208: elevation angle = 28 deg from North Pole
+
+  Substep 208.1: cp ../inputs/PTW-elev-0p028.geo .
+
+  Substep 208.2: ./MMoM_4.1.12 PTW-elev-0p028.geo > ../outputs/PTW-elev-0p028.out
+sh: junk: command not found
+
+  Substep 208.3: mv *.4112.* ../outputs/.
+
+  Substep 208.4: rm PTW-elev-0p028.geo
+
+time used to run PTW-elev-0p028.geo = 132 s
+
+
+Step 209: elevation angle = 29 deg from North Pole
+
+  Substep 209.1: cp ../inputs/PTW-elev-0p029.geo .
+
+  Substep 209.2: ./MMoM_4.1.12 PTW-elev-0p029.geo > ../outputs/PTW-elev-0p029.out
+sh: junk: command not found
+
+  Substep 209.3: mv *.4112.* ../outputs/.
+
+  Substep 209.4: rm PTW-elev-0p029.geo
+
+time used to run PTW-elev-0p029.geo = 145 s
+
+
+Step 210: elevation angle = 30 deg from North Pole
+
+  Substep 210.1: cp ../inputs/PTW-elev-0p030.geo .
+
+  Substep 210.2: ./MMoM_4.1.12 PTW-elev-0p030.geo > ../outputs/PTW-elev-0p030.out
+sh: junk: command not found
+
+  Substep 210.3: mv *.4112.* ../outputs/.
+
+  Substep 210.4: rm PTW-elev-0p030.geo
+
+time used to run PTW-elev-0p030.geo = 132 s
+
+
+Step 211: elevation angle = 31 deg from North Pole
+
+  Substep 211.1: cp ../inputs/PTW-elev-0p031.geo .
+
+  Substep 211.2: ./MMoM_4.1.12 PTW-elev-0p031.geo > ../outputs/PTW-elev-0p031.out
+sh: junk: command not found
+
+  Substep 211.3: mv *.4112.* ../outputs/.
+
+  Substep 211.4: rm PTW-elev-0p031.geo
+
+time used to run PTW-elev-0p031.geo = 135 s
+
+
+Step 212: elevation angle = 32 deg from North Pole
+
+  Substep 212.1: cp ../inputs/PTW-elev-0p032.geo .
+
+  Substep 212.2: ./MMoM_4.1.12 PTW-elev-0p032.geo > ../outputs/PTW-elev-0p032.out
+sh: junk: command not found
+
+  Substep 212.3: mv *.4112.* ../outputs/.
+
+  Substep 212.4: rm PTW-elev-0p032.geo
+
+time used to run PTW-elev-0p032.geo = 132 s
+
+
+Step 213: elevation angle = 33 deg from North Pole
+
+  Substep 213.1: cp ../inputs/PTW-elev-0p033.geo .
+
+  Substep 213.2: ./MMoM_4.1.12 PTW-elev-0p033.geo > ../outputs/PTW-elev-0p033.out
+sh: junk: command not found
+
+  Substep 213.3: mv *.4112.* ../outputs/.
+
+  Substep 213.4: rm PTW-elev-0p033.geo
+
+time used to run PTW-elev-0p033.geo = 154 s
+
+
+Step 214: elevation angle = 34 deg from North Pole
+
+  Substep 214.1: cp ../inputs/PTW-elev-0p034.geo .
+
+  Substep 214.2: ./MMoM_4.1.12 PTW-elev-0p034.geo > ../outputs/PTW-elev-0p034.out
+sh: junk: command not found
+
+  Substep 214.3: mv *.4112.* ../outputs/.
+
+  Substep 214.4: rm PTW-elev-0p034.geo
+
+time used to run PTW-elev-0p034.geo = 152 s
+
+
+Step 215: elevation angle = 35 deg from North Pole
+
+  Substep 215.1: cp ../inputs/PTW-elev-0p035.geo .
+
+  Substep 215.2: ./MMoM_4.1.12 PTW-elev-0p035.geo > ../outputs/PTW-elev-0p035.out
+sh: junk: command not found
+
+  Substep 215.3: mv *.4112.* ../outputs/.
+
+  Substep 215.4: rm PTW-elev-0p035.geo
+
+time used to run PTW-elev-0p035.geo = 155 s
+
+
+Step 216: elevation angle = 36 deg from North Pole
+
+  Substep 216.1: cp ../inputs/PTW-elev-0p036.geo .
+
+  Substep 216.2: ./MMoM_4.1.12 PTW-elev-0p036.geo > ../outputs/PTW-elev-0p036.out
+sh: junk: command not found
+
+  Substep 216.3: mv *.4112.* ../outputs/.
+
+  Substep 216.4: rm PTW-elev-0p036.geo
+
+time used to run PTW-elev-0p036.geo = 143 s
+
+
+Step 217: elevation angle = 37 deg from North Pole
+
+  Substep 217.1: cp ../inputs/PTW-elev-0p037.geo .
+
+  Substep 217.2: ./MMoM_4.1.12 PTW-elev-0p037.geo > ../outputs/PTW-elev-0p037.out
+sh: junk: command not found
+
+  Substep 217.3: mv *.4112.* ../outputs/.
+
+  Substep 217.4: rm PTW-elev-0p037.geo
+
+time used to run PTW-elev-0p037.geo = 139 s
+
+
+Step 218: elevation angle = 38 deg from North Pole
+
+  Substep 218.1: cp ../inputs/PTW-elev-0p038.geo .
+
+  Substep 218.2: ./MMoM_4.1.12 PTW-elev-0p038.geo > ../outputs/PTW-elev-0p038.out
+sh: junk: command not found
+
+  Substep 218.3: mv *.4112.* ../outputs/.
+
+  Substep 218.4: rm PTW-elev-0p038.geo
+
+time used to run PTW-elev-0p038.geo = 139 s
+
+
+Step 219: elevation angle = 39 deg from North Pole
+
+  Substep 219.1: cp ../inputs/PTW-elev-0p039.geo .
+
+  Substep 219.2: ./MMoM_4.1.12 PTW-elev-0p039.geo > ../outputs/PTW-elev-0p039.out
+sh: junk: command not found
+
+  Substep 219.3: mv *.4112.* ../outputs/.
+
+  Substep 219.4: rm PTW-elev-0p039.geo
+
+time used to run PTW-elev-0p039.geo = 141 s
+
+
+Step 220: elevation angle = 40 deg from North Pole
+
+  Substep 220.1: cp ../inputs/PTW-elev-0p040.geo .
+
+  Substep 220.2: ./MMoM_4.1.12 PTW-elev-0p040.geo > ../outputs/PTW-elev-0p040.out
+sh: junk: command not found
+
+  Substep 220.3: mv *.4112.* ../outputs/.
+
+  Substep 220.4: rm PTW-elev-0p040.geo
+
+time used to run PTW-elev-0p040.geo = 139 s
+
+
+Step 221: elevation angle = 41 deg from North Pole
+
+  Substep 221.1: cp ../inputs/PTW-elev-0p041.geo .
+
+  Substep 221.2: ./MMoM_4.1.12 PTW-elev-0p041.geo > ../outputs/PTW-elev-0p041.out
+sh: junk: command not found
+
+  Substep 221.3: mv *.4112.* ../outputs/.
+
+  Substep 221.4: rm PTW-elev-0p041.geo
+
+time used to run PTW-elev-0p041.geo = 140 s
+
+
+Step 222: elevation angle = 42 deg from North Pole
+
+  Substep 222.1: cp ../inputs/PTW-elev-0p042.geo .
+
+  Substep 222.2: ./MMoM_4.1.12 PTW-elev-0p042.geo > ../outputs/PTW-elev-0p042.out
+sh: junk: command not found
+
+  Substep 222.3: mv *.4112.* ../outputs/.
+
+  Substep 222.4: rm PTW-elev-0p042.geo
+
+time used to run PTW-elev-0p042.geo = 137 s
+
+
+Step 223: elevation angle = 43 deg from North Pole
+
+  Substep 223.1: cp ../inputs/PTW-elev-0p043.geo .
+
+  Substep 223.2: ./MMoM_4.1.12 PTW-elev-0p043.geo > ../outputs/PTW-elev-0p043.out
+	sh: junk: command not found
+
+  Substep 223.3: mv *.4112.* ../outputs/.
+
+  Substep 223.4: rm PTW-elev-0p043.geo
+
+time used to run PTW-elev-0p043.geo = 156 s
+
+
+Step 224: elevation angle = 44 deg from North Pole
+
+  Substep 224.1: cp ../inputs/PTW-elev-0p044.geo .
+
+  Substep 224.2: ./MMoM_4.1.12 PTW-elev-0p044.geo > ../outputs/PTW-elev-0p044.out
+sh: junk: command not found
+
+  Substep 224.3: mv *.4112.* ../outputs/.
+
+  Substep 224.4: rm PTW-elev-0p044.geo
+
+time used to run PTW-elev-0p044.geo = 137 s
+
+
+Step 225: elevation angle = 45 deg from North Pole
+
+  Substep 225.1: cp ../inputs/PTW-elev-0p045.geo .
+
+  Substep 225.2: ./MMoM_4.1.12 PTW-elev-0p045.geo > ../outputs/PTW-elev-0p045.out
+sh: junk: command not found
+
+  Substep 225.3: mv *.4112.* ../outputs/.
+
+  Substep 225.4: rm PTW-elev-0p045.geo
+
+time used to run PTW-elev-0p045.geo = 143 s
+
+
+Step 226: elevation angle = 46 deg from North Pole
+
+  Substep 226.1: cp ../inputs/PTW-elev-0p046.geo .
+
+  Substep 226.2: ./MMoM_4.1.12 PTW-elev-0p046.geo > ../outputs/PTW-elev-0p046.out
+sh: junk: command not found
+
+  Substep 226.3: mv *.4112.* ../outputs/.
+
+  Substep 226.4: rm PTW-elev-0p046.geo
+
+time used to run PTW-elev-0p046.geo = 160 s
+
+
+Step 227: elevation angle = 47 deg from North Pole
+
+  Substep 227.1: cp ../inputs/PTW-elev-0p047.geo .
+
+  Substep 227.2: ./MMoM_4.1.12 PTW-elev-0p047.geo > ../outputs/PTW-elev-0p047.out
+sh: junk: command not found
+
+  Substep 227.3: mv *.4112.* ../outputs/.
+
+  Substep 227.4: rm PTW-elev-0p047.geo
+
+time used to run PTW-elev-0p047.geo = 193 s
+
+
+Step 228: elevation angle = 48 deg from North Pole
+
+  Substep 228.1: cp ../inputs/PTW-elev-0p048.geo .
+
+  Substep 228.2: ./MMoM_4.1.12 PTW-elev-0p048.geo > ../outputs/PTW-elev-0p048.out
+sh: junk: command not found
+
+  Substep 228.3: mv *.4112.* ../outputs/.
+
+  Substep 228.4: rm PTW-elev-0p048.geo
+
+time used to run PTW-elev-0p048.geo = 203 s
+
+
+Step 229: elevation angle = 49 deg from North Pole
+
+  Substep 229.1: cp ../inputs/PTW-elev-0p049.geo .
+
+  Substep 229.2: ./MMoM_4.1.12 PTW-elev-0p049.geo > ../outputs/PTW-elev-0p049.out
+sh: junk: command not found
+
+  Substep 229.3: mv *.4112.* ../outputs/.
+
+  Substep 229.4: rm PTW-elev-0p049.geo
+
+time used to run PTW-elev-0p049.geo = 189 s
+
+
+Step 230: elevation angle = 50 deg from North Pole
+
+  Substep 230.1: cp ../inputs/PTW-elev-0p050.geo .
+
+  Substep 230.2: ./MMoM_4.1.12 PTW-elev-0p050.geo > ../outputs/PTW-elev-0p050.out
+sh: junk: command not found
+
+  Substep 230.3: mv *.4112.* ../outputs/.
+
+  Substep 230.4: rm PTW-elev-0p050.geo
+
+time used to run PTW-elev-0p050.geo = 181 s
+
+
+Step 231: elevation angle = 51 deg from North Pole
+
+  Substep 231.1: cp ../inputs/PTW-elev-0p051.geo .
+
+  Substep 231.2: ./MMoM_4.1.12 PTW-elev-0p051.geo > ../outputs/PTW-elev-0p051.out
+sh: junk: command not found
+
+  Substep 231.3: mv *.4112.* ../outputs/.
+
+  Substep 231.4: rm PTW-elev-0p051.geo
+
+time used to run PTW-elev-0p051.geo = 143 s
+
+
+Step 232: elevation angle = 52 deg from North Pole
+
+  Substep 232.1: cp ../inputs/PTW-elev-0p052.geo .
+
+  Substep 232.2: ./MMoM_4.1.12 PTW-elev-0p052.geo > ../outputs/PTW-elev-0p052.out
+sh: junk: command not found
+
+  Substep 232.3: mv *.4112.* ../outputs/.
+
+  Substep 232.4: rm PTW-elev-0p052.geo
+
+time used to run PTW-elev-0p052.geo = 138 s
+
+
+Step 233: elevation angle = 53 deg from North Pole
+
+  Substep 233.1: cp ../inputs/PTW-elev-0p053.geo .
+
+  Substep 233.2: ./MMoM_4.1.12 PTW-elev-0p053.geo > ../outputs/PTW-elev-0p053.out
+sh: junk: command not found
+
+  Substep 233.3: mv *.4112.* ../outputs/.
+
+  Substep 233.4: rm PTW-elev-0p053.geo
+
+time used to run PTW-elev-0p053.geo = 142 s
+
+
+Step 234: elevation angle = 54 deg from North Pole
+
+  Substep 234.1: cp ../inputs/PTW-elev-0p054.geo .
+
+  Substep 234.2: ./MMoM_4.1.12 PTW-elev-0p054.geo > ../outputs/PTW-elev-0p054.out
+sh: junk: command not found
+
+  Substep 234.3: mv *.4112.* ../outputs/.
+
+  Substep 234.4: rm PTW-elev-0p054.geo
+
+time used to run PTW-elev-0p054.geo = 166 s
+
+
+Step 235: elevation angle = 55 deg from North Pole
+
+  Substep 235.1: cp ../inputs/PTW-elev-0p055.geo .
+
+  Substep 235.2: ./MMoM_4.1.12 PTW-elev-0p055.geo > ../outputs/PTW-elev-0p055.out
+sh: junk: command not found
+
+  Substep 235.3: mv *.4112.* ../outputs/.
+
+  Substep 235.4: rm PTW-elev-0p055.geo
+
+time used to run PTW-elev-0p055.geo = 159 s
+
+
+Step 236: elevation angle = 56 deg from North Pole
+
+  Substep 236.1: cp ../inputs/PTW-elev-0p056.geo .
+
+  Substep 236.2: ./MMoM_4.1.12 PTW-elev-0p056.geo > ../outputs/PTW-elev-0p056.out
+sh: junk: command not found
+
+  Substep 236.3: mv *.4112.* ../outputs/.
+
+  Substep 236.4: rm PTW-elev-0p056.geo
+
+time used to run PTW-elev-0p056.geo = 155 s
+
+
+Step 237: elevation angle = 57 deg from North Pole
+
+  Substep 237.1: cp ../inputs/PTW-elev-0p057.geo .
+
+  Substep 237.2: ./MMoM_4.1.12 PTW-elev-0p057.geo > ../outputs/PTW-elev-0p057.out
+sh: junk: command not found
+
+  Substep 237.3: mv *.4112.* ../outputs/.
+
+  Substep 237.4: rm PTW-elev-0p057.geo
+
+time used to run PTW-elev-0p057.geo = 150 s
+
+
+Step 238: elevation angle = 58 deg from North Pole
+
+  Substep 238.1: cp ../inputs/PTW-elev-0p058.geo .
+
+  Substep 238.2: ./MMoM_4.1.12 PTW-elev-0p058.geo > ../outputs/PTW-elev-0p058.out
+sh: junk: command not found
+
+  Substep 238.3: mv *.4112.* ../outputs/.
+
+  Substep 238.4: rm PTW-elev-0p058.geo
+
+time used to run PTW-elev-0p058.geo = 156 s
+
+
+Step 239: elevation angle = 59 deg from North Pole
+
+  Substep 239.1: cp ../inputs/PTW-elev-0p059.geo .
+
+  Substep 239.2: ./MMoM_4.1.12 PTW-elev-0p059.geo > ../outputs/PTW-elev-0p059.out
+sh: junk: command not found
+
+  Substep 239.3: mv *.4112.* ../outputs/.
+
+  Substep 239.4: rm PTW-elev-0p059.geo
+
+time used to run PTW-elev-0p059.geo = 149 s
+
+
+Step 240: elevation angle = 60 deg from North Pole
+
+  Substep 240.1: cp ../inputs/PTW-elev-0p060.geo .
+
+  Substep 240.2: ./MMoM_4.1.12 PTW-elev-0p060.geo > ../outputs/PTW-elev-0p060.out
+sh: junk: command not found
+
+  Substep 240.3: mv *.4112.* ../outputs/.
+
+  Substep 240.4: rm PTW-elev-0p060.geo
+
+time used to run PTW-elev-0p060.geo = 153 s
+
+
+Step 241: elevation angle = 61 deg from North Pole
+
+  Substep 241.1: cp ../inputs/PTW-elev-0p061.geo .
+
+  Substep 241.2: ./MMoM_4.1.12 PTW-elev-0p061.geo > ../outputs/PTW-elev-0p061.out
+sh: junk: command not found
+
+  Substep 241.3: mv *.4112.* ../outputs/.
+
+  Substep 241.4: rm PTW-elev-0p061.geo
+
+time used to run PTW-elev-0p061.geo = 146 s
+
+
+Step 242: elevation angle = 62 deg from North Pole
+
+  Substep 242.1: cp ../inputs/PTW-elev-0p062.geo .
+
+  Substep 242.2: ./MMoM_4.1.12 PTW-elev-0p062.geo > ../outputs/PTW-elev-0p062.out
+sh: junk: command not found
+
+  Substep 242.3: mv *.4112.* ../outputs/.
+
+  Substep 242.4: rm PTW-elev-0p062.geo
+
+time used to run PTW-elev-0p062.geo = 149 s
+
+
+Step 243: elevation angle = 63 deg from North Pole
+
+  Substep 243.1: cp ../inputs/PTW-elev-0p063.geo .
+
+  Substep 243.2: ./MMoM_4.1.12 PTW-elev-0p063.geo > ../outputs/PTW-elev-0p063.out
+sh: junk: command not found
+
+  Substep 243.3: mv *.4112.* ../outputs/.
+
+  Substep 243.4: rm PTW-elev-0p063.geo
+
+time used to run PTW-elev-0p063.geo = 142 s
+
+
+Step 244: elevation angle = 64 deg from North Pole
+
+  Substep 244.1: cp ../inputs/PTW-elev-0p064.geo .
+
+  Substep 244.2: ./MMoM_4.1.12 PTW-elev-0p064.geo > ../outputs/PTW-elev-0p064.out
+sh: junk: command not found
+
+  Substep 244.3: mv *.4112.* ../outputs/.
+
+  Substep 244.4: rm PTW-elev-0p064.geo
+
+time used to run PTW-elev-0p064.geo = 145 s
+
+
+Step 245: elevation angle = 65 deg from North Pole
+
+  Substep 245.1: cp ../inputs/PTW-elev-0p065.geo .
+
+  Substep 245.2: ./MMoM_4.1.12 PTW-elev-0p065.geo > ../outputs/PTW-elev-0p065.out
+sh: junk: command not found
+
+  Substep 245.3: mv *.4112.* ../outputs/.
+
+  Substep 245.4: rm PTW-elev-0p065.geo
+
+time used to run PTW-elev-0p065.geo = 140 s
+
+
+Step 246: elevation angle = 66 deg from North Pole
+
+  Substep 246.1: cp ../inputs/PTW-elev-0p066.geo .
+
+  Substep 246.2: ./MMoM_4.1.12 PTW-elev-0p066.geo > ../outputs/PTW-elev-0p066.out
+sh: junk: command not found
+
+  Substep 246.3: mv *.4112.* ../outputs/.
+
+  Substep 246.4: rm PTW-elev-0p066.geo
+
+time used to run PTW-elev-0p066.geo = 145 s
+
+
+Step 247: elevation angle = 67 deg from North Pole
+
+  Substep 247.1: cp ../inputs/PTW-elev-0p067.geo .
+
+  Substep 247.2: ./MMoM_4.1.12 PTW-elev-0p067.geo > ../outputs/PTW-elev-0p067.out
+sh: junk: command not found
+
+  Substep 247.3: mv *.4112.* ../outputs/.
+
+  Substep 247.4: rm PTW-elev-0p067.geo
+
+time used to run PTW-elev-0p067.geo = 147 s
+
+
+Step 248: elevation angle = 68 deg from North Pole
+
+  Substep 248.1: cp ../inputs/PTW-elev-0p068.geo .
+
+  Substep 248.2: ./MMoM_4.1.12 PTW-elev-0p068.geo > ../outputs/PTW-elev-0p068.out
+sh: junk: command not found
+
+  Substep 248.3: mv *.4112.* ../outputs/.
+
+  Substep 248.4: rm PTW-elev-0p068.geo
+
+time used to run PTW-elev-0p068.geo = 148 s
+
+
+Step 249: elevation angle = 69 deg from North Pole
+
+  Substep 249.1: cp ../inputs/PTW-elev-0p069.geo .
+
+  Substep 249.2: ./MMoM_4.1.12 PTW-elev-0p069.geo > ../outputs/PTW-elev-0p069.out
+sh: junk: command not found
+
+  Substep 249.3: mv *.4112.* ../outputs/.
+
+  Substep 249.4: rm PTW-elev-0p069.geo
+
+time used to run PTW-elev-0p069.geo = 155 s
+
+
+Step 250: elevation angle = 70 deg from North Pole
+
+  Substep 250.1: cp ../inputs/PTW-elev-0p070.geo .
+
+  Substep 250.2: ./MMoM_4.1.12 PTW-elev-0p070.geo > ../outputs/PTW-elev-0p070.out
+sh: junk: command not found
+
+  Substep 250.3: mv *.4112.* ../outputs/.
+
+  Substep 250.4: rm PTW-elev-0p070.geo
+
+time used to run PTW-elev-0p070.geo = 191 s
+
+
+Step 251: elevation angle = 71 deg from North Pole
+
+  Substep 251.1: cp ../inputs/PTW-elev-0p071.geo .
+
+  Substep 251.2: ./MMoM_4.1.12 PTW-elev-0p071.geo > ../outputs/PTW-elev-0p071.out
+sh: junk: command not found
+
+  Substep 251.3: mv *.4112.* ../outputs/.
+
+  Substep 251.4: rm PTW-elev-0p071.geo
+
+time used to run PTW-elev-0p071.geo = 183 s
+
+
+Step 252: elevation angle = 72 deg from North Pole
+
+  Substep 252.1: cp ../inputs/PTW-elev-0p072.geo .
+
+  Substep 252.2: ./MMoM_4.1.12 PTW-elev-0p072.geo > ../outputs/PTW-elev-0p072.out
+sh: junk: command not found
+
+  Substep 252.3: mv *.4112.* ../outputs/.
+
+  Substep 252.4: rm PTW-elev-0p072.geo
+
+time used to run PTW-elev-0p072.geo = 157 s
+
+
+Step 253: elevation angle = 73 deg from North Pole
+
+  Substep 253.1: cp ../inputs/PTW-elev-0p073.geo .
+
+  Substep 253.2: ./MMoM_4.1.12 PTW-elev-0p073.geo > ../outputs/PTW-elev-0p073.out
+sh: junk: command not found
+
+  Substep 253.3: mv *.4112.* ../outputs/.
+
+  Substep 253.4: rm PTW-elev-0p073.geo
+
+time used to run PTW-elev-0p073.geo = 137 s
+
+
+Step 254: elevation angle = 74 deg from North Pole
+
+  Substep 254.1: cp ../inputs/PTW-elev-0p074.geo .
+
+  Substep 254.2: ./MMoM_4.1.12 PTW-elev-0p074.geo > ../outputs/PTW-elev-0p074.out
+sh: junk: command not found
+
+  Substep 254.3: mv *.4112.* ../outputs/.
+
+  Substep 254.4: rm PTW-elev-0p074.geo
+
+time used to run PTW-elev-0p074.geo = 170 s
+
+
+Step 255: elevation angle = 75 deg from North Pole
+
+  Substep 255.1: cp ../inputs/PTW-elev-0p075.geo .
+
+  Substep 255.2: ./MMoM_4.1.12 PTW-elev-0p075.geo > ../outputs/PTW-elev-0p075.out
+sh: junk: command not found
+
+  Substep 255.3: mv *.4112.* ../outputs/.
+
+  Substep 255.4: rm PTW-elev-0p075.geo
+
+time used to run PTW-elev-0p075.geo = 170 s
+
+
+Step 256: elevation angle = 76 deg from North Pole
+
+  Substep 256.1: cp ../inputs/PTW-elev-0p076.geo .
+
+  Substep 256.2: ./MMoM_4.1.12 PTW-elev-0p076.geo > ../outputs/PTW-elev-0p076.out
+sh: junk: command not found
+
+  Substep 256.3: mv *.4112.* ../outputs/.
+
+  Substep 256.4: rm PTW-elev-0p076.geo
+
+time used to run PTW-elev-0p076.geo = 157 s
+
+
+Step 257: elevation angle = 77 deg from North Pole
+
+  Substep 257.1: cp ../inputs/PTW-elev-0p077.geo .
+
+  Substep 257.2: ./MMoM_4.1.12 PTW-elev-0p077.geo > ../outputs/PTW-elev-0p077.out
+sh: junk: command not found
+
+  Substep 257.3: mv *.4112.* ../outputs/.
+
+  Substep 257.4: rm PTW-elev-0p077.geo
+
+time used to run PTW-elev-0p077.geo = 154 s
+
+
+Step 258: elevation angle = 78 deg from North Pole
+
+  Substep 258.1: cp ../inputs/PTW-elev-0p078.geo .
+
+  Substep 258.2: ./MMoM_4.1.12 PTW-elev-0p078.geo > ../outputs/PTW-elev-0p078.out
+sh: junk: command not found
+
+  Substep 258.3: mv *.4112.* ../outputs/.
+
+  Substep 258.4: rm PTW-elev-0p078.geo
+
+time used to run PTW-elev-0p078.geo = 148 s
+
+
+Step 259: elevation angle = 79 deg from North Pole
+
+  Substep 259.1: cp ../inputs/PTW-elev-0p079.geo .
+
+  Substep 259.2: ./MMoM_4.1.12 PTW-elev-0p079.geo > ../outputs/PTW-elev-0p079.out
+sh: junk: command not found
+
+  Substep 259.3: mv *.4112.* ../outputs/.
+
+  Substep 259.4: rm PTW-elev-0p079.geo
+
+time used to run PTW-elev-0p079.geo = 138 s
+
+
+Step 260: elevation angle = 80 deg from North Pole
+
+  Substep 260.1: cp ../inputs/PTW-elev-0p080.geo .
+
+  Substep 260.2: ./MMoM_4.1.12 PTW-elev-0p080.geo > ../outputs/PTW-elev-0p080.out
+sh: junk: command not found
+
+  Substep 260.3: mv *.4112.* ../outputs/.
+
+  Substep 260.4: rm PTW-elev-0p080.geo
+
+time used to run PTW-elev-0p080.geo = 149 s
+
+
+Step 261: elevation angle = 81 deg from North Pole
+
+  Substep 261.1: cp ../inputs/PTW-elev-0p081.geo .
+
+  Substep 261.2: ./MMoM_4.1.12 PTW-elev-0p081.geo > ../outputs/PTW-elev-0p081.out
+sh: junk: command not found
+
+  Substep 261.3: mv *.4112.* ../outputs/.
+
+  Substep 261.4: rm PTW-elev-0p081.geo
+
+time used to run PTW-elev-0p081.geo = 142 s
+
+
+Step 262: elevation angle = 82 deg from North Pole
+
+  Substep 262.1: cp ../inputs/PTW-elev-0p082.geo .
+
+  Substep 262.2: ./MMoM_4.1.12 PTW-elev-0p082.geo > ../outputs/PTW-elev-0p082.out
+sh: junk: command not found
+
+  Substep 262.3: mv *.4112.* ../outputs/.
+
+  Substep 262.4: rm PTW-elev-0p082.geo
+
+time used to run PTW-elev-0p082.geo = 143 s
+
+
+Step 263: elevation angle = 83 deg from North Pole
+
+  Substep 263.1: cp ../inputs/PTW-elev-0p083.geo .
+
+  Substep 263.2: ./MMoM_4.1.12 PTW-elev-0p083.geo > ../outputs/PTW-elev-0p083.out
+sh: junk: command not found
+
+  Substep 263.3: mv *.4112.* ../outputs/.
+
+  Substep 263.4: rm PTW-elev-0p083.geo
+
+time used to run PTW-elev-0p083.geo = 143 s
+
+
+Step 264: elevation angle = 84 deg from North Pole
+
+  Substep 264.1: cp ../inputs/PTW-elev-0p084.geo .
+
+  Substep 264.2: ./MMoM_4.1.12 PTW-elev-0p084.geo > ../outputs/PTW-elev-0p084.out
+sh: junk: command not found
+
+  Substep 264.3: mv *.4112.* ../outputs/.
+
+  Substep 264.4: rm PTW-elev-0p084.geo
+
+time used to run PTW-elev-0p084.geo = 136 s
+
+
+Step 265: elevation angle = 85 deg from North Pole
+
+  Substep 265.1: cp ../inputs/PTW-elev-0p085.geo .
+
+  Substep 265.2: ./MMoM_4.1.12 PTW-elev-0p085.geo > ../outputs/PTW-elev-0p085.out
+sh: junk: command not found
+
+  Substep 265.3: mv *.4112.* ../outputs/.
+
+  Substep 265.4: rm PTW-elev-0p085.geo
+
+time used to run PTW-elev-0p085.geo = 137 s
+
+
+Step 266: elevation angle = 86 deg from North Pole
+
+  Substep 266.1: cp ../inputs/PTW-elev-0p086.geo .
+
+  Substep 266.2: ./MMoM_4.1.12 PTW-elev-0p086.geo > ../outputs/PTW-elev-0p086.out
+sh: junk: command not found
+
+  Substep 266.3: mv *.4112.* ../outputs/.
+
+  Substep 266.4: rm PTW-elev-0p086.geo
+
+time used to run PTW-elev-0p086.geo = 151 s
+
+
+Step 267: elevation angle = 87 deg from North Pole
+
+  Substep 267.1: cp ../inputs/PTW-elev-0p087.geo .
+
+  Substep 267.2: ./MMoM_4.1.12 PTW-elev-0p087.geo > ../outputs/PTW-elev-0p087.out
+sh: junk: command not found
+
+  Substep 267.3: mv *.4112.* ../outputs/.
+
+  Substep 267.4: rm PTW-elev-0p087.geo
+
+time used to run PTW-elev-0p087.geo = 150 s
+
+
+Step 268: elevation angle = 88 deg from North Pole
+
+  Substep 268.1: cp ../inputs/PTW-elev-0p088.geo .
+
+  Substep 268.2: ./MMoM_4.1.12 PTW-elev-0p088.geo > ../outputs/PTW-elev-0p088.out
+sh: junk: command not found
+
+  Substep 268.3: mv *.4112.* ../outputs/.
+
+  Substep 268.4: rm PTW-elev-0p088.geo
+
+time used to run PTW-elev-0p088.geo = 176 s
+
+
+Step 269: elevation angle = 89 deg from North Pole
+
+  Substep 269.1: cp ../inputs/PTW-elev-0p089.geo .
+
+  Substep 269.2: ./MMoM_4.1.12 PTW-elev-0p089.geo > ../outputs/PTW-elev-0p089.out
+sh: junk: command not found
+
+  Substep 269.3: mv *.4112.* ../outputs/.
+
+  Substep 269.4: rm PTW-elev-0p089.geo
+
+time used to run PTW-elev-0p089.geo = 194 s
+
+
+Step 270: elevation angle = 90 deg from North Pole
+
+  Substep 270.1: cp ../inputs/PTW-elev-0p090.geo .
+
+  Substep 270.2: ./MMoM_4.1.12 PTW-elev-0p090.geo > ../outputs/PTW-elev-0p090.out
+sh: junk: command not found
+
+  Substep 270.3: mv *.4112.* ../outputs/.
+
+  Substep 270.4: rm PTW-elev-0p090.geo
+
+time used to run PTW-elev-0p090.geo = 197 s
+
+
+Step 271: elevation angle = 91 deg from North Pole
+
+  Substep 271.1: cp ../inputs/PTW-elev-0p091.geo .
+
+  Substep 271.2: ./MMoM_4.1.12 PTW-elev-0p091.geo > ../outputs/PTW-elev-0p091.out
+sh: junk: command not found
+
+  Substep 271.3: mv *.4112.* ../outputs/.
+
+  Substep 271.4: rm PTW-elev-0p091.geo
+
+time used to run PTW-elev-0p091.geo = 180 s
+
+
+Step 272: elevation angle = 92 deg from North Pole
+
+  Substep 272.1: cp ../inputs/PTW-elev-0p092.geo .
+
+  Substep 272.2: ./MMoM_4.1.12 PTW-elev-0p092.geo > ../outputs/PTW-elev-0p092.out
+sh: junk: command not found
+
+  Substep 272.3: mv *.4112.* ../outputs/.
+
+  Substep 272.4: rm PTW-elev-0p092.geo
+
+time used to run PTW-elev-0p092.geo = 139 s
+
+
+Step 273: elevation angle = 93 deg from North Pole
+
+  Substep 273.1: cp ../inputs/PTW-elev-0p093.geo .
+
+  Substep 273.2: ./MMoM_4.1.12 PTW-elev-0p093.geo > ../outputs/PTW-elev-0p093.out
+sh: junk: command not found
+
+  Substep 273.3: mv *.4112.* ../outputs/.
+
+  Substep 273.4: rm PTW-elev-0p093.geo
+
+time used to run PTW-elev-0p093.geo = 152 s
+
+
+Step 274: elevation angle = 94 deg from North Pole
+
+  Substep 274.1: cp ../inputs/PTW-elev-0p094.geo .
+
+  Substep 274.2: ./MMoM_4.1.12 PTW-elev-0p094.geo > ../outputs/PTW-elev-0p094.out
+sh: junk: command not found
+
+  Substep 274.3: mv *.4112.* ../outputs/.
+
+  Substep 274.4: rm PTW-elev-0p094.geo
+
+time used to run PTW-elev-0p094.geo = 145 s
+
+
+Step 275: elevation angle = 95 deg from North Pole
+
+  Substep 275.1: cp ../inputs/PTW-elev-0p095.geo .
+
+  Substep 275.2: ./MMoM_4.1.12 PTW-elev-0p095.geo > ../outputs/PTW-elev-0p095.out
+sh: junk: command not found
+
+  Substep 275.3: mv *.4112.* ../outputs/.
+
+  Substep 275.4: rm PTW-elev-0p095.geo
+
+time used to run PTW-elev-0p095.geo = 155 s
+
+
+Step 276: elevation angle = 96 deg from North Pole
+
+  Substep 276.1: cp ../inputs/PTW-elev-0p096.geo .
+
+  Substep 276.2: ./MMoM_4.1.12 PTW-elev-0p096.geo > ../outputs/PTW-elev-0p096.out
+sh: junk: command not found
+
+  Substep 276.3: mv *.4112.* ../outputs/.
+
+  Substep 276.4: rm PTW-elev-0p096.geo
+
+time used to run PTW-elev-0p096.geo = 149 s
+
+
+Step 277: elevation angle = 97 deg from North Pole
+
+  Substep 277.1: cp ../inputs/PTW-elev-0p097.geo .
+
+  Substep 277.2: ./MMoM_4.1.12 PTW-elev-0p097.geo > ../outputs/PTW-elev-0p097.out
+sh: junk: command not found
+
+  Substep 277.3: mv *.4112.* ../outputs/.
+
+  Substep 277.4: rm PTW-elev-0p097.geo
+
+time used to run PTW-elev-0p097.geo = 141 s
+
+
+Step 278: elevation angle = 98 deg from North Pole
+
+  Substep 278.1: cp ../inputs/PTW-elev-0p098.geo .
+
+  Substep 278.2: ./MMoM_4.1.12 PTW-elev-0p098.geo > ../outputs/PTW-elev-0p098.out
+sh: junk: command not found
+
+  Substep 278.3: mv *.4112.* ../outputs/.
+
+  Substep 278.4: rm PTW-elev-0p098.geo
+
+time used to run PTW-elev-0p098.geo = 148 s
+
+
+Step 279: elevation angle = 99 deg from North Pole
+
+  Substep 279.1: cp ../inputs/PTW-elev-0p099.geo .
+
+  Substep 279.2: ./MMoM_4.1.12 PTW-elev-0p099.geo > ../outputs/PTW-elev-0p099.out
+sh: junk: command not found
+
+  Substep 279.3: mv *.4112.* ../outputs/.
+
+  Substep 279.4: rm PTW-elev-0p099.geo
+
+time used to run PTW-elev-0p099.geo = 161 s
+
+
+Step 280: elevation angle = 100 deg from North Pole
+
+  Substep 280.1: cp ../inputs/PTW-elev-0p100.geo .
+
+  Substep 280.2: ./MMoM_4.1.12 PTW-elev-0p100.geo > ../outputs/PTW-elev-0p100.out
+sh: junk: command not found
+
+  Substep 280.3: mv *.4112.* ../outputs/.
+
+  Substep 280.4: rm PTW-elev-0p100.geo
+
+time used to run PTW-elev-0p100.geo = 144 s
+
+
+Step 281: elevation angle = 101 deg from North Pole
+
+  Substep 281.1: cp ../inputs/PTW-elev-0p101.geo .
+
+  Substep 281.2: ./MMoM_4.1.12 PTW-elev-0p101.geo > ../outputs/PTW-elev-0p101.out
+sh: junk: command not found
+
+  Substep 281.3: mv *.4112.* ../outputs/.
+
+  Substep 281.4: rm PTW-elev-0p101.geo
+
+time used to run PTW-elev-0p101.geo = 144 s
+
+
+Step 282: elevation angle = 102 deg from North Pole
+
+  Substep 282.1: cp ../inputs/PTW-elev-0p102.geo .
+
+  Substep 282.2: ./MMoM_4.1.12 PTW-elev-0p102.geo > ../outputs/PTW-elev-0p102.out
+sh: junk: command not found
+
+  Substep 282.3: mv *.4112.* ../outputs/.
+
+  Substep 282.4: rm PTW-elev-0p102.geo
+
+time used to run PTW-elev-0p102.geo = 142 s
+
+
+Step 283: elevation angle = 103 deg from North Pole
+
+  Substep 283.1: cp ../inputs/PTW-elev-0p103.geo .
+
+  Substep 283.2: ./MMoM_4.1.12 PTW-elev-0p103.geo > ../outputs/PTW-elev-0p103.out
+sh: junk: command not found
+
+  Substep 283.3: mv *.4112.* ../outputs/.
+
+  Substep 283.4: rm PTW-elev-0p103.geo
+
+time used to run PTW-elev-0p103.geo = 142 s
+
+
+Step 284: elevation angle = 104 deg from North Pole
+
+  Substep 284.1: cp ../inputs/PTW-elev-0p104.geo .
+
+  Substep 284.2: ./MMoM_4.1.12 PTW-elev-0p104.geo > ../outputs/PTW-elev-0p104.out
+sh: junk: command not found
+
+  Substep 284.3: mv *.4112.* ../outputs/.
+
+  Substep 284.4: rm PTW-elev-0p104.geo
+
+time used to run PTW-elev-0p104.geo = 151 s
+
+
+Step 285: elevation angle = 105 deg from North Pole
+
+  Substep 285.1: cp ../inputs/PTW-elev-0p105.geo .
+
+  Substep 285.2: ./MMoM_4.1.12 PTW-elev-0p105.geo > ../outputs/PTW-elev-0p105.out
+sh: junk: command not found
+
+  Substep 285.3: mv *.4112.* ../outputs/.
+
+  Substep 285.4: rm PTW-elev-0p105.geo
+
+time used to run PTW-elev-0p105.geo = 149 s
+
+
+Step 286: elevation angle = 106 deg from North Pole
+
+  Substep 286.1: cp ../inputs/PTW-elev-0p106.geo .
+
+  Substep 286.2: ./MMoM_4.1.12 PTW-elev-0p106.geo > ../outputs/PTW-elev-0p106.out
+sh: junk: command not found
+
+  Substep 286.3: mv *.4112.* ../outputs/.
+
+  Substep 286.4: rm PTW-elev-0p106.geo
+
+time used to run PTW-elev-0p106.geo = 150 s
+
+
+Step 287: elevation angle = 107 deg from North Pole
+
+  Substep 287.1: cp ../inputs/PTW-elev-0p107.geo .
+
+  Substep 287.2: ./MMoM_4.1.12 PTW-elev-0p107.geo > ../outputs/PTW-elev-0p107.out
+sh: junk: command not found
+
+  Substep 287.3: mv *.4112.* ../outputs/.
+
+  Substep 287.4: rm PTW-elev-0p107.geo
+
+time used to run PTW-elev-0p107.geo = 156 s
+
+
+Step 288: elevation angle = 108 deg from North Pole
+
+  Substep 288.1: cp ../inputs/PTW-elev-0p108.geo .
+
+  Substep 288.2: ./MMoM_4.1.12 PTW-elev-0p108.geo > ../outputs/PTW-elev-0p108.out
+sh: junk: command not found
+
+  Substep 288.3: mv *.4112.* ../outputs/.
+
+  Substep 288.4: rm PTW-elev-0p108.geo
+
+time used to run PTW-elev-0p108.geo = 154 s
+
+
+Step 289: elevation angle = 109 deg from North Pole
+
+  Substep 289.1: cp ../inputs/PTW-elev-0p109.geo .
+
+  Substep 289.2: ./MMoM_4.1.12 PTW-elev-0p109.geo > ../outputs/PTW-elev-0p109.out
+sh: junk: command not found
+
+  Substep 289.3: mv *.4112.* ../outputs/.
+
+  Substep 289.4: rm PTW-elev-0p109.geo
+
+time used to run PTW-elev-0p109.geo = 169 s
+
+
+Step 290: elevation angle = 110 deg from North Pole
+
+  Substep 290.1: cp ../inputs/PTW-elev-0p110.geo .
+
+  Substep 290.2: ./MMoM_4.1.12 PTW-elev-0p110.geo > ../outputs/PTW-elev-0p110.out
+sh: junk: command not found
+
+  Substep 290.3: mv *.4112.* ../outputs/.
+
+  Substep 290.4: rm PTW-elev-0p110.geo
+
+time used to run PTW-elev-0p110.geo = 167 s
+
+
+Step 291: elevation angle = 111 deg from North Pole
+
+  Substep 291.1: cp ../inputs/PTW-elev-0p111.geo .
+
+  Substep 291.2: ./MMoM_4.1.12 PTW-elev-0p111.geo > ../outputs/PTW-elev-0p111.out
+sh: junk: command not found
+
+  Substep 291.3: mv *.4112.* ../outputs/.
+
+  Substep 291.4: rm PTW-elev-0p111.geo
+
+time used to run PTW-elev-0p111.geo = 178 s
+
+
+Step 292: elevation angle = 112 deg from North Pole
+
+  Substep 292.1: cp ../inputs/PTW-elev-0p112.geo .
+
+  Substep 292.2: ./MMoM_4.1.12 PTW-elev-0p112.geo > ../outputs/PTW-elev-0p112.out
+sh: junk: command not found
+
+  Substep 292.3: mv *.4112.* ../outputs/.
+
+  Substep 292.4: rm PTW-elev-0p112.geo
+
+time used to run PTW-elev-0p112.geo = 159 s
+
+
+Step 293: elevation angle = 113 deg from North Pole
+
+  Substep 293.1: cp ../inputs/PTW-elev-0p113.geo .
+
+  Substep 293.2: ./MMoM_4.1.12 PTW-elev-0p113.geo > ../outputs/PTW-elev-0p113.out
+sh: junk: command not found
+
+  Substep 293.3: mv *.4112.* ../outputs/.
+
+  Substep 293.4: rm PTW-elev-0p113.geo
+
+time used to run PTW-elev-0p113.geo = 176 s
+
+
+Step 294: elevation angle = 114 deg from North Pole
+
+  Substep 294.1: cp ../inputs/PTW-elev-0p114.geo .
+
+  Substep 294.2: ./MMoM_4.1.12 PTW-elev-0p114.geo > ../outputs/PTW-elev-0p114.out
+sh: junk: command not found
+
+  Substep 294.3: mv *.4112.* ../outputs/.
+
+  Substep 294.4: rm PTW-elev-0p114.geo
+
+time used to run PTW-elev-0p114.geo = 162 s
+
+
+Step 295: elevation angle = 115 deg from North Pole
+
+  Substep 295.1: cp ../inputs/PTW-elev-0p115.geo .
+
+  Substep 295.2: ./MMoM_4.1.12 PTW-elev-0p115.geo > ../outputs/PTW-elev-0p115.out
+sh: junk: command not found
+
+  Substep 295.3: mv *.4112.* ../outputs/.
+
+  Substep 295.4: rm PTW-elev-0p115.geo
+
+time used to run PTW-elev-0p115.geo = 162 s
+
+
+Step 296: elevation angle = 116 deg from North Pole
+
+  Substep 296.1: cp ../inputs/PTW-elev-0p116.geo .
+
+  Substep 296.2: ./MMoM_4.1.12 PTW-elev-0p116.geo > ../outputs/PTW-elev-0p116.out
+sh: junk: command not found
+
+  Substep 296.3: mv *.4112.* ../outputs/.
+
+  Substep 296.4: rm PTW-elev-0p116.geo
+
+time used to run PTW-elev-0p116.geo = 165 s
+
+
+Step 297: elevation angle = 117 deg from North Pole
+
+  Substep 297.1: cp ../inputs/PTW-elev-0p117.geo .
+
+  Substep 297.2: ./MMoM_4.1.12 PTW-elev-0p117.geo > ../outputs/PTW-elev-0p117.out
+sh: junk: command not found
+
+  Substep 297.3: mv *.4112.* ../outputs/.
+
+  Substep 297.4: rm PTW-elev-0p117.geo
+
+time used to run PTW-elev-0p117.geo = 162 s
+
+
+Step 298: elevation angle = 118 deg from North Pole
+
+  Substep 298.1: cp ../inputs/PTW-elev-0p118.geo .
+
+  Substep 298.2: ./MMoM_4.1.12 PTW-elev-0p118.geo > ../outputs/PTW-elev-0p118.out
+sh: junk: command not found
+
+  Substep 298.3: mv *.4112.* ../outputs/.
+
+  Substep 298.4: rm PTW-elev-0p118.geo
+
+time used to run PTW-elev-0p118.geo = 157 s
+
+
+Step 299: elevation angle = 119 deg from North Pole
+
+  Substep 299.1: cp ../inputs/PTW-elev-0p119.geo .
+
+  Substep 299.2: ./MMoM_4.1.12 PTW-elev-0p119.geo > ../outputs/PTW-elev-0p119.out
+sh: junk: command not found
+
+  Substep 299.3: mv *.4112.* ../outputs/.
+
+  Substep 299.4: rm PTW-elev-0p119.geo
+
+time used to run PTW-elev-0p119.geo = 150 s
+
+
+Step 300: elevation angle = 120 deg from North Pole
+
+  Substep 300.1: cp ../inputs/PTW-elev-0p120.geo .
+
+  Substep 300.2: ./MMoM_4.1.12 PTW-elev-0p120.geo > ../outputs/PTW-elev-0p120.out
+sh: junk: command not found
+
+  Substep 300.3: mv *.4112.* ../outputs/.
+
+  Substep 300.4: rm PTW-elev-0p120.geo
+
+time used to run PTW-elev-0p120.geo = 146 s
+
+
+Step 301: elevation angle = 121 deg from North Pole
+
+  Substep 301.1: cp ../inputs/PTW-elev-0p121.geo .
+
+  Substep 301.2: ./MMoM_4.1.12 PTW-elev-0p121.geo > ../outputs/PTW-elev-0p121.out
+sh: junk: command not found
+
+  Substep 301.3: mv *.4112.* ../outputs/.
+
+  Substep 301.4: rm PTW-elev-0p121.geo
+
+time used to run PTW-elev-0p121.geo = 161 s
+
+
+Step 302: elevation angle = 122 deg from North Pole
+
+  Substep 302.1: cp ../inputs/PTW-elev-0p122.geo .
+
+  Substep 302.2: ./MMoM_4.1.12 PTW-elev-0p122.geo > ../outputs/PTW-elev-0p122.out
+sh: junk: command not found
+
+  Substep 302.3: mv *.4112.* ../outputs/.
+
+  Substep 302.4: rm PTW-elev-0p122.geo
+
+time used to run PTW-elev-0p122.geo = 147 s
+
+
+Step 303: elevation angle = 123 deg from North Pole
+
+  Substep 303.1: cp ../inputs/PTW-elev-0p123.geo .
+
+  Substep 303.2: ./MMoM_4.1.12 PTW-elev-0p123.geo > ../outputs/PTW-elev-0p123.out
+sh: junk: command not found
+
+  Substep 303.3: mv *.4112.* ../outputs/.
+
+  Substep 303.4: rm PTW-elev-0p123.geo
+
+time used to run PTW-elev-0p123.geo = 162 s
+
+
+Step 304: elevation angle = 124 deg from North Pole
+
+  Substep 304.1: cp ../inputs/PTW-elev-0p124.geo .
+
+  Substep 304.2: ./MMoM_4.1.12 PTW-elev-0p124.geo > ../outputs/PTW-elev-0p124.out
+sh: junk: command not found
+
+  Substep 304.3: mv *.4112.* ../outputs/.
+
+  Substep 304.4: rm PTW-elev-0p124.geo
+
+time used to run PTW-elev-0p124.geo = 168 s
+
+
+Step 305: elevation angle = 125 deg from North Pole
+
+  Substep 305.1: cp ../inputs/PTW-elev-0p125.geo .
+
+  Substep 305.2: ./MMoM_4.1.12 PTW-elev-0p125.geo > ../outputs/PTW-elev-0p125.out
+sh: junk: command not found
+
+  Substep 305.3: mv *.4112.* ../outputs/.
+
+  Substep 305.4: rm PTW-elev-0p125.geo
+
+time used to run PTW-elev-0p125.geo = 166 s
+
+
+Step 306: elevation angle = 126 deg from North Pole
+
+  Substep 306.1: cp ../inputs/PTW-elev-0p126.geo .
+
+  Substep 306.2: ./MMoM_4.1.12 PTW-elev-0p126.geo > ../outputs/PTW-elev-0p126.out
+sh: junk: command not found
+
+  Substep 306.3: mv *.4112.* ../outputs/.
+
+  Substep 306.4: rm PTW-elev-0p126.geo
+
+time used to run PTW-elev-0p126.geo = 168 s
+
+
+Step 307: elevation angle = 127 deg from North Pole
+
+  Substep 307.1: cp ../inputs/PTW-elev-0p127.geo .
+
+  Substep 307.2: ./MMoM_4.1.12 PTW-elev-0p127.geo > ../outputs/PTW-elev-0p127.out
+sh: junk: command not found
+
+  Substep 307.3: mv *.4112.* ../outputs/.
+
+  Substep 307.4: rm PTW-elev-0p127.geo
+
+time used to run PTW-elev-0p127.geo = 173 s
+
+
+Step 308: elevation angle = 128 deg from North Pole
+
+  Substep 308.1: cp ../inputs/PTW-elev-0p128.geo .
+
+  Substep 308.2: ./MMoM_4.1.12 PTW-elev-0p128.geo > ../outputs/PTW-elev-0p128.out
+sh: junk: command not found
+
+  Substep 308.3: mv *.4112.* ../outputs/.
+
+  Substep 308.4: rm PTW-elev-0p128.geo
+
+time used to run PTW-elev-0p128.geo = 185 s
+
+
+Step 309: elevation angle = 129 deg from North Pole
+
+  Substep 309.1: cp ../inputs/PTW-elev-0p129.geo .
+
+  Substep 309.2: ./MMoM_4.1.12 PTW-elev-0p129.geo > ../outputs/PTW-elev-0p129.out
+sh: junk: command not found
+
+  Substep 309.3: mv *.4112.* ../outputs/.
+
+  Substep 309.4: rm PTW-elev-0p129.geo
+
+time used to run PTW-elev-0p129.geo = 197 s
+
+
+Step 310: elevation angle = 130 deg from North Pole
+
+  Substep 310.1: cp ../inputs/PTW-elev-0p130.geo .
+
+  Substep 310.2: ./MMoM_4.1.12 PTW-elev-0p130.geo > ../outputs/PTW-elev-0p130.out
+sh: junk: command not found
+
+  Substep 310.3: mv *.4112.* ../outputs/.
+
+  Substep 310.4: rm PTW-elev-0p130.geo
+
+time used to run PTW-elev-0p130.geo = 273 s
+
+
+Step 311: elevation angle = 131 deg from North Pole
+
+  Substep 311.1: cp ../inputs/PTW-elev-0p131.geo .
+
+  Substep 311.2: ./MMoM_4.1.12 PTW-elev-0p131.geo > ../outputs/PTW-elev-0p131.out
+sh: junk: command not found
+
+  Substep 311.3: mv *.4112.* ../outputs/.
+
+  Substep 311.4: rm PTW-elev-0p131.geo
+
+time used to run PTW-elev-0p131.geo = 261 s
+
+
+Step 312: elevation angle = 132 deg from North Pole
+
+  Substep 312.1: cp ../inputs/PTW-elev-0p132.geo .
+
+  Substep 312.2: ./MMoM_4.1.12 PTW-elev-0p132.geo > ../outputs/PTW-elev-0p132.out
+sh: junk: command not found
+
+  Substep 312.3: mv *.4112.* ../outputs/.
+
+  Substep 312.4: rm PTW-elev-0p132.geo
+
+time used to run PTW-elev-0p132.geo = 159 s
+
+
+Step 313: elevation angle = 133 deg from North Pole
+
+  Substep 313.1: cp ../inputs/PTW-elev-0p133.geo .
+
+  Substep 313.2: ./MMoM_4.1.12 PTW-elev-0p133.geo > ../outputs/PTW-elev-0p133.out
+sh: junk: command not found
+
+  Substep 313.3: mv *.4112.* ../outputs/.
+
+  Substep 313.4: rm PTW-elev-0p133.geo
+
+time used to run PTW-elev-0p133.geo = 159 s
+
+
+Step 314: elevation angle = 134 deg from North Pole
+
+  Substep 314.1: cp ../inputs/PTW-elev-0p134.geo .
+
+  Substep 314.2: ./MMoM_4.1.12 PTW-elev-0p134.geo > ../outputs/PTW-elev-0p134.out
+sh: junk: command not found
+
+  Substep 314.3: mv *.4112.* ../outputs/.
+
+  Substep 314.4: rm PTW-elev-0p134.geo
+
+time used to run PTW-elev-0p134.geo = 160 s
+
+
+Step 315: elevation angle = 135 deg from North Pole
+
+  Substep 315.1: cp ../inputs/PTW-elev-0p135.geo .
+
+  Substep 315.2: ./MMoM_4.1.12 PTW-elev-0p135.geo > ../outputs/PTW-elev-0p135.out
+sh: junk: command not found
+
+  Substep 315.3: mv *.4112.* ../outputs/.
+
+  Substep 315.4: rm PTW-elev-0p135.geo
+
+time used to run PTW-elev-0p135.geo = 169 s
+
+
+Step 316: elevation angle = 136 deg from North Pole
+
+  Substep 316.1: cp ../inputs/PTW-elev-0p136.geo .
+
+  Substep 316.2: ./MMoM_4.1.12 PTW-elev-0p136.geo > ../outputs/PTW-elev-0p136.out
+sh: junk: command not found
+
+  Substep 316.3: mv *.4112.* ../outputs/.
+
+  Substep 316.4: rm PTW-elev-0p136.geo
+
+time used to run PTW-elev-0p136.geo = 179 s
+
+
+Step 317: elevation angle = 137 deg from North Pole
+
+  Substep 317.1: cp ../inputs/PTW-elev-0p137.geo .
+
+  Substep 317.2: ./MMoM_4.1.12 PTW-elev-0p137.geo > ../outputs/PTW-elev-0p137.out
+sh: junk: command not found
+
+  Substep 317.3: mv *.4112.* ../outputs/.
+
+  Substep 317.4: rm PTW-elev-0p137.geo
+
+time used to run PTW-elev-0p137.geo = 192 s
+
+
+Step 318: elevation angle = 138 deg from North Pole
+
+  Substep 318.1: cp ../inputs/PTW-elev-0p138.geo .
+
+  Substep 318.2: ./MMoM_4.1.12 PTW-elev-0p138.geo > ../outputs/PTW-elev-0p138.out
+sh: junk: command not found
+
+  Substep 318.3: mv *.4112.* ../outputs/.
+
+  Substep 318.4: rm PTW-elev-0p138.geo
+
+time used to run PTW-elev-0p138.geo = 205 s
+
+
+Step 319: elevation angle = 139 deg from North Pole
+
+  Substep 319.1: cp ../inputs/PTW-elev-0p139.geo .
+
+  Substep 319.2: ./MMoM_4.1.12 PTW-elev-0p139.geo > ../outputs/PTW-elev-0p139.out
+sh: junk: command not found
+
+  Substep 319.3: mv *.4112.* ../outputs/.
+
+  Substep 319.4: rm PTW-elev-0p139.geo
+
+time used to run PTW-elev-0p139.geo = 199 s
+
+
+Step 320: elevation angle = 140 deg from North Pole
+
+  Substep 320.1: cp ../inputs/PTW-elev-0p140.geo .
+
+  Substep 320.2: ./MMoM_4.1.12 PTW-elev-0p140.geo > ../outputs/PTW-elev-0p140.out
+sh: junk: command not found
+
+  Substep 320.3: mv *.4112.* ../outputs/.
+
+  Substep 320.4: rm PTW-elev-0p140.geo
+
+time used to run PTW-elev-0p140.geo = 208 s
+
+
+Step 321: elevation angle = 141 deg from North Pole
+
+  Substep 321.1: cp ../inputs/PTW-elev-0p141.geo .
+
+  Substep 321.2: ./MMoM_4.1.12 PTW-elev-0p141.geo > ../outputs/PTW-elev-0p141.out
+sh: junk: command not found
+
+  Substep 321.3: mv *.4112.* ../outputs/.
+
+  Substep 321.4: rm PTW-elev-0p141.geo
+
+time used to run PTW-elev-0p141.geo = 207 s
+
+
+Step 322: elevation angle = 142 deg from North Pole
+
+  Substep 322.1: cp ../inputs/PTW-elev-0p142.geo .
+
+  Substep 322.2: ./MMoM_4.1.12 PTW-elev-0p142.geo > ../outputs/PTW-elev-0p142.out
+sh: junk: command not found
+
+  Substep 322.3: mv *.4112.* ../outputs/.
+
+  Substep 322.4: rm PTW-elev-0p142.geo
+
+time used to run PTW-elev-0p142.geo = 225 s
+
+
+Step 323: elevation angle = 143 deg from North Pole
+
+  Substep 323.1: cp ../inputs/PTW-elev-0p143.geo .
+
+  Substep 323.2: ./MMoM_4.1.12 PTW-elev-0p143.geo > ../outputs/PTW-elev-0p143.out
+sh: junk: command not found
+
+  Substep 323.3: mv *.4112.* ../outputs/.
+
+  Substep 323.4: rm PTW-elev-0p143.geo
+
+time used to run PTW-elev-0p143.geo = 216 s
+
+
+Step 324: elevation angle = 144 deg from North Pole
+
+  Substep 324.1: cp ../inputs/PTW-elev-0p144.geo .
+
+  Substep 324.2: ./MMoM_4.1.12 PTW-elev-0p144.geo > ../outputs/PTW-elev-0p144.out
+sh: junk: command not found
+
+  Substep 324.3: mv *.4112.* ../outputs/.
+
+  Substep 324.4: rm PTW-elev-0p144.geo
+
+time used to run PTW-elev-0p144.geo = 197 s
+
+
+Step 325: elevation angle = 145 deg from North Pole
+
+  Substep 325.1: cp ../inputs/PTW-elev-0p145.geo .
+
+  Substep 325.2: ./MMoM_4.1.12 PTW-elev-0p145.geo > ../outputs/PTW-elev-0p145.out
+sh: junk: command not found
+
+  Substep 325.3: mv *.4112.* ../outputs/.
+
+  Substep 325.4: rm PTW-elev-0p145.geo
+
+time used to run PTW-elev-0p145.geo = 224 s
+
+
+Step 326: elevation angle = 146 deg from North Pole
+
+  Substep 326.1: cp ../inputs/PTW-elev-0p146.geo .
+
+  Substep 326.2: ./MMoM_4.1.12 PTW-elev-0p146.geo > ../outputs/PTW-elev-0p146.out
+sh: junk: command not found
+
+  Substep 326.3: mv *.4112.* ../outputs/.
+
+  Substep 326.4: rm PTW-elev-0p146.geo
+
+time used to run PTW-elev-0p146.geo = 262 s
+
+
+Step 327: elevation angle = 147 deg from North Pole
+
+  Substep 327.1: cp ../inputs/PTW-elev-0p147.geo .
+
+  Substep 327.2: ./MMoM_4.1.12 PTW-elev-0p147.geo > ../outputs/PTW-elev-0p147.out
+sh: junk: command not found
+
+  Substep 327.3: mv *.4112.* ../outputs/.
+
+  Substep 327.4: rm PTW-elev-0p147.geo
+
+time used to run PTW-elev-0p147.geo = 210 s
+
+
+Step 328: elevation angle = 148 deg from North Pole
+
+  Substep 328.1: cp ../inputs/PTW-elev-0p148.geo .
+
+  Substep 328.2: ./MMoM_4.1.12 PTW-elev-0p148.geo > ../outputs/PTW-elev-0p148.out
+sh: junk: command not found
+
+  Substep 328.3: mv *.4112.* ../outputs/.
+
+  Substep 328.4: rm PTW-elev-0p148.geo
+
+time used to run PTW-elev-0p148.geo = 189 s
+
+
+Step 329: elevation angle = 149 deg from North Pole
+
+  Substep 329.1: cp ../inputs/PTW-elev-0p149.geo .
+
+  Substep 329.2: ./MMoM_4.1.12 PTW-elev-0p149.geo > ../outputs/PTW-elev-0p149.out
+sh: junk: command not found
+
+  Substep 329.3: mv *.4112.* ../outputs/.
+
+  Substep 329.4: rm PTW-elev-0p149.geo
+
+time used to run PTW-elev-0p149.geo = 185 s
+
+
+Step 330: elevation angle = 150 deg from North Pole
+
+  Substep 330.1: cp ../inputs/PTW-elev-0p150.geo .
+
+  Substep 330.2: ./MMoM_4.1.12 PTW-elev-0p150.geo > ../outputs/PTW-elev-0p150.out
+sh: junk: command not found
+
+  Substep 330.3: mv *.4112.* ../outputs/.
+
+  Substep 330.4: rm PTW-elev-0p150.geo
+
+time used to run PTW-elev-0p150.geo = 182 s
+
+
+Step 331: elevation angle = 151 deg from North Pole
+
+  Substep 331.1: cp ../inputs/PTW-elev-0p151.geo .
+
+  Substep 331.2: ./MMoM_4.1.12 PTW-elev-0p151.geo > ../outputs/PTW-elev-0p151.out
+sh: junk: command not found
+
+  Substep 331.3: mv *.4112.* ../outputs/.
+
+  Substep 331.4: rm PTW-elev-0p151.geo
+
+time used to run PTW-elev-0p151.geo = 172 s
+
+
+Step 332: elevation angle = 152 deg from North Pole
+
+  Substep 332.1: cp ../inputs/PTW-elev-0p152.geo .
+
+  Substep 332.2: ./MMoM_4.1.12 PTW-elev-0p152.geo > ../outputs/PTW-elev-0p152.out
+sh: junk: command not found
+
+  Substep 332.3: mv *.4112.* ../outputs/.
+
+  Substep 332.4: rm PTW-elev-0p152.geo
+
+time used to run PTW-elev-0p152.geo = 169 s
+
+
+Step 333: elevation angle = 153 deg from North Pole
+
+  Substep 333.1: cp ../inputs/PTW-elev-0p153.geo .
+
+  Substep 333.2: ./MMoM_4.1.12 PTW-elev-0p153.geo > ../outputs/PTW-elev-0p153.out
+sh: junk: command not found
+
+  Substep 333.3: mv *.4112.* ../outputs/.
+
+  Substep 333.4: rm PTW-elev-0p153.geo
+
+time used to run PTW-elev-0p153.geo = 173 s
+
+
+Step 334: elevation angle = 154 deg from North Pole
+
+  Substep 334.1: cp ../inputs/PTW-elev-0p154.geo .
+
+  Substep 334.2: ./MMoM_4.1.12 PTW-elev-0p154.geo > ../outputs/PTW-elev-0p154.out
+sh: junk: command not found
+
+  Substep 334.3: mv *.4112.* ../outputs/.
+
+  Substep 334.4: rm PTW-elev-0p154.geo
+
+time used to run PTW-elev-0p154.geo = 155 s
+
+
+Step 335: elevation angle = 155 deg from North Pole
+
+  Substep 335.1: cp ../inputs/PTW-elev-0p155.geo .
+
+  Substep 335.2: ./MMoM_4.1.12 PTW-elev-0p155.geo > ../outputs/PTW-elev-0p155.out
+sh: junk: command not found
+
+  Substep 335.3: mv *.4112.* ../outputs/.
+
+  Substep 335.4: rm PTW-elev-0p155.geo
+
+time used to run PTW-elev-0p155.geo = 171 s
+
+
+Step 336: elevation angle = 156 deg from North Pole
+
+  Substep 336.1: cp ../inputs/PTW-elev-0p156.geo .
+
+  Substep 336.2: ./MMoM_4.1.12 PTW-elev-0p156.geo > ../outputs/PTW-elev-0p156.out
+sh: junk: command not found
+
+  Substep 336.3: mv *.4112.* ../outputs/.
+
+  Substep 336.4: rm PTW-elev-0p156.geo
+
+time used to run PTW-elev-0p156.geo = 165 s
+
+
+Step 337: elevation angle = 157 deg from North Pole
+
+  Substep 337.1: cp ../inputs/PTW-elev-0p157.geo .
+
+  Substep 337.2: ./MMoM_4.1.12 PTW-elev-0p157.geo > ../outputs/PTW-elev-0p157.out
+sh: junk: command not found
+
+  Substep 337.3: mv *.4112.* ../outputs/.
+
+  Substep 337.4: rm PTW-elev-0p157.geo
+
+time used to run PTW-elev-0p157.geo = 181 s
+
+
+Step 338: elevation angle = 158 deg from North Pole
+
+  Substep 338.1: cp ../inputs/PTW-elev-0p158.geo .
+
+  Substep 338.2: ./MMoM_4.1.12 PTW-elev-0p158.geo > ../outputs/PTW-elev-0p158.out
+sh: junk: command not found
+
+  Substep 338.3: mv *.4112.* ../outputs/.
+
+  Substep 338.4: rm PTW-elev-0p158.geo
+
+time used to run PTW-elev-0p158.geo = 159 s
+
+
+Step 339: elevation angle = 159 deg from North Pole
+
+  Substep 339.1: cp ../inputs/PTW-elev-0p159.geo .
+
+  Substep 339.2: ./MMoM_4.1.12 PTW-elev-0p159.geo > ../outputs/PTW-elev-0p159.out
+sh: junk: command not found
+
+  Substep 339.3: mv *.4112.* ../outputs/.
+
+  Substep 339.4: rm PTW-elev-0p159.geo
+
+time used to run PTW-elev-0p159.geo = 168 s
+
+
+Step 340: elevation angle = 160 deg from North Pole
+
+  Substep 340.1: cp ../inputs/PTW-elev-0p160.geo .
+
+  Substep 340.2: ./MMoM_4.1.12 PTW-elev-0p160.geo > ../outputs/PTW-elev-0p160.out
+sh: junk: command not found
+
+  Substep 340.3: mv *.4112.* ../outputs/.
+
+  Substep 340.4: rm PTW-elev-0p160.geo
+
+time used to run PTW-elev-0p160.geo = 176 s
+
+
+Step 341: elevation angle = 161 deg from North Pole
+
+  Substep 341.1: cp ../inputs/PTW-elev-0p161.geo .
+
+  Substep 341.2: ./MMoM_4.1.12 PTW-elev-0p161.geo > ../outputs/PTW-elev-0p161.out
+sh: junk: command not found
+
+  Substep 341.3: mv *.4112.* ../outputs/.
+
+  Substep 341.4: rm PTW-elev-0p161.geo
+
+time used to run PTW-elev-0p161.geo = 157 s
+
+
+Step 342: elevation angle = 162 deg from North Pole
+
+  Substep 342.1: cp ../inputs/PTW-elev-0p162.geo .
+
+  Substep 342.2: ./MMoM_4.1.12 PTW-elev-0p162.geo > ../outputs/PTW-elev-0p162.out
+sh: junk: command not found
+
+  Substep 342.3: mv *.4112.* ../outputs/.
+
+  Substep 342.4: rm PTW-elev-0p162.geo
+
+time used to run PTW-elev-0p162.geo = 160 s
+
+
+Step 343: elevation angle = 163 deg from North Pole
+
+  Substep 343.1: cp ../inputs/PTW-elev-0p163.geo .
+
+  Substep 343.2: ./MMoM_4.1.12 PTW-elev-0p163.geo > ../outputs/PTW-elev-0p163.out
+sh: junk: command not found
+
+  Substep 343.3: mv *.4112.* ../outputs/.
+
+  Substep 343.4: rm PTW-elev-0p163.geo
+
+time used to run PTW-elev-0p163.geo = 165 s
+
+
+Step 344: elevation angle = 164 deg from North Pole
+
+  Substep 344.1: cp ../inputs/PTW-elev-0p164.geo .
+
+  Substep 344.2: ./MMoM_4.1.12 PTW-elev-0p164.geo > ../outputs/PTW-elev-0p164.out
+sh: junk: command not found
+
+  Substep 344.3: mv *.4112.* ../outputs/.
+
+  Substep 344.4: rm PTW-elev-0p164.geo
+
+time used to run PTW-elev-0p164.geo = 161 s
+
+
+Step 345: elevation angle = 165 deg from North Pole
+
+  Substep 345.1: cp ../inputs/PTW-elev-0p165.geo .
+
+  Substep 345.2: ./MMoM_4.1.12 PTW-elev-0p165.geo > ../outputs/PTW-elev-0p165.out
+sh: junk: command not found
+
+  Substep 345.3: mv *.4112.* ../outputs/.
+
+  Substep 345.4: rm PTW-elev-0p165.geo
+
+time used to run PTW-elev-0p165.geo = 168 s
+
+
+Step 346: elevation angle = 166 deg from North Pole
+
+  Substep 346.1: cp ../inputs/PTW-elev-0p166.geo .
+
+  Substep 346.2: ./MMoM_4.1.12 PTW-elev-0p166.geo > ../outputs/PTW-elev-0p166.out
+sh: junk: command not found
+
+  Substep 346.3: mv *.4112.* ../outputs/.
+
+  Substep 346.4: rm PTW-elev-0p166.geo
+
+time used to run PTW-elev-0p166.geo = 168 s
+
+
+Step 347: elevation angle = 167 deg from North Pole
+
+  Substep 347.1: cp ../inputs/PTW-elev-0p167.geo .
+
+  Substep 347.2: ./MMoM_4.1.12 PTW-elev-0p167.geo > ../outputs/PTW-elev-0p167.out
+sh: junk: command not found
+
+  Substep 347.3: mv *.4112.* ../outputs/.
+
+  Substep 347.4: rm PTW-elev-0p167.geo
+
+time used to run PTW-elev-0p167.geo = 171 s
+
+
+Step 348: elevation angle = 168 deg from North Pole
+
+  Substep 348.1: cp ../inputs/PTW-elev-0p168.geo .
+
+  Substep 348.2: ./MMoM_4.1.12 PTW-elev-0p168.geo > ../outputs/PTW-elev-0p168.out
+sh: junk: command not found
+
+  Substep 348.3: mv *.4112.* ../outputs/.
+
+  Substep 348.4: rm PTW-elev-0p168.geo
+
+time used to run PTW-elev-0p168.geo = 184 s
+
+
+Step 349: elevation angle = 169 deg from North Pole
+
+  Substep 349.1: cp ../inputs/PTW-elev-0p169.geo .
+
+  Substep 349.2: ./MMoM_4.1.12 PTW-elev-0p169.geo > ../outputs/PTW-elev-0p169.out
+sh: junk: command not found
+
+  Substep 349.3: mv *.4112.* ../outputs/.
+
+  Substep 349.4: rm PTW-elev-0p169.geo
+
+time used to run PTW-elev-0p169.geo = 167 s
+
+
+Step 350: elevation angle = 170 deg from North Pole
+
+  Substep 350.1: cp ../inputs/PTW-elev-0p170.geo .
+
+  Substep 350.2: ./MMoM_4.1.12 PTW-elev-0p170.geo > ../outputs/PTW-elev-0p170.out
+sh: junk: command not found
+
+  Substep 350.3: mv *.4112.* ../outputs/.
+
+  Substep 350.4: rm PTW-elev-0p170.geo
+
+time used to run PTW-elev-0p170.geo = 172 s
+
+
+Step 351: elevation angle = 171 deg from North Pole
+
+  Substep 351.1: cp ../inputs/PTW-elev-0p171.geo .
+
+  Substep 351.2: ./MMoM_4.1.12 PTW-elev-0p171.geo > ../outputs/PTW-elev-0p171.out
+sh: junk: command not found
+
+  Substep 351.3: mv *.4112.* ../outputs/.
+
+  Substep 351.4: rm PTW-elev-0p171.geo
+
+time used to run PTW-elev-0p171.geo = 165 s
+
+
+Step 352: elevation angle = 172 deg from North Pole
+
+  Substep 352.1: cp ../inputs/PTW-elev-0p172.geo .
+
+  Substep 352.2: ./MMoM_4.1.12 PTW-elev-0p172.geo > ../outputs/PTW-elev-0p172.out
+sh: junk: command not found
+
+  Substep 352.3: mv *.4112.* ../outputs/.
+
+  Substep 352.4: rm PTW-elev-0p172.geo
+
+time used to run PTW-elev-0p172.geo = 171 s
+
+
+Step 353: elevation angle = 173 deg from North Pole
+
+  Substep 353.1: cp ../inputs/PTW-elev-0p173.geo .
+
+  Substep 353.2: ./MMoM_4.1.12 PTW-elev-0p173.geo > ../outputs/PTW-elev-0p173.out
+sh: junk: command not found
+
+  Substep 353.3: mv *.4112.* ../outputs/.
+
+  Substep 353.4: rm PTW-elev-0p173.geo
+
+time used to run PTW-elev-0p173.geo = 201 s
+
+
+Step 354: elevation angle = 174 deg from North Pole
+
+  Substep 354.1: cp ../inputs/PTW-elev-0p174.geo .
+
+  Substep 354.2: ./MMoM_4.1.12 PTW-elev-0p174.geo > ../outputs/PTW-elev-0p174.out
+sh: junk: command not found
+
+  Substep 354.3: mv *.4112.* ../outputs/.
+
+  Substep 354.4: rm PTW-elev-0p174.geo
+
+time used to run PTW-elev-0p174.geo = 258 s
+
+
+Step 355: elevation angle = 175 deg from North Pole
+
+  Substep 355.1: cp ../inputs/PTW-elev-0p175.geo .
+
+  Substep 355.2: ./MMoM_4.1.12 PTW-elev-0p175.geo > ../outputs/PTW-elev-0p175.out
+sh: junk: command not found
+
+  Substep 355.3: mv *.4112.* ../outputs/.
+
+  Substep 355.4: rm PTW-elev-0p175.geo
+
+time used to run PTW-elev-0p175.geo = 272 s
+
+
+Step 356: elevation angle = 176 deg from North Pole
+
+  Substep 356.1: cp ../inputs/PTW-elev-0p176.geo .
+
+  Substep 356.2: ./MMoM_4.1.12 PTW-elev-0p176.geo > ../outputs/PTW-elev-0p176.out
+sh: junk: command not found
+
+  Substep 356.3: mv *.4112.* ../outputs/.
+
+  Substep 356.4: rm PTW-elev-0p176.geo
+
+time used to run PTW-elev-0p176.geo = 297 s
+
+
+Step 357: elevation angle = 177 deg from North Pole
+
+  Substep 357.1: cp ../inputs/PTW-elev-0p177.geo .
+
+  Substep 357.2: ./MMoM_4.1.12 PTW-elev-0p177.geo > ../outputs/PTW-elev-0p177.out
+sh: junk: command not found
+
+  Substep 357.3: mv *.4112.* ../outputs/.
+
+  Substep 357.4: rm PTW-elev-0p177.geo
+
+time used to run PTW-elev-0p177.geo = 249 s
+
+
+Step 358: elevation angle = 178 deg from North Pole
+
+  Substep 358.1: cp ../inputs/PTW-elev-0p178.geo .
+
+  Substep 358.2: ./MMoM_4.1.12 PTW-elev-0p178.geo > ../outputs/PTW-elev-0p178.out
+sh: junk: command not found
+
+  Substep 358.3: mv *.4112.* ../outputs/.
+
+  Substep 358.4: rm PTW-elev-0p178.geo
+
+time used to run PTW-elev-0p178.geo = 277 s
+
+
+Step 359: elevation angle = 179 deg from North Pole
+
+  Substep 359.1: cp ../inputs/PTW-elev-0p179.geo .
+
+  Substep 359.2: ./MMoM_4.1.12 PTW-elev-0p179.geo > ../outputs/PTW-elev-0p179.out
+sh: junk: command not found
+
+  Substep 359.3: mv *.4112.* ../outputs/.
+
+  Substep 359.4: rm PTW-elev-0p179.geo
+
+time used to run PTW-elev-0p179.geo = 271 s
+
+
+Step 360: elevation angle = 180 deg from North Pole
+
+  Substep 360.1: cp ../inputs/PTW-elev-0p180.geo .
+
+  Substep 360.2: ./MMoM_4.1.12 PTW-elev-0p180.geo > ../outputs/PTW-elev-0p180.out
+sh: junk: command not found
+
+  Substep 360.3: mv *.4112.* ../outputs/.
+
+  Substep 360.4: rm PTW-elev-0p180.geo
+
+time used to run PTW-elev-0p180.geo = 247 s
+
+
+Step 361: clear shared files
+
+  Substep 361.1: rm PTW-Materials.lib
+
+  Substep 361.2: rm PTW.facet
+
+  Substep 361.3: rm -r tempDir/
+
+time used = 55579 s
+Wed May 13 21:58:39 UTC 2020
+
