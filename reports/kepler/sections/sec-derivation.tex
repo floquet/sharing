@@ -3,6 +3,9 @@
 \section{Derivation}
 \label{sec:derive}
 		%
+
+%     %     %     %     %     %     %     %     %
+\subsection{Orbit Equation}
 \begin{equation}
 	\frac{d u^{2}}{d^{2} \lambda} + u = \frac{\mu}{h}, \quad u(0) = u_{0}, u'(0) = v_{0}
 \label{eq:forced-oscillator}
@@ -25,5 +28,44 @@ which is
 \end{equation}
 		%
 Using the boundary conditions, $u(\theta) = u_{0} \cos \theta + v_{0} \sin \theta$.
+
+%     %     %     %     %     %     %     %     %
+\subsection{Ellipse}
+		%
+\begin{equation}
+	\frac{ \xi^{2} } { a^{2} } + \frac{ \eta^{2} } { b^{2} } = 1
+\label{eq:derive:ellipse}
+\end{equation}
+		%
+\begin{equation}
+	\xi = ae + r\cos f, \eta = r\sin f, b^{2} = a^{2}(1 - e^{2})
+\label{eq:derive:subs}
+\end{equation}
+		%
+\begin{equation}
+	(1 - e^{2}) \xi^{2} + \eta^{2} - a^{2}(1 - e^{2}) = 0
+\label{eq:derive:new-quad}
+\end{equation}
+		%
+\begin{equation}
+	f(r) = \alpha r^{2} + \beta r + \gamma = 0
+\label{eq:derive:see-quad}
+\end{equation}
+		%
+\begin{equation}
+	\alpha = 1 - e^{2} \cos^{2} f, \quad \beta = 2ae (1 - e^{2})\cos f, \quad \gamma = a^{2}(1 - e^{2})^{2}
+\label{eq:derive:terms-quad}
+\end{equation}
+		%
+\begin{equation}
+	r_{\pm} = \frac{ -\beta \pm \sqrt{ \beta^{2} - 4 \alpha \gamma}} { 2\alpha }
+\label{eq:derive:roots-quad}
+\end{equation}
+		%
+\begin{equation}
+	r_{+} = \frac{ a(1 - e^{2}) } { 1 + e \cos f }, \quad r_{-} = \frac{ -a(1 - e^{2}) } { 1 - e \cos f }
+\label{eq:derive:roots-quad}
+\end{equation}
+
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
