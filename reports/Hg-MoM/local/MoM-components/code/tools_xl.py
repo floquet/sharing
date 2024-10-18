@@ -1,0 +1,343 @@
+#! /usr/bin/python3
+
+# # Daniel Topa
+
+# # Excel tools
+# xl_new_workbook( workbook_title )
+# xl_sheet_requirements( this_workbook )
+# xl_sheet_generate( this_workbook, title_sheet )
+# xl_s( this_workbook )
+# xl_sheet_header_footer( this_worksheet )
+
+# # imports
+import os               # probe, change directories
+import sys              # python version
+import datetime         # https://stackoverflow.com/questions/415511/how-to-get-the-current-time-in-python
+import numpy as np
+import pandas as pd
+import xlsxwriter       # API for Excel
+from xlsxwriter.utility import xl_rowcol_to_cell
+import numpy as np
+import pandas as pd
+
+import cls_TestObject
+
+# # modules
+def xl_new_workbook( testObject ):
+
+    MoMresults = xlsxwriter.Workbook( testObject.outputFile )
+    print( "output file %s" % testObject.outputFile )
+    print( "source file %s" % testObject.sourceFile )
+
+    xl_sheet_master( MoMresults, testObject ) # MoM summary
+    xl_add_data_sheets( MoMresults, testObject ) # MoM summary
+    xl_sheet_provenance( MoMresults ) # provenance sheet
+
+    return MoMresults;
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+def xl_add_data_sheets( this_workbook, testObject ):
+
+    format_MoM_title = this_workbook.add_format( )
+    format_MoM_title.set_bold( )
+    format_MoM_title.set_font_color( "red" )
+
+    format_MoM_head = this_workbook.add_format( )
+    format_MoM_head.set_bold( )
+
+    format_MoM_polarization = this_workbook.add_format( )
+    format_MoM_polarization.set_bold( )
+
+    number_format = this_workbook.add_format({'num_format': '#,##0.000'})
+
+    # https://xlsxwriter.readthedocs.io/format.html#set_center_across
+    cell_format = this_workbook.add_format()
+    cell_format.set_center_across()
+
+    for index in range( 1, 29 ):
+        # add sheet and tag header and footer
+        title = str( index + 2 ) + ' MHz'
+        print ( 'adding sheet %s' % title )
+        s = xl_sheet_generate( this_workbook, title )
+        xl_sheet_header_footer( s )
+        s.write( "A1", "MoM 4.1.12 output (*.dat)", format_MoM_title )
+        #
+        s.write( "A3", "azimuth, °", format_MoM_head )
+        s.write( "B3", "HH, dBsm",   format_MoM_head )
+        s.write( "C3", "VV, dBsm",   format_MoM_head )
+        s.write( "D3", "HV, dBsm",   format_MoM_head )
+        s.write( "E3", "VH, dBsm",   format_MoM_head )
+        #
+        s.write( "H3", "mean", format_MoM_head )
+        s.write( "J3", "standard deviation", format_MoM_head )
+        #
+        s.write( "G4", "HH", format_MoM_polarization )
+        s.write( "G5", "VV", format_MoM_polarization )
+        #
+    #    AttributeError: 'str' object has no attribute '_get_xf_index'
+    #    s.write( "I4", "HH", u"\u00B1" )
+        s.write( "I4", '±', cell_format )
+        s.write( "I5", '±', cell_format )
+        s.set_column( "I:I", 3 )
+
+        # = AVERAGE( B5:B364)
+        # = STDEV( B5:B364 )
+        s.write( "H4", '= AVERAGE( B5:B364)', number_format )
+        s.write( "H5", '= AVERAGE( C5:C364)', number_format )
+        s.write( "J4", '= STDEV( B5:B364 )',  number_format )
+        s.write( "J5", '= STDEV( B5:B364 )',  number_format )
+
+        # read in data file
+        filename = './data/sphere-005-' + testObject.resolution + '-' + str( index + 2 ).zfill(2) + '.4112.dat.txt'
+        s.write_string( "D1", filename )
+        data = pd.read_csv( filename, delimiter=r"\s+", header = None )
+        data_np = data.values
+        row = 3
+        col = 0
+        for line in range( 0, len ( data_np ) ):
+            cell = xl_rowcol_to_cell ( row, col )
+            s.write( row, col, data_np[ line ][ 0 ], number_format )
+            s.write( row, col + 1, data_np[ line ][ 1 ], number_format )
+            s.write( row, col + 2, data_np[ line ][ 2 ], number_format )
+            s.write( row, col + 3, data_np[ line ][ 3 ], number_format )
+            s.write( row, col + 4, data_np[ line ][ 4 ], number_format )
+            row += 1
+
+    return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+def xl_sheet_generate( this_workbook, title_sheet ):
+
+    # insure every worksheet has a header and footer
+    mySheet = this_workbook.add_worksheet( title_sheet )
+    xl_sheet_header_footer( mySheet )
+
+    return mySheet;
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+def xl_sheet_provenance( this_workbook ):
+
+    # Define some global names.
+    this_workbook.define_name( 'c_', '=299792458' )
+    # forensic info
+    s = xl_sheet_generate( this_workbook, "provenance" )
+    #  # special formats
+    # https://xlsxwriter.readthedocs.io/format.html?highlight=bold
+
+    # method 1
+    # setting the property as a dictionary of key/value pairs in the constructor
+    format_title = this_workbook.add_format( )
+    format_title.set_bold( )
+    format_title.set_font_color( "blue" )
+
+    # method 2
+    # passing a dictionary of properties to the add_format() constructor
+    format_time = this_workbook.add_format( {'num_format': 'yy/mm/dd hh:mm'} ) # https://xlsxwriter.readthedocs.io/working_with_dates_and_time.html
+
+    # widen first columns
+    s.set_column( "A:A", 15 )
+    s.set_column( "B:B", 13 )
+
+    # https://xlsxwriter.readthedocs.io/worksheet.html
+    s.write_url( "A1", "https://en.wikipedia.org/wiki/Computational_electromagnetics", string = "Radar Cross Section Measurements" )
+
+    #  #  provencance
+    s.write( "A3", "Workbook created by", format_title )
+    #s.write( "A1", tip, "boo" )
+
+    # python notebook which creates workbook
+    s.write( "A4", "python source" )
+    s.write( "B4", os.path.basename( __file__ ) ) # charlie.py
+
+    # current working directory
+    s.write( "A5", "directory" )
+    s.write( "B5", os.getcwd( ) ) # /Volumes/Tlaltecuhtli/repos/GitHub/topa-development/python/xlsx
+
+    # python version
+    s.write( "A6", "python version" )
+    s.write( "B6", sys.version ) # "3.7.0 (default, Jun 28 2018, 07:39:16) [Clang 4.0.1 (tags/RELEASE_401/final)]"
+
+    #  #  environment variables
+    # practise row, col notation
+    col = 0 # starting column
+    row = 7 # starting row
+    s.write( row, col, "Environment variables", format_title ); row += 1
+
+    s.write( row, col, "$USER" ) # l127914
+    s.write( row, col + 1, os.environ[ "USER" ] ); row += 1
+
+    s.write( row, col, "$HOSTNAME" ) # Cauchy.Schwarz
+    s.write( row, col + 1, os.environ[ "HOSTNAME" ] ); row += 1
+
+    s.write( row, col, "$HOME" ) # /Users/l127914
+    s.write( row, col + 1, os.environ[ "HOME" ] ); row += 1
+
+    s.write( row, col, "timestamp" ) # 11/21/18 16:18
+    s.write( row, col + 1, datetime.datetime.now( ), format_time ); row += 1
+
+    #  #  Excel info routines
+    # https://xlsxwriter.readthedocs.io/working_with_formulas.html
+
+    row += 1 # jump
+    s.write( row, col, "XL info function", format_title ); row += 1
+
+    s.write( row, col, "platform" ) # mac
+    s.write_formula( row, col + 1, '= INFO( "system" )' ); row += 1
+
+    s.write( row, col, "recalculation mode" ) # Automatic
+    s.write_formula( row, col + 1, '= INFO( "recalc" )' ); row += 1
+
+    s.write( row, col, "active sheets" ) # 1
+    s.write_formula( row, col + 1, '= INFO( "numfile" )' ); row += 1
+
+    s.write( row, col, "cursor" ) # $A:$A$1
+    s.write_formula( row, col + 1, '= INFO( "origin" )' ); row += 1
+
+    s.write( row, col, "XL release" ) # 16.16
+    s.write_formula( row, col + 1, '= INFO( "release" )' ); row += 1
+
+    s.write( row, col, "application directory" ) # /Users/dantopa/Library/Containers/com.microsoft.Excel/Data/Documents/
+    s.write_formula( row, col + 1, '= INFO( "directory" )' ); row += 1
+
+    s.write( row, col, "operating systems" ) # Macintosh (Intel) Version 10.13.3 (Build 17D47)
+    s.write_formula( row, col + 1, '= INFO( "osversion" )' ); row += 1
+
+    return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+def xl_sheet_header_footer( this_worksheet ):
+
+    # header: sheet name (center)
+    # footer: date/time, page number, path/file
+
+    myheader = "&C&12&A" # fontsize 12
+    myfooter = "&L&8&T\n&8&D" + "&C &P / &N" + "&R&8&Z\n&8&F" # fontsize 8
+
+    this_worksheet.set_header( myheader )
+    this_worksheet.set_footer( myfooter )
+
+    return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+def xl_sheet_master( this_workbook, testObject ):
+
+    number_format = this_workbook.add_format({'num_format': '#,##0.000'})
+
+    masterRow = 0
+    masterCol = 0
+    xl_set_label_column ( this_workbook, testObject, masterRow, masterCol )
+
+    dataRow = 8
+    dataCol = 0
+    s = this_workbook.get_worksheet_by_name( testObject.masterSheet )
+    for index in range(1, 29):
+        dataCol += 1
+        nu = index + 2
+        xl_computation ( s, dataRow, dataCol, nu, number_format )
+
+    return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+# https://xlsxwriter.readthedocs.io/working_with_cell_notation.html
+def xl_computation ( wsheet, row, col, nu, number_format ):
+
+    # frequency
+    wsheet.write_number ( row, col, nu )
+
+    # wavelength =  c_ / ( B11 * 1000000 )
+    cell = xl_rowcol_to_cell ( row, col )
+    wsheet.write ( row + 1, col, '= c_ / ( ' + cell + ' * 1000000 )', number_format ); row += 1
+
+    # = radius / wavelength
+    cell = xl_rowcol_to_cell ( row, col )
+    wsheet.write ( row + 1, col, '= radius / ' + cell, number_format ); row += 3
+
+    # MoM average dBsm  = '30 MHz'!$H4
+    wsheet.write_formula(row, col, "= '" + str( nu ) + " MHz'!$H$4", number_format ); row += 1
+    # relative error dBsm
+    cell = xl_rowcol_to_cell ( row - 1, col )
+    wsheet.write_formula ( row, col, '= 1 - size_optical_dbsm / ' + cell, number_format ); row += 2
+
+    # rcs, sq m  = 10^( B15 / 10 )
+    cell = xl_rowcol_to_cell ( row - 3, col )
+    wsheet.write_formula ( row, col, '= 10^( ' + cell + ' / 10 )', number_format ); row += 1
+    # rel error (sq m)  =  1 - size_optical_sq_m / B18
+    cell = xl_rowcol_to_cell ( row - 1, col )
+    wsheet.write_formula ( row, col, '= 1 - size_optical_sq_m / ' + cell, number_format )
+
+    return
+
+#  ==   ==   == ==   ==   == ==   ==   == ==   ==   ==  #
+
+def xl_set_label_column( wbook, testObject, row, col ):
+
+    # method 1
+    # setting the property as a dictionary of key/value pairs in the constructor
+    format_title = wbook.add_format( )
+    format_title.set_bold( )
+    format_title.set_font_color( "blue" )
+
+    format_label = wbook.add_format( )
+    format_label.set_bold( )
+
+    # https://xlsxwriter.readthedocs.io/example_defined_name.html
+    # https://docs.python.org/2.0/ref/strings.html
+    wbook.define_name( 'c_', '=299792458' )
+    #string = '\'=' + str( testObject.sizeValue / 2 ) + '\''
+    #print( 'string = %s' % string )
+    wbook.define_name( 'radius', '=5' )
+    wbook.define_name( 'size_optical_sq_m', '=\'' + testObject.masterSheet + '\'!$B$6' )
+    wbook.define_name( 'size_optical_dbsm', '=\'' + testObject.masterSheet + '\'!$B$7' )
+
+    # sheet operations
+    s = xl_sheet_generate( wbook, testObject.masterSheet )
+    s.set_first_sheet( )
+
+    # widen first columns
+    s.set_column( "A:A", 17 )
+    s.set_column( "B:B", 10  )
+
+    # column of labels
+    s.write_string( row, col, 'INPUT', format_title ); row += 2
+
+    s.write( row, col, 'MoM output:', format_label )
+    s.write( row, col + 1, testObject.sourceFile ); row += 2
+
+    s.write( row, col, testObject.sizeName, format_label );
+    s.write( row, col + 1, testObject.sizeValue )
+    s.write( row, col + 2, 'm' );  row += 1
+
+    s.write( row, col, 'optical size', format_label )
+    s.write( row, col + 1, '= pi() * radius^2' )
+    s.write_string( row, col + 2, testObject.areaUnits ); row += 1
+    s.write_formula( row, col + 1, '= 10 * LOG10( size_optical_sq_m )' );
+    s.write( row, col + 2, 'dB area' ); row += 2
+
+    s.write( row, col, 'frequency (MHz)', format_label ); row += 1
+    s.write( row, col, 'wavelength (m)', format_label ); row += 1
+    s.write( row, col, 'radius / lambda', format_label ); row += 2
+
+    s.write( row, col, 'MoM average (dbSm)', format_label ); row += 1
+    s.write( row, col, 'rel error (dbSm)', format_label ); row += 2
+
+    s.write( row, col, 'rcs, sq m', format_label ); row += 1
+    s.write( row, col, 'rel error (sq m)', format_label )
+
+    xl_sheet_header_footer( s )
+
+
+    return
+
+# root@f21d93a5a2e9:sphere $ python tools_xl.py
+#
+# root@f21d93a5a2e9:sphere $ date
+# Wed Jun 24 01:19:38 MDT 2020
+#
+# root@f21d93a5a2e9:sphere $ pwd
+# /Tlaloc/python/sphere

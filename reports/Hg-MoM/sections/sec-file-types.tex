@@ -1,0 +1,56 @@
+% \input{\pSections "sec-file-types"}
+
+\section{File Types}
+Standard file types
+\begin{enumerate}
+	\item \texttt{*.obj}
+	\item \texttt{*.txt}
+\end{enumerate}
+
+Intrinsic file types
+\begin{enumerate}
+	\item \texttt{*.geo}
+	\item \texttt{*.facet}
+\end{enumerate}
+
+
+%     %     %     %     %     %     %     %     %
+\subsection{Geometry Files \texttt{*.obj}}
+The geometry files are the primary input to Hg MoM.
+
+\begin{enumerate}
+	\item Mathematica: \href{https://reference.wolfram.com/language/ref/format/OBJ.html}{Import/Export format OBJ}
+	\item Wikipedia: \href{https://en.wikipedia.org/wiki/Wavefront_.obj_file}{Wavefront .obj file}
+	\item All3DP: \href{https://all3dp.com/2/obj-file-format-simply-explained/}{The OBJ File Format – Simply Explained}
+\end{enumerate}
+
+
+\begin{table}[htp]
+\begin{center}
+\begin{tabular}{cccccc}
+		%
+	\includegraphics[ width = 2.5cm ]{ \pLocalGraphics sphere-d050-01} &	\includegraphics[ width = 2.5cm ]{ \pLocalGraphics sphere-d050-02} &	\includegraphics[ width = 2.5cm ]{ \pLocalGraphics sphere-d050-03} &	\includegraphics[ width = 2.5cm ]{ \pLocalGraphics sphere-d050-04} &	\includegraphics[ width = 2.5cm ]{ \pLocalGraphics sphere-d050-05} \\
+		%
+	$20$ & $80$ & $320$ & $1280$ & $5120$ \\		%
+\end{tabular}
+\end{center}
+\caption{A sphere resolved into facets in an \texttt{*.obj} file. The application irradiates each facet and aggregates the output.}
+\label{tab:obj}
+\end{table}%
+
+
+{\scriptsize{
+\lstinputlisting[ caption = The \texttt{*.obj} file for the sphere with 20 facets.]{\pLocalMoM/data/"sphere-0020-obj.txt"}
+}}
+
+{\scriptsize{
+\lstinputlisting[ caption = The \texttt{*.facet} file for the sphere with 20 facets.]{\pLocalMoM/data/"sphere-0020-facet.txt"}
+}}
+
+
+%     %     %     %     %     %     %     %     %
+\subsection{New Efforts}
+
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

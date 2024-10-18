@@ -1,0 +1,135 @@
+% \input{\pLocalMoM/code/"tabula-rasa.geo"}
+
+% https://tex.stackexchange.com/questions/212793/how-can-i-typeset-julia-code-with-the-listings-package
+
+
+%\lstset{
+%  abovecaptionskip={0cm},
+%  backgroundcolor={\color{lightgray}},
+%  basicstyle={\small\ttfamily},
+%  breakatwhitespace=true,
+%  breaklines=true,
+%  captionpos=b,
+%  frame=tb,
+%  resetmargins=true,
+%  sensitive=true,
+%  stepnumber=1,
+%  tabsize=4,
+%  upquote=true
+%}
+%
+%\AtBeginDocument{\lstdefinelanguage{bash}[]{sh}%
+%  {morekeywords={alias,bg,bind,builtin,caller,command,compgen,compopt,%
+%      complete,coproc,curl,declare,disown,dirs,enable,fc,fg,help,%
+%      history,jobs,let,local,logout,mapfile,printf,pushd,popd,%
+%      readarray,select,set,suspend,shopt,source,times,type,typeset,%
+%      ulimit,unalias,wait},%
+%   otherkeywords={ [, ], [[, ]], \{, \} }%
+%  }%
+%
+%\lstdefinelanguage{sh}%
+%  {morekeywords={awk,break,case,cat,cd,continue,do,done,echo,elif,else,%
+%      env,esac,eval,exec,exit,export,expr,false,fi,for,function,getopts,%
+%      hash,history,if,in,kill,login,newgrp,nice,nohup,ps,pwd,read,%
+%      readonly,return,set,sed,shift,test,then,times,trap,true,type,%
+%      ulimit,umask,unset,until,wait,while},%
+%   morecomment=[l]\#,%
+%   morestring=[d]",%
+%   alsoletter={*"'0123456789.},%
+%   alsoother={$},%
+%   alsoother={\{\=\}},%
+%   literate={{=}{{{=}}}1},%
+%   literate={\$\{}{{{{\bfseries{}\$\{}}}}2,%
+%   otherkeywords={ [, ], \{, \} }%
+%  }[keywords,comments,strings]%
+  %\begin{lstlisting}[caption={Trimming silence script},label={lst:scr1},language=batch]
+%{\small{
+%\begin{lstlisting}[language=batch]
+\begin{Verbatim}[ numbers=left, xleftmargin=5mm ]
+ego
+
+!Mercury MoM input file, VIE/SIE Version 4.x compatible (VIE/Dual Sided SIE)
+
+\&MM_MOM
+  bUseACA = .TRUE.,
+  bSolve_ACA = .TRUE.,
+  bOutOfCore = .TRUE.,
+  bNormalizeToWaveLength = .FALSE.,
+  bNormalize             = .FALSE.,
+  dCloseLambda  = 0.100000,
+  ACA_Factor_Tol = 0.000010,
+  ACA_RHS_Tol = 0.000100,
+  Point_Tolerance = 0.001000,
+  nLargestBlockSize = 400,
+  MemorySize_GB = -1.000000,
+  stackSize_GB = -1.000000,
+  nFillThreads = -1,
+  nFillMKLThreads = 1,
+  nLUThreads = -1,
+  nLUMKLThreads = 1,
+  nRHSThreads = 1,
+  nRHSMKLThreads = 1,
+  bOutputACAGrouping     = .FALSE.,
+  bOutputRankFraction    = .FALSE.,
+  bLimitLUColumns        = .FALSE.,
+  Lop_Admissibility = WEAK,
+  Kop_Admissibility = CLOSE
+/
+
+\&Scratch_Memory
+  Scratch_RankFraction_Z     = 0.300000,
+  Scratch_RankFraction_LU    = 0.600000,
+  Scratch_RankFraction_RHS   = 0.500000,
+  Scratch_RankFraction_Solve = 1.000000,
+  MemoryFraction_Z           = 0.950000,
+  MemoryFraction_Scratch_LU  = 0.500000,
+  MemoryFraction_LU          = 1.000000,
+  MemoryFraction_RHS         = 0.500000,
+  MemoryFraction_Solve       = 0.900000,
+/
+
+\&QUADRATURE
+  NTRISELF    = 7,
+  NTRINEAR    = 3,
+  NTRIFAR     = 3,
+  NTETSELF    = 11,
+  NTETNEAR    = 4,
+  NTETFAR     = 4,
+  NQGAUSS  = 4,
+/
+
+FREQUENCY
+  mhz
+  nu-mhz  nu-mhz  1   !Freq Start, Freq Stop, Number of Frequencies
+
+Excitation
+  MONOSTATIC
+
+Angle Cut
+  1
+  0.000000  359.000000  360
+  AZIMUTH
+  90.000000
+
+Boundary Conditions
+PEC-Materials.lib
+4
+V_FREE_SPACE => Free_Space
+V_PEC => PEC
+V_PMC => PMC
+V_NULL => NULL
+1
+0 BC_PEC V_FREE_SPACE
+
+SIE
+myFacet.facet
+m
+
+Geometry_End
+
+! Fiducial run
+\end{Verbatim}
+%\end{lstlisting}
+%}}
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

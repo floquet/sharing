@@ -2,10 +2,60 @@
 
 \section{Prec\'is}
 
+%     %     %     %     %     %     %     %     %
+\subsection{Models of Radar Cross Section}
+\begin{figure}[htbp] 
+   \centering
+   \includegraphics[ width=4in ]{\pLocalGraphics b20-glamor} 
+   \caption{Toy model}
+   \label{fig:toy}
+\end{figure}
+
+Look angle
+\begin{table}[htp]
+\begin{center}
+\begin{tabular}{c}
+	\includegraphics[ width=3in ]{\pLocalGraphics b20-above} \\
+	\includegraphics[ width=3in ]{\pLocalGraphics b20-side} \\
+	\includegraphics[ width=3in ]{\pLocalGraphics b20-nose} \\
+\end{tabular}
+\end{center}
+\caption{Different views present very different areas.}
+\label{tab:views}
+\end{table}%
+
+		%
+\begin{equation}
+	\sigma_{\nu}\paren{\alpha}  \approx \dfrac{a_{0}}{2} + \sum_{k=1}^{\bl{d}}a_{k}\cos k\alpha + b_{k}\sin k\alpha
+\label{eq:fourier}
+\end{equation}
+		%
+Amplitudes and Errors for $\nu=3$ MHz and $d=7$:
+		%
+	\begin{equation*}
+		\begin{split}
+			\sigma_{3}\paren{\theta} = a_{0} &+  a_{1}\cos \theta  +  a_{2}\cos 2\theta +  a_{3}\cos 3\theta\\
+				& +  a_{4}\cos 4\theta +  a_{5}\cos 5\theta+  a_{6}\cos 6\theta +  a_{7}\cos 7\theta
+		\end{split}
+	\end{equation*}	
+		%
+	\begin{equation*}
+		\begin{split}
+			\sigma_{3}\paren{\theta} &= 35.237 \pm 0.012   +  (1.675 \pm 0.018) \cos \theta  +  (-3.434 \pm 0.018) \cos 2\theta  +  (-0.866 \pm 0.018) \cos 3\theta   \\
+			&+  (5.386 \pm 0.018) \cos 4\theta  +  (-1.280 \pm 0.018) \cos 5\theta  +  (1.379 \pm 0.018) \cos 6\theta +   (-0.675 \pm 0.018) \cos 7\theta
+		\end{split}
+	\end{equation*}	
+		%
+	\input{\pSections "sec-plots"}
 
 %     %     %     %     %     %     %     %     %
 \subsection{Running the Code}
-\texttt{./MMoM\textbackslash4.1.12 ${geofilename}}
+%\texttt{./MMoM\textbackslash4.1.12 ${geofilename}}
+
+\begin{verbatim}
+	./MMoM_4.1.12 sample.geo
+\end{verbatim}
+
 %     %     %     %     %     %     %     %     %
 \subsection{Radar}
 
@@ -14,6 +64,27 @@
 Working with CAF files, producing output, compressing data.
 \cite{topa-4-20-2024}
 \textcite{topa-4-20-2024}
+
+
+%     %     %     %     %     %     %     %     %
+\subsection{Process}
+\begin{table}[htp]
+\begin{center}
+\begin{tabular}{lll}
+	1 & Create CAD model	& CAD software \\
+	2 & Convert CAD to \texttt{*.obj}	& CAD software \\
+	3 & Convert \texttt{*.obj} to \texttt{*.facet} & Mathematica, Fortran \\
+	4 & Input  properties to \texttt{materials.lib}	& \texttt{VIM} \\
+	5 & Set radar frequencies & \texttt{VIM} \\
+	6 & \bf{Simulate radar irradiation} & \texttt{Mercury MoM} \\
+	7 & Harvest reflection values from output & Mathematica, Fortran, Python \\
+	8 & Describe RCS as a series of amplitudes & Not written
+\end{tabular}
+\end{center}
+\caption{Start with a CAD model and construct a Radar Cross Section model}
+\label{tab:process}
+\end{table}%
+
 
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

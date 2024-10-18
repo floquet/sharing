@@ -9,14 +9,14 @@
 \subsubsection{Class Electric Fields: \texttt{m-class-electric-fields.f08}}
 
 \subsubsection{\texttt{m-class-electric-fields.f08}}
-The primary output of the simulation are the electric fields. The input electric field is resolved into two polarization axes: horizontal and vertical. Each of these fields are resolved into horizontal and vertical components creating four complex vectors (line 21) whose length matches the angular sample size.
+The primary output of the simulation are the electric fields. Lines 17-24 define the class; the remainder of the codes is for methods. The input electric field is resolved into two polarization axes: horizontal and vertical. Each of these fields are resolved into horizontal and vertical components creating four complex vectors (line 21) whose length matches the angular sample size.
 
 The class \texttt{m-class-electric-fields.f08} reads the text file and harvests the electric fields eventually passing back a composite value (lines 65-66) for all four components of the scattering return.
-		\input{\pLocal code/"mClassElectricField"}
+		\input{\pLocalMoM/code/"mClassElectricField"}
 
 
 
 \subsubsection{Class Data File: \texttt{m-class-data-file.f08}}
-		\input{\pLocal code/"mClassDataFile"}
+		\input{\pLocalMoM/code/"mClassDataFile"}
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

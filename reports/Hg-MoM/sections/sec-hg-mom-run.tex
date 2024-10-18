@@ -1,0 +1,81 @@
+% \input{\pSections "sec-hg-mom-run"}
+
+\section{Running Mercury Method of Moments}
+
+%     %     %     %     %     %     %     %     %
+\subsection{Inputs}
+Consider an example with the sphere.
+
+%\begin{lstlisting}[
+%  mathescape,
+%  columns=fullflexible,
+%  basicstyle=\fontfamily{lmvtt}\selectfont,
+%    morecomment=[l]{\&},
+%]
+%1- Train triggers model $ X_{i} \to Y_j$ ($X_i$: source phrase
+%composed of $i$ &, $Y_j$: target phrase composed of $j$ words)
+%\end{lstlisting}
+
+%\VerbatimInput{\input{\pLocalMoM/data/"tabula-rasa.geo"}}
+
+% https://tex.stackexchange.com/questions/342502/embedding-text-file-in-latex-document
+{\scriptsize{
+\lstinputlisting[ caption = ``tabula-rasa.geo'' ]{\pLocalMoM/data/"tabula-rasa.geo"}
+}}
+
+{\scriptsize{
+\lstinputlisting[ caption = A simple \texttt{*.facet} file ]{\pLocalMoM/data/"sphere-d050-01.facet"}
+}}
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
+
+	\input{\pLocalMoM/data/"tabula-rasa.geo"}
+
+{\tiny{
+\begin{lstlisting}
+facimusFacet.f08  2020-06-25 11:34:36
+    1
+<partName>
+0
+     12
+     13.819660      42.532539      22.360680
+    -13.819660      42.532539     -22.360680
+    -36.180340      26.286556      22.360680
+    -36.180340     -26.286556      22.360680
+    -13.819660     -42.532539     -22.360680
+     13.819660     -42.532539      22.360680
+     36.180340      26.286556     -22.360680
+    -44.721359       0.000000     -22.360680
+     44.721359       0.000000      22.360680
+     36.180340     -26.286556     -22.360680
+      0.000000       0.000000      50.000000
+      0.000000       0.000000     -50.000000
+    1
+<partName>
+      3     20      0      0      0      0      0
+      1      2      3      0
+      4      5      6      0
+      2      1      7      0
+      4      3      8      0
+      9      6     10      0
+      3      4     11      0
+      2      7     12      0
+      3      2      8      0
+      2     12      8      0
+     12      5      8      0
+      7      1      9      0
+      5      4      8      0
+      6      5     10      0
+      5     12     10      0
+     12      7     10      0
+      7      9     10      0
+      4      6     11      0
+      6      9     11      0
+      9      1     11      0
+      1      3     11      0
+      }}
+
+%     %     %     %     %     %     %     %     %
+\subsection{Distribution Letter for Software}
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

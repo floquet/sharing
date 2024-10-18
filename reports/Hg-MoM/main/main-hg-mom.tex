@@ -5,12 +5,6 @@
 % latex likes bibtex
 
 \documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
-\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
-%\geometry{landscape}                		% Activate for rotated page geometry
-%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
-\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
-								% TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{enumitem}  % list labels A, B, C
 \usepackage{pdfpages}
 
@@ -21,15 +15,42 @@
 \newcommand{\pGlobalSetup}[0]		{\pGlobal setup-global/}	
 
 \input{\pGlobalSetup setup-global-reports}
-\input{\pLocalSetup macros}
+\input{\pLocalSetup setup-local}
+
 \bibliography{\pGlobalBibliographies radar.bib}
 %\addbibresource{\pGlobalBibliographies radar.bib}
-%
+\usepackage[printwatermark]{xwatermark}
+	\newwatermark[allpages,color=red!10,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+
 \usepackage{listings}
 	\definecolor{textblue}{rgb}{.2,.2,.7}
 	\definecolor{textred}{rgb}{0.54,0,0}
 	\definecolor{textgreen}{rgb}{0,0.43,0}
+	\definecolor{lightgray}{RGB}{245,245,245}
+	\definecolor{darkgray}{RGB}{128,128,128}
 
+% https://tex.stackexchange.com/questions/583984/how-to-include-a-txt-file-content-inside-the-latex-file
+\begin{filecontents*}{\pLocalMoM/data/"tabula-rasa.geo"}
+\end{filecontents*}
+
+\lstdefinelanguage{batch}{
+    morekeywords={not,exist,mkdir,echo,pause},
+    morekeywords={Do,Else,For,ForEach,Function,If,In,Until,While},
+    alsodigit={-},
+    sensitive=false,
+    morecomment=[l]{\#},
+    morecomment=[n]{<\#}{\#>},
+    morestring=[b]{"},
+    morestring=[b]{'},
+    morestring=[s]{@'}{'@},
+    morestring=[s]{@"}{"@},
+    numbers=right,
+    numberstyle=\tiny,
+    basicstyle=\footnotesize,
+    stringstyle=\color{green},
+    keywordstyle=\color{blue},
+    frame=tb,
+}
 
 \lstset{language=Fortran, 
 numbers=left, 
@@ -56,17 +77,21 @@ showstringspaces=false}
 \maketitle
 \abstract{A brief survey of characterizing the three dimensional radar cross section of satellites.}
 \tableofcontents
+				%
 			\input{\pSections "sec-precis"}
 			\input{\pSections sec-overview}
+			\input{\pSections sec-file-types}
 			%\input{\pSections sec-A-CAD-model}
 			%\input{\pSections sec-B-mesh-sealing}
 			%\input{\pSections sec-C-materials}
 			%\input{\pSections sec-overview}
+			\input{\pSections sec-hg-mom-run}
 			\input{\pSections sec-learn}
 			\appendix
-			\input{\pSections sec-hg-mom}
 			\input{\pSections sec-hg-mom-data}
 			\input{\pSections "sec-hg-mom-tools"}
+			\input{\pSections sec-hg-mom}
+			\input{\pSections sec-spreadsheet}
 			
 	\printbibliography
 %\nocite
