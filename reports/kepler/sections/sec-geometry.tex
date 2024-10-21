@@ -2,40 +2,81 @@
 
 \section{Geometry of Kepler's Law}
 \label{sec:geo}
-
-\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
-\centering
-\begin{center}
-   \includegraphics[ width = 3.75in ]{\pLocalGraphics vallado-anomaly} 
-   \caption{Vallado's figure 2-2 showing $E$ and $\nu$.}
-\end{center}
-   \label{fig:anomaly-vallado}
-\end{figure}
-
-\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
-\begin{center}
-   \includegraphics[ width = 3.5in ]{\pLocalGraphics Bate-etal-anomaly} 
-   \caption{Figure 4-4 in Bate \emph{et al.}  showing $E$ and $\nu$.}
-\end{center}
-   \label{fig:anomaly-bate}
-\end{figure}
-
-\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
-   \centering
-   \includegraphics[ width = 4in ]{\pLocalGraphics moulton-anomaly} 
-   \caption{Moulton's figure 28 showing $E$ and $\nu$.}
-   \label{fig:anomaly-mouton}
-\end{figure}
-
-\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
-\centering
-\begin{tikzpicture}
-	\draw[ gray ] (0,0) circle (4cm);
-	\draw[ thick ] (0,0) ellipse (4cm and 1cm);
-\end{tikzpicture}
-\caption{Geometry}
-\label{fig:ellipse-circle}
-\end{figure}
+		 \input{\pSections fig-geometry}
+%\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+%\centering
+%\begin{center}
+%   \includegraphics[ width = 3.75in ]{\pLocalGraphics vallado-anomaly} 
+%   \caption{Vallado's figure 2-2 showing $E$ and $\nu$.}
+%\end{center}
+%   \label{fig:anomaly-vallado}
+%\end{figure}
+%
+%\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+%\begin{center}
+%   \includegraphics[ width = 3.5in ]{\pLocalGraphics Bate-etal-anomaly} 
+%   \caption{Figure 4-4 in Bate \emph{et al.}  showing $E$ and $\nu$.}
+%\end{center}
+%   \label{fig:anomaly-bate}
+%\end{figure}
+%
+%\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+%   \centering
+%   \includegraphics[ width = 4in ]{\pLocalGraphics moulton-anomaly} 
+%   \caption{Moulton's figure 28 showing $E$ and $\nu$.}
+%   \label{fig:anomaly-mouton}
+%\end{figure}
+%
+%\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+%\centering
+%\begin{tikzpicture}
+%	\def\major{4cm}
+%	\def\minor{3cm}
+%	\coordinate (origin) at (0, 0);
+%	\coordinate (earth) at (2.234, 0);
+%	\coordinate (aux) at (3.464, 2.);
+%	\coordinate (satellite) at (3.464, 1.5);
+%	\draw[ gray ] (origin) circle (\major);
+%	\draw[ thick ] (0,0) ellipse (4cm and (3cm);
+%	\draw[ -{Stealth[gray]} ] (-4, 0) -- (5, 0) node[anchor=west ] {$\xi$};
+%	\draw[ -{Stealth[gray]} ] (0, -4) -- (0, 5) node[ anchor=south ] {$\eta$};
+%	\node[ circle, inner sep=1pt, fill=gray, label=below right:{$O$}] at (origin) {};
+%	\node[ circle, inner sep=1pt, fill=gray, label=below:{$f$}] at (earth) {};
+%	\draw[ gray ] (origin) -- (aux);
+%	\draw[ black ] (earth) -- (satellite);
+%\end{tikzpicture}
+%\caption{Seeing the anomalies. The auxiliary circle in gray and the satellite trajectory as the black ellipse.}
+%\label{fig:ellipse-circle}
+%\end{figure}
+%
+%\begin{tikzpicture}
+%    % Draw the ellipse
+%    \draw[blue, thick] (0, 0) ellipse (4cm and 3cm);
+%
+%    % Draw the circumscribing circle
+%    \draw[red, thick] (0, 0) circle (4cm);
+%
+%    % Calculate the focus of the ellipse
+%    \def\a{4}
+%    \def\b{3}
+%    \def\c{sqrt(\a^2 - \b^2)}  % c = sqrt(a^2 - b^2)
+%    \coordinate (F) at (-\c, 0); % Left focus
+%
+%    % Calculate the point on the circle at angle pi/6
+%    \coordinate (C) at ({4*cos(30)}, {4*sin(30)}); % 30 degrees = pi/6
+%
+%    % Calculate the corresponding point on the ellipse at angle pi/6
+%    \coordinate (E) at ({4*cos(30)}, {3*sin(30)});
+%
+%    % Draw lines
+%    \draw[green, thick] (0, 0) -- (C) node[midway, right] {Line to Circle};
+%    \draw[orange, thick] (F) -- (E) node[midway, below] {Line to Ellipse};
+%
+%    % Add labels
+%    \node at (4.5, 0) {Circle (radius = 4 cm)};
+%    \node at (0, 3.5) {Ellipse (a = 4 cm, b = 3 cm)};
+%    \node at (-\c, -0.5) {Focus};
+%\end{tikzpicture}
 
 %\begin{table}[htp]
 %%\caption{default}

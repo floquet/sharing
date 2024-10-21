@@ -25,7 +25,7 @@
 
 \newcommand{\angdom}[0]			{\left[ 0, 2\pi \right.)}
 
-\title{Kepler's Law}
+\title{Kepler's Equation: Derivation, Implementation, Validation}
 \author{Daniel Topa\\\href{mailto:daniel.topa@hii-tsd.com}{daniel.topa@hii-tsd.com}}
 \affil{\href{https://hii.com/what-we-do/divisions/mission-technologies/}{Mission Technologies}
 \\Huntington Ingalls Industries
@@ -38,15 +38,27 @@
 
 \section{Overview}
 Kepler's law is a cornerstone of orbital mechanics.
-\begin{enumerate}
-	\item \hyperref[sec:env]{\env}	
-	\item \hyperref[sec:ldd]{\ldd}	
-\end{enumerate}
+Kepler's equation
+		%
+\begin{equation}
+	M = E - e \sin E
+\label{eq:kepler-law}
+\end{equation}
+		%
+Kepler's Law III
+		%
+\begin{equation}
+	n = \mu^{\tfrac{1}{2}} a^{\tfrac{-3}{2}}
+\label{eq:kepler-law-III}
+\end{equation}
+
 
 		\input{\pSections sec-derivation}
 		\input{\pSections sec-geometry}
 		\input{\pSections sec-math}
-		
+		\appendix
+		\input{\pSections sec-diagrams}
+				
 		\printbibliography
 			
 \end{document} 
