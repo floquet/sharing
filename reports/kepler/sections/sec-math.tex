@@ -6,7 +6,7 @@
 \subsection{Definitions}
 %%
 \begin{definition}[The ellipse]
-Given $\theta \in \angdom$, and parameters $a, b \in\mathbb{R}^{+}$ with $a>b$ the following parametric form defines an ellipse.
+Given $\theta \in \angdom$, and parameters $a, b \in\mathbb{R}^{+}$ with $a\ge b$ the following parametric form defines an ellipse.
 \begin{equation}
 	\epsilon(\theta) = \paren{ a \cos \theta, b\sin \theta }
 \label{eq:ellipse}
@@ -18,6 +18,20 @@ The eccentricity is a scalar parameter $e \in \paren{0,1}$ and can be expressed 
 \begin{equation}
 	e = \frac{c}{a} = \sqrt{1 - \paren{\frac{b}{a}}^{2}}
 \label{eq:eccentricity}
+\end{equation}
+\end{definition}
+%%
+\begin{definition}[The circle]
+In the limit
+		%
+\begin{equation*}
+	\lim\limits_{b\to a^{-}} \paren{ a \cos \theta, b\sin \theta } = a \paren{ \cos \theta, \sin \theta } = C_{2}(\theta)
+%\label{eq:}
+\end{equation*}
+		%
+\begin{equation}
+	C_{2}(\theta) = a \paren{ \cos \theta, \sin \theta }
+\label{eq:circle}
 \end{equation}
 \end{definition}
 %%

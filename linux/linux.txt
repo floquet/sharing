@@ -1,23 +1,64 @@
 John:
 
-Windows never looks so good as it does in the rear-view mirror. Welcome to Linux. Let's have some fun.
+Windows never looks so good as it does in the rear-view mirror. Welcome to Linux! Let's have some fun.
 
-Linux
+Linux rudiments
 https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 https://linuxhandbook.com/linux-directory-structure/
 
 Your ubuntu package manager is apt-get
 https://manpages.ubuntu.com/manpages/trusty/man8/apt-get.8.html
 When building, always choose *-dev versions! These contain *.h files.
-
 The script apt-get.sh shows how to take control of your machine configuration.
 
-Fun commands: 
-1. cat /proc/cpuinfo: cpu details
-2. cat /proc/meminfo: memory details
-1. lstopo: hardware configuration
-1. tree -L 2: directory structure, 2 levels deep
-1. env: list environment variables
+Command line navigation:
+https://superuser.com/questions/262942/whats-different-between-ctrlz-and-ctrlc-in-unix-command-line
+ctrl+c: STOP a process
+ctrl+z: PAUSE a process
+
+https://www.redhat.com/en/blog/shortcuts-command-line-navigation#:~:text=Shortcuts%3A,to%20move%20forward%20a%20word.
+ctrl+a: goto beginning of line
+ctrl+e: goto end of line
+
+alt+a: move forward one word
+alt+b: move backward one word
+
+Query hardware configuration: 
+1. cat /proc/cpuinfo : cpu details
+2. cat /proc/meminfo : memory details
+3. lstopo: hardware configuration
+
+Query software configuration: 
+1. cat /etc/os-release : release details
+2. cat /proc/version
+3. uname -a : OS details
+4. lsb_release -a : Linux Systems Base
+5. env: list environment variables
+
+Query directory structure:
+1. du : disk usage
+    du -csh * | sort -n : 
+    du -shm
+2. pwd : print working directory
+3. tree -L 2: directory structure, 2 levels deep
+4. ls -alh
+
+Query daemons and jobs
+1. ps -aux: running jobs and ownership: to kill job 123, kill -9 123
+2. top: see running processes
+
+Other queries
+1. whoami : user name
+2. whereis : whereis gfortran
+3. history : list previous commands; to repeat 6, use !6
+
+Fun commands
+1. grep -Inr "kill" . : search for the word "kill" in files recursively
+    grep -inr --include \*.tex '\\myline': search LaTeX files for \myline
+2. find : find files
+    find all fortran source files and put them into a tarball
+    find . -iname '*.f08' -print0 | xargs -0 tar cvf fortran_tarball.tar
+3. xargs : tool for argument passing
 
 =========== E X A M P L E S =========== 
 [root@16393d43ebbb /]# cat /proc/cpuinfo

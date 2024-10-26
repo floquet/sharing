@@ -4,6 +4,10 @@ printf "%s\n" "$(date), $(tput bold)${BASH_SOURCE[0]}$(tput sgr0)"
 # Fri Feb 25 17:46:48 MST 2022
 
 export aptTime=${SECONDS}
+
+# enumeration routines
+source ../shared/common-header.sh
+
 # ubuntu
 
 # https://askubuntu.com/questions/990823/apt-gives-unstable-cli-interface-warning
@@ -140,10 +144,3 @@ new_step "$(tput bold)${BASH_SOURCE[0]}$(tput sgr0) script completed at $(date)"
 # sudo addgroup wheel
 #
 # usermod -aG wheel ${USER}
-
-# ubuntu disaster
-# ~/.spack/bootstrap/config/packages.yaml
-# change gcc@12.0.1 cxx compiler from null to /usr/bin/g++
-
-# ==> Installing berkeley-db-18.1.40-bf42xis6fcmsnfqehvzpo2x75ptvwegx
-#   >> 138    checking whether the C++ compiler supports templates for STL... configure: error: no
