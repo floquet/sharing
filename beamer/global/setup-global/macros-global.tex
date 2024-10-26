@@ -1,56 +1,48 @@
-\documentclass{standalone}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.17} % Set compatibility to avoid warnings
-\usepgfplotslibrary{fillbetween} % Load library for 'name path'
+% global setup
 
-\begin{document}
+% \input{\pGlobalSetup macros-global}
+% transitions to next subsection, next section
+\newcommand{\jumpLittle}[0]			{\textcolor{bg!85}{.}}
+\newcommand{\jumpBig}[0]			{\textcolor{bg!85}{..}}
 
-\begin{tikzpicture}
-    % Define parameters for ellipse and circle
-    \def\a{1.75}          % Semi-major axis of the ellipse
-    \def\b{0.75}          % Semi-minor axis of the ellipse
-    \def\centerX{-1.25}   % x-coordinate of the ellipse center
-    \def\centerY{0}       % y-coordinate of the ellipse center
+% https://tex.stackexchange.com/questions/55000/continuing-enumerate-counters-in-beamer
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
 
-    % Corrected intersection points
-    \pgfmathsetmacro{\intersectX}{-0.7}
-    \pgfmathsetmacro{\intersectY}{0.7}
+\newcommand{\ns}[0]				{Navier-Stokes}
 
-    \begin{axis}[
-        axis equal,
-        axis lines=middle,
-        grid=both,                   % Enable both major and minor grids
-        minor tick num=4,            % Set minor ticks to 4 per major tick (0.2 increment)
-        xmin=-2, xmax=2,             % Set axis limits to properly fit the unit circle
-        ymin=-2, ymax=2,
-        xlabel={$x$},
-        ylabel={$y$},
-        ticks=none
-    ]
-        % Draw the unit circle centered at the origin (radius = 1)
-        \addplot[thick, domain=0:360, samples=100, smooth, name path=circle] 
-            ({cos(x)}, {sin(x)});
 
-        % Draw the ellipse using parameters for a, b, and center
-        \addplot[thick, domain=0:360, samples=100, smooth, name path=ellipse] 
-            ({\centerX + \a*cos(x)}, {\centerY + \b*sin(x)});
-        
-        % Calculate foci positions based on a and b
-        \pgfmathsetmacro{\c}{sqrt(\a^2 - \b^2)}
-        
-        % Plot points for the foci of the ellipse
-        \addplot[only marks, mark=*, mark options={scale=1, color=red}] coordinates 
-            {({\centerX - \c}, \centerY) ({\centerX + \c}, \centerY)};
-        \node at ({\centerX - \c}, -0.2) {$\mathrm{Focus}_1$};
-        \node at ({\centerX + \c}, -0.2) {$\mathrm{Focus}_2$};
+\newcommand{\onedot}[0]  
+{  
+\begin{textblock*}{1cm}(1.136\textwidth,8.9cm)%
+	{\color{medgray}{.}}
+\end{textblock*} 
+}
 
-        % Plot the final corrected intersection points between the circle and ellipse
-        \addplot[only marks, mark=*, mark options={scale=1, color=blue}] coordinates 
-            {(\intersectX, \intersectY) (\intersectX, -\intersectY)};
-        \node at (\intersectX, \intersectY + 0.1) {Intersection};
-        \node at (\intersectX, -\intersectY - 0.1) {Intersection};
+\newcommand{\twodots}[0]  
+{  
+  \begin{textblock*}{1cm}(1.136\textwidth,8.9cm)%
+   %{\color{medgray}{..}}
+   {\color{red}{..}}
+  \end{textblock*} 
+}
 
-    \end{axis}
-\end{tikzpicture}
+\newcommand{\donedot}[0]  
+{  
+  \begin{textblock*}{1cm}(1.136\textwidth,8.9cm)%
+   {\color{darkgray}{.}}
+  \end{textblock*} 
+}
 
-\end{document}
+\newcommand{\dtwodots}[0]  
+{  
+  \begin{textblock*}{1cm}(1.136\textwidth,8.9cm)%
+   {\color{darkgray}{..}}
+  \end{textblock*} 
+}
+
+
+\endinput  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+
+\newcommand{}[0]				{}
