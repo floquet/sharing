@@ -13,7 +13,7 @@
 % point to content libraries
 %\newcommand{\pGlobal}			{../../../../global/}
 %\newcommand{\pGlobal}[0]			{../../../global/}
-\newcommand{\pGlobal}[0]			{/Users/dantopa/repos-camaxtli/github/sharing/global/}
+\newcommand{\pGlobal}[0]			{~/GitHub/sharing/global/}
 \newcommand{\pGlobalSetup}			{\pGlobal setup-global/}	
 % load LaTeX packages and personal macros
 \input{\pGlobalSetup setup-global-beamer}
@@ -21,7 +21,7 @@
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
 \tikzset{>=latex}
-%\pgfplotsset{compat=1.6}
+%\pgfplotsset{compat=1.6}T
 %\input{../probe.tex}
 
 % Styles
@@ -37,9 +37,7 @@
 %\usepackage{MnSymbol,wasysym}
 \bibliography{\pGlobalBibliographies radar.bib}
 %
-\title
-[Design Tools for Satellite Models]
-{Design Tools for Satellite Models}
+\title[Design Tools for Satellite Models]{Design Tools for Satellite Models}
 
 \author[Daniel Topa]{\TopaHII \\ \TopaHIIEmail}
 \institute{\missiontech} 
@@ -64,7 +62,6 @@
 }
 
 \begin{document}
-%\input{\pLocalSetup slide-numbers}
 
 \begin{frame}
 	\titlepage
@@ -77,9 +74,9 @@
 
 % main sections
 	\input{\pSections "sec-radar"}
-%	\input{\pSections "sec-open-source"}
+	\input{\pSections "sec-open-source"}
 	%\input{\pSections "sec-freecad"}
-%	\input{\pSections "sec-mathematica"}
+	\input{\pSections "sec-mathematica"}
 	%\input{\pSections "sec-solvespace"}
 	%\input{\pSections "sec-librecad"}
 	\input{\pSections "sec-backup"}
