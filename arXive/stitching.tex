@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{Stitching Multiple Camera Frames into a Single Picture}
+\author{Daniel M. Topa \\ WaveFront Sciences Inc.}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{The Physical Problem}
+
+Consider a lenslet array with $\xi'$ columns and $\eta'$ rows. Each lenslet samples the incident wavefront $\psi(x, y)$ over a distinct region of space and produces a well-defined focal spot on the CCD array. The average of the $x$ and $y$ slopes of the wavefront over the lenslet is:
+\[
+\theta_{\mu\nu} = 
+\begin{bmatrix}
+\theta_{\mu\nu,x} \\
+\theta_{\mu\nu,y}
+\end{bmatrix},
+\]
+where:
+\[
+\theta_{\mu\nu,x} = \int_{\mu-1}^{\mu} \int_{\nu-1}^{\nu} \frac{\partial \psi}{\partial x} \, dx \, dy, \quad
+\theta_{\mu\nu,y} = \int_{\mu-1}^{\mu} \int_{\nu-1}^{\nu} \frac{\partial \psi}{\partial y} \, dx \, dy.
+\]
+
+A continuous wavefront is reduced to a discrete set of $N' = \xi' \eta'$ average slope measurements for each camera frame.
+
+A simple case involving two frames is shown in Figure~\ref{fig:overlap}. The overlap region reveals the relative tilt difference between adjacent frames. The analysis assumes a perfect reference file.
+
+\begin{figure}[h!]
+    \centering
+    % Placeholder for Figure 1
+    \includegraphics[width=0.8\textwidth]{placeholder.png}
+    \caption{Overlapping frames. The red and blue outlines represent consecutive frames with overlap regions shaded in gray.}
+    \label{fig:overlap}
+\end{figure}
+
+\section{The Mathematical Problem}
+
+The tilt of each frame is denoted as $c_{\mu\nu}$. For adjacent frames, the relative tilt difference is:
+\[
+\Delta v_{\mu\nu} = v_{\mu\nu} - v_{\mu+1,\nu}, \quad \Delta h_{\mu\nu} = h_{\mu\nu} - h_{\mu,\nu+1}.
+\]
+
+The least squares fit minimizes the sum of the squares of the differences:
+\[
+\chi^2 = \sum_{\mu=1}^\xi \sum_{\nu=1}^\eta 
+\left( (\Delta v_{\mu\nu} - (c_{\mu\nu} - c_{\mu+1,\nu}))^2 + (\Delta h_{\mu\nu} - (c_{\mu\nu} - c_{\mu,\nu+1}))^2 \right).
+\]
+
+The system of equations derived from minimizing $\chi^2$ can be solved using Singular Value Decomposition (SVD). 
+
+Define the interaction matrix $A$ and data matrix $D$ such that:
+\[
+A \cdot c = D.
+\]
+
+The matrix $A$ is singular and requires special handling. Using SVD, the inverse can be computed as:
+\[
+A^{-1} = V \Sigma^{-1} U^T,
+\]
+where $\Sigma$ contains the singular values, $U$ and $V$ are orthogonal matrices, and $A = U \Sigma V^T$.
+
+\section{Example}
+
+Consider a non-rectangular quilt (Figure~\ref{fig:nonrectangular}). The existence function $\epsilon_{\mu\nu}$ determines if data is present in a given panel:
+\[
+\epsilon_{\mu\nu} =
+\begin{cases}
+1 & \text{if data exists in panel } (\mu, \nu), \\
+0 & \text{otherwise.}
+\end{cases}
+\]
+
+\begin{figure}[h!]
+    \centering
+    % Placeholder for Figure 4
+    \includegraphics[width=0.8\textwidth]{placeholder.png}
+    \caption{Non-rectangular quilt example. The existence function $\epsilon_{\mu\nu}$ ensures valid data regions are identified.}
+    \label{fig:nonrectangular}
+\end{figure}
+
+In a practical implementation, the solution vector $c$ must adjust for missing data. This ensures a robust solution to the stitching problem. For example, if a frame is missing data, the existence function accounts for it, and $A$ is adjusted accordingly.
+
+\section{References}
+
+\begin{enumerate}
+    \item R.A. Horn and C.R. Johnson, \textit{Matrix Analysis}, Cambridge University Press, 1990.
+    \item G.H. Golub and C.F. Van Loan, \textit{Matrix Computations}, Johns Hopkins University Press, 1996.
+    \item W.H. Press et al., \textit{Numerical Recipes in FORTRAN}, Cambridge University Press, 1992.
+    \item R.A. Horn and C.R. Johnson, \textit{Topics in Matrix Analysis}, Cambridge University Press, 1991.
+\end{enumerate}
+
+\end{document}
