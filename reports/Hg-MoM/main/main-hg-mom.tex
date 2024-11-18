@@ -22,6 +22,10 @@
 \usepackage[printwatermark]{xwatermark}
 	\newwatermark[allpages,color=red!10,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
 
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{textcomp} % For \textdegree symbol
+
 \usepackage{listings}
 	\definecolor{textblue}{rgb}{.2,.2,.7}
 	\definecolor{textred}{rgb}{0.54,0,0}
@@ -33,6 +37,15 @@
 \begin{filecontents*}{\pLocalMoM/data/"tabula-rasa.geo"}
 \end{filecontents*}
 
+\lstset{
+  basicstyle=\ttfamily,
+  literate={±}{{\ensuremath{\pm}}}1
+           {°}{{\textdegree}}1, % Combine mappings into one literate key
+}
+%\lstset{
+%  basicstyle=\ttfamily,    % Adjust the default style for listings
+%  literate={°}{{\textdegree}}1 % Replace ° with \textdegree
+%}
 \lstdefinelanguage{batch}{
     morekeywords={not,exist,mkdir,echo,pause},
     morekeywords={Do,Else,For,ForEach,Function,If,In,Until,While},
@@ -71,7 +84,7 @@ showstringspaces=false}
 
 \title{Simulation of \\Radar Profiles for Satellites}
 \author{Daniel Topa\\\TopaHIIEmail}
-\affil{\hiiafil}
+\affil{\hiiaffil}
 
 \begin{document}
 \maketitle

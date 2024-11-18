@@ -2,6 +2,10 @@
 
 \section{Using Python to Create Spreadsheets}
 
+Some users preferred to digest the radar data in spreadsheet form. The Python toolkit \href{https://pypi.org/project/XlsxWriter/}{xlswriter} simplifies moving the data into \texttt{*.xlsx} form.
+
+The spreadsheets eschew row-column notation (e.g. \texttt{A4}) and makes use of variables and named ranges to simplify the interpretation of the results.
+
 %     %     %     %     %     %     %     %     %
 \subsection{Inputs}
 
@@ -19,5 +23,10 @@ Radar return data.
 \subsubsection{Excel Details}	
 Toolkit for writing to spreadsheets.
 		\input{\pLocalMoM/code/"tools"}
+
+%     %     %     %     %     %     %     %     %
+\subsection{Outputs}
+The main module arranges the output data by creating a tab for each separate radar frequency in the range $3-30$ MHz. Other tabs contain aggregate information and diagnostics.
+		\input{\pLocalMoM/code/"py-main"}
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

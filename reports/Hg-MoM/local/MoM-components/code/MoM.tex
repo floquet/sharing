@@ -81,8 +81,8 @@ def xl_add_data_sheets( this_workbook, testObject ):
         #
     #    AttributeError: 'str' object has no attribute '_get_xf_index'
     #    s.write( "I4", "HH", u"\u00B1" )
-        s.write( "I4", '±', cell_format )
-        s.write( "I5", '±', cell_format )
+        s.write( "I4", "±", cell_format )
+        s.write( "I5", "±", cell_format )
         s.set_column( "I:I", 3 )
 
         # = AVERAGE( B5:B364)
