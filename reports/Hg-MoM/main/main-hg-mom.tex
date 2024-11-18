@@ -38,9 +38,14 @@
 \end{filecontents*}
 
 \lstset{
-  basicstyle=\ttfamily,    % Adjust the default style for listings
-  literate={°}{{\textdegree}}1 % Replace ° with \textdegree
+  basicstyle=\ttfamily,
+  literate={±}{{\ensuremath{\pm}}}1
+           {°}{{\textdegree}}1, % Combine mappings into one literate key
 }
+%\lstset{
+%  basicstyle=\ttfamily,    % Adjust the default style for listings
+%  literate={°}{{\textdegree}}1 % Replace ° with \textdegree
+%}
 \lstdefinelanguage{batch}{
     morekeywords={not,exist,mkdir,echo,pause},
     morekeywords={Do,Else,For,ForEach,Function,If,In,Until,While},

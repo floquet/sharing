@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{listings}
+
+\lstset{
+  literate={±}{{\textpm}}1
+}
+
+\begin{document}
+
+\begin{lstlisting}[language=Python]
+s.write("I4", "\textpm", cell_format)
+s.write("I5", "\textpm", cell_format)
+\end{lstlisting}
+
+\end{document}

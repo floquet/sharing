@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{textcomp}
+
+\lstset{
+  basicstyle=\ttfamily,
+  literate={±}{{\textpm}}1 % Replace ± with LaTeX-compatible \textpm
+}
+
+\begin{document}
+
+\begin{lstlisting}
+s.write( "I4", "±", cell_format )
+\end{lstlisting}
+
+\end{document}
