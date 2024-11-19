@@ -20,7 +20,7 @@
 \bibliography{\pGlobalBibliographies radar.bib}
 %\addbibresource{\pGlobalBibliographies radar.bib}
 \usepackage[printwatermark]{xwatermark}
-	\newwatermark[allpages,color=red!10,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
 
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
@@ -84,13 +84,15 @@ showstringspaces=false}
 
 \title{Simulation of \\Radar Profiles for Satellites}
 \author{Daniel Topa\\\TopaHIIEmail}
-\affil{\hiiaffil}
+\affil{\missiontech}
 
 \begin{document}
 \maketitle
-\abstract{A brief survey of characterizing the three dimensional radar cross section of satellites.}
+\abstract{A brief survey of characterizing the three dimensional radar cross section of satellites. The process of finding the optimal Fourier expression for each band is explored and different success measures are presented.
+}
 \tableofcontents
 				%
+			\input{\pSections "sec-writ-large"}
 			\input{\pSections "sec-precis"}
 			\input{\pSections sec-overview}
 			\input{\pSections sec-file-types}

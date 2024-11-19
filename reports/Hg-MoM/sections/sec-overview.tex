@@ -51,7 +51,7 @@ Wave speed equation
 \end{enumerate}
 
 %     %     %     %     %     %     %     %     %
-\subsection{About}
+\subsection{Process}
 
 \begin{enumerate}[label=(\Alph*)]
 	\item Build a CAD model of the satellite \texttt(*.cad)
@@ -63,5 +63,221 @@ Wave speed equation
 	\item Resolve RCS measurements into spherical harmonics
 \end{enumerate}
 
+\section{Computing the Radar Cross Section}
+The computation of the radar cross section is based on a simple scenario guided by Maxwell's equations. A radar illuminates the target with radar energy. The target, acting like an antenna, reradiates the energy and illuminates the radar receiver. The radar cross section is measurement of the difference between energy absorbed and energy radiated.
+
+One form of the \href{https://www.radartutorial.eu/01.basics/Radar\%20Cross\%20Section.en.html}{radar cross section equation} is
+\begin{equation}
+	\sigma=4\pi r^{2} \frac{S_{r}}{S_{t}}
+\end{equation}
+where $r$ is the distance to the target, $S_{t}$ is the energy {\it{intercepted}} by the target and $S_{r}$ is the energy {\it{radiated}} by the target. The result has units of area and can be compared to an ideally reflecting sphere.
+
+The areal measure $\sigma$ is computed through numerical simulation by the program Mercury MoM.
+
+\subsection{Maxwell's Equations}
+The mathematical foundation for the radar cross section computation is the set of Maxwell's equations.
+Start with two conservative fields on a simply connected domain, the electric field $\mathbf{E}\colon\mathbb{R}^{3}\mapsto\mathbb{R}^{3}$, and the magnetic field $\mathbf{B}\colon\mathbb{R}^{3}\mapsto\mathbb{R}^{3}$. We can relax the requirements for the electric current $\mathbf{J}\colon\mathbb{R}^{3}\mapsto\mathbb{R}^{3}$.
+The differential form of \href{https://physics.info/maxwell/}{Maxwell's equations} in \href{https://www.nist.gov/pml/weights-and-measures/metric-si/si-units}{SI} units is
+\begin{equation}
+	\begin{array}{rclcrcl}
+			%
+		\nabla \cdot \mathbf{E} &= &\frac{\rho}{\epsilon_{0}}
+			%
+		&&\nabla \times \mathbf{E} &= &- \partial_{t}\mathbf{B} \\ 
+			%
+		\nabla \cdot \mathbf{B} &= &0
+			%
+		&&\nabla \times \mathbf{B} &= &\mu_{0} \left( \mathbf{J} + \epsilon_{0} \partial_{t}\mathbf{E} \right) \\ 
+			%
+	\end{array}
+\label{eq:Maxwell-differential}
+\end{equation}
+%
+The fundamental physical constant in SI units are given in table \ref{tab:mu-eps}.
+%
+\begin{table}
+	\begin{center}
+		\begin{tabular}{lll}
+		%
+	$\epsilon_{0}$ 
+		& \href{https://en.wikipedia.org/wiki/Vacuum_permittivity}{vacuum electric permittivity} 
+		& \href{https://physics.nist.gov/cgi-bin/cuu/Value?ep0}{$8.854 \times 10^{-12} \text{ F m}^{-1}$} \\
+		%
+	$\mu_{0}$ 
+		& \href{https://en.wikipedia.org/wiki/Vacuum_permeability}{vacuum magnetic permeability}
+		& \href{https://physics.nist.gov/cgi-bin/cuu/Value?mu0}{$1.257 \times 10^{-7} \text{ N A}^{-2}$}
+		%
+		\end{tabular}
+	\end{center}
+\caption{Constants used in Maxwell's equations}
+\label{tab:mu-eps}
+\end{table}
+
+\subsection{Method of Moments}
+There is a rich mathematical toolkit for the solution of Maxwell's equations. Mercury MoM uses the \href{https://en.wikipedia.org/wiki/Computational_electromagnetics#Method_of_moments_element_method}{method of moments} (MoM), also known as the boundary element method (BEM).
+\href{https://en.wikipedia.org/wiki/Maxwell\%27s\_equations}{Maxwell's equations in integral form}
+\begin{equation}
+	\begin{array}{cccccccccc}
+			%
+		\nabla \cdot \mathbf{E} &= &\displaystyle\frac{\rho}{\epsilon_{0}} 
+			&\Rightarrow &\displaystyle{\oint_{d\Omega} \mathbf{E}\cdot d\mathbf{S}} &= &\displaystyle\int_{\Omega} \rho dV \\[10pt]
+			%
+		\nabla \times \mathbf{E} &= &- \partial_{t}\mathbf{B} 
+			&\Rightarrow &\displaystyle\oint_{d\Omega} \mathbf{B}\cdot d\mathbf{S} &= &0 \\[10pt]
+			%
+		\nabla \cdot \mathbf{B} &= &0
+			&\Rightarrow &\displaystyle\oint_{d\Sigma} \mathbf{E}\cdot d\mathbf{l} &= &\displaystyle-\frac{d}{dt} \mathbf{B}\cdot d\mathbf{S} \\[10pt]
+			%
+		\nabla \times \mathbf{B} &= &\mu_{0} \left( \mathbf{J} + \epsilon_{0} \partial_{t}\mathbf{E} \right) 
+			&\Rightarrow & \displaystyle\oint_{d\Sigma} \mathbf{B}\cdot d\mathbf{l} &= &\displaystyle\mu_{0} \int_{\Sigma} \paren{ \mathbf{J}+ \epsilon_{0} \frac{d}{dt}  \mathbf{E} } \cdot d\mathbf{S} \\
+			%
+	\end{array}
+\label{eq:Maxwell-differential}
+\end{equation}
+The method of moments creates dense matrices which implies quadratic growth in storage and computation time as the problem scales up. 
+
+\subsection{Mercury MoM Example}
+The power of Mercury MoM is the ability to simultaneously solve equations with millions of unknowns using a patented low rank approximation method for the linear system.
+
+Internally, the Mercury MoM package resolves the signal emitted from the target into two complex electric fields: $\theta$ for the vertical component and $\phi$ for the horizontal component. As these fields are complex, they each have orthogonal real and imaginary components. 
+
+The prescription for the mean total radar cross section is taken from the Sciacca report as the average of the total field energy
+\begin{equation}
+	\inner{ \sigma_{T} } = \tfrac{1}{2} \left( \theta^{*}\theta + \theta^{*}\phi + \phi^{*}\theta + \phi^{*}\theta \right),
+\end{equation}
+and is assigned areal units of squared meters m$^{2}$.
+\section{Fourier Expansion}
+
+\subsection{Why Fourier?}
+What is the best way to approximate information in the cross sections curves shown in figure \ref{tab:sigma-nu}? Given that the data is periodic over the unit circle, 
+\begin{equation}
+	\sigma_{\nu} \paren{\alpha, \beta} = \sigma_{\nu} \paren{\alpha+2\pi, \beta}
+\end{equation}
+an obvious choice is the \href{https://mathworld.wolfram.com/FourierSeries.html}{Fourier series}. For example, a $d$th order approximation can be written as
+\begin{equation}
+	\sigma_{\nu}\paren{\alpha,\beta_{0}=\tfrac{\pi}{12}}  \approx \dfrac{a_{0}}{2} + \sum_{k=1}^{d}a_{k}\cos k\alpha + b_{1}\sin k\alpha.
+\end{equation}
+What does this series represent? It represents a sequence of oscillations about the mean value.
+
+There are three powerful theoretical reasons which support this choice. The first is the convergence of the series. The \href{Weierstrass Approximation Theorem}{Weierstrass Approximation Theorem} states that the polynomial approximation of smooth curves converges {\it{uniformly}}. That is, we can define a maximum error $\epsilon > 0$ and we are guaranteed the existence of $N \in \mathbb{Z}^{+}$ such that
+\begin{equation}
+	\normi{\sigma_{\nu}\paren{\alpha, \beta_{0}} -  \dfrac{a_{0}}{2} - \sum_{k=1}^{N}a_{k}\cos k\alpha + b_{k}\sin k\alpha} \le \epsilon.
+\end{equation}
+The ability to choice a maximum error is both remarkable and useful. However, the application to trigonometric polynomials, while valid, is not immediate and left for another document.
+
+The second reason is the \href{https://en.wikipedia.org/wiki/Riesz–Fischer_theorem}{Riesz–Fischer theorem}. While often cited as evidence that the Lebesgue space $L^{2}$ is complete, it also establishes that an infinite series whose terms converge quadratically represents an $L^{2}$ function. And so the amplitudes, the $a$ and $bv$ values, will eventually converge at least quadratically.
+
+The final reason is the often-overlooked fact that of all the orthogonal polynomials, only the trigonometric polynomials are orthogonal in both the continuous topology of $L^{2}$ and and the discrete orthogonality of $l^{2}$. Having an orthogonal basis decouples the problem and can be solved mode-by--mode, obviating the need to solve a large linear system.
+
+\subsection{Orthogonality}
+Given non-zero integers $m$ and $n$, the \href{https://mathworld.wolfram.com/FourierSeries.html}{expression of orthogonality} in $L^{2}$ can be written as
+\begin{equation}
+	\begin{split}
+			%
+		\int_{-\pi}^{\pi} \sin \paren{mx} \sin \paren{nx}dx &= \pi \delta^{m}_{n}\\
+			%
+		\int_{-\pi}^{\pi} \cos \paren{mx} \cos \paren{nx} dx &= \pi \delta^{m}_{n}\\
+			%
+		\int_{-\pi}^{\pi} \cos \paren{mx} \sin \paren{nx} dx &= 0\\
+			%
+		\int_{-\pi}^{\pi} \sin \paren{mx} dx &= 0\\
+			%
+		\int_{-\pi}^{\pi} \cos \paren{mx}dx &= 0\\
+			%
+	\end{split}
+\label{eq:orthogonality}
+\end{equation}
+%
+where $\delta^{m}_{n}$ is the \href{https://mathworld.wolfram.com/KroneckerDelta.html}{Kronecker delta} tensor. To complete the toolkit to solve the linear system, recall that
+\begin{equation}
+	\int_{-\pi}^{\pi} 1 dx = 2\pi.
+\end{equation}
+
+The linear system decouples and amplitudes for each mode can be computed independently:
+\begin{equation}
+	\begin{split}
+			%
+		a_{0} &= \tfrac{1}{\pi} \int_{-\pi}^{\pi} f(x) dx \\
+			%
+		a_{k} &= \tfrac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos kx dx \\
+			%
+		b_{k} &= \tfrac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin kx dx \\
+			%
+	\end{split}
+\end{equation}
+where $k=1,2,3,\dots$.
+
+\subsection{Projection}
+Consider the low--order approximation 
+%
+\begin{equation}
+	f\paren{\varphi}  \approx \frac{a_{0}}{2}  + a_{1} \cos \varphi +  a_{2} \cos 2\varphi.
+\end{equation}
+%
+To compute the amplitudes $a=\left\{a_{0}, a_{1}, a_{2} \right\}$, use Hilbert's \href{https://en.wikipedia.org/wiki/Hilbert_projection_theorem}{projection theorem}, which is \href{http://www.kris-nimark.net/pdf/ProjectionTheorem.pdf}{tantamount} to using the method of least squares. Multiply both side of the equation by $\cos j \varphi$ and integrate over the domain to isolate the contribution of $a_{j}$. For example, to isolate the component $a_{2}$,
+%
+\begin{equation}
+	\begin{split}
+				%
+		\int_{-\pi}^{\pi}{ f\paren{\varphi}  {\color{blue}{\cos 2\varphi }}} d\varphi  
+			&\approx \int_{-\pi}^{\pi}{ \paren{\frac{a_{0}}{2}  + a_{1} \cos \varphi +  a_{2} {\color{blue}{\cos 2\varphi}} } {\color{blue}{\cos 2\varphi}}} d\varphi. \\
+				%
+			&= a_{2} \int_{-\pi}^{\pi}{ \cos^{2} 2\varphi } d\varphi. \\
+				%
+	\end{split}
+\end{equation}
+%
+The result is the rather general formula
+\begin{equation}
+	a_{2} = \frac{1}{\pi} \int_{-\pi}^{\pi} f\paren{\varphi} \cos 2\varphi d\varphi.
+\end{equation}
+Because the basis functions are orthogonal, the modes are decoupled and the amplitudes can be computed independently.
+
+\subsection{Discrete Topology}
+The continuum formulation in $L^{2}$ is useful for understanding the critical components of the theory and makes a natural starting point for discussing the discrete topology of $l^{2}$. The moment we discretize the problem in a computer code, we switch from the continuum to a discrete space. Out of all the known orthogonal polynomials, only two are orthogonal in both $L^{2}$ and $l^{2}$, and these are the sine and cosine functions. 
+
+However, because of sampling mesh that was used in Mercury MoM, the data vectors are {\it{not}} orthogonal. But resolution is deferred until the end.
+
+
+
+\subsection{\label{sec:special-case}Special Case: The Mean}
+The Fourier series resolves a function into successively higher oscillations about a constant value. This constant value is the mean, and it is a least squares solution and in this effort, is a valuable bellwether.
+
+\subsubsection{The Method of Least Squares}
+\begin{equation}
+	r^{2} = \sum_{k=1}^{m} \paren{ \sigma\paren{\alpha_{k},\beta_{0}} - \mu }^{2}
+\end{equation}
+
+\begin{equation}
+	D_{\mu} r^{2} = -2 \paren{ \sigma\paren{\alpha_{k},\beta_{0}} - \mu } = 0
+\end{equation}
+The least squares solution for the parameter $\mu$ is simply the average of the data:
+\begin{equation}
+	\mu = m^{-1}\sigma\paren{\alpha_{k},\beta_{0}}.
+\end{equation}
+Compare to $a_{0}$
+
+\subsubsection{Continuum to discrete}
+The continuum formulation translates to discrete spaces using the idea of the integral as a Riemann sum: 
+\begin{equation}
+	\int_{-\pi}^{\pi}{ \cos j\alpha d\alpha } \quad \Rightarrow \quad \sum_{k=1}^{m} \cos \paren{j\alpha_{k}} \Delta_{k}.
+\end{equation}
+Here $\Delta_{k}$, the interval length, corresponds to the Riemann integration measure $d\alpha$. A basic result from the calculus is that the average $\langle f\paren{x} \rangle$ of an integrable function over a finite, ordered interval $\paren{a,b}$ is
+\begin{equation}
+	\langle f\paren{x} \rangle = \frac{\int_{b}^{a} f(x) dx }{b-a},
+\end{equation}
+where the interval length $L=b-a$. The connection to the discrete case is clear with the realization that the Mercury MoM results are spaced at regular intervals, that is,
+$$ \Delta_{k} = \Delta.$$ 
+Then the interval length is
+\begin{equation}
+	L = \sum_{k=1}^{m} \Delta_{k} = \sum_{k=1}^{m}  \Delta = m \Delta.
+\end{equation}
+\begin{equation}
+	\frac{\int_{b}^{a} f(x) dx }{L} \quad \Rightarrow \quad \frac{\sum_{k=1}^{m} f(x) \Delta}{m \Delta} =  \frac{\sum_{k=1}^{m} f(x)}{m}
+\end{equation}
+
+\subsection{Linear Independence}
+	
+\subsection{Quality of Fit}
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
