@@ -1,0 +1,58 @@
+% \input{\pSections "sec-satnogs"}
+
+\section{Using satnogs.org to Identify GEO Satellites}
+
+Geostationary (GEO) satellites can be identified on the SatNOGS Database (\href{https://db.satnogs.org/}{https://db.satnogs.org/}) by utilizing their unique orbital characteristics and the filtering tools available on the platform. Below are the steps to locate and identify GEO satellites effectively.
+\subsection{Understanding GEO Characteristics}
+Geostationary satellites have the following orbital properties:
+\begin{itemize}
+    \item \textbf{Altitude:} Approximately 35,786 km above the Earth's surface.
+    \item \textbf{Inclination:} Near $0^\circ$ to remain stationary over the equator.
+    \item \textbf{Eccentricity:} Close to 0, indicating a circular orbit.
+    \item \textbf{Orbital Slot:} Fixed at a specific longitude (e.g., 119.5°W for GOES satellites).
+\end{itemize}
+
+These properties can help filter and identify GEO satellites in the SatNOGS database.
+
+\subsection{Using the SatNOGS Search and Filters}
+\begin{enumerate}
+    \item Navigate to \href{https://db.satnogs.org/}{SatNOGS Database}.
+    \item Use the search bar to look for:
+    \begin{itemize}
+        \item Keywords such as \texttt{GEO} or \texttt{Geostationary}.
+        \item Known GEO satellite names or operators (e.g., GOES, Intelsat, SES).
+    \end{itemize}
+    \item Click on a satellite’s entry to view its details and orbital parameters.
+    \item Look for the following key parameters:
+    \begin{itemize}
+        \item \textbf{Inclination:} Near $0^\circ$.
+        \item \textbf{Altitude:} Approximately 35,786 km.
+        \item \textbf{Eccentricity:} Close to 0.
+    \end{itemize}
+    \item Use category tags (e.g., communication, weather, navigation) to narrow down the results.
+\end{enumerate}
+
+\subsection{Cross-Verification Using External Tools}
+If GEO satellites are not explicitly labeled in SatNOGS, the following tools can provide additional verification:
+\begin{itemize}
+    \item \textbf{CelesTrak GEO Catalog:} \\
+    Access the TLE catalog for GEO satellites at \href{https://celestrak.org/NORAD/elements/geo.txt}{https://celestrak.org/NORAD/elements/geo.txt} and cross-reference satellite names or NORAD IDs with SatNOGS entries.
+    \item \textbf{Heavens-Above:} \\
+    Use \href{https://www.heavens-above.com/}{https://www.heavens-above.com/} to visualize GEO satellite positions and compare their orbital parameters.
+\end{itemize}
+
+\subsection{Examples of GEO Satellites}
+Examples of well-known GEO satellites to search for:
+\begin{itemize}
+    \item \textbf{Weather Satellites:} GOES (NOAA), Meteosat (EUMETSAT).
+    \item \textbf{Communications Satellites:} Intelsat, SES satellites.
+    \item \textbf{Navigation Satellites:} WAAS (USA), EGNOS (Europe).
+\end{itemize}
+
+\subsection{Automating Identification (Optional)}
+For advanced users, you can programmatically compare TLE data from \href{https://celestrak.org/NORAD/elements/geo.txt}{CelesTrak GEO Catalog} with SatNOGS records using tools like Python (e.g., with the \texttt{PyEphem} library).
+
+\section{Conclusion}
+Using SatNOGS, along with external tools like CelesTrak and Heavens-Above, enables efficient identification and tracking of geostationary satellites.
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

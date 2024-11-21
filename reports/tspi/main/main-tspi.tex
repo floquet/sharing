@@ -1,0 +1,59 @@
+% typeset: Pdftex
+% Afterwards compile with pdflatex > bibtex > pdflatex > pdflatex.
+% in TeXShop preferences, changed edit from bibtex to biber
+% beamer likes biber
+% latex likes bibtex
+
+\documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{enumitem}  % list labels A, B, C
+\usepackage{pdfpages}
+\usepackage[hidelinks]{hyperref}
+
+%\addbibresource{radar.bib}
+%\bibliography{\pSections radar.bib}
+% personalize environment
+\newcommand{\pGlobal}[0]			{~/GitHub/sharing/global/}
+\newcommand{\pGlobalSetup}[0]		{\pGlobal setup-global/}	
+
+\input{\pGlobalSetup setup-global-reports}
+\input{\pLocalSetup setup-local}
+
+\bibliography{\pGlobalBibliographies tspi.bib}
+%\addbibresource{\pGlobalBibliographies radar.bib}
+\usepackage[printwatermark]{xwatermark}
+	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+
+\title{Time, Space, and Position Information for Geosynchronous Satellites}
+\author{Daniel Topa\\\TopaHIIEmail}
+\affil{\missiontech}
+
+\begin{document}
+\maketitle
+\abstract{A brief survey of characterizing the three dimensional radar cross section of satellites. The process of finding the optimal Fourier expression for each band is explored and different success measures are presented.
+}
+\tableofcontents
+				%
+			\input{\pSections "sec-gpt"}
+			\input{\pSections "sec-satnogs"}
+\printbibliography
+%\nocite
+%\printbibliography
+%\bibliographystyle{thisjournal}
+%\include{bibliography} 
+%\bibliographystyle{vancouver}
+%\bibliography{MonthlyReferences.bib}
+%\bibliography{triangulation.bib}
+%\bibliography{triangulation.bib}
+
+
+\end{document} 
+
+\tiny
+\scriptsize
+\footnotesize
+\small
+\normalsize
+\large
+\Large
+\huge
+\Huge
