@@ -1,6 +1,6 @@
 % typeset: Pdftex
 % Afterwards compile with pdflatex > bibtex > pdflatex > pdflatex.
-% in TeXShop preferences, changed edit from bibtex to biber
+% in TeXShop preferences, changed edit from biber to bibtex
 % beamer likes biber
 % latex likes bibtex
 
@@ -8,33 +8,68 @@
 \usepackage{enumitem}  % list labels A, B, C
 \usepackage{pdfpages}
 \usepackage[hidelinks]{hyperref}
-
+\usepackage{lmodern}
+\usepackage{multicol}
+\usepackage{enumitem}
+%\setlist[enumerate,2]{label=\arabic*.}
+\setlist[enumerate,1]{label=\arabic*.}
+\setlist[enumerate,2]{label=\arabic{enumi}.\arabic*, ref=\arabic{enumi}.\arabic*}
+\setcounter{enumi}{9999} % Increase main enumeration counter
+\setcounter{enumii}{999} % Increase sub-enumeration counter
+\usepackage{alltt}
+%\usepackage{enumitem}
 %\addbibresource{radar.bib}
 %\bibliography{\pSections radar.bib}
 % personalize environment
-\newcommand{\pGlobal}[0]			{~/GitHub/sharing/global/}
+%\newcommand{\pGlobal}[0]			{~/GitHub/sharing/global/}
+\newcommand{\pGlobal}[0]			{/Users/dantopa/GitHub/sharing/global/}
 \newcommand{\pGlobalSetup}[0]		{\pGlobal setup-global/}	
 
 \input{\pGlobalSetup setup-global-reports}
 \input{\pLocalSetup setup-local}
-
-\bibliography{\pGlobalBibliographies tspi.bib}
+\usepackage[affil-it]{authblk}
+%\addbibresource{\pGlobalBibliographies tle.bib}
+\usepackage[
+    backend = biber,
+    style = authoryear,
+    citestyle = ext-authoryear
+]{biblatex}
+%\bibliography{\pGlobalBibliographies tle.bib}
+\addbibresource{\pGlobalBibliographies/tle.bib}
+\typeout{Value of \pGlobalBibliographies: \pGlobalBibliographies}
 %\addbibresource{\pGlobalBibliographies radar.bib}
 \usepackage[printwatermark]{xwatermark}
 	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
 
-\title{Time, Space, and Position Information for Geosynchronous Satellites}
-\author{Daniel Topa\\\TopaHIIEmail}
-\affil{\missiontech}
+\title{Time, Space, and Position Information\\ for Geosynchronous Satellites}
+%\author{Daniel Topa\\\TopaHIIEmail}
+%\author{%
+%Daniel Topa\thanks{Primary author. Contact: \TopaHIIEmail} \\ 
+%\textit{\missiontech}
+%\and
+%Achates (AI, ChatGPT by OpenAI)\thanks{Contributed sections 1 and 2, classified as "4-o with canvas."} \\ 
+%\textit{AI Collaboration Partner}
+%}
+\author[1]{Daniel Topa\thanks{Primary author. Contact: \TopaHIIEmail}}
+\affil[1]{\textit{\missiontech}}
+
+\author[2]{Achates (AI, ChatGPT by OpenAI)\thanks{Contributed sections 1 and 2, classified as "4-o with canvas."}}
+\affil[2]{\textit{AI Collaboration Partner}}
+%\affil{\missiontech}
 
 \begin{document}
 \maketitle
-\abstract{A brief survey of characterizing the three dimensional radar cross section of satellites. The process of finding the optimal Fourier expression for each band is explored and different success measures are presented.
+\abstract{A brief survey of characterizing the three dimensional radar cross section of satellites. The process of finding the optimal Fourier expression for each band is explored and different success measures are presented. \texttt{\pGlobalBibliographies}
 }
 \tableofcontents
-				%
-			\input{\pSections "sec-gpt"}
-			\input{\pSections "sec-satnogs"}
+
+			%
+		\input{\pSections "sec-gpt"}
+		\input{\pSections "sec-satnogs"}
+		\input{\pSections "sec-tle"}
+		\input{\pSections "sec-geo"}
+		\input{\pSections "sec-ref"}
+			%
 \printbibliography
 %\nocite
 %\printbibliography
