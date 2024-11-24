@@ -1,7 +1,0 @@
-{\scriptsize{
-\begin{equation}
-    \begin{split}
-        f_{27}(\alpha) &= 20.955 + 0.00 \cos(\alpha) - 8.59 \cos(2\alpha) + 1.57 \cos(3\alpha) + 8.71 \cos(4\alpha)\\ &  + 2.60 \cos(5\alpha) - 0.54 \cos(6\alpha) + 1.77 \cos(7\alpha) + 3.48 \cos(8\alpha)\\ &  - 0.21 \cos(9\alpha) + 2.21 \cos(10\alpha) - 0.43 \cos(11\alpha) + 3.07 \cos(12\alpha)\\ &  + 0.79 \cos(13\alpha) - 1.04 \cos(14\alpha) + 1.24 \cos(15\alpha) + 3.86 \cos(16\alpha)\\ &  - 0.56 \cos(17\alpha) - 1.61 \cos(18\alpha) + 0.99 \cos(19\alpha) + 1.28 \cos(20\alpha)\\ &  + 1.69 \cos(21\alpha) - 0.79 \cos(22\alpha) - 0.98 \cos(23\alpha) + 1.70 \cos(24\alpha)\\ &  + 0.59 \cos(25\alpha) - 0.17 \cos(26\alpha) - 1.30 \cos(27\alpha) + 1.66 \cos(28\alpha)\\ &  + 0.31 \cos(29\alpha) - 0.63 \cos(30\alpha) - 0.41 \cos(31\alpha) + 2.34 \cos(32\alpha)\\ &  + 0.16 \cos(33\alpha)
-    \end{split}
-\end{equation}
-}}

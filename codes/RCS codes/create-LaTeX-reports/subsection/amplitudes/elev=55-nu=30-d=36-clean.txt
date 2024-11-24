@@ -1,7 +1,0 @@
-{\scriptsize{
-\begin{equation}
-    \begin{split}
-        f_{30}(\alpha) &= 21.858 - 2.13 \cos(\alpha) - 7.00 \cos(2\alpha) + 0.98 \cos(3\alpha) + 7.64 \cos(4\alpha)\\ &  + 1.44 \cos(5\alpha) + 1.19 \cos(6\alpha) - 2.54 \cos(7\alpha) + 0.22 \cos(8\alpha)\\ &  - 0.10 \cos(9\alpha) + 0.21 \cos(10\alpha) + 0.01 \cos(11\alpha) + 1.61 \cos(12\alpha)\\ &  + 0.27 \cos(13\alpha) - 4.67 \cos(14\alpha) - 0.74 \cos(15\alpha) + 2.47 \cos(16\alpha)\\ &  - 0.93 \cos(17\alpha) - 3.18 \cos(18\alpha) + 0.39 \cos(19\alpha) + 1.61 \cos(20\alpha)\\ &  - 0.21 \cos(21\alpha) - 1.54 \cos(22\alpha) - 1.77 \cos(23\alpha) + 1.68 \cos(24\alpha)\\ &  + 1.84 \cos(25\alpha) - 0.94 \cos(26\alpha) - 1.77 \cos(27\alpha) + 3.61 \cos(28\alpha)\\ &  - 0.28 \cos(29\alpha) - 0.82 \cos(30\alpha) + 1.52 \cos(31\alpha) + 1.54 \cos(32\alpha)\\ &  - 0.31 \cos(33\alpha) - 0.33 \cos(34\alpha) - 0.69 \cos(35\alpha) + 1.63 \cos(36\alpha)
-    \end{split}
-\end{equation}
-}}

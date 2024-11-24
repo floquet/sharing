@@ -1,8 +1,0 @@
-dantopa@Xiuhcoatl-8.local:bertrand $ grep -r '\x{0301}' .
-./main/main-bertrand.bbl:           family={R{ı́}o-Correa},
-./main/main-bertrand.bbl:      \field{journaltitle}{Revista Mexicana de F{ı́}sica}
-./main/main-bertrand.log:./main-bertrand.tex:95: Package inputenc Error: Unicode character ́ (U+0301)
-./main/main-bertrand.log:./main-bertrand.tex:95: Package inputenc Error: Unicode character ́ (U+0301)
-
-
-Recompile bibliography

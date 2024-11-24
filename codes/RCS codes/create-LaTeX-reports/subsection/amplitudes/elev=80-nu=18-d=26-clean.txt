@@ -1,5 +1,0 @@
-\begin{equation}
-    \begin{split}
-        f_{18}(\alpha) &= 17.529 - 1.20 \cos(\alpha) - 4.85 \cos(2\alpha) - 0.47 \cos(3\alpha) + 4.79 \cos(4\alpha)\\ &  + 0.32 \cos(5\alpha) + 0.84 \cos(6\alpha) - 0.01 \cos(7\alpha) + 6.58 \cos(8\alpha)\\ &  - 0.45 \cos(9\alpha) - 4.38 \cos(10\alpha) - 0.87 \cos(11\alpha) + 7.28 \cos(12\alpha)\\ &  - 0.11 \cos(13\alpha) - 3.75 \cos(14\alpha) - 0.76 \cos(15\alpha) + 0.89 \cos(16\alpha)\\ &  - 0.52 \cos(17\alpha) - 2.26 \cos(18\alpha) + 0.91 \cos(19\alpha) + 1.84 \cos(20\alpha)\\ &  - 0.09 \cos(21\alpha) - 0.10 \cos(22\alpha) + 0.07 \cos(23\alpha) + 0.89 \cos(24\alpha)\\ &  + 0.37 \cos(25\alpha) - 1.66 \cos(26\alpha)
-    \end{split}
-\end{equation}

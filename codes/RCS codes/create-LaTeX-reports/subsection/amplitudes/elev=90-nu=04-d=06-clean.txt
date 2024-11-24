@@ -1,5 +1,0 @@
-\begin{equation}
-    \begin{split}
-        f_{4}(\alpha) &= 19.883 + 2.22 \cos(\alpha) + 2.11 \cos(2\alpha) + 1.69 \cos(3\alpha) + 10.63 \cos(4\alpha)\\ &  + 0.32 \cos(5\alpha) + 0.29 \cos(6\alpha)
-    \end{split}
-\end{equation}

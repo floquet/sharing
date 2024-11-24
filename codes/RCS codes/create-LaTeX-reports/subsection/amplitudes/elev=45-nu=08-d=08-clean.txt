@@ -1,5 +1,0 @@
-\begin{equation}
-    \begin{split}
-        f_{8}(\alpha) &= 36.825 + 4.512 \cos(\alpha) - 1.471 \cos(2\alpha) - 0.697 \cos(3\alpha) + 4.350 \cos(4\alpha)\\ &  + 2.564 \cos(5\alpha) - 0.894 \cos(6\alpha) - 3.558 \cos(7\alpha) - 3.598 \cos(8\alpha)
-    \end{split}
-\end{equation}

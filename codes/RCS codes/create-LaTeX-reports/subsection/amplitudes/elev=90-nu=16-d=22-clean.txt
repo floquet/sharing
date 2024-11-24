@@ -1,5 +1,0 @@
-\begin{equation}
-    \begin{split}
-        f_{16}(\alpha) &= 15.696 - 0.92 \cos(\alpha) - 5.76 \cos(2\alpha) - 0.75 \cos(3\alpha) + 4.53 \cos(4\alpha)\\ &  + 0.97 \cos(5\alpha) - 5.35 \cos(6\alpha) - 0.71 \cos(7\alpha) + 5.94 \cos(8\alpha)\\ &  - 1.11 \cos(9\alpha) - 6.58 \cos(10\alpha) - 1.77 \cos(11\alpha) + 5.36 \cos(12\alpha)\\ &  - 0.05 \cos(13\alpha) - 3.86 \cos(14\alpha) - 0.24 \cos(15\alpha) + 2.96 \cos(16\alpha)\\ &  - 0.22 \cos(17\alpha) - 1.09 \cos(18\alpha) - 0.72 \cos(19\alpha) + 1.11 \cos(20\alpha)\\ &  + 0.61 \cos(21\alpha) - 1.11 \cos(22\alpha)
-    \end{split}
-\end{equation}

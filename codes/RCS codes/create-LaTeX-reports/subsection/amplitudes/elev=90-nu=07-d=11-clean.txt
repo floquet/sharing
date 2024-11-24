@@ -1,5 +1,0 @@
-\begin{equation}
-    \begin{split}
-        f_{7}(\alpha) &= 17.047 + 2.291 \cos(\alpha) + 0.116 \cos(2\alpha) + 1.600 \cos(3\alpha) + 8.993 \cos(4\alpha)\\ &  + 2.393 \cos(5\alpha) - 2.779 \cos(6\alpha) + 0.677 \cos(7\alpha) + 4.127 \cos(8\alpha)\\ &  + 0.164 \cos(9\alpha) - 0.052 \cos(10\alpha) - 2.056 \cos(11\alpha)
-    \end{split}
-\end{equation}

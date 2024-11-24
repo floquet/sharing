@@ -1,2 +1,0 @@
-class FileReadException(Exception):
-    pass

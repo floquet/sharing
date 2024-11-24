@@ -1,5 +1,0 @@
-\begin{equation}
-    \begin{split}
-        f_{19}(\alpha) &= 22.760 - 0.51 \cos(\alpha) - 8.12 \cos(2\alpha) + 0.05 \cos(3\alpha) + 6.28 \cos(4\alpha)\\ &  - 0.41 \cos(5\alpha) - 1.11 \cos(6\alpha) - 1.07 \cos(7\alpha) + 5.57 \cos(8\alpha)\\ &  - 2.18 \cos(9\alpha) - 4.92 \cos(10\alpha) + 0.73 \cos(11\alpha) + 6.38 \cos(12\alpha)\\ &  + 0.25 \cos(13\alpha) - 4.41 \cos(14\alpha) - 2.84 \cos(15\alpha) + 2.89 \cos(16\alpha)\\ &  + 0.28 \cos(17\alpha) + 0.04 \cos(18\alpha) + 0.16 \cos(19\alpha) + 0.83 \cos(20\alpha)\\ &  - 0.16 \cos(21\alpha) - 0.03 \cos(22\alpha) + 0.12 \cos(23\alpha) + 0.84 \cos(24\alpha)
-    \end{split}
-\end{equation}

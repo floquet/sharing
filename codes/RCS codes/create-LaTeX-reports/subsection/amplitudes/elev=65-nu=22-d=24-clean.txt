@@ -1,5 +1,0 @@
-\begin{equation}
-    \begin{split}
-        f_{22}(\alpha) &= 19.442 - 0.71 \cos(\alpha) - 9.12 \cos(2\alpha) + 0.19 \cos(3\alpha) + 5.73 \cos(4\alpha)\\ &  - 0.12 \cos(5\alpha) - 1.10 \cos(6\alpha) + 1.17 \cos(7\alpha) + 3.10 \cos(8\alpha)\\ &  + 2.74 \cos(9\alpha) - 1.32 \cos(10\alpha) - 1.22 \cos(11\alpha) + 4.92 \cos(12\alpha)\\ &  - 0.12 \cos(13\alpha) - 2.13 \cos(14\alpha) + 0.10 \cos(15\alpha) + 2.42 \cos(16\alpha)\\ &  - 0.70 \cos(17\alpha) - 1.35 \cos(18\alpha) + 0.35 \cos(19\alpha) + 1.36 \cos(20\alpha)\\ &  - 0.76 \cos(21\alpha) - 1.87 \cos(22\alpha) + 1.63 \cos(23\alpha) + 1.48 \cos(24\alpha)
-    \end{split}
-\end{equation}

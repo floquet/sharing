@@ -1,7 +1,0 @@
-{\scriptsize{
-\begin{equation}
-    \begin{split}
-        f_{30}(\alpha) &= 12.428 - 0.42 \cos(\alpha) - 3.37 \cos(2\alpha) - 0.49 \cos(3\alpha) + 4.18 \cos(4\alpha)\\ &  + 0.94 \cos(5\alpha) - 3.39 \cos(6\alpha) + 0.96 \cos(7\alpha) + 3.74 \cos(8\alpha)\\ &  + 1.79 \cos(9\alpha) - 1.77 \cos(10\alpha) - 0.42 \cos(11\alpha) + 2.50 \cos(12\alpha)\\ &  + 0.41 \cos(13\alpha) - 2.18 \cos(14\alpha) + 0.14 \cos(15\alpha) + 5.08 \cos(16\alpha)\\ &  + 1.30 \cos(17\alpha) - 0.29 \cos(18\alpha) - 0.21 \cos(19\alpha) + 1.98 \cos(20\alpha)\\ &  + 1.52 \cos(21\alpha) - 2.03 \cos(22\alpha) + 0.64 \cos(23\alpha) + 2.68 \cos(24\alpha)\\ &  - 0.08 \cos(25\alpha) - 0.70 \cos(26\alpha) + 0.47 \cos(27\alpha) + 1.95 \cos(28\alpha)\\ &  + 1.30 \cos(29\alpha) - 1.54 \cos(30\alpha) - 0.72 \cos(31\alpha) + 2.51 \cos(32\alpha)\\ &  + 0.68 \cos(33\alpha) - 1.33 \cos(34\alpha) - 1.32 \cos(35\alpha) + 1.68 \cos(36\alpha)\\ &  + 0.27 \cos(37\alpha) - 0.31 \cos(38\alpha) - 0.47 \cos(39\alpha) + 1.50 \cos(40\alpha)
-    \end{split}
-\end{equation}
-}}

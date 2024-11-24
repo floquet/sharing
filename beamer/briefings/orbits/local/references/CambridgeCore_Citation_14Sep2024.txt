@@ -1,1 +1,0 @@
-@book{Hand_Finch_1998, place={Cambridge}, title={Analytical Mechanics}, publisher={Cambridge University Press}, author={Hand, Louis N. and Finch, Janet D.}, year={1998}} <div></div>

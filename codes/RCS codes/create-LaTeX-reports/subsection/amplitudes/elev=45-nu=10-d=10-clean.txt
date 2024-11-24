@@ -1,5 +1,0 @@
-\begin{equation}
-    \begin{split}
-        f_{10}(\alpha) &= 38.705 - 3.42 \cos(\alpha) - 10.05 \cos(2\alpha) + 4.93 \cos(3\alpha) + 5.87 \cos(4\alpha)\\ &  - 7.60 \cos(5\alpha) - 4.11 \cos(6\alpha) - 2.92 \cos(7\alpha) + 3.20 \cos(8\alpha)\\ &  + 0.80 \cos(9\alpha) - 1.17 \cos(10\alpha)
-    \end{split}
-\end{equation}

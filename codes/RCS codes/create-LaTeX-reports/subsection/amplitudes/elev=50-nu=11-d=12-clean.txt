@@ -1,5 +1,0 @@
-\begin{equation}
-    \begin{split}
-        f_{11}(\alpha) &= 39.529 - 7.68 \cos(\alpha) - 9.45 \cos(2\alpha) + 10.32 \cos(3\alpha) + 3.17 \cos(4\alpha)\\ &  - 5.93 \cos(5\alpha) - 2.57 \cos(6\alpha) - 0.99 \cos(7\alpha) + 4.76 \cos(8\alpha)\\ &  + 2.99 \cos(9\alpha) - 5.02 \cos(10\alpha) + 2.04 \cos(11\alpha) + 1.90 \cos(12\alpha)
-    \end{split}
-\end{equation}

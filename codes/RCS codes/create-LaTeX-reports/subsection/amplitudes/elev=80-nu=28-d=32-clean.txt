@@ -1,7 +1,0 @@
-{\scriptsize{
-\begin{equation}
-    \begin{split}
-        f_{28}(\alpha) &= 15.548 - 0.76 \cos(\alpha) - 4.94 \cos(2\alpha) + 0.02 \cos(3\alpha) + 5.45 \cos(4\alpha)\\ &  + 0.21 \cos(5\alpha) - 2.74 \cos(6\alpha) + 0.98 \cos(7\alpha) + 3.91 \cos(8\alpha)\\ &  + 1.98 \cos(9\alpha) + 0.53 \cos(10\alpha) - 0.34 \cos(11\alpha) + 3.23 \cos(12\alpha)\\ &  - 0.05 \cos(13\alpha) - 1.83 \cos(14\alpha) - 1.90 \cos(15\alpha) + 4.90 \cos(16\alpha)\\ &  + 0.76 \cos(17\alpha) - 3.31 \cos(18\alpha) - 1.45 \cos(19\alpha) + 4.69 \cos(20\alpha)\\ &  - 0.93 \cos(21\alpha) - 1.32 \cos(22\alpha) + 1.07 \cos(23\alpha) + 1.74 \cos(24\alpha)\\ &  - 1.13 \cos(25\alpha) - 0.46 \cos(26\alpha) - 0.05 \cos(27\alpha) + 2.24 \cos(28\alpha)\\ &  - 1.00 \cos(29\alpha) - 1.26 \cos(30\alpha) + 0.18 \cos(31\alpha) + 0.99 \cos(32\alpha)
-    \end{split}
-\end{equation}
-}}

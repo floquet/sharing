@@ -1,5 +1,0 @@
-\begin{equation}
-    \begin{split}
-        f_{13}(\alpha) &= 26.791 - 5.65 \cos(\alpha) - 4.64 \cos(2\alpha) + 0.09 \cos(3\alpha) + 2.71 \cos(4\alpha)\\ &  + 2.35 \cos(5\alpha) + 0.98 \cos(6\alpha) + 3.66 \cos(7\alpha) + 7.54 \cos(8\alpha)\\ &  - 0.74 \cos(9\alpha) - 7.28 \cos(10\alpha) - 0.90 \cos(11\alpha) + 5.91 \cos(12\alpha)\\ &  + 0.11 \cos(13\alpha) - 1.84 \cos(14\alpha) + 1.70 \cos(15\alpha) + 2.02 \cos(16\alpha)
-    \end{split}
-\end{equation}

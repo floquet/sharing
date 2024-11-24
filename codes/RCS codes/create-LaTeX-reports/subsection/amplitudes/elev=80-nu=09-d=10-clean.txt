@@ -1,5 +1,0 @@
-\begin{equation}
-    \begin{split}
-        f_{9}(\alpha) &= 22.245 - 2.907 \cos(\alpha) - 1.257 \cos(2\alpha) - 0.582 \cos(3\alpha) + 4.808 \cos(4\alpha)\\ &  + 3.186 \cos(5\alpha) - 4.662 \cos(6\alpha) + 2.544 \cos(7\alpha) + 6.363 \cos(8\alpha)\\ &  - 1.403 \cos(9\alpha) - 3.950 \cos(10\alpha)
-    \end{split}
-\end{equation}
