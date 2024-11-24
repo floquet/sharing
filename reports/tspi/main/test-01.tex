@@ -1,0 +1,19 @@
+\documentclass{article}
+\usepackage[backend=biber,style=numeric]{biblatex} 
+\addbibresource{/Users/dantopa/repos-xiuhcoatal/github/sharing/bibliographies/tle-01.bib}
+
+\usepackage{lmodern}
+\usepackage{hyperref}
+
+\begin{document}
+
+This is an example of citing a reference. For instance, we can refer to Myers' work \cite{Myers1973_ExecSummary}.
+
+\section{More on Geosynchronous Orbits}
+The \href{https://ntrs.nasa.gov/search?q=Geosynchronous\%20platform\%20definition\%20study}{Geosynchronous Platform Definition Study}, consisting of several volumes, is detailed in the following order:
+\cite{Myers1973_ExecSummary, Myers1973_BaselineTraffic, Myers1973_StudySummary, 
+      Myers1973_PlatformSynthesis, Myers1973_TransportationRequirements, 
+      Myers1973_ProgramEvaluation}.
+
+\printbibliography
+\end{document}

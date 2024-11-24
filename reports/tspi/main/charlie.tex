@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[backend=biber,style=numeric]{biblatex}
+\addbibresource{/Users/dantopa/repos-xiuhcoatal/github/sharing/bibliographies/tle-02.bib}
+
+% Display title, volume, and subtitle
+\DeclareBibliographyDriver{techreport}{%
+  \usebibmacro{author/editor}%
+  \setunit{\labelnamepunct}\newblock
+  \printfield{title}%
+  \setunit{\addspace}%
+  \printfield{subtitle}%
+  \newunit\newblock
+  \iffieldundef{volume}
+    {}
+    {\printtext{vol.~\printfield{volume}}}%
+  \newunit\newblock
+  \usebibmacro{date}%
+  \newunit\newblock
+  \printfield{institution}%
+  \setunit{\addcomma\space}%
+  \printfield{address}%
+  \newunit\newblock
+  \printfield{url}%
+  \finentry
+}
+
+\begin{document}
+This is an example reference: \cite{Myers1973_vol_I}.
+
+\printbibliography
+\end{document}

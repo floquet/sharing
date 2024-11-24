@@ -1,0 +1,58 @@
+% /Users/dantopa/repos-xiuhcoatal/github/sharing/reports/tspi/lib.tex
+\documentclass{article}
+%\usepackage[backend=biber,style=numeric]{biblatex} % Using biber and numeric style
+%\addbibresource{/Users/dantopa/repos-xiuhcoatal/github/sharing/bibliographies/tle-01.bib} % Path to your .bib file
+% Compile Order: pdflatex > bibtex (or biber) > pdflatex > pdflatex
+% Ensure TeXShop preferences align with your choice of BibTeX or Biber.
+% - Use BibTeX for compatibility with legacy documents.
+% - Use Biber for advanced bibliography management with BibLaTeX.
+
+%\documentclass[10pt, oneside]{article}
+
+\usepackage{lmodern}      % Modern font package
+\usepackage{multicol}     % Multiple columns in text
+\usepackage{alltt}        % Typeset alltt environments
+
+
+% Dynamically fetch the home directory (requires --shell-escape)
+% TeXShop > Settings > Engine > pdfTeX > Latex >
+%			pdflatex --shell-escape  --file-line-error --synctex=1
+\usepackage{catchfile}
+
+% Fetch home directory
+\CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
+
+% Strip trailing spaces from HomePath
+\makeatletter
+\edef\HomePath{\expandafter\zap@space\HomePath \@empty}
+\makeatother
+
+% Define base paths
+% relies on symlink  at $HOME, e.g.
+% 	GitHub -> /Users/dantopa//repos-xiuhcoatal/github
+\newcommand{\pGithub}			{\HomePath/GitHub/}
+\newcommand{\pGithubSharing}	{\pGithub/sharing/}
+\newcommand{\pGlobal}			{\pGithubSharing/global/}
+\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
+
+% Load Additional Setup Files
+\input{\pGlobalSetup/setup-global-reports.tex}
+\input{\pLocalSetup/setup-local.tex}
+
+\usepackage[affil-it]{authblk}
+\input{\pGlobalSetup packages-global-bibliography-alpha.tex}
+\begin{document}
+
+This is an example of citing a reference. For instance, we can refer to Myers' work \cite{Myers1973_ExecSummary}.
+% \input{\pSections "sec-ref"}
+
+\section{More on Geosynchronous Orbits}
+The \href{https://ntrs.nasa.gov/search?q=Geosynchronous\%20platform\%20definition\%20study&page=\%7B\%22from\%22:0,\%22size\%22:25\%7D}{Geosynchronous Platform Definition Study}, consisting of several volumes 
+\cite{Myers1973_ExecSummary, Myers1973_StudySummary, Myers1973_BaselineTraffic, 
+      Myers1973_PlatformSynthesis, Myers1973_TransportationRequirements, 
+      Myers1973_ProgramEvaluation}
+
+\nocite{*} % Include all references in the bibliography, even if not cited
+\printbibliography
+
+\end{document}

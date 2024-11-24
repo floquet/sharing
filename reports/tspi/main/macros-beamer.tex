@@ -1,0 +1,47 @@
+% \input{\pGlobalSetup macros-global}
+
+% transitions to next subsection, next section
+\newcommand{\jumpLittle}			{\textcolor{bg!85}{.}}
+\newcommand{\jumpBig}			{\textcolor{bg!85}{..}}
+
+% https://tex.stackexchange.com/questions/55000/continuing-enumerate-counters-in-beamer
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+
+\newcommand{\ns}				{Navier-Stokes}
+
+
+\newcommand{\onedot}  
+{  
+\begin{textblock*}{1cm}(1.136\textwidth,8.9cm)%
+	{\color{medgray}{.}}
+\end{textblock*} 
+}
+
+\newcommand{\twodots}  
+{  
+  \begin{textblock*}{1cm}(1.136\textwidth,8.9cm)%
+   %{\color{medgray}{..}}
+   {\color{red}{..}}
+  \end{textblock*} 
+}
+
+\newcommand{\donedot}  
+{  
+  \begin{textblock*}{1cm}(1.136\textwidth,8.9cm)%
+   {\color{darkgray}{.}}
+  \end{textblock*} 
+}
+
+\newcommand{\dtwodots}  
+{  
+  \begin{textblock*}{1cm}(1.136\textwidth,8.9cm)%
+   {\color{darkgray}{..}}
+  \end{textblock*} 
+}
+
+
+\endinput  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+
+\newcommand{}				{}

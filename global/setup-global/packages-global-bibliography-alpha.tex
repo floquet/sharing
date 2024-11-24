@@ -1,0 +1,44 @@
+% \input{\pGlobalSetup packages-global-bibliography-alpha.tex}
+
+% Purpose: Centralized configuration for bibliography actions and settings
+% Attribution: Designed collaboratively by Daniel and Achates (GPT-4), November 2024
+% References:
+%   - Biblatex documentation: https://ctan.org/pkg/biblatex
+%   - Biber documentation: https://ctan.org/pkg/biber
+
+% Load the biblatex package with desired options
+% Options:
+%   - style=numeric: Produces numeric citations like [1].
+%   - backend=biber: Uses Biber for advanced bibliography processing.
+%   - sorting=nyt: Sorts entries by Name, Year, and Title.
+%   - maxnames=3: Limits the number of authors displayed; "et al." is used for longer lists.
+%   - minnames=1: Ensures at least one author is displayed in shortened lists.
+\usepackage[
+    style=numeric,          
+    backend=biber,          
+    sorting=nyt,            
+    maxnames=3,             
+    minnames=1              
+]{biblatex}
+
+% Specify the bibliography resource file
+% Adjust the path to match your setup
+\addbibresource{\pShareBibliographies/tle-01.bib}
+
+% Configure bibliography layout and formatting
+\setlength{\bibhang}{2em}       % Hanging indent of 2em for each entry
+\setlength{\bibitemsep}{0.5em}  % Space of 0.5em between entries
+\setlength{\bibparsep}{0.2em}   % Space of 0.2em between paragraphs in an entry
+
+% Custom bibliography environment
+\defbibenvironment{bibliography}
+  {\list{} % Begin a list for bibliography formatting
+    {\setlength{\leftmargin}{\bibhang}% Adjust left margin
+     \setlength{\itemindent}{-\leftmargin}% Adjust item indentation
+     \setlength{\itemsep}{\bibitemsep}% Set spacing between items
+     \setlength{\parsep}{\bibparsep}}% Set spacing between paragraphs
+  }
+  {\endlist} % End the list
+  {\item} % Define an item in the list
+
+\endinput  % Ensures no unintended content is processed beyond this file

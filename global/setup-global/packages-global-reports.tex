@@ -1,0 +1,72 @@
+% \input{\pGlobalSetup packages-global-reports.tex}
+% Global setup for packages used in most reports
+
+% Load AMS packages for mathematical environments
+\usepackage{amsmath, amssymb, amsthm}
+
+% Define theorem styles and environments
+\theoremstyle{plain} % Default theorem style
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+
+% Geometry package for page layout
+% `showframe` option helps visualize margins (useful during debugging)
+%\usepackage[showframe]{geometry}
+\usepackage[]{geometry}
+\geometry{letterpaper} % Standard letter paper dimensions
+
+% Authblk package for author affiliations
+\usepackage[affil-it]{authblk}
+
+% Enumeration customization
+\usepackage{enumitem} % Customizable enumeration styles
+% Set default styles for enumerate lists
+\setlist[enumerate,1]{label=\arabic*.} % First level: 1, 2, 3...
+\setlist[enumerate,2]{label=\arabic{enumi}.\arabic*, ref=\arabic{enumi}.\arabic*} % Second level: 1.1, 1.2...
+% Adjust main and sub-enumeration counters if needed
+\setcounter{enumi}{9999}
+\setcounter{enumii}{999}
+
+% Include external PDFs (e.g., appendices or supplemental material)
+\usepackage{pdfpages}
+
+% Hyperref package for clickable links in the document
+\usepackage[hidelinks]{hyperref} % Hide link borders for clean PDF appearance
+
+% Fancy Verbatim for typesetting code or preformatted text
+\usepackage{fancyvrb}
+
+% Improve font support
+\usepackage[T1]{fontenc}
+
+% Graphicx for including images
+\usepackage{graphicx}
+
+% Overpic for overlaying text on images
+\usepackage{overpic}
+
+% Xcolor for custom colors (with additional options for named colors)
+\usepackage[dvipsnames]{xcolor} % Example: "red", "blue", "ForestGreen"
+
+% Colortbl for colored table cells
+\usepackage{colortbl}
+
+% Textpos for absolute text positioning (useful for annotations or overlays)
+\usepackage[overlay,absolute]{textpos}
+
+% Parfill option for better paragraph spacing
+\usepackage[parfill]{parskip}
+
+% TikZ for diagrams and graphics
+\usepackage{tikz}
+% Load commonly used TikZ libraries
+\usetikzlibrary{arrows.meta} % Enhanced arrow styles
+\usetikzlibrary{arrows}      % Basic arrow styles
+
+% Avoid redundancy: Hyperref and Xcolor should be loaded once with the desired options
+% Ensure `xcolor` options are passed explicitly for consistency
+
+\endinput  % Terminate the file to ignore any unintended trailing content

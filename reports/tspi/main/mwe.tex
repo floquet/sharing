@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[style=authoryear,backend=biber]{biblatex}
+
+\addbibresource{references.bib}  % Reference to your .bib file
+
+\begin{document}
+
+\section*{Example Citations}
+
+Here are some example citations:
+
+\begin{itemize}
+    \item Citing a specific volume with its subtitle: \cite{smith2023vol1}.
+    \item Citing a specific part of a volume: \cite{smith2023vol4part1}.
+    \item Citing the entire work: \cite{smith2023allvols}.
+    \item Listing all volumes in order: \cites[Vol. I]{smith2023vol1}[Vol. II]{smith2023vol2}[Vol. III]{smith2023vol3}[Vol. IV, Part 1]{smith2023vol4part1}[Vol. IV, Part 2]{smith2023vol4part2}[Vol. V]{smith2023vol5}[Vol. VI]{smith2023vol6}[Vol. VII]{smith2023vol7}.
+\end{itemize}
+
+\printbibliography
+
+\end{document}

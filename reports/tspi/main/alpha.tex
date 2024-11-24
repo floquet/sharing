@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage[backend=biber,style=numeric,sorting=volumepriority]{biblatex}
+\addbibresource{/Users/dantopa/repos-xiuhcoatal/github/sharing/bibliographies/tle-02.bib}
+
+\usepackage{hyperref} % Enable hyperlinks
+
+% Format titles and subtitles in italics
+\DeclareFieldFormat[article,book,inbook,incollection,manual,techreport]{title}{\mkbibemph{#1\isdot}}
+\DeclareFieldFormat[article,book,inbook,incollection,manual,techreport]{subtitle}{\mkbibemph{#1\isdot}}
+
+% Custom bibliography driver to include volume and subvolume
+\DeclareBibliographyDriver{techreport}{%
+  \usebibmacro{author/editor}%
+  \setunit{\labelnamepunct}\newblock
+  \printfield[title]{title}%
+  \setunit{\addspace}%
+  \printfield[title]{subtitle}%
+  \newunit\newblock
+  \ifboolexpr{
+    not test {\iffieldundef{volume}}
+  }
+    {\printtext{vol.~\printfield{volume}}} % Print volume with "vol." prefix
+    {}%
+  \ifboolexpr{
+    not test {\iffieldundef{subvolume}}
+  }
+    {\setunit{\addcomma\space}%
+     \printfield{subvolume}} % Print subvolume if available
+    {}%
+  \newunit\newblock
+  \usebibmacro{date}%
+  \newunit\newblock
+  \printfield{institution}%
+  \setunit{\addcomma\space}%
+  \printfield{address}%
+  \newunit\newblock
+  \printfield{url}%
+  \finentry
+}
+
+% Sorting scheme for volume and subvolume prioritization
+\DeclareSortingScheme{volumepriority}{
+  \sort{
+    \field{author}
+  }
+  \sort{
+    \field{year}
+  }
+  \sort{
+    \field{volume}
+  }
+  \sort{
+    \field{subvolume}
+  }
+}
+
+\begin{document}
+
+This is an example of citing a reference. For instance, we can refer to Myers' work \cite{Myers1973_vol_I}.
+
+\section{More on Geosynchronous Orbits}
+The \href{https://ntrs.nasa.gov/search?q=Geosynchronous\%20platform\%20definition\%20study}{Geosynchronous Platform Definition Study}, consisting of several volumes, is detailed in the following order: 
+\cite{Myers1973_vol_I, Myers1973_vol_II, Myers1973_vol_III, Myers1973_vol_IV_Part1, Myers1973_vol_IV_Part2, Myers1973_vol_V, Myers1973_vol_VI, Myers1973_vol_VII}
+
+\printbibliography
+
+\end{document}
