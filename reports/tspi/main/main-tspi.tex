@@ -22,21 +22,35 @@
 %\bibliography{\pSections radar.bib}
 % personalize environment
 %\newcommand{\pGlobal}[0]			{~/GitHub/sharing/global/}
-\newcommand{\pGlobal}[0]			{/Users/dantopa/GitHub/sharing/global/}
-\newcommand{\pGlobalSetup}[0]		{\pGlobal setup-global/}	
+% setup-global
+% \input{\pGlobalSetup paths-global.tex}
+\usepackage{catchfile}
 
-\input{\pGlobalSetup setup-global-reports}
-\input{\pLocalSetup setup-local}
+% Dynamically fetch the home directory
+\CatchFileDef{\HomePath}{|echo -n $HOME}{} 
+
+% Define GitHub path relative to home directory
+\newcommand{\pGithub}[0]			{\HomePath/GitHub/}
+\newcommand{\pGithubSharing}[0] 		{\pGithub/sharing/}
+\newcommand{\pGlobal}[0]			{\pGithubSharing/global/}
+\newcommand{\pGlobalSetup}[0]		{\pGlobal/setup-global/}	
+
+\input{\pGlobalSetup/setup-global-reports}
+\input{\pLocalSetup/setup-local}
 \usepackage[affil-it]{authblk}
 %\addbibresource{\pGlobalBibliographies tle.bib}
-\usepackage[
-    backend = biber,
-    style = authoryear,
-    citestyle = ext-authoryear
-]{biblatex}
+%\usepackage[
+%    backend = biber,
+%    style = authoryear,
+%    citestyle = ext-authoryear
+%]{biblatex}
+%\usepackage[ style = authoryear ]{biblatex} % Replace 'authoryear' with your preferred style
+% \usepackage[style=numeric, citestyle=numeric, backend=biber]{biblatex}
+ \input{\pGlobalSetup packages-global-bibliography-alpha.tex}
+ \AtEveryBibitem{\clearfield{url}}
 %\bibliography{\pGlobalBibliographies tle.bib}
-\addbibresource{\pGlobalBibliographies/tle.bib}
-\typeout{Value of \pGlobalBibliographies: \pGlobalBibliographies}
+\addbibresource{\pGlobalBibliographies/tle-01.bib}
+%\typeout{Value of \pGlobalBibliographies: \pGlobalBibliographies}
 %\addbibresource{\pGlobalBibliographies radar.bib}
 \usepackage[printwatermark]{xwatermark}
 	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
