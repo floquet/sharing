@@ -1,0 +1,25 @@
+\documentclass{article}
+
+\usepackage{catchfile}
+
+% Dynamically fetch the home directory (requires --shell-escape)
+\CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
+
+% Define and pre-expand paths
+\edef\pGithub{\expandafter\detokenize\expandafter{\HomePath/GitHub}}
+\edef\pGlobalSetup{\expandafter\detokenize\expandafter{\pGithub/sharing/global/setup-global}}
+
+% Debugging output
+\typeout{DEBUG: Home Path = \HomePath}
+\typeout{DEBUG: GitHub Path = \pGithub}
+\typeout{DEBUG: Global Setup Path = \pGlobalSetup}
+
+% Test inclusion of files
+\begin{document}
+
+\section*{Path Debugging}
+Home Path: \texttt{\HomePath} \\
+GitHub Path: \texttt{\pGithub} \\
+Global Setup Path: \texttt{\pGlobalSetup}
+
+\end{document}

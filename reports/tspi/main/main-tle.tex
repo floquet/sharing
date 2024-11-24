@@ -1,0 +1,99 @@
+% Compile Order: pdflatex > bibtex (or biber) > pdflatex > pdflatex
+% Ensure TeXShop preferences align with your choice of BibTeX or Biber.
+% - Use BibTeX for compatibility with legacy documents.
+% - Use Biber for advanced bibliography management with BibLaTeX.
+
+\documentclass[10pt, oneside]{article}
+
+% Package Imports
+\usepackage{enumitem}     % Customizable enumeration styles
+% Enumeration Styles
+\setlist[enumerate,1]{label=\arabic*.} % First-level: 1, 2, 3...
+\setlist[enumerate,2]{label=\arabic{enumi}.\arabic*, ref=\arabic{enumi}.\arabic*} % Second-level: 1.1, 1.2...
+\setcounter{enumi}{9999} % Adjust main enumeration counter
+\setcounter{enumii}{999} % Adjust sub-enumeration counter
+\usepackage{pdfpages}     % Include external PDFs
+\usepackage[hidelinks]{hyperref} % Suppress link borders in PDF
+\usepackage{lmodern}      % Modern font package
+\usepackage{multicol}     % Multiple columns in text
+\usepackage{alltt}        % Typeset alltt environments
+
+
+% Dynamically fetch the home directory (requires --shell-escape)
+% TeXShop > Settings > Engine > pdfTeX > Latex >
+%			pdflatex --shell-escape  --file-line-error --synctex=1
+\usepackage{catchfile}
+
+% Fetch home directory
+\CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
+
+% Strip trailing spaces from HomePath
+\makeatletter
+\edef\HomePath{\expandafter\zap@space\HomePath \@empty}
+\makeatother
+
+% Define base paths
+% relies on symlink  at $HOME, e.g.
+% 	GitHub -> /Users/dantopa//repos-xiuhcoatal/github
+\newcommand{\pGithub}			{\HomePath/GitHub/}
+\newcommand{\pGithubSharing}	{\pGithub/sharing/}
+\newcommand{\pGlobal}			{\pGithubSharing/global/}
+\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
+
+% Load Additional Setup Files
+\input{\pGlobalSetup/setup-global-reports.tex}
+\input{\pLocalSetup/setup-local.tex}
+
+\usepackage[affil-it]{authblk}
+\input{\pGlobalSetup packages-global-bibliography-alpha.tex}
+\AtEveryBibitem{\clearfield{url}}
+\addbibresource{\pGlobalBibliographies/tle-01.bib}
+
+\usepackage[printwatermark]{xwatermark}
+	\newwatermark[ allpages,color=red!5, angle=45, scale=3, xpos=0, ypos=0 ]{DRAFT}
+
+\title{Time, Space, and Position Information\\ for Geosynchronous Satellites}
+\author[1]{Daniel Topa\thanks{Primary author. Contact: \TopaHIIEmail}}
+\affil[1]{\textit{\missiontech}}
+
+\author[2]{Achates (AI, ChatGPT by OpenAI)\thanks{Contributed sections 1 and 2, classified as "4-o with canvas."}}
+\affil[2]{\textit{AI Collaboration Partner}}
+%\affil{\missiontech}
+
+\begin{document}
+\maketitle
+\abstract{A brief survey of characterizing the three dimensional radar cross section of satellites. The process of finding the optimal Fourier expression for each band is explored and different success measures are presented. \texttt{\pGlobalBibliographies}
+}
+\tableofcontents
+% Debugging output
+\typeout{DEBUG: \pGlobalSetup/setup-global-reports.tex}
+\typeout{DEBUG: \pLocalSetup/setup-local.tex}
+			%
+		\input{\pSections "sec-gpt"}
+		\input{\pSections "sec-satnogs"}
+		\input{\pSections "sec-tle"}
+		\input{\pSections "sec-geo"}
+		\input{\pSections "sec-ref"}
+			%
+\printbibliography
+%\nocite
+%\printbibliography
+%\bibliographystyle{thisjournal}
+%\include{bibliography} 
+%\bibliographystyle{vancouver}
+%\bibliography{MonthlyReferences.bib}
+%\bibliography{triangulation.bib}
+%\bibliography{triangulation.bib}
+
+
+\end{document} 
+
+\tiny
+\scriptsize
+\footnotesize
+\small
+\normalsize
+\large
+\Large
+\huge
+\Huge

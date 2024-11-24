@@ -21,19 +21,19 @@
 %\addbibresource{radar.bib}
 %\bibliography{\pSections radar.bib}
 % personalize environment
-%\newcommand{\pGlobal}[0]			{~/GitHub/sharing/global/}
+%\newcommand{\pGlobal}			{~/GitHub/sharing/global/}
 % setup-global
 % \input{\pGlobalSetup paths-global.tex}
 \usepackage{catchfile}
 
 % Dynamically fetch the home directory
-\CatchFileDef{\HomePath}{|echo -n $HOME}{} 
+\CatchFileDef{\HomePath}{|echo $HOME}{} 
 
 % Define GitHub path relative to home directory
-\newcommand{\pGithub}[0]			{\HomePath/GitHub/}
-\newcommand{\pGithubSharing}[0] 		{\pGithub/sharing/}
-\newcommand{\pGlobal}[0]			{\pGithubSharing/global/}
-\newcommand{\pGlobalSetup}[0]		{\pGlobal/setup-global/}	
+\newcommand{\pGithub}			{\HomePath/GitHub/}
+\newcommand{\pGithubSharing} 		{\pGithub/sharing/}
+\newcommand{\pGlobal}			{\pGithubSharing/global/}
+\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}	
 
 \input{\pGlobalSetup/setup-global-reports}
 \input{\pLocalSetup/setup-local}
@@ -76,7 +76,9 @@
 \abstract{A brief survey of characterizing the three dimensional radar cross section of satellites. The process of finding the optimal Fourier expression for each band is explored and different success measures are presented. \texttt{\pGlobalBibliographies}
 }
 \tableofcontents
-
+% Debugging output
+\typeout{DEBUG: \pGlobalSetup/setup-global-reports.tex}
+\typeout{DEBUG: \pLocalSetup/setup-local.tex}
 			%
 		\input{\pSections "sec-gpt"}
 		\input{\pSections "sec-satnogs"}

@@ -1,0 +1,38 @@
+\documentclass{article}
+
+\usepackage{catchfile}
+
+% Dynamically fetch the home directory (requires --shell-escape)
+\CatchFileDef{\HomePath}{|echo $HOME}{} 
+
+% Define paths relative to the home directory
+\newcommand{\pGithub}{\HomePath/GitHub}
+\newcommand{\pGithubSharing}{\pGithub/sharing}
+\newcommand{\pGlobal}{\pGithubSharing/global}
+\newcommand{\pGlobalSetup}{\pGlobal/setup-global}
+
+% Debugging output
+\typeout{DEBUG: Home Path = \HomePath}
+\typeout{DEBUG: GitHub Path = \pGithub}
+\typeout{DEBUG: GitHub Sharing Path = \pGithubSharing}
+\typeout{DEBUG: Global Path = \pGlobal}
+\typeout{DEBUG: Global Setup Path = \pGlobalSetup}
+
+% Test inclusion of files
+\begin{document}
+
+\section*{Path Debugging}
+\noindent
+Home Path: \texttt{\HomePath} \\ 
+GitHub Path: \texttt{\pGithub} \\
+GitHub Sharing Path: \texttt{\pGithubSharing} \\
+Global Path: \texttt{\pGlobal} \\
+Global Setup Path: \texttt{\pGlobalSetup} \\
+
+% Attempt to include test files
+\subsection*{File Inclusion Tests}
+\input{\pGlobalSetup/setup-global-reports.tex} % Test global file inclusion
+% Uncomment the next line if you have a local setup path defined
+% \input{\pLocalSetup/setup-local.tex}
+
+\end{document}
