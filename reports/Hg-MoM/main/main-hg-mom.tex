@@ -10,14 +10,31 @@
 
 %\addbibresource{radar.bib}
 %\bibliography{\pSections radar.bib}
-% personalize environment
-\newcommand{\pGlobal}[0]			{~/GitHub/sharing/global/}
-\newcommand{\pGlobalSetup}[0]		{\pGlobal setup-global/}	
+%			pdflatex --shell-escape  --file-line-error --synctex=1
+\usepackage{catchfile}
 
-\input{\pGlobalSetup setup-global-reports}
-\input{\pLocalSetup setup-local}
+% Fetch home directory
+\CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
 
-\bibliography{\pGlobalBibliographies radar.bib}
+% Strip trailing spaces from HomePath
+\makeatletter
+\edef\HomePath{\expandafter\zap@space\HomePath \@empty}
+\makeatother
+
+% Define base paths
+% relies on symlink  at $HOME, e.g.
+% 	GitHub -> /Users/dantopa//repos-xiuhcoatal/github
+\newcommand{\pGithub}			{\HomePath/GitHub/}
+\newcommand{\pGithubSharing}	{\pGithub/sharing/}
+\newcommand{\pGlobal}			{\pGithubSharing/global/}
+\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
+
+% Load Additional Setup Files
+\input{\pGlobalSetup/setup-global-reports.tex}
+\input{\pLocalSetup/setup-local.tex}
+
+\input{\pGlobalSetup packages-global-bibliography-alpha.tex}
+\bibliography{\pShareBibliographies radar.bib}
 %\addbibresource{\pGlobalBibliographies radar.bib}
 \usepackage[printwatermark]{xwatermark}
 	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
@@ -32,10 +49,6 @@
 	\definecolor{textgreen}{rgb}{0,0.43,0}
 	\definecolor{lightgray}{RGB}{245,245,245}
 	\definecolor{darkgray}{RGB}{128,128,128}
-
-% https://tex.stackexchange.com/questions/583984/how-to-include-a-txt-file-content-inside-the-latex-file
-\begin{filecontents*}{\pLocalMoM/data/"tabula-rasa.geo"}
-\end{filecontents*}
 
 \lstset{
   basicstyle=\ttfamily,
