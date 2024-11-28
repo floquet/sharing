@@ -1,0 +1,13 @@
+\section*{Example Code for Chapter 2}
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lll@{}}  % Removes vertical lines
+\toprule
+\textbf{Example Name}       & \textbf{File Name}         & \textbf{Page} \\ 
+\midrule
+Hello, World Program        & \texttt{ch02-hello-world.f23} & \pageref{ex:ch02-hello-world} \\
+Coarray Data Sharing        & \texttt{ch02-data-sharing.f23} & \pageref{ex:ch02-data-sharing} \\
+Coarray Collective Sum      & \texttt{ch02-co-sum.f23}     & \pageref{ex:ch02-co-sum} \\
+\bottomrule
+\end{tabular}
+\end{table}

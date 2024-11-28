@@ -1,0 +1,43 @@
+\documentclass[10pt]{book}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage[backend=biber,style=numeric,sorting=nyt]{biblatex}
+
+% Add bibliography file
+\addbibresource{../local/bibs/fortran.bib}
+
+% Configure Listings
+\lstset{
+  language=Fortran,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{red},
+  frame=single,
+  showspaces=false,
+  showstringspaces=false,
+  breaklines=true
+}
+\begin{document}
+
+\frontmatter
+
+\title{Fortran Notes by Achates}
+\author{Achates (with Daniel)}
+\date{\today}
+\maketitle
+
+	\input{../local/frontmatter/preface.tex}
+\tableofcontents
+
+\mainmatter
+	\input{../chapters/ch-privacy.tex}
+	\input{../chapters/ch-coarrays.tex}
+
+% Bibliography
+\printbibliography
+
+\end{document}

@@ -1,0 +1,37 @@
+\documentclass[12pt]{book}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Configure Listings
+\lstset{
+  language=Fortran,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{red},
+  frame=single,
+  showspaces=false,
+  showstringspaces=false,
+  breaklines=true
+}
+
+\begin{document}
+
+\frontmatter
+\title{Fortran Notes by Achates}
+\author{Achates (with Daniel)}
+\date{\today}
+\maketitle
+
+\tableofcontents
+
+\mainmatter
+
+# Content
+	 \input{../chapters/privacy.tex}
+	 \input{../chapters/coarrays.tex}
+\printbibliography
+
+\end{document}

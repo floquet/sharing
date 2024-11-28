@@ -1,0 +1,138 @@
+% input{../chapters/coarrays.tex}
+\chapter{Coarrays in Fortran}
+
+\section{Introduction to Coarrays}
+
+Coarrays are a powerful feature of modern Fortran introduced in Fortran 2008 to enable parallel programming using a simple and elegant syntax. They allow variables to be shared across multiple execution images, each with its own local memory, enabling distributed memory parallelism.
+
+Coarrays are designed to simplify parallel programming by abstracting the complexity of traditional message-passing interfaces while still offering fine-grained control over data distribution and synchronization.
+
+\section{Key Concepts of Coarrays}
+
+\subsection{Execution Images}
+An \emph{image} is an independent instance of a program running as part of a parallel execution. Each image has its own memory but can communicate with others via coarrays. Think of images as lightweight processes or threads:
+\begin{itemize}
+    \item Each image executes the same program.
+    \item Images are identified by unique indices ranging from 1 to the total number of images.
+    \item Communication between images is explicit and controlled.
+\end{itemize}
+
+\subsection{Declaring Coarrays}
+Coarrays are declared using square brackets to specify the codimension. Here’s an example of a simple coarray declaration:
+\begin{lstlisting}
+real :: x[*]
+\end{lstlisting}
+This declares a scalar real coarray \texttt{x}, distributed across all images. The \texttt{[*]} codimension specifies that each image has a separate copy of \texttt{x}.
+
+For multidimensional arrays, both normal dimensions and codimensions can be specified:
+\begin{lstlisting}
+real :: matrix(10,10)[*]
+\end{lstlisting}
+
+\subsection{Accessing Coarray Data}
+To access data on another image, use the square bracket syntax to specify the image index. For example:
+\begin{lstlisting}
+x[2] = 3.14  ! Assign 3.14 to x on image 2
+y = x[3]     ! Retrieve the value of x from image 3
+\end{lstlisting}
+
+If no image index is specified, the operation occurs on the local image.
+
+\subsection{Synchronization}
+Synchronization is crucial in parallel programming to ensure data consistency across images. Fortran provides the following intrinsic procedures for synchronization:
+\begin{itemize}
+    \item \texttt{sync all}: Synchronize all images.
+    \item \texttt{sync images}: Synchronize specific images.
+    \item \texttt{sync memory}: Ensure memory consistency across images.
+\end{itemize}
+
+Example:
+\begin{lstlisting}
+sync all  ! Wait for all images to reach this point
+\end{lstlisting}
+
+\subsection{Teams and Subgroups}
+Fortran 2018 introduced teams, allowing images to be grouped for collective operations. Teams enable finer control over parallelism by creating subsets of images:
+\begin{lstlisting}
+form team(team_number)
+change team(team_number)
+    ! Code executed within the team
+end team
+\end{lstlisting}
+
+---
+
+\section{Examples of Coarray Usage}
+
+\subsection{Hello, World with Coarrays}
+Here’s a simple program demonstrating coarrays:
+\begin{lstlisting}
+program hello_coarrays
+    implicit none
+    integer :: me, num_images
+
+    me = this_image()          ! Get the current image index
+    num_images = num_images()  ! Get the total number of images
+
+    print *, "Hello from image ", me, " of ", num_images
+end program hello_coarrays
+\end{lstlisting}
+
+Run this program with multiple images using an MPI-compatible Fortran compiler:
+\begin{verbatim}
+mpirun -np 4 ./hello_coarrays
+\end{verbatim}
+
+---
+
+\subsection{Data Sharing Across Images}
+This example demonstrates sharing data between images:
+\begin{lstlisting}
+program data_sharing
+    implicit none
+    integer :: me
+    real :: shared_value[*]
+
+    me = this_image()
+
+    if (me == 1) then
+        shared_value = 42.0  ! Assign a value on image 1
+    end if
+
+    sync all  ! Ensure all images are synchronized
+
+    print *, "Image ", me, " sees shared_value = ", shared_value[1]
+end program data_sharing
+\end{lstlisting}
+
+---
+
+\section{Best Practices and Tips}
+\begin{itemize}
+    \item Use \texttt{sync all} and \texttt{sync images} judiciously to avoid unnecessary synchronization overhead.
+    \item Minimize direct communication between images to reduce potential bottlenecks.
+    \item Test coarray code on multiple configurations to ensure scalability.
+\end{itemize}
+
+\section{Advanced Features}
+Fortran coarrays also support asynchronous operations and collective procedures such as \texttt{co\_sum}, \texttt{co\_min}, and \texttt{co\_max}, which operate across images efficiently.
+
+Example of a collective sum:
+\begin{lstlisting}
+real :: sum_value[*], total_sum
+
+sum_value = this_image()
+total_sum = co_sum(sum_value)  ! Sum values across all images
+if (this_image() == 1) then
+    print *, "Total sum: ", total_sum
+end if
+\end{lstlisting}
+
+---
+
+\section{Conclusion}
+Fortran coarrays provide a high-level, intuitive framework for parallel programming that integrates seamlessly with Fortran’s core features. They simplify data sharing, synchronization, and team-based operations while retaining control and efficiency. By leveraging coarrays, you can write scalable parallel applications with minimal overhead.
+
+---
+
+\endinput  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -

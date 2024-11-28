@@ -1,0 +1,91 @@
+% input{../chapters/privacy.tex}
+\chapter{Privacy and Procedure Control in Fortran}
+
+\section{Introduction to Privacy}
+In Fortran, managing access to module entities, such as procedures and variables, is essential for creating clean, maintainable code. The `public` and `private` attributes control visibility, allowing module authors to expose only the necessary components while keeping implementation details hidden.
+
+By default, procedures in a module are \textbf{public}. This means they can be accessed from outside the module unless explicitly marked as `private`. On the other hand, you can change the default behavior to `private` using a single statement at the start of the module.
+
+\section{Declaring \texttt{private} and \texttt{public}}
+Here's an example of controlling access to procedures and variables in a module:
+
+\begin{lstlisting}
+module example
+    implicit none
+    private           ! All module entities are private by default
+    public :: my_function
+
+    contains
+
+    function my_function() result(res)
+        integer :: res
+        res = 42
+    end function my_function
+
+    subroutine hidden_sub()
+        ! This subroutine remains private
+    end subroutine hidden_sub
+end module example
+\end{lstlisting}
+
+\section{Procedure Aliasing and Abstraction}
+Procedure aliasing allows you to define user-friendly names for internal procedures. For instance:
+
+\begin{lstlisting}
+module allocator
+    implicit none
+    public :: allocate_rank_one
+    private :: allocate_one_sub
+
+    contains
+
+    procedure, public :: allocate_rank_one => allocate_one_sub
+
+    subroutine allocate_one_sub()
+        ! Implementation for allocating a rank-one array
+    end subroutine allocate_one_sub
+end module allocator
+\end{lstlisting}
+
+\subsection{Benefits of Procedure Aliasing}
+This design offers the following advantages:
+\begin{itemize}
+    \item Encapsulation: External users only see the public name, hiding implementation details.
+    \item Clarity: Names like \texttt{allocate\_rank\_one} describe the procedure's purpose, while internal names remain short and specific.
+    \item Flexibility: Swap implementations without affecting external code.
+\end{itemize}
+
+\section{Using Generic Interfaces}
+Combining procedure aliasing with generic interfaces allows you to design polymorphic and user-friendly APIs. Here's an example:
+
+\begin{lstlisting}
+module allocator
+    implicit none
+    public :: allocate
+    private :: allocate_one_sub, allocate_two_sub
+
+    interface allocate
+        procedure allocate_one_sub, allocate_two_sub
+    end interface allocate
+
+    contains
+
+    subroutine allocate_one_sub()
+        ! Allocate a rank-one array
+    end subroutine allocate_one_sub
+
+    subroutine allocate_two_sub()
+        ! Allocate a rank-two array
+    end subroutine allocate_two_sub
+end module allocator
+\end{lstlisting}
+
+\section{Best Practices}
+\begin{itemize}
+    \item Always use \texttt{private} at the top of a module to enforce encapsulation by default.
+    \item Leverage \texttt{procedure aliasing} for clean interfaces and flexibility.
+    \item Use generic interfaces to simplify user interaction with your modules.
+    \item Document the purpose of each public entity to maintain clarity.
+\end{itemize}
+
+\endinput  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
