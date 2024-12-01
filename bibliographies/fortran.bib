@@ -1,12 +1,75 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Daniel Topa at 2024-11-28 17:16:49 -0700 
+%% Created for Daniel Topa at 2024-11-29 12:07:41 -0700 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
 
 
+
+@unknown{xlog1p,
+	abstract = {This is a Fortran 90 test program package of "qlog1p", "dlog1p", and "slog1p", the quadruple, double, and single precision programs to compute a special logarithm function, log1p(x) = log(1+x), accurately by mini-max rational approximations. "qlog1p", "dlog1p", and "slog1p" keep 33, 16, and 9 digit accuracy for arbitrary value of x, especially even when |x| is small. They are fast in the sense that "dlog1p" and "slog1p" run 20% and 30% faster than "dlog(x)" in the standard math library, respectively, while "qlog1p" runs 9 times slower than "qlog(x)".},
+	author = {Fukushima, Toshio},
+	date-added = {2024-11-29 12:07:15 -0700},
+	date-modified = {2024-11-29 12:07:34 -0700},
+	doi = {10.13140/RG.2.2.16473.88162},
+	month = {10},
+	title = {xlog1p.txt: Fortran test program package of "qlog1p", "dlog1p", and "slog1p", the quadruple, double, and single precision programs to compute a special logarithm function, log1p(x) = log(1+x), accurately by mini-max rational approximations},
+	year = {2019},
+	bdsk-url-1 = {https://doi.org/10.13140/RG.2.2.16473.88162}}
+
+@dataset{xelbd,
+	abstract = {This file contains some Fortran 90 programs to compute associate incomplete elliptic integrals of first and second kind: B(phi|m) and D(phi|m): 1) xelbd.f90: test driver of "elbd" and "relbd" 2) elbd.f90: subroutine to compute B(phi|m) and D(phi|m) in double precision 3) relbd.f90: subroutine to compute B(phi|m) and D(phi|m) in single precision 4) celbd.f90: subroutine to compute B(m) and D(m) in double precision 5) rcelbd.f90:subroutine to compute B(m) and D(m) in single precision Once B(phi|m) and D(phi|m) are given, F(phi|m) and E(phi|m) are computed as F(phi|m) = B(phi|m) + D(phi|m), E(phi|m) = B(phi|m) + (1-m) D(phi|m) Similarly K(m) = B(m) + D(m), E(m) = B(m) + (1-m) D(m) The file also includes the output file of "xelbd"},
+	author = {Fukushima, Toshio},
+	date-added = {2024-11-29 12:05:05 -0700},
+	date-modified = {2024-11-29 12:05:50 -0700},
+	doi = {10.13140/RG.2.1.1985.2408},
+	month = {05},
+	title = {xelbd.f90(Fortran 90 package to compute general complete/incomplete elliptic integral of first/second kind in single/double precision)},
+	year = {2016},
+	bdsk-url-1 = {https://doi.org/10.13140/RG.2.1.1985.2408}}
+
+@dataset{xcei,
+	abstract = {Presented are some Fortran 90 programs to compute five complete elliptic integrals of first and second kind,K(m), E(m), B(m), D(m), S(m): 1) xcei.f90, test driver of "ceik", "ceie", "ceib", "ceid", and "ceis", 2) ceik.f90, real*8 function to compute K(m), 3) ceie.f90, real*8 function to compute E(m), 4) ceib.f90, real*8 function to compute B(m) = (E(m)-(1-m)K(m))/m, 5) ceid.f90, real*8 function to compute D(m) = (K(m)-E(m))/m, 6) ceis.f90, real*8 function to compute S(m) = (D(m)-B(m))/m. Notice that B(m) and S(m) are most fundamental since the others are computable from them without suffering precision loss when m is small. Also, the output of "xcei" is attached.},
+	author = {Fukushima, Toshio},
+	date-added = {2024-11-29 12:02:07 -0700},
+	date-modified = {2024-11-29 12:06:32 -0700},
+	month = {02},
+	title = {xcei.f90 (F90 package of complete elliptic integral computation)},
+	year = {2016}}
+
+@book{lemmon2005developing,
+	author = {Lemmon, David R and Schafer, Joseph L},
+	date-added = {2024-11-29 11:41:45 -0700},
+	date-modified = {2024-11-29 11:41:45 -0700},
+	publisher = {Springer Science \& Business Media},
+	title = {Developing Statistical Software in Fortran 95},
+	year = {2005}}
+
+@book{adams2008fortran,
+	abstract = {The Fortran 2003 Handbook is a definitive and comprehensive guide to Fortran 2003 and its use. Fortran 2003, the latest standard version of Fortran, has many excellent features that assist the programmer in writing efficient, portable and maintainable programs. This book is an informal description of Fortran 2003, developed to provide not only a readable explanation of features, but also some rationale for the inclusion of features and their use.
+
+Topics and features include: The syntactic features of the language are described completely in the appendices; Each chapter begins with a summary of the main terms and concepts described in the chapter; Each of the intrinsic procedures is described in detail; The complete syntax of Fortran 2003 is supplied; Contains a listing of the new and obsolescent features; Numerous examples are given.
+
+This handbook is intended for anyone who wants a comprehensive survey of Fortran 2003, including those familiar with programming language concepts but unfamiliar with Fortran.},
+	author = {Adams, Jeanne C and Brainerd, Walter S and Hendrickson, Richard A and Maine, Richard E and Martin, Jeanne T and Smith, Brian T},
+	date-added = {2024-11-29 11:38:25 -0700},
+	date-modified = {2024-11-29 11:38:43 -0700},
+	publisher = {Springer Science \& Business Media},
+	title = {The Fortran 2003 handbook: the complete syntax, features and procedures},
+	year = {2008}}
+
+@book{Brainerd2018,
+	abstract = {This textbook provides an accessible introduction to the most important features of Fortran 2008. Features: presents a complete discussion of all the basic features needed to write complete Fortran programs; makes extensive use of examples and case studies to illustrate the practical use of features of Fortran 08, and supplies simple problems for the reader; provides a detailed exploration of control constructs, modules, procedures, arrays, character strings, data structures and derived types, pointer variables, and object-oriented programming; includes coverage of such major new features in Fortran 08 as coarrays, submodules, parameterized derived types, and derived-type input and output; highlights the topic of modules as the framework for organizing data and procedures for a Fortran program; investigates the excellent input/output facilities available in Fortran; contains appendices listing the many intrinsic procedures and providing a brief informal syntax specification for the language.},
+	author = {Walter S. Brainerd},
+	date-added = {2024-11-29 11:34:25 -0700},
+	date-modified = {2024-11-29 11:35:57 -0700},
+	doi = {https://doi.org/10.1007/978-1-4471-6759-4},
+	edition = {2},
+	publisher = {Springer London},
+	title = {Guide to Fortran 2008 Programming},
+	year = {2015}}
 
 @book{numrich2018parallel,
 	abstract = {Parallel Programming with Co-Arrays describes the basic techniques used to design parallel algorithms for high-performance, scientific computing. It is intended for upper-level undergraduate students and graduate students who need to develop parallel codes with little or no previous introduction to parallel computing. It is also intended as a reference manual for researchers active in the field of scientific computing. All the algorithms in the book are based on partition operators. These operators provide a unifying principle that fits seemingly disparate techniques into an overall framework for algorithm design. The book uses the co-array programming model to illustrate how to write code for concrete examples, but it emphasizes that the important concepts for algorithm design are independent of the programming model. With these concepts in mind, the reader can write algorithms in different programming models based on personal taste and comfort.},
@@ -69,7 +132,7 @@
 	title = {Fortran 2018 with parallel programming},
 	year = {2019}}
 
-@book{doi:10.1137/1.9781611973129,
+@book{Hanson2013,
 	abstract = {The Fortran language standard has undergone significant upgrades in recent years (1990, 1995, 2003, and 2008). Numerical Computing with Modern Fortran illustrates many of these improvements through practical solutions to a number of scientific and engineering problems.
 
 Readers will discover
@@ -84,7 +147,7 @@ Readers will discover
 	address = {Philadelphia, PA},
 	author = {Hanson, Richard J. and Hopkins, Tim},
 	date-added = {2024-11-28 12:42:30 -0700},
-	date-modified = {2024-11-28 12:42:49 -0700},
+	date-modified = {2024-11-29 11:39:27 -0700},
 	doi = {10.1137/1.9781611973129},
 	eprint = {https://epubs.siam.org/doi/pdf/10.1137/1.9781611973129},
 	publisher = {Society for Industrial and Applied Mathematics},
@@ -104,12 +167,33 @@ Readers will discover
 	year = {2009}}
 
 @book{chivers2018introduction,
-	abstract = {The book aims to provide coverage of a reasonable working subset of the Fortran programming language. The subset chosen should enable you to solve quite a wide range of frequently occurring problems.},
+	abstract = {In response to feedback from course delegates this third edition has been revised throughout. It expands on the second edition with new and updated examples in the chapters on arithmetic, i/o, character data, modules, data structuring and generic programming with minor updates to the rest of the chapters.
+
+Key Features
+
+·         lots of clear, simple examples highlighting the core language features  of modern Fortran including data typing, array processing,  control structures, functions, subroutines, modules,  user defined types, pointers, operator overloading, generic programming, object oriented programming and parallel programming
+
+·         pinpoints common problems that occur when programming
+
+·         illustrates the use of several compilers
+
+·         with better standards conformance in compilers  there are new examples illustrating the following major features:
+
+                - C Interop
+
+                - IEEE arithmetic
+
+                - parameterised derived types
+
+Introduction to Programming with Fortran will appeal to the complete beginner, existing
+
+Fortran programmers wishing to update their code and those with programming experience in other languages.},
 	author = {Chivers, Ian D and Sleightholme, Jane},
 	date-added = {2024-11-28 12:33:58 -0700},
-	date-modified = {2024-11-28 12:34:17 -0700},
+	date-modified = {2024-11-29 11:37:40 -0700},
+	doi = {https://doi.org/10.1007/978-3-319-17701-4},
 	publisher = {Springer},
-	title = {Introduction to programming with Fortran},
+	title = {Introduction to programming with Fortran: With Coverage of Fortran 90, 95, 2003, 2008 and 77},
 	volume = {2},
 	year = {2018}}
 

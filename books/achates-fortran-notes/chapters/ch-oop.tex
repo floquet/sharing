@@ -1,0 +1,124 @@
+% input{../chapters/coarrays.tex}
+\chapter{Object-Oriented Programming in Fortran}
+
+\section{Object-Oriented Programming in Fortran: Type-Bound Procedures and Arrays}
+
+Object-oriented programming (OOP) in Fortran allows for encapsulation and abstraction using derived types and type-bound procedures. This section discusses the concept of type-bound procedures and their application, particularly when working with arrays of derived-type objects.
+
+\subsection{Type-Bound Procedures: A Primer}
+
+In Fortran, type-bound procedures are subroutines or functions that are logically associated with a derived type. They enable the encapsulation of operations within the type itself, leading to better organization and clearer code. Type-bound procedures are declared in the \texttt{CONTAINS} block of a type definition.
+
+For example, a simple \texttt{satellite} type with type-bound procedures can be defined as:
+\begin{lstlisting}[language=Fortran]
+type :: satellite
+    integer :: index
+contains
+    procedure, public :: update_parameters => update_parameters_sub
+end type satellite
+\end{lstlisting}
+
+Here, the \texttt{update\_parameters\_sub} subroutine is bound to the \texttt{satellite} type. It operates on an instance of \texttt{satellite}, referred to as \texttt{self}.
+
+\subsection{Extending Operations to Arrays of Objects}
+
+Often, there is a need to perform operations on an array of objects. In such cases, the relationship between the type and the procedure can be maintained in two ways:
+\begin{itemize}
+    \item Using a type-bound procedure that accepts an array of objects.
+    \item Defining a standalone module-level procedure for array operations.
+\end{itemize}
+
+\subsubsection{Using a Type-Bound Procedure}
+
+A type-bound procedure can be defined to operate on an array of the associated type:
+\begin{lstlisting}[language=Fortran]
+type :: satellite
+    integer :: index
+contains
+    procedure, public :: update_all => update_all_satellites_sub
+end type satellite
+
+subroutine update_all_satellites_sub(satArray)
+    class(satellite), dimension(:), intent(inout) :: satArray
+    integer :: i
+    do i = 1, size(satArray)
+        satArray(i) % index = satArray(i) % index + 1
+    end do
+end subroutine update_all_satellites_sub
+\end{lstlisting}
+
+This approach retains encapsulation by tying the array-level operation to the type. The routine can be invoked using a proxy object:
+\begin{lstlisting}[language=Fortran]
+type(satellite) :: proxy
+type(satellite), allocatable :: satelliteArray(:)
+
+allocate(satelliteArray(5))
+satelliteArray(:) = proxy
+
+call proxy % update_all(satelliteArray)
+\end{lstlisting}
+
+\subsubsection{Using a Standalone Module-Level Procedure}
+
+For operations that are more logically tied to arrays than to individual objects, a standalone module-level procedure is more appropriate:
+\begin{lstlisting}[language=Fortran]
+module satellite_module
+    type :: satellite
+        integer :: index
+    end type satellite
+contains
+    subroutine update_satellite_array(satArray)
+        type(satellite), dimension(:), intent(inout) :: satArray
+        integer :: i
+        do i = 1, size(satArray)
+            satArray(i) % index = satArray(i) % index + 1
+        end do
+    end subroutine update_satellite_array
+end module satellite_module
+\end{lstlisting}
+
+This method is invoked directly on the array:
+\begin{lstlisting}[language=Fortran]
+type(satellite), allocatable :: satelliteArray(:)
+
+allocate(satelliteArray(5))
+
+call update_satellite_array(satelliteArray)
+\end{lstlisting}
+
+\subsection{Blending Approaches for Flexibility}
+
+To maximize flexibility, you can blend these two approaches. Define a type-bound procedure as a wrapper that delegates the work to a module-level procedure:
+\begin{lstlisting}[language=Fortran]
+type :: satellite
+    integer :: index
+contains
+    procedure, public :: update_all => update_all_satellites_sub
+end type satellite
+
+subroutine update_all_satellites_sub(self, satArray)
+    class(satellite), intent(in) :: self
+    type(satellite), dimension(:), intent(inout) :: satArray
+    call update_satellite_array(satArray)
+end subroutine update_all_satellites_sub
+
+subroutine update_satellite_array(satArray)
+    type(satellite), dimension(:), intent(inout) :: satArray
+    integer :: i
+    do i = 1, size(satArray)
+        satArray(i) % index = satArray(i) % index + 1
+    end do
+end subroutine update_satellite_array
+\end{lstlisting}
+
+\subsection{Guidelines for Choosing an Approach}
+
+\begin{itemize}
+    \item Use type-bound procedures for operations that are conceptually part of the type’s behavior.
+    \item Use standalone procedures for operations that are independent of specific instances or require global context.
+    \item Blend approaches when you need the flexibility to operate both through type-bound methods and standalone interfaces.
+\end{itemize}
+
+This dual approach ensures both encapsulation and reusability while providing a clean and logical design for object-oriented programming in Fortran.
+
+\endinput  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
