@@ -1,0 +1,63 @@
+
+\section{Causal Bubbles}
+
+The concept of \textbf{causal bubbles} offers a powerful abstraction for reducing interdependencies and enhancing the efficiency of parallel discrete event simulation (PDES) in satellite engagements. This section outlines the principles, benefits, and implementation strategies for leveraging causal bubbles with coarrays.
+
+\subsection{Definition and Advantages}
+
+A causal bubble is an isolated group of events or processes that interact only within the bubble, without affecting or being affected by external processes. This approach has several advantages:
+\begin{itemize}
+    \item \textbf{Reduced Communication Overhead:} Events in one mission bubble do not impact another, minimizing the need for inter-bubble communication.
+    \item \textbf{Independent Processing:} Each mission can proceed independently, leveraging parallelism effectively.
+    \item \textbf{Scalability:} The simulation can handle increasing numbers of missions without a proportional increase in complexity.
+\end{itemize}
+
+\subsection{Local Timescales}
+
+Each mission operates on a local timescale, which can have finer granularity than the global simulation clock. This allows missions with faster dynamics to resolve events more accurately without slowing down the overall simulation. For example:
+\begin{itemize}
+    \item The global simulation clock advances in 1-second intervals.
+    \item Missions resolve their events at a finer resolution, such as 0.1 seconds.
+\end{itemize}
+
+\subsection{Implementation Strategy}
+
+\subsubsection{Using Coarrays}
+
+Coarrays provide a natural way to map missions and their satellites to parallel processes:
+\begin{itemize}
+    \item Each \textbf{mission bubble} is assigned to a coarray image or a team of images.
+    \item \textbf{Synchronization} within a bubble is managed using \texttt{sync team}, while \texttt{sync all} is used only for global reporting or major events.
+\end{itemize}
+
+\subsubsection{Example Code}
+
+The following illustrates the implementation of local timescales and event resolution:
+\begin{verbatim}
+real :: global_time = 0.0   ! Overall simulation clock
+real :: mission_time = 0.0  ! Local clock for the mission
+
+do while (global_time < max_simulation_time)
+    ! Local events
+    mission_time = mission_time + 0.1
+    call resolve_local_events(mission_time)
+
+    ! Synchronize with global clock periodically
+    if (mod(global_time, 1.0) == 0.0) then
+        sync team
+    end if
+
+    global_time = global_time + 1.0
+end do
+\end{verbatim}
+
+\subsection{Benefits of the Approach}
+
+By treating missions as causal bubbles:
+\begin{itemize}
+    \item \textbf{Parallelism is Maximized:} Independent missions can run simultaneously on separate images.
+    \item \textbf{Accuracy is Preserved:} Local timescales allow finer resolution where needed.
+    \item \textbf{Synchronization Overhead is Minimized:} Inter-bubble communication is avoided unless absolutely necessary.
+\end{itemize}
+
+This design ensures an efficient and scalable simulation framework for modeling satellite engagements.
