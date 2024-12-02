@@ -1,0 +1,48 @@
+
+\section{Genesis}
+
+The use of coarrays in satellite simulations provides a powerful paradigm for modeling distributed systems. This section explores the foundational concepts and initial design considerations for simulating satellite engagements using coarrays in Fortran.
+
+\subsection{Concepts and Design Philosophy}
+
+The simulation models satellite engagements, where:
+\begin{itemize}
+    \item \textbf{Packs of Satellites}: Each pack is represented by an image in the coarray model.
+    \item \textbf{Individual Satellites}: Satellites within a pack are indexed as elements in coarrays.
+    \item \textbf{Engagement Dynamics}: Packs engage enemy packs, sharing data and state across images via coarray communication.
+\end{itemize}
+
+This structure leverages Fortran’s coarray capabilities to parallelize and simplify the simulation:
+\begin{itemize}
+    \item \textbf{Parallelism}: Each image independently simulates its pack, enabling concurrent computation.
+    \item \textbf{Data Sharing}: Coarray variables facilitate efficient inter-image communication.
+    \item \textbf{Scalability}: The design can accommodate increasing numbers of satellites and packs.
+\end{itemize}
+
+\subsection{Initial Considerations}
+
+The key architectural choices are:
+\begin{itemize}
+    \item \textbf{Packs as Images}:
+        Each image represents a pack of satellites. Internal dynamics are simulated locally, while inter-pack engagements are handled via coarray references.
+    \item \textbf{Satellites as Coarray Indices}:
+        Satellites within a pack are indexed in coarrays. This simplifies data management and ensures efficient access to satellite states.
+    \item \textbf{Synchronization}:
+        Use coarray synchronization primitives (\texttt{sync all}, \texttt{sync team}, etc.) to manage interactions between packs.
+    \item \textbf{Encapsulation}:
+        Encapsulate satellite behavior within types, ensuring clean separation between simulation logic and data structure.
+\end{itemize}
+
+\subsection{High-Level Design}
+
+The simulation follows this high-level flow:
+\begin{enumerate}
+    \item \textbf{Initialization}:
+        Distribute satellite data across images and initialize states (e.g., position, velocity, fuel).
+    \item \textbf{Engagement Simulation}:
+        Simulate pack dynamics within each image and coordinate inter-pack engagements using coarray communication.
+    \item \textbf{Result Aggregation}:
+        Gather and summarize results for analysis (e.g., pack status, satellite losses).
+\end{enumerate}
+
+This design ensures scalability, modularity, and efficient use of Fortran’s coarray features. Future sections will explore specific implementation details and results of these simulations.

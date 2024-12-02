@@ -121,4 +121,197 @@ end subroutine update_satellite_array
 
 This dual approach ensures both encapsulation and reusability while providing a clean and logical design for object-oriented programming in Fortran.
 
+
+\section{type vs. class}
+
+Fortran provides two mechanisms for defining user-defined data types: \texttt{type} and \texttt{class}. While both are used to create structured data and associated behaviors, their capabilities and intended uses differ significantly.
+
+\subsection{type: Static, Non-Polymorphic}
+A \texttt{type} variable is bound to a specific derived type. It does not support polymorphism or dynamic dispatch, which means the type and behavior are fixed at compile time. This results in simpler and more efficient code.
+
+\textbf{Use \texttt{type} when:}
+\begin{itemize}
+    \item Polymorphism is not required.
+    \item Performance and simplicity are priorities.
+    \item Fixed-functionality components are sufficient.
+\end{itemize}
+
+\begin{lstlisting}[caption={Example of type Usage}, label={lst:type_example}]
+type :: point
+    real :: x, y, z
+end type
+
+type(point) :: p
+p%x = 1.0
+p%y = 2.0
+p%z = 3.0
+\end{lstlisting}
+
+\subsection{class: Dynamic, Polymorphic}
+A \texttt{class} variable can hold an instance of its declared type or any type that extends it. This feature enables polymorphism and dynamic dispatch, allowing behavior to vary based on the actual type of the object at runtime.
+
+\textbf{Use \texttt{class} when:}
+\begin{itemize}
+    \item Polymorphism is needed.
+    \item Inheritance and type extension are required.
+    \item You need dynamic dispatch or heterogeneous collections.
+\end{itemize}
+
+\begin{lstlisting}[caption={Example of class Usage}, label={lst:class_example}]
+type :: particle
+    real :: mass
+contains
+    procedure :: move
+end type
+
+type, extends(particle) :: charged_particle
+    real :: charge
+end type
+
+class(particle), allocatable :: p
+allocate(charged_particle :: p)
+call p%move()  ! Runtime dispatch to `move` of `charged_particle`.
+\end{lstlisting}
+
+\subsection{Comparison of type and class}
+The following table summarizes the differences between \texttt{type} and \texttt{class}:
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{l l l}
+\hline
+\textbf{Feature}       & \textbf{type}                              & \textbf{class}                            \\ \hline
+Polymorphism           & Not supported                             & Supported                                 \\
+Dynamic Dispatch       & Not supported                             & Supported                                 \\
+Type Safety            & Static type checking at compile time      & Runtime type checking for extensions      \\
+Inheritance            & Cannot store extended types               & Can store base and extended types         \\
+Performance            & Faster, less overhead                     & Slight runtime overhead                   \\
+\hline
+\end{tabular}
+\caption{Comparison of type and class in Fortran}
+\label{tab:type_class_comparison}
+\end{table}
+
+\subsection{Best Practices}
+\begin{itemize}
+    \item Start with \texttt{type} for simple, static data structures.
+    \item Use \texttt{class} when your design requires polymorphism, inheritance, or dynamic dispatch.
+    \item Opt for \texttt{class} if you need flexibility and maintainability in an object-oriented program.
+    \item Consider performance trade-offs: \texttt{class} adds a small runtime overhead compared to \texttt{type}.
+\end{itemize}
+
+\subsection{Rule of Thumb}
+\textbf{If you don’t need polymorphism, stick to \texttt{type}. Switch to \texttt{class} only when object-oriented features such as inheritance and dynamic dispatch become essential.}
+
+\begin{center}
+\textit{Fortran's \texttt{type} and \texttt{class} empower you to choose between static simplicity and dynamic flexibility—decide based on your program's needs.}
+\end{center}
+
+
+\section{Dynamic Dispatch}
+
+Dynamic dispatch is a fundamental mechanism in object-oriented programming that enables the selection of the appropriate implementation of a polymorphic procedure at runtime. Unlike static dispatch, where the procedure is determined at compile time based on the declared type of an object, dynamic dispatch resolves the procedure based on the object's actual (dynamic) type during execution.
+
+\subsection{Definition and Key Concepts}
+
+\textbf{Dynamic Dispatch:} The mechanism that selects the implementation of a type-bound procedure at runtime based on the dynamic type of a polymorphic object.
+
+\textbf{Key Components:}
+\begin{itemize}
+    \item \textbf{Polymorphism:} Dynamic dispatch requires polymorphism, where a variable can hold objects of its declared type or any derived type.
+    \item \textbf{Type Hierarchy:} Objects belong to a hierarchy of types, starting with a base type and extending to derived types that override base functionality.
+    \item \textbf{Type-Bound Procedures:} Procedures associated with a type, resolved dynamically when called on polymorphic objects.
+    \item \textbf{Dispatch Mechanism:} The compiler generates a virtual table (vtable) to map each object's type to its corresponding procedures. This table is used at runtime to resolve calls.
+\end{itemize}
+
+\subsection{Dynamic Dispatch in Fortran}
+
+Fortran supports dynamic dispatch through the \texttt{class} keyword and type-bound procedures. Polymorphic objects declared with \texttt{class} can hold instances of their declared type or any of its extensions. When a type-bound procedure is invoked, the actual procedure executed depends on the dynamic type of the object.
+
+\begin{lstlisting}[caption={Example of Dynamic Dispatch in Fortran}, label={lst:dynamic_dispatch}]
+module mParticles
+    implicit none
+
+    ! Base type: particle
+    type :: particle
+        real :: mass
+    contains
+        procedure :: move => move_particle  ! Type-bound procedure
+    end type particle
+
+    ! Derived type: charged_particle
+    type, extends(particle) :: charged_particle
+        real :: charge
+    contains
+        procedure :: move => move_charged_particle  ! Override base procedure
+    end type charged_particle
+
+contains
+
+    ! Procedure for base type
+    subroutine move_particle(self)
+        class(particle), intent(inout) :: self
+        print *, "Moving a generic particle with mass", self%mass
+    end subroutine move_particle
+
+    ! Procedure for derived type
+    subroutine move_charged_particle(self)
+        class(charged_particle), intent(inout) :: self
+        print *, "Moving a charged particle with mass", self%mass, "and charge", self%charge
+    end subroutine move_charged_particle
+
+end module mParticles
+
+program test_dispatch
+    use mParticles
+    implicit none
+
+    class(particle), allocatable :: p  ! Polymorphic object
+
+    ! Allocate base type
+    allocate(particle :: p)
+    p%mass = 1.0
+    call p%move()  ! Calls move_particle
+
+    ! Allocate derived type
+    allocate(charged_particle :: p)
+    p%mass = 1.5
+    call p%move()  ! Calls move_charged_particle
+end program test_dispatch
+\end{lstlisting}
+
+\subsection{Advantages of Dynamic Dispatch}
+\begin{itemize}
+    \item \textbf{Extensibility:} New derived types can be added without modifying existing code.
+    \item \textbf{Runtime Flexibility:} Behavior depends on the actual type of an object, enabling more general and reusable designs.
+\end{itemize}
+
+\subsection{Comparison with Static Dispatch}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{l l l}
+\hline
+\textbf{Feature}        & \textbf{Static Dispatch}                & \textbf{Dynamic Dispatch}                \\ \hline
+Resolution Time         & Compile-time                           & Runtime                                  \\
+Procedure Selection     & Based on declared (static) type        & Based on actual (dynamic) type           \\
+Flexibility             & Limited to compile-time knowledge      & Supports runtime type-dependent behavior \\
+Performance             & Faster, no runtime lookup              & Slightly slower due to runtime overhead  \\ \hline
+\end{tabular}
+\caption{Comparison of Static and Dynamic Dispatch}
+\label{tab:dispatch_comparison}
+\end{table}
+
+\subsection{Key Takeaways}
+\begin{itemize}
+    \item Use \textbf{dynamic dispatch} when the behavior of a procedure depends on the runtime type of an object.
+    \item Polymorphism and type-bound procedures make dynamic dispatch a powerful tool for object-oriented design.
+    \item Be aware of the slight runtime overhead associated with dynamic dispatch due to vtable lookups.
+\end{itemize}
+
+\begin{center}
+\textit{Dynamic dispatch is a cornerstone of object-oriented programming, enabling flexible and extensible designs by resolving procedure calls at runtime.}
+\end{center}
+
+
 \endinput  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
