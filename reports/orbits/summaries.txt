@@ -1,0 +1,58 @@
+The results of our navigation experiment demonstrate
+that RTK positioning accuracy is improved from meter to decimeter level with fixed ambiguity (horizontal < 2 cm, vertical < 18 cm).
+Horizontal accuracy is improved by over 50%, and the vertical accuracies of the results of the static and kinematic experiments are
+increased by 47% and 27% respectively, compared with the results produced by the classical approach. Though as the baseline becomes
+longer, the accuracy is weakened, our predictive algorithm is an improvement over existing approaches to overcome the issue of missing
+data.
+
+
+A novel predictive algorithm for double difference observations of obstructed BeiDou geostationary earth orbit (GEO) satellites
+
+
+
+
+Reduced dynamic and kinematic precise orbit determination
+for the Swarm mission from 4 years of GPS tracking
+30% improvement in the precision of the reduced dynamic orbits with resulting errors at the 0.5--1 cm level (1D RMS)
+
+
+
+Precise relative positioning using real tracking data from COMPASS GEO and IGSO satellites
+The precision of COMPASS only solutions is better than 2 cm for the North component and 4 cm for the vertical.
+
+
+Precise Orbit Determination of the ZY3-03
+Satellite Using the Yaw-Attitude Modeling
+for Drift Angle CompensationThe orbit determination experiments have revealed that the zero-yaw assumption in the zero-attitude model would result in periodic orbit errors of up to ±86 mm in the normal direction, while
+the proposed model can describe yaw angle variations accurately with errors of less than ±0.01◦
+
+
+Dynamic and Reduced-Dynamic Precise Orbit
+Determination of Satellites in Low Earth Orbits
+The precise positioning of satellites in Low Earth Orbits (LEO) has become a key technology
+for advanced space missions. Dedicated satellite missions, such as CHAMP, GRACE and
+GOCE, that aim to map the Earth’s gravity field and its variation over time with
+unprecedented accuracy,
+
+Orbital arcs over a whole day can be generated with an
+accuracy of up to 4.5 cm RMS. 
+
+
+Aiming at a 1-cm Orbit for Low Earth Orbiters: Reduced-Dynamic and Kinematic Precise Orbit Determination
+Both techniques have reached a high level of maturity and have been successfully applied to missions in th past, for example to TOPEX/POSEIDON (T/P), leading to (sub-)decimeter orbit accuracy.
+
+A novel method for improving LEO kinematic real-time precise orbit determination with neural networks
+Benefiting from this method, a promising accuracy of 3.2 cm can be achieved in LEO KRTPOD
+
+
+Precise orbit determination for low Earth orbit satellites using GNSS: Observations, models, and methods
+Using a state-of-the-art combination of GNSS observations and satellite dynamics, the absolute orbit determination for a single satellite reached a precision of 1 cm.
+
+
+Precise Orbit Determination for Maneuvering HY2D Using Onboard GNSS Data
+the three-dimensional position difference is about 1.16 cm
+
+
+
+
+

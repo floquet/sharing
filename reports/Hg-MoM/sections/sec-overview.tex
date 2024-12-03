@@ -74,6 +74,7 @@ where $r$ is the distance to the target, $S_{t}$ is the energy {\it{intercepted}
 
 The areal measure $\sigma$ is computed through numerical simulation by the program Mercury MoM.
 
+%     %     %     %     %     %     %     %     %
 \subsection{Maxwell's Equations}
 The mathematical foundation for the radar cross section computation is the set of Maxwell's equations.
 Start with two conservative fields on a simply connected domain, the electric field $\mathbf{E}\colon\mathbb{R}^{3}\mapsto\mathbb{R}^{3}$, and the magnetic field $\mathbf{B}\colon\mathbb{R}^{3}\mapsto\mathbb{R}^{3}$. We can relax the requirements for the electric current $\mathbf{J}\colon\mathbb{R}^{3}\mapsto\mathbb{R}^{3}$.
@@ -113,6 +114,7 @@ The fundamental physical constant in SI units are given in table \ref{tab:mu-eps
 \label{tab:mu-eps}
 \end{table}
 
+%     %     %     %     %     %     %     %     %
 \subsection{Method of Moments}
 There is a rich mathematical toolkit for the solution of Maxwell's equations. Mercury MoM uses the \href{https://en.wikipedia.org/wiki/Computational_electromagnetics#Method_of_moments_element_method}{method of moments} (MoM), also known as the boundary element method (BEM).
 \href{https://en.wikipedia.org/wiki/Maxwell\%27s\_equations}{Maxwell's equations in integral form}
@@ -136,6 +138,7 @@ There is a rich mathematical toolkit for the solution of Maxwell's equations. Me
 \end{equation}
 The method of moments creates dense matrices which implies quadratic growth in storage and computation time as the problem scales up. 
 
+%     %     %     %     %     %     %     %     %
 \subsection{Mercury MoM Example}
 The power of Mercury MoM is the ability to simultaneously solve equations with millions of unknowns using a patented low rank approximation method for the linear system.
 
@@ -148,6 +151,7 @@ The prescription for the mean total radar cross section is taken from the Sciacc
 and is assigned areal units of squared meters m$^{2}$.
 \section{Fourier Expansion}
 
+%     %     %     %     %     %     %     %     %
 \subsection{Why Fourier?}
 What is the best way to approximate information in the cross sections curves shown in figure \ref{tab:sigma-nu}? Given that the data is periodic over the unit circle, 
 \begin{equation}
@@ -169,6 +173,7 @@ The second reason is the \href{https://en.wikipedia.org/wiki/Riesz–Fischer_the
 
 The final reason is the often-overlooked fact that of all the orthogonal polynomials, only the trigonometric polynomials are orthogonal in both the continuous topology of $L^{2}$ and and the discrete orthogonality of $l^{2}$. Having an orthogonal basis decouples the problem and can be solved mode-by--mode, obviating the need to solve a large linear system.
 
+%     %     %     %     %     %     %     %     %
 \subsection{Orthogonality}
 \begin{equation}
 	\int_{-\pi}^{\pi} e^{I m \theta} e^{I n \theta} d\theta = \int_{-\pi}^{\pi} e^{I m + n \theta} d\theta = \pi \delta^{m}_{n}
@@ -211,6 +216,7 @@ The linear system decouples and amplitudes for each mode can be computed indepen
 \end{equation}
 where $k=1,2,3,\dots$.
 
+%     %     %     %     %     %     %     %     %
 \subsection{Projection}
 Consider the low--order approximation 
 %
@@ -237,6 +243,7 @@ The result is the rather general formula
 \end{equation}
 Because the basis functions are orthogonal, the modes are decoupled and the amplitudes can be computed independently.
 
+%     %     %     %     %     %     %     %     %
 \subsection{Discrete Topology}
 The continuum formulation in $L^{2}$ is useful for understanding the critical components of the theory and makes a natural starting point for discussing the discrete topology of $l^{2}$. The moment we discretize the problem in a computer code, we switch from the continuum to a discrete space. Out of all the known orthogonal polynomials, only two are orthogonal in both $L^{2}$ and $l^{2}$, and these are the sine and cosine functions. 
 
@@ -261,6 +268,7 @@ The least squares solution for the parameter $\mu$ is simply the average of the 
 \end{equation}
 Compare to $a_{0}$
 
+%     %     %     %     %     %     %     %     %
 \subsubsection{Continuum to discrete}
 The continuum formulation translates to discrete spaces using the idea of the integral as a Riemann sum: 
 \begin{equation}
@@ -280,8 +288,10 @@ Then the interval length is
 	\frac{\int_{b}^{a} f(x) dx }{L} \quad \Rightarrow \quad \frac{\sum_{k=1}^{m} f(x) \Delta}{m \Delta} =  \frac{\sum_{k=1}^{m} f(x)}{m}
 \end{equation}
 
+%     %     %     %     %     %     %     %     %
 \subsection{Linear Independence}
 	
+%     %     %     %     %     %     %     %     %
 \subsection{Quality of Fit}
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

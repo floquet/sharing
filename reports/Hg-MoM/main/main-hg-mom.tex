@@ -94,6 +94,27 @@ keepspaces=true,
 xleftmargin=\parindent,
 showstringspaces=false}
 
+% Define Mathematica language style
+\lstdefinelanguage{Mathematica}{
+    morekeywords={Plot, Sin, Cos, Pi, Exp, Abs, Table, Sum, SphericalHarmonicY, NIntegrate, Conjugate, SphericalPlot3D},
+    sensitive=true,
+    morecomment=[l]{(*},
+    morecomment=[s]{(*}{*)},
+    morestring=[b]{"}
+}
+
+\lstset{
+    language=Mathematica,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red!50!black},
+    frame=single,
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    showstringspaces=false
+}
 
 \title{Simulation of \\Radar Profiles for Satellites}
 \author{Daniel Topa\\\TopaHIIEmail}
@@ -108,6 +129,7 @@ showstringspaces=false}
 			\input{\pSections "sec-writ-large"}
 			\input{\pSections "sec-precis"}
 			\input{\pSections sec-overview}
+			\input{\pSections sec-sh}
 			\input{\pSections sec-file-types}
 			%\input{\pSections sec-A-CAD-model}
 			%\input{\pSections sec-B-mesh-sealing}
