@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{Zernike Decomposition of the Tophat Function}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Problem Setup}
+The tophat function \( g(r) \) is defined as:
+\begin{equation}
+g(r) = 
+\begin{cases} 
+0 & \text{if } 0 \leq \abs{r} < \frac{1}{2}, \\
+1 & \text{if } \frac{1}{2} \leq \abs{r} \leq 1, \\
+\end{cases}
+\end{equation}
+
+The Tophat function, f(r)f(r), is a symmetric piecewise-defined function closely related to the Heaviside step function. It is non-zero within a specific radius and zero outside, representing a 1D analog of a 2D tophat profile.
+
+\begin{center}
+\textbf{Achates' idea for improvement: Add a plot of \( g(r) \) generated in Mathematica.}
+\end{center}
+
+The goal is to approximate \( g(r) \) using a series of rotationally invariant Zernike polynomials:
+\begin{equation}
+f(r) = a_{0,0} Z_{0,0}(r) + a_{2,0} Z_{2,0}(r) + a_{4,0} Z_{4,0}(r) + \dots
+\end{equation}
+where \( Z_{k,0}(r) \) are the radial Zernike polynomials with even indices \( k \), and \( a_{k,0} \) are the amplitudes.
+
+\section{Objective Function}
+To find the amplitudes \( a_{k,0} \), we minimize the least-squares difference:
+\begin{equation}
+\int_{0}^{1} \left( g(r) - f(r) \right)^2 r \, dr.
+\end{equation}
+Expanding \( f(r) \) in terms of the Zernike polynomials, we have:
+\begin{equation}
+f(r) = \sum_{k=0, k \text{ even}}^{\infty} a_{k,0} Z_{k,0}(r).
+\end{equation}
+
+\begin{center}
+\textbf{Achates' idea for improvement: Add an explanation of why Zernike polynomials are suitable for this problem.}
+\end{center}
+
+\section{Amplitude Calculation}
+The amplitudes \( a_{k,0} \) are computed by:
+\begin{equation}
+a_{k,0} = \frac{\int_{0}^{1} g(r) Z_{k,0}(r) r \, dr}{\int_{0}^{1} Z_{k,0}(r)^2 r \, dr}.
+\end{equation}
+This formula minimizes the least-squares error in the approximation.
+
+\begin{center}
+\textbf{Achates' idea for improvement: Add a plot illustrating the first few Zernike radial polynomials.}
+\end{center}
+
+\section{Future Work}
+\begin{itemize}
+    \item Extend the decomposition to higher-order terms and evaluate convergence.
+    \item Explore 2D Zernike polynomials for functions defined over a disk.
+    \item Add numerical results and graphs showing the approximation of \( g(r) \).
+\end{itemize}
+
+\section{Conclusion}
+The Zernike decomposition provides a systematic way to approximate rotationally symmetric functions like the tophat function. By computing the amplitudes \( a_{k,0} \), we achieve an efficient representation using a compact basis of polynomials.
+
+\begin{center}
+\textbf{Achates' idea for improvement: Add numerical results and discuss error analysis.}
+\end{center}
+
+\end{document}
