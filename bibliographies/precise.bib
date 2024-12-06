@@ -1,12 +1,182 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Daniel Topa at 2024-12-03 13:00:41 -0700 
+%% Created for Daniel Topa at 2024-12-05 17:00:49 -0700 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
 
 
+
+@article{schrama2024choices,
+	abstract = {In this paper we review the precision orbit determination (POD) performance of the CryoSat-2 mission where we used all tracking data between June-2010 and Jan-2023; with station and beacon coordinates provided in the ITRF2020 reference system, we use a mean gravity model, and we use spacecraft specific models for modeling drag and radiation pressure. To model time variable gravity (TVG) we distinguish between two components, there is a short term oceanic and atmospheric part for which we use the AOD1B model; for the longer term part we employ GRACE and GRACE-FO monthly potential coefficient solutions. Our experience is that adding TVG information is not necessarily successful during POD, and that attention must be paid to the proper processing of the GRACE and GRACE-FO data. To demonstrate this property we define four runs where we gradually implement TVG information. An evaluation criterion is the level of POD tracking residuals, the level of the empirical accelerations, and a comparison to precision orbit ephemeris provided by the Centre National d'Etudes Spatiales (CNES). Unexplained empirical accelerations found during POD are on the level of 3 for the along-track component and 13 for the cross-track component. The laser residuals converge at approximately 1.02 cm and the Doppler residuals are on the level of 0.406 mm/s, the radial orbit difference to the CNES POE-F (Precision Orbit Ephemeris version F) orbits narrows to 6.5 mm. Tracking residuals are not evenly distributed for DORIS (Doppler Orbitography and Radiopositioning Integrated by Satellite) beacons, the South Atlantic Anomaly effect is for instance clearly visible in the first empirical orthogonal function EOF mode of monthly binned DORIS residuals. After consideration of all possible TVG approaches our conclusion is that 3 hourly AOD1B model fields result in a small but visible improvement. The addition of TVG from GRACE and GRACE-FO is implemented in two different ways from which we can select a version that does lead to a reduction in the Doppler tracking residuals and which does reduce the level of solved for empirical accelerations.},
+	author = {Schrama, EJO and Visser, PNAM},
+	date-added = {2024-12-05 16:03:02 -0700},
+	date-modified = {2024-12-05 16:03:31 -0700},
+	journal = {Advances in Space Research},
+	number = {1},
+	pages = {31--41},
+	publisher = {Elsevier},
+	title = {Choices for temporal gravity field modeling for precision orbit determination of CryoSat-2},
+	volume = {73},
+	year = {2024}}
+
+@inproceedings{gaur2019precision,
+	abstract = {Precision orbit determination (POD) these days emerging to be one of the paramount research domains in spaceflight tasks., predominantly in altimetric tasks such as earth observing system mission: Ice, Cloud, and land Elevation Satellite (ICESAT) mission, satellite oceanography mission: JASON-1, and ICESat, and ocean surface topography mission: TOPEX/POSEIDON, which demands high precision (in centimeters) for radial orbits. Although, there exists limitations on orbit determination accuracy which are mainly because of the pre-existing unmodeled accelerations. To counter this problem and thus boosting orbit determination precision values for error driven dynamic models new methodologies have been surfaced. Two predominantly used algorithms to handle such tasks are State Noise Compensation (SNC) and Dynamic Model Compensation (DMC). Research presented aims at investigating and comparing the two algorithms to demonstrate the efficacy of both. To demonstrate benefits associated, an extension is incorporated in which DMC of 2 nd -order is defined based on the assumption that characterization of unmodeled acceleration is possible in terms of differential equation of 2nd -order, followed by an example. As a result, it is observed that DMC of 2nd -order tend to deliver more precise estimate of position, velocity, as well as acceleration., along with better stability in comparison to conventional SNC and DMC. Moreover, a numerical simulation is conducted using DMC of 2 nd -order with substandard tracking information of Lower Earth Orbit (LEO) satellite and on comparison of results with those incorporating Kalman filter exclusively, it is assessed that for substandard tracking, DMC of 2nd -order can perform efficiently delivering relatively precise trajectory estimation.},
+	author = {Gaur, Deepak and Prasad, Mani Shankar},
+	booktitle = {2019 3rd International Conference on Recent Developments in Control, Automation \& Power Engineering (RDCAPE)},
+	date-added = {2024-12-05 15:18:44 -0700},
+	date-modified = {2024-12-05 15:19:02 -0700},
+	organization = {IEEE},
+	pages = {38--44},
+	title = {Precision Orbit Determination for Errored Dynamic Models},
+	year = {2019}}
+
+@article{wang2024impact,
+	abstract = {Haiyang-2A (HY-2A) is the first marine dynamic environment satellite established by China, which has made significant contributions to the marine scientific research field. It carries the satellite-based GPS receiver named HY2, which was independently developed by China. It is an experimental satellite-borne GPS receiver for low earth orbit satellites, and during its operational period in orbit, the satellite-borne GPS data are not made accessible to the public. Therefore, this paper assesses the quality of HY-2A satellite-borne GPS data based on indicators such as satellite visibility, multipath effect, and ionospheric delay. The results indicate that the data acquired by the HY2 receiver are of high quality. The precise orbit determination (POD) uses the reduced-dynamic (RD) method. The adjustment effects of the pseudo-stochastic pulse time interval and a priori sigma on POD are analyzed, and the antenna phase center variation (PCV) is estimated using the direct method and residual method. Furthermore, this paper investigates the impact of PCV models with different resolutions (10$\,^{\circ}$ × 10$\,^{\circ}$ and 5$\,^{\circ}$ × 5$\,^{\circ}$) on satellite orbit determination. To evaluate the orbit precision, three methods are used for validation, including carrier phase residual analysis, external precise science orbit (PSO) validation, and SLR three-dimensional (3D) validation, respectively. The results indicate that the highest orbit precision is achieved when the pseudo-stochastic pulse time interval is configured to 15 min, with the a priori sigma of 1 × 10−8 m/s2. The orbit carrier phase residuals reach the millimeter level. The 10$\,^{\circ}$ × 10$\,^{\circ}$PCV model was estimated using the direct method and residual method, respectively; the root mean square of the external orbit validation for both methods show a millimeter-level improvement. The results obtained from the direct method and residual method are comparable. The resolution is increased from 10$\,^{\circ}$ to 5$\,^{\circ}$, and the improvement in orbital precision is relatively small. The results obtained from the SLR 3D validation are consistent with those from the external PSO validation. The experimental results contribute valuable information for the POD of the HY2 series satellites.},
+	author = {Wang, Youyuan and Guo, Jinyun and Ya, Shaoshuai and Jia, Yongjun and Guo, Hengyang and Chang, Xiaotao and Liu, Xin},
+	date-added = {2024-12-05 15:06:09 -0700},
+	date-modified = {2024-12-05 15:06:32 -0700},
+	journal = {Remote Sensing},
+	number = {8},
+	pages = {1336},
+	publisher = {MDPI},
+	title = {Impact of Pseudo-Stochastic Pulse and Phase Center Variation on Precision Orbit Determination of Haiyang-2A from Experimental HY2 Receiver GPS Data},
+	volume = {16},
+	year = {2024}}
+
+@article{10122508,
+	abstract = {Tianjin University-1 (TJU-1) is a small low-Earth-orbiting (LEO) meteorological satellite equipped with a multi-global navigation satellite system (GNSS) receiver that provides the dual-frequency pseudorange and carrier-phase measurements from Global Positioning System (GPS), Global Navigation Satellite System (GLONASS), and BeiDou Navigation Satellite System (BDS), including BDS-2 and BDS-3. In this contribution, the quality of GNSS data during the period of 2022/31--2022/37 is assessed, and the precise orbit determination (POD) based on the onboard GNSS data is conducted. Assessing the pseudorange measurement accuracy, it reveals that the GPS and BDS-3 are comparable, followed by BDS-2, and GLONASS the worst. The POD experiments demonstrate that the orbit precision of all single-GNSS solutions is almost at an equivalent level of 2.2--3.4 cm, in terms of the overlapped orbit consistency, and the GPS-based solution is slightly worse than the BDS-based one and the GLONASS-based one is worse than other two. According to the orbit differences between different solutions, the orbit accuracy of single-GNSS solutions is inferred to be at the level of about 4.7--6.2 cm. With the multi-GNSS fusion, the precision and inferred accuracy of orbits could be improved significantly to 1.7--2.1 cm and about 1.7--3.7 cm, respectively. Furthermore, the root mean square (RMS) of posteriori carrier-phase residuals for all the IGSO/MEO satellites is at the level of 7--15 mm in different single-GNSS and multi-GNSS fusion solutions. These performances have fully demonstrated that the centimeter-level POD is easily achievable for small LEO satellites by using the multi-GNSS receiver.},
+	author = {Gong, Xuewen and Li, Xingxing and Wang, Pengcheng and Wang, Qingyun and Wang, Fuhong and Sang, Jizhang and Gao, Shuaihe},
+	date-added = {2024-12-05 14:51:50 -0700},
+	date-modified = {2024-12-05 14:52:45 -0700},
+	doi = {10.1109/JSEN.2023.3272923},
+	journal = {IEEE Sensors Journal},
+	keywords = {Satellites;Global navigation satellite system;Orbits;Receivers;Global Positioning System;Satellite broadcasting;Low earth orbit satellites;Global navigation satellite system (GNSS) data quality;multi-GNSS fusion;precise orbit determination (POD);precision and accuracy;Tianjin University-1 (TJU-1)},
+	number = {12},
+	pages = {13340-13350},
+	title = {High-Precision Orbit Determination of the Small TJU-1 Satellite Using GPS, GLONASS, and BDS},
+	volume = {23},
+	year = {2023},
+	bdsk-url-1 = {https://doi.org/10.1109/JSEN.2023.3272923}}
+
+@book{Hairer1993,
+	address = {Berlin, Heidelberg},
+	author = {E. Hairer and S. P. N{\o}rsett and G. Wanner},
+	date-added = {2024-12-05 14:21:21 -0700},
+	date-modified = {2024-12-05 14:21:21 -0700},
+	doi = {10.1007/978-3-662-09947-6},
+	edition = {2nd},
+	isbn = {978-3-540-56670-0},
+	note = {A comprehensive resource for numerical methods in solving ordinary differential equations.},
+	publisher = {Springer},
+	series = {Springer Series in Computational Mathematics},
+	title = {Solving Ordinary Differential Equations: Nonstiff Problems},
+	volume = {8},
+	year = {1993},
+	bdsk-url-1 = {https://doi.org/10.1007/978-3-662-09947-6}}
+
+@article{shampine1986some,
+	abstract = {A new selection is made of the most practical of the many explicit Runge-Kutta formulas of order 4 which have been proposed. A new formula is considered, formulas are modified to improve their quality and efficiency in agreement with improved understanding of the issues, and formulas are derived which permit interpolation. It is possible to do a lot better than the pair of Fehlberg currently regarded as" best"},
+	author = {Shampine, Lawrence F},
+	date-added = {2024-12-05 14:10:16 -0700},
+	date-modified = {2024-12-05 14:10:16 -0700},
+	journal = {Mathematics of computation},
+	number = {173},
+	pages = {135--150},
+	title = {Some practical runge-kutta formulas},
+	volume = {46},
+	year = {1986}}
+
+@online{cash_karp_method,
+	author = {{Wikipedia contributors}},
+	date-added = {2024-12-05 14:02:30 -0700},
+	date-modified = {2024-12-05 14:02:30 -0700},
+	note = {Accessed: 2024-12-05},
+	title = {Cash--Karp method},
+	url = {https://en.wikipedia.org/wiki/Cash%E2%80%93Karp_method},
+	urldate = {2024-12-05},
+	year = {2024},
+	bdsk-url-1 = {https://en.wikipedia.org/wiki/Cash%E2%80%93Karp_method}}
+
+@online{runge_kutta_fehlberg_method,
+	author = {{Wikipedia contributors}},
+	date-added = {2024-12-05 14:02:22 -0700},
+	date-modified = {2024-12-05 14:02:22 -0700},
+	note = {Accessed: 2024-12-05},
+	title = {Runge--Kutta--Fehlberg method},
+	url = {https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta%E2%80%93Fehlberg_method},
+	urldate = {2024-12-05},
+	year = {2024},
+	bdsk-url-1 = {https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta%E2%80%93Fehlberg_method}}
+
+@online{dormand_prince_method,
+	author = {{Wikipedia contributors}},
+	date-added = {2024-12-05 14:02:12 -0700},
+	date-modified = {2024-12-05 14:02:12 -0700},
+	note = {Accessed: 2024-12-05},
+	title = {Dormand--Prince method},
+	url = {https://en.wikipedia.org/wiki/Dormand%E2%80%93Prince_method},
+	urldate = {2024-12-05},
+	year = {2024},
+	bdsk-url-1 = {https://en.wikipedia.org/wiki/Dormand%E2%80%93Prince_method}}
+
+@article{dormand1980family,
+	author = {Dormand, John R and Prince, Peter J},
+	date-added = {2024-12-05 07:26:33 -0700},
+	date-modified = {2024-12-05 07:26:33 -0700},
+	journal = {Journal of computational and applied mathematics},
+	number = {1},
+	pages = {19--26},
+	publisher = {Elsevier},
+	title = {A family of embedded Runge-Kutta formulae},
+	volume = {6},
+	year = {1980}}
+
+@article{kopeikin2004parametrized,
+	abstract = {Post-Newtonian relativistic theory of astronomical reference frames based on Einstein's general theory of relativity was adopted by General Assembly of the International Astronomical Union in 2000. This theory is extended in the present paper by taking into account all relativistic effects caused by the presumable existence of a scalar field and parametrized by two parameters, β and γ, of the parametrized post-Newtonian (PPN) formalism. We use a general class of the scalar-tensor (Brans-Dicke type) theories of gravitation to work out PPN concepts of global and local reference frames for an astronomical N-body system. The global reference frame is a standard PPN coordinate system. A local reference frame is constructed in the vicinity of a weakly self-gravitating body (a sub-system of the bodies) that is a member of the astronomical N-body system. Such local inertial frame is required for unambiguous derivation of the equations of motion of the body in the field of other members of the N-body system and for construction of adequate algorithms for data analysis of various gravitational experiments conducted in ground-based laboratories and/or on board of spacecrafts in the solar system. We assume that the bodies comprising the N-body system have weak gravitational field and move slowly. At the same time we do not impose any specific limitations on the distribution of density, velocity and the equation of state of the body's matter. Scalar--tensor equations of the gravitational field are solved by making use of the post-Newtonian approximations so that the metric tensor and the scalar field are obtained as functions of the global and local coordinates. A correspondence between the local and global coordinate frames is found by making use of asymptotic expansion matching technique. This technique allows us to find a class of the post-Newtonian coordinate transformations between the frames as well as equations of translational motion of the origin of the local frame along with the law of relativistic precession of its spatial axes. These transformations depend on the PPN parameters \beta and \gamma, generalize general relativistic transformations of the IAU 2000 resolutions, and should be used in the data processing of the solar system gravitational experiments aimed to detect the presence of the scalar field. These PPN transformations are also applicable in the precise time-keeping metrology, celestial mechanics, astrometry, geodesy and navigation. We consider a multipolar post-Newtonian expansion of the gravitational and scalar fields and construct a set of internal and external gravitational multipoles depending on the parameters \beta and \gamma. These PPN multipoles generalize the Thorne-Blanchet-Damour multipoles defined in harmonic coordinates of general theory of relativity. The PPN multipoles of the scalar-tensor theory of gravity are split in three classes---active, conformal, and scalar multipoles. Only two of them are algebraically independent and we chose to work with the conformal and active multipoles. We derive the laws of conservations of the multipole moments and show that they must be formulated in terms of the conformal multipoles. We focus then on the law of conservation of body's linear momentum which is defined as a time derivative of the conformal dipole moment of the body in the local coordinates. We prove that the local force violating the law of conservation of the body's linear momentum depends exclusively on the active multipole moments of the body along with a few other terms which depend on the internal structure of the body and are responsible for the violation of the strong principle of equivalence (the Nordtvedt effect).},
+	author = {Kopeikin, Sergei and Vlasov, Igor},
+	date-added = {2024-12-04 10:27:32 -0700},
+	date-modified = {2024-12-04 10:27:32 -0700},
+	journal = {Physics Reports},
+	number = {4-6},
+	pages = {209--318},
+	publisher = {Elsevier},
+	title = {Parametrized post-Newtonian theory of reference frames, multipolar expansions and equations of motion in the N-body problem},
+	volume = {400},
+	year = {2004}}
+
+@article{roh2018numerical,
+	abstract = {PRECISE orbital knowledge is one of the most stringent requirements for a global navigation satellite system (GNSS) because the positions of the GNSS satellites serve as reference points. If the reference points are provided with high precision, better solutions can be achieved in most applications, such as positioning and time synchronization. One of the most important issues for precise orbit determination is that the orbital dynamic model should have an accuracy equivalent to that of the measurements. The measurement technology of the GNSS, based on the time and frequency transfer through atomic clocks, has achieved an accuracy on the order of 1× 10− 16, which is several orders of magnitude lower than that of the relativistic effect. The continuing progress in atomic clocks is expected to improve the accuracy at the rate of one order of magnitude per decade. There have been several extensive studies about the relativistic effects on the signal and time transfer in the GNSS [1]. The major relativistic effect of gravitational blue shift has already been taken into account in the Global Positioning System (GPS). The clocks on GPS satellites are adjusted so that the clocks appear to a ground station to have its chosen frequency. The details and additional relativistic effects on the atomic clocks in the GNSS satellites will not be discussed here because this Note focuses on the relativistic effects on the equations of motion of the GNSS satellites. Readers interested in the relativistic effects on the atomic clocks in the GNSS satellites can refer to the paper by Ashby [2]. According to the advances in measurement systems, the dynamic model (ie, the equations of motion of satellites) also needs to take into account the relativistic effects. Therefore, the International Earth Rotation and Reference System Service (IERS) has first recommended that the largest relativistic effect must be included (ie, the Schwarzschild terms), and this recommendation appeared in the IERS standards of 1992 [3]. The latest IERS conventions of 2010 [4] suggested that two additional relativistic perturbations (ie, the Lense--Thirring effect and de Sitter precession) should be taken into account for precise orbit determination. However, these two additional relativistic terms are still often ignored in GPS data processing [5].},
+	author = {Roh, Kyoung-Min},
+	date-added = {2024-12-04 09:56:41 -0700},
+	date-modified = {2024-12-04 09:56:41 -0700},
+	journal = {Journal of Spacecraft and Rockets},
+	keywords = {GNSS, KASIOP, LAGEOS, LARES,GLONASS},
+	number = {4},
+	pages = {1028--1033},
+	publisher = {American Institute of Aeronautics and Astronautics},
+	title = {Numerical evaluation of post-Newtonian perturbations on the Global Navigation Satellite System},
+	volume = {55},
+	year = {2018}}
+
+@article{ROH20162255,
+	abstract = {We study the post-Newtonian perturbations in the orbit of a near-Earth satellite by integrating them with a high-fidelity orbit propagation software KASIOP. The perturbations of the orbital elements are evaluated for various cases from a low-Earth orbit to a geostationary one, and from an equatorial to a polar orbit. In particular, the numerical simulation is applied to the LARES-like satellite under a realistic orbital configuration. The relativistic perturbations include the Schwarzschild term, the effects of Lense-Thirring precession, and the post-Newtonian term due to the quadrupole moment of the Earth as well as the post-Newtonian gravitoelectric and gravitomagnetic forces, which are produced by the tidal potential of the solar system bodies, are also modeled. The latter three terms are usually ignored in most orbit-propagation software. The secular variations of the orbital elements are evaluated from the orbital positions propagated for a half year. For a medium altitude orbit like that of the LARES mission, the magnitude of the relativistic perturbations ranges from the order of 10−7m/s2 by the Schwarzschild effect to 10−15m/s2 by the relativistic tidal effects. The orbital integration shows that the secular variations in three orbital elements -- the ascending node, the argument of perigee, and the mean anomaly at epoch -- are larger than the systematic error as results of the relativistic perturbations. The magnitudes of the secular variation are investigated in terms of the orbital altitude, inclination, and the size of each perturbation force. The numerical simulation rendered in this study shows that the secular post-Newtonian perturbations with the magnitude lying beyond the Schwarzschild and the Lense-Thirring effects need to be taken into account in current and upcoming space geodesy missions.},
+	author = {Kyoung-Min Roh and Sergei M. Kopeikin and Jung-Ho Cho},
+	date-added = {2024-12-04 09:56:41 -0700},
+	date-modified = {2024-12-04 09:56:41 -0700},
+	doi = {https://doi.org/10.1016/j.asr.2016.08.009},
+	issn = {0273-1177},
+	journal = {Advances in Space Research},
+	keywords = {Post-Newtonian, Orbit propagation, General relativity, Space Geodesy, Earth Quadrupole Moment, KASIOP},
+	number = {11},
+	pages = {2255-2268},
+	title = {Numerical simulation of the post-Newtonian equations of motion for the near Earth satellite with an application to the LARES satellite},
+	url = {https://www.sciencedirect.com/science/article/pii/S0273117716304422},
+	volume = {58},
+	year = {2016},
+	bdsk-url-1 = {https://www.sciencedirect.com/science/article/pii/S0273117716304422},
+	bdsk-url-2 = {https://doi.org/10.1016/j.asr.2016.08.009}}
 
 @inproceedings{maisonobe2010orekit,
 	abstract = {In 2002, the following observation was made by CS: several request for proposal (RFP) had come out that requested complete flight dynamics systems, either for low earth orbit or for geostationary orbit. Among the whole lot of products available on space flight dynamics market, several could pretend to fit, but they were either fulfilling only part of the requirements, or they were monolithic suites that offered much more possibilities than necessary. Moreover, proven systems were old. On CS side, lots of experience had been acquired along the years and the many fulfillments performed, but the company did not own the corresponding intellectual property. All the work done was on customers request and IP was sold along with the product. The licenses costs proved to be far too expensive and put customers off.
@@ -14,11 +184,13 @@ From that reflexion came out the idea to develop a CS-owned space-flight dynamic
 	author = {Maisonobe, Luc and Pommier, V{\'e}ronique and Parraud, Pascal},
 	booktitle = {4th international conference on astrodynamics tools and techniques},
 	date-added = {2024-12-03 12:58:40 -0700},
-	date-modified = {2024-12-03 12:59:00 -0700},
+	date-modified = {2024-12-04 09:50:08 -0700},
 	organization = {European Space Agency Paris},
 	pages = {3--6},
 	title = {Orekit: An open source library for operational flight dynamics applications},
-	year = {2010}}
+	url = {https://www.researchgate.net/profile/Luc-Maisonobe/publication/310250345_OREKIT_AN_OPEN_SOURCE_LIBRARY_FOR_OPERATIONAL_FLIGHT_DYNAMICS_APPLICATIONS/links/6034c01e299bf1cc26e4a550/OREKIT-AN-OPEN-SOURCE-LIBRARY-FOR-OPERATIONAL-FLIGHT-DYNAMICS-APPLICATIONS.pdf},
+	year = {2010},
+	bdsk-url-1 = {https://www.researchgate.net/profile/Luc-Maisonobe/publication/310250345_OREKIT_AN_OPEN_SOURCE_LIBRARY_FOR_OPERATIONAL_FLIGHT_DYNAMICS_APPLICATIONS/links/6034c01e299bf1cc26e4a550/OREKIT-AN-OPEN-SOURCE-LIBRARY-FOR-OPERATIONAL-FLIGHT-DYNAMICS-APPLICATIONS.pdf}}
 
 @techreport{gilbertson2017demonstrating,
 	abstract = {Orbit propagation is fundamental to almost every space-based analysis. Currently, many system analysts use commercial software to predict the future positions of orbiting satellites. This is one of many capabilities that can replicated, with great accuracy, without using expensive, proprietary software. NASAs SCaN (Space Communication and Navigation) Center for Engineering, Networks, Integration, and Communications (SCENIC) project plans to provide its analysis capabilities using a combination of internal and open-source software, allowing for a much greater measure of customization and flexibility, while reducing recurring software license costs. MATLAB and the open-source Orbit Determination Toolbox created by Goddard Space Flight Center (GSFC) were utilized to develop tools with the capability to propagate orbits, perform line-of-sight (LOS) availability analyses, and visualize the results. The developed programs are modular and can be applied for mission planning and viability analysis in a variety of Solar System applications. The tools can perform 2 and N-body orbit propagation, find inter-satellite and satellite to ground station LOS access (accounting for intermediate oblate spheroid body blocking, geometric restrictions of the antenna field-of-view (FOV), and relativistic corrections), and create animations of planetary movement, satellite orbits, and LOS accesses. The code is the basis for SCENICs broad analysis capabilities including dynamic link analysis, dilution-of-precision navigation analysis, and orbital availability calculations.},
@@ -27,7 +199,8 @@ From that reflexion came out the idea to develop a CS-owned space-flight dynamic
 	date-modified = {2024-12-03 12:16:08 -0700},
 	title = {Demonstrating High-Accuracy Orbital Access Using Open-Source Tools},
 	url = {https://ntrs.nasa.gov/api/citations/20170010173/downloads/20170010173.pdf},
-	year = {2017}}
+	year = {2017},
+	bdsk-url-1 = {https://ntrs.nasa.gov/api/citations/20170010173/downloads/20170010173.pdf}}
 
 @article{PROIETTI2021559,
 	abstract = {In nominal mission scenarios, geostationary satellites perform end-of-life orbit maneuvers to reach suitable disposal orbits, where they do not interfere with operational satellites. This research investigates the long-term orbit evolution of decommissioned geostationary satellite under the assumption that the disposal maneuver does not occur and the orbit evolves with no control. The dynamical model accounts for all the relevant harmonics of the terrestrial gravity field at the typical altitude of geostationary orbits, as well as solar radiation pressure and third-body perturbations caused by the Moon and the Sun. Orbit propagations are performed using two algorithms based on different equations of motion and numerical integration methods: (i) Gauss planetary equations for modified equinoctial elements with a Runge-Kutta numerical integration scheme based on 8--7th-order Dorman and Prince formulas; (ii) Cartesian state equations of motion in an Earth-fixed frame with a Runge-Kutta Fehlberg 7/8 integration scheme. The numerical results exhibit excellent agreement over integration times of decades. Some well-known phenomena emerge, such as the longitudinal drift due to the resonance between the orbital motion and Earth's rotation, attributable to the J22 term of the geopotential. In addition, the third-body perturbation due to Sun and Moon causes two major effects: (a) a precession of the orbital plane, and (b) complex longitudinal dynamics. This study proposes an analytical approach for the prediction of the precessional motion and show its agreement with the (more accurate) orbit evolution obtained numerically. Moreover, long-term orbit propagations show that the above mentioned complex longitudinal dynamics persists over time scales of several decades. Frequent and unpredictable migrations toward different longitude regions occur, in contrast with the known effects due only to the perturbative action of J22.},
@@ -297,14 +470,7 @@ acceleration error. This paper presents a detailed description of the technique 
 	year = {2024}}
 
 @article{montenbruck2002satellite,
-	abstract = {This book is intended to be a ``comprehensive textbook that guides the reader through the theory and practice of satellite orbit prediction and determination.'' This reviewer believes the book does just that. However, it is stated that it is intended for advanced undergraduate or graduate courses, and for professionals on the job. The undergraduate would likely have to struggle with the material presented in the book for two reasons. One is that s/he would not have a sufficient background in all the areas covered, and the other is that a significant amount of material is presented in such a concise form that it does not allow one to pick up the background material from the text. The diligent student, however, could refer to the ample references provided (approximately 320) to fill in the background gaps. The author's focus is on providing material currently being used for orbit prediction and determination. (A good portion of the references are from the 1990s.) There is little, if any, discussion of analytic approaches (such as perturbation techniques) that classically have been applied to such problems. There is an extensive amount of practical information regarding force modeling, measurements and filtering, tracking, reckoning time, and computer algorithms. This information is presented in nine chapters, two appendices, and one CD.
-
-The first chapter, entitled Around the World in a Hundred Minutes, summarizes the broad range and types of orbits encountered and has excellent color photos of some recent satellites. The second chapter, Introductory Astrodynamics, is approximately 30 pages and reviews the basic two-body theory with its implications on tracking and determining orbit characteristics. Chapter 3 devotes about 60 pages to the modeling of forces, including the higher harmonics of the gravitational field, the gravitational effects of the Sun and the Moon, Solar radiation, and atmospheric drag. In addition, some consideration is paid to precision modeling with GPS satellites in mind. Chapter 4 devotes about 40 pages to the various methods of integration for precise orbit prediction. The emphasis is on comparing accuracy and effort of the different techniques. Chapter 5 is a very nice discussion of the various time and reference systems which takes about 30 pages. Tracking and observation models are discussed in Chapter 6. These include radar and laser tracking, range, range rate, and the use of GPS signals. Chapter 7 introduces the linearization procedure to supply the required background for Chapter 8 which is Orbit Determination and Parameter Estimation. These chapters occupy about 60 pages. In this next to last chapter, the least squares and Kalman filtering methods are presented. Finally, Chapter 9 supplies three application examples using real data, including one demonstrating error analysis, real time orbit determination, and orbit determination using a relay satellite.
-
-If that were the complete book, this reviewer would suggest that it would be a good addition to your library. However, there is more. The authors have provided a CD with some C++ codes that support all the problems at the ends of the chapters, the three application problems in Chapter 9, and in addition, have some generic satellite codes to support problems that the reader might want to attack. In this generic library are mathematical and astronomical constants, integration routines for differential equations, least squares estimation and Kalman filtering, a force model which includes a 
- gravitational model, Sun and Moon gravitational effects, appropriate coordinate transformations, calendar-time calculations, and some vector/matrix operations. The codes that support the problems at the end of each chapter help to improve the understanding of the chapter and aid readers who are doing a self study. In addition, the CD has an extensive list of website links which support most of the topics in the book and more.
-
-Satellite Orbits: Models, Methods, and Applications would be a valuable addition to the library of any engineer or scientist interested in the practical aspects of orbit prediction and determination. There are few books currently available that cover this material under a single cover, the most recent being, Fundamentals of Astrodynamics and Applications by DA Vallado, (McGraw Hill, 1997), which would be a good complimentary text to Satellite Orbits. The comprehensive reference list along with the CD supplied codes make this book unique in this area.},
+	abstract = {This book is intended to be a ``comprehensive textbook that guides the reader through the theory and practice of satellite orbit prediction and determination.'' This reviewer believes the book does just that. However, it is stated that it is intended for advanced undergraduate or graduate courses, and for professionals on the job. The undergraduate would likely have to struggle with the material presented in the book for two reasons. One is that s/he would not have a sufficient background in all the areas covered, and the other is that a significant amount of material is presented in such a concise form that it does not allow one to pick up the background material from the text. The diligent student, however, could refer to the ample references provided (approximately 320) to fill in the background gaps. The author's focus is on providing material currently being used for orbit prediction and determination. (A good portion of the references are from the 1990s.) There is little, if any, discussion of analytic approaches (such as perturbation techniques) that classically have been applied to such problems. There is an extensive amount of practical information regarding force modeling, measurements and filtering, tracking, reckoning time, and computer algorithms. This information is presented in nine chapters, two appendices, and one CD.},
 	author = {Montenbruck, Oliver and Gill, Eberhard and Lutze, FH},
 	date-added = {2024-12-02 14:14:48 -0700},
 	date-modified = {2024-12-02 14:14:48 -0700},

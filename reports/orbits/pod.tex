@@ -8,6 +8,9 @@
 \usepackage{lmodern}
 \usepackage{hyperref}
 \usepackage{csquotes} % Recommended for BibLaTeX
+\usepackage{rotating} % Add this to the preamble
+\usepackage{enumitem}
+\usepackage{placeins} % Add this to your preamble
 
 % Page layout
 \geometry{margin=1in}
@@ -15,6 +18,7 @@
 % Bibliography settings
 \usepackage[backend=biber,style=numeric]{biblatex}
 \addbibresource{/Users/dantopa/repos-xiuhcoatal/github/sharing/bibliographies/precise.bib}
+%\addbibresource{precise.bib}
 
 % Title and author
 \title{A Quick Literature Survey: Precise Orbit Determination}
@@ -36,59 +40,224 @@ The determination of a satellite's precise orbit is crucial for various applicat
 In this section, we summarize recent studies on precise orbit determination.
 
 The results of our navigation experiment demonstrate
-that RTK positioning accuracy is improved from meter to decimeter level with fixed ambiguity (horizontal < 2 cm, vertical < 18 cm).
-Horizontal accuracy is improved by over 50\%, and the vertical accuracies of the results of the static and kinematic experiments are
-increased by 47\% and 27\% respectively, compared with the results produced by the classical approach. Though as the baseline becomes
-longer, the accuracy is weakened, our predictive algorithm is an improvement over existing approaches to overcome the issue of missing
-data.
 
+\section{Summary of Selected References}
 
-A novel predictive algorithm for double difference observations of obstructed BeiDou geostationary earth orbit (GEO) satellites
+\noindent Below is a summary of key insights from selected references. Each entry includes the document title followed by a quote highlighting the relevant content.
 
+Below is a summary of key insights from selected references. Each entry includes the document title followed by a quote highlighting the relevant content.
 
+\begin{enumerate}[label=\textbf{\arabic{enumi}.}, leftmargin=0.5in]
 
+    \item \textbf{Real-Time Precise Orbit Determination of Low Earth Orbit Satellites Based on GPS and BDS-3 PPP B2b Service} \cite{shi2024real}
+    \begin{quote}
+        \textit{The RMS of the RT orbital errors in the radial, along, and cross directions is 0.10, 0.13, and 0.09 m, respectively, using BDS-3 and GPS PPP-B2b corrections.}
+    \end{quote}
+    
+    \item \textbf{LEO Real-Time Ambiguity-Fixed Precise Orbit Determination with Onboard GPS/Galileo Observations} \cite{li2024leo}
+    \begin{quote}
+        \textit{Using onboard GPS and Galileo observations, the 3D orbit accuracy of the ambiguity-fixed solution is significantly improved from 5.17 to 3.61 cm, by 30\%, compared to the ambiguity-float solution. Furthermore, the application of IAR also achieves a faster convergence to the centimeter-level orbit.}
+    \end{quote}
+    
+    \item \textbf{A Novel Method for Improving LEO Kinematic Real-Time Precise Orbit Determination with Neural Networks} \cite{zhang2024novel}
+    \begin{quote}
+        \textit{Benefiting from this method, a promising accuracy of 3.2 cm can be achieved in LEO KRTPOD.}
+    \end{quote}
 
-Reduced dynamic and kinematic precise orbit determination
-for the Swarm mission from 4 years of GPS tracking
-30\% improvement in the precision of the reduced dynamic orbits with resulting errors at the 0.5--1 cm level (1D RMS)
+    \item \textbf{Precise Orbit Determination for Low Earth Orbit Satellites Using GNSS: Observations, Models, and Methods} \cite{mao2024precise}
+    \begin{quote}
+        \textit{Using a state-of-the-art combination of GNSS observations and satellite dynamics, the absolute orbit determination for a single satellite reached a precision of 1 cm.}
+    \end{quote}
 
+    \item \textbf{Precise Orbit Determination of the ZY3-03 Satellite Using the Yaw-Attitude Modeling for Drift Angle Compensation} \cite{gong2024precise}
+    \begin{quote}
+        \textit{The orbit determination experiments revealed that the zero-yaw assumption in the zero-attitude model would result in periodic orbit errors of up to $\pm$86 mm in the normal direction, while the proposed model describes yaw angle variations accurately with errors of less than $\pm$0.01$^\circ$.}
+    \end{quote}
+    
+    \item \textbf{Long-Term Orbit Dynamics of Decommissioned Geostationary Satellites} \cite{proietti2021}
+    \begin{quote}
+        \textit{Orbit propagations are performed using two algorithms based on different equations of motion and numerical integration methods. The numerical results exhibit excellent agreement over integration times of decades.}
+    \end{quote}
+    
+    \item \textbf{Reduced Dynamic and Kinematic Precise Orbit Determination for the Swarm Mission from 4 Years of GPS Tracking} \cite{montenbruck2018reduced}
+    \begin{quote}
+        \textit{30\% improvement in the precision of the reduced dynamic orbits with resulting errors at the 0.5--1 cm level (1D RMS).}
+    \end{quote}
 
+    \item \textbf{Precise Relative Positioning Using Real Tracking Data from COMPASS GEO and IGSO Satellites} \cite{shi2013precise}
+    \begin{quote}
+        \textit{The precision of COMPASS-only solutions is better than 2 cm for the North component and 4 cm for the vertical.}
+    \end{quote}
 
-Precise relative positioning using real tracking data from COMPASS GEO and IGSO satellites
-The precision of COMPASS only solutions is better than 2 cm for the North component and 4 cm for the vertical.
+    \item \textbf{Dynamic and Reduced-Dynamic Precise Orbit Determination of Satellites in Low Earth Orbits} \cite{swatschina2012dynamic}
+    \begin{quote}
+        \textit{Orbital arcs over a whole day can be generated with an accuracy of up to 4.5 cm RMS.}
+    \end{quote}
+    
+    \item \textbf{Aiming at a 1-cm Orbit for Low Earth Orbiters: Reduced-Dynamic and Kinematic Precise Orbit Determination} \cite{visser2003aiming}
+    \begin{quote}
+        \textit{Both techniques have reached a high level of maturity and have been successfully applied to missions in the past, such as TOPEX/POSEIDON (T/P), leading to (sub-) decimeter orbit accuracy.}
+    \end{quote}
 
+\end{enumerate}
 
-Precise Orbit Determination of the ZY3-03
-Satellite Using the Yaw-Attitude Modeling
-for Drift Angle CompensationThe orbit determination experiments have revealed that the zero-yaw assumption in the zero-attitude model would result in periodic orbit errors of up to ±86 mm in the normal direction, while
-the proposed model can describe yaw angle variations accurately with errors of less than $\pm$0.01$^\circ$
+%that RTK positioning accuracy is improved from meter to decimeter level with fixed ambiguity (horizontal < 2 cm, vertical < 18 cm).
+%Horizontal accuracy is improved by over 50\%, and the vertical accuracies of the results of the static and kinematic experiments are
+%increased by 47\% and 27\% respectively, compared with the results produced by the classical approach. Though as the baseline becomes
+%longer, the accuracy is weakened, our predictive algorithm is an improvement over existing approaches to overcome the issue of missing
+%data.
+%
+%
+%A novel predictive algorithm for double difference observations of obstructed BeiDou geostationary earth orbit (GEO) satellites
+%
+%
+%
+%
+%Reduced dynamic and kinematic precise orbit determination
+%for the Swarm mission from 4 years of GPS tracking
+%30\% improvement in the precision of the reduced dynamic orbits with resulting errors at the 0.5--1 cm level (1D RMS)
+%
+%
+%
+%Precise relative positioning using real tracking data from COMPASS GEO and IGSO satellites
+%The precision of COMPASS only solutions is better than 2 cm for the North component and 4 cm for the vertical.
+%
+%
+%Precise Orbit Determination of the ZY3-03
+%Satellite Using the Yaw-Attitude Modeling
+%for Drift Angle CompensationThe orbit determination experiments have revealed that the zero-yaw assumption in the zero-attitude model would result in periodic orbit errors of up to ±86 mm in the normal direction, while
+%the proposed model can describe yaw angle variations accurately with errors of less than $\pm$0.01$^\circ$
+%
+%
+%Dynamic and Reduced-Dynamic Precise Orbit
+%Determination of Satellites in Low Earth Orbits
+%The precise positioning of satellites in Low Earth Orbits (LEO) has become a key technology
+%for advanced space missions. Dedicated satellite missions, such as CHAMP, GRACE and
+%GOCE, that aim to map the Earth’s gravity field and its variation over time with
+%unprecedented accuracy,	
+%
+%Orbital arcs over a whole day can be generated with an
+%accuracy of up to 4.5 cm RMS. 
+%
+%
+%Aiming at a 1-cm Orbit for Low Earth Orbiters: Reduced-Dynamic and Kinematic Precise Orbit Determination
+%Both techniques have reached a high level of maturity and have been successfully applied to missions in the past, for example to TOPEX/POSEIDON (T/P), leading to (sub-)decimeter orbit accuracy.
+%
+%A novel method for improving LEO kinematic real-time precise orbit determination with neural networks
+%Benefiting from this method, a promising accuracy of 3.2 cm can be achieved in LEO KRTPOD
+%
+%
+%Precise orbit determination for low Earth orbit satellites using GNSS: Observations, models, and methods
+%Using a state-of-the-art combination of GNSS observations and satellite dynamics, the absolute orbit determination for a single satellite reached a precision of 1 cm.
 
+\section{Open-Source Orbit Propagators}
+\label{sec:orbit_propagators}
 
-Dynamic and Reduced-Dynamic Precise Orbit
-Determination of Satellites in Low Earth Orbits
-The precise positioning of satellites in Low Earth Orbits (LEO) has become a key technology
-for advanced space missions. Dedicated satellite missions, such as CHAMP, GRACE and
-GOCE, that aim to map the Earth’s gravity field and its variation over time with
-unprecedented accuracy,
+The use of open-source orbit propagators has expanded significantly in recent years, driven by the need for accurate, flexible, and cost-effective tools for satellite trajectory prediction and mission analysis. In this section, we present an overview of key open-source propagators, compare their features, and provide insights into their applications.
+\FloatBarrier % Add this before the table
 
-Orbital arcs over a whole day can be generated with an
-accuracy of up to 4.5 cm RMS. 
+\subsection{Comparison of Orbit Propagators}
+Table~\ref{tab:propagator_comparison} summarizes the key features of popular open-source orbit propagators, highlighting their precision, supported orbital regimes, ease of use, programming languages, and special features.
 
+%\begin{table}[h!]
+%\centering
+%\caption{Comparison of Open-Source Orbit Propagators}
+%\label{tab:propagator_comparison}
+%\begin{tabular}{llllllp{5cm}|}
+%\hline
+%\textbf{Tool}            & \textbf{Precision} & \textbf{Supported Models}      & \textbf{Ease of Use} & \textbf{Language}   & \textbf{Special Features} \\
+%\hline
+%GMAT                    & High               & All orbital regimes            & Moderate             & C++                 & Robust mission analysis; trajectory optimization. \\
+%Orekit                  & High               & LEO, HEO, GNSS, interplanetary & Advanced             & Java                & Highly customizable library. \\
+%Orbit Predictor         & Moderate           & TLE propagation                & Easy                 & Python              & Simplified for Earth satellite orbits. \\
+%NEOPROP                 & High               & GNSS and celestial bodies      & Moderate             & Proprietary         & ESA-backed accuracy. \\
+%Skyfield                & Moderate           & Astronomical computations      & Easy                 & Python              & Great for tracking astronomical bodies. \\
+%ODTBX                   & High               & Matlab-compatible models       & Moderate             & Matlab/Java         & Comprehensive GNSS support. \\
+%FOSSASAT                & Moderate           & LEO propagation                & Easy                 & Python              & New entrant focused on small satellites. \\
+%\label{tab:open-prop}
+%\end{tabular}
+%\end{table}
 
-Aiming at a 1-cm Orbit for Low Earth Orbiters: Reduced-Dynamic and Kinematic Precise Orbit Determination
-Both techniques have reached a high level of maturity and have been successfully applied to missions in the past, for example to TOPEX/POSEIDON (T/P), leading to (sub-)decimeter orbit accuracy.
+\begin{sidewaystable}[h!]
+\centering
+\begin{tabular}{lllllp{5cm}|} % Added missing '|' at the start
+\hline
+\textbf{Tool}            & \textbf{Precision} & \textbf{Supported Models}      & \textbf{Ease of Use} & \textbf{Language}   & \textbf{Special Features} \\
+\hline
+GMAT                    & High               & All orbital regimes            & Moderate             & C++                 & Robust mission analysis; trajectory optimization. \\
+Orekit                  & High               & LEO, HEO, GNSS, interplanetary & Advanced             & Java                & Highly customizable library. \\
+Orbit Predictor         & Moderate           & TLE propagation                & Easy                 & Python              & Simplified for Earth satellite orbits. \\
+NEOPROP                 & High               & GNSS and celestial bodies      & Moderate             & Proprietary         & ESA-backed accuracy. \\
+Skyfield                & Moderate           & Astronomical computations      & Easy                 & Python              & Great for tracking astronomical bodies. \\
+ODTBX                   & High               & Matlab-compatible models       & Moderate             & Matlab/Java         & Comprehensive GNSS support. \\
+FOSSASAT                & Moderate           & LEO propagation                & Easy                 & Python              & New entrant focused on small satellites. \\
+\hline
+\end{tabular}
+\caption{Comparison of Open-Source Orbit Propagators}
+\label{tab:propagator_comparison}
+\end{sidewaystable}
 
-A novel method for improving LEO kinematic real-time precise orbit determination with neural networks
-Benefiting from this method, a promising accuracy of 3.2 cm can be achieved in LEO KRTPOD
+\subsection{Complementary Tools}
+In addition to orbit propagators, complementary tools such as NASA's SPICE toolkit and Python libraries like Astropy provide valuable functionality for mission design, time conversions, and astronomical computations. These tools are not orbit propagators per se but significantly enhance the analytical capabilities of mission planners.
 
+\subsection{Evaluation and Use Cases}
+The choice of an orbit propagator depends on the specific mission requirements. For example:
+\begin{itemize}
+    \item \textbf{CubeSat missions:} Tools like FOSSASAT and Orbit Predictor are ideal for their simplicity and ease of use.
+    \item \textbf{GNSS and precise orbit determination:} Orekit and ODTBX offer advanced features tailored for such applications.
+    \item \textbf{Interplanetary missions:} GMAT excels in trajectory optimization for deep-space missions.
+\end{itemize}
 
-Precise orbit determination for low Earth orbit satellites using GNSS: Observations, models, and methods
-Using a state-of-the-art combination of GNSS observations and satellite dynamics, the absolute orbit determination for a single satellite reached a precision of 1 cm.
+\subsection{Emerging Trends}
+The field of open-source orbit propagation continues to evolve. Emerging trends include:
+\begin{itemize}
+    \item Integration of artificial intelligence and machine learning to enhance orbit prediction accuracy.
+    \item Real-time data assimilation from global navigation satellite systems (GNSS) and other sensors.
+    \item Collaborative development of modular, extensible propagators tailored to specific mission needs.
+\end{itemize}
 
-\section{Some Orbit Propagators}
+\subsection{Why Open Source Matters}
+Open-source tools democratize access to advanced orbital mechanics, enabling researchers, small satellite developers, and students to experiment and innovate without prohibitive costs. They also foster collaboration and transparency, ensuring reproducibility and peer review of results.
+
+\subsection{Future Directions (Placeholder: Achates' Ideas for Improvement)}
+In this subsection, we will explore:
+\begin{itemize}
+    \item Strategies for integrating multiple tools into a cohesive workflow.
+    \item Enhancements to the accuracy and computational efficiency of open-source propagators.
+    \item Community-driven initiatives to standardize interfaces and outputs for interoperability.
+\end{itemize}
+
+\subsection{Figures and Visualizations (Placeholder)}
+Figures showcasing example orbits, computational pipelines, or comparisons of propagator outputs will be included here to illustrate the discussion visually.
+
+\section{Open-source orbit propagators}
+Open-source orbit propagators have revolutionized the field of astrodynamics by providing accessible, high-quality tools for a diverse range of applications. Their continued development will be pivotal in shaping the future of space exploration.
+
 
 %%    %%    %%    %%    %%    %%    %%
 \subsection{KASIOP}
+\subsubsection{Software}
+KASIOP (Korea Astronomy and Space science Institute Orbit Propagator) is a high-fidelity orbit propagation software developed by the \href{https://www.kasi.re.kr/eng/index}{Korea Astronomy and Space Science Institute} (KASI) designed to simulate the trajectories of Earth-orbiting satellites with high precision, incorporating various perturbative forces, including gravitational harmonics, atmospheric drag, solar radiation pressure, and relativistic effects. KASIOP has been utilized in research to evaluate post-Newtonian perturbations in satellite orbits, demonstrating its capability to model complex orbital dynamics accurately. Details are included in two papers by Roh \cite{ROH20162255,roh2018numerical}
+\begin{itemize}
+	\item Download: None found
+	\item Documentation: None found
+\end{itemize}
+
+\subsubsection{Post-Newtonian equations of motion}
+\begin{quotation}
+The Post-Newtonian equations of motion provide a refined framework for modeling the dynamics of celestial bodies and satellites by incorporating relativistic corrections to Newtonian mechanics. These equations arise from the Post-Newtonian approximation, which is a perturbative expansion of General Relativity for systems where gravitational fields are weak and velocities are much smaller than the speed of light. This approach is particularly useful for scenarios involving high-precision orbit determination, such as those required for global navigation satellite systems (GNSS), satellite geodesy, and relativistic tests.
+
+Key corrections include:
+
+    Relativistic time dilation due to the satellite's velocity and the gravitational potential.
+    Frame-dragging effects caused by the Earth's rotation (Lense-Thirring effect).
+    Periapsis precession, an analog to the relativistic precession of Mercury's orbit around the Sun.
+
+Post-Newtonian equations are critical for missions with stringent accuracy requirements, such as the LARES (Laser Relativity Satellite) project, where relativistic effects are explicitly measured. They are also increasingly integrated into orbit propagators for precise modeling of satellite trajectories in the Earth's gravitational field.
+
+The use of Post-Newtonian dynamics is vital in bridging the gap between classical orbital mechanics and full relativistic solutions, enabling groundbreaking advancements in space science and technology.
+\end{quotation}
+
 
 %%    %%    %%    %%    %%    %%    %%
 \subsection{NEOPROP}
@@ -188,9 +357,10 @@ poliastro is an open source (MIT) pure Python library for interactive Astrodynam
 Some features include orbit propagation, solution of the Lambert's problem, conversion between position and velocity vectors and classical orbital elements and orbit plotting, among others. It focuses on interplanetary applications, but can also be used to analyze artificial satellites in Low-Earth Orbit (LEO).
 \end{quotation}
 
+Footnote\footnote{https://www.researchgate.net/profile/Luc-Maisonobe/publication/310250345\_OREKIT\_AN\_OPEN\_SOURCE\_LIBRARY\_FOR\_OPERATIONAL\_FLIGHT\_DYNAMICS\_APPLICATIONS/links/6034c01e299bf1cc26e4a550/OREKIT-AN-OPEN-SOURCE-LIBRARY-FOR-OPERATIONAL-FLIGHT-DYNAMICS-APPLICATIONS.pdf}
+
 \section{Discussion}
 The implications of achieving sub-meter or centimeter-level precision in satellite positioning are significant.
-https://www.researchgate.net/profile/Luc-Maisonobe/publication/310250345_OREKIT_AN_OPEN_SOURCE_LIBRARY_FOR_OPERATIONAL_FLIGHT_DYNAMICS_APPLICATIONS/links/6034c01e299bf1cc26e4a550/OREKIT-AN-OPEN-SOURCE-LIBRARY-FOR-OPERATIONAL-FLIGHT-DYNAMICS-APPLICATIONS.pdf
 % Add your discussion points here...
 
 \section{Conclusion}

@@ -1,12 +1,135 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Daniel Topa at 2024-12-03 09:09:49 -0700 
+%% Created for Daniel Topa at 2024-12-05 15:35:26 -0700 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
 
 
+
+@article{waldron2023assessing,
+	abstract = {This study focuses on utilizing the increasing availability of satellite trajectory data from global navigation satellite system-enabled low-Earth orbiting satellites and their precision orbit determination (POD) solutions to expand and refine thermospheric model validation capabilities. The research introduces an updated interface for the GEODYN-II POD software, leveraging high-precision space geodetic POD to investigate satellite drag and assess density models. This work presents a case study to examine five models (NRLMSIS2.0, DTM2020, JB2008, TIEGCM, and CTIPe) using precise science orbit (PSO) solutions of the Ice, Cloud, and Land Elevation Satellite-2 (ICESat-2). The PSO is used as tracking measurements to construct orbit fits, enabling an evaluation according to each model's ability to redetermine the orbit. Relative in-track deviations, quantified by in-track residuals and root-mean-square errors (RMSe), are treated as proxies for model densities that differ from an unknown true density. The study investigates assumptions related to the treatment of the drag coefficient and leverages them to eliminate bias and effectively scale model density. Assessment results and interpretations are dictated by the timescale at which the scaling occurs. DTM2020 requires the least scaling (∼−7%) to achieve orbit fits closely matching the PSO within an in-track RMSe of 7 m when scaled over 2 weeks and 2 m when scaled daily. The remaining models require substantial scaling of the mean density offset (∼30 − 75%) to construct orbit fits that meet the aforementioned RMSe criteria. All models exhibit slight over or under-sensitivity to geomagnetic activity according to trends in their 24-hr scaling factors.},
+	author = {Waldron, Zachary C and Garcia-Sage, Katherine and Thayer, Jeffrey P and Sutton, Eric K and Ray, Vishal and Rowlands, David D and Lemoine, Frank G and Luthcke, Scott B and Kuznetsova, Maria M and Ringuette, Rebecca and others},
+	date-added = {2024-12-05 15:35:22 -0700},
+	date-modified = {2024-12-05 15:35:22 -0700},
+	journal = {Authorea Preprints},
+	keywords = {NRLMSIS2.0, DTM2020, JB2008, TIEGCM, CTIPe},
+	publisher = {Authorea},
+	title = {Assessing Thermospheric Neutral Density Models using GEODYN's Precision Orbit Determination},
+	year = {2023}}
+
+@inproceedings{gaur2019precision,
+	abstract = {Precision orbit determination (POD) these days emerging to be one of the paramount research domains in spaceflight tasks., predominantly in altimetric tasks such as earth observing system mission: Ice, Cloud, and land Elevation Satellite (ICESAT) mission, satellite oceanography mission: JASON-1, and ICESat, and ocean surface topography mission: TOPEX/POSEIDON, which demands high precision (in centimeters) for radial orbits. Although, there exists limitations on orbit determination accuracy which are mainly because of the pre-existing unmodeled accelerations. To counter this problem and thus boosting orbit determination precision values for error driven dynamic models new methodologies have been surfaced. Two predominantly used algorithms to handle such tasks are State Noise Compensation (SNC) and Dynamic Model Compensation (DMC). Research presented aims at investigating and comparing the two algorithms to demonstrate the efficacy of both. To demonstrate benefits associated, an extension is incorporated in which DMC of 2 nd -order is defined based on the assumption that characterization of unmodeled acceleration is possible in terms of differential equation of 2nd -order, followed by an example. As a result, it is observed that DMC of 2nd -order tend to deliver more precise estimate of position, velocity, as well as acceleration., along with better stability in comparison to conventional SNC and DMC. Moreover, a numerical simulation is conducted using DMC of 2 nd -order with substandard tracking information of Lower Earth Orbit (LEO) satellite and on comparison of results with those incorporating Kalman filter exclusively, it is assessed that for substandard tracking, DMC of 2nd -order can perform efficiently delivering relatively precise trajectory estimation.},
+	author = {Gaur, Deepak and Prasad, Mani Shankar},
+	booktitle = {2019 3rd International Conference on Recent Developments in Control, Automation \& Power Engineering (RDCAPE)},
+	date-added = {2024-12-05 15:25:52 -0700},
+	date-modified = {2024-12-05 15:25:52 -0700},
+	organization = {IEEE},
+	pages = {38--44},
+	title = {Precision Orbit Determination for Errored Dynamic Models},
+	year = {2019}}
+
+@article{wang2024impact,
+	abstract = {Haiyang-2A (HY-2A) is the first marine dynamic environment satellite established by China, which has made significant contributions to the marine scientific research field. It carries the satellite-based GPS receiver named HY2, which was independently developed by China. It is an experimental satellite-borne GPS receiver for low earth orbit satellites, and during its operational period in orbit, the satellite-borne GPS data are not made accessible to the public. Therefore, this paper assesses the quality of HY-2A satellite-borne GPS data based on indicators such as satellite visibility, multipath effect, and ionospheric delay. The results indicate that the data acquired by the HY2 receiver are of high quality. The precise orbit determination (POD) uses the reduced-dynamic (RD) method. The adjustment effects of the pseudo-stochastic pulse time interval and a priori sigma on POD are analyzed, and the antenna phase center variation (PCV) is estimated using the direct method and residual method. Furthermore, this paper investigates the impact of PCV models with different resolutions (10$\,^{\circ}$ × 10$\,^{\circ}$ and 5$\,^{\circ}$ × 5$\,^{\circ}$) on satellite orbit determination. To evaluate the orbit precision, three methods are used for validation, including carrier phase residual analysis, external precise science orbit (PSO) validation, and SLR three-dimensional (3D) validation, respectively. The results indicate that the highest orbit precision is achieved when the pseudo-stochastic pulse time interval is configured to 15 min, with the a priori sigma of 1 × 10−8 m/s2. The orbit carrier phase residuals reach the millimeter level. The 10$\,^{\circ}$ × 10$\,^{\circ}$PCV model was estimated using the direct method and residual method, respectively; the root mean square of the external orbit validation for both methods show a millimeter-level improvement. The results obtained from the direct method and residual method are comparable. The resolution is increased from 10$\,^{\circ}$ to 5$\,^{\circ}$, and the improvement in orbital precision is relatively small. The results obtained from the SLR 3D validation are consistent with those from the external PSO validation. The experimental results contribute valuable information for the POD of the HY2 series satellites.},
+	author = {Wang, Youyuan and Guo, Jinyun and Ya, Shaoshuai and Jia, Yongjun and Guo, Hengyang and Chang, Xiaotao and Liu, Xin},
+	date-added = {2024-12-05 15:07:38 -0700},
+	date-modified = {2024-12-05 15:07:38 -0700},
+	journal = {Remote Sensing},
+	number = {8},
+	pages = {1336},
+	publisher = {MDPI},
+	title = {Impact of Pseudo-Stochastic Pulse and Phase Center Variation on Precision Orbit Determination of Haiyang-2A from Experimental HY2 Receiver GPS Data},
+	volume = {16},
+	year = {2024}}
+
+@article{10122508,
+	abstract = {Tianjin University-1 (TJU-1) is a small low-Earth-orbiting (LEO) meteorological satellite equipped with a multi-global navigation satellite system (GNSS) receiver that provides the dual-frequency pseudorange and carrier-phase measurements from Global Positioning System (GPS), Global Navigation Satellite System (GLONASS), and BeiDou Navigation Satellite System (BDS), including BDS-2 and BDS-3. In this contribution, the quality of GNSS data during the period of 2022/31--2022/37 is assessed, and the precise orbit determination (POD) based on the onboard GNSS data is conducted. Assessing the pseudorange measurement accuracy, it reveals that the GPS and BDS-3 are comparable, followed by BDS-2, and GLONASS the worst. The POD experiments demonstrate that the orbit precision of all single-GNSS solutions is almost at an equivalent level of 2.2--3.4 cm, in terms of the overlapped orbit consistency, and the GPS-based solution is slightly worse than the BDS-based one and the GLONASS-based one is worse than other two. According to the orbit differences between different solutions, the orbit accuracy of single-GNSS solutions is inferred to be at the level of about 4.7--6.2 cm. With the multi-GNSS fusion, the precision and inferred accuracy of orbits could be improved significantly to 1.7--2.1 cm and about 1.7--3.7 cm, respectively. Furthermore, the root mean square (RMS) of posteriori carrier-phase residuals for all the IGSO/MEO satellites is at the level of 7--15 mm in different single-GNSS and multi-GNSS fusion solutions. These performances have fully demonstrated that the centimeter-level POD is easily achievable for small LEO satellites by using the multi-GNSS receiver.},
+	author = {Gong, Xuewen and Li, Xingxing and Wang, Pengcheng and Wang, Qingyun and Wang, Fuhong and Sang, Jizhang and Gao, Shuaihe},
+	date-added = {2024-12-05 14:53:21 -0700},
+	date-modified = {2024-12-05 14:53:21 -0700},
+	doi = {10.1109/JSEN.2023.3272923},
+	journal = {IEEE Sensors Journal},
+	keywords = {Satellites;Global navigation satellite system;Orbits;Receivers;Global Positioning System;Satellite broadcasting;Low earth orbit satellites;Global navigation satellite system (GNSS) data quality;multi-GNSS fusion;precise orbit determination (POD);precision and accuracy;Tianjin University-1 (TJU-1)},
+	number = {12},
+	pages = {13340-13350},
+	title = {High-Precision Orbit Determination of the Small TJU-1 Satellite Using GPS, GLONASS, and BDS},
+	volume = {23},
+	year = {2023},
+	bdsk-url-1 = {https://doi.org/10.1109/JSEN.2023.3272923}}
+
+@book{Hairer1993,
+	address = {Berlin, Heidelberg},
+	author = {E. Hairer and S. P. N{\o}rsett and G. Wanner},
+	date-added = {2024-12-05 14:21:23 -0700},
+	date-modified = {2024-12-05 14:21:23 -0700},
+	doi = {10.1007/978-3-662-09947-6},
+	edition = {2nd},
+	isbn = {978-3-540-56670-0},
+	note = {A comprehensive resource for numerical methods in solving ordinary differential equations.},
+	publisher = {Springer},
+	series = {Springer Series in Computational Mathematics},
+	title = {Solving Ordinary Differential Equations: Nonstiff Problems},
+	volume = {8},
+	year = {1993},
+	bdsk-url-1 = {https://doi.org/10.1007/978-3-662-09947-6}}
+
+@article{shampine1986some,
+	abstract = {A new selection is made of the most practical of the many explicit Runge-Kutta formulas of order 4 which have been proposed. A new formula is considered, formulas are modified to improve their quality and efficiency in agreement with improved understanding of the issues, and formulas are derived which permit interpolation. It is possible to do a lot better than the pair of Fehlberg currently regarded as" best"},
+	author = {Shampine, Lawrence F},
+	date-added = {2024-12-05 14:09:54 -0700},
+	date-modified = {2024-12-05 14:10:10 -0700},
+	journal = {Mathematics of computation},
+	number = {173},
+	pages = {135--150},
+	title = {Some practical runge-kutta formulas},
+	volume = {46},
+	year = {1986}}
+
+@online{cash_karp_method,
+	author = {{Wikipedia contributors}},
+	date-added = {2024-12-05 14:02:32 -0700},
+	date-modified = {2024-12-05 14:02:32 -0700},
+	note = {Accessed: 2024-12-05},
+	title = {Cash--Karp method},
+	url = {https://en.wikipedia.org/wiki/Cash%E2%80%93Karp_method},
+	urldate = {2024-12-05},
+	year = {2024},
+	bdsk-url-1 = {https://en.wikipedia.org/wiki/Cash%E2%80%93Karp_method}}
+
+@online{runge_kutta_fehlberg_method,
+	author = {{Wikipedia contributors}},
+	date-added = {2024-12-05 14:02:20 -0700},
+	date-modified = {2024-12-05 14:02:20 -0700},
+	note = {Accessed: 2024-12-05},
+	title = {Runge--Kutta--Fehlberg method},
+	url = {https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta%E2%80%93Fehlberg_method},
+	urldate = {2024-12-05},
+	year = {2024},
+	bdsk-url-1 = {https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta%E2%80%93Fehlberg_method}}
+
+@online{dormand_prince_method,
+	author = {{Wikipedia contributors}},
+	date-added = {2024-12-05 14:02:16 -0700},
+	date-modified = {2024-12-05 14:02:16 -0700},
+	note = {Accessed: 2024-12-05},
+	title = {Dormand--Prince method},
+	url = {https://en.wikipedia.org/wiki/Dormand%E2%80%93Prince_method},
+	urldate = {2024-12-05},
+	year = {2024},
+	bdsk-url-1 = {https://en.wikipedia.org/wiki/Dormand%E2%80%93Prince_method}}
+
+@article{dormand1980family,
+	author = {Dormand, John R and Prince, Peter J},
+	date-added = {2024-12-05 07:26:58 -0700},
+	date-modified = {2024-12-05 07:26:58 -0700},
+	journal = {Journal of computational and applied mathematics},
+	number = {1},
+	pages = {19--26},
+	publisher = {Elsevier},
+	title = {A family of embedded Runge-Kutta formulae},
+	volume = {6},
+	year = {1980}}
 
 @article{li2024leo,
 	abstract = {Real-time precise orbits of low earth orbit (LEO) satellites are becoming indispensable with the rapid development of real-time Earth observation application and LEO enhanced precise point positioning. Currently, GNSS-based precise orbit determination is a widely used method for LEO onboard navigation. However, the real-time LEO satellite orbits are usually obtained by ambiguity-float solution even when the GNSS augmentation corrections are considered. In this study, we perform LEO ambiguity-fixed multi-GNSS real-time precise orbit determination (RTPOD) based on square root information filter. One month of onboard GPS + Galileo observations from Sentinel-6A and real-time products of the Centre National d'Etudes Spatiales (CNES) are used to investigate the contribution of integer ambiguity resolution (IAR). The benefit of dual-system combination on LEO RTPOD is firstly evaluated. The combination of GPS and Galileo dual-system contributes to more visible GNSS satellites and better observation geometry for LEO RTPOD, which results in an evident accuracy improvement of 19% over GPS and a convergence time reduction of 43\% and 41\% compared to the GPS and Galileo solutions respectively. Considering the short arc of onboard GNSS observations and imperfections in GNSS real-time products, we propose a strict IAR quality control method to avoid fixing the ambiguity to the wrong values. The results indicate that the IAR quality control method we used can effectively reduce the wrong fixing risk and increase the robustness of the IAR solution. Using onboard GPS and Galileo observations, the 3D orbit accuracy of the ambiguity-fixed solution is significantly improved from 5.17 to 3.61cm, by 30%, compared to the ambiguity-float solution. Furthermore, the application of IAR also achieves a faster convergence to the centimeter-level orbit.},

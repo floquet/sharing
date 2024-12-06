@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{catchfile}
+% Fetch home directory
+\CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
+
+% Strip trailing spaces from HomePath
+\makeatletter
+\edef\HomePath{\expandafter\zap@space\HomePath \@empty}
+\makeatother
+
+% Define base paths
+% relies on symlink  at $HOME, e.g.
+% 	GitHub -> /Users/dantopa//repos-xiuhcoatal/github
+\newcommand{\pGithub}			{\HomePath/GitHub/}
+\newcommand{\pGithubSharing}	{\pGithub/sharing/}
+\newcommand{\pGlobal}			{\pGithubSharing/global/}
+\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
+
+% Load Additional Setup Files
+	\input{\pGlobalSetup/setup-global-reports.tex}
+	\input{\pLocalSetup/setup-local.tex}
+
+% Bibliography
+	\input{\pGlobalSetup packages-global-bibliography-charlie.tex}
+%\bibliography{\pShareBibliographies precise.bib}
+\addbibresource{\pShareBibliographies/precise.bib} % Add another file if needed
+
+\begin{document}
+Here is a sample citation \cite{ROH20162255,roh2018numerical}.
+
+\printbibliography
+\end{document}

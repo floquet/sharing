@@ -1,3 +1,5 @@
+A novel predictive algorithm for double difference observations of obstructed BeiDou geostationary earth orbit (GEO) satellites
+
 The results of our navigation experiment demonstrate
 that RTK positioning accuracy is improved from meter to decimeter level with fixed ambiguity (horizontal < 2 cm, vertical < 18 cm).
 Horizontal accuracy is improved by over 50%, and the vertical accuracies of the results of the static and kinematic experiments are
@@ -6,7 +8,6 @@ longer, the accuracy is weakened, our predictive algorithm is an improvement ove
 data.
 
 
-A novel predictive algorithm for double difference observations of obstructed BeiDou geostationary earth orbit (GEO) satellites
 
 
 
@@ -52,7 +53,23 @@ Using a state-of-the-art combination of GNSS observations and satellite dynamics
 Precise Orbit Determination for Maneuvering HY2D Using Onboard GNSS Data
 the three-dimensional position difference is about 1.16 cm
 
+LEO real-time ambiguity-fixed precise orbit determination with onboard GPS/Galileo observations
+Using onboard GPS and Galileo observations, the 3D orbit accuracy of the ambiguity-fixed solution is significantly improved from 5.17 to 3.61cm, by 30%, compared to the ambiguity-float solution. Furthermore, the application of IAR also achieves a faster convergence to the centimeter-level orbit.
 
 
+Precise Orbit Determination on LEO Satellite using Pseudorange and Pseudorange-Rate Measurements
+An error of around 0.2 m and 1e-3 m/s for position and velocity is obtained
+
+Real-Time Precise Orbit Determination of Low Earth Orbit Satellites Based on GPS and BDS-3 PPP B2b Service
+The RMS of the RT orbital errors in the radial, along, and cross directions is 0.10, 0.13, and 0.09 m, respectively, using BDS-3 and GPS PPP-B2b corrections
 
 
+Long-term orbit dynamics of decommissioned geostationary satellites
+Orbit propagations are performed using two algorithms based on different equations of motion and numerical integration methods: (i) Gauss planetary equations
+for modified equinoctial elements with a Runge-Kutta numerical integration scheme based on 8–7th-order
+Dorman and Prince formulas; (ii) Cartesian state equations of motion in an Earth-fixed frame with a Runge-Kutta
+Fehlberg 7/8 integration scheme. The numerical results exhibit excellent agreement over integration times of
+
+Precise orbit determination for Tianwen-1 during mapping phase
+To improve the accuracy of the spacecraft’s orbit, this study analyzes the effects of arc length, the empirical acceleration, and the solar radiation pressure parameters on POD, considering the limited number of radio tracking observations
+decades

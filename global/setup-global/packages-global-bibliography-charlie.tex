@@ -1,0 +1,31 @@
+% packages-global-bibliography-beta.tex
+
+% Load BibLaTeX with desired options
+\usepackage[
+    style=numeric,          
+    backend=biber,          
+    %sorting=none,            % Use 'none' to follow citation order
+    sorting=nyt,            % Sort entries by Name, Year, and Title
+    maxnames=3,             
+    minnames=1              
+]{biblatex}
+
+% Configure bibliography layout and formatting
+\setlength{\bibhang}{2em}       % Hanging indent of 2em for each entry
+\setlength{\bibitemsep}{0.5em}  % Space of 0.5em between entries
+\setlength{\bibparsep}{0.2em}   % Space of 0.2em between paragraphs in an entry
+
+\defbibenvironment{bibliography}
+  {\list{}%
+    {%
+     \setlength{\leftmargin}{\bibhang}% Hanging indent
+     \setlength{\itemindent}{0pt}% No additional indentation for numbers
+     \setlength{\itemsep}{\bibitemsep}% Space between items
+     \setlength{\parsep}{\bibparsep}% Space between paragraphs in entries
+    }%
+  }%
+  {\endlist}
+  {\item[\printfield{labelnumber}]} % Print the numeric label for each entry
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[printwatermark]{xwatermark}
+\usepackage{xcolor} % For watermark color
+\usepackage{lipsum} % For generating dummy text
+
+% Define watermark properties
+\newcommand{\WatermarkText}{DRAFT}
+\newcommand{\WatermarkColor}{red!10}
+\newwatermark[pages=1-, color=\WatermarkColor, angle=45, scale=3, xpos=0, ypos=0]{\WatermarkText}
+
+\begin{document}
+
+% Title page
+\title{Test Document}
+\author{Author Name}
+\date{\today}
+\maketitle
+
+% Content
+\section{Introduction}
+This is a test document to check the watermark. The watermark should appear on every page.
+
+\newpage
+\section{Second Page}
+\lipsum[1-5] % Generates dummy text
+
+\newpage
+\section{Third Page}
+\lipsum[6-10] % More dummy text
+
+\end{document}

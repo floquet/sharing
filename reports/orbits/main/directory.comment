@@ -1,0 +1,15 @@
+project/
+├── main.tex                  # Main LaTeX file
+├── setup/
+│   ├── setup-global.tex      # Global configuration
+│   ├── setup-local.tex       # Local configuration
+├── sections/
+│   ├── abstract.tex          # Abstract content
+│   ├── introduction.tex      # Introduction section
+│   ├── literature-review.tex # Literature review
+│   ├── summary.tex           # Summary of references
+│   ├── orbit-propagators.tex # Open-source orbit propagators
+│   ├── discussion.tex        # Discussion section
+│   ├── conclusion.tex        # Conclusion section
+└── tables/
+    ├── table-propagators.tex # Sideways table content

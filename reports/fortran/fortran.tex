@@ -1,0 +1,208 @@
+% Fortran with Achates
+% ChatGPT (Version 4.0) - December 4, 2024
+% Author: Daniel and Achates
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Listings settings for Fortran code
+\lstset{
+    language=Fortran,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray},
+    stringstyle=\color{teal},
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    stepnumber=1,
+    breaklines=true,
+    frame=single,
+    captionpos=b
+}
+
+% Metadata
+\title{Fortran with Achates}
+\author{Daniel with Contributions from Achates}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+Fortran has stood the test of time as a language optimized for numerical and scientific computing. It remains highly relevant today, not only for legacy systems but also for new projects requiring performance, precision, and scalability.
+
+This report explores nine core areas where Fortran excels, often contrasting its capabilities with C++ and other modern programming languages. Each section includes practical examples to illustrate these strengths.
+
+\section{1. Numerical and Scientific Computing}
+\textit{Fortran’s array handling, built-in functions, and library support make it a natural choice for scientific applications.}
+
+\subsection{Example: Solving a Linear System of Equations}
+\begin{lstlisting}[caption={Solving a Linear System with Fortran}]
+program solve_linear_system
+    implicit none
+    real, dimension(3,3) :: A
+    real, dimension(3) :: b, x
+
+    ! Coefficients matrix
+    A = reshape([2.0, 1.0, 3.0, &
+                 1.0, 2.0, 1.0, &
+                 3.0, 1.0, 2.0], shape(A))
+
+    ! Right-hand side
+    b = [8.0, 7.0, 14.0]
+
+    ! Solve using matmul and inversion
+    x = matmul(inv(A), b)
+
+    print *, "Solution: ", x
+end program solve_linear_system
+
+function inv(A) result(A_inv)
+    real, dimension(:,:), intent(in) :: A
+    real, dimension(size(A,1), size(A,2)) :: A_inv
+    ! Stub: Replace with LAPACK-based inversion
+end function inv
+\end{lstlisting}
+
+---
+
+\section{2. Parallel Computing}
+\textit{Fortran simplifies both shared and distributed memory parallelism with Coarrays, OpenMP, and MPI integration.}
+
+\subsection{Example: Heat Equation with Coarrays}
+\begin{lstlisting}[caption={Heat Equation Simulation Using Coarrays}]
+program heat_equation
+    use iso_fortran_env
+    implicit none
+    integer, parameter :: n = 100
+    real, dimension(n) :: temp
+    integer :: i
+
+    ! Parallel computation using coarrays
+    do i = 1, n
+        temp(i) = compute_temperature(i)
+    end do
+
+    call sync all
+    ! Coarray results are now distributed
+end program heat_equation
+
+real function compute_temperature(i)
+    integer, intent(in) :: i
+    compute_temperature = sin(real(i))
+end function compute_temperature
+\end{lstlisting}
+
+---
+
+\section{3. Precision and Accuracy}
+\textit{Fortran’s \texttt{kind} system ensures explicit control over numerical precision, vital for scientific applications.}
+
+\subsection{Example: High-Precision Area Calculation}
+\begin{lstlisting}[caption={High-Precision Example in Fortran}]
+program high_precision
+    implicit none
+    real(kind=selected_real_kind(15, 307)) :: pi, area
+    real(kind=selected_real_kind(15, 307)) :: radius
+
+    radius = 1.0_8
+    pi = 3.141592653589793_8
+    area = pi * radius**2
+
+    print *, "High-Precision Area: ", area
+end program high_precision
+\end{lstlisting}
+
+---
+
+\section{4. Readability and Simplicity for Math-Centric Programs}
+\textit{Fortran’s syntax closely resembles mathematical notation, making it ideal for numerical methods.}
+
+\subsection{Example: Solving an ODE using Runge-Kutta}
+\begin{lstlisting}[caption={Runge-Kutta Method for ODEs}]
+program runge_kutta
+    implicit none
+    real, parameter :: h = 0.01
+    real :: t, y, k1, k2, k3, k4
+
+    t = 0.0
+    y = 1.0
+
+    do while (t < 1.0)
+        k1 = h * f(t, y)
+        k2 = h * f(t + h/2, y + k1/2)
+        k3 = h * f(t + h/2, y + k2/2)
+        k4 = h * f(t + h, y + k3)
+        y = y + (k1 + 2*k2 + 2*k3 + k4) / 6
+        t = t + h
+    end do
+
+    print *, "Solution at t=1.0: ", y
+end program runge_kutta
+
+real function f(t, y)
+    real, intent(in) :: t, y
+    f = -y + t
+end function f
+\end{lstlisting}
+
+---
+
+\section{5. Portability and Legacy Support}
+\textit{Fortran’s standardized history and portability ensure that old codes remain relevant and modern codes are easily deployed across platforms.}
+
+\subsection{Example: Monte Carlo Simulation}
+\begin{lstlisting}[caption={Monte Carlo Simulation for π Estimation}]
+program monte_carlo
+    implicit none
+    integer, parameter :: n = 1000000
+    integer :: i, inside_circle
+    real :: x, y, pi_estimate
+
+    inside_circle = 0
+
+    do i = 1, n
+        call random_number(x)
+        call random_number(y)
+        if (x**2 + y**2 <= 1.0) then
+            inside_circle = inside_circle + 1
+        end if
+    end do
+
+    pi_estimate = 4.0 * real(inside_circle) / n
+    print *, "Estimated pi: ", pi_estimate
+end program monte_carlo
+\end{lstlisting}
+
+---
+
+\section{6. Efficient I/O for Scientific Data}
+\textit{Fortran’s flexible I/O capabilities allow for precise control over formatted and binary data.}
+
+---
+
+\section{7. Domain-Specific Features}
+\textit{Built-in support for complex numbers, efficient integration with numerical libraries, and domain-specific optimizations make Fortran a leader in computational science.}
+
+---
+
+\section{8. Safety in Numerical Computations}
+\textit{Fortran’s array bounds checking and explicit variable declarations enhance program safety and reduce runtime errors.}
+
+---
+
+\section{9. Parallel Discrete Event Simulation}
+\textit{Coarray Fortran excels in simulations with independent, causal processes, such as modeling satellite missions.}
+
+---
+
+\section{Conclusion}
+Fortran continues to thrive as a language for scientific and numerical computing. The examples in this report highlight its strengths, making it clear why Fortran remains indispensable in high-performance computing.
+
+\end{document}

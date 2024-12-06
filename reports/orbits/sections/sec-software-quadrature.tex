@@ -1,0 +1,110 @@
+% \input{\pSections "sec-software-quadrature.tex"}
+
+\section{Algorithms: Solution by Quadrature}
+\label{sec:quadrature}
+
+A crucial component for orbit propagators is a numerical integration package as most orbit mechanics lacks analytic solution.
+
+%%    %%    %%    %%    %%    %%    %%
+\subsection{Dormand Prince}
+From the Wikipedia page \href{https://en.wikipedia.org/wiki/Dormand%E2%80%93Prince_method}{Dormand–Prince method}
+\begin{quote}
+The Dormand–Prince (RKDP) method or DOPRI method, is an embedded method for solving ordinary differential equations (ODE). The method is a member of the Runge–Kutta family of ODE solvers. More specifically, it uses six function evaluations to calculate fourth- and fifth-order accurate solutions. The difference between these solutions is then taken to be the error of the (fourth-order) solution. This error estimate is very convenient for adaptive stepsize integration algorithms. Other similar integration methods are Fehlberg (RKF) and \href{https://en.wikipedia.org/wiki/Cash%E2%80%93Karp_method}{Cash–Karp} (RKCK). 
+\end{quote}
+
+\fullcite{dormand1980family}
+
+%%    %%    %%    %%    %%    %%    %%
+\section{Software Packages}
+\subsection{Nonstiff Differential Equations}
+
+For a comprehensive description, see \emph{Solving Ordinary Differential Equations: Nonstiff Problems} by Hairer, N\o rsett, and Wanner \cite{Hairer1993}.
+
+The following methods and their associated drivers are designed to solve nonstiff ordinary differential equations of the form \( y' = f(x, y) \). More information and software implementations can be found on the \href{http://www.unige.ch/~hairer/software.html}{University of Geneva Software Page}.
+
+\begin{itemize}
+    \item \textbf{DOPRI5}: An explicit Runge-Kutta method of order 5(4) with dense output of order 4. 
+    \begin{itemize}
+        \item \textbf{DR\_DOPRI5}: Driver for the DOPRI5 method.
+        \item \href{http://www.unige.ch/~hairer/prog/nonstiff/dopri5.f}{DOPRI5 Fortran Source Code}
+    \end{itemize}
+    
+    \item \textbf{DOP853}: An explicit Runge-Kutta method of order 8(5,3) with dense output of order 7.
+    \begin{itemize}
+        \item \textbf{DR\_DOP853}: Driver for the DOP853 method.
+        \item \href{http://www.unige.ch/~hairer/prog/nonstiff/dop853.f}{DOP853 Fortran Source Code}
+    \end{itemize}
+    
+    \item \textbf{ODEX}: An extrapolation method (Gragg–Bulirsch–Stoer) for solving \( y' = f(x, y) \), with dense output.
+    \begin{itemize}
+        \item \textbf{DR\_ODEX}: Driver for the ODEX method.
+        \item \href{http://www.unige.ch/~hairer/prog/nonstiff/odex.f}{ODEX Fortran Source Code}
+    \end{itemize}
+    
+    \item \textbf{ODEX2}: An extrapolation method (Störmer's rule) for second-order differential equations of the form \( y'' = f(x, y) \), with dense output.
+    \begin{itemize}
+        \item \textbf{DR\_ODEX2}: Driver for the ODEX2 method.
+        \item \href{http://www.unige.ch/~hairer/prog/nonstiff/odex2.f}{ODEX2 Fortran Source Code}
+    \end{itemize}
+\end{itemize}
+\section{Dormand–Prince Method in Python Libraries}
+The Dormand–Prince method has also been widely adopted in computational libraries, enabling its use in a variety of programming environments. In Python, the \texttt{RK45} integrator within the \texttt{scipy.integrate} module implements this method. Below is an excerpt from the official SciPy documentation:
+
+\begin{quote}
+\textbf{RK45: Explicit Runge-Kutta method of order 5(4)} \\
+This uses the Dormand–Prince pair of formulas. The error is controlled assuming the accuracy of the fourth-order method, but steps are taken using the fifth-order accurate formula (local extrapolation). A quartic interpolation polynomial is used for dense output, making this method suitable for a variety of practical applications. Notably, it can also be applied in the complex domain \cite{scipy2024rk45}. (See \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.RK45.html}{SciPy Documentation})
+\end{quote}
+
+\subsection{Integrating \texttt{RK45} in Orbit Propagation}
+The inclusion of \texttt{scipy.integrate.RK45} into Python-based astrodynamics tools simplifies the process of solving nonstiff ordinary differential equations such as \( y' = f(x, y) \). Leveraging this method ensures accurate and efficient numerical integration with adaptive step size, making it an ideal choice for orbit propagation tasks.
+
+\begin{itemize}
+    \item \textbf{Strengths}:
+    \begin{itemize}
+        \item Adaptive stepsize control based on the Dormand–Prince embedded method.
+        \item Dense output suitable for event detection or interpolating orbital states.
+        \item Native compatibility with Python, enhancing its usability in modern astrodynamics workflows.
+    \end{itemize}
+    \item \textbf{Limitations}:
+    \begin{itemize}
+        \item Primarily designed for nonstiff problems; not ideal for highly stiff systems.
+        \item Additional overhead when compared to fixed-step integrators.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Example Usage in Python}
+Below is an example of solving an orbital mechanics problem using \texttt{scipy.integrate.RK45}:
+
+\begin{verbatim}
+from scipy.integrate import RK45
+import numpy as np
+
+def orbit_dynamics(t, y):
+    # Example: Simple 2D motion under gravity
+    mu = 3.986e14  # Earth's standard gravitational parameter [m^3/s^2]
+    r = np.linalg.norm(y[:2])
+    dydt = np.zeros_like(y)
+    dydt[:2] = y[2:]  # Velocity components
+    dydt[2:] = -mu * y[:2] / r**3  # Acceleration components
+    return dydt
+
+# Initial conditions [x, y, vx, vy]
+y0 = np.array([7000e3, 0, 0, 7.5e3])
+t0, t_bound = 0, 3600  # Time bounds (seconds)
+
+solver = RK45(orbit_dynamics, t0, y0, t_bound, max_step=60)
+trajectory = []
+while solver.status == 'running':
+    solver.step()
+    trajectory.append((solver.t, *solver.y))
+
+trajectory = np.array(trajectory)
+\end{verbatim}
+
+This example showcases the versatility and power of SciPy's implementation of the Dormand–Prince method for solving differential equations in orbital mechanics.
+
+\subsection{References}
+\fullcite{scipy2024rk45}
+	
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

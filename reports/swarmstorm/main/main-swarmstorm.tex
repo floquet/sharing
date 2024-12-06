@@ -1,0 +1,89 @@
+% typeset: Pdftex
+% Afterwards compile with pdflatex > bibtex > pdflatex > pdflatex.
+\documentclass[10pt, oneside]{article}   	
+
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{listings} % For code blocks
+\usepackage{xcolor}   % For syntax highlighting
+\usepackage{hyperref} % For clickable links
+
+% Define title, author, and date
+\title{SwarmStorm: A Multiprocessor Satellite Simulation Demonstration Using Fortran Coarrays}
+\author{Daniel Topa}
+\date{\today}
+
+% Code settings
+\lstset{
+  language=[90]Fortran,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray},
+  stringstyle=\color{green!50!black},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  numbersep=5pt,
+  backgroundcolor=\color{white},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  frame=single,
+  rulecolor=\color{black},
+  breaklines=true,
+  breakatwhitespace=true,
+  captionpos=b,
+  tabsize=4,
+  escapeinside={\%*}{*)},
+}
+
+\begin{document}
+
+\maketitle
+
+\section*{Abstract}
+SwarmStorm is a Fortran-based multiprocessor simulation for satellite interactions, leveraging coarray technology to enable efficient parallel computation. This report outlines the critical features of the program, including its object-oriented design with the `satellite` type and its operations, and demonstrates how coarrays streamline distributed memory computations in the context of satellite simulations.
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+SwarmStorm employs advanced Fortran techniques to simulate the dynamic interactions of satellite constellations. The program leverages coarrays to distribute workload across multiple processors efficiently, enabling detailed simulations of satellite parameters, resource management, and orbital dynamics. This report highlights key features of the program, focusing on its object-oriented design and the application of coarrays.
+
+\section{Key Features of the Satellite Module}
+The `satellite` module, `mClassSatellite`, defines the core satellite type and its associated operations. Below are the critical features of the module:
+
+\subsection{Satellite Type}
+The `satellite` type encapsulates key attributes such as mass, fuel, orbital radius, and UUID. It also includes type-bound procedures for parameter setting and listing.
+
+\lstinputlisting[firstline=35,lastline=50]{m-cl-satellite.f08}
+
+\subsection{Type-Bound Procedures}
+The type-bound procedures, such as `set_satellite_parameters` and `list_satellite_parameters`, provide robust interfaces for managing satellite objects.
+
+\lstinputlisting[firstline=132,lastline=205]{m-cl-satellite.f08}
+
+\section{Coarray Implementation}
+Coarrays in Fortran enable parallelization by extending the language with syntax for distributed arrays. SwarmStorm uses coarrays to represent satellite teams, distributing computational workloads across multiple processors. The following example demonstrates the coarray implementation:
+
+\begin{lstlisting}
+real, allocatable :: position[:]
+allocate(position[*])
+position[this_image()] = compute_position()
+sync all
+\end{lstlisting}
+
+This approach ensures efficient synchronization and communication between processors, facilitating high-performance simulations.
+
+\section{Conclusion}
+SwarmStorm demonstrates the power of modern Fortran for scientific simulations, combining object-oriented programming with coarray parallelization. The modular design of the `satellite` type and the seamless integration of coarrays make it a valuable tool for satellite interaction studies.
+
+\newpage
+\printbibliography
+
+\end{document}

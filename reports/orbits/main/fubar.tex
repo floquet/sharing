@@ -1,0 +1,79 @@
+% typeset: Pdftex
+% Afterwards compile with pdflatex > bibtex > pdflatex > pdflatex.
+% in TeXShop preferences, changed edit from bibtex to biber
+% beamer likes biber
+% latex likes bibtex
+
+\documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+
+% Essential packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{lmodern}
+\usepackage{pdflscape}
+\usepackage{csquotes} % Recommended for BibLaTeX
+\usepackage{rotating}
+\usepackage{enumitem}
+\usepackage{placeins}
+\usepackage{afterpage}
+\usepackage{catchfile}
+\usepackage{url}
+\renewcommand{\UrlFont}{\small\ttfamily}
+
+% Fetch home directory
+\CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
+
+% Strip trailing spaces from HomePath
+\makeatletter
+\edef\HomePath{\expandafter\zap@space\HomePath \@empty}
+\makeatother
+
+% Define base paths
+% relies on symlink  at $HOME, e.g.
+% 	GitHub -> /Users/dantopa//repos-xiuhcoatal/github
+\newcommand{\pGithub}			{\HomePath/GitHub/}
+\newcommand{\pGithubSharing}	{\pGithub/sharing/}
+\newcommand{\pGlobal}			{\pGithubSharing/global/}
+\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
+
+% Load Additional Setup Files
+	\input{\pGlobalSetup/setup-global-reports.tex}
+	\input{\pLocalSetup/setup-local.tex}
+
+% Bibliography
+	\input{\pGlobalSetup packages-global-bibliography-charlie.tex}
+%\bibliography{\pShareBibliographies precise.bib}
+%\addbibresource{\pShareBibliographies/precise.bib} % Add another file if needed
+\addbibresource{\pShareBibliographies/delete.bib} % Add another file if needed
+
+% watermark
+\usepackage[printwatermark]		{xwatermark}
+\newcommand{\WatermarkText}	{DRAFT}
+\newcommand{\WatermarkColor}	{red!5}
+\newwatermark[allpages, color=\WatermarkColor, angle=45, scale=3, xpos=0, ypos=0]{\WatermarkText}
+	%\newwatermark[ allpages,color=red!5, angle=45, scale=3, xpos=0, ypos=0]{DRAFT}
+\sloppy % loosen spacing globally:
+
+% Title and author
+\title{Precise Orbit Determination: A Quick Survey}
+\author{Daniel Topa\\\TopaHIIEmail}
+\affil{\missiontech}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+	\input{\pSections "sec-abstract.tex"}
+
+\tableofcontents
+
+	\input{\pSections "sec-introduction.tex"}
+	\input{\pSections "sec-literature-survey.tex"}
+	\input{\pSections "sec-cauterize.tex"}
+	
+\newpage
+\printbibliography
+
+\end{document}

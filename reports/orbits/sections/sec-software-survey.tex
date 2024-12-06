@@ -1,0 +1,179 @@
+% \input{\pSections "sec-software-survey.tex"}
+
+\section{Open-Source Orbit Propagators}
+\label{sec:orbit_propagators}
+
+The use of open-source orbit propagators has expanded significantly in recent years, driven by the need for accurate, flexible, and cost-effective tools for satellite trajectory prediction and mission analysis. In this section, we present an overview of key open-source propagators, compare their features, and provide insights into their applications.
+\FloatBarrier % Add this before the table
+
+\subsection{Comparison of Orbit Propagators}
+Table~\ref{tab:propagator_comparison} summarizes the key features of popular open-source orbit propagators, highlighting their precision, supported orbital regimes, ease of use, programming languages, and special features.
+
+\input{\pLocalTables "tab-propagators.tex"}
+
+\subsection{Complementary Tools}
+In addition to orbit propagators, complementary tools such as NASA's SPICE toolkit and Python libraries like Astropy provide valuable functionality for mission design, time conversions, and astronomical computations. These tools are not orbit propagators per se but significantly enhance the analytical capabilities of mission planners.
+
+\subsection{Evaluation and Use Cases}
+The choice of an orbit propagator depends on the specific mission requirements. For example:
+\begin{itemize}
+    \item \textbf{CubeSat missions:} Tools like FOSSASAT and Orbit Predictor are ideal for their simplicity and ease of use.
+    \item \textbf{GNSS and precise orbit determination:} Orekit and ODTBX offer advanced features tailored for such applications.
+    \item \textbf{Interplanetary missions:} GMAT excels in trajectory optimization for deep-space missions.
+\end{itemize}
+
+\subsection{Emerging Trends}
+The field of open-source orbit propagation continues to evolve. Emerging trends include:
+\begin{itemize}
+    \item Integration of artificial intelligence and machine learning to enhance orbit prediction accuracy.
+    \item Real-time data assimilation from global navigation satellite systems (GNSS) and other sensors.
+    \item Collaborative development of modular, extensible propagators tailored to specific mission needs.
+\end{itemize}
+
+\subsection{Why Open Source Matters}
+Open-source tools democratize access to advanced orbital mechanics, enabling researchers, small satellite developers, and students to experiment and innovate without prohibitive costs. They also foster collaboration and transparency, ensuring reproducibility and peer review of results.
+
+\subsection{Future Directions (Placeholder: Achates' Ideas for Improvement)}
+In this subsection, we will explore:
+\begin{itemize}
+    \item Strategies for integrating multiple tools into a cohesive workflow.
+    \item Enhancements to the accuracy and computational efficiency of open-source propagators.
+    \item Community-driven initiatives to standardize interfaces and outputs for interoperability.
+\end{itemize}
+
+\subsection{Figures and Visualizations (Placeholder)}
+Figures showcasing example orbits, computational pipelines, or comparisons of propagator outputs will be included here to illustrate the discussion visually.
+
+\section{Open-source orbit propagators}
+Open-source orbit propagators have revolutionized the field of astrodynamics by providing accessible, high-quality tools for a diverse range of applications. Their continued development will be pivotal in shaping the future of space exploration.
+
+
+%%    %%    %%    %%    %%    %%    %%
+\subsection{KASIOP}
+\subsubsection{Software}
+KASIOP (Korea Astronomy and Space science Institute Orbit Propagator) is a high-fidelity orbit propagation software developed by the \href{https://www.kasi.re.kr/eng/index}{Korea Astronomy and Space Science Institute} (KASI) designed to simulate the trajectories of Earth-orbiting satellites with high precision, incorporating various perturbative forces, including gravitational harmonics, atmospheric drag, solar radiation pressure, and relativistic effects. KASIOP has been utilized in research to evaluate post-Newtonian perturbations in satellite orbits, demonstrating its capability to model complex orbital dynamics accurately. Details are included in two papers by Roh \cite{ROH20162255,roh2018numerical}.
+\begin{itemize}
+	\item Download: None found
+	\item Documentation: None found
+\end{itemize}
+
+\subsubsection{Post-Newtonian equations of motion}
+\begin{quotation}
+The Post-Newtonian equations of motion provide a refined framework for modeling the dynamics of celestial bodies and satellites by incorporating relativistic corrections to Newtonian mechanics. These equations arise from the Post-Newtonian approximation, which is a perturbative expansion of General Relativity for systems where gravitational fields are weak and velocities are much smaller than the speed of light. This approach is particularly useful for scenarios involving high-precision orbit determination, such as those required for global navigation satellite systems (GNSS), satellite geodesy, and relativistic tests.
+
+Key corrections include:
+
+    Relativistic time dilation due to the satellite's velocity and the gravitational potential.
+    Frame-dragging effects caused by the Earth's rotation (Lense-Thirring effect).
+    Periapsis precession, an analog to the relativistic precession of Mercury's orbit around the Sun.
+
+Post-Newtonian equations are critical for missions with stringent accuracy requirements, such as the LARES (Laser Relativity Satellite) project, where relativistic effects are explicitly measured. They are also increasingly integrated into orbit propagators for precise modeling of satellite trajectories in the Earth's gravitational field.
+
+The use of Post-Newtonian dynamics is vital in bridging the gap between classical orbital mechanics and full relativistic solutions, enabling groundbreaking advancements in space science and technology.
+\end{quotation}
+
+
+%%    %%    %%    %%    %%    %%    %%
+\subsection{NEOPROP}
+The \href{https://neo.ssa.esa.int/}{European Space Agency} sponsors the \href{https://neo.ssa.esa.int/neo-propagator}{Asteroid and Comet Trajectory Propagator} NEOPROP\footnote{Splash page URL: https://neo.ssa.esa.int/neo-propagator} to model objects which may impact the Earth.
+From the website:
+\begin{quotation}
+New orbital perturbations (e.g. Poynting-Robertson effect, solar radiation pressure, outgassing) to improve the propagator accuracy and to allow the identification and propagation of any celestial body (not only NEOs but also moons, comets, planets, etc.).
+The pre-existing algorithms were further improved in order to increase the performance and reduce the need for human intervention. Robust and redundant preliminary orbit determination techniques were added in order to deal with very long and disrupted observational arcs, which usually would require a manual split of the observations. 
+\end{quotation}
+
+An \href{https://neo.ssa.esa.int/documents/20126/418165/Setup\_NEOPROP\_2.1.exe/}{*.exe} file is available\footnote{Download URL: https://neo.ssa.esa.int/documents/20126/418165/Setup\_NEOPROP\_2.1.exe/} for download.
+
+The User's Manual focuses on running the software and has scant mathematical explanation.
+
+% Table 17: Integrators implemented
+% Source: Enhanced Orbit Propagator
+% ESA Contract No. RFP/D/IPL-PTE/GLC/al/557.2014
+% NEOPROP2 Software User Manual
+% Reference: https://neo.ssa.esa.int/documents/20126/418165/propagator-manual.pdf/8e36ff2a-f499-a031-77bb-0bf917810d97?t=1559724493027 (page 42)
+
+\begin{table}[!htbp]
+\centering
+\caption{Integrators Implemented}
+\begin{tabular}{llll}
+Integrator             & Step & Step-Size   & Integrator Identifier \\
+Runge-Kutta 45         & single            & variable    & Runge\_Kutta\_45      \\
+Dormand Prince 8       & single            & variable    & Dormand\_Prince\_8    \\
+Runge-Kutta 853        & single            & variable    & Runge\_Kutta\_853     \\
+Runge-Kutta 4          & single            & fixed       & Runge\_Kutta\_4       \\
+Runge-Kutta 4 Adapted  & single            & fixed*      & Runge\_Kutta\_4\_Adapted \\
+Gauss-Jackson 8        & multi             & fixed       & Gauss\_Jackson\_8     \\
+Gauss-Jackson 8 Adapted & multi            & fixed*      & Gauss\_Jackson\_8\_Adapted \\
+Gauss-Jackson 8 Self-Adapted & multi      & fixed*      & Gauss\_Jackson\_8\_Self\_Adapted \\
+\end{tabular}
+
+\begin{flushleft}
+*The integration follows a fixed step-size scheme, but for some trajectory arcs (e.g., close to a celestial body), the step-size might be reduced by a factor of 10.
+
+Source: \textit{Enhanced Orbit Propagator, ESA Contract No. RFP/D/IPL-PTE/GLC/al/557.2014. NEOPROP2 Software User Manual}.\\
+For more details, see: \href{https://neo.ssa.esa.int/documents/20126/418165/propagator-manual.pdf/8e36ff2a-f499-a031-77bb-0bf917810d97?t=1559724493027#page=42}{ESA NEOPROP2 User Manual}.
+\end{flushleft}
+\end{table}
+
+%%    %%    %%    %%    %%    %%    %%
+\subsection{Orbit Determination Toolbox (ODTBX)}
+\begin{quotation}
+The \href{https://opensource.gsfc.nasa.gov/projects/ODTBX/}{Orbit Determination Toolbox} ODTBX is an orbit determination analysis tool based on Matlab and Java that provides a flexible way to do early mission analysis, especially for formation flying and exploration systems. ODTBX is composed of both Matlab and Java code.
+\end{quotation}
+
+Download\footnote{https://opensource.gsfc.nasa.gov/projects/ODTBX/ODTBX\_4\_0.jar} \href{https://opensource.gsfc.nasa.gov/projects/ODTBX/ODTBX_4_0.jar}{ODTBX\_4\_0.jar}
+
+\begin{quotation}
+The Java
+Astrodynamics Toolbox is used as an engine for things that might be slow or inefficient in MATLAB, such as high-fidelity trajectory propagation, lunar and planetary ephemeris look-ups, precession, nutation, polar motion calculations, ephemeris file parsing, and the like.
+\end{quotation}
+
+%%    %%    %%    %%    %%    %%    %%
+\subsection{polyastro: Astrodynamics in Python}
+\begin{quotation}
+poliastro is an open source (MIT) pure Python library for interactive Astrodynamics and Orbital Mechanics, with a focus on ease of use, speed, and quick visualization. It provides a simple and intuitive API, and handles physical quantities with units.
+
+Some features include orbit propagation, solution of the Lambert's problem, conversion between position and velocity vectors and classical orbital elements and orbit plotting, among others. It focuses on interplanetary applications, but can also be used to analyze artificial satellites in Low-Earth Orbit (LEO).
+\end{quotation}
+
+The application \href{https://pypi.org/project/poliastro/}{polyastro} has a page the PyPI server\footnote{https://pypi.org/project/poliastro/} and adequate \href{https://docs.poliastro.space/en/stable/}{documentation}
+
+\begin{itemize}
+	\item Website: https://www.poliastro.space
+	\item PyPi page: \href{https://pypi.org/project/poliastro/}{poliastro 0.17.0}
+	\item Documentation: \href{https://docs.poliastro.space/en/stable/}{poliastro - Astrodynamics in Python}
+\end{itemize}
+
+
+%%    %%    %%    %%    %%    %%    %%
+\subsection{OPI - Orbital Propagation Interface}
+\begin{quotation}
+\href{https://github.com/Space-Systems/OPI}{OPI} is an interface with the goal to facilitate the implementation of orbital propagators into different applications.
+
+To calculate orbital motion, many different software programs exist emphasizing on different aspects such as execution speed or accuracy. They often require different input parameters and are written in different languages. This makes comparing or exchanging them a challenging task. OPI aims at simplifying this by providing a common way of handling propagation. Propagators using OPI are designed as plugins/shared libraries that can be loaded by a host program via the interface.
+\end{quotation}
+
+%%    %%    %%    %%    %%    %%    %%
+\subsection{Orbit Predictor}
+\begin{quotation}
+\href{https://github.com/satellogic/orbit-predictor}{Orbit Predictor} is a Python library to propagate orbits of Earth-orbiting objects (satellites, ISS, Santa Claus, etc) using TLE (Two-Line Elements set). We can say Orbit predictor is kind of a "wrapper" for the python implementation of SGP4.
+\end{quotation}
+
+PyPi page: \href{https://pypi.org/project/orbit-predictor/}{orbit-predictor 1.15.0} \\
+Download source: \href{https://files.pythonhosted.org/packages/c2/98/c1497925d73f522d17a2db3e704a85fdad17fcd191464b82fad82e73aedb/orbit-predictor-1.15.0.tar.gz}{orbit-predictor-1.15.0.tar.gz}
+
+
+%%    %%    %%    %%    %%    %%    %%
+\subsection{Orekit: an Open-source Library for Operational Flight Dynamics Applications}
+\begin{quotation}
+poliastro is an open source (MIT) pure Python library for interactive Astrodynamics and Orbital Mechanics, with a focus on ease of use, speed, and quick visualization. It provides a simple and intuitive API, and handles physical quantities with units.
+
+Some features include orbit propagation, solution of the Lambert's problem, conversion between position and velocity vectors and classical orbital elements and orbit plotting, among others. It focuses on interplanetary applications, but can also be used to analyze artificial satellites in Low-Earth Orbit (LEO).
+\end{quotation}
+
+Footnote\footnote{https://www.researchgate.net/profile/Luc-Maisonobe/publication/310250345\_OREKIT\_AN\_OPEN\_SOURCE\_LIBRARY\_FOR\_OPERATIONAL\_FLIGHT\_DYNAMICS\_APPLICATIONS/links/6034c01e299bf1cc26e4a550/OREKIT-AN-OPEN-SOURCE-LIBRARY-FOR-OPERATIONAL-FLIGHT-DYNAMICS-APPLICATIONS.pdf}
+
+	
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
+

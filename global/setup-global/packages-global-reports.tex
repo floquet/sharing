@@ -34,7 +34,9 @@
 \usepackage{pdfpages}
 
 % Hyperref package for clickable links in the document
-\usepackage[hidelinks]{hyperref} % Hide link borders for clean PDF appearance
+\PassOptionsToPackage{hidelinks}{hyperref} % Set global options
+\usepackage{hyperref} % Load hyperref once
+%\usepackage[hidelinks]{hyperref} % Hide link borders for clean PDF appearance
 
 % Fancy Verbatim for typesetting code or preformatted text
 \usepackage{fancyvrb}
