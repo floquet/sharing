@@ -1,0 +1,22 @@
+% \input{\pLocalTables "tab-propagators.tex"}
+
+\begin{sidewaystable}[!htbp]
+\centering
+\begin{tabular}{lllllp{5cm}}
+\hline
+\textbf{Tool}            & \textbf{Precision} & \textbf{Supported Models}      & \textbf{Ease of Use} & \textbf{Language}   & \textbf{Special Features} \\
+\hline
+GMAT                    & High               & All orbital regimes            & Moderate             & C++                 & Robust mission analysis; trajectory optimization. \\
+Orekit                  & High               & LEO, HEO, GNSS, interplanetary & Advanced             & Java                & Highly customizable library. \\
+Orbit Predictor         & Moderate           & TLE propagation                & Easy                 & Python              & Simplified for Earth satellite orbits. \\
+NEOPROP                 & High               & GNSS and celestial bodies      & Moderate             & Proprietary         & ESA-backed accuracy. \\
+Skyfield                & Moderate           & Astronomical computations      & Easy                 & Python              & Great for tracking astronomical bodies. \\
+ODTBX                   & High               & Matlab-compatible models       & Moderate             & Matlab/Java         & Comprehensive GNSS support. \\
+FOSSASAT                & Moderate           & LEO propagation                & Easy                 & Python              & New entrant focused on small satellites. \\
+\hline
+\end{tabular}
+\caption{Comparison of Open-Source Orbit Propagators}
+\label{tab:propagator_comparison}
+\end{sidewaystable}
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

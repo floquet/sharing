@@ -1,16 +1,63 @@
+% typeset: Pdftex
+% Afterwards compile with pdflatex > bibtex > pdflatex > pdflatex.
+% in TeXShop preferences, changed edit from bibtex to biber
+% beamer likes biber
+% latex likes bibtex
 
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \geometry{a4paper, margin=1in}
+\usepackage{catchfile}
 
+% Fetch home directory
+\CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
+
+% Strip trailing spaces from HomePath
+\makeatletter
+\edef\HomePath{\expandafter\zap@space\HomePath \@empty}
+\makeatother
+
+% Define base paths
+% relies on symlink  at $HOME, e.g.
+% 	GitHub -> /Users/dantopa//repos-xiuhcoatal/github
+\newcommand{\pGithub}			{\HomePath/GitHub/}
+\newcommand{\pGithubSharing}	{\pGithub/sharing/}
+\newcommand{\pGlobal}			{\pGithubSharing/global/}
+\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
+
+% Load Additional Setup Files
+	\input{\pGlobalSetup/setup-global-reports.tex}
+	\input{\pLocalSetup/setup-local.tex}
+
+% Bibliography
+	\input{\pGlobalSetup packages-global-bibliography-charlie.tex}
+%\bibliography{\pShareBibliographies precise.bib}
+%\addbibresource{\pShareBibliographies/precise.bib} % Add another file if needed
+\addbibresource{\pShareBibliographies/fortran.bib} % Add another file if needed
+
+% watermark
+\usepackage[printwatermark]		{xwatermark}
+\newcommand{\WatermarkText}	{DRAFT}
+\newcommand{\WatermarkColor}	{red!5}
+%\newwatermark[allpages, color=\WatermarkColor, angle=45, scale=3, xpos=0, ypos=0]{\WatermarkText}
+	%\newwatermark[ allpages,color=red!5, angle=45, scale=3, xpos=0, ypos=0]{DRAFT}
+\sloppy % loosen spacing globally:
+
+% Title and author
 \title{SwarmStorm: Coarrays in Satellite Simulations}
+\author{Daniel Topa\\\TopaHIIEmail}
+\affil{\missiontech}
+\date{\today}
+
 \author{Daniel T. and Achates}
 \date{\today}
 
 \begin{document}
 
 \maketitle
+
+\tableofcontents
 
 \section*{Abstract}
 This document explores the application of Fortran coarrays to simulate satellite engagements. By leveraging coarrays' parallelism and synchronization capabilities, the simulation models packs of satellites as coarray images and individual satellites as coarray indices. The report outlines the foundational principles, architectural considerations, and implementation details of this innovative approach.
@@ -62,7 +109,8 @@ The simulation follows this high-level flow:
 \end{enumerate}
 
 This design ensures scalability, modularity, and efficient use of Fortran’s coarray features. Future sections will explore specific implementation details and results of these simulations.
-
-\input{Causal_Bubbles.tex}
+	\input{\pSections "sec-fortran.tex"}
+%\input{Causal_Bubbles.tex}
+\printbibliography
 
 \end{document}

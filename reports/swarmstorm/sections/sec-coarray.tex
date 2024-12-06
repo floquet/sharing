@@ -1,0 +1,16 @@
+% \input{\pSections "sec-coarray.tex"}
+
+\section{Coarray Implementation}
+Coarrays in Fortran enable parallelization by extending the language with syntax for distributed arrays. SwarmStorm uses coarrays to represent satellite teams, distributing computational workloads across multiple processors. The following example demonstrates the coarray implementation:
+
+\begin{lstlisting}
+real, allocatable :: position[:]
+allocate(position[*])
+position[this_image()] = compute_position()
+sync all
+\end{lstlisting}
+
+This approach ensures efficient synchronization and communication between processors, facilitating high-performance simulations.
+	\input{\pSections "sec-side-by-side.tex"}
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
