@@ -1,0 +1,24 @@
+% \input{\pSections "sec-proof.tex"}
+
+\lstdefinestyle{terminal}{
+    backgroundcolor=\color{white},    % White background
+    basicstyle=\ttfamily\footnotesize,       % Monospaced font
+    breaklines=true,                  % Enable line wrapping
+    frame=single,                     % Box around the listing
+    tabsize=4,                        % Set tab width
+    showstringspaces=false,           % Hide space markers
+    numbers=left,                     % Show line numbers on the left
+    numberstyle=\tiny,                % Line number font size
+    numbersep=5pt,                    % Space between line numbers and text
+    keywordstyle=\color{black},       % No color for keywords (disable syntax highlighting)
+    commentstyle=\color{black},       % No color for comments
+    stringstyle=\color{black},        % No color for strings
+    language={}                       % Treat as plain text (disable language-specific formatting)
+}
+
+\section{Proof of Principle}
+Below is the output from compiling and running the program, demonstrating its successful execution. The code creates an array of 3 blue satellites of type \texttt{Psamathe} and 2 red satellites of type \texttt{Despina}.
+
+	\lstinputlisting[ style = terminal ]{\pLocalData output.txt}
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

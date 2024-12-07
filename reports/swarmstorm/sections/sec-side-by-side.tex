@@ -1,61 +1,196 @@
 % \input{\pSections "sec-side-by-side.tex"}
 
+%\lstset{
+%    basicstyle=\ttfamily\footnotesize,
+%    numbers=left,
+%    numberstyle=\tiny,
+%    frame=none,
+%    xleftmargin=1.5em,
+%    breaklines=true,
+%    tabsize=4,
+%    keywordstyle=\color{blue}\bfseries,
+%    commentstyle=\color{green!50!black},
+%    stringstyle=\color{red!70!black},
+%    showstringspaces=false,
+%}
+%
+%\newcommand{\alignedcodes}[2]{%
+%\begin{tabular}{@{}>{\ttfamily\footnotesize\raggedright}p{0.45\linewidth}@{\hspace{1em}}>{\ttfamily\footnotesize\raggedright}p{0.45\linewidth}@{}}
+%\hline
+%\textbf{MPI Code} & \textbf{Coarray Code} \\
+%\hline
+%\begin{lstlisting}[language=Fortran]
+%program mpi_hello_world
+%    use mpi
+%    implicit none
+%
+%    integer :: ierr, rank, size
+%
+%    call MPI_Init(ierr)
+%    call MPI_Comm_rank(MPI_COMM_WORLD, rank, ierr)
+%    call MPI_Comm_size(MPI_COMM_WORLD, size, ierr)
+%
+%    print *, 'Hello, World from process ', rank, ' out of ', size
+%
+%    call MPI_Finalize(ierr)
+%end program mpi_hello_world
+%\end{lstlisting} &
+%\begin{lstlisting}[language=Fortran]
+%program coarray_hello_world
+%    implicit none
+%
+%    integer :: num_images, my_image
+%
+%    num_images = num_images()
+%    my_image = this_image()
+%
+%    print *, 'Hello, World from image ', my_image, ' out of ', num_images
+%end program coarray_hello_world
+%\end{lstlisting} \\
+%\hline
+%\end{tabular}
+%}
+%
+%
+%\section*{Side-by-Side Comparison: MPI vs Coarray}
+%\lstset{
+%    basicstyle=\ttfamily\footnotesize,
+%    numbers=left,
+%    numberstyle=\tiny,
+%    xleftmargin=1.5em,
+%    breaklines=true,
+%    tabsize=4,
+%    keywordstyle=\color{blue}\bfseries,
+%    commentstyle=\color{green!50!black},
+%    stringstyle=\color{red!70!black},
+%    showstringspaces=false,
+%}
+%\alignedcodes{}{}
+
+%\section*{Side-by-Side Comparison: MPI vs Coarray}
+
+%\begin{tabular}{|p{0.48\linewidth}|p{0.48\linewidth}|}
+%\hline
+%\textbf{MPI Code} & \textbf{Coarray Code} \\ \hline
+%\lstset{language=Fortran}
+%\begin{lstlisting}
+%program mpi_hello_world
+%    use mpi
+%    implicit none
+%
+%    integer :: ierr, rank, size
+%
+%    call MPI_Init(ierr)
+%    call MPI_Comm_rank(MPI_COMM_WORLD, rank, ierr)
+%    call MPI_Comm_size(MPI_COMM_WORLD, size, ierr)
+%
+%    print *, 'Hello, World from process ', rank, ' out of ', size
+%
+%    call MPI_Finalize(ierr)
+%end program mpi_hello_world
+%\end{lstlisting} &
+%
+%\lstset{language=Fortran}
+%\begin{lstlisting}
+%program coarray_hello_world
+%    implicit none
+%
+%    integer :: num_images, my_image
+%
+%    num_images = num_images()
+%    my_image = this_image()
+%
+%    print *, 'Hello, World from image ', my_image, ' out of ', num_images
+%end program coarray_hello_world
+%\end{lstlisting} \\
+%\hline
+%\end{tabular}
+\section{Side-by-Side Comparison: MPI vs Coarray}
+
 \lstset{
     basicstyle=\ttfamily\footnotesize,
-    numbers=left,
-    numberstyle=\tiny,
-    frame=none,
+    numbers=none,       % Disable line numbers
+    frame=none,         % Remove boxes around code
     xleftmargin=1.5em,
     breaklines=true,
     tabsize=4,
     keywordstyle=\color{blue}\bfseries,
     commentstyle=\color{green!50!black},
     stringstyle=\color{red!70!black},
-    showstringspaces=false,
+    showstringspaces=false
 }
+\begin{table}[ht]
+\centering
+\setlength{\tabcolsep}{4pt} % Reduce padding between table columns
+\renewcommand{\arraystretch}{1.1} % Adjust row spacing
 
-\newcommand{\alignedcodes}[2]{%
-\begin{tabular}{@{}>{\ttfamily\footnotesize\raggedright}p{0.45\linewidth}@{\hspace{1em}}>{\ttfamily\footnotesize\raggedright}p{0.45\linewidth}@{}}
+\begin{tabular}{|p{0.48\linewidth}|p{0.48\linewidth}|}
 \hline
-\textbf{MPI Code} & \textbf{Coarray Code} \\
-\hline
-\begin{lstlisting}[language=Fortran]
+\textbf{MPI Code} & \textbf{Coarray Code} \\ \hline
+
+\begin{lstlisting}
 program mpi_hello_world
+\end{lstlisting} &
+\begin{lstlisting}
+program coarray_hello_world
+\end{lstlisting} \\
+
+\begin{lstlisting}
     use mpi
     implicit none
+\end{lstlisting} &
+\begin{lstlisting}
+    ! No module needed
+    implicit none
+\end{lstlisting} \\
 
-    integer :: ierr, rank, size
+% Additional rows for other parts of the code...
 
+\begin{lstlisting}
     call MPI_Init(ierr)
     call MPI_Comm_rank(MPI_COMM_WORLD, rank, ierr)
     call MPI_Comm_size(MPI_COMM_WORLD, size, ierr)
+\end{lstlisting} &
+\begin{lstlisting}
+    num_images = num_images()
+    my_image = this_image()
+\end{lstlisting} \\
 
-    print *, 'Hello, World from process ', rank, ' out of ', size
+\begin{lstlisting}
+    print *, 'Hello, World from process ', &
+             rank, ' out of ', size
+\end{lstlisting} &
+\begin{lstlisting}
+    print *, 'Hello, World from image ', &
+             my_image, ' out of ', num_images
+\end{lstlisting} \\
 
+\begin{lstlisting}
     call MPI_Finalize(ierr)
 end program mpi_hello_world
 \end{lstlisting} &
-\begin{lstlisting}[language=Fortran]
-program coarray_hello_world
-    implicit none
-
-    integer :: num_images, my_image
-
-    num_images = num_images()
-    my_image = this_image()
-
-    print *, 'Hello, World from image ', my_image, ' out of ', num_images
+\begin{lstlisting}
 end program coarray_hello_world
 \end{lstlisting} \\
+
 \hline
 \end{tabular}
-}
+\caption{Comparison of MPI and Coarray implementations for a Hello World program.}
+\label{table:mpi_vs_coarray}
+\end{table}
 
+\paragraph{Compilation and Execution:}
 
-\section*{Side-by-Side Comparison: MPI vs Coarray}
+To compile and execute the MPI and coarray programs:
+\begin{lstlisting}[language=bash]
+# For MPI:
+mpifort -o mpi_hello_world mpi_hello_world.f90
+mpirun -np 4 ./mpi_hello_world
 
-\alignedcodes{}{}
-
+# For Coarrays:
+caf -o coarray_hello_world coarray_hello_world.f90
+cafrun -n 4 ./coarray_hello_world
+\end{lstlisting}
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
 

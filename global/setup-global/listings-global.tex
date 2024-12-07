@@ -1,0 +1,110 @@
+% \input{\pGlobalSetup listings-global}
+
+% lststyles.tex - Collection of listings styles for LaTeX
+% This file was created with guidance and collaboration from Achates (ChatGPT by OpenAI) on 2024-11-26.
+
+% \lstinputlisting[ style = terminal ]{output.txt}
+% \lstinputlisting[ style = fortran ]{mycode.f90}
+
+% Ensure this file can only be used within another LaTeX document
+\ProvidesFile{lststyles.tex}[2024/11/26 Custom Listings Styles]
+
+% Terminal-style listings
+\lstdefinestyle{terminal}{
+    backgroundcolor=\color{white},    % White background
+    basicstyle=\ttfamily\footnotesize,       % Monospaced font
+    breaklines=true,                  % Enable line wrapping
+    frame=single,                     % Box around the listing
+    tabsize=4,                        % Set tab width
+    showstringspaces=false,           % Hide space markers
+    numbers=left,                     % Show line numbers on the left
+    numberstyle=\tiny,                % Line number font size
+    numbersep=5pt,                    % Space between line numbers and text
+    keywordstyle=\color{black},       % No color for keywords (disable syntax highlighting)
+    commentstyle=\color{black},       % No color for comments
+    stringstyle=\color{black},        % No color for strings
+    language={}                       % Treat as plain text (disable language-specific formatting)
+}
+
+% Fortran-style listings
+\lstdefinestyle{fortran}{
+    language=[90]Fortran,
+    basicstyle=\ttfamily\tiny,        % Monospaced font, tiny size
+    keywordstyle=\color{blue}\bfseries, % Keywords in blue and bold
+    commentstyle=\color{gray},        % Comments in gray
+    stringstyle=\color{green!50!black}, % Strings in green
+    numbers=left,                     % Line numbers on the left
+    numberstyle=\tiny\color{gray},    % Line number font size and color
+    stepnumber=1,                     % Number every line
+    numbersep=5pt,                    % Space between line numbers and text
+    backgroundcolor=\color{white},    % White background
+    showspaces=false,                 % Do not show spaces
+    showstringspaces=false,           % Do not show string spaces
+    showtabs=false,                   % Do not show tabs
+    frame=single,                     % Box around the listing
+    rulecolor=\color{black},          % Frame color
+    breaklines=true,                  % Enable line wrapping
+    breakatwhitespace=true,           % Break at whitespace
+    captionpos=b,                     % Caption position at the bottom
+    tabsize=4,                        % Tab size
+    escapeinside={\%*}{*)},           % Escape sequences for LaTeX
+}
+
+% Fortran-style listings for Fortran 2023
+% Highlighting features from Fortran 2003, 2008, 2018, and 2023.
+\lstdefinestyle{fortran}{
+    language=[90]Fortran,                % Base language is Fortran 90 for compatibility
+    basicstyle=\ttfamily\tiny,          % Monospaced font, tiny size
+    keywordstyle=\color{blue}\bfseries, % Keywords in blue and bold
+    commentstyle=\color{gray},          % Comments in gray
+    stringstyle=\color{green!50!black}, % Strings in green
+    numbers=left,                       % Line numbers on the left
+    numberstyle=\tiny\color{gray},      % Line number font size and color
+    stepnumber=1,                       % Number every line
+    numbersep=5pt,                      % Space between line numbers and text
+    backgroundcolor=\color{white},      % White background
+    showspaces=false,                   % Do not show spaces
+    showstringspaces=false,             % Do not show string spaces
+    showtabs=false,                     % Do not show tabs
+    frame=single,                       % Box around the listing
+    rulecolor=\color{black},            % Frame color
+    breaklines=true,                    % Enable line wrapping
+    breakatwhitespace=true,             % Break at whitespace
+    captionpos=b,                       % Caption position at the bottom
+    tabsize=4,                          % Tab size
+    escapeinside={\%*}{*)},             % Escape sequences for LaTeX
+    morekeywords={abstract,associate,class,extends,final,import,procedure,select,block,where}, % Fortran 2003+ keywords
+    morekeywords={error,critical,team_type,event_post,event_wait,fail_image,stop},             % Fortran 2018 keywords
+    morekeywords={alloc_error,do_concurrent,assume,enumerator,bit,coarray,get_environment_variable}, % Fortran 2023 keywords
+}
+
+% Style for C++ code
+\lstdefinestyle{cpp}{
+    language=C++,
+    basicstyle=\ttfamily\tiny,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{gray},
+    stringstyle=\color{green!50!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color{white},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    frame=single,
+    rulecolor=\color{black},
+    breaklines=true,
+    breakatwhitespace=true,
+    captionpos=b,
+    tabsize=4,
+    escapeinside={\%*}{*)},
+}
+
+% \lstset{style=fortran}
+% Default style to apply globally (if needed)
+% \lstset{style=terminal}
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

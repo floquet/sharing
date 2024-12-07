@@ -12,5 +12,152 @@ sync all
 
 This approach ensures efficient synchronization and communication between processors, facilitating high-performance simulations.
 	\input{\pSections "sec-side-by-side.tex"}
+	
+\subsection{Image Teams for Coarrays}
+Image Teams for Coarrays
+
+In Fortran coarray programming, image teams provide a mechanism for grouping images into smaller, independent subgroups, allowing for localized operations and reduced communication overhead. This concept is particularly useful in simulations involving multiple entities, such as satellite packs, where different groups can operate independently or engage in coordinated interactions.
+Definition and Benefits
+
+\subsubsection{What is an Image Team?}
+An image team is a subset of the program's coarray images that can collaborate independently of other teams. Key advantages include:
+
+    Scalability: Teams enable efficient use of computational resources by limiting communication to within the team.
+    Flexibility: Teams can be dynamically formed and dissolved as simulation needs evolve.
+    Isolation: Different teams operate in isolation, preventing interference and ensuring localized computation.
+
+\subsubsection{Application to Satellite Simulations}
+
+In satellite engagement scenarios, image teams can represent:
+
+    Allied Satellite Packs: Each pack forms a team, coordinating among themselves for maneuvers or data sharing.
+    Enemy Satellite Packs: Similarly, enemy satellites can form their own teams.
+    Engagement Regions: Teams can represent satellites within a particular spatial or operational domain.
+
+For instance:
+
+    A team of 5 friendly satellites can be defined for coordinated defense.
+    Another team of 3 enemy satellites can operate independently for reconnaissance.
+\subsection{Image Teams for Coarrays}
+
+In Fortran coarray programming, \textbf{image teams} provide a mechanism for dividing the images into smaller, independent groups. This capability is essential for managing the complexity of parallel tasks, especially in simulations that involve independent but concurrent operations.
+
+\subsubsection{Concept of Image Teams}
+Each image in Fortran can belong to one or more teams, where a team is a subset of the total number of images. By organizing images into teams, a developer can effectively partition the computational resources, enabling finer control over task parallelism.
+
+For example, in a simulation of satellite engagements:
+\begin{itemize}
+    \item Each team of images can represent a \emph{pack of satellites}.
+    \item Teams operate independently, such that operations on one team do not interfere with another.
+    \item This independence allows for scalable and efficient simulations.
+\end{itemize}
+
+\subsubsection{Forming and Using Teams}
+The formation of image teams in Fortran uses the \texttt{FORM TEAM} and \texttt{CHANGE TEAM} constructs. Here is an example:
+\begin{verbatim}
+FORM TEAM (team_number, my_new_team)
+CHANGE TEAM (my_new_team)
+! Code that operates within the new team
+END TEAM
+\end{verbatim}
+
+\subsubsection{Application to Satellite Simulations}
+In the context of satellite simulations:
+\begin{enumerate}
+    \item \textbf{Team Assignment:} Each team corresponds to a specific mission or group of satellites, such as a reconnaissance team or an orbital defense team.
+    \item \textbf{Independent Execution:} Teams can operate on different timelines or perform entirely different sets of computations without cross-team dependencies.
+    \item \textbf{Scalability:} Teams allow simulations to scale efficiently across available processors.
+\end{enumerate}
+
+\subsubsection{Advantages of Image Teams}
+\begin{itemize}
+    \item \textbf{Reduced Synchronization Overhead:} Teams minimize unnecessary synchronization across unrelated tasks, improving performance.
+    \item \textbf{Encapsulation of Tasks:} By isolating tasks to specific teams, developers can simplify the logic and improve maintainability.
+    \item \textbf{Parallel Debugging:} Errors can be confined to a team, making parallel debugging more manageable.
+\end{itemize}
+
+\subsubsection{Conclusion}
+The concept of image teams in Fortran coarrays empowers developers to tackle complex parallel programming challenges with structured and efficient solutions. In satellite simulations, they allow for a clear and scalable organization of computational tasks, enabling realistic and high-performance models of satellite behavior.
+\subsection{Image Teams in Coarrays}
+\label{ssec:image-teams}
+
+In Fortran coarray programming, \emph{image teams} provide a powerful mechanism to hierarchically organize images for finer control over parallelism and communication. Image teams are particularly useful when subsets of images need to work independently or collaboratively on specific tasks, such as domain decomposition or independent simulations.
+
+\subsubsection{Concept of Image Teams}
+
+An \emph{image team} is a subset of the default set of images. Within a team:
+\begin{itemize}
+    \item Images are indexed locally, starting from 1.
+    \item Communication and synchronization operations are restricted to the images within the team.
+    \item Teams operate independently of one another, enabling parallel tasks without interference.
+\end{itemize}
+
+Image teams enable use cases such as:
+\begin{itemize}
+    \item \textbf{Domain decomposition:} Dividing a computational domain into spatial regions, with each team handling a specific region.
+    \item \textbf{Independent tasks:} Assigning different algorithms or computations to separate teams.
+    \item \textbf{Hierarchical parallelism:} Combining multiple levels of parallel computation for greater scalability.
+\end{itemize}
+
+\subsubsection{Creating Image Teams}
+
+Image teams are created using the \lstinline{FORM TEAM} statement. For example:
+\begin{lstlisting}[language=Fortran, style=fortran, caption={Forming image teams}]
+integer :: team_number
+type(team_type) :: my_team
+
+! Assign team membership based on image index
+team_number = mod(this_image(), 2) + 1
+
+! Form image teams
+form team (team_number, my_team)
+\end{lstlisting}
+
+In this example:
+\begin{itemize}
+    \item Images are divided into two teams based on whether their image indices are even or odd.
+    \item Each team has its own independent scope for computation and synchronization.
+\end{itemize}
+
+\subsubsection{Using Image Teams}
+
+Once a team is formed, all subsequent coarray operations within the \lstinline{CHANGE TEAM} construct are scoped to that team:
+\begin{lstlisting}[language=Fortran, style=fortran, caption={Using image teams}]
+change team (my_team)
+    ! Operations here involve only 'my_team' members
+    print *, 'Image', this_image(), 'of team', num_images()
+end team
+\end{lstlisting}
+
+Inside a \lstinline{CHANGE TEAM} block:
+\begin{itemize}
+    \item \lstinline{THIS_IMAGE()} and \lstinline{NUM_IMAGES()} return indices and size local to the team.
+    \item Synchronization operations such as \lstinline{SYNC ALL} apply only to images within the team.
+\end{itemize}
+
+\subsubsection{Synchronization Between Teams}
+
+While teams operate independently, inter-team communication requires switching back to the parent team using \lstinline{SYNC TEAM} and coarray assignments or other synchronization mechanisms.
+
+\subsubsection{Applications of Image Teams}
+
+Image teams are well-suited for:
+\begin{itemize}
+    \item \textbf{Parallel Discrete Event Simulation (PDES):} Assigning each team a different ``causal bubble'' or event set.
+    \item \textbf{Satellite Engagement Models:} Dividing satellite packs into separate teams to simulate domain-specific interactions.
+    \item \textbf{Multi-resolution Algorithms:} Running different levels of resolution on separate teams and combining results in the parent team.
+    \item \textbf{Load Balancing:} Allocating more images to computationally expensive tasks while isolating less intensive tasks on smaller teams.
+\end{itemize}
+
+\subsubsection{Best Practices}
+
+\begin{enumerate}
+    \item \textbf{Define Membership Carefully:} Ensure logical partitioning of images for tasks and avoid excessive inter-team communication.
+    \item \textbf{Use Descriptive Team Names:} Clearly name \lstinline{TEAM_TYPE} variables for readability and maintenance.
+    \item \textbf{Combine with Coarray Features:} Use coarrays for data sharing across teams and leverage collective subroutines such as \lstinline{CO_SUM} and \lstinline{CO_MAX}.
+    \item \textbf{Debug with Team Scopes:} Print image indices and team sizes during initialization for verification.
+\end{enumerate}
+
+\emph{Image teams} in coarrays are a key feature for building scalable, hierarchical parallel programs in modern Fortran. They enable effective utilization of computational resources for complex simulations, making them an indispensable tool for developers.
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

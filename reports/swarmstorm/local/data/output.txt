@@ -1,19 +1,7 @@
-dantopa@Mac-mini.local:delta $ ./swarmstorm 
- UUID for Satellite-A:
-9C41F2C084914FCCA2BD673E1224DC41
-Satellite Parameters:
-Color:              0
-Mass (Metal):       0.0000000000000000
-Mass (Fuel):        0.0000000000000000
-Radius (Orbit):     0.0000000000000000
-Energy (Kinetic):   0.0000000000000000
-Time Born:          0.0000000000000000
-Time End:           0.0000000000000000
-Time Attack:        0.0000000000000000
-Moniker:               Satellite-A
-UUID:                  9C:41:F2:C0:84:91:4F:CC:A2:BD:67:3E:12:24:DC:41
+dantopa@Mac-mini.local:foxtrot $ ./swarmstorm 
 Created Psamathe Satellite 1
 Satellite Parameters:
+Model:              Psamathe                            
 Color:              1
 Mass (Metal):       1200.0000000000000
 Mass (Fuel):        2500.0000000000000
@@ -23,9 +11,10 @@ Time Born:          0.0000000000000000
 Time End:           0.0000000000000000
 Time Attack:        0.0000000000000000
 Moniker:               TopaSat-1
-UUID:                  61:F3:03:3D:CF:76:47:7B:90:D9:F9:52:E4:B6:38:C2
+UUID:                  BB:2D:DC:18:8C:20:4D:64:B5:31:CE:A6:D9:98:61:D3
 Created Psamathe Satellite 2
 Satellite Parameters:
+Model:              Psamathe                            
 Color:              1
 Mass (Metal):       1200.0000000000000
 Mass (Fuel):        2500.0000000000000
@@ -35,9 +24,10 @@ Time Born:          0.0000000000000000
 Time End:           0.0000000000000000
 Time Attack:        0.0000000000000000
 Moniker:               TopaSat-2
-UUID:                  07:9B:A5:78:9E:1D:48:09:90:1F:CA:FC:78:83:29:D8
+UUID:                  1C:B9:F3:2B:DD:8A:4D:09:9F:5D:6E:75:3F:95:51:B7
 Created Psamathe Satellite 3
 Satellite Parameters:
+Model:              Psamathe                            
 Color:              1
 Mass (Metal):       1200.0000000000000
 Mass (Fuel):        2500.0000000000000
@@ -47,35 +37,49 @@ Time Born:          0.0000000000000000
 Time End:           0.0000000000000000
 Time Attack:        0.0000000000000000
 Moniker:               TopaSat-3
-UUID:                  F9:7A:A1:B6:0C:22:47:3B:98:11:8A:80:DF:7E:B4:B6
-Created Psamathe Satellite 1
+UUID:                  8C:E2:62:72:0C:02:4E:88:BF:70:E0:F8:41:36:35:A1
 Satellite Parameters:
+Model:              Despina                             
 Color:              2
-Mass (Metal):       1200.0000000000000
-Mass (Fuel):        2500.0000000000000
+Mass (Metal):       2450.0000000000000
+Mass (Fuel):        3750.0000000000000
+Radius (Orbit):     0.0000000000000000
+Energy (Kinetic):   0.0000000000000000
+Time Born:          0.0000000000000000
+Time End:           0.0000000000000000
+Time Attack:        0.0000000000000000
+Moniker:               Despina-Class
+UUID:                  00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+Created Despina Satellite 1
+Satellite Parameters:
+Model:              Despina                             
+Color:              2
+Mass (Metal):       2450.0000000000000
+Mass (Fuel):        3750.0000000000000
 Radius (Orbit):     0.0000000000000000
 Energy (Kinetic):   0.0000000000000000
 Time Born:          0.0000000000000000
 Time End:           0.0000000000000000
 Time Attack:        0.0000000000000000
 Moniker:               DanSat-1
-UUID:                  8A:FB:CB:AF:BE:83:40:77:84:B6:50:22:65:AA:54:96
-Created Psamathe Satellite 2
+UUID:                  98:82:0D:21:A9:D0:4A:93:BF:DD:B5:4D:F2:1A:D3:8B
+Created Despina Satellite 2
 Satellite Parameters:
+Model:              Despina                             
 Color:              2
-Mass (Metal):       1200.0000000000000
-Mass (Fuel):        2500.0000000000000
+Mass (Metal):       2450.0000000000000
+Mass (Fuel):        3750.0000000000000
 Radius (Orbit):     0.0000000000000000
 Energy (Kinetic):   0.0000000000000000
 Time Born:          0.0000000000000000
 Time End:           0.0000000000000000
 Time Attack:        0.0000000000000000
 Moniker:               DanSat-2
-UUID:                  4D:06:0C:EE:33:CE:4D:92:B5:A3:11:8A:DB:16:FD:32
+UUID:                  27:22:B1:EA:85:E6:4F:82:B3:74:F2:AD:1A:0E:6D:3D
 
-completed at 2024-12-06  8:30:16
+completed at 2024-12-06 10:35:10
 
-CPU time used =      0.135E-02 seconds.
+CPU time used =      0.267E-02 seconds.
 
 compiler version: GCC version 14.2.0.
 

@@ -3,4 +3,45 @@
 \section{Introduction}
 SwarmStorm employs intrinsic Fortran tools to simulate the dynamic interactions of satellite constellations. The program leverages coarrays to distribute workload across multiple processors efficiently, enabling detailed simulations of satellite parameters, resource management, and orbital dynamics. This report highlights key features of the program, focusing on its object-oriented design and the application of coarrays.
 
+\section{Comparing Fortran and C++ for Linear Algebra Operations}
+
+\subsection{Dot Product}
+
+\textbf{In Fortran:}
+\begin{lstlisting}[style=fortran]
+real(dp) :: x(3), y(3), result
+result = dot_product(x, y)
+\end{lstlisting}
+Fortran handles vector operations efficiently with intrinsic functions like \texttt{dot\_product}, making the implementation compact and intuitive.
+
+\textbf{In C++:}
+\begin{lstlisting}[style=cpp]
+double dot_product = 0.0;
+for (size_t i = 0; i < x.size(); ++i) {
+    dot_product += x[i] * y[i];
+}
+\end{lstlisting}
+In C++, the same operation requires explicit iteration through the elements, which provides control but is more verbose.
+
+\subsection{Matrix-Vector Multiplication}
+
+\textbf{In Fortran:}
+\begin{lstlisting}[style=fortran]
+real(dp) :: A(3, 3), x(3), b(3), r(3)
+r = matmul(A, x) - b
+\end{lstlisting}
+Fortran's array syntax and \texttt{matmul} intrinsic simplify matrix-vector operations.
+
+\textbf{In C++:}
+\begin{lstlisting}[style=cpp]
+std::vector<double> r(x.size(), 0.0);
+for (size_t i = 0; i < A.size(); ++i) {
+    for (size_t j = 0; j < x.size(); ++j) {
+        r[i] += A[i][j] * x[j];
+    }
+    r[i] -= b[i];
+}
+\end{lstlisting}
+C++ requires explicit loops for matrix-vector multiplication, which is verbose but flexible for more complex customizations.
+
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

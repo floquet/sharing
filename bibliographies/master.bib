@@ -1,12 +1,42 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Daniel Topa at 2024-12-05 15:35:26 -0700 
+%% Created for Daniel Topa at 2024-12-06 19:42:25 -0700 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
 
 
+
+@book{pacheco2011introduction,
+	abstract = {Author Peter Pacheco uses a tutorial approach to show students how to develop effective parallel programs with MPI, Pthreads, and OpenMP. The first undergraduate text to directly address compiling and running parallel programs on the new multi-core and cluster architecture, An Introduction to Parallel Programming explains how to design, debug, and evaluate the performance of distributed and shared-memory programs. User-friendly exercises teach students how to compile, run and modify example programs.},
+	author = {Pacheco, Peter},
+	date-added = {2024-12-06 19:42:23 -0700},
+	date-modified = {2024-12-06 19:42:23 -0700},
+	publisher = {Elsevier},
+	title = {An introduction to parallel programming},
+	year = {2011}}
+
+@article{xia2024precise,
+	abstract = {The solar panel of non-geostationary GNSS spacecrafts may not always be perpendicular to the Sun irradiation direction due to attitude errors and mounting misalignment, which affects the modeling of solar radiation pressure (SRP). This study presents the effects of commanded pitch-attitude biases for solar panels on SRP and orbit solutions. From the collected telemetry information, the solar panel B (SP-B) of BeiDou-3 M215 satellite underwent pitch-maneuvers around the body-fixed Y-axis on days of year 65--67 of 2024, and was then kept perpendicular to the body-fixed X-axis (pitch-fixed mode). SRP biases due to the SP-B pitch-maneuvers exhibit remarkable discontinuities in the D (satellite-Sun) direction that cannot be accounted by traditional ECOM1 and ECOM2 SRP models. This is devastating for M215 precise orbit solutions. When combining the ECOM1 and box-wing model (ECOM1 + BW) with telemetry SP-B orientation information, the three-dimensional orbit consistency reaches 10.7 cm, with improvements of about 95.9\% and 96.0\% relative to the ECOM1 and ECOM2 solutions. SLR (Satellite laser ranging) residual mean and standard derivations decrease from  m and  m to  m for ECOM1 and ECOM2 solutions, respectively. For SP-B orientation in pitch-fixed mode, the derived SRP has a twice-per-revolution signal in D similar to that of satellite body, but with opposite harmonic phases and amplitudes greater by a factor of 2--4. SRP perturbation induced by SP-B largely neutralizes the satellite body contribution, thus dominating and changing the total SRP harmonic phases in D. This feature change results in opposing Sun-elongation-angle-dependent systematic patterns of de-trended clocks obtained with ECOM1 model for SP-B in nominal and pitch-fixed orientations, which is not seen in the solutions using ECOM1 + BW model and ECOM2 model. As evidenced by reduced orbit overlap differences, SLR residuals and de-trended clock residuals, and more stable SRP parameter estimates, the ECOM1 + BW model clearly outperforms the ECOM1 and ECOM2 models for SP-B orientation in pitch-fixed mode.},
+	author = {Xia, Fengyu and Zhou, Shanshi and Lin, Xia and Hu, Xiaogong and Liu, Xiao and Jiang, Nana and You, Yunzhi},
+	date-added = {2024-12-06 16:18:06 -0700},
+	date-modified = {2024-12-06 16:18:29 -0700},
+	journal = {GPS Solutions},
+	number = {4},
+	pages = {208},
+	publisher = {Springer},
+	title = {Precise orbit determination for BeiDou-3 satellite with solar panel non-nominal orientation operations using telemetry information},
+	volume = {28},
+	year = {2024}}
+
+@article{d2019improved,
+	abstract = {The proposed research responds to the pressing need of the Air Force to better understand and utilize the dynamics of satellite relative motion for close-proximity missions. Current closed-form relative dynamics models are typically ad-hoc, mission-specific, and affected by major limitations such as the inter-satellite range of applicability, the eccentricity of the satellites orbits, the type of modelled perturbation forces, the resulting algorithm complexity and computational load. The project goal is to develop novel, efficient and accurate relative dynamics models for proximity operations that can be effectively used for orbit design, and guidance, navigation and control GN and C in a broad range of mission scenarios. Those scenarios include orbits of arbitrary eccentricity at small to large distances from Earth eg, from low-Earth to geostationary orbits and with inter-spacecraft separations from virtually zero to hundreds of kilometers.},
+	author = {D'Amico, Simone and Bevilacqua, Riccardo and LELAND STANFORD JUNIOR UNIV CA STANFORD United States},
+	date-added = {2024-12-06 16:13:09 -0700},
+	date-modified = {2024-12-06 16:13:30 -0700},
+	title = {Improved Dynamics Modeling of Proximity Flight using Relative Orbit Elements},
+	year = {2019}}
 
 @article{waldron2023assessing,
 	abstract = {This study focuses on utilizing the increasing availability of satellite trajectory data from global navigation satellite system-enabled low-Earth orbiting satellites and their precision orbit determination (POD) solutions to expand and refine thermospheric model validation capabilities. The research introduces an updated interface for the GEODYN-II POD software, leveraging high-precision space geodetic POD to investigate satellite drag and assess density models. This work presents a case study to examine five models (NRLMSIS2.0, DTM2020, JB2008, TIEGCM, and CTIPe) using precise science orbit (PSO) solutions of the Ice, Cloud, and Land Elevation Satellite-2 (ICESat-2). The PSO is used as tracking measurements to construct orbit fits, enabling an evaluation according to each model's ability to redetermine the orbit. Relative in-track deviations, quantified by in-track residuals and root-mean-square errors (RMSe), are treated as proxies for model densities that differ from an unknown true density. The study investigates assumptions related to the treatment of the drag coefficient and leverages them to eliminate bias and effectively scale model density. Assessment results and interpretations are dictated by the timescale at which the scaling occurs. DTM2020 requires the least scaling (∼−7%) to achieve orbit fits closely matching the PSO within an in-track RMSe of 7 m when scaled over 2 weeks and 2 m when scaled daily. The remaining models require substantial scaling of the mean density offset (∼30 − 75%) to construct orbit fits that meet the aforementioned RMSe criteria. All models exhibit slight over or under-sensitivity to geomagnetic activity according to trends in their 24-hr scaling factors.},

@@ -34,39 +34,22 @@
 % Load Additional Setup Files
 	\input{\pGlobalSetup/setup-global-reports.tex}
 	\input{\pLocalSetup/setup-local.tex}
+	\input{\pGlobalSetup/listings-global}
 
 % Bibliography
 	\input{\pGlobalSetup packages-global-bibliography-charlie.tex}
 \addbibresource{\pShareBibliographies/fortran.bib} % Add another file if need
+
+% watermark
+\usepackage[printwatermark]		{xwatermark}
+\newcommand{\WatermarkText}	{DRAFT}
+\newcommand{\WatermarkColor}	{red!5}
+\newwatermark[allpages, color=\WatermarkColor, angle=45, scale=3, xpos=0, ypos=0]{\WatermarkText}
+
 % Define title, author, and date
 \title{SwarmStorm: A Multiprocessor Satellite Simulation Demonstration Using Fortran Coarrays}
 \author{Daniel Topa}
 \date{\today}
-
-% Code settings
-\lstset{
-  language=[90]Fortran,
-  %basicstyle=\ttfamily\scriptsize,
-  basicstyle=\ttfamily\tiny,
-  keywordstyle=\color{blue}\bfseries,
-  commentstyle=\color{gray},
-  stringstyle=\color{green!50!black},
-  numbers=left,
-  numberstyle=\tiny\color{gray},
-  stepnumber=1,
-  numbersep=5pt,
-  backgroundcolor=\color{white},
-  showspaces=false,
-  showstringspaces=false,
-  showtabs=false,
-  frame=single,
-  rulecolor=\color{black},
-  breaklines=true,
-  breakatwhitespace=true,
-  captionpos=b,
-  tabsize=4,
-  escapeinside={\%*}{*)},
-}
 
 \begin{document}
 
@@ -77,9 +60,11 @@
 \tableofcontents
 	\input{\pSections "sec-introduction.tex"}
 	\input{\pSections "sec-key.tex"}
-	 \input{\pSections "sec-coarray.tex"}
+	\input{\pSections "sec-coarray.tex"}
 	\input{\pSections "sec-conclusion.tex"}
 	\input{\pSections "sec-reading.tex"}
+	\appendix
+	\input{\pSections "sec-proof.tex"}
 
 
 \newpage

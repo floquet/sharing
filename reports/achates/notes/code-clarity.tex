@@ -1,0 +1,134 @@
+%
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+
+\usepackage{amssymb}
+
+\usepackage{geometry}
+
+\usepackage{color}
+
+\usepackage{listings}
+
+\geometry{a4paper, margin=1in}
+
+
+
+% Title Information
+
+\title{\textbf{Achates on Code Clarity and Testing Philosophy}}
+
+\author{Achates}
+
+\date{\today}
+
+
+
+\begin{document}
+
+
+
+\maketitle
+
+
+
+\section*{Code Should Mirror the Blackboard}
+
+
+
+Code should be as \textbf{readable} and \textbf{self-documenting} as possible---closer to how we would express the mathematics on a blackboard. Simplicity, maintainability, and robust testing are key to creating sustainable software.
+
+
+
+\subsection*{Readable Code Mirrors the Blackboard}
+
+Mathematical expressions like \( a \cdot b \) and \( r = Ax - b \) are \textbf{elegant and intuitive}. Translating them directly into code without clutter improves readability and debugging.
+
+\begin{itemize}
+
+    \item In Fortran: \texttt{result = dot\_product(a, b)} or \texttt{r = matmul(A, x) - b} is clear and unambiguous.
+
+    \item In C++, verbose loops or unnecessary size variables can obscure intent and introduce error-prone complexity.
+
+\end{itemize}
+
+
+
+\subsection*{Implicit Sizes Over Explicit Counters}
+
+Relying on \textbf{intrinsic sizes} (e.g., \texttt{size()} or \texttt{A.shape}) is safer than managing counters like \(m, n\) manually. Manual indexing like \(k = 0, m-1\) is error-prone and prone to edge-case bugs. For instance:
+
+\begin{itemize}
+
+    \item Indexing beyond the array bounds throws an error---easy to catch.
+
+    \item Underutilizing the array silently leads to logical errors, which are far worse because they can slip through testing.
+
+\end{itemize}
+
+
+
+\subsection*{Readable Code Encourages Testing}
+
+Compact and mathematical expressions reduce \textbf{cognitive overhead}, freeing developers to focus on writing tests instead of deciphering logic.
+
+\begin{itemize}
+
+    \item When the logic is as simple as \texttt{dot\_product(a, b)}, writing meaningful test cases becomes straightforward.
+
+    \item Verbose loops with manual indexing require extra attention to edge cases (off-by-one errors, empty arrays, etc.).
+
+\end{itemize}
+
+
+
+\subsection*{Avoiding Debugging Nightmares}
+
+Testing doesn’t stop at syntax---it’s about \textbf{logical correctness}. If a program uses only 9 of 10 elements, that’s a logical failure reflecting insufficient test coverage.
+
+
+
+Debugging is made harder when:
+
+\begin{itemize}
+
+    \item Manual indices (\(m, n\), etc.) are used instead of intrinsic methods.
+
+    \item Assumptions about array shapes or sizes aren’t validated.
+
+\end{itemize}
+
+
+
+\subsection*{Philosophy for Future Generations}
+
+Code that mimics the \textbf{clarity of mathematics} teaches good habits to others and reduces the learning curve for maintainers. Engineers using cryptic or overly compact notations (\(m\) for size) often fall into the trap of ``clever code'' that nobody else can decipher.
+
+
+
+\section*{Key Principle: If You Don’t Test, You’ll Pay for It Later}
+
+\begin{quote}
+
+``If A has 10 elements and you ask for 11, well that's the easy one to find. But if you only use 9... Then that proves you don't test.''
+
+\end{quote}
+
+
+
+This principle resonates because:
+
+\begin{itemize}
+
+    \item Over-reliance on manual indices often hides bugs in edge cases.
+
+    \item Developers sometimes \textbf{skip tests} for ``obvious'' operations, missing scenarios where array misuse quietly produces wrong results.
+
+    \item Testing isn’t just about code correctness---it validates design decisions, ensuring intrinsic methods are used properly.
+
+\end{itemize}
+
+
+
+\end{document}

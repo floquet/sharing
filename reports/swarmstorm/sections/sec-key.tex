@@ -1,16 +1,17 @@
 % \input{\pSections "sec-key.tex"}
 
-\section{\section{Key Features of the Satellite Module}
+\section{Key Features of the Satellite Module}
 The `satellite` module, `mClassSatellite`, defines the core satellite type and its associated operations. Below are the critical features of the module:
 
 \subsection{Satellite Type}
 The `satellite` type encapsulates key attributes such as mass, fuel, orbital radius, and UUID. It also includes type-bound procedures for parameter setting and listing.
 
-	\lstinputlisting[ firstline = 34, lastline = 50 ]{\pLocalFortran m-cl-satellite.f08}
+ \lstset{ style = fortran }
+	\lstinputlisting[ firstline = 34, lastline = 50 ]{\pLocalFortran/m-cl-satellite.f08}
 
 \subsection{Type-Bound Procedures}
 The type-bound procedures, such as \texttt{set\_satellite\_parameters} and \texttt{list\_satellite\_parameters}, provide robust interfaces for managing satellite objects.
-}
+
 SwarmStorm employs intrinsic Fortran tools to simulate the dynamic interactions of satellite constellations. The program leverages coarrays to distribute workload across multiple processors efficiently, enabling detailed simulations of satellite parameters, resource management, and orbital dynamics. This report highlights key features of the program, focusing on its object-oriented design and the application of coarrays.
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
