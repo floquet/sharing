@@ -1,0 +1,66 @@
+% typeset: Pdftex
+% Afterwards compile with pdflatex > bibtex > pdflatex > pdflatex.
+% in TeXShop preferences, changed edit from bibtex to biber
+% beamer likes biber
+% latex likes bibtex
+
+\documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{enumitem}  % list labels A, B, C
+\usepackage{pdfpages}
+
+%\addbibresource{radar.bib}
+%\bibliography{\pSections radar.bib}
+%			pdflatex --shell-escape  --file-line-error --synctex=1
+\usepackage{catchfile}
+
+% Fetch home directory
+\CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
+
+% Strip trailing spaces from HomePath
+\makeatletter
+\edef\HomePath{\expandafter\zap@space\HomePath \@empty}
+\makeatother
+
+% Define base paths
+% relies on symlink  at $HOME, e.g.
+% 	GitHub -> /Users/dantopa//repos-xiuhcoatal/github
+\newcommand{\pGithub}			{\HomePath/GitHub/}
+\newcommand{\pGithubSharing}	{\pGithub/sharing/}
+\newcommand{\pGlobal}			{\pGithubSharing/global/}
+\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
+
+% Load Additional Setup Files
+\input{\pGlobalSetup/setup-global-reports.tex}
+\input{\pLocalSetup/setup-local.tex}
+
+\input{\pGlobalSetup packages-global-bibliography-alpha.tex}
+\bibliography{\pShareBibliographies fourier.bib}
+%\addbibresource{\pGlobalBibliographies radar.bib}
+\usepackage[printwatermark]{xwatermark}
+	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+
+
+\title{Fourier and Fourier-Like Functions:\\Examples in Spectral Decomposition}
+\author{Daniel Topa\\\TopaHIIEmail}
+\affil{\missiontech}
+
+\begin{document}
+\maketitle
+	\input{\pSections sec-abstract}
+\tableofcontents
+				%
+		\input{\pSections "sec-introduction}
+			
+\printbibliography
+	
+\end{document} 
+
+\tiny
+\scriptsize
+\footnotesize
+\small
+\normalsize
+\large
+\Large
+\huge
+\Huge
