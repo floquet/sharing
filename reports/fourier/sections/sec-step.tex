@@ -1,0 +1,42 @@
+% \input{\pSections/step}
+%
+\section{Example: The Heaviside Step Function}
+\section{Decomposition of the Heaviside Step Function}
+
+The Heaviside step function $H(x)$ defined on the interval $(-\pi, \pi)$ can be written as a Fourier series:
+\begin{equation}
+\begin{split}
+H(x) &= \sum_{n=1}^{\infty} \frac{2}{\pi n} \sin\left(\frac{n\pi}{2}\right) e^{inx},
+\end{split}
+\end{equation}
+where the Fourier coefficients are given by:
+\begin{equation}
+c_n = \frac{1}{\pi in} (1 - (-1)^n).
+\end{equation}
+
+\section{Zernike Polynomials on the Top-Hat Function}
+
+The top-hat function on the unit disk can be expanded using Zernike polynomials:
+\begin{equation}
+\text{Top-Hat}(r) = \sum_{n,m} a_{n,m} Z_{n,m}(r, \theta),
+\end{equation}
+with the coefficients given by:
+\begin{equation}
+a_{n,m} = \int_0^{2\pi} \int_0^1 \text{Top-Hat}(r) Z_{n,m}(r, \theta) r \, dr \, d\theta.
+\end{equation}
+
+\section{Weierstrass Approximation Theorem}
+
+The Weierstrass approximation theorem states that any continuous function defined on a closed interval can be uniformly approximated by polynomials:
+\begin{equation}
+\sup_{x \in [a, b]} |f(x) - P(x)| < \epsilon.
+\end{equation}
+
+\section{Pointwise and Uniform Convergence}
+
+- **Pointwise Convergence**: A sequence \(f_n(x)\) converges pointwise to \(f(x)\) if for each \(x\), \(\lim_{n \to \infty} f_n(x) = f(x)\).
+- **Uniform Convergence**: A sequence \(f_n(x)\) converges uniformly to \(f(x)\) if:
+\begin{equation}
+\sup_{x \in [a, b]} |f_n(x) - f(x)| \to 0 \quad \text{as} \quad n \to \infty.
+\end{equation}
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
