@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{xcolor}
+%\newcommand{\listingFontSize}{\footnotesize} % Default font size for listings
+\usepackage{listings}
+	\input{/Users/dantopa/repos-xiuhcoatal/github/sharing/global/setup-global/del-listings-global}
+
+%\lstdefinestyle{terminal}{
+%    backgroundcolor=\color{black},
+%    basicstyle=\color{white}\ttfamily\footnotesize,
+%    frame=single,
+%    breaklines=true,
+%    numbers=none,
+%    tabsize=4
+%}
+
+%\lstdefinestyle{terminal}{
+%    backgroundcolor=\color{black}, % Black background
+%    basicstyle=\color{white}\ttfamily\footnotesize, % White text, monospaced font, small size
+%    frame=single,                  % Box around the listing
+%    breaklines=true,               % Enable line wrapping
+%    numbers=none,                  % No line numbers
+%    tabsize=4                      % Tab size
+%}
+
+
+\begin{document}
+
+Compile the Fortran code into a shared library:
+\begin{lstlisting}[ style = terminal, caption = {C++ wrapper for the Fortran routine.}]
+$ gfortran -shared -fPIC -o libmyfortran.so myfortran.f90
+\end{lstlisting}
+
+\begin{lstlisting}[style=terminal]
+Boo
+\end{lstlisting}
+
+\end{document}

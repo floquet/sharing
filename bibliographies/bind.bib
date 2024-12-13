@@ -1,0 +1,257 @@
+%% This BibTeX bibliography file was created using BibDesk.
+%% https://bibdesk.sourceforge.io/
+
+%% Created for Daniel Topa at 2024-12-12 13:31:51 -0700 
+
+
+%% Saved with string encoding Unicode (UTF-8) 
+
+
+
+@misc{pyhpc2016_slides,
+	author = {PyHPC Workshop Committee},
+	date-added = {2024-12-12 10:42:34 -0700},
+	date-modified = {2024-12-12 10:42:34 -0700},
+	howpublished = {Presentation slides},
+	note = {Slides from the PyHPC 2016 workshop, focusing on Python for High-Performance Computing.},
+	title = {PyHPC 2016 Slides Handout},
+	url = {https://mbdevpl.github.io/pyhpc2016_slides_handout.pdf},
+	urldate = {2024-12-12},
+	year = {2016},
+	bdsk-url-1 = {https://mbdevpl.github.io/pyhpc2016_slides_handout.pdf}}
+
+@article{kim2016kgen,
+	abstract = {Computational kernels, which are small pieces of software that selectively capture the characteristics of larger applications, have been used successfully for decades. Kernels allow for the testing of a compiler's ability to optimize code, performance of future hardware and reproducing compiler bugs. Unfortunately they can be rather time consuming to create and do not always accurately represent the full complexity of large scientific applications. Furthermore, expert knowledge is often required to create such kernels. In this paper, we present a Python-based tool that greatly simplifies the generation of computational kernels from Fortran based applications. Our tool automatically extracts partial source code of a larger Fortran application
+into a stand-alone executable kernel. Additionally, our tool also generates state data necessary
+for proper execution and verification of the extracted kernel. We have utilized our tool to
+extract more than thirty computational kernels from a million-line climate simulation model.
+Our extracted kernels have been used for a variety of purposes including: code modernization,
+identification of limitations in compiler optimizations, numerical algorithm debugging, compiler
+bug reporting, and for procurement benchmarking},
+	author = {Kim, Youngsung and Dennis, John and Kerr, Christopher and Kumar, Raghu Raj Prasanna and Simha, Amogh and Baker, Allison and Mickelson, Sheri},
+	date-added = {2024-12-12 10:39:39 -0700},
+	date-modified = {2024-12-12 10:39:56 -0700},
+	journal = {Procedia Computer Science},
+	pages = {1450--1460},
+	publisher = {Elsevier},
+	title = {KGEN: A Python tool for automated Fortran kernel generation and verification},
+	volume = {80},
+	year = {2016}}
+
+@article{arabas2014formula,
+	abstract = {Three object-oriented implementations of a prototype solver of the advection equation are introduced. The presented programs are based on Blitz++ (C++), NumPy (Python) and Fortran's built-in array containers. The solvers constitute implementations of the Multidimensional Positive-Definite Advective Transport Algorithm (MPDATA). The introduced codes serve as examples for how the application of object-oriented programming (OOP) techniques and new language constructs from C++11 and Fortran 2008 allow to reproduce the mathematical notation used in the literature within the program code. A discussion on the tradeoffs of the programming language choice is presented. The main angles of comparison are code brevity and syntax clarity (and hence maintainability and auditability) as well as performance. All performance tests are carried out using free and open-source compilers. In the case of Python, a significant performance gain is observed when switching from the standard interpreter (CPython) to the PyPy implementation of Python. Entire source code of all three implementations is embedded in the text and is licensed under the terms of the GNU GPL license.},
+	author = {Arabas, Sylwester and Jarecka, Dorota and Jaruga, Anna and Fija{\l}kowski, Maciej},
+	date-added = {2024-12-12 10:37:10 -0700},
+	date-modified = {2024-12-12 10:37:36 -0700},
+	journal = {Scientific Programming},
+	number = {3},
+	pages = {201--222},
+	publisher = {IOS Press},
+	title = {Formula translation in Blitz++, NumPy and modern Fortran: A case study of the language choice tradeoffs},
+	volume = {22},
+	year = {2014}}
+
+@book{langtangen2008python,
+	author = {Langtangen, Hans Petter},
+	date-added = {2024-12-12 10:35:30 -0700},
+	date-modified = {2024-12-12 10:35:30 -0700},
+	publisher = {Springer},
+	title = {Python scripting for computational science},
+	year = {2008}}
+
+@article{langtangen2006fortran,
+	author = {Langtangen, Hans Petter},
+	date-added = {2024-12-12 08:26:58 -0700},
+	date-modified = {2024-12-12 08:26:58 -0700},
+	journal = {Python Scripting for Computational Science},
+	pages = {443--473},
+	publisher = {Springer},
+	title = {Fortran Programming with Numerical Python Arrays},
+	year = {2006}}
+
+@online{pyfort_reference,
+	abstract = {Pyfort is a tool for connecting Fortran routines (and "Fortran-like" C) to Python (www.python.org) and its Numerical Python array extension (numpy.sf.net). Pyfort translates an module file that describes the routines you wish to access from Python into a C language source file defining a Python module. Pyfort will also build and install this extension into Python.},
+	author = {Paul F. Dubois},
+	date-added = {2024-12-12 08:24:13 -0700},
+	date-modified = {2024-12-12 08:25:43 -0700},
+	keywords = {Python, Fortran},
+	note = {Comprehensive guide for PyFort functionality and usage.},
+	title = {PyFort Reference Manual},
+	url = {https://pyfortran.sourceforge.net/pyfort/pyfort_reference.htm},
+	urldate = {2024-12-12},
+	year = {n.d.},
+	bdsk-url-1 = {https://pyfortran.sourceforge.net/pyfort/pyfort_reference.htm}}
+
+@article{790589,
+	abstract = {Python is a great scripting language. It is portable, free, and has a powerful numerical facility, object oriented features, and a library of modules that enable a huge variety of applications: cryptography, image processing, special effects for movies, Web programming, Web site search engines, and so on. The authors have created a tool, Pyfort, for connecting Fortran routines to Python. To use Pyfort, you create an input file that describes the Fortran functions and subroutines you wish to access from Python. This file uses a syntax that is close to a subset of the Fortran 95 interface syntax. Once the input file is prepared, you execute the Pyfort tool. The tool produces one or more Python extension modules, which you then compile and load into Python, either statically or dynamically, as desired.},
+	author = {Dubois, P.F. and Yang, T.-Y.},
+	date-added = {2024-12-12 08:14:11 -0700},
+	date-modified = {2024-12-12 08:17:51 -0700},
+	doi = {10.1109/5992.790589},
+	journal = {Computing in Science & Engineering},
+	keywords = {Java;Software maintenance;Libraries;Cryptography;Strips;Protection;Computer crashes;Computational modeling;Object oriented modeling;Scientific computing},
+	number = {5},
+	pages = {66-73},
+	title = {Extending Python with Fortran},
+	url = {https://ieeexplore.ieee.org/document/790589},
+	volume = {1},
+	year = {1999},
+	bdsk-url-1 = {https://doi.org/10.1109/5992.790589}}
+
+@article{peterson2009f2py,
+	abstract = {In this paper we tackle the problem of connecting low-level Fortran programs to high-level Python programs. The difficulties of mixed language programming between Fortran and C are resolved in an almost compiler and platform independent way. We provide a polished software tool F2PY that can (semi-)automatically build interfaces between the Python and Fortran languages and hence almost completely hide the difficulties from the target user: a research scientist who develops a computer model using a high-performance scripting approach.
+
+},
+	author = {Peterson, Pearu},
+	date-added = {2024-12-12 08:07:38 -0700},
+	date-modified = {2024-12-12 08:10:46 -0700},
+	journal = {International Journal of Computational Science and Engineering},
+	number = {4},
+	pages = {296--305},
+	publisher = {Inderscience Publishers},
+	title = {F2PY: a tool for connecting Fortran and Python programs},
+	url = {https://www.inderscienceonline.com/doi/10.1504/IJCSE.2009.029165},
+	volume = {4},
+	year = {2009}}
+
+@article{8745480,
+	abstract = {Although many active scientific codes use modern Fortran, most contemporary scientific software libraries are implemented in C and C++. Providing their numerical, algorithmic, or data management features to Fortran codes requires writing and maintaining substantial amounts of glue code. This paper introduces a tool that automatically generates native Fortran 2003 interfaces to C and C++ libraries. The tool supports C++ features that have no direct Fortran analog, such as templated functions and exceptions. A set of simple examples demonstrates the utility and scope of the tool, and timing measurements with a mock numerical library illustrate the minimal performance impact of the generated wrapper code.},
+	author = {Johnson, Seth R. and Prokopenko, Andrey and Evans, Katherine J.},
+	date-added = {2024-12-12 08:00:43 -0700},
+	date-modified = {2024-12-12 08:01:32 -0700},
+	doi = {10.1109/MCSE.2019.2924204},
+	journal = {Computing in Science & Engineering},
+	keywords = {C++ languages;Software lbraries;Software tools;Government;Software algorithms;Computer languages;Software Interoperability;Scientific Codes;Software Reusability;Fortran;C++;SWIG},
+	number = {5},
+	pages = {84-94},
+	title = {Automated Fortran--C++ Bindings for Large-Scale Scientific Applications},
+	volume = {22},
+	year = {2020},
+	bdsk-url-1 = {https://doi.org/10.1109/MCSE.2019.2924204}}
+
+@article{4548209,
+	abstract = {When building large scientific codes, you might have to mix different programming languages. The authors show how to bridge the interoperability gap between Fortran 90/95 and C, and from C to other languages, with working code examples},
+	author = {Pletzer, Alexander and McCune, Douglas and Muszala, Stefan and Vadlamani, Srinath and Kruger, Scott},
+	date-added = {2024-12-12 07:57:02 -0700},
+	date-modified = {2024-12-12 07:57:34 -0700},
+	doi = {10.1109/MCSE.2008.94},
+	journal = {Computing in Science & Engineering},
+	keywords = {Java;Joining processes;Object oriented programming;Object oriented modeling;Computer languages;Bridges;Data encapsulation;Programming profession;Parallel programming;Parallel architectures;scientific programming;Fortran;Python;derived types;programming languages},
+	number = {4},
+	pages = {86-92},
+	title = {Exposing Fortran Derived Types to C and Other Languages},
+	volume = {10},
+	year = {2008},
+	bdsk-url-1 = {https://doi.org/10.1109/MCSE.2008.94}}
+
+@techreport{TS29113,
+	author = {{J3 Fortran Standards Committee}},
+	date-added = {2024-12-12 07:51:53 -0700},
+	date-modified = {2024-12-12 07:51:53 -0700},
+	institution = {ISO/IEC JTC1/SC22/WG5},
+	note = {Technical Specification TS 29113},
+	number = {12-119},
+	title = {Further Interoperability of Fortran with C},
+	url = {https://j3-fortran.org/doc/year/12/12-119.pdf},
+	year = {2012},
+	bdsk-url-1 = {https://j3-fortran.org/doc/year/12/12-119.pdf}}
+
+@book{metcalf2024modern,
+	abstract = {Fortran remains one of the principal programming languages used in high-performance scientific, numerical, and engineering computing. A series of significant revisions to the standard versions of the language have progressively enhanced its capabilities, and the current standard - Fortran 2023 - brings with it further additions and improvements. The language as defined by its most recent standards, with their introduction of object-oriented programming and of coarrays, is often referred to generically as 'Modern Fortran', and this term is increasingly used in the literature. Thus, we see that Fortran's particular advantages as a high-end numerical language, especially where arrays are the main form of data object and/or where complex arithmetic is involved, are still to the fore},
+	author = {Metcalf, Michael and Reid, John and Cohen, Malcolm and Bader, Reinhold},
+	date-added = {2024-12-12 07:45:13 -0700},
+	date-modified = {2024-12-12 07:46:09 -0700},
+	edition = {3},
+	publisher = {Oxford University Press},
+	title = {Modern Fortran Explained: Incorporating Fortran 2023},
+	year = {2024}}
+
+@manual{cffi_docs,
+	author = {CFFI Developers},
+	date-added = {2024-12-11 21:44:02 -0700},
+	date-modified = {2024-12-11 21:44:02 -0700},
+	note = {Accessed: 2024-12-11},
+	title = {CFFI Documentation},
+	url = {https://cffi.readthedocs.io/en/latest/},
+	year = {2024},
+	bdsk-url-1 = {https://cffi.readthedocs.io/en/latest/}}
+
+@misc{cffi_github,
+	author = {CFFI Developers},
+	date-added = {2024-12-11 21:44:02 -0700},
+	date-modified = {2024-12-11 21:44:02 -0700},
+	note = {Accessed: 2024-12-11},
+	title = {CFFI GitHub Repository},
+	url = {https://github.com/cffi/cffi},
+	year = {2024},
+	bdsk-url-1 = {https://github.com/cffi/cffi}}
+
+@manual{cython_docs,
+	author = {Cython Developers},
+	date-added = {2024-12-11 21:44:02 -0700},
+	date-modified = {2024-12-11 21:44:02 -0700},
+	note = {Accessed: 2024-12-11},
+	title = {Cython Documentation},
+	url = {https://docs.cython.org/en/latest/},
+	year = {2024},
+	bdsk-url-1 = {https://docs.cython.org/en/latest/}}
+
+@manual{cython_quickstart,
+	author = {Cython Developers},
+	date-added = {2024-12-11 21:44:02 -0700},
+	date-modified = {2024-12-11 21:44:02 -0700},
+	note = {Accessed: 2024-12-11},
+	title = {Cython: Getting Started Guide},
+	url = {https://docs.cython.org/en/latest/src/quickstart/index.html},
+	year = {2024},
+	bdsk-url-1 = {https://docs.cython.org/en/latest/src/quickstart/index.html}}
+
+@manual{cython_tutorial,
+	author = {Cython Developers},
+	date-added = {2024-12-11 21:44:02 -0700},
+	date-modified = {2024-12-11 21:44:02 -0700},
+	note = {Accessed: 2024-12-11},
+	title = {Cython Tutorial},
+	url = {https://docs.cython.org/src/tutorial/cython_tutorial.html},
+	year = {2024},
+	bdsk-url-1 = {https://docs.cython.org/src/tutorial/cython_tutorial.html}}
+
+@misc{cython_homepage,
+	author = {Cython Developers},
+	date-added = {2024-12-11 21:44:02 -0700},
+	date-modified = {2024-12-11 21:44:02 -0700},
+	note = {Accessed: 2024-12-11},
+	title = {Cython Official Website},
+	url = {https://cython.org/},
+	year = {2024},
+	bdsk-url-1 = {https://cython.org/}}
+
+@manual{f2py_stable,
+	author = {NumPy Developers},
+	date-added = {2024-12-11 21:41:54 -0700},
+	date-modified = {2024-12-11 21:41:54 -0700},
+	note = {Accessed: 2024-12-11},
+	title = {F2PY Documentation (Stable)},
+	url = {https://numpy.org/doc/stable/f2py/},
+	year = {2024},
+	bdsk-url-1 = {https://numpy.org/doc/stable/f2py/}}
+
+@manual{f2py_usage,
+	author = {NumPy Developers},
+	date-added = {2024-12-11 21:41:49 -0700},
+	date-modified = {2024-12-11 21:41:49 -0700},
+	note = {Accessed: 2024-12-11},
+	title = {F2PY Usage Guide},
+	url = {https://numpy.org/doc/2.1/f2py/usage.html},
+	year = {2024},
+	bdsk-url-1 = {https://numpy.org/doc/2.1/f2py/usage.html}}
+
+@book{reid2018modern,
+	author = {Reid, John and others},
+	chapter = {19},
+	date-added = {2024-12-11 20:50:17 -0700},
+	date-modified = {2024-12-11 20:50:17 -0700},
+	note = {Interoperability with C},
+	publisher = {Oxford University Press},
+	title = {Modern Fortran for Scientists and Engineers},
+	year = {2018}}

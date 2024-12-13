@@ -1,0 +1,92 @@
+% \input{\pSections "sec-isco_c_binding.tex"}
+
+\section{Fortran's \texttt{iso\_c\_binding}}
+Fortran 2018 introduced significant advancements in interoperability with the C programming language, marking a major breakthrough in combining the strengths of these two languages. This section highlights the key features of Fortran-C interoperability as defined in the Fortran 2018 standard the following is excerpted and adapted from \emph{Modern Fortran Explained: Incorporating Fortran 2023, 3rd Edition} by Metcalf, Reid, Cohen, and Bader (2024).
+
+\subsection{Key Features of Interoperability}
+
+Fortran 2018 provides robust mechanisms to facilitate seamless integration between Fortran and C, ensuring efficient and consistent data exchange and procedure calling conventions. The following are the main features of Fortran-C interoperability:
+
+\subsubsection{Interoperable Data Types}
+The standard defines a set of data types that are compatible between Fortran and C. These data types ensure seamless translation and interpretation of data structures when shared across both languages.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lll}
+\textbf{Type} & \textbf{\texttt{Named Constant}} & \textbf{C Type or Types} \\\hline
+integer & \texttt{c\_int} & \texttt{int} \\
+ & \texttt{c\_short} & \texttt{short int} \\
+ & \texttt{c\_long} & \texttt{long int} \\
+ & \texttt{c\_long\_long} & \texttt{long long int} \\
+ & \texttt{c\_signed\_char} & \texttt{signed char, unsigned char} \\
+ & \texttt{c\_size\_t} & \texttt{size\_t} \\
+ & \texttt{c\_int8\_t} & \texttt{int8\_t} \\
+ & \texttt{c\_int16\_t} & \texttt{int16\_t} \\
+ & \texttt{c\_int32\_t} & \texttt{int32\_t} \\
+ & \texttt{c\_int64\_t} & \texttt{int64\_t} \\
+ & \texttt{c\_int\_least8\_t} & \texttt{int\_least8\_t} \\
+ & \texttt{c\_int\_least16\_t} & \texttt{int\_least16\_t} \\
+ & \texttt{c\_int\_least32\_t} & \texttt{int\_least32\_t} \\
+ & \texttt{c\_int\_least64\_t} & \texttt{int\_least64\_t} \\
+ & \texttt{c\_int\_fast8\_t} & \texttt{int\_fast8\_t} \\
+ & \texttt{c\_int\_fast16\_t} & \texttt{int\_fast16\_t} \\
+ & \texttt{c\_int\_fast32\_t} & \texttt{int\_fast32\_t} \\
+ & \texttt{c\_int\_fast64\_t} & \texttt{int\_fast64\_t} \\
+ & \texttt{c\_intmax\_t} & \texttt{intmax\_t} \\
+ & \texttt{c\_intptr\_t} & \texttt{intptr\_t} \\[3pt]
+real & \texttt{c\_float} & \texttt{float} \\
+ & \texttt{c\_double} & \texttt{double} \\
+ & \texttt{c\_long\_double} & \texttt{long double} \\[3pt]
+complex & \texttt{c\_float\_complex} & \texttt{float \_Complex} \\
+ & \texttt{c\_double\_complex} & \texttt{double \_Complex} \\
+ & \texttt{c\_long\_double\_complex} & \texttt{long double \_Complex} \\[3pt]
+logical & \texttt{c\_bool} & \texttt{\_Bool} \\[3pt]
+character & \texttt{c\_char} & \texttt{char} \\
+\end{tabular}
+\caption{Named constants for interoperable kinds of intrinsic Fortran types. Adapted from Metcalf, Cohen, and Reid, Table 19.1.}
+\label{tab:fortran_c_interop}
+\end{table}
+
+\subsubsection{The \texttt{ISO\_C\_BINDING} Module}
+The \texttt{ISO\_C\_BINDING} intrinsic module introduces named constants and derived types that map Fortran types to their C counterparts. This module ensures consistent interpretation and compatibility of data types across both languages.
+
+\subsubsection{Procedure Interoperability}
+Fortran procedures can be made accessible to C, and vice versa, by using the \texttt{BIND(C)} attribute. This attribute specifies the linkage convention and optionally the external name to be used in the C environment, enabling seamless procedure calls between the languages.
+
+\subsubsection{Interoperability of Global Data}
+Global variables can be shared between Fortran and C by applying the \texttt{BIND(C)} attribute. This allows both languages to access and modify the same global data structures, ensuring consistency across the codebase.
+
+\subsubsection{Interfacing with C Pointers}
+The \texttt{ISO\_C\_BINDING} module includes derived types such as \texttt{C\_PTR} and \texttt{C\_FUNPTR}, which facilitate the interaction with C pointers and function pointers. These types ensure that pointer operations remain compatible and error-free.
+
+\subsubsection{Interoperability of Arrays}
+Guidelines are provided in the Fortran 2018 standard for handling array descriptors. These guidelines ensure that arrays, whether passed by Fortran or C, are correctly interpreted and manipulated across the languages.
+
+\subsection{Historical Impact}
+The introduction of these features in Fortran 2018 marked a significant milestone in scientific and engineering computing. By enabling seamless interoperability with C, Fortran retained its dominance in numerical computing while leveraging the extensive ecosystem of C libraries and tools. This advancement greatly simplified the process of integrating Fortran with modern software stacks.
+
+\subsection{Further Enhancements with TS 29113}
+The Technical Specification TS 29113, titled \emph{Further Interoperability of Fortran with C}, builds upon the Fortran 2018 standard to offer extended capabilities and clarifications. Notable additions include support for assumed-shape arrays and optional dummy arguments in interoperable procedures. For more details, refer to \url{https://j3-fortran.org/doc/year/12/12-119.pdf} \cite[TS29113].
+
+\subsection{Additional Concepts from Chapter 20}
+The following are additional interoperability concepts excerpted and adapted from \emph{Modern Fortran Explained, 5th Edition} by Metcalf, Reid, Cohen, and Bader (2024):
+
+\subsubsection{Interoperability of Derived Types}
+Derived types can be made interoperable with C structures by using the \texttt{BIND(C)} attribute. For example, a Fortran type can interoperate with a C structure if they have the same number of components, and each component is interoperable. Components must be declared in the same order.
+
+\subsubsection{Procedure Interoperability}
+Fortran procedures can interoperate with C function prototypes if they declare arguments and results that match the corresponding C types. A Fortran explicit-shape or assumed-shape array can interoperate with a C array.
+
+\subsubsection{Assumed-Type Dummy Arguments}
+The assumed-type syntax \texttt{TYPE(*)} allows interoperability with C types where no type information is specified. Assumed-type dummy arguments can be scalar, assumed-shape, or rank-agnostic arrays.
+
+\subsubsection{Optional Arguments}
+Fortran allows optional arguments to interoperate with C. If an argument is not present, Fortran passes a null pointer to the C procedure, enabling flexible interoperability with optional parameters in C.
+
+\subsubsection{Enumerations}
+Enumerations declared with \texttt{BIND(C)} enable Fortran to interoperate with C \texttt{enum} types. For example, a C enumeration can map directly to a Fortran kind value.
+
+\subsection{Final Notes}
+Fortran and C interoperability continues to empower developers by combining the computational efficiency of Fortran with the extensive library ecosystem of C, enabling robust solutions for scientific and engineering challenges.
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

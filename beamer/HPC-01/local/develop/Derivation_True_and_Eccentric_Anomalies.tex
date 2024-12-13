@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, graphicx}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{hyperref}
+
+\title{Derivation of Relations Between True and Eccentric Anomalies}
+\author{Achates (ChatGPT)}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Introduction}
+This document outlines the starting points and key relationships necessary for re-deriving Equation (1) and Equation (3) from the paper, which relate the true anomaly (\(v\)) and eccentric anomaly (\(E\)).
+
+\section*{Key Relationships}
+\subsection*{1. Tangent Relation Between True and Eccentric Anomaly}
+\begin{equation}
+\tan\frac{v}{2} = \sqrt{\frac{1 + e}{1 - e}} \tan\frac{E}{2},
+\end{equation}
+where \(e\) is the orbital eccentricity.
+
+\subsection*{2. Radius Vector in Terms of \(E\) and \(v\)}
+\begin{itemize}
+    \item Using the \textbf{eccentric anomaly}:
+    \[
+    r = a(1 - e \cos E),
+    \]
+    \item Using the \textbf{true anomaly}:
+    \[
+    r = \frac{a(1 - e^2)}{1 + e \cos v}.
+    \]
+\end{itemize}
+
+\subsection*{3. Sine and Cosine Relations for True Anomaly}
+From the geometry of the ellipse:
+\[
+\cos v = \frac{\cos E - e}{1 - e \cos E}, \quad \sin v = \frac{\sqrt{1 - e^2} \sin E}{1 - e \cos E}.
+\]
+
+\section*{Equation (1): Relating \(v\) and \(E\)}
+\subsection*{Starting Point}
+Consider the difference in angles:
+\[
+\tan\frac{v - E}{2}.
+\]
+Using the tangent addition formula:
+\[
+\tan\frac{v - E}{2} = \frac{\sin(v - E)}{1 + \cos(v - E)}.
+\]
+
+\subsection*{Expand Sine and Cosine Terms}
+Expand \(\sin(v - E)\) and \(\cos(v - E)\) using:
+\[
+\sin(v - E) = \sin v \cos E - \cos v \sin E,
+\]
+\[
+\cos(v - E) = \cos v \cos E + \sin v \sin E.
+\]
+
+\subsection*{Substitute Known Relations}
+Substitute the expressions for \(\sin v\), \(\cos v\), \(\sin E\), and \(\cos E\) derived earlier.
+
+\subsection*{Simplify}
+Simplify the result to:
+\[
+\tan\frac{v - E}{2} = \frac{\sin v - \sin E}{2 + \cos v - \cos E}.
+\]
+
+\section*{Equation (3): \(v - M\) as a Function of \(E\) or \(v\)}
+\subsection*{Starting Point}
+From Kepler’s equation:
+\[
+M = E - e \sin E,
+\]
+express \(v - M\) as:
+\[
+v - M = v - (E - e \sin E).
+\]
+
+\subsection*{Substitute for \(v\)}
+Using the tangent formula:
+\[
+v = 2 \tan^{-1}\left(\sqrt{\frac{1 + e}{1 - e}} \tan\frac{E}{2}\right),
+\]
+expand \(v - M\).
+
+\subsection*{Simplify Using Trigonometric Identities}
+Simplify terms involving:
+\[
+\tan^{-1}(x) + \tan^{-1}(y) = \tan^{-1}\left(\frac{x + y}{1 - xy}\right),
+\]
+and expressions for \(\sin E\), \(\cos E\), \(\sin v\), and \(\cos v\).
+
+\section*{Conclusion}
+These steps establish a clear starting point for deriving the formulas. Further simplifications should match the results in the paper.
+
+\end{document}

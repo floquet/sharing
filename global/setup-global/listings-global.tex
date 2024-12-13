@@ -1,4 +1,70 @@
-% \input{\pGlobalSetup listings-global}
+% \input{\pGlobalSetup listings-global.tex}
+
+\newcommand{\listingFontSize}{\footnotesize} % Default font size for listings
+% \renewcommand{\listingFontSize}{\scriptsize} % Override for this document
+% size spectrum:
+% \tiny
+% \scriptsize
+% \footnotesize
+% \small
+% \normalsize
+% \large
+% \Large
+% \huge
+% \Huge
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Listings Configuration File (listings-global.tex)
+% ---------------------------------------------------------------------------
+% Purpose:
+% This file defines global styles for code listings in LaTeX documents,
+% providing a unified and maintainable way to handle syntax highlighting,
+% formatting, and customization for different programming languages and contexts.
+%
+% Usage:
+% 1. Include this file in your LaTeX document preamble with:
+%    \input{path/to/listings-global.tex}
+% 2. Use the defined styles in your `lstlisting` environments. For example:
+%    \begin{lstlisting}[style=python, caption={Python example.}]
+%    import numpy as np
+%    a = np.array([1, 2, 3])
+%    print(a)
+%    \end{lstlisting}
+%
+% Customization:
+% To globally control the font size of all listings, redefine the command:
+%    \renewcommand{\listingFontSize}{\scriptsize}
+% To customize styles for specific languages, modify the corresponding 
+% `lstdefinestyle` blocks in this file.
+%
+% Examples:
+% 1. For a terminal command:
+%    \begin{lstlisting}[style=terminal, caption={Terminal example.}]
+%    $ gfortran -shared -fPIC -o libmyfortran.so myfortran.f90
+%    \end{lstlisting}
+%
+% 2. For Python code:
+%    \begin{lstlisting}[style=python, caption={Python example.}]
+%    import numpy as np
+%    result = np.add([1, 2, 3], [4, 5, 6])
+%    print(result)
+%    \end{lstlisting}
+%
+% 3. For Fortran code:
+%    \begin{lstlisting}[style=fortran, caption={Fortran example.}]
+%    module mymodule
+%    contains
+%        subroutine mysubroutine
+%            print *, "Hello, Fortran!"
+%        end subroutine mysubroutine
+%    end module mymodule
+%    \end{lstlisting}
+%
+% Notes:
+% - Ensure that `\usepackage{listings}` and `\usepackage{xcolor}` are loaded
+%   in your main document preamble.
+% - Adjust the styles and configurations in this file to suit your needs.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % lststyles.tex - Collection of listings styles for LaTeX
 % This file was created with guidance and collaboration from Achates (ChatGPT by OpenAI) on 2024-11-26.
@@ -6,55 +72,70 @@
 % \lstinputlisting[ style = terminal ]{output.txt}
 % \lstinputlisting[ style = fortran ]{mycode.f90}
 
+
+
 % Ensure this file can only be used within another LaTeX document
 \ProvidesFile{lststyles.tex}[2024/11/26 Custom Listings Styles]
 
 % Terminal-style listings
+%\lstdefinestyle{terminal}{
+%    language={Bash},                       % Treat as plain text (disable language-specific formatting)
+%    backgroundcolor=\color{white},    % White background
+%    basicstyle=\ttfamily\listingFontSize,          % Monospaced font, tiny size
+%    breaklines=true,                  % Enable line wrapping
+%    frame=single,                     % Box around the listing
+%    tabsize=4,                        % Set tab width
+%    showstringspaces=false,           % Hide space markers
+%    numbers=left,                     % Show line numbers on the left
+%    numberstyle=\tiny,                % Line number font size
+%    numbersep=5pt,                    % Space between line numbers and text
+%    keywordstyle=\color{black},       % No color for keywords (disable syntax highlighting)
+%    commentstyle=\color{black},       % No color for comments
+%    stringstyle=\color{black},        % No color for strings
+%}
+\lstdefinestyle{basic}{
+    basicstyle=\ttfamily\footnotesize,
+    frame=single
+}
+
 \lstdefinestyle{terminal}{
-    backgroundcolor=\color{white},    % White background
-    basicstyle=\ttfamily\footnotesize,       % Monospaced font
-    breaklines=true,                  % Enable line wrapping
-    frame=single,                     % Box around the listing
-    tabsize=4,                        % Set tab width
-    showstringspaces=false,           % Hide space markers
-    numbers=left,                     % Show line numbers on the left
-    numberstyle=\tiny,                % Line number font size
-    numbersep=5pt,                    % Space between line numbers and text
-    keywordstyle=\color{black},       % No color for keywords (disable syntax highlighting)
-    commentstyle=\color{black},       % No color for comments
-    stringstyle=\color{black},        % No color for strings
-    language={}                       % Treat as plain text (disable language-specific formatting)
+    backgroundcolor=\color{black}, % Black background
+    basicstyle=\color{white}\ttfamily\footnotesize, % White text, monospaced font, small size
+    frame=single,                  % Box around the listing
+    breaklines=true,               % Enable line wrapping
+    numbers=none,                  % No line numbers
+    tabsize=4                      % Tab size
 }
 
 % Fortran-style listings
-\lstdefinestyle{fortran}{
-    language=[90]Fortran,
-    basicstyle=\ttfamily\tiny,        % Monospaced font, tiny size
-    keywordstyle=\color{blue}\bfseries, % Keywords in blue and bold
-    commentstyle=\color{gray},        % Comments in gray
-    stringstyle=\color{green!50!black}, % Strings in green
-    numbers=left,                     % Line numbers on the left
-    numberstyle=\tiny\color{gray},    % Line number font size and color
-    stepnumber=1,                     % Number every line
-    numbersep=5pt,                    % Space between line numbers and text
-    backgroundcolor=\color{white},    % White background
-    showspaces=false,                 % Do not show spaces
-    showstringspaces=false,           % Do not show string spaces
-    showtabs=false,                   % Do not show tabs
-    frame=single,                     % Box around the listing
-    rulecolor=\color{black},          % Frame color
-    breaklines=true,                  % Enable line wrapping
-    breakatwhitespace=true,           % Break at whitespace
-    captionpos=b,                     % Caption position at the bottom
-    tabsize=4,                        % Tab size
-    escapeinside={\%*}{*)},           % Escape sequences for LaTeX
-}
+%\lstdefinestyle{fortran}{
+%    language=[90]Fortran,
+%    basicstyle=\ttfamily\tiny,        % Monospaced font, tiny size
+%    keywordstyle=\color{blue}\bfseries, % Keywords in blue and bold
+%    commentstyle=\color{gray},        % Comments in gray
+%    stringstyle=\color{green!50!black}, % Strings in green
+%    numbers=left,                     % Line numbers on the left
+%    numberstyle=\tiny\color{gray},    % Line number font size and color
+%    stepnumber=1,                     % Number every line
+%    numbersep=5pt,                    % Space between line numbers and text
+%    backgroundcolor=\color{white},    % White background
+%    showspaces=false,                 % Do not show spaces
+%    showstringspaces=false,           % Do not show string spaces
+%    showtabs=false,                   % Do not show tabs
+%    frame=single,                     % Box around the listing
+%    rulecolor=\color{black},          % Frame color
+%    breaklines=true,                  % Enable line wrapping
+%    breakatwhitespace=true,           % Break at whitespace
+%    captionpos=b,                     % Caption position at the bottom
+%    tabsize=4,                        % Tab size
+%    escapeinside={\%*}{*)},           % Escape sequences for LaTeX
+%}
 
 % Fortran-style listings for Fortran 2023
 % Highlighting features from Fortran 2003, 2008, 2018, and 2023.
 \lstdefinestyle{fortran}{
     language=[90]Fortran,                % Base language is Fortran 90 for compatibility
-    basicstyle=\ttfamily\tiny,          % Monospaced font, tiny size
+    basicstyle=\ttfamily\listingFontSize,          % Monospaced font, tiny size
     keywordstyle=\color{blue}\bfseries, % Keywords in blue and bold
     commentstyle=\color{gray},          % Comments in gray
     stringstyle=\color{green!50!black}, % Strings in green
@@ -81,7 +162,7 @@
 % Style for C++ code
 \lstdefinestyle{cpp}{
     language=C++,
-    basicstyle=\ttfamily\tiny,
+    basicstyle=\ttfamily\listingFontSize,
     keywordstyle=\color{blue}\bfseries,
     commentstyle=\color{gray},
     stringstyle=\color{green!50!black},
@@ -102,6 +183,65 @@
     escapeinside={\%*}{*)},
 }
 
+% Terminal-style listings
+%\lstdefinestyle{terminal}{
+%    backgroundcolor=\color{white},    % White background
+%    basicstyle=\ttfamily\footnotesize, % Monospaced font
+%    breaklines=true,                  % Enable line wrapping
+%    frame=single,                     % Box around the listing
+%    tabsize=4,                        % Set tab width
+%    showstringspaces=false,           % Hide space markers
+%    numbers=none,                     % No line numbers
+%    keywordstyle=\color{black},       % No color for keywords
+%    commentstyle=\color{black},       % No color for comments
+%    stringstyle=\color{black},        % No color for strings
+%    language={}                       % Treat as plain text
+%}
+
+\lstdefinestyle{terminal}{
+    backgroundcolor=\color{black},  % Black background for terminal appearance
+    basicstyle=\color{white}\ttfamily\listingFontSize, % Monospaced white text
+    frame=single,                    % Box around the listing
+    rulecolor=\color{gray},         % Gray border
+    breaklines=true,                 % Enable line wrapping
+    tabsize=4,                       % Tab size
+    showstringspaces=false,          % No space markers
+    showtabs=false,                  % No tab markers
+    numbers=none,                    % No line numbers
+}
+
+% Bash-style listings
+\lstdefinestyle{bash}{
+    language=bash,                    % Enable Bash syntax
+    basicstyle=\ttfamily\listingFontSize, % Monospaced font
+    keywordstyle=\color{blue}\bfseries, % Keywords in blue and bold
+    commentstyle=\color{green!50!black}, % Comments in green
+    stringstyle=\color{red},          % Strings in red
+    numbers=left,                     % Line numbers on the left
+    numberstyle=\tiny\color{gray},    % Line number font size and color
+    frame=single,                     % Box around the listing
+    backgroundcolor=\color{white},    % White background
+    breaklines=true,                  % Enable line wrapping
+    tabsize=4                         % Tab size
+}
+
+\lstdefinestyle{python}{
+    language=Python,                  % Use Python language definition
+    basicstyle=\ttfamily\listingFontSize, % Monospaced font, smaller size
+    keywordstyle=\color{blue}\bfseries, % Keywords in blue and bold
+    commentstyle=\color{green!50!black}, % Comments in green
+    stringstyle=\color{red},          % Strings in red
+    numbers=left,                     % Line numbers on the left
+    numberstyle=\tiny\color{gray},    % Line number font size and color
+    stepnumber=1,                     % Number every line
+    numbersep=5pt,                    % Space between line numbers and text
+    frame=single,                     % Box around the listing
+    rulecolor=\color{black},          % Frame color
+    breaklines=true,                  % Enable line wrapping
+    breakatwhitespace=true,           % Break at whitespace
+    captionpos=b,                     % Caption position at the bottom
+    tabsize=4                         % Tab size
+}
 % \lstset{style=fortran}
 % Default style to apply globally (if needed)
 % \lstset{style=terminal}

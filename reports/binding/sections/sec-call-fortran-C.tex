@@ -1,0 +1,39 @@
+% \input{\pSections "sec-call-fortran-C.tex"}
+
+\section{Fortran Interoperability With C}
+
+\subsection{Fortran and C Interoperability}
+
+Fortran 2018 introduced significant advancements in interoperability with the C programming language, marking a major breakthrough in combining the strengths of these two languages. This section highlights the key features of Fortran-C interoperability as defined in the Fortran 2018 standard.
+
+\subsection{Key Features of Interoperability}
+
+Fortran 2018 provides robust mechanisms to facilitate seamless integration between Fortran and C, ensuring efficient and consistent data exchange and procedure calling conventions. The following are the main features of Fortran-C interoperability:
+
+\subsubsection{Interoperable Data Types}
+The standard defines a set of data types that are compatible between Fortran and C. These data types ensure seamless translation and interpretation of data structures when shared across both languages.
+
+\subsubsection{The \texttt{ISO\_C\_BINDING} Module}
+The \texttt{ISO\_C\_BINDING} intrinsic module introduces named constants and derived types that map Fortran types to their C counterparts. This module ensures consistent interpretation and compatibility of data types across both languages.
+
+\subsubsection{Procedure Interoperability}
+Fortran procedures can be made accessible to C, and vice versa, by using the \texttt{BIND(C)} attribute. This attribute specifies the linkage convention and optionally the external name to be used in the C environment, enabling seamless procedure calls between the languages.
+
+\subsubsection{Interoperability of Global Data}
+Global variables can be shared between Fortran and C by applying the \texttt{BIND(C)} attribute. This allows both languages to access and modify the same global data structures, ensuring consistency across the codebase.
+
+\subsubsection{Interfacing with C Pointers}
+The \texttt{ISO\_C\_BINDING} module includes derived types such as \texttt{C\_PTR} and \texttt{C\_FUNPTR}, which facilitate the interaction with C pointers and function pointers. These types ensure that pointer operations remain compatible and error-free.
+
+\subsubsection{Interoperability of Arrays}
+Guidelines are provided in the Fortran 2018 standard for handling array descriptors. These guidelines ensure that arrays, whether passed by Fortran or C, are correctly interpreted and manipulated across the languages.
+
+\subsection{Historical Impact}
+The introduction of these features in Fortran 2018 marked a significant milestone in scientific and engineering computing. By enabling seamless interoperability with C, Fortran retained its dominance in numerical computing while leveraging the extensive ecosystem of C libraries and tools. This advancement greatly simplified the process of integrating Fortran with modern software stacks.
+
+\subsection{Further Enhancements with TS 29113}
+The Technical Specification TS 29113, titled \emph{Further Interoperability of Fortran with C}, builds upon the Fortran 2018 standard to offer extended capabilities and clarifications. Notable additions include support for assumed-shape arrays and optional dummy arguments in interoperable procedures. For more details, refer to \url{https://j3-fortran.org/doc/year/12/12-119.pdf}.
+
+Fortran and C interoperability continues to empower developers to combine the computational efficiency of Fortran with the versatility of C, enabling powerful solutions for modern scientific and engineering challenges.
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

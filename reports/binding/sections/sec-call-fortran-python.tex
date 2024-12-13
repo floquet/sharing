@@ -1,0 +1,110 @@
+% \input{\pSections "sec-call-fortran-python.tex"}
+
+\section{Calling Fortran from Python}
+PyBind11 is a bridge between Python and Fortran providing a way to blend Python's usability with Fortran's performance, an approach particularly valuable in HPC and scientific workflows where computational efficiency and ease of scripting are paramount.
+
+Integrating Fortran with Python combines the computational efficiency of Fortran with the flexibility and ecosystem of Python. This section demonstrates a practical approach to achieve this using PyBind11, highlighting examples and best practices.
+
+\subsection{Why PyBind11?}
+PyBind11 is a high-level library for binding C++ code to Python. Although designed for C++, it serves as an effective bridge between Python and Fortran by leveraging C++ wrappers for Fortran routines. Benefits include:
+\begin{itemize}
+    \item Minimal overhead, allowing efficient execution of Fortran routines.
+    \item High-level abstractions to simplify binding.
+    \item Direct integration with Python's ecosystem.
+\end{itemize}
+
+\subsection{Workflow Overview}
+The workflow to call Fortran from Python using PyBind11 involves three main steps:
+\begin{enumerate}
+    \item Writing computational routines in Fortran and compiling them into a shared library.
+    \item Creating a C++ wrapper to expose the Fortran routines.
+    \item Using PyBind11 to bind the C++ wrapper to Python.
+\end{enumerate}
+
+\subsection{Example Implementation}
+\subsubsection{Fortran Code}
+Here is a simple Fortran module that adds two arrays:
+\begin{lstlisting}[style=fortran, caption={Fortran routine to add arrays.}]
+module myfortran
+contains
+    subroutine add_arrays(a, b, result, n)
+        real, intent(in) :: a(:), b(:)
+        real, intent(out) :: result(:)
+        integer, intent(in) :: n
+        integer :: i
+
+        do i = 1, n
+            result(i) = a(i) + b(i)
+        end do
+    end subroutine add_arrays
+end module myfortran
+\end{lstlisting}
+
+Compile the Fortran code into a shared library:
+\begin{lstlisting}[ style = terminal, caption = {Fortran compilation into a shared object.}]
+$ gfortran -shared -fPIC -o libmyfortran.so myfortran.f90
+\end{lstlisting}
+
+\subsubsection{C++ Wrapper}
+Create a C++ wrapper to call the Fortran routine. Use the \texttt{extern "C"} directive to ensure compatibility:
+\begin{lstlisting}[ style = cpp, caption = {C++ wrapper for the Fortran routine.}]
+#include <pybind11/pybind11.h>
+#include <pybind11/numpy.h>
+
+extern "C" {
+    void add_arrays_(float* a, float* b, float* result, int* n);
+}
+
+namespace py = pybind11;
+
+void add_arrays(py::array_t<float> a, py::array_t<float> b, py::array_t<float> result) {
+    auto buf_a = a.request();
+    auto buf_b = b.request();
+    auto buf_result = result.request();
+
+    if (buf_a.size != buf_b.size || buf_a.size != buf_result.size) {
+        throw std::runtime_error("Array sizes must match.");
+    }
+
+    int n = buf_a.size;
+    add_arrays_(static_cast<float*>(buf_a.ptr), static_cast<float*>(buf_b.ptr),
+                static_cast<float*>(buf_result.ptr), &n);
+}
+
+PYBIND11_MODULE(myfortran, m) {
+    m.doc() = "Python interface for Fortran routines";
+    m.def("add_arrays", &add_arrays, "Add two arrays using Fortran");
+}
+\end{lstlisting}
+
+Compile the C++ wrapper with PyBind11:
+\begin{lstlisting}[ style = terminal, caption = {Compiling the PyBind11 wrapper.}]
+c++ -O3 -Wall -shared -std=c++17 -fPIC $(python3 -m pybind11 --includes) \
+    wrapper.cpp -o myfortran$(python3-config --extension-suffix) -L. -lmyfortran
+\end{lstlisting}
+
+\subsubsection{Python Code}
+Finally, use the Fortran routine from Python:
+\begin{lstlisting}[style=python, caption={Calling the Fortran routine in Python.}]
+import numpy as np
+import myfortran
+
+a = np.array([1.0, 2.0, 3.0], dtype=np.float32)
+b = np.array([4.0, 5.0, 6.0], dtype=np.float32)
+result = np.empty_like(a)
+
+myfortran.add_arrays(a, b, result)
+print("Result:", result)
+\end{lstlisting}
+
+\subsection{Alternatives to PyBind11}
+While PyBind11 is versatile, other options exist for calling Fortran from Python:
+\begin{itemize}
+    \item \textbf{F2PY:} A Fortran-to-Python interface generator that is part of NumPy. Ideal for pure Fortran-Python workflows, \cite{f2py_stable,f2py_usage}.
+    \item \textbf{ctypes or CFFI:} Directly interact with shared libraries using Python's built-in libraries. Suitable for simple use cases.
+    \item \textbf{Cython:} Provides fine-grained control over bindings but involves more boilerplate code than PyBind11.
+    \item \textbf{pyfort:} Provides fine-grained control over bindings but involves more boilerplate code than PyBind11.
+\end{itemize}
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

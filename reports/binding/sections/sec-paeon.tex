@@ -1,0 +1,61 @@
+% \input{\pSections "sec-paeon.tex"}
+
+\section{About Fortran}
+
+Modern Fortran is an ideal choice for computationally intensive applications due to its efficient handling of arrays in numerical computations, vector formulation, advanced parallelism through coarrays, and seamless integration with C and other languages. Its object-oriented features enable large-scale software design, while array manipulation and intrinsic functions provide concise and readable code for mathematical and scientific applications. Fortran a robust, high-performance language for HPC, data analysis, and numerical modeling in the modern era.
+
+\subsection{Fortran: A Pioneering Langauge}
+Commodity-priced personal computers of the democratization of the Internet have spurred explosive evolution in computational science. At times, Fortran has spurred new paradigms, at other times responded. The watershed change was captured in the Fortran 90 standard. IBM, once  guardian of the language, saw their influence wane as the corporation stumbled in the personal computer market. They fought to maintain the simplicity of the language and lost to those who wanted to include object oriented programming features, setting a new mindset over the language. Even more revolutionary, was the remake of Fortran into a vector language. While Cray had supplied Fortran compilers with vector tools for Cray super computers, the new standard brought vector computing to the desktop, an astonishing and often overlooked breakthrough.
+\begin{itemize}
+    \item \textbf{Fortran 90:}
+    \begin{itemize}
+        \item Modular programming with \texttt{MODULE}.
+        \item Dynamic memory allocation and allocatable arrays.
+        \item Whole-array and elemental operations for numerical computations.
+        \item User-defined types and array slicing.
+        \item Enhanced control structures like \texttt{DO WHILE} and \texttt{SELECT CASE}.
+    \end{itemize}
+
+    \item \textbf{Fortran 95:}
+    \begin{itemize}
+        \item \texttt{FORALL} and \texttt{WHERE} constructs for parallelism.
+        \item \texttt{PURE} and \texttt{ELEMENTAL} procedures for functional programming.
+    \end{itemize}
+
+    \item \textbf{Fortran 2003:}
+    \begin{itemize}
+        \item Full object-oriented programming with type extension, polymorphism, and type-bound procedures.
+        \item C interoperability with the \texttt{ISO\_C\_BINDING} module and \texttt{BIND(C)} attribute.
+        \item Asynchronous and stream I/O for better data handling.
+    \end{itemize}
+
+    \item \textbf{Fortran 2008:}\footnote{The infamous DO LOOP is now extinct.}
+    \begin{itemize}
+        \item Introduction of coarrays for native parallel programming.
+        \item \texttt{SUBMODULES} for modular program decomposition.
+        \item \texttt{DO CONCURRENT} for loop-level parallelism.
+        \item \texttt{BLOCK} construct for nested variable scoping.
+    \end{itemize}
+
+    \item \textbf{Fortran 2018:}
+    \begin{itemize}
+        \item Enhanced coarrays with teams and events for parallel synchronization.
+        \item Support for optional arguments and assumed-rank arrays in C interoperability.
+        \item \texttt{FAIL IMAGE} and error codes in \texttt{STOP} statements for debugging.
+        \item Bitwise operations and improved intrinsic functions.
+    \end{itemize}
+
+    \item \textbf{Fortran 2023 (Upcoming):}
+    \begin{itemize}
+        \item Improved object-oriented features, including finalization and procedure pointers.
+        \item Automatic deallocation of allocatable arrays.
+        \item Further enhancements to coarray parallelism and task-based concurrency.
+        \item Simplified syntax and improved performance diagnostics.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Why Fortran?}
+Perhaps a better question is Why aren't you using a vector language with intrinsic parallelism? For mankind to progress, we must rise beyond the dogmatic adherence to scalar and serial principles embodied in the cultural inertia of Excel.
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
