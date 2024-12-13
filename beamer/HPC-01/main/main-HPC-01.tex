@@ -10,7 +10,7 @@
 % https://tex.stackexchange.com/tags/accents/info
 %
 \documentclass[]{beamer}
-
+\usepackage{transparent}
 % Fetch home directory
 \usepackage{url}
 \usepackage{catchfile}
@@ -31,6 +31,8 @@
 % Load Additional Setup Files
 	\input{\pGlobalSetup/setup-global-beamer.tex}
 	\input{\pLocalSetup/setup-local.tex}
+\newcommand{\Kerberos}{https://oidc.hwss.hpc.mil/authentication?response_type=code&scope=hpcmp\%20openid\%20profile&client_id=ul0uUIzosXt9&state=ElrigsNzg4UXlA8aRZ_coUKRnV8&redirect_uri=https\%3A\%2F\%2Fdashboard.hpc.mil\%2Fprivate\%2Fredirect_uri&nonce=EVv0yVlQ9XXXRHFokDN_QJfLQCwh5EBCqfOWlaCWBjA}
+\newcommand{\CAC}{\newcommand{\CAC}{https://oidc.hwss.hpc.mil/authentication?response_type=code\&scope=hpcmp\%20openid\%20profile\&client_id=ul0uUIzosXt9\&state=srJb8oJrR_SBLWWoDrnyobejcoM\&redirect_uri=https\%3A\%2F\%2Fdashboard.hpc.mil\%2Fprivate\%2Fredirect_uri\&nonce=KVrAGvVROIzBiUJskwX73Zal7Nt1a2Uae5CaboDWsIU\#getCACEnablers}}
 
 \setbeamercovered{transparent=10} % pause activated text
 \usepackage{transparent}
@@ -38,6 +40,18 @@
 %\usepackage[T1]{fontenc}
 %\usepackage[utf8]{inputenc}
 %
+%\setbeamertemplate{footline}{
+%    \leavevmode%
+%    \hbox{\hspace*{0.5cm}\begin{minipage}[t][1cm]{\dimexpr\paperwidth-1cm\relax}%
+%        \vspace*{2pt}% Adjust this value to move the footnote up
+%        \usebeamercolor[fg]{footline}%
+%        \usebeamerfont{footline}%
+%        \insertshortauthor\hfill%
+%        \insertshorttitle\hfill%
+%        \insertframenumber{} / \inserttotalframenumber\strut\par%
+%    \end{minipage}}%
+%}
+
 \title[Military Supercomputing: Your HPC Accounts]{Military Supercomputing:\\Your HPC Account}
 
 \author[Daniel Topa]{\TopaHII \\ \TopaHIIEmail}

@@ -1,9 +1,9 @@
 % \input{\pSections "sec-call-fortran-python.tex"}
 
 \section{Calling Fortran from Python}
-PyBind11 is a bridge between Python and Fortran providing a way to blend Python's usability with Fortran's performance, an approach particularly valuable in HPC and scientific workflows where computational efficiency and ease of scripting are paramount.
+%PyBind11 is a bridge between Python and Fortran providing a way to blend Python's usability with Fortran's performance, an approach particularly valuable in HPC and scientific workflows where computational efficiency and ease of scripting are paramount.
 
-Integrating Fortran with Python combines the computational efficiency of Fortran with the flexibility and ecosystem of Python. This section demonstrates a practical approach to achieve this using PyBind11, highlighting examples and best practices.
+Integrating Fortran with Python combines the computational efficiency of Fortran with the flexibility and ecosystem of Python, an approach particularly valuable in HPC and scientific workflows where computational efficiency and ease of scripting are paramount (See e.g. \cite{pyhpc2016_slides, langtangen2006fortran, arabas2014formula, 790589}). This section demonstrates a practical approach to achieve this using PyBind11, highlighting examples and best practices.
 
 \subsection{Why PyBind11?}
 PyBind11 is a high-level library for binding C++ code to Python. Although designed for C++, it serves as an effective bridge between Python and Fortran by leveraging C++ wrappers for Fortran routines. Benefits include:
@@ -24,6 +24,7 @@ The workflow to call Fortran from Python using PyBind11 involves three main step
 \subsection{Example Implementation}
 \subsubsection{Fortran Code}
 Here is a simple Fortran module that adds two arrays:
+%\begin{figure}[htbp]
 \begin{lstlisting}[style=fortran, caption={Fortran routine to add arrays.}]
 module myfortran
 contains
@@ -33,12 +34,12 @@ contains
         integer, intent(in) :: n
         integer :: i
 
-        do i = 1, n
-            result(i) = a(i) + b(i)
-        end do
+        result = a + b
+        
     end subroutine add_arrays
 end module myfortran
 \end{lstlisting}
+%\end{figure}[htbp]
 
 Compile the Fortran code into a shared library:
 \begin{lstlisting}[ style = terminal, caption = {Fortran compilation into a shared object.}]
@@ -100,11 +101,87 @@ print("Result:", result)
 \subsection{Alternatives to PyBind11}
 While PyBind11 is versatile, other options exist for calling Fortran from Python:
 \begin{itemize}
+    \item \textbf{CFFI} C Foreign Function Interface: Simplie, flexibile tools to call C functions and write inline C code in Python \cite{cffi_github,cffi_docs}.
+    \item \textbf{Chasm:} Lightweight tool for creating bindings between Python and Fortran, emphasizing simplicity and ease of use.
+    \item \textbf{ctypes:} Built-in Python library for calling functions in shared C libraries (.so -- Linux, .dylib -- macOS, DLLs -- Windows, ).
+    \item \textbf{Cython:} Provides fine-grained control over bindings but involves more boilerplate code than PyBind11 \cite{cython_docs, cython_quickstart, cython_homepage, cython_tutorial}.
+    \item \textbf{pyfort:} Handles boilerplate code to bridge the Python C API and Fortran, but limited compatibility (Some Fortran 90) \cite{pyfort_reference}.
     \item \textbf{F2PY:} A Fortran-to-Python interface generator that is part of NumPy. Ideal for pure Fortran-Python workflows, \cite{f2py_stable,f2py_usage}.
-    \item \textbf{ctypes or CFFI:} Directly interact with shared libraries using Python's built-in libraries. Suitable for simple use cases.
-    \item \textbf{Cython:} Provides fine-grained control over bindings but involves more boilerplate code than PyBind11.
-    \item \textbf{pyfort:} Provides fine-grained control over bindings but involves more boilerplate code than PyBind11.
 \end{itemize}
+
+%\begin{landscape}
+%\begin{table}[ht]
+%\centering
+%\begin{tabular}{|l|c|c|c|c|c|c|}
+%\hline
+%\textbf{Feature} & \textbf{ctypes} & \textbf{CFFI} & \textbf{F2PY} & \textbf{Cython} & \textbf{Pyfort} & \textbf{Chasm} \\
+%\hline
+%\textbf{Ease of Use} & Simple for small tasks but verbose & Concise, handles types well & Intuitive for Fortran bindings & Pythonic, seamless for C extensions & Simple for Fortran libraries & Limited by design, requires setup \\
+%\hline
+%\textbf{Performance} & ABI mode: moderate overhead & API mode: better performance & High performance (compiled) & Compiled: very efficient & Comparable to F2PY & Lower performance due to abstraction \\
+%\hline
+%\textbf{Type Handling} & Manual mapping of types & Automatic, simplifies type handling & Built for Fortran types & Python-Cython converters & Built for Fortran types & Simplistic type handling, less flexible \\
+%\hline
+%\textbf{Inline Code} & Not supported & Supported (API mode) & Not supported & Supports inline C code & Not supported & Limited inline support \\
+%\hline
+%\textbf{Compilation Step} & No & Optional (API mode) & Required & Required & Required & Required \\
+%\hline
+%\textbf{Error Checking} & Minimal & Stronger type and error checking & Strong (via Fortran compiler) & Strong (via Cython annotations) & Fortran compiler handles it & Minimal, limited error feedback \\
+%\hline
+%\textbf{Specialization} & General-purpose C libraries & General-purpose C libraries & Fortran-Python integration & C-Python extensions, performance optimization & Simplifies Fortran bindings & General purpose but less common \\
+%\hline
+%\textbf{Popularity} & Built-in; widely available & Popular for modern C integrations & Popular for scientific computing & Very popular for high-performance Python & Niche; older library & Rarely used, niche applications \\
+%\hline
+%\textbf{Best For} & Small projects, quick integrations & Complex C libraries with many functions & Interfacing Fortran for numerical work & High-performance Python-C integration & Legacy Fortran libraries & Simpler bindings, less performance-critical \\
+%\hline
+%\end{tabular}
+%\caption{Comparison of Python-C/Fortran Integration Tools (\textit{Created by Achates, ChatGPT 4o}).}
+%\label{tab:integration_comparison}
+%\end{table}
+%\end{landscape}
+
+%\begin{landscape}
+%\begin{longtable}{p{0.2\textwidth}p{0.4\textwidth}p{0.3\textwidth}}
+\begin{table}[ht]
+\centering
+\begin{tabular}{lll}
+\textbf{Feature} & \textbf{Best For} & \textbf{URL} \\
+\hline
+\textbf{ctypes} & Small projects, quick integrations & \url{https://docs.python.org/3/library/ctypes.html} \\
+\textbf{CFFI} & Complex C libraries & \url{https://cffi.readthedocs.io/} \\
+\textbf{F2PY} & Interfacing Fortran & \url{https://numpy.org/doc/stable/f2py/} \\
+\textbf{Cython} & High-performance Python-C & \url{https://cython.org/} \\
+\textbf{Pyfort} & Legacy Fortran libraries & \url{https://pyfortran.sourceforge.net/pyfort/} \\
+\textbf{Chasm} & Simpler bindings & \url{https://example.com/chasm} \\
+\end{tabular}
+\caption{Condensed Comparison of Python-C/Fortran Integration Tools (\textit{Created by Achates, ChatGPT 4o).}}
+\label{tab:condensed_integration_comparison}
+\end{table}
+%\end{longtable}
+%\end{landscape}
+
+%\begin{table}[ht]
+%\centering
+%\begin{tabular}{|l|c|c|}
+%\hline
+%\textbf{Feature} & \textbf{Best For} & \textbf{URL} \\
+%\hline
+%\textbf{ctypes} & Small projects, quick integrations & \url{https://docs.python.org/3/library/ctypes.html} \\
+%\hline
+%\textbf{CFFI} & Complex C libraries & \url{https://cffi.readthedocs.io/} \\
+%\hline
+%\textbf{F2PY} & Interfacing Fortran & \url{https://numpy.org/doc/stable/f2py/} \\
+%\hline
+%\textbf{Cython} & High-performance Python-C & \url{https://cython.org/} \\
+%\hline
+%\textbf{Pyfort} & Legacy Fortran libraries & \url{https://pyfortran.sourceforge.net/pyfort/} \\
+%\hline
+%\textbf{Chasm} & Simpler bindings & \url{https://example.com/chasm} \\
+%\hline
+%\end{tabular}
+%\caption{Condensed Comparison of Python-C/Fortran Integration Tools (\textit{Created by Achates, Assisting Daniel}).}
+%\label{tab:condensed_integration_comparison}
+%\end{table}
 
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

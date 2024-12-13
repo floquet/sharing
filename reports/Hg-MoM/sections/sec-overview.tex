@@ -176,25 +176,18 @@ The final reason is the often-overlooked fact that of all the orthogonal polynom
 %     %     %     %     %     %     %     %     %
 \subsection{Orthogonality}
 \begin{equation}
-	\int_{-\pi}^{\pi} e^{I m \theta} e^{I n \theta} d\theta = \int_{-\pi}^{\pi} e^{I m + n \theta} d\theta = \pi \delta^{m}_{n}
+	\int_{-\pi}^{\pi} e^{i m \theta} e^{i n \theta} d\theta = \int_{-\pi}^{\pi} e^{i m + n \theta} d\theta = \pi \delta^{m}_{n}
 \end{equation}
 
 Given non-zero integers $m$ and $n$, the \href{https://mathworld.wolfram.com/FourierSeries.html}{expression of orthogonality} in $L^{2}$ can be written as
 \begin{equation}
-	\begin{split}
-			%
-		\int_{-\pi}^{\pi} \sin \paren{mx} \sin \paren{nx}dx &= \pi \delta^{m}_{n}\\
-			%
-		\int_{-\pi}^{\pi} \cos \paren{mx} \cos \paren{nx} dx &= \pi \delta^{m}_{n}\\
-			%
-		\int_{-\pi}^{\pi} \cos \paren{mx} \sin \paren{nx} dx &= 0\\
-			%
-		\int_{-\pi}^{\pi} \sin \paren{mx} dx &= 0\\
-			%
-		\int_{-\pi}^{\pi} \cos \paren{mx}dx &= 0\\
-			%
-	\end{split}
-\label{eq:orthogonality}
+		\int_{-\pi}^{\pi} \sin \paren{mx} \sin \paren{nx}dx &=  \int_{-\pi}^{\pi} \cos \paren{mx} \cos \paren{nx} dx &= \pi \delta^{m}_{n}\\
+\label{eq:orthogonality-A}
+\end{equation}
+
+\begin{equation}
+		\int_{-\pi}^{\pi} \cos \paren{mx} \sin \paren{nx} dx = \int_{-\pi}^{\pi} \sin \paren{mx} dx = \int_{-\pi}^{\pi} \cos \paren{mx}dx &= 0\\
+\label{eq:orthogonality-B}
 \end{equation}
 %
 where $\delta^{m}_{n}$ is the \href{https://mathworld.wolfram.com/KroneckerDelta.html}{Kronecker delta} tensor. To complete the toolkit to solve the linear system, recall that
