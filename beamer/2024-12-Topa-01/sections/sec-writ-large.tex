@@ -3,7 +3,7 @@
 \section{Writ Large}
 
 %     %     %     %     %     %     %     %     %
-\subsection{Problem}
+\subsection{Radar Images of Satellite}
 \begin{frame}\frametitle{Sealing the Mesh}
 Boo
 \end{frame}
@@ -11,8 +11,73 @@ Boo
 
 
 %     %     %     %     %     %     %     %     %
-\subsection{Linear Independence}
+\subsection{Approximation}
+\begin{frame}{Fourier and Extensions to 2- and 3-D}
+    \centering
+    $\fourier$
+    \vspace{1em}
+    \textit{From periodic functions in 1D to radial and angular decompositions in 2D and 3D.}
+\end{frame}
 	
+\begin{frame}{Why We Love Fourier for Smooth Functions}
+    \textbf{Smooth Functions, Beautiful Representations}
+    \begin{itemize}
+        \item \textbf{Weierstrass Approximation Theorem:} 
+        Any continuous function on \([a, b]\) can be uniformly approximated by polynomials. Fourier provides a similar approximation, using trigonometric bases instead of polynomials.
+        
+        \item \textbf{Riesz-Fischer Theorem:} 
+        Fourier coefficients \((a_n, b_n)\) belong to \(l^2\) space, guaranteeing convergence in the \(L^2\) sense. This bridges the gap between smoothness and square-integrability.
+
+        \item \textbf{Uniform Convergence for Smooth Periodic Functions:} 
+        For sufficiently smooth functions (\(C^\infty\) or \(C^k\)), Fourier series converge uniformly, ensuring no oscillatory artifacts (Gibbs phenomenon disappears).
+
+        \item \textbf{Orthogonality of Basis:} 
+        Sines and cosines form an orthogonal basis in \(L^2\), enabling direct computation of coefficients via projection (Parseval's theorem quantifies energy distribution).
+
+        \item \textbf{Spectral Insights:} 
+        Decomposes a function into frequency components, making smoothness and structure explicit. High smoothness = rapid Fourier coefficient decay.
+
+        \item \textbf{Compact Representation:} 
+        Smooth functions require fewer terms for accurate approximation. High efficiency for practical computation and storage.
+
+        \item \textbf{Universality:} 
+        Fourier's reach extends to PDEs, signal processing, and quantum mechanics. Smooth functions unlock the full power of these tools.
+    \end{itemize}
+    \vspace{1em}
+    \textbf{Takeaway:} Fourier connects smoothness, convergence, and representation, offering unmatched clarity and utility for periodic and localized phenomena.
+\end{frame}
+
+\begin{frame}{Fourier and Extensions to 2- and 3D}
+    \centering
+    \renewcommand{\arraystretch}{2.0}
+    \setlength{\tabcolsep}{10pt} % Adjust column spacing
+    
+    \begin{tabular}{@{} l c @{}} % Align left and center without extra spacing
+        \textcolor{blue}{\textbf{1D:}} & 
+        \( \displaystyle f(\theta) = \sum_{n=-\infty}^{\infty} a_m \fourier \) \\[1em]
+
+        \textcolor{blue}{\textbf{2D:}} & 
+        \( \displaystyle f(r, \theta) = \sum_{n=1}^{\infty}\sum_{m=-n}^{n} R_n^m(r) fourier  \) \\[1em]
+
+        \textcolor{blue}{\textbf{3D:}} & 
+        \( \displaystyle 
+        f(r, \theta, \phi) = 
+        \sum_{n=1}^{\infty}\sum_{m=-n}^{n} 
+        \sqrt{\frac{(2l+1)(l-m)!}{4\pi (l+m)!}} 
+        P_l^m(\cos \theta) \fourier 
+        \)
+    \end{tabular}
+\end{frame}
+	
+\begin{frame}{Fourier and Extensions to 2- and 3D}
+    \begin{itemize}
+        \item \href{https://mathworld.wolfram.com/FourierSeries.html}{\textbf{1D Fourier Series:}} Decomposes a periodic function \(f(\theta)\) into a sum of complex exponentials with coefficients \(a_n\) capturing the amplitudes of each frequency component.
+        \item \href{https://mathworld.wolfram.com/ZernikePolynomial.html}{\textbf{2D Fourier-Bessel:}} Extends Fourier analysis to two dimensions using radial functions \(R_n^m(r)\), often employed in circular domains or optical applications.
+        \item \href{https://mathworld.wolfram.com/SphericalHarmonic.html}{\textbf{3D Spherical Harmonics:}} Represents functions on a sphere using harmonics \(Y_l^m(\theta, \phi)\) and radial components \(R_l(r)\), crucial in fields like quantum mechanics and gravitational modeling.
+    \end{itemize}
+\end{frame}
+
+
 %     %     %     %     %     %     %     %     %
 \subsection{Quality of Fit}
 

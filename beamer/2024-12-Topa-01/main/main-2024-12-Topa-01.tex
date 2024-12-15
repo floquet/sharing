@@ -39,13 +39,15 @@
 	%\input{\pGlobalSetup packages-global-bibliography-charlie.tex}
 \addbibresource{\pShareBibliographies/radar.bib} 
 
+\newcommand{\fourier}		{\color{blue}{ e^{i n \theta} }} 
+
 \setbeamercovered{transparent=10} % pause activated text
 \usepackage{transparent}
 \usepackage{seqsplit}
 %\usepackage[T1]{fontenc}
 %\usepackage[utf8]{inputenc}
 
-\title[Input Slides 2024-12]{Input Slides 2024-12}
+\title[Input Slides 2024-12]{Input Slides 2024-12: My Two Slides}
 
 \author[Daniel Topa]{\TopaHII \\ \TopaHIIEmail}
 \institute{\missiontech} 
@@ -66,11 +68,12 @@
 \end{frame}
 
 % main sections
+	\input{\pSections "sec-writ-large"}
 	\input{\pSections "sec-radiation"}
 	\input{\pSections "sec-results"}
-	\input{\pSections "sec-mesh"}
+	%\input{\pSections "sec-mesh"}
 	%\input{\pSections "sec-model"}
-	\input{\pSections "sec-software"}
+	%\input{\pSections "sec-software"}
 	%\input{\pSections "sec-output"}
 %\section{Bibliography}
 %\begin{frame}[t,allowframebreaks]
