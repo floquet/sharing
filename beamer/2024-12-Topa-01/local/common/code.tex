@@ -1,0 +1,44 @@
+% LaTeX macros to present a programming environment
+% Looks like a terminal session, colored text on black background
+\newcommand{\scru}[1]		{\bl   {\texttt{#1}}}
+\newcommand{\scrk}[1]		{\bk   {\texttt{#1}}}
+\newcommand{\scrg}[1]		{\gr   {\texttt{#1}}}
+\newcommand{\scrr}[1]		{\rd   {\texttt{#1}}}
+\newcommand{\scrv}[1]		{\dg   {\texttt{#1}}}
+\newcommand{\scrz}[1]		{\mg   {\texttt{#1}}}
+\newcommand{\scrc}[1]		{\textcolor{cyan}  {\texttt{#1}}}
+\newcommand{\scrp}[1]		{\textcolor{purple}{\texttt{#1}}}
+\newcommand{\scry}[1]		{\textcolor{yellow}{\texttt{#1}}}
+\newcommand{\scrw}[1]		{\textcolor{white} {\texttt{#1}}}
+
+%
+\newcommand{\mySize}[1]		{{\normalsize{#1}}}
+\newcommand{\myCanvas}[1]		{{\setbeamercolor{background canvas}{bg=black}{#1}}}
+\newcommand{\myRasa}[1]		{\myCanvas{\mySize{#1}}}
+\newcommand{\myFrame}[2]		{\myRasa{\begin{frame} \frametitle{#1} #2 \end{frame}}}
+\newcommand{\myFoo}[2]			{\myFrame{#1}  \program \ \\[10pt] #2 \eprogram}
+
+
+% tabs
+%\newcommand{\tab}[0]     {\phantom{mm}}
+\newcommand{\tab}[0]		{\ \ }
+\newcommand{\spacer}[0]		{\ps\text{::}\ps}
+\newcommand{\ps}[0]		{\phantom{m}}
+
+% is equal?
+\newcommand{\iseq}[0]		{ \overset{?}{=} }
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
+
+% https://engineering.purdue.edu/ECN/Support/KB/Docs/LaTeXChangingTheFont
+% \tiny
+% \scriptsize
+% \footnotesize
+% \small
+% \normalsize
+% \large
+% \Large
+% \LARGE
+% \huge
+% \Huge% programming enviro

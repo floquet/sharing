@@ -2,18 +2,204 @@
 
 \section{Meshing}
 
-%     %     %     %     %     %     %     %     %
-\subsection{Primary Problems}
-\begin{frame}\frametitle{Sealing the Mesh}
-Boo
+\begin{frame}
+	\frametitle{Meshing Schemes}
+	\begin{table}[htp]
+		\begin{center}
+			\begin{tabular}{clr@{.}lrrr@{.}l}
+					%
+					&&\multicolumn{2}{c}{Mesh}&&&  \multicolumn{2}{c}{Spectral} \\
+				&Method &  \multicolumn{2}{l}{Resolution} & Faces & Points & \multicolumn{2}{c}{Radius} \\\hline
+					%
+				\cmark & Standard & $1$ & $0$ m 		& $626$  		& $315$  & $5$ & $3$\\
+					%	
+				\cmark & Standard & $0$ & $1$ m 		& $766$ 		& $385$ & $5$ & $3$ \\
+					%
+				\cmark & Standard & $0$ & $05$ m 	& $1,198$ 	& $601$ & $5$ & $3$\\\arrayrulecolor{medgray}\hline
+					%
+				\xmark & Standard & $0$ & $01$ m 	& $3,352$	& 	$1,678$ & $\rd{6}$ & $\rd{5}$\\
+					%
+				\xmark & Standard & $0$ & $001$ m 	& $28,394$ 	& $14,199$ & $\rd{8}$ & $\rd{7}$ \\
+					%
+				\xmark & Mefisto & $1$ & $0$ m 		& $3,974$ 	& $1,992$ & $\rd{2}$ & $\rd{5}$ \\
+					%
+				\xmark & Netgen &  \multicolumn{2}{l}{very fine}& $10,098$	& $5,051$  & $\rd{3}$ & $\rd{0}$\\
+					%
+			\end{tabular}
+		\end{center}
+	\caption{One model, many meshes. How does Mercury MoM fare? }
+	\label{tab:features}
+	\end{table}%
 \end{frame}
-		%
+\
+\begin{frame}
+	\frametitle{Achilles Heel: Minimum triangle size}
+	Mercury MoM is very sensitive to \color{red}{Spectral radius}
+\end{frame}
 
+\myFrame{Linux Environment}{\tiny{
+\scrr{--------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------}} \\
+\scrr{subroutine Geometry\_TRI\_Compute( Tris, tol ) :Have }\scrw{Triangles with effective zero area} \\
+\scrr{nTris\_With\_Zero\_Area =        15244}
+}
+
+\newcommand{\passed}[0]		{\begin{center}{
+\tiny{\texttt{\dg{--------------------------------------------------------------------------------}}} \\
+\tiny{\texttt{\dg{\phantom{----}---| Mercury MOM Completed }\bl{Sucessfully}\dg{ |---}}} \\
+\tiny{\texttt{\dg{--------------------------------------------------------------------------------}}}}
+\end{center}}
 
 %     %     %     %     %     %     %     %     %
-\subsection{Linear Independence}
-	
+\subsection{What Works}
+
+\begin{frame}
+	\frametitle{Standard meshing, $1$ m resolution}
+	\begin{table}[htp]
+		\begin{center}
+			\begin{tabular}{ccc}
+					%
+				Mesh && \phantom{wi}Spectrum \\\hline
+				\ \\
+					%
+				\includegraphics[ scale = 0.40 ]{\pLocalGraphics b20/"views-B20-standard-1m"} &&
+				\includegraphics[ scale = 0.35 ]{\pLocalGraphics b20/"dots-B20-standard-1m"} \\
+					%
+			\end{tabular}
+		\end{center}
+	\end{table}
+\passed{}
+\label{tab:standard-works-A}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Standard meshing, $0.1$ m resolution}
+	\begin{table}[htp]
+		\begin{center}
+			\begin{tabular}{ccc}
+					%
+				Mesh && Spectrum \\\hline
+				\ \\
+					%
+				\includegraphics[ scale = 0.40 ]{\pLocalGraphics b20/"views-B20-standard-0-1m"} &&
+				\includegraphics[ scale = 0.35 ]{\pLocalGraphics b20/"dots-B20-standard-0-1m"} \\
+					%
+			\end{tabular}
+		\end{center}
+	\end{table}%
+\passed{}
+\label{tab:standard-works-B}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Standard meshing, $0.05$ m resolution}
+	\begin{table}[htp]
+		\begin{center}
+			\begin{tabular}{ccc}
+					%
+				Mesh && Spectrum \\\hline
+				\ \\
+					%
+				\includegraphics[ scale = 0.40 ]{\pLocalGraphics b20/"views-B20-standard-0-05m"} &&
+				\includegraphics[ scale = 0.35 ]{\pLocalGraphics b20/"dots-B20-standard-0-05m"} \\
+					%
+			\end{tabular}
+		\end{center}
+	\end{table}%
+\passed{}
+\label{tab:standard-works-C}
+\end{frame}
+
 %     %     %     %     %     %     %     %     %
-\subsection{Quality of Fit}
+\subsection{What Doesn't Work}
+
+\begin{frame}
+	\frametitle{Standard meshing, $0.01$ m resolution}
+	\begin{table}[htp]
+		\begin{center}
+			\begin{tabular}{ccc}
+					%
+				Mesh && Spectrum \\\hline
+				\ \\
+					%
+				\includegraphics[ scale = 0.40 ]{\pLocalGraphics b20/"views-B20-standard-0-01m"} &&
+				\includegraphics[ scale = 0.35 ]{\pLocalGraphics b20/"dots-B20-standard-0-01m"} \\
+					%
+			\end{tabular}
+		\end{center}
+	\end{table}%
+	\tiny{\dg{\texttt{--------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------}}} \\
+	\tiny{\dg{\texttt{ subroutine ACA\_Sum\_Update( A, S, Tol, RefNorm )  : }}\scrr{RHS: ACA did not converge}} \\
+\tiny{\texttt{\dg{ = \phantom{---------}0}}}
+\label{tab:features}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Standard meshing, $0.001$ m resolution}
+	\begin{table}[htp]
+		\begin{center}
+			\begin{tabular}{ccc}
+					%	r
+				Mesh && Spectrum \\\hline
+				\ \\
+					%
+				\includegraphics[ scale = 0.40 ]{\pLocalGraphics b20/"views-B20-standard-0-001m"} &&
+				\includegraphics[ scale = 0.35 ]{\pLocalGraphics b20/"dots-B20-standard-0-001m"} \\
+					%
+			\end{tabular}
+		\end{center}
+	\end{table}%
+	\tiny{\dg{\texttt{--------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------}}}\\
+	\tiny{\dg{\texttt{subroutine Geometry\_TRI\_Compute( Tris, tol ) :}\scrr{Have Triangles with effective zero area}}}\\
+	\tiny{\dg{\texttt{nTris\_With\_Zero\_Area = \phantom{--------}60}}}
+\label{tab:features}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Mefisto meshing, $1$ m resolution}
+	\begin{table}[htp]
+		\begin{center}
+			\begin{tabular}{ccc}
+					%
+				Mesh && Spectrum \\\hline
+				\ \\
+					%
+				\includegraphics[ scale = 0.45 ]{\pLocalGraphics b20/"views-B20-mephisto-1-m"} &&
+				\includegraphics[ scale = 0.40 ]{\pLocalGraphics b20/"dots-B20-mephisto-1-m"} \\
+				%\put(-50,50) {\tiny{\rd{\texttt{--------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------}}}}
+				%\put(-50,45) {\tiny{\rd{\texttt{ subroutine ACA\_Sum\_Update( A, S, Tol, RefNorm )  : RHS: ACA did not converge}}}}
+					%
+			\end{tabular}
+		\end{center}
+	\end{table}%
+	\tiny{\dg{\texttt{--------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------}}} \\
+	\tiny{\dg{\texttt{ subroutine ACA\_Sum\_Update( A, S, Tol, RefNorm )  : }}\scrr{RHS: ACA did not converge}} \\
+\tiny{\texttt{\dg{ = \phantom{---------}0}}}
+\label{tab:features}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Netgen meshing, {\it{very fine}} resolution}
+	\begin{table}[htp]
+		\begin{center}
+			\begin{tabular}{ccc}
+					%
+				Mesh && Spectrum \\\hline
+				\ \\
+					%
+				\includegraphics[ scale = 0.40 ]{\pLocalGraphics b20/"views-B20-netgen-very-fine"} &&
+				\includegraphics[ scale = 0.35 ]{\pLocalGraphics b20/"dots-B20-netgen-very-fine"} \\
+					%
+			\end{tabular}
+		\end{center}
+	\end{table}%
+%	\tiny{\dg{\texttt{--------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------}}} \\
+%	\tiny{\dg{\texttt{ subroutine ACA\_Sum\_Update( A, S, Tol, RefNorm )  : }}\scrr{RHS: ACA did not converge}} \\
+%	\tiny{\dg{\texttt{ =            0}}}
+\tiny{\texttt{\dg{-------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------}}} \\
+\tiny{\texttt{\dg{subroutine ACA\_Sum\_Update( A, S, Tol, RefNorm )  : }}\scrr{RHS: ACA did not converge}} \\
+\tiny{\texttt{\dg{ = \phantom{---------}0}}}
+\label{tab:features}
+\end{frame}
+
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

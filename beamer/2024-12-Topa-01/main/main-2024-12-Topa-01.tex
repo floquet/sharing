@@ -10,6 +10,9 @@
 % https://tex.stackexchange.com/tags/accents/info
 %
 \documentclass[]{beamer}
+\usepackage{pifont}
+\newcommand{\cmark}{\text{\ding{51}}}
+\newcommand{\xmark}{\text{\ding{55}}}
 \usepackage{transparent}
 % Fetch home directory
 \usepackage{url}
@@ -34,7 +37,7 @@
 
 % Bibliography
 	%\input{\pGlobalSetup packages-global-bibliography-charlie.tex}
-\addbibresource{\pShareBibliographies/bind.bib} 
+\addbibresource{\pShareBibliographies/radar.bib} 
 
 \setbeamercovered{transparent=10} % pause activated text
 \usepackage{transparent}
@@ -63,9 +66,12 @@
 \end{frame}
 
 % main sections
-	\input{\pSections "sec-mesh"}
 	\input{\pSections "sec-radiation"}
-	\input{\pSections "sec-model"}
+	\input{\pSections "sec-results"}
+	\input{\pSections "sec-mesh"}
+	%\input{\pSections "sec-model"}
+	\input{\pSections "sec-software"}
+	%\input{\pSections "sec-output"}
 %\section{Bibliography}
 %\begin{frame}[t,allowframebreaks]
 %\frametitle{Bibliography}
