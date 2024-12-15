@@ -20,31 +20,31 @@ Boo
 \end{frame}
 	
 \begin{frame}{Why We Love Fourier for Smooth Functions}
-    \textbf{Smooth Functions, Beautiful Representations}
+    \bl{Smooth Functions, Beautiful Representations}
     \begin{itemize}
-        \item \textbf{Weierstrass Approximation Theorem:} 
+        \item \bl{Weierstrass Approximation Theorem:} 
         Any continuous function on \([a, b]\) can be uniformly approximated by polynomials. Fourier provides a similar approximation, using trigonometric bases instead of polynomials.
         
-        \item \textbf{Riesz-Fischer Theorem:} 
+        \item \bl{Riesz-Fischer Theorem:} 
         Fourier coefficients \((a_n, b_n)\) belong to \(l^2\) space, guaranteeing convergence in the \(L^2\) sense. This bridges the gap between smoothness and square-integrability.
 
-        \item \textbf{Uniform Convergence for Smooth Periodic Functions:} 
+        \item \bl{Uniform Convergence for Smooth Periodic Functions:} 
         For sufficiently smooth functions (\(C^\infty\) or \(C^k\)), Fourier series converge uniformly, ensuring no oscillatory artifacts (Gibbs phenomenon disappears).
 
-        \item \textbf{Orthogonality of Basis:} 
+        \item \bl{Orthogonality of Basis:} 
         Sines and cosines form an orthogonal basis in \(L^2\), enabling direct computation of coefficients via projection (Parseval's theorem quantifies energy distribution).
 
-        \item \textbf{Spectral Insights:} 
+        \item \bl{Spectral Insights:} 
         Decomposes a function into frequency components, making smoothness and structure explicit. High smoothness = rapid Fourier coefficient decay.
 
-        \item \textbf{Compact Representation:} 
+        \item \bl{Compact Representation:} 
         Smooth functions require fewer terms for accurate approximation. High efficiency for practical computation and storage.
 
-        \item \textbf{Universality:} 
+        \item \bl{Universality:} 
         Fourier's reach extends to PDEs, signal processing, and quantum mechanics. Smooth functions unlock the full power of these tools.
     \end{itemize}
     \vspace{1em}
-    \textbf{Takeaway:} Fourier connects smoothness, convergence, and representation, offering unmatched clarity and utility for periodic and localized phenomena.
+    \bl{Takeaway:} Fourier connects smoothness, convergence, and representation, offering unmatched clarity and utility for periodic and localized phenomena.
 \end{frame}
 
 \begin{frame}{Fourier and Extensions to 2- and 3D}
@@ -53,17 +53,17 @@ Boo
     \setlength{\tabcolsep}{10pt} % Adjust column spacing
     
     \begin{tabular}{@{} l c @{}} % Align left and center without extra spacing
-        \textcolor{blue}{\textbf{1D:}} & 
+        \textcolor{blue}{\bl{1D:}} & 
         \( \displaystyle f(\theta) = \sum_{n=-\infty}^{\infty} a_m \fourier \) \\[1em]
 
-        \textcolor{blue}{\textbf{2D:}} & 
-        \( \displaystyle f(r, \theta) = \sum_{n=1}^{\infty}\sum_{m=-n}^{n} R_n^m(r) fourier  \) \\[1em]
+        \textcolor{blue}{\bl{2D:}} & 
+        \( \displaystyle f(r, \theta) = \sum_{n=1}^{\infty}\sum_{m=-n}^{n,2} a_{n}^{m} R_n^m(r)  \fourier  \) \\[1em]
 
-        \textcolor{blue}{\textbf{3D:}} & 
+        \textcolor{blue}{\bl{3D:}} & 
         \( \displaystyle 
         f(r, \theta, \phi) = 
         \sum_{n=1}^{\infty}\sum_{m=-n}^{n} 
-        \sqrt{\frac{(2l+1)(l-m)!}{4\pi (l+m)!}} 
+        a_{n}^{m} \sqrt{\frac{(2m+1)(m-n)!}{4\pi (m+n)!}} 
         P_l^m(\cos \theta) \fourier 
         \)
     \end{tabular}
@@ -71,10 +71,90 @@ Boo
 	
 \begin{frame}{Fourier and Extensions to 2- and 3D}
     \begin{itemize}
-        \item \href{https://mathworld.wolfram.com/FourierSeries.html}{\textbf{1D Fourier Series:}} Decomposes a periodic function \(f(\theta)\) into a sum of complex exponentials with coefficients \(a_n\) capturing the amplitudes of each frequency component.
-        \item \href{https://mathworld.wolfram.com/ZernikePolynomial.html}{\textbf{2D Fourier-Bessel:}} Extends Fourier analysis to two dimensions using radial functions \(R_n^m(r)\), often employed in circular domains or optical applications.
-        \item \href{https://mathworld.wolfram.com/SphericalHarmonic.html}{\textbf{3D Spherical Harmonics:}} Represents functions on a sphere using harmonics \(Y_l^m(\theta, \phi)\) and radial components \(R_l(r)\), crucial in fields like quantum mechanics and gravitational modeling.
+        \item \href{https://mathworld.wolfram.com/FourierSeries.html}{\bl{1D Fourier Series:}} Decomposes a periodic function \(f(\theta)\) into a sum of complex exponentials with coefficients \(a_n\) capturing the amplitudes of each frequency component.
+        \item \href{https://mathworld.wolfram.com/ZernikePolynomial.html}{\bl{2D Fourier-Bessel:}} Extends Fourier analysis to two dimensions using radial functions \(R_n^m(r)\), often employed in circular domains or optical applications.
+        \item \href{https://mathworld.wolfram.com/SphericalHarmonic.html}{\bl{3D Spherical Harmonics:}} Represents functions on a sphere using harmonics \(Y_l^m(\theta, \phi)\) and radial components \(R_l(r)\), crucial in fields like quantum mechanics and gravitational modeling.
     \end{itemize}
+\end{frame}
+
+\begin{frame}{The first few Zernike disk polynomials}
+\begin{table}[htp]
+%\caption{The first few Zernike disk polynomials. The parameter $n$ specifies the order; the parameter $m$ the angular frequency.}
+		\begin{center}
+			\begin{tabular}{c|ccccccccc}
+				%
+				$n$ \\
+				%
+				$\raisebox{12pt}{0}$ 
+				&&&&&\includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/0300-pyramid-00-00.eps} \\
+				%
+				$\raisebox{12pt}{1}$ 
+				  &&&&\includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/0300-pyramid-01--01.eps} &&
+				      \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-01-01.eps"} \\
+				%
+				$\raisebox{12pt}{2}$ 
+				  &&&\includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-02--02".eps} &&
+				     \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-02-00".eps} &&
+				     \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-02-02".eps} \\
+				%
+				$\raisebox{12pt}{3}$ 
+				  &&\includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-03--03".eps} &&
+				    \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-03--01".eps} &&
+				    \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-03-01".eps} &&
+				    \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-03-03".eps} \\
+				%
+				$\raisebox{12pt}{4}$ 
+				  & \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-04--04".eps} &&
+				    \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-04--02".eps} &&
+				    \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-04-00".eps} &&
+				    \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-04-02".eps} &&
+				    \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-04-04".eps} \\\hline
+				%
+				& 4 & 3 & 2 & 1 & 0 & 1 & 2 & 3 & 4 \\
+				&&&&& $m$
+				%
+			\end{tabular}
+		\end{center}
+	\label{tab:zernike pyramid 3d}
+\end{table}%
+\end{frame}
+
+\begin{frame}{Lowest Zernike disk polynomials}
+    \centering
+  	\setlength\extrarowheight{-6pt}
+    %\renewcommand{\arraystretch}{-0.2} % Adjust row spacing
+    \setlength{\tabcolsep}{3pt}       % Adjust column spacing
+    \begin{tabular}{cccccccccc}
+				$n$ \\
+        %
+ 				$\raisebox{12pt}{0}$  &
+        & & & & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-00-00.eps} & & & & \\[-4pt]
+        %
+ 				$\raisebox{12pt}{1}$  &
+        & & & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-01--01.eps} &
+        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-01-01.eps} & & & \\[-4pt]
+        %
+ 				$\raisebox{12pt}{2}$  &
+        & & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-02--02.eps} &
+        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-02-00.eps} &
+        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-02-02.eps} & & \\[-4pt]
+        %
+ 				$\raisebox{12pt}{3}$  &
+        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-03--03.eps} &
+        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-03--01.eps} &
+        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-03-01.eps} &
+        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-03-03.eps} & \\[-4pt]
+        %
+				$\raisebox{12pt}{4}$  &
+        \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-04--04.eps} &
+        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-04--02.eps} &
+        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-04-00.eps} &
+        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-04-02.eps} &
+        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-04-04.eps} \\
+        %
+ 				& -4 & -3 & -2 & -1 & 0 & 1 & 2 & 3 & 4 \\
+				&&&&& $m$
+    \end{tabular}
 \end{frame}
 
 
