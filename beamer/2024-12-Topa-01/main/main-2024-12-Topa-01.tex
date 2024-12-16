@@ -17,6 +17,9 @@
 \usepackage{epstopdf} % Automatic EPS to PDF conversion
 % Fetch home directory
 \usepackage{url}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17} % Ensure compatibility with PGFPlots
 \usepackage{catchfile}
 \CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
 
@@ -63,6 +66,39 @@
 	\titlepage
 \end{frame}
 	%\include{\pSections "sec splash"}
+
+\begin{frame}{Models of Satellite Cross Sections}
+    \centering
+    \begin{columns}[c,onlytextwidth]
+        % Left Column: Satellite Image
+        \begin{column}{0.4\textwidth}
+            \centering
+            % Light gray shading for the satellite
+            \begin{tikzpicture}
+                \node[inner sep=0pt] at (0,0) 
+                {\includegraphics[width=0.9\linewidth]{\pLocalGraphics/satellites/satellite-outline-hi.png}};
+                \fill[gray!10, opacity=0.5] (-1,0.5) rectangle (1,-1); % Light fill example
+            \end{tikzpicture}
+        \end{column}
+
+        % Right Column: Spherical Harmonics Expansion
+        \begin{column}{0.6\textwidth}
+            \centering
+            \textbf{\large Spherical Harmonics Expansion} \\[1em]
+            \[
+            f(r, \theta, \phi) \approx 
+            \textcolor{blue}{a_{00}} Y_0^0 + \textcolor{blue}{a_{10}} Y_1^0 + \textcolor{blue}{a_{11}} Y_1^1 + \dots
+            \]
+        \end{column}
+    \end{columns}
+
+    % Bottom Line: Y_l^m Definition Spanning the Slide
+    \vspace{1em}
+    \textbf{where}
+    \[
+    Y_l^m (\theta, \phi) = \sqrt{\frac{(2l+1)(l-m)!}{4\pi (l+m)!}} P_l^m (\cos \theta) e^{i m \phi}
+    \]
+\end{frame}
 
 \begin{frame}\frametitle{Overview}
 	\tableofcontents[hideallsubsections]
