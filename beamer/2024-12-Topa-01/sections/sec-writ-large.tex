@@ -3,72 +3,40 @@
 \section{Writ Large}
 
 %     %     %     %     %     %     %     %     %
-\subsection{Radar Images of Satellite}
-\begin{frame}\frametitle{Sealing the Mesh}
-Boo
+\subsection{RCS Models}
+\begin{frame}\frametitle{Goal: RCS Models in 3D}
+	RCS models have been built in 2D. \\
+	\bl{Extend to 3D} using the same MoM code. 
 \end{frame}
 		%
 %     %     %     %     %     %     %     %     %
 \subsection{Domains}
-\begin{frame}{Domain Visualizations}
-    \centering
-    \begin{tikzpicture}
-        % Left: Interval [-pi, pi]
-        \begin{scope}[xshift=-5cm]
-            \draw[thick] (-3.14,0) -- (3.14,0); % Solid line
-            \draw[thick] (-3.5,0) node[left] {$[$} -- (-3.14,0);
-            \draw[thick] (3.14,0) -- (3.5,0) node[right] {$]$};
-            \foreach \x/\label in {-3.14/$-\pi$, -1.57/$-\frac{\pi}{2}$, 0/$0$, 1.57/$\frac{\pi}{2}$, 3.14/$\pi$}
-                \draw[fill=black] (\x,0) circle (0.05) node[below] {\label};
-            \node[above] at (0,0.3) {\textbf{Interval: \([- \pi, \pi]\)}};
-        \end{scope}
 
-        % Center: Unit Disk (Polar Grid)
-        \begin{scope}
-            \draw[thick] (0,0) circle (1cm); % Outer circle
-            \foreach \r in {0.2,0.4,0.6,0.8,1}
-                \draw[gray!50, thin] (0,0) circle (\r cm); % Concentric circles
-            \foreach \a in {0,45,90,135,180,225,270,315}
-                \draw[gray!50, thin] (0,0) -- (\a:1cm); % Radial lines
-            \node[above] at (0,1.3) {\textbf{Unit Disk}};
-        \end{scope}
-
-        % Right: Unit Sphere (3D Mesh)
-        \begin{scope}[xshift=5cm]
-            \shade[ball color=gray!20, opacity=0.6] (0,0) circle (1cm); % Sphere shading
-            \foreach \phi in {-60,-30,0,30,60}
-                \draw[gray!50, thin] (\phi:1cm) arc (0:360:0.3 and 0.6); % Latitude lines
-            \foreach \theta in {0,45,...,360}
-                \draw[gray!50, thin] (\theta:1cm) -- (\theta:0cm); % Longitude lines
-            \node[above] at (0,1.3) {\textbf{Unit Sphere}};
-        \end{scope}
-    \end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Domain Visualizations}
-    \centering
-    \begin{tikzpicture}
-
-        % Center: Unit Disk (Polar Grid)
-        \begin{scope}
-            \draw[thick] (0,0) circle (1cm); % Outer circle
-            \foreach \r in {0.2,0.4,0.6,0.8,1}
-                \draw[gray!50, thin] (0,0) circle (\r cm); % Concentric circles
-            \foreach \a in {0,45,90,135,180,225,270,315}
-                \draw[gray!50, thin] (0,0) -- (\a:1cm); % Radial lines
-            \node[above] at (0,1.3) {\textbf{Unit Disk}};
-        \end{scope}
-
-        % Right: Unit Sphere (3D Mesh)
-        \begin{scope}[xshift=5cm]
-            \shade[ball color=gray!20, opacity=0.6] (0,0) circle (1cm); % Sphere shading
-            \foreach \phi in {-60,-30,0,30,60}
-                \draw[gray!50, thin] (\phi:1cm) arc (0:360:0.3 and 0.6); % Latitude lines
-            \foreach \theta in {0,45,...,360}
-                \draw[gray!50, thin] (\theta:1cm) -- (\theta:0cm); % Longitude lines
-            \node[above] at (0,1.3) {\textbf{Unit Sphere}};
-        \end{scope}
-    \end{tikzpicture}
+\begin{frame}{Fourier Domains in 1-, 2-, and 3D}
+\begin{table}[htp]
+	%\caption{default}
+	\begin{center}
+				%
+		\begin{tabular}{ccc}
+			        \raisebox{0.95cm}{\begin{tikzpicture}[scale=0.75]
+			        \begin{scope}[xshift=-5cm, yshift=0cm, scale=0.75]
+            				\draw[thick] (-3.14,0) -- (3.14,0);
+            				\foreach \x/\label in {-3.14/$-\pi$, 0/$0$, 3.14/$\pi$}
+                				\draw[fill=black] (\x,0) circle (0.05) node[below] {\label};
+        				\end{scope}
+				\end{tikzpicture}} &
+				%
+			\includegraphics[ width = 3cm ]{ \pLocalGraphics/grid-2d.pdf } &
+				%
+			\includegraphics[ width = 3cm ]{ \pLocalGraphics/grid-3d.pdf } \\
+				%
+			$\theta \in \brac{-\pi, \pi}$ & $\theta \in \brac{-\pi, \pi}$ & $\theta \in \brac{-\pi, \pi}$ \\[5pt]
+			& $r \in \brac{0,1}$ & $r \in \brac{0,1}$ \\[5pt]
+			&& $\phi \in \brac{0,\pi}$
+		\end{tabular}
+	\end{center}
+\label{tab:domains}
+\end{table}%
 \end{frame}
 
 %     %     %     %     %     %     %     %     %
@@ -87,10 +55,10 @@ Boo
         Any continuous function on \([a, b]\) can be uniformly approximated by polynomials. Fourier provides a similar approximation, using trigonometric bases instead of polynomials.
         
         \item \bl{Riesz-Fischer Theorem:} 
-        Fourier coefficients \((a_n, b_n)\) belong to \(l^2\) space, guaranteeing convergence in the \(L^2\) sense. This bridges the gap between smoothness and square-integrability.
+        Hunting license - Fourier coefficients \((a_n, b_n)\) $\in$ \(l^2\), guaranteeing convergence in the \(L^2\) sense.
 
         \item \bl{Uniform Convergence for Smooth Periodic Functions:} 
-        For sufficiently smooth functions (\(C^\infty\) or \(C^k\)), Fourier series converge uniformly, ensuring no oscillatory artifacts (Gibbs phenomenon disappears).
+       Smooth (\(C^\infty\) or \(C^k\)) functions, Fourier series converge uniformly, ensuring no oscillatory artifacts (Gibbs phenomenon disappears).
 
         \item \bl{Orthogonality of Basis:} 
         Sines and cosines form an orthogonal basis in \(L^2\), enabling direct computation of coefficients via projection (Parseval's theorem quantifies energy distribution).
@@ -138,48 +106,6 @@ Boo
     \end{itemize}
 \end{frame}
 
-%\begin{frame}{The first few Zernike disk polynomials}
-%\begin{table}[htp]
-%%\caption{The first few Zernike disk polynomials. The parameter $n$ specifies the order; the parameter $m$ the angular frequency.}
-%		\begin{center}
-%			\begin{tabular}{c|ccccccccc}
-%				%
-%				$n$ \\
-%				%
-%				$\raisebox{12pt}{0}$ 
-%				&&&&&\includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/0300-pyramid-00-00.eps} \\
-%				%
-%				$\raisebox{12pt}{1}$ 
-%				  &&&&\includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/0300-pyramid-01--01.eps} &&
-%				      \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-01-01.eps"} \\
-%				%
-%				$\raisebox{12pt}{2}$ 
-%				  &&&\includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-02--02".eps} &&
-%				     \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-02-00".eps} &&
-%				     \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-02-02".eps} \\
-%				%
-%				$\raisebox{12pt}{3}$ 
-%				  &&\includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-03--03".eps} &&
-%				    \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-03--01".eps} &&
-%				    \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-03-01".eps} &&
-%				    \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-03-03".eps} \\
-%				%
-%				$\raisebox{12pt}{4}$ 
-%				  & \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-04--04".eps} &&
-%				    \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-04--02".eps} &&
-%				    \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-04-00".eps} &&
-%				    \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-04-02".eps} &&
-%				    \includegraphics[ width = 1cm ]{ \pBitbucketStrangeEps/sf/zernike/"0300-pyramid-04-04".eps} \\\hline
-%				%
-%				& 4 & 3 & 2 & 1 & 0 & 1 & 2 & 3 & 4 \\
-%				&&&&& $m$
-%				%
-%			\end{tabular}
-%		\end{center}
-%	\label{tab:zernike pyramid 3d}
-%\end{table}%
-%\end{frame}
-
 \begin{frame}{Lowest Order Fourier Basic Functions}
     \centering
     \begin{columns}[c] % Center-align the columns
@@ -201,91 +127,7 @@ Boo
     \end{columns}
 \end{frame}
 
-\begin{frame}{Lowest Order Zernike Disk Polynomials}
-    \centering
-  	\setlength\extrarowheight{-6pt}
-    %\renewcommand{\arraystretch}{-0.2} % Adjust row spacing
-    \setlength{\tabcolsep}{3pt}       % Adjust column spacing
-    \begin{tabular}{cccccccccc}
-				$n$ \\
-        %
- 				$\raisebox{12pt}{0}$  &
-        & & & & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-00-00.eps} & & & & \\[-4pt]
-        %
- 				$\raisebox{12pt}{1}$  &
-        & & & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-01--01.eps} &
-        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-01-01.eps} & & & \\[-4pt]
-        %
- 				$\raisebox{12pt}{2}$  &
-        & & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-02--02.eps} &
-        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-02-00.eps} &
-        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-02-02.eps} & & \\[-4pt]
-        %
- 				$\raisebox{12pt}{3}$  &
-        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-03--03.eps} &
-        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-03--01.eps} &
-        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-03-01.eps} &
-        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-03-03.eps} & \\[-4pt]
-        %
-				$\raisebox{12pt}{4}$  &
-        \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-04--04.eps} &
-        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-04--02.eps} &
-        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-04-00.eps} &
-        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-04-02.eps} &
-        & \includegraphics[width=1cm]{\pBitbucketStrangeEps/sf/zernike/0300-pyramid-04-04.eps} \\[10pt]
-        %
- 				& -4 & -3 & -2 & -1 & 0 & 1 & 2 & 3 & 4 \\
-				&&&&& $m$
-    \end{tabular}
-\end{frame}
-
-%\begin{frame}{Fourier Basis Functions}
-%    \centering
-%    \begin{tikzpicture}
-%        % Left Figure: Cosine Functions
-%        \begin{axis}[
-%            width=5.5cm, height=4cm, % Slightly reduce width to prevent overlap
-%            title={\textbf{Cosine Basis Functions}},
-%            xlabel={\(\theta\)}, ylabel={\(f(\theta)\)},
-%            grid=both,
-%            xtick={0,90,180,270,360},
-%            xticklabels={\(0\), \(90^\circ\), \(180^\circ\), \(270^\circ\), \(360^\circ\)},
-%            ymin=-1.2, ymax=1.2, % Tightened range for clarity
-%            legend style={at={(0.5,1.05)}, anchor=south, legend columns=1, font=\tiny}
-%        ]
-%            \addplot[thick, blue] {cos(deg(0*x))};
-%            \addlegendentry{\(\cos(0\theta)\)}
-%            
-%            \addplot[thick, red] {cos(deg(x))};
-%            \addlegendentry{\(\cos(\theta)\)}
-%            
-%            \addplot[thick, green] {cos(deg(3*x))};
-%            \addlegendentry{\(\cos(3\theta)\)}
-%        \end{axis}
-%
-%        % Right Figure: Sine Functions
-%        \begin{axis}[
-%            at={(8cm,0)}, anchor=north west, % Manual positioning to avoid overlap
-%            width=5.5cm, height=4cm, % Matching left plot size
-%            title={\textbf{Sine Basis Functions}},
-%            xlabel={\(\theta\)}, ylabel={\(f(\theta)\)},
-%            grid=both,
-%            xtick={0,90,180,270,360},
-%            xticklabels={\(0\), \(90^\circ\), \(180^\circ\), \(270^\circ\), \(360^\circ\)},
-%            ymin=-1.2, ymax=1.2,
-%            legend style={at={(0.5,1.05)}, anchor=south, legend columns=1, font=\tiny}
-%        ]
-%            \addplot[thick, orange] {sin(deg(x))};
-%            \addlegendentry{\(\sin(\theta)\)}
-%            
-%            \addplot[thick, purple] {sin(deg(2*x))};
-%            \addlegendentry{\(\sin(2\theta)\)}
-%            
-%            \addplot[thick, cyan] {sin(deg(3*x))};
-%            \addlegendentry{\(\sin(3\theta)\)}
-%        \end{axis}
-%    \end{tikzpicture}
-%\end{frame}
+	\input{\pLocalSlides "slide-Lowest-Order-Zernikes"}
 
 
 %     %     %     %     %     %     %     %     %
