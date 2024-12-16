@@ -31,7 +31,7 @@
 	\label{tab:features}
 	\end{table}%
 \end{frame}
-\
+
 \begin{frame}
 	\frametitle{Achilles Heel: Minimum triangle size}
 	Mercury MoM is very sensitive to \color{red}{Spectral radius}
@@ -48,6 +48,109 @@
 \tiny{\texttt{\dg{\phantom{----}---| Mercury MOM Completed }\bl{Sucessfully}\dg{ |---}}} \\
 \tiny{\texttt{\dg{--------------------------------------------------------------------------------}}}}
 \end{center}}
+
+%     %     %     %     %     %     %     %     %
+\subsection{Spectral Radius}
+
+\begin{frame}
+	\frametitle{Mesh Resolution}
+	We can quantify mesh limits by looking at the \bl{spectrum} of triangle areas
+\end{frame}
+
+\subsection{Mesh Criteria}
+\begin{frame}
+	\frametitle{Spectral Radius}
+	\begin{enumerate}
+		\item We know \bl{ a priori} which mesh resolutions will fail
+		\item MMoM is \bl{single precision}
+		\item Key idea: \bl{difference} between largest and smallest triangle
+	\end{enumerate}
+\end{frame}
+
+
+\subsection{Computing the Spectral Radius}
+\begin{frame}
+	\frametitle{Spectral Radius}
+	Start with $\bl{\Omega}$, a \bl{closed}, \bl{simply connected} surface:\\[10pt]
+	\centering
+	\raisebox{2cm}{$\bl{\Omega} = $} \includegraphics[ scale = 0.65 ]{\pLocalGraphics/b20/b20-glamor}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Defining the Spectrum}
+	Let $\bl{\Omega_{P}}$, be a triangular partition of $\Omega$\\[10pt]
+	\centering
+	\raisebox{2cm}{$\bl{\Omega_{P}} = $} 
+	\includegraphics[ scale = 0.45 ]{\pLocalGraphics/b20/wire-1}
+	\raisebox{2cm}{$= \bigcup\limits_{k=1}^{m}\tau_{k}$}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Defining the Spectrum}
+	Properties of the triangular partition $\bl{\Omega_{P}}$\\[10pt]
+	\begin{enumerate}
+		\item $ \Omega_{P} = \bigcup\limits_{k=1}^{m}\tau_{k} $\\[10pt]
+		\item $\text{Area}\paren{\Omega_{P}} = \text{Area}\paren{\bigcup_{k=1}^{m}\tau_{k}}$\\[10pt]
+		\item $\text{Area}\paren{\tau_{k}} > 0, \quad k = 1:m$\\[10pt]
+		\item $\tau_{k} \cap \tau_{j} = \delta_{k}^{j} \times$Area $\paren{\tau_{j}}$
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Defining the Spectrum}
+	Colloquially, it's a good mesh:\\[10pt]
+	\begin{enumerate}
+		\item The mesh is watertight (sealed)
+		\item No triangles overlap
+		\item No triangles underlap
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Defining the Spectrum}
+	Define $\alpha_{k}$ as the area of triangle $\tau_{k}$\\[10pt]
+	\begin{enumerate}
+		\item Define $\alpha_{k}$ as the area of triangle $\tau_{k}$
+		\item The sequence is in ascending order:
+		$$0 < \alpha_{1} \le \alpha_{2} \le \dots \le \alpha_{m}$$
+ 		\item The \bl{spectrum} is the sequence $\bl{\lst{\alpha_{k}}_{k=1}^{m}}$
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Spectral Radius}
+	Define $T$, the \bl{spectral radius} as\\[10pt]
+	$$T=\ln \tau_{m} - \ln \tau_{1} = \ln \frac{\tau_{m}}{\tau_{1}}$$
+\end{frame}
+
+\begin{frame}
+	\frametitle{Seeing the Spectral Radius}
+	\begin{table}
+		\begin{center}
+			\begin{tabular}{ccc}
+					%
+				Mesh && \phantom{wi}Spectrum \\\hline
+				\ \\
+					%
+				\includegraphics[ scale = 0.40 ]{\pLocalGraphics/b20/"views-B20-standard-1m"} &&
+				\includegraphics[ scale = 0.35 ]{\pLocalGraphics/b20/"spectral-radius"} \\
+					%
+			\end{tabular}
+		\end{center}
+	\end{table}
+	\centering
+	Think of the \bl{height} of the gray box as the \bl{spectral radius}
+\label{tab:rectangle}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Spectral Radius}
+	Compare to $\kappa$ the \bl{matrix condition number} in the $2-$norm:\\[10pt]
+	Given a matrix $\mathbf{A}$ of rank $\rho$ with singular value spectrum $\lst{\sigma_{k}}_{k=1}^{\rho}$\\
+	The matrix condition number is defined as\\
+	$$\kappa_{2} = \frac{\normt{\mathbf{A}}}{\normt{\mathbf{A}^{-1}}} = \bl{\frac{\sigma_{k}}{\sigma_{1}}}$$\\[10pt]
+	$$T=\bl{\ln \frac{\tau_{m}}{\tau_{1}}}$$
+\end{frame}
 
 %     %     %     %     %     %     %     %     %
 \subsection{What Works}

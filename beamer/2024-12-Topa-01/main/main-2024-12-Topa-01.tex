@@ -11,8 +11,8 @@
 %
 \documentclass[]{beamer}
 \usepackage{pifont}
-\newcommand{\cmark}{\text{\ding{51}}}
-\newcommand{\xmark}{\text{\ding{55}}}
+\newcommand{\cmark}{\bl{\ding{51}}}
+\newcommand{\xmark}{\rd{\ding{55}}}
 \usepackage{transparent}
 \usepackage{epstopdf} % Automatic EPS to PDF conversion
 % Fetch home directory
@@ -20,6 +20,9 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.17} % Ensure compatibility with PGFPlots
+\usepackage{listings}
+\usepackage{tcolorbox}
+\definecolor{mygray}{cmyk}{0, 0, 0, 0.5} % 50% black
 \usepackage{catchfile}
 \CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
 
@@ -48,7 +51,7 @@
 \setbeamercovered{transparent=10} % pause activated text
 \usepackage{transparent}
 \usepackage{seqsplit}
-%\usepackage{enumitem}
+%\usepackage{enumitem} fata
 %\usepackage[T1]{fontenc}
 %\usepackage[utf8]{inputenc}
 
@@ -78,9 +81,9 @@
 	\input{\pSections "sec-writ-large"}
 	\input{\pSections "sec-radiation"}
 	\input{\pSections "sec-results"}
-	%\input{\pSections "sec-mesh"}
+	\input{\pSections "sec-mesh"}
 	%\input{\pSections "sec-model"}
-	%\input{\pSections "sec-software"}
+	\input{\pSections "sec-software"}
 	%\input{\pSections "sec-output"}
 %\section{Bibliography}
 %\begin{frame}[t,allowframebreaks]
@@ -92,7 +95,7 @@
 {\tiny{
 %\begin{frame}[allowframebreaks,shrink=10]\frametitle{Bibliography}
 \begin{frame}[allowframebreaks]\frametitle{Bibliography}
-	\nocite{*}
+	%\nocite{*}
 	\printbibliography
 \end{frame}}}
 

@@ -14,7 +14,6 @@
 		\item radar (left) {\color{red}{irradiates}} target (star)
 		\item {\color{blue}{backscatter}} travels from target to radar
 	\end{enumerate}
-
 \end{frame}
 
 
@@ -68,7 +67,37 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Factors Influencing Radar Cross Section}
+%\begin{frame}{Factors Influencing Radar Cross Section}
+%    \small
+%    \begin{itemize}
+%        \item \textcolor{blue}{Shape:}
+%            \begin{itemize}
+%                \item Smooth → directional reflection (\cite[p. 47]{knott2004radar}).
+%                \item Complex → scattered energy.
+%            \end{itemize}
+%        \item \textcolor{blue}{Material:}
+%            \begin{itemize}
+%                \item Metal → strong reflection.
+%                \item Absorbers → reduced RCS (\cite[Section 3.2]{knott2004radar}).
+%            \end{itemize}
+%        \item \textcolor{blue}{Size vs. Wavelength:}
+%            \begin{itemize}
+%                \item Large → high scattering.
+%                \item Small → "invisible" (Rayleigh scattering) (\cite[p. 188]{kolosov1987}).
+%            \end{itemize}
+%        \item \textcolor{blue}{Orientation:}
+%            \begin{itemize}
+%                \item Aligned → max RCS (\cite[Eq. 2.1]{knott2004radar}).
+%                \item Tilted → min RCS (\cite[p. 22]{skolnik1962introduction}).
+%            \end{itemize}
+%        \item \textcolor{blue}{Radar Parameters:}
+%            \begin{itemize}
+%                \item Frequency, polarization, incidence angle (\cite[p. 45]{cite-trcs}).
+%            \end{itemize}
+%    \end{itemize}
+%\end{frame}
+
+\begin{frame}{Factors Influencing Radar Cross Section (1/2)}
     \small
     \begin{itemize}
         \item \textcolor{blue}{Shape:}
@@ -86,6 +115,12 @@
                 \item Large → high scattering.
                 \item Small → "invisible" (Rayleigh scattering) (\cite[p. 188]{kolosov1987}).
             \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Factors Influencing Radar Cross Section (2/2)}
+    \small
+    \begin{itemize}
         \item \textcolor{blue}{Orientation:}
             \begin{itemize}
                 \item Aligned → max RCS (\cite[Eq. 2.1]{knott2004radar}).
@@ -98,42 +133,203 @@
     \end{itemize}
 \end{frame}
 
-
 %     %     %     %     %     %     %     %     %
-\subsection{Linear Independence}
+\subsection{Simulation Using Mercury MoM}
+% Slide 2: What is Mercury MoM?
+\begin{frame}{What is Mercury Method of Moments (MoM)?}
+    \begin{itemize}
+        \item Mercury MoM solves Maxwell's equations in integral form.
+        \item Targets: 
+            \begin{itemize}
+                \item Perfect Electric Conductors (PECs).
+                \item Far-field monostatic radar configurations.
+            \end{itemize}
+        \item Applications:
+            \begin{itemize}
+                \item Electromagnetic scattering simulations.
+                \item Radar Cross Section (RCS) analysis.
+            \end{itemize}
+        \item Benefits:
+            \begin{itemize}
+                \item Standalone Linux execution.
+                \item Minimal dependencies.
+                \item Accurate surface-based integral solutions.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide 3: Setup Workflow
+\begin{frame}{Mercury MoM Setup Workflow}
+    \begin{enumerate}
+        \item \textbf{Model Geometry}:
+            \begin{itemize}
+                \item Create CAD model using \texttt{FreeCAD}.
+                \item Export mesh as \texttt{*.obj} file.
+            \end{itemize}
+        \item \textbf{Convert Mesh}:
+            \begin{itemize}
+                \item Use Python tool to convert \texttt{*.obj} to \texttt{*.facet}.
+            \end{itemize}
+        \item \textbf{Prepare Input Files}:
+            \begin{itemize}
+                \item \texttt{B-20.geo} (Simulation control).
+                \item \texttt{B-20.facet} (Geometry).
+                \item \texttt{Materials.lib} (Material properties).
+            \end{itemize}
+        \item \textbf{Run Simulation}:
+            \begin{itemize}
+                \item Extract tarball and execute with bash scripts.
+            \end{itemize}
+    \end{enumerate}
+\end{frame}
+
+% Slide 4: Key Input Files
+%\begin{frame}{Using Mercury MoM - Terminal Commands}
+%    \centering
+%    % Code listing styled like a terminal
+%    \lstset{style=terminal}
+%    \begin{lstlisting}
+%    $ mom --file B-20.geo ## Run Mercury MoM with input file
+%    > Input: B-20.geo
+%    > Processing mesh...
+%    > Sealing mesh...
+%    > Configuring solver for frequency range...
+%    > Solver complete: Results saved to B-20-output.txt
+%    \end{lstlisting}
+%    \vspace{0.5em}
+%    \begin{itemize}
+%        \item \textbf{Input File:} \texttt{B-20.geo} provides mesh configuration, solver details, and radar parameters.
+%        \item \textbf{Processing:} Mesh is verified and sealed, ready for computation.
+%        \item \textbf{Output:} Results saved to \texttt{B-20-output.txt}.
+%    \end{itemize}
+%\end{frame}
+
+% Slide 5: Execution Steps
+\begin{frame}{Running Mercury MoM Simulations}
+    \begin{itemize}
+        \item Extract the Mercury MoM package:
+        \begin{tcolorbox}[colback=mygray, colframe=blue!50, sharp corners]
+        \texttt{tar -xvf Hg-MoM-4.1.12.tar.gz}
+        \end{tcolorbox}
+
+        \item Run the example bash script:
+        \begin{tcolorbox}[colback=mygray, colframe=blue!50, sharp corners]
+        \texttt{./run\_mom\_example.sh}
+        \end{tcolorbox}
+
+        \item Simulation:
+            \begin{itemize}
+                \item Reads input files (\texttt{*.geo}, \texttt{*.facet}, \texttt{*.lib}).
+                \item Configures radar frequency, sampling angles, and conditions.
+            \end{itemize}
+
+        \item Outputs:
+            \begin{itemize}
+                \item Results saved in output directories.
+                \item Files named after input stems (e.g., \texttt{B-20\_results}).
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide 6: Key Notes
+\begin{frame}{Key Notes}
+    \begin{itemize}
+        \item \textbf{System Requirements:}
+            \begin{itemize}
+                \item Linux environment.
+                \item Minimal dependencies (e.g., \texttt{libpthread}, \texttt{libc}).
+            \end{itemize}
+        \item \textbf{Radar Parameters:}
+            \begin{itemize}
+                \item Frequency range: 3–30 MHz.
+                \item Azimuth cuts and sampling.
+            \end{itemize}
+        \item \textbf{Applications:}
+            \begin{itemize}
+                \item Analyze far-field scattering patterns.
+                \item Perform monostatic radar cross-section simulations.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide 7: Summary
+\begin{frame}{Summary: How to Use Mercury MoM}
+    \begin{enumerate}
+        \item Model CAD geometry in \texttt{FreeCAD}.
+        \item Convert mesh to \texttt{*.facet}.
+        \item Prepare input files (\texttt{geo}, \texttt{facet}, \texttt{lib}).
+        \item Extract and execute Mercury MoM package.
+        \item Analyze results.
+    \end{enumerate}
+    \vspace{1em}
+    \centering
+    \textit{Mercury MoM: Accurate, reliable, and ready for PEC far-field radar simulations.}
+\end{frame}
 	
 %     %     %     %     %     %     %     %     %
 \subsection{Configuring Mercury MoM}
 
-\begin{frame}
-	\frametitle{Input files}
-	\begin{enumerate}
-			%
-		\item \texttt{B-20.geo}
-		\begin{enumerate}
-			\item Points to facet file
-			\item Configure linear algebra solver
-			\item Radar frequency range
-			\item Angular sampling ranges
-			\item Boundary conditions
-			\item Mono-- or Bistatic
-			\item Surface or Volume integral elements
-			\item Length units
-		\end{enumerate}
-			%
-		\item \texttt{B-20.facet}
-		\begin{enumerate}
-			\item Vertex list
-			\item Face list 
-		\end{enumerate}
-			%
-		\item \texttt{Materials.lib}
-		\begin{enumerate}
-			\item Permiability
-			\item Permittivity
-		\end{enumerate}
-			%
-	\end{enumerate}
+%\begin{frame}
+%	\frametitle{Input files}
+%	\begin{enumerate}
+%			%
+%		\item \texttt{B-20.geo}
+%		\begin{enumerate}
+%			\item Points to facet file
+%			\item Configure linear algebra solver
+%			\item Radar frequency range
+%			\item Angular sampling ranges
+%			\item Boundary conditions
+%			\item Mono-- or Bistatic
+%			\item Surface or Volume integral elements
+%			\item Length units
+%		\end{enumerate}
+%			%
+%		\item \texttt{B-20.facet}
+%		\begin{enumerate}
+%			\item Vertex list
+%			\item Face list 
+%		\end{enumerate}
+%			%
+%		\item \texttt{Materials.lib}
+%		\begin{enumerate}
+%			\item Permiability
+%			\item Permittivity
+%		\end{enumerate}
+%			%
+%	\end{enumerate}
+%\end{frame}
+
+\begin{frame}{Input Files (1/2)}
+    \begin{enumerate}
+        \item \texttt{B-20.geo}
+        \begin{enumerate}
+            \item Points to facet file
+            \item Configure linear algebra solver
+            \item Radar frequency range
+            \item Angular sampling ranges
+            \item Boundary conditions
+            \item Mono-- or Bistatic
+            \item Surface or Volume integral elements
+            \item Length units
+        \end{enumerate}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Input Files (2/2)}
+    \begin{enumerate}
+        \setcounter{enumi}{1} % Start enumeration at item 2
+        \item \texttt{B-20.facet}
+        \begin{enumerate}
+            \item Vertex list
+            \item Face list 
+        \end{enumerate}
+        \item \texttt{Materials.lib}
+        \begin{enumerate}
+            \item Permiability
+            \item Permittivity
+        \end{enumerate}
+    \end{enumerate}
 \end{frame}
 
 %\begin{frame}
