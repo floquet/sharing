@@ -1,4 +1,5 @@
 % \input{\pSections "sec-software.tex"}
+\renewcommand{\listingFontSize}{\tiny} 
 
 \section{Software Components}
 
@@ -31,11 +32,33 @@ Python:
 \end{frame}
 
 %     %     %     %     %     %     %     %     %
-\subsection{Fortran}
-\begin{frame}\frametitle{Sealing the Mesh}
-Show code structure
+\subsection{Fortran Codes}
+\begin{frame}\frametitle{Reading \texttt{*.obj} Files}
+\begin{enumerate}
+	\item http://paulbourke.net/dataformats/obj/
+	\item https://www.cs.utah.edu/~boulos/cs3505/obj_spec.pdf
+\end{enumerate}
 \end{frame}
 		%
+\begin{frame}[fragile]{Module \texttt{mOBJreader}: Dependencies}
+    \lstinputlisting[
+        style=fortran,
+        firstline=2,
+        lastline=12,
+        caption={Excerpt from \texttt{m\_obj\_reader.f08}},
+        label={lst:m_obj_reader_excerpt}
+    ]{\pLocalCode/m_obj_reader.f08}
+\end{frame}
+		%
+\begin{frame}[fragile]{Module \texttt{mOBJreader}: Dependencies}
+    \lstinputlisting[
+        style=fortran,
+        firstline=34,
+        lastline=60,
+        caption={Excerpt from \texttt{m\_obj\_reader.f08}},
+        label={lst:a_obj_reader_excerpt}
+    ]{\pLocalCode/m_obj_reader.f08}
+\end{frame}
 
 
 %     %     %     %     %     %     %     %     %

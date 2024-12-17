@@ -93,9 +93,16 @@
 %    commentstyle=\color{black},       % No color for comments
 %    stringstyle=\color{black},        % No color for strings
 %}
+% \lstdefinestyle{basic}{
+%     basicstyle=\ttfamily\footnotesize,
+%     frame=single
+% }
+
 \lstdefinestyle{basic}{
-    basicstyle=\ttfamily\footnotesize,
-    frame=single
+    basicstyle=\ttfamily\footnotesize, % Monospaced font, small size
+    frame=single,                      % Box around the listing
+    breaklines=true,                   % Enable line wrapping
+    numbers=none                       % No line numbers
 }
 
 \lstdefinestyle{terminal}{
@@ -198,7 +205,7 @@
 %    language={}                       % Treat as plain text
 %}
 
-\lstdefinestyle{terminal}{
+\lstdefinestyle{terminalCompact}{
     backgroundcolor=\color{black},  % Black background for terminal appearance
     basicstyle=\color{white}\ttfamily\listingFontSize, % Monospaced white text
     frame=single,                    % Box around the listing

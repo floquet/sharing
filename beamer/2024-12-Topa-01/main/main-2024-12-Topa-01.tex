@@ -20,7 +20,12 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.17} % Ensure compatibility with PGFPlots
+
+% beaver vs listing styles
 \usepackage{listings}
+\renewcommand{\ttdefault}{cmtt} % Ensure Computer Modern monospaced font
+\lstset{basicstyle=\ttfamily\tiny} % Use tiny monospaced font for Beamer
+ 
 \usepackage{tcolorbox}
 \definecolor{mygray}{cmyk}{0, 0, 0, 0.5} % 50% black
 \usepackage{catchfile}
@@ -41,6 +46,7 @@
 % Load Additional Setup Files
 	\input{\pGlobalSetup/setup-global-beamer.tex}
 	\input{\pLocalSetup/setup-local.tex}
+	\input{\pGlobalSetup/listings-global.tex}
 
 % Bibliography
 	%\input{\pGlobalSetup packages-global-bibliography-charlie.tex}
@@ -79,9 +85,9 @@
 
 % main sections
 	\input{\pSections "sec-writ-large"}
-	\input{\pSections "sec-radiation"}
-	\input{\pSections "sec-results"}
-	\input{\pSections "sec-mesh"}
+	%\input{\pSections "sec-radiation"}
+	%\input{\pSections "sec-results"}
+	%\input{\pSections "sec-mesh"}
 	%\input{\pSections "sec-model"}
 	\input{\pSections "sec-software"}
 	%\input{\pSections "sec-output"}
