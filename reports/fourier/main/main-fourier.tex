@@ -7,6 +7,10 @@
 \documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
 \usepackage{enumitem}  % list labels A, B, C
 \usepackage{pdfpages}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\hyphenpenalty=1000
+\tolerance=2000
 
 %\addbibresource{radar.bib}
 %\bibliography{\pSections radar.bib}
@@ -24,22 +28,26 @@
 % Define base paths
 % relies on symlink  at $HOME, e.g.
 % 	GitHub -> /Users/dantopa//repos-xiuhcoatal/github
-\newcommand{\pGithub}			{\HomePath/GitHub/}
+\newcommand{\pGithub}				{\HomePath/GitHub/}
 \newcommand{\pGithubSharing}	{\pGithub/sharing/}
-\newcommand{\pGlobal}			{\pGithubSharing/global/}
+\newcommand{\pGlobal}				{\pGithubSharing/global/}
 \newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
 
 % Load Additional Setup Files
 \input{\pGlobalSetup/setup-global-reports.tex}
 \input{\pLocalSetup/setup-local.tex}
 
-\input{\pGlobalSetup packages-global-bibliography-alpha.tex}
-\bibliography{\pShareBibliographies fourier.bib}
-%\addbibresource{\pGlobalBibliographies radar.bib}
+% Load the global bibliography setup from an external file
+% This file includes BibLaTeX settings, custom styles, and configurations
+\input{\pGlobalSetup/packages-global-bibliography-charlie.tex}
+
+% Specify the bibliography file to be used (fourier.bib)
+\bibliography{\pShareBibliographies/fourier.bib}
+
 \usepackage[printwatermark]{xwatermark}
 	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
 
-
+% Title, Author
 \title{Fourier and Fourier-Like Functions:\\Examples in Spectral Decomposition}
 \author{Daniel Topa\\\TopaHIIEmail}
 \affil{\missiontech}
@@ -52,6 +60,7 @@
 		\input{\pSections "sec-introduction}
 		\input{\pSections "sec-step}
 			
+\nocite{*}
 \printbibliography
 	
 \end{document} 

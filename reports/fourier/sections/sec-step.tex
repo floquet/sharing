@@ -1,42 +1,116 @@
-% \input{\pSections/step}
+% \input{\pSections/sec-step}
 %
-\section{Example: The Heaviside Step Function}
-\section{Decomposition of the Heaviside Step Function}
+\section{Fourier Decomposition of the Heaviside Theta Function}
 
-The Heaviside step function $H(x)$ defined on the interval $(-\pi, \pi)$ can be written as a Fourier series:
+The Heaviside theta function \( \Theta(x) \) is a step function defined as:
 \begin{equation}
-\begin{split}
-H(x) &= \sum_{n=1}^{\infty} \frac{2}{\pi n} \sin\left(\frac{n\pi}{2}\right) e^{inx},
-\end{split}
-\end{equation}
-where the Fourier coefficients are given by:
-\begin{equation}
-c_n = \frac{1}{\pi in} (1 - (-1)^n).
+\Theta(x) =
+\begin{cases}
+0, & x < 0, \\
+1, & x \geq 0.
+\end{cases}
+\label{eq:theta-definition}
 \end{equation}
 
-\section{Zernike Polynomials on the Top-Hat Function}
-
-The top-hat function on the unit disk can be expanded using Zernike polynomials:
+To compute its Fourier series representation on the interval \( -\pi \leq x \leq \pi \), we express it as:
 \begin{equation}
-\text{Top-Hat}(r) = \sum_{n,m} a_{n,m} Z_{n,m}(r, \theta),
+\Theta(x) = \frac{a_0}{2} + \sum_{n=1}^\infty \left(a_n \cos(nx) + b_n \sin(nx)\right),
+\label{eq:fourier-series}
 \end{equation}
-with the coefficients given by:
+where the Fourier coefficients \( a_0 \), \( a_n \), and \( b_n \) are given by:
 \begin{equation}
-a_{n,m} = \int_0^{2\pi} \int_0^1 \text{Top-Hat}(r) Z_{n,m}(r, \theta) r \, dr \, d\theta.
+a_0 = \frac{1}{\pi} \int_{-\pi}^\pi \Theta(x) \, dx,
+\label{eq:a0-definition}
 \end{equation}
-
-\section{Weierstrass Approximation Theorem}
-
-The Weierstrass approximation theorem states that any continuous function defined on a closed interval can be uniformly approximated by polynomials:
 \begin{equation}
-\sup_{x \in [a, b]} |f(x) - P(x)| < \epsilon.
+a_n = \frac{1}{\pi} \int_{-\pi}^\pi \Theta(x) \cos(nx) \, dx,
+\label{eq:an-definition}
 \end{equation}
-
-\section{Pointwise and Uniform Convergence}
-
-- **Pointwise Convergence**: A sequence \(f_n(x)\) converges pointwise to \(f(x)\) if for each \(x\), \(\lim_{n \to \infty} f_n(x) = f(x)\).
-- **Uniform Convergence**: A sequence \(f_n(x)\) converges uniformly to \(f(x)\) if:
 \begin{equation}
-\sup_{x \in [a, b]} |f_n(x) - f(x)| \to 0 \quad \text{as} \quad n \to \infty.
+b_n = \frac{1}{\pi} \int_{-\pi}^\pi \Theta(x) \sin(nx) \, dx.
+\label{eq:bn-definition}
 \end{equation}
+
+\subsection{Computing the Fourier Coefficients}
+
+The coefficients are computed as follows:
+
+\begin{equation}
+a_0 = \frac{1}{\pi} \int_{-\pi}^\pi \Theta(x) \, dx = \frac{1}{\pi} \int_0^\pi 1 \, dx = \frac{\pi}{\pi} = 1.
+\label{eq:a0-result}
+\end{equation}
+
+For \( a_n \) with \( n \geq 1 \):
+\begin{equation}
+a_n = \frac{1}{\pi} \int_{-\pi}^\pi \Theta(x) \cos(nx) \, dx = \frac{1}{\pi} \int_0^\pi \cos(nx) \, dx.
+\label{eq:an-step}
+\end{equation}
+Using the integral of cosine:
+\begin{equation}
+\int \cos(nx) \, dx = \frac{\sin(nx)}{n},
+\label{eq:cosine-integral}
+\end{equation}
+we find:
+\begin{equation}
+a_n = \frac{1}{\pi} \left[ \frac{\sin(nx)}{n} \right]_0^\pi = \frac{1}{\pi} \left( \frac{\sin(n\pi)}{n} - \frac{\sin(0)}{n} \right) = 0.
+\label{eq:an-result}
+\end{equation}
+
+For \( b_n \) with \( n \geq 1 \):
+\begin{equation}
+b_n = \frac{1}{\pi} \int_{-\pi}^\pi \Theta(x) \sin(nx) \, dx = \frac{1}{\pi} \int_0^\pi \sin(nx) \, dx.
+\label{eq:bn-step}
+\end{equation}
+Using the integral of sine:
+\begin{equation}
+\int \sin(nx) \, dx = -\frac{\cos(nx)}{n},
+\label{eq:sine-integral}
+\end{equation}
+we find:
+\begin{equation}
+b_n = \frac{1}{\pi} \left[ -\frac{\cos(nx)}{n} \right]_0^\pi = \frac{1}{\pi} \left( -\frac{\cos(n\pi)}{n} + \frac{\cos(0)}{n} \right).
+\label{eq:bn-calculation}
+\end{equation}
+Simplifying:
+\begin{equation}
+b_n = \frac{1}{\pi} \left( -\frac{(-1)^n}{n} + \frac{1}{n} \right) = \frac{1}{\pi} \frac{1 - (-1)^n}{n}.
+\label{eq:bn-result}
+\end{equation}
+Thus:
+\begin{equation}
+b_n = 0 \text{ for even } n, \quad b_n = \frac{2}{\pi n} \text{ for odd } n.
+\label{eq:bn-odd-even}
+\end{equation}
+
+\subsection{Parseval's Theorem}
+
+Parseval's theorem states that the total energy of the function \( \Theta(x) \) over the interval \( [-\pi, \pi] \) equals the sum of the squares of its Fourier coefficients:
+\begin{equation}
+\frac{1}{\pi} \int_{-\pi}^\pi \Theta(x)^2 \, dx = \frac{a_0^2}{2} + \sum_{n=1}^\infty \left(a_n^2 + b_n^2\right).
+\label{eq:parseval}
+\end{equation}
+
+For the left-hand side:
+\begin{equation}
+\frac{1}{\pi} \int_{-\pi}^\pi \Theta(x)^2 \, dx = \frac{1}{\pi} \int_0^\pi 1^2 \, dx = \frac{\pi}{\pi} = 1.
+\label{eq:parseval-lhs}
+\end{equation}
+
+For the right-hand side:
+\begin{equation}
+\frac{a_0^2}{2} + \sum_{n=1}^\infty \left(a_n^2 + b_n^2\right) = \frac{1^2}{2} + \sum_{k=1}^\infty \left(\frac{2}{\pi(2k-1)}\right)^2.
+\label{eq:parseval-rhs}
+\end{equation}
+The series converges to 1, consistent with Parseval's theorem.
+
+\subsection{Final Fourier Series}
+
+The Fourier series for the Heaviside function is:
+\begin{equation}
+\Theta(x) = \frac{1}{2} + \sum_{k=1}^\infty \frac{2}{\pi(2k-1)} \sin((2k-1)x).
+\label{eq:final-series}
+\end{equation}
+This representation satisfies Parseval's theorem, ensuring the energy of the original function matches the energy of its Fourier components.
+
+%
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

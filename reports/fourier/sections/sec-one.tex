@@ -1,0 +1,102 @@
+% \input{\pSections/sec-one.tex}
+\section{Trigonometric Functions on an Interval}}
+% \label{sec:xxxx}
+
+Trigonometric functions, such as sine and cosine, are fundamental tools in mathematics, especially in the study of periodic phenomena. However, these functions are typically limited to a one-dimensional interval. In this work, we explore how these basic trigonometric functions can be extended into higher dimensions. First, we look at how they can be extended to the unit disk using Zernike polynomials, and later to the unit sphere using spherical harmonics.
+
+Consider the standard trigonometric functions, sine and cosine, defined on the interval \([0, 2\pi]\):
+
+\begin{equation}
+\begin{split}
+\cos(\theta) &= \frac{e^{i\theta} + e^{-i\theta}}{2}, \\
+\sin(\theta) &= \frac{e^{i\theta} - e^{-i\theta}}{2i}.
+\end{split}
+\end{equation}
+
+These functions describe oscillations and periodic phenomena in one-dimensional space. However, for many applications, such as those in higher-dimensional spaces, we need to extend these functions to handle the geometry of a disk or a sphere.
+%
+% ==    ==    ==    ==    ==    ==
+\subsection{A formula by de Moivre}
+We begin the Taylor series for the exponential functions%
+%
+\begin{equation}
+	e^{x} = 1 + x + \frac{x^{2}}{2!} + \frac{x^{3}}{3!} + \dots
+\label{eq:exp}
+\end{equation}
+%
+Let $x\to i \theta$ and using the cyclic property $i^{2} = i i = -1$, $i^{3} = i i^{2} = -i$,  $i^{4} = i i^{3} = 1$, we find that after separating real and imaginary components, we are left with
+%
+\begin{equation}
+	e^{i \theta} = \left(1 + \frac{x^{2}}{2!} +  \frac{x^{4}}{4!} + ... \right) + i \left( x + \frac{x^{3}}{3!} +  \frac{x^{5}}{5!} + \dots \right)
+\label{eq:exp}
+\end{equation}
+%
+\begin{equation}
+\begin{array}{ccc ccc}
+	e^{i \theta} &= &\left(1 + \frac{x^{2}}{2!} +  \frac{x^{4}}{4!} + ... \right) &+ & i \left( x + \frac{x^{3}}{3!} +  \frac{x^{5}}{5!} + \dots \right)\\
+		&&\cos \theta &+ &i \sin \theta &
+\end{array}
+\label{eq:de-Moivre}
+\end{equation}
+%
+% ==    ==    ==    ==    ==    ==
+\subsection{ssec}
+%
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
+\section{Trigonometric Functions on an Interval}
+
+\section{Extension to the Unit Disk: Zernike Polynomials}
+
+The first extension we consider is from the unit circle (i.e., the interval \([0, 2\pi]\)) to the unit disk. The **Zernike polynomials** are a family of orthogonal polynomials that are defined on the unit disk. These polynomials provide a way to express functions over the unit disk and can be considered an extension of trigonometric functions.
+
+The general form of the Zernike polynomials is:
+
+\begin{equation}
+\begin{split}
+Z_{n,m}(r, \theta) &= R_{n,m}(r) \cos(m\theta),
+\end{split}
+\end{equation}
+where \(R_{n,m}(r)\) are the radial components and \(m\) is an integer that determines the angular frequency. The radial components \(R_{n,m}(r)\) are polynomials that ensure the orthogonality over the unit disk.
+
+For example, the lowest order Zernike polynomials include:
+
+\begin{equation}
+\begin{split}
+Z_{0,0}(r, \theta) &= 1, \\
+Z_{1,1}(r, \theta) &= r \cos(\theta), \\
+Z_{2,2}(r, \theta) &= r^2 \cos(2\theta).
+\end{split}
+\end{equation}
+
+These polynomials capture the radial and angular behavior of a function over the disk. The extension from trigonometric functions to Zernike polynomials involves not just the angular components (like \(\cos(m\theta)\)) but also radial components, which account for the geometry of the disk.
+
+\section{Extension to the Unit Sphere: Spherical Harmonics}
+
+Next, we extend our study from the unit disk to the unit sphere. The **spherical harmonics** provide a natural extension of trigonometric functions to two dimensions of angular dependence: latitude and longitude on the sphere.
+
+Spherical harmonics \(Y_{\ell}^{m}(\theta, \phi)\) are defined on the sphere and have the form:
+
+\begin{equation}
+\begin{split}
+Y_{\ell}^{m}(\theta, \phi) &= \sqrt{\frac{(2\ell + 1)(\ell - |m|)!}{4\pi (\ell + |m|)!}} \, P_{\ell}^{m}(\cos\theta) e^{im\phi},
+\end{split}
+\end{equation}
+where \(\ell\) is the degree (a non-negative integer), \(m\) is the order (\(-\ell \leq m \leq \ell\)), \(\theta\) is the polar angle (latitude), and \(\phi\) is the azimuthal angle (longitude). The associated Legendre polynomials \(P_{\ell}^{m}(\cos\theta)\) represent the radial part, while the exponential term captures the angular part.
+
+For example, the lowest-order spherical harmonics are:
+
+\begin{equation}
+\begin{split}
+Y_0^0(\theta, \phi) &= \frac{1}{\sqrt{4\pi}}, \\
+Y_1^0(\theta, \phi) &= \sqrt{\frac{3}{4\pi}} \cos(\theta), \\
+Y_1^1(\theta, \phi) &= -\sqrt{\frac{3}{8\pi}} \sin(\theta) e^{i\phi}.
+\end{split}
+\end{equation}
+
+The spherical harmonics allow the representation of functions on the surface of the sphere. The angular components include **sinusoidal** terms (just like in the unit disk), but in this case, they depend on both \(\theta\) and \(\phi\). The spherical harmonics thus provide a rich set of basis functions for expanding functions on the sphere.
+
+\section{Conclusion}
+
+We have explored how basic trigonometric functions, such as sine and cosine, can be extended to higher-dimensional spaces. The extension to the **unit disk** via Zernike polynomials adds radial components to the angular functions, allowing for the representation of functions over the disk. Further, spherical harmonics provide an elegant extension to the **unit sphere**, where functions are described in terms of both latitude and longitude.
+
+These extensions provide a powerful framework for representing functions on curved domains, with applications in physics, engineering, and mathematics, especially in the fields of approximation theory and spectral decomposition.

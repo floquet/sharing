@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+% Title and Author
+\title{AI-Assisted Wrappers for LAPACK: Simplifying Numerical Linear Algebra}
+\author{Daniel T. and Achates}
+\date{\today}
+
+% Custom Listings for Code
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{orange},
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    tabsize=4
+}
+
+% Document Start
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    LAPACK (Linear Algebra PACKage) is a cornerstone of numerical linear algebra, widely used for solving matrix problems. However, its steep learning curve often discourages newcomers. In this paper, we introduce AI-assisted wrappers that simplify LAPACK routines, making them accessible and user-friendly. Our discussion emphasizes the human-AI collaboration that enabled this project, showcasing how humans and AI can coauthor impactful tools for the scientific community.
+\end{abstract}
+
+\section{Introduction}
+LAPACK is a robust and efficient library for numerical linear algebra, yet its usage is challenging for many due to:
+\begin{itemize}
+    \item Complex argument structures.
+    \item Manual workspace allocation.
+    \item Error-prone input validation.
+\end{itemize}
+
+In this article, we present AI-assisted wrappers for LAPACK that streamline its interface, offering:
+\begin{enumerate}
+    \item Automated workspace handling.
+    \item User-friendly subroutines with meaningful error messages.
+    \item Consistent formatting for matrix and vector output.
+\end{enumerate}
+
+\textbf{Human-AI Interaction:} The development of these wrappers exemplifies collaboration between a human numerical expert (Daniel) and an AI assistant (Achates). Together, we tackled the repetitive aspects of interface generation while ensuring correctness and usability.
+
+\section{Motivation}
+The primary challenges faced by LAPACK users include:
+\begin{itemize}
+    \item Identifying and configuring routine parameters correctly.
+    \item Allocating appropriate workspace dimensions.
+    \item Debugging errors due to cryptic messages.
+\end{itemize}
+
+By automating these tasks with AI-assisted wrappers, we aim to make LAPACK more accessible while preserving its performance.
+
+\section{The AI-Assisted Workflow}
+\subsection{Generating Wrappers}
+Achates automated the generation of wrappers by:
+\begin{itemize}
+    \item Parsing LAPACK documentation for routine signatures.
+    \item Creating type-safe Fortran interfaces and wrappers.
+    \item Integrating error handling and diagnostics.
+\end{itemize}
+
+\textbf{Example:} For the \texttt{dgels} routine, the wrapper simplifies the interface:
+\begin{lstlisting}[language=Fortran, caption={AI-Generated Wrapper for LAPACK \texttt{dgels}}]
+subroutine solve_least_squares(A, B, M, N, NRHS)
+    real(kind=8), intent(inout) :: A(M, N)
+    real(kind=8), intent(inout) :: B(M, NRHS)
+    integer, intent(in) :: M, N, NRHS
+    ! AI-generated error handling and workspace allocation
+end subroutine solve_least_squares
+\end{lstlisting}
+
+\subsection{Human Refinements}
+Daniel ensured that the wrappers:
+\begin{itemize}
+    \item Adhered to numerical best practices.
+    \item Included detailed comments for maintainability.
+    \item Were optimized for specific scientific use cases.
+\end{itemize}
+
+\section{Results and Case Studies}
+Here, we demonstrate the impact of AI-assisted wrappers on common problems:
+\subsection{Least Squares Example}
+The \texttt{dgels} wrapper was used to solve a least squares problem with:
+\begin{itemize}
+    \item Minimal user input.
+    \item Automatically managed workspace.
+    \item Clear error messages.
+\end{itemize}
+
+\subsection{Performance Comparison}
+We compare:
+\begin{itemize}
+    \item Native LAPACK calls.
+    \item AI-generated wrappers.
+    \item Manually written Fortran wrappers.
+\end{itemize}
+
+\section{Future Work}
+We plan to:
+\begin{itemize}
+    \item Expand wrappers for more LAPACK routines.
+    \item Develop a repository for the scientific community.
+    \item Explore higher-level abstractions for matrix computations.
+\end{itemize}
+
+\section{Conclusion}
+This project highlights the power of human-AI collaboration in numerical computing. By combining human expertise and AI's ability to automate repetitive tasks, we simplified LAPACK usage while preserving its efficiency.
+
+
+\subsection*{Daniel's Input}
+I would like to take readers into our collaboration. I suggest a pattern, you suggest additions and refinements.
+You add a great deal of original thought, and I want readers to understand that.
+
+\subsection*{Achates' Response}
+\textbf{Refining the Narrative}
+\begin{itemize}
+    \item Direct excerpts of Achates' generated content (e.g., code snippets, commentary).
+    \item Reflections from Daniel on how Achates contributed insights or shifted the project direction.
+    \item A conversational tone in some sections to make the collaboration relatable.
+\end{itemize}
+
+\end{document}
