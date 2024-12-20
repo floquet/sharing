@@ -1,0 +1,131 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{pdflscape} % Rotates the page content
+\usepackage{graphicx}
+
+\geometry{margin=1in}
+
+\newcommand{\shsym}[2]{%
+  \ifnum#2<0 (-1)^{#2} \shreal{#1}{-\the\numexpr#2}%
+  \else \shreal{#1}{#2}%
+  \fi%
+}
+% Spherical Harmonic Primitives: Simplified Real Forms with 2sqrt(pi) scaling
+
+% Degree 0
+\newcommand{\shrealzerozero}{\frac{1}{2}} % Scaled Y_0^0
+
+% Degree 1
+\newcommand{\shrealonezero}{\sqrt{3} \cos\theta}
+\newcommand{\shrealoneoneplus}{\sqrt{3} \sin\theta \cos\phi}
+
+% Degree 2
+\newcommand{\shrealtwozero}{\frac{1}{2} \sqrt{5} (3\cos^2\theta - 1)}
+\newcommand{\shrealtwooneplus}{\sqrt{15} \cos\phi \sin\theta \cos\theta}
+\newcommand{\shrealtwotwoplus}{\frac{\sqrt{15}}{4} (1 - \cos(2\theta)) \cos(2\phi)}
+
+% Degree 3
+\newcommand{\shrealthreezero}{\frac{\sqrt{7}}{2} (5\cos^3\theta - 3\cos\theta)}
+\newcommand{\shrealthreeoneplus}{\frac{\sqrt{21}}{4} (3\sin\theta - \sin(3\theta)) \cos\phi}
+\newcommand{\shrealthreetwoplus}{\frac{\sqrt{105}}{4} \sin(2\theta) \cos\theta \cos(2\phi)}
+\newcommand{\shrealthreethreeplus}{\frac{\sqrt{35}}{4} (3\sin\theta - \sin(3\theta)) \cos(3\phi)}
+
+% Degree 0
+\newcommand{\shzerozero}{\frac{1}{2}} % Scaled Y_0^0
+
+% Degree 1
+\newcommand{\shonezero}{\sqrt{3} \cos\theta} % Scaled Y_1^0
+\newcommand{\shoneoneplus}{\sqrt{3} \sin\theta \cos\phi} % Scaled Y_1^1
+\newcommand{\shoneoneminus}{\sqrt{3} \sin\theta \sin\phi} % Scaled Y_1^{-1}
+
+% Degree 2
+\newcommand{\shtwozero}{\frac{1}{2} \sqrt{5} (3\cos^2\theta - 1)} % Scaled Y_2^0
+\newcommand{\shtwooneplus}{\sqrt{15} \sin\theta \cos\theta \cos\phi} % Scaled Y_2^1
+\newcommand{\shtwooneminus}{\sqrt{15} \sin\theta \cos\theta \sin\phi} % Scaled Y_2^{-1}
+\newcommand{\shtwotwoplus}{\frac{1}{2} \sqrt{15} \sin^2\theta \cos(2\phi)} % Scaled Y_2^2
+\newcommand{\shtwotwominus}{\frac{1}{2} \sqrt{15} \sin^2\theta \sin(2\phi)} % Scaled Y_2^{-2}
+
+% Degree 3
+\newcommand{\shthreezero}{\frac{1}{2} \sqrt{7} (5\cos^3\theta - 3\cos\theta)} % Scaled Y_3^0
+\newcommand{\shthreeoneplus}{\frac{1}{2} \sqrt{21} \sin\theta (5\cos^2\theta - 1) \cos\phi} % Scaled Y_3^1
+\newcommand{\shthreeoneminus}{\frac{1}{2} \sqrt{21} \sin\theta (5\cos^2\theta - 1) \sin\phi} % Scaled Y_3^{-1}
+\newcommand{\shthreetwoplus}{\frac{1}{2} \sqrt{105} \sin^2\theta \cos\theta \cos(2\phi)} % Scaled Y_3^2
+\newcommand{\shthreetwominus}{\frac{1}{2} \sqrt{105} \sin^2\theta \cos\theta \sin(2\phi)} % Scaled Y_3^{-2}
+\newcommand{\shthreethreeplus}{\frac{1}{2} \sqrt{35} \sin^3\theta \cos(3\phi)} % Scaled Y_3^3
+\newcommand{\shthreethreeminus}{\frac{1}{2} \sqrt{35} \sin^3\theta \sin(3\phi)} % Scaled Y_3^{-3}
+
+% Multiple-Angle Spherical Harmonic Primitives: Simplified Real Forms
+
+% Degree 0
+\newcommand{\shmazerozero}{\frac{1}{2}} % Scaled Y_0^0
+
+% Degree 1
+\newcommand{\shmaonezero}{\sqrt{3} \cos\theta} % Y_1^0
+\newcommand{\shmaoneoneplus}{\sqrt{3} \sin\theta \cos\phi} % Y_1^1
+\newcommand{\shmaoneoneminus}{\sqrt{3} \sin\theta \sin\phi} % Y_1^{-1}
+
+% Degree 2
+%\newcommand{\shmatwozero}{\frac{1}{2} \sqrt{5} (3\cos^2\theta - 1)} % Y_2^0
+\newcommand{\shmatwozero}{\frac{\sqrt{5}}{4} \left(1 + \cos(2\theta)\right)}
+\newcommand{\shmatwooneplus}{\sqrt{15} \cos\phi \sin\theta \cos\theta} % Y_2^1
+\newcommand{\shmatwooneminus}{\sqrt{15} \sin\phi \sin\theta \cos\theta} % Y_2^{-1}
+\newcommand{\shmatwotwoplus}{\frac{\sqrt{15}}{4} \left(1 - \cos(2\theta)\right) \cos(2\phi)} % Y_2^2
+\newcommand{\shmatwotwominus}{\frac{\sqrt{15}}{4} \left(1 - \cos(2\theta)\right) \sin(2\phi)} % Y_2^{-2}
+
+% Degree 3
+%\newcommand{\shmathreezero}{\frac{\sqrt{7}}{2} \left(5\cos^3\theta - 3\cos\theta\right)} % Y_3^0
+\newcommand{\shmathreezero}{\frac{\sqrt{7}}{8} \left(3\cos\theta + 5\cos(3\theta)\right)}
+\newcommand{\shmathreeoneplus}{\frac{\sqrt{21}}{4} \left(3\sin\theta - \sin(3\theta)\right) \cos\phi} % Y_3^1
+\newcommand{\shmathreeoneminus}{\frac{\sqrt{2}}{4} \left(3\sin\theta - \sin(3\theta)\right) \sin\phi} % Y_3^{-1}
+\newcommand{\shmathreetwoplus}{\frac{\sqrt{105}}{4} \sin(2\theta) \cos\theta \cos(2\phi)} % Y_3^2
+\newcommand{\shmathreetwominus}{\frac{\sqrt{105}}{4} \sin(2\theta) \cos\theta \sin(2\phi)} % Y_3^{-2}
+\newcommand{\shmathreethreeplus}{\frac{\sqrt{35}}{4} \left(3\sin\theta - \sin(3\theta)\right) \cos(3\phi)} % Y_3^3
+\newcommand{\shmathreethreeminus}{\frac{\sqrt{35}}{4} \left(3\sin\theta - \sin(3\theta)\right) \sin(3\phi)} % Y_3^{-3}
+
+
+\begin{document}
+
+\begin{landscape} % Rotates this page into landscape
+% Degree 5, m = -3
+\newcommand{\shmafivethreeminus}{\frac{\sqrt{385}}{16} \left(5\sin\theta - 10\sin(3\theta) + \sin(5\theta)\right) \sin(3\phi)}
+
+% Degree 6, m = -3
+\newcommand{\shmasixthreeminus}{\frac{\sqrt{77}}{16} \left(15\sin\theta - 20\sin(3\theta) + 6\sin(5\theta)\right) \sin(3\phi)}
+
+% Degree 7, m = -3
+\newcommand{\shmaseventhreeminus}{\frac{\sqrt{1155}}{32} \left(7\sin\theta - 28\sin(3\theta) + 28\sin(5\theta) - \sin(7\theta)\right) \sin(3\phi)}
+
+\begin{equation}
+	\shmafivethreeminus, \quad \shmasixthreeminus, \quad \shmaseventhreeminus
+\end{equation}
+
+
+\scriptsize
+\renewcommand{\arraystretch}{2.0}
+\setlength{\tabcolsep}{8pt}
+
+\begin{center}
+\begin{tabular}{lccccccc}
+\textbf{\( n \)} & \textbf{\( m = -3 \)} & \textbf{\( m = -2 \)} & \textbf{\( m = -1 \)} & \textbf{\( m = 0 \)} & \textbf{\( m = 1 \)} & \textbf{\( m = 2 \)} & \textbf{\( m = 3 \)} \\ \hline
+0 &  &  &  & $\shzerozero$ &  &  &  \\
+1 &  &  & $\shoneoneminus$ & $\shonezero$ & $\shoneoneplus$ &  &  \\ 
+2 &  & $\shtwotwominus$ & $\shtwooneminus$ & $\shtwozero$ & $\shtwooneplus$ & $\shtwotwoplus$ &  \\
+3 & $\shthreethreeminus$ & $\shthreetwominus$ & $\shthreeoneminus$ & $\shthreezero$ & $\shthreeoneplus$ & $\shthreetwoplus$ & $\shthreethreeplus$ \\ 
+\end{tabular}
+\end{center}
+
+
+\begin{tabular}{lccccccc}
+\textbf{\( n \)} & \textbf{\( m = -3 \)} & \textbf{\( m = -2 \)} & \textbf{\( m = -1 \)} & \textbf{\( m = 0 \)} & \textbf{\( m = 1 \)} & \textbf{\( m = 2 \)} & \textbf{\( m = 3 \)} \\ \hline
+0 &  &  &  & $\shmazerozero$ &  &  &  \\
+1 &  &  & $\shmaoneoneminus$ & $\shmaonezero$ & $-\shmaoneoneplus$ &  &  \\ 
+2 &  & $\shmatwotwominus$ & $\shmatwooneminus$ & $\shmatwozero$ & $-\shmatwooneplus$ & $\shmatwotwoplus$ &  \\
+3 & $\shmathreethreeminus$ & $\shmathreetwominus$ & $\shmathreeoneminus$ & $\shmathreezero$ & $-\shmathreeoneplus$ & $\shmathreetwoplus$ & $-\shmathreethreeplus$ \\
+\end{tabular}
+
+\end{landscape}
+
+\end{document}

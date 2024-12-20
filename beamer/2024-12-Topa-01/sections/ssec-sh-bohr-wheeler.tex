@@ -1,0 +1,89 @@
+% \input{\pSections "ssec-sh-bohr-wheeler.tex"}
+
+%     %     %     %     %     %     %     %     %
+\begin{frame}\frametitle{Comparison of Liquid Drop Models}
+\begin{table}[htp]
+%\caption{default}
+\begin{center}
+\begin{tabular}{cc}bb
+	Constant Radius & Variable Radius \\\hline
+	\ \\
+	\includegraphics[ width= 2in ]{\pLocalGraphics liquid-drop-sphere} & 
+	\includegraphics[ width= 2in ]{\pLocalGraphics liquid-drop-balls} 
+\end{tabular}
+\end{center}
+%\label{default}
+\end{table}%
+\end{frame}
+%
+\begin{frame}\frametitle{Historical Survey}
+\center
+	\href{\reedBook}{
+	\begin{overpic}[ scale = 0.105 ]
+	{\pLocalGraphics Manhattan}
+	\end{overpic}}
+\center
+\footnotesize{
+Appendix E: Formal Derivation of the \\\bl{Bohr–Wheeler Spontaneous Fission Limit}.} 
+\end{frame}
+%
+\begin{frame}\frametitle{Summary of Liquid Drop Model\jumpLittle}
+\begin{enumerate}
+	\item Nucleus is liquid drop of \bl{variable radius}
+	\item Fluid is incompressible
+	\item Volume is conserved
+\end{enumerate}
+\end{frame}
+
+
+%%%   %%%   %%%   %%%
+\subsection{The Mechanism of Nuclear Fission}
+\begin{frame}\frametitle{1939 Paper on \href{https://en.wikipedia.org/wiki/Nuclear\_fission}{Nuclear Fission}}
+\center
+	\href{\bohrPaper}{
+	\begin{overpic}[ scale = 0.8]
+	{\pLocalGraphics paper-bohr-wheeler-a}
+		%\put(24,43){$Z=92$}
+	\put(85.5,28) {\includegraphics[ width = 1cm ]{\pLocalGraphics medal}}
+	\end{overpic}}
+\end{frame}
+
+
+\begin{frame}\frametitle{Deformations from Sphericity}
+\center
+	\href{\bohrPaper}{\begin{overpic}[ scale = 0.9]
+	{\pLocalGraphics bw-01a}
+	\end{overpic}}
+\end{frame}
+
+\begin{frame}\frametitle{Bohr-Wheeler Derivation}
+\center
+	\href{\bohrPaper}{\begin{overpic}[ scale = 0.75]
+	{\pLocalGraphics bw-formula-a}
+	\end{overpic}}
+\end{frame}
+
+\begin{frame}\frametitle{Express Radius as a Function of Polar Angle}
+%
+\begin{equation}
+	\mg{\xcancel{\bk{r = R_{0}}}}
+%\label{eq:name}
+\end{equation}
+$$ \Downarrow $$
+\begin{equation}
+	r(\theta) = R_{0}\paren{\bwexpa}
+\label{eq:bw-radius}
+\end{equation}
+\end{frame}
+
+\begin{frame}\frametitle{Express Radius as a Function of Polar Angle\jumpLittle}
+%
+Adjust $ \azero$, $ \atwo$ so that \rd{volume is conserved}:
+\begin{equation}
+	r(\theta) = R_{0}\paren{\bwexpa}
+\tag{\ref{eq:bw-radius}}
+\end{equation}
+\end{frame}
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

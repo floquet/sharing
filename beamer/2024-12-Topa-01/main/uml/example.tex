@@ -1,0 +1,197 @@
+%%
+%% This is file `example.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% uml.dtx  (with options: `example')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from example.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file uml.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+\def\filedate{2010/03/17}
+\def\docdate{2010/03/17}
+\def\fileversion{0.11}
+\def\basename{uml}
+%% Package 'uml' to use with LaTeX2e and PSTricks
+%% Copyright 2006 by Ellef Fange Gjelstad.
+%% http://www.ifi.uio.no/~ellefg/uml.sty/
+%% This program can be redistributed and/or modified under the terms
+%% of the LaTeX Project Public License Distributed from CTAN archives
+%% in directory macros/latex/base/lppl.txt.
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+
+
+
+\newcommand\umlADTExample{%
+    \umlDiagram[box=,sizeX=15cm, sizeY=16cm,ref=ADTdiagram,
+                grayness=0.92]{}% End of diagram
+      \umlSchema[pos=\umlTopRight{ADTdiagram}, posDelta={-.5,-.5},
+        refpoint=tr]{ADT}{% Attributes
+        \umlAttribute[visibility,type=String]{name}}{}{}{}{}
+      \umlSchema[pos=\umlTopLeft{ADTdiagram}, posDelta={.5,-1},
+                 refpoint=lt, abstract,
+                 ref=ADTexample]{ADT-example}{%
+        \umlAttribute[visibility=-,
+          type=\emph{\umlColorsArgument\umlColorsAdjust type},default=null]{%
+          firstNode}
+        }{%Methods
+        }{%Arguments
+        \umlArgument[type=Metaclass]{type}
+        }{%Constraints
+        }{%Structure
+          \umlDiagram[box=,innerBorder=2mm,outerBorder]{%
+            \umlClass[pos={.5,.5}, ref=adtNode,box=]{Node}{%
+              \umlAttribute[visibility,
+                type=\emph{\umlColorsArgument\umlColorsAdjust type}]{%
+                data}}{}%
+            \umlAssociation[angleA=20, angleB=-20,
+                         arm=1em, arm=1em]{adtNode}{adtNode}%
+         }\cr% End of Diagram
+       }% End of ADT-example
+      \umlInstance{ADTexample}{ADT}%
+      \umlSchema[pos=\umlRight{ADTexample}, posDelta={3,-1},
+                 refpoint=tl, ]{Graph}{% Attributes
+        }{% Methods
+        \umlMethod[visibility,]{%
+          insert}{\emph{\umlColorsArgument\umlColorsAdjust type} x}
+        \umlMethod[visibility,
+            type=\emph{\umlColorsArgument\umlColorsAdjust type}]{%
+          dijkstra}{\emph{\umlColorsArgument\umlColorsAdjust type} x}
+        \umlMethod[visibility, type=boolean]{%
+          insertEdge}{\emph{\umlColorsArgument\umlColorsAdjust type} x}
+        \umlMethod[visibility, ]{%
+          delete}{\emph{\umlColorsArgument\umlColorsAdjust type} x}
+        }{% Arguments
+        }{% Constraints
+        }{% Structure
+          \umlDiagram[box=,innerBorder=2mm, outerBorder,
+                      sizeX=11em,sizeY=3.5em,ref=GraphDiagram]{%
+               \begin{umlColors}{\umlColorsSub}
+            \umlClass[pos=\umlBottomLeft{GraphDiagram},
+                      posDelta={1,1}, ref=graphNode]{Node}{}{}%
+            \umlAssociation[angleA=20, angleB=-20, armA=1em, armB=1em
+                         ]{graphNode}{graphNode}%
+               \end{umlColors}
+              \umlLabelA[height=0mm,offset=1ex]{graphNodegraphNode}{*}%
+              \umlLabelB[height=0mm,offset=1ex,refpoint=t
+                         ]{graphNodegraphNode}{*}%
+            \umlSymbol[fraction=.5]{graphNodegraphNode}{\pnode{gngn}}
+            \umlClass[pos=gngn, posDelta={2,0},
+                               ref=graphEdge, refpoint=l]{Edge}{%
+            \umlAttribute[type=real]{cost}}{}%
+          \umlAssociationClass[]{graphEdge}{gngn}%
+          }\cr% End of diagram
+        }% End of Graph
+      \umlSubclass{Graph}{ADTexample}
+      \umlSchema[posX=\umlLeft{ADTexample}, posDelta={3em,-1em},
+                 posY=\umlBottom{Graph},
+                 refpoint=tl, ref=searchTree]{Search Tree}{% Attributes
+        }{% Methods
+        \umlMethod[visibility,]{%
+          insert}{\emph{\umlColorsArgument\umlColorsAdjust type} x}
+        \umlMethod[visibility,
+             type=\emph{\umlColorsArgument\umlColorsAdjust type}]{%
+          search}{\emph{\umlColorsArgument\umlColorsAdjust type} x}
+        \umlMethod[visibility, type=boolean]{%
+          search}{\emph{\umlColorsArgument\umlColorsAdjust type} x}
+        \umlMethod[visibility, ]{%
+          delete}{\emph{\umlColorsArgument\umlColorsAdjust type} x}
+        }{% Arguments
+        \umlArgument[type=Integer, initialValue=2]{arity}
+        \umlArgument[type={${\umlColorsArgument\umlColorsAdjust type}
+          \times {\umlColorsArgument\umlColorsAdjust type}\rightarrow$
+            boolean}, default=>]{sort}
+        }{% Constraints
+        }{% Structure
+          \umlDiagram[box=, sizeX=14em, sizeY=4em,
+                      innerBorder=2mm, outerBorder]{%
+            \begin{umlColors}{\umlColorsSub}
+            \umlClass[pos={.5, .5}, ref=treeNode]{Node}{}{}%
+            \umlAssociation[angleA=30, angleB=-30, armA=1em, armB=1em
+                         ]{treeNode}{treeNode}%
+             \end{umlColors}
+              \umlLabelA[height=1mm, offset=4mm,refpoint=l
+                ]{treeNodetreeNode}{%
+                \emph{\umlColorsArgument\umlColorsAdjust arity}}%
+              \umlLabelB[refpoint=tl,height=-1mm, offset=4mm,
+                         ]{treeNodetreeNode}{1}%
+            }\cr% End of diagram
+        }%
+      \umlSubclass{searchTree}{ADTexample}%
+      \umlSchema[pos=\umlBottomLeft{searchTree},posDelta={0,-1},
+                 refpoint=lt]{List}{%Attributes
+        }{% Methods
+        }{% Arguments
+        }{% Constraints
+        }{% Structure
+          \umlDiagram[box=, sizeX=6em, sizeY=4em,
+                      innerBorder=2mm, outerBorder]{%
+            \begin{umlColors}{\umlColorsSub}
+              \umlClass[pos={.5, .5}, ref=listNode]{Node}{}{}%
+              \umlAssociation[angleA=30, angleB=-30, armA=1em, armB=1em
+                           ]{listNode}{listNode}%
+            \end{umlColors}
+              \umlLabelA[height=1mm, offset=5mm, refpoint=l
+                         ]{listNodelistNode}{1}%
+              \umlLabelB[refpoint=tl, height=-1mm,offset=5mm
+                         ]{listNodelistNode}{1}%
+            }\cr% End of diagram
+        }% End of Schema List
+      \umlPlaceNode[leftside, top, down=1em]{List}{Listtl}
+      \umlPlaceNode[leftside,right=2em,bottom]{ADTexample}{ADTexamplebl}
+      \umlSubclass[armA=1.4142em, armAngleA=135]{Listtl}{ADTexamplebl}%
+      \umlSchema[pos=\umlTopRight{List},posDelta={1em,-2em},
+                 refpoint=tl]{Queue}{% Attributes
+        }{\umlMethod[visibility]{%
+          enqueue}{\emph{\umlColorsArgument\umlColorsAdjust type} x}
+        \umlMethod[visibility, type=\emph{\umlColorsArgument\umlColorsAdjust type}]{%
+          dequeue}{}}{%Arguments
+        }{%Constraints
+        \umlCompartmentline{First come, first served.}
+        }{% Structure
+        }% End of Queue
+      \umlPlaceNode[rightside, top, down=1em]{List}{Listtr}
+      \umlSubclass[angleA=90, armAngleA=135, armA=1.4142em]{Queue}{Listtr}%
+      \umlSchema[pos=\umlTopRight{Queue},posDelta={\umlNodeSep,0em},
+                 refpoint=tl]{Stack}{%Attributes
+        }{% Methods
+        \umlMethod[visibility]{
+          push}{\emph{\umlColorsArgument\umlColorsAdjust type} x}
+        \umlMethod[visibility, type=\emph{\umlColorsArgument\umlColorsAdjust type}]{%
+          pop}{}
+        }{% Arguments
+        }{% Constraints
+        \umlCompartmentline{S:Stack = S.push(x).pop()}
+        }{% Structure
+        }% End of Stack
+      \umlSubclass[angleA=90, armAngleA=135, armA=1.4142em]{Stack}{Listtr}%
+}
+\endinput
+%%
+%% End of file `example.tex'.

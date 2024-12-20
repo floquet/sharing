@@ -1,0 +1,64 @@
+% \input{\pSections/"ssec-running-mom.tex"}
+
+%     %     %     %     %     %     %     %     %
+\subsection{Running Mercury MoM}
+
+\begin{frame}{Running Mercury MoM}
+\begin{center}
+    \texttt{\bl{\$ ./MMoM\_4.1.12 example.geo}}
+\end{center}
+\vspace{0.5cm}
+\begin{itemize}
+    \item Execution is Simple.  
+    \item Everything Else Builds From This.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Overview of Simulation Results}
+\textbf{Simulation Parameters:}
+\begin{itemize}
+    \item \textbf{Radar Frequencies:} 3, 4, 5, 30 MHz
+    \item \textbf{Azimuth Sweep:} 0\textdegree{} to \rd{360}\textdegree{} in 1\textdegree{} steps
+    \item \textbf{Input Geometry:} sphereCoarse.facet
+    \item \textbf{Output:} Backscatter RCS at each angle and frequency
+\end{itemize}
+\vspace{0.3cm}
+\textbf{Output Files:}
+\begin{itemize}
+    \item Results: \texttt{example.4112.txt}
+    \item \mg{Results: \texttt{example.dat}}
+    \item Optional runtime Information: \texttt{> logs/example.out}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Simulation Execution}
+\textbf{Command:}
+\begin{center}
+\texttt{\$ ./MMoM\_4.1.12 sphereCoarse.geo}
+\end{center}
+\textbf{What Happens:}
+\begin{itemize}
+    \item Input file specifies radar frequency range and azimuth steps.
+    \item Simulation computes \textit{Backscatter Radar Energy}.
+    \item Results are stored in structured outputs for post-processing.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Sample Output: RCS Data (Excerpt)}
+\scriptsize
+\begin{tabbing}
+\hspace{0.8cm} \= \textbf{Theta} \hspace{0.3cm} \= \textbf{Phi} \hspace{0.5cm} \= \textbf{Theta-Theta (Re, Im)} \hspace{0.3cm} \= \textbf{Phi-Phi (Re, Im)} \\
+\\
+\> 90.0000 \> 0.0000 \> (0.233E-1, 0.141E-3) \> (0.227E-1, 0.127E-3) \\
+\> 90.0000 \> 1.0000 \> (0.233E-1, 0.140E-3) \> (0.227E-1, 0.126E-3) \\
+\> 90.0000 \> 2.0000 \> (0.233E-1, 0.139E-3) \> (0.227E-1, 0.125E-3) \\
+\> 90.0000 \> 3.0000 \> (0.233E-1, 0.138E-3) \> (0.227E-1, 0.125E-3) \\
+\> \vdots \> \vdots \> \vdots \> \vdots
+\end{tabbing}
+\vspace{0.3cm}
+\textbf{Insight:} Backscatter results sweep across \textbf{azimuth angles} with fixed \textbf{theta} at 90\textdegree{}.
+\end{frame}
+
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

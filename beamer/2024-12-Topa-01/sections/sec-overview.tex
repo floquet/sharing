@@ -1,0 +1,58 @@
+% \input{\pSections "sec-overview.tex"}
+
+\section{Radar Cross Section Simulation}
+
+\begin{frame}{Input and Final Output}
+    \begin{columns}[T] % Top-aligned columns
+        % Left Column: Input (*.obj file)
+        \column{0.48\textwidth}
+        \textbf{Input: \obj \ File}
+        \lstset{style=obj}
+        \lstinputlisting[firstline=1,lastline=8]{\pLocalData/sp-006.obj} % Adjust the path as needed
+
+        % Right Column: Output (Amplitude Vector)
+        \column{0.48\textwidth}
+        \textbf{Output: Amplitude Vector}
+        \[
+        \begin{aligned}
+        a_{0,0}  &= 1.345 \pm 0.015 \\
+        a_{1,-1} &= 1.098 \pm 0.017 \\
+        a_{1,0}  &= 1.210 \pm 0.017 \\
+        a_{1,1}  &= 0.945 \pm 0.017 \\
+        a_{2,-2} &= 0.512 \pm 0.018 \\
+        a_{2,-1} &= 0.732 \pm 0.017 \\
+        a_{2,0}  &= 1.110 \pm 0.017 \\
+        a_{2,1}  &= 0.885 \pm 0.016 \\
+        a_{2,2}  &= 0.658 \pm 0.017 \\
+        \end{aligned}
+        \]
+    \end{columns}
+\end{frame}
+
+%%%   %%%   %%%   %%%
+\subsection{Process}
+\begin{frame}{Big Picture: CAD to RCS Table}
+We discuss Step 1 $\Rightarrow$ Step 2
+\begin{enumerate}
+	\item Start with CAD model: \stl
+	\item Finish with table \bl{\texttt{*.rcs}}
+	\item \mg{Resolved to approximate $f\paren{\theta,\phi}$}
+\end{enumerate}
+\end{frame}
+
+%%%   %%%   %%%   %%%
+\subsection{Software Components}
+\begin{frame}\frametitle{Software Components}
+\begin{enumerate}
+	\item converter: \obj $\Rightarrow$ \texttt{*.facet}
+	\item mesh analysis \& repair: \obj $\Rightarrow$ \texttt{*.facet}
+	\item extractor: pull backscatter from \texttt{*.4112.txt}
+	\item converter: backscatter to \texttt{*.rcs}
+	\item calculator: \texttt{*.rcs} to spherical harmonic amplitudes
+\end{enumerate}
+\end{frame}
+
+
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

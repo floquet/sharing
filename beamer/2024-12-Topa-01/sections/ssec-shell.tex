@@ -1,0 +1,144 @@
+% \input{\pSections/"ssec-shell.tex"}
+
+%     %     %     %     %     %     %     %     %
+\subsection{Shell Scripts}
+
+\begin{frame}{Running Mercury MoM}
+\begin{itemize}
+    \item \bl{Shell Execution Command:}
+    \begin{center}
+        \texttt{\bl{\$ ./MMoM\_4112 example.geo}}
+    \end{center}
+    \vspace{0.5cm}
+
+    \item \bl{What This Does:}
+    \begin{itemize}
+        \item \bl{Input:} Uses geometry file \texttt{example.geo}.
+        \item \bl{Output:} Simulation results in \texttt{../outputs/example.out}.
+    \end{itemize}
+
+    \vspace{0.5cm}
+
+    \item \bl{Key Insight:}
+    \begin{itemize}
+        \item \textit{While this execution is simple, real-world use requires automation:}
+        \begin{itemize}
+            \item Running multiple simulations (sweeps).
+            \item Handling large geometries and outputs.
+            \item Organizing results systematically.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Understanding the Outputs}
+\begin{itemize}
+    \item \textbf{Runtime Information:}
+    \begin{center}
+        optional \texttt{\textbf{> logs/panel-elev-0p180.out}}.
+    \end{center}
+    \vspace{0.3cm}
+    \item \textbf{Simulation Results:} (MBytes)
+    \begin{center}
+        Written to \texttt{\textbf{results/example.4112.txt}}.
+    \end{center}
+    \vspace{0.3cm}
+    \item \textbf{Key Insight:}  
+    Simple execution commands are powerful when combined with automation:
+    \begin{itemize}
+        \item Sweeping parameters (e.g., elevation angles).  
+        \item Logging runs systematically.  
+        \item Managing and analyzing outputs efficiently.  
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Workflow Overview}
+\begin{itemize}
+    \item \bl{Input Files:}
+            \item \bl{*.geo}: Points to *.facet, *.geo.
+        \begin{itemize}
+            \item \bl{*.facet}: Mesh model.
+            \item \bl{*.lib}: Material properties.
+        \end{itemize}
+    \item \bl{Simulation Outputs:}
+        \begin{itemize}
+            \item \bl{*.4112.txt}: Numerical simulation results.
+        \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Script Purpose Summary}
+\begin{center}
+\begin{tabular}{ll}
+    \bl{Script}            & \bl{Purpose}    \\ \hline
+    \texttt{create-geos.sh}    & Automate batch run \texttt{*.geo} template \\
+    \texttt{run-MoM-example.sh}& Run a single simulation \\
+    \texttt{run-MoM-timer.sh}  & Measure simulation performance \\
+    \texttt{elevation-sweep.sh}& didactic 3D sweep $\paren{\theta, \phi}$  \\
+    \texttt{harvest.sh}        & alternative 3D sweep $\paren{\theta, \phi}$  \\
+\end{tabular}
+\end{center}
+\end{frame}
+%
+%\begin{frame}{Script Purpose Summary}
+%\begin{center}
+%\begin{tabular}{|l|l|l|}
+%    \hline
+%    \bl{Script}            & \bl{Purpose}                  & \bl{Outputs}       \\ \hline
+%    \texttt{create-geos.sh}    & Generate \texttt{*.geo} files     & \texttt{*.geo}         \\ \hline
+%    \texttt{run-MoM-example.sh}& Run a single simulation           & \texttt{*.4112}        \\ \hline
+%    \texttt{run-MoM-timer.sh}  & Measure simulation performance    & Timed logs             \\ \hline
+%    \texttt{elevation-sweep.sh}& Sweep angles, automate runs       & Multiple \texttt{*.4112} \\ \hline
+%    \texttt{harvest.sh}        & Consolidate simulation results    & Structured data        \\ \hline
+%\end{tabular}
+%\end{center}
+%\end{frame}
+
+%\begin{frame}{Workflow Diagram}
+%\begin{center}
+%\begin{tikzpicture}[
+%    node distance=1.5cm,
+%    every node/.style={rectangle, draw, text centered, font=\bfseries, minimum width=2.5cm, minimum height=1cm},
+%    arrow/.style={thick, ->, >=stealth}
+%]
+%
+%% Nodes
+%\node[fill=gray!20] (facet) {\bl{*.facet}};
+%\node[fill=gray!20, below of=facet, yshift=-1.2cm] (lib) {\bl{*.lib}};
+%\node[fill=blue!20, right=2.5cm of facet] (geo) {\bl{*.geo}};
+%\node[fill=red!20, right=2.5cm of geo] (output) {\bl{*.4112}};
+%\node[fill=yellow!20, below of=output, yshift=-1.2cm] (harvest) {\bl{Results}};
+%
+%% Arrows
+%\draw[arrow] (facet) -- (geo);
+%\draw[arrow] (lib) -- (geo);
+%\draw[arrow] (geo) -- (output);
+%\draw[arrow] (output) -- (harvest);
+%
+%% Labels
+%\node[above of=geo, yshift=0.5cm] {\texttt{create-geos.sh}};
+%\node[above of=output, yshift=0.5cm] {\texttt{run-MoM-example.sh}};
+%\node[right of=output, xshift=1.5cm] {\texttt{elevation-sweep.sh}};
+%\node[below of=harvest, yshift=-0.5cm] {\texttt{harvest.sh}};
+%\end{tikzpicture}
+%\end{center}
+%\end{frame}
+
+\begin{frame}{Key Insights}
+\begin{itemize}
+    \item \bl{Automation:} Eliminates manual geometry setup and simulation runs.
+    \item \bl{Consistency:} Uniform outputs and structured logs across runs.
+    \item \bl{Scalability:} Parameter sweeps enable 3D studies.
+    \item \bl{Performance:} \texttt{run-MoM-timer.sh} benchmarks computational efficiency.
+    \item \bl{Workflow:}
+    \begin{itemize}
+        \item \bl{Input:} \texttt{*.geo}, \texttt{*.facet}, \texttt{*.lib}.
+        \item \bl{Output:} \texttt{*.4112}.
+        \item \bl{Harvest:} Complex backscatter energy.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

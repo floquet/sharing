@@ -1,0 +1,380 @@
+% \input{\pSections/"ssec-fortran.tex"}
+
+%     %     %     %     %     %     %     %     %
+\subsection{Fortran Codes}
+		%
+%\begin{frame}[fragile]{Module \texttt{mOBJreader}: Dependencies}
+%    \lstinputlisting[
+%        style=fortran,
+%        firstline=2,
+%        lastline=12,
+%        caption={Excerpt from \texttt{m\_obj\_reader.f08}},
+%        label={lst:m_obj_reader_excerpt}
+%    ]{\pLocalCode/m_obj_reader.f08}
+%\end{frame}
+%		%
+%\begin{frame}[fragile]{Module \texttt{mOBJreader}: Read}
+%    \lstinputlisting[
+%        style=fortran,
+%        firstline=34,
+%        lastline=60,
+%        caption={Excerpt from \texttt{a\_obj\_reader.f08}},
+%        label={lst:a_obj_reader_excerpt}
+%    ]{\pLocalCode/a_obj_reader.f08}
+%\end{frame}
+
+% Title and Metadata
+%\title{Static Code Analysis of \texttt{facimusFacet}}
+%\subtitle{A Tool for Mesh Analysis and Mercury MoM Preparation}
+%\author{Daniel + Achates \\ (Static Code Function and Method Analysis)}
+%\date{\today}
+
+% Slide 2: Purpose
+\begin{frame}{Purpose of \texttt{facimusFacet}}
+    \begin{itemize}
+        \item Converts \bl{\texttt{*.obj}} mesh decompositions into \bl{\texttt{*.facet}} files for Mercury MoM.
+        \item Serves as a research tool to understand:
+            \begin{itemize}
+                \item How some meshes fail during analysis.
+                \item Why others succeed.
+            \end{itemize}
+        \item Highlights object-oriented design and robust error handling.
+    \end{itemize}
+\end{frame}
+
+% Slide 3: Code Overview
+\begin{frame}{Code Overview}
+    \begin{itemize}
+        \item \bl{Inputs:} OBJ file containing vertex and facet data.
+        \item \bl{Outputs:} 
+            \begin{itemize}
+                \item Face areas, nearest neighbors, mesh statistics.
+                \item Several debug and analysis files.
+            \end{itemize}
+        \item \bl{Execution Tracking:}
+            \begin{itemize}
+                \item CPU timing, execution date, and compiler version.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Class Hierarchy and Relationships 1/2}
+\begin{description}[leftmargin=2cm]
+    \item[\textbf{Model}] \textit{(Base Object)}
+        \begin{itemize}
+            \item Contains allocatable list of \textbf{Vertex} objects
+            \item Contains allocatable list of \textbf{Face} objects
+            \item Contains a \textbf{Census} object
+        \end{itemize}
+        
+    \item[\textbf{Vertex}] \textit{(Class)}  
+        \begin{itemize}
+            \item Position vectors: $\mathbb{R}^3$ (real)
+            \item Color indices: $\mathbb{Z}^3$ (integer)
+        \end{itemize}
+\end{description}
+\end{frame}
+
+\begin{frame}[fragile]{Class Hierarchy and Relationships 2/2}
+\begin{description}[leftmargin=2cm]
+    \item[\textbf{Face}] \textit{(Class)}  
+        \begin{itemize}
+            \item Vertex indices: $\mathbb{Z}^3$ (integer)
+            \item Area: (real)
+        \end{itemize}
+        
+    \item[\textbf{Census}] \textit{(Class)}  
+        \begin{itemize}
+            \item Contains a \textbf{Lines} object
+        \end{itemize}
+        
+    \item[\textbf{Lines}] \textit{(Class)}  
+        \begin{itemize}
+            \item Line numbers for vertices
+            \item Line numbers for normals
+            \item Line numbers for faces
+        \end{itemize}
+\end{description}
+\end{frame}
+
+% Slide 4: Module Breakdown
+\begin{frame}{Module Breakdown}
+    The program leverages the following modules:
+    \begin{itemize}
+        \item \bl{mClassModel:} Core type for vertices, faces, and statistics.
+        \item \bl{mAllocations:} Robust memory allocation and hygiene.
+        \item \bl{mClassFace:} Handles face-related computations.
+        \item \bl{mClassVertex:} Manages vertex-related operations.
+        \item \bl{mProcessControl:} Drives the overall process and calls subroutines.
+    \end{itemize}
+\end{frame}
+
+% Slide 5: Key Features
+\begin{frame}{Key Features}
+    \begin{itemize}
+        \item \bl{Error Handling:} 
+        \begin{itemize}
+            \item Memory allocation checks.
+            \item Clear error messages with detailed context.
+        \end{itemize}
+        \item \bl{Object-Oriented Design:} 
+        \begin{itemize}
+		\item \bl{Class over Type:} Encapsulates data \emph{and} methods
+            	\item \bl{Methods:} e.g. \texttt{computeFaceArea}, \texttt{findNearestNeighbor}.
+        		\item \bl{Operations:} tied directly to Face, Vertex, and Census objects
+        		\item \bl{Maintainability:} Keeps mesh logic clean, extensible, and avoids scattered code
+    	\end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide 6: Flowchart
+%\begin{frame}{Program Flowchart}
+%    \begin{center}
+%        \begin{tikzpicture}[node distance=2cm, auto]
+%            % Nodes
+%            \node[draw, rectangle, fill=blue!20] (input) {Input: OBJ file};
+%            \node[draw, rectangle, below of=input, fill=green!20] (alloc) {Allocate Memory};
+%            \node[draw, rectangle, below of=alloc, fill=yellow!20] (process) {Process Faces and Vertices};
+%            \node[draw, rectangle, below of=process, fill=red!20] (error) {Error Handling Checks};
+%            \node[draw, rectangle, below of=error, fill=orange!20] (output) {Output: Statistics, Face Areas, Debug Files};
+%
+%            % Arrows
+%            \draw[->] (input) -- (alloc);
+%            \draw[->] (alloc) -- (process);
+%            \draw[->] (process) -- (error);
+%            \draw[->] (error) -- (output);
+%        \end{tikzpicture}
+%    \end{center}
+%\end{frame}
+
+%\begin{frame}{Program Flowchart}
+%    \begin{center}
+%        \resizebox{0.4\textwidth}{!}{ % Rescale diagram to fit slide
+%        \begin{tikzpicture}[node distance=1.5cm, auto] % Reduce spacing slightly
+%            % Nodes
+%            \node[draw, rectangle, fill=blue!20, font=\bfseries] (input) {Input: OBJ file};
+%            \node[draw, rectangle, below of=input, fill=green!20, font=\bfseries] (alloc) {Allocate Memory};
+%            \node[draw, rectangle, below of=alloc, fill=yellow!20, font=\bfseries] (process) {Process Faces and Vertices};
+%            \node[draw, rectangle, below of=process, fill=red!20, font=\bfseries] (error) {Error Handling Checks};
+%            \node[draw, rectangle, below of=error, fill=orange!20] (output) {Output: Statistics, Face Areas, Debug Files};
+%            
+%            % Arrows
+%            \draw[->, thick] (input) -- (alloc);
+%            \draw[->, thick] (alloc) -- (process);
+%            \draw[->, thick] (process) -- (error);
+%            \draw[->, thick] (error) -- (output);
+%        \end{tikzpicture}}
+%    \end{center}
+%\end{frame}
+ 
+ 
+%\begin{frame}{Object Model Hierarchy}
+%    \begin{center}
+%    \begin{tikzpicture}[
+%        node distance=1.5cm, % Vertical node spacing
+%        every node/.style={rectangle, draw, text centered, font=\bfseries, minimum width=2.5cm},
+%        edge from parent/.style={draw, ->, thick}
+%    ]
+%        % Root node
+%        \node[fill=blue!20] (cad) {CAD Model};
+%
+%        % First level
+%        \node[below=of cad, fill=green!20] (faces) {Faces};
+%        \node[right=of faces, fill=yellow!20] (vertices) {Vertices};
+%        \node[left=of faces, fill=red!20] (census) {Census};
+%
+%        % Second level
+%        \node[below=of faces, fill=pink!20] (location) {Location Vectors};
+%        \node[below=of vertices, fill=orange!20] (color) {Color Attributes};
+%
+%        % Connections
+%        \draw[->] (cad) -- (faces);
+%        \draw[->] (cad) -- (vertices);
+%        \draw[->] (cad) -- (census);
+%        \draw[->] (faces) -- (location);
+%        \draw[->] (vertices) -- (color);
+%    \end{tikzpicture}
+%    \end{center}
+%\end{frame}
+ 
+% Slide 7: Pseudocode
+\begin{frame}[fragile]{High-Level Pseudocode}
+\begin{algorithm}[H]
+    \caption{\textit{facimusFacet Program Overview}}
+    \begin{algorithmic}[1]
+        \State \textbf{Initialize} CPU timer
+        \State \textbf{Call} \textit{main\_process\_sub}:
+        \Statex \hspace{2em} \textbf{Parse} input \texttt{OBJ} file
+        \Statex \hspace{2em} \textbf{Allocate} memory for vertices and faces
+        \Statex \hspace{2em} \textbf{Compute} face areas and vertex statistics
+        \Statex \hspace{2em} \textbf{Identify} nearest and farthest neighbors
+        \Statex \hspace{2em} \textbf{Write} results to output files
+        \State \textbf{Record} CPU time and date
+        \State \textbf{Print} compiler version and options
+    \end{algorithmic}
+\end{algorithm}
+\end{frame}
+
+%\begin{frame}{Object Model Hierarchy}
+%    \begin{center}
+%    \begin{tikzpicture}[scale = 0.8, 
+%        node distance=1.5cm and 3.5cm, % Adjust horizontal and vertical spacing
+%        every node/.style={rectangle, draw, text centered, font=\bfseries, minimum width=3cm, minimum height=1cm},
+%        level 1/.style={sibling distance=4.5cm, level distance=2cm}, % Space out first level
+%        level 2/.style={sibling distance=2.5cm, level distance=2cm}  % Space out second level
+%    ]
+%        % Root node
+%        \node[fill=blue!20] (cad) {CAD Model}
+%            % First level nodes
+%            child { node[fill=red!20] {Census} }
+%            child { node[fill=yellow!20] {Faces}
+%                % Second level node for Faces
+%                child { node[fill=orange!20] {Location Vectors} }
+%            }
+%            child { node[fill=green!20] {Vertices}
+%                % Second level node for Vertices
+%                child { node[fill=pink!20] {Color Attributes} }
+%            };
+%    \end{tikzpicture}
+%    \end{center}
+%\end{frame}
+
+%\begin{frame}[fragile]{Class Relationships (Pseudocode)}
+%\begin{lstlisting}[basicstyle=\ttfamily\small,frame=single]
+%class Vertex:
+%    has Position: vector
+%    has Color: attributes
+%    has Indices: references
+%
+%class Face:
+%    has PointNumbers: list
+%    has Area: real
+%
+%class Census:
+%    has Lines:
+%        - FirstLine: int
+%        - LastLine: int
+%        - LineCount: int
+%    has Indices: references to Vertex, Normals, Faces
+%
+%class CADModel:
+%    contains Vertices: Vertex[]
+%    contains Faces: Face[]
+%    contains Census: Census
+%\end{lstlisting}
+%\end{frame}
+%
+%\begin{frame}{Object Model: Is-A vs Has-A}
+%    \begin{center}
+%    \begin{tikzpicture}[
+%        scale=0.8,
+%        node distance=1.5cm and 3.5cm, % Adjust node distances
+%        every node/.style={
+%            rectangle, draw, text centered, font=\bfseries, minimum width=3cm, minimum height=1cm
+%        },
+%        level 1/.style={sibling distance=4.5cm, level distance=2cm},
+%        level 2/.style={sibling distance=2.5cm, level distance=2cm},
+%        dashed-line/.style={dashed, ->, thick} % Style for has-a relationships
+%    ]
+%        % Root node
+%        \node[fill=blue!20] (cad) {CAD Model}
+%            child { node[fill=red!20] (census) {Census} }
+%            child { node[fill=yellow!20] (faces) {Faces}
+%                child { node[fill=orange!20] (location) {Location Vectors} }
+%            }
+%            child { node[fill=green!20] (vertices) {Vertices}
+%                child { node[fill=pink!20] (color) {Color Attributes} }
+%            };
+%
+%        % Dashed lines for "has-a" relationships
+%        \draw[dashed-line] (faces) -- (vertices);
+%        \draw[dashed-line] (census) -- (vertices);
+%    \end{tikzpicture}
+%    \end{center}
+%\end{frame}
+
+%\begin{frame}{Object Model Hierarchy}
+%\begin{center}
+%\begin{tikzpicture}
+%  \umlclass{Model}{
+%    - myVertex : Vertex [ ]
+%    \\
+%    - myFace : Face [ ]
+%    \\
+%    - myCensus : Census
+%  }{
+%    + analyze_lengths()
+%    \\
+%    + compute_centroid()
+%  }
+%  
+%  \umlclass[y=-4]{Face}{
+%    - indexVertex : Integer[ ]
+%  }{
+%    + computeFaceArea()
+%    \\
+%    + writeFace()
+%  }
+%  
+%  \umlclass[x=-4, y=-4]{Vertex}{
+%    - position : Real[ ]
+%    \\
+%    - color : Color
+%  }{
+%    + someVertexMethod()
+%  }
+%  
+%  \umlclass[x=4, y=-4]{Census}{
+%    - objPointers : Pointer[ ]
+%  }{
+%    + managePointers()
+%  }
+%  
+%  % Relationships
+%  \umlassoc[mult1=1..*, mult2=1..*]{Model}{Vertex}
+%  \umlassoc[mult1=1..*, mult2=1..*]{Model}{Face}
+%  \umlaggreg[mult1=1, mult2=1]{Model}{Census}
+%  \umlcompo[mult1=1, mult2=3]{Face}{Vertex}
+%\end{tikzpicture}
+%\end{center}
+%\end{frame}
+
+% Slide 8: Summary
+\begin{frame}{Summary and Next Steps}
+    \begin{itemize}
+        \item \bl{Purpose:} \bl{OBJ} to \bl{FACET} conversion for Mercury MoM.
+        \item \bl{Features:} 
+            \begin{itemize}
+                \item Object-oriented programming.
+                \item Robust error handling.
+                \item Modularity and reusability.
+            \end{itemize}
+        \item \bl{Next Steps for Rewrite:}
+            \begin{itemize}
+                \item Focus on maintaining modularity.
+                \item Retain robust error handling features.
+                \item Highlight mesh success/failure analysis in design.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide 9: Attribution
+\begin{frame}{Attribution}
+    \begin{itemize}
+        \item Static Code Function and Method Analysis.
+        \item Code reviewed, analyzed, and presented with insights.
+        \item Collaborative contributions by:  
+        \bl{Daniel \& Achates}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Reading \texttt{*.obj} Files}
+\begin{enumerate}
+	\item Modelo: \href{https://www.modelo.io/damf/article/2024/07/09/1755/understanding-the-obj-format--a-comprehensive-guide?hl=en}{Understanding OBJ Format: A Comprehensive Guide}
+	\item Paul Bourke: \href{http://paulbourke.net/dataformats/obj/}{Object Files (.obj)}
+	\item Wikipedia: \href{https://en.wikipedia.org/wiki/Wavefront_.obj_file}{Wavefront .obj file}
+	\item Library of Congress: \href{https://www.loc.gov/preservation/digital/formats/fdd/fdd000507.shtml}{Wavefront OBJ File Format}
+	\item https://www.cs.utah.edu/~boulos/cs3505/obj\_spec.pdf
+\end{enumerate}
+	
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

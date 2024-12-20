@@ -1,0 +1,103 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usetheme{Madrid}
+
+% Title Information
+\title{Thoughts on Function Signatures}
+\subtitle{Building Understanding from 1D to 3D}
+\author{Achates \\ \small{Thoughts Shared with Daniel Topa}}
+\date{\today}
+
+\begin{document}
+
+% Slide 1: Establish the Foundation
+\begin{frame}{1. Establish the Foundation}
+    \begin{itemize}
+        \item **Function Signatures** describe how data is modeled and represented.
+        \item Foundation: Start with **Fourier (1D)**, extend to **Zernike (2D)**, and then **Spherical Harmonics (3D)**.
+    \end{itemize}
+    \vspace{0.3cm}
+    \begin{center}
+        \begin{tabular}{|l|l|l|}
+            \hline
+            \textbf{Domain} & \textbf{Basis Functions} & \textbf{Example Input} \\
+            \hline
+            1D              & Sines/Cosines           & \( f(x) \) \\
+            2D (disk)       & Zernike Polynomials     & \( f(x, y) \) \\
+            3D (sphere)     & Spherical Harmonics     & \( f(\theta, \phi) \) \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{frame}
+
+% Slide 2: Trivial Example - Constant Sphere
+\begin{frame}{2. Trivial Example: Constant Sphere}
+    \begin{itemize}
+        \item Input: \( f(\theta, \phi) = 1 \)
+        \item Output: Only \( c_{00} \neq 0 \) in the SH expansion.
+    \end{itemize}
+    \vspace{0.3cm}
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{uniform_sphere.png} % Placeholder image
+    \end{center}
+    \vspace{0.3cm}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \( l \) & \( m \) & \( c_{lm} \) \\
+        \hline
+        0       & 0       & 1.0         \\
+        1       & -1, 0, 1 & 0.0        \\
+        2       & -2..2   & 0.0         \\
+        \hline
+    \end{tabular}
+\end{frame}
+
+% Slide 3: Perturbed Sphere - Higher Modes
+\begin{frame}{3. Perturbed Sphere: Higher Modes}
+    \begin{itemize}
+        \item A small localized **bump** perturbs the sphere.
+        \item Higher \( l \)-modes are excited in the SH expansion.
+    \end{itemize}
+    \vspace{0.3cm}
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{bumped_sphere.png} % Placeholder image
+    \end{center}
+    \vspace{0.3cm}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \( l \) & \( m \) & \( c_{lm} \) (Uniform) & \( c_{lm} \) (Bumped) \\
+        \hline
+        0       & 0       & 1.0                  & 0.95                  \\
+        1       & -1, 0, 1 & 0.0                 & Small nonzero         \\
+        2       & -2..2   & 0.0                  & Larger contributions  \\
+        \hline
+    \end{tabular}
+\end{frame}
+
+% Slide 4: Connecting to Visuals
+\begin{frame}{4. Connecting to Visuals}
+    \begin{itemize}
+        \item Pick an angle \( (\theta, \phi) \), e.g., \( (90^\circ, 0^\circ) \).
+        \item Value \( f(\theta, \phi) \) determines the color/height at that point.
+        \item **Higher SH coefficients \( c_{lm} \)** add detail to the surface.
+    \end{itemize}
+    \vspace{0.3cm}
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{rcs_visual.png} % Placeholder image
+    \end{center}
+\end{frame}
+
+% Slide 5: Function Signature
+\begin{frame}{5. Function Signature}
+    \[
+    \sigma(\theta, \phi) \approx \sum_{l=0}^L \sum_{m=-l}^l c_{lm} Y_{lm}(\theta, \phi)
+    \]
+    \begin{itemize}
+        \item **Inputs**: Angles \( (\theta, \phi) \).
+        \item **Outputs**: Scalar values \( f(\theta, \phi) \) (RCS, etc.).
+        \item **Spherical Harmonics Coefficients \( c_{lm} \)** describe the function.
+    \end{itemize}
+\end{frame}
+
+\end{document}

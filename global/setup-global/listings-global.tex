@@ -98,6 +98,18 @@
 %     frame=single
 % }
 
+\lstdefinestyle{obj}{
+    basicstyle=\ttfamily\footnotesize,
+    backgroundcolor=\color{black!5},
+    frame=single,
+    framerule=0.5pt,
+    rulecolor=\color{black!50},
+    breaklines=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=10pt
+}
+
 \lstdefinestyle{basic}{
     basicstyle=\ttfamily\footnotesize, % Monospaced font, small size
     frame=single,                      % Box around the listing
@@ -252,6 +264,24 @@
 % \lstset{style=fortran}
 % Default style to apply globally (if needed)
 % \lstset{style=terminal}
-
+    \lstdefinestyle{mathematica}{
+        language=Mathematica,
+        basicstyle=\ttfamily\listingFontSize,
+        keywordstyle=\color{blue}\bfseries,
+        commentstyle=\color{green!50!black},
+        stringstyle=\color{red},
+        numbers=left,
+        numberstyle=\tiny\color{gray},
+        stepnumber=1,
+        numbersep=5pt,
+        frame=single,
+        framerule=0.5pt,
+        rulecolor=\color{black!50},
+        breaklines=true,
+        breakatwhitespace=true,
+        captionpos=b,
+        tabsize=4
+    }
+ 
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
