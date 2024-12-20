@@ -114,8 +114,8 @@ Many Tools For Converting \stl \ to \obj
 \end{frame}
 
 %%%   %%%   %%%   %%%
-\subsection{Structure of \texttt{*.facet}}
-\begin{frame}{Components of the \texttt{*.obj}}
+\subsection{Structure of \facet}
+\begin{frame}{Components of the \obj}
     \begin{enumerate}
         \item \textbf{Headers and Comments} (\#):
             \begin{itemize}
@@ -137,5 +137,81 @@ Many Tools For Converting \stl \ to \obj
     \end{enumerate}
         \setcounter{listnumber}{\value{enumi}}
 \end{frame}
+
+%%%   %%%   %%%   %%%
+\subsection{Mesh Delicacies}
+
+\begin{frame}
+	\frametitle{Achilles Heel: Minimum triangle size}
+	Mercury MoM is very sensitive to \color{red}{Spectral radius}
+\end{frame}
+
+\newcommand{\passed}[0]		{\begin{center}{
+\tiny{\texttt{\dg{--------------------------------------------------------------------------------}}} \\
+\tiny{\texttt{\dg{\phantom{----}---| Mercury MOM Completed }\bl{Sucessfully}\dg{ |---}}} \\
+\tiny{\texttt{\dg{--------------------------------------------------------------------------------}}}}
+\end{center}}
+
+\begin{frame}
+	\frametitle{Standard meshing, $0.05$ m resolution}
+	\begin{table}[htp]
+		\begin{center}
+			\begin{tabular}{ccc}
+					%
+				Mesh && Spectrum \\\hline
+				\ \\
+					%
+				\includegraphics[ scale = 0.40 ]{\pLocalGraphics b20/"views-B20-standard-0-05m"} &&
+				\includegraphics[ scale = 0.35 ]{\pLocalGraphics b20/"dots-B20-standard-0-05m"} \\
+					%
+			\end{tabular}
+		\end{center}
+	\end{table}%
+\passed{}
+\label{tab:standard-works-C}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Standard meshing, $0.01$ m resolution}
+	\begin{table}[htp]
+		\begin{center}
+			\begin{tabular}{ccc}
+					%
+				Mesh && Spectrum \\\hline
+				\ \\
+					%
+				\includegraphics[ scale = 0.40 ]{\pLocalGraphics b20/"views-B20-standard-0-01m"} &&
+				\includegraphics[ scale = 0.35 ]{\pLocalGraphics b20/"dots-B20-standard-0-01m"} \\
+					%
+			\end{tabular}
+		\end{center}
+	\end{table}%
+	\tiny{\dg{\texttt{--------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------}}} \\
+	\tiny{\dg{\texttt{ subroutine ACA\_Sum\_Update( A, S, Tol, RefNorm )  : }}\scrr{RHS: ACA did not converge}} \\
+\tiny{\texttt{\dg{ = \phantom{---------}0}}}
+\label{tab:features}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Standard meshing, $0.001$ m resolution}
+	\begin{table}[htp]
+		\begin{center}
+			\begin{tabular}{ccc}
+					%	r
+				Mesh && Spectrum \\\hline
+				\ \\
+					%
+				\includegraphics[ scale = 0.40 ]{\pLocalGraphics b20/"views-B20-standard-0-001m"} &&
+				\includegraphics[ scale = 0.35 ]{\pLocalGraphics b20/"dots-B20-standard-0-001m"} \\
+					%
+			\end{tabular}
+		\end{center}
+	\end{table}%
+	\tiny{\dg{\texttt{--------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------FATAL ERROR-------}}}\\
+	\tiny{\dg{\texttt{subroutine Geometry\_TRI\_Compute( Tris, tol ) :}\scrr{Have Triangles with effective zero area}}}\\
+	\tiny{\dg{\texttt{nTris\_With\_Zero\_Area = \phantom{--------}60}}}
+\label{tab:features}
+\end{frame}
+
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
