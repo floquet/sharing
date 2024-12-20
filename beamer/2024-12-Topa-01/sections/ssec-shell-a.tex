@@ -1,0 +1,34 @@
+% \input{\pSections "ssec-shell-a.tex"}
+
+%%%   %%%   %%%   %%%
+\subsection{Shell Scripts}
+\renewcommand{\listingFontSize}{\tiny} 
+\begin{frame}\frametitle{Shell Scripts}
+\begin{enumerate}
+	\item Initialize environment for Mercury MoM
+	\item Run special cases
+	\item Data wrangling
+\end{enumerate}
+\end{frame}
+
+ \begin{frame}[ fragile, allowframebreaks ]{Initialize Runtime Environment}
+    \lstset{style=bash}
+    \lstinputlisting{\pLocalCode/InitializeMM.sh}
+\end{frame}
+
+ \begin{frame}[ fragile, allowframebreaks ]{Resolution Sweep for Calibration}
+    \lstset{style=bash}
+   \lstinputlisting{\pLocalCode/Mom-sphere-run.sh}
+\end{frame}
+
+ \begin{frame}[ fragile, allowframebreaks ]{Sweeping Polar Angle}
+    \lstset{style=bash}
+   \lstinputlisting{\pLocalCode/elevation-sweep-breve.sh}
+\end{frame}
+
+ \begin{frame}[ fragile, allowframebreaks ]{Running Code, Sorting Output}
+    \lstset{style=bash}
+   \lstinputlisting{\pLocalCode/runThisScript.sh}
+\end{frame}
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

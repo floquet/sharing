@@ -1,0 +1,86 @@
+% \input{\pSections "ssec-python.tex"}
+
+%%%   %%%   %%%   %%%
+\subsection{Python}
+\renewcommand{\listingFontSize}{\tiny} 
+\begin{frame}[ fragile, allowframebreaks ]{Python Tool for \texttt{*.obj} to \texttt{*.facet}}
+    \lstset{style=python} % Use the Python style
+    \lstinputlisting{\pLocalCode/Obj2Facet_Python3.py}
+\end{frame}
+
+\renewcommand{\listingFontSize}{\tiny} 
+\begin{frame}[ fragile, allowframebreaks ]{\texttt{obj\_model.py} for \texttt{Obj2Facet\_Python3.py}}
+    \lstset{style=python} % Use the Python style
+    \lstinputlisting{\pLocalCode/obj_model.py}
+\end{frame}
+
+\lstset{
+    inputencoding=utf8,
+    extendedchars=true,
+    literate={├}{|}1 {─}{-}1 {└}{+}1
+}
+\begin{frame}[ fragile, allowframebreaks ]{OBJ to FACET Conversion Tools}
+    \lstset{basicstyle=\ttfamily\footnotesize}
+    \begin{lstlisting}
+|-- face.py
+|-- facet_converter.py
+|-- facet_file_reader.py
+|-- facet_file_writer.py
+|-- facet_model.py
+|-- file_read_exception.py
+|-- file_reader.py
+|-- obj_converter.py
+|-- obj_facet_conversion.py
+|-- obj_file_reader.py
+|-- obj_file_writer.py
+|-- obj_model.py
+|-- part.py
+|-- subpart.py
+|-- test/
+|   |-- test_facet_file_reader.py
+|   `-- test_obj_file_reader.py
+`-- vertex.py
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Tools for \texttt{*.4112.txt}}
+    \begin{lstlisting}
+|-- MercuryMoMProcessor.pyproj
+|-- MercuryMoMProcessor.sln
+|-- README.md
+|-- file_read_exception.py
+|-- mercury_mom_output_file_reader.py
+|-- mercury_mom_processor.py
+|-- output
+|-- result_data.py
+|-- result_set.py
+|-- sample
+|   |-- sphereCourse.4112.txt
+|   |-- test_mercury_mom_output_file_reader.py
+    \end{lstlisting}
+\end{frame}
+
+%\begin{frame}[ fragile, allowframebreaks ]{Python Tool \texttt{obj_model.py} for \texttt{Obj2Facet_Python3.py}}
+%    \lstset{style=terminal} 
+%./ObjFacetConversion/face.py
+%./ObjFacetConversion/facet_converter.py
+%./ObjFacetConversion/facet_file_reader.py
+%./ObjFacetConversion/facet_file_writer.py
+%./ObjFacetConversion/facet_model.py
+%./ObjFacetConversion/file_read_exception.py
+%./ObjFacetConversion/file_reader.py
+%./ObjFacetConversion/obj_converter.py
+%./ObjFacetConversion/obj_facet_conversion.py
+%./ObjFacetConversion/obj_file_reader.py
+%./ObjFacetConversion/obj_file_writer.py
+%./ObjFacetConversion/obj_model.py
+%./ObjFacetConversion/part.py
+%./ObjFacetConversion/subpart.py
+%./ObjFacetConversion/test
+%./ObjFacetConversion/test/test_facet_file_reader.py
+%./ObjFacetConversion/test/test_obj_file_reader.py
+%./ObjFacetConversion/vertex.py
+%\end{frame}
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

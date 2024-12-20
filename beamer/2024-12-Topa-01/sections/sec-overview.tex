@@ -36,12 +36,13 @@
 Data Creation and Analysis Steps
 \begin{enumerate}
 	\item Start with CAD model: \stl
-	\item Create \obj
-	\item Create \bl{\facet}
+	\item Create \obj (all facets, vertices)
+	\item Create \bl{\facet} (partitioned by materials)
 		\begin{itemize}
 			\item Create \bl{\texttt{*.geo}} (geometry)
 			\item Create \bl{\texttt{*.lib}} (EM properties)
 		\end{itemize}
+	\item Run Mercury MoM
 	\item Generate \bl{\texttt{*.4112.txt}}
 	\item Harvest $\theta, \phi$ fields
 	\item Create \bl{\texttt{*.rcs}}
@@ -49,12 +50,12 @@ Data Creation and Analysis Steps
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{Big Picture: CAD to RCS Table}
-We discuss Step 1 $\Rightarrow$ Step 2
+\begin{frame}{Big Picture: CAD to \geo}
+Preparing to Run Mercury MoM
 \begin{enumerate}
 	\item Start with CAD model: \stl
-	\item Finish with table \bl{\texttt{*.rcs}}
-	\item \mg{Resolved to approximate $f\paren{r,\theta,\phi}$}
+	\item Finish with table \geo
+	\item Partition CAD material by materials properties
 \end{enumerate}
 \end{frame}
 

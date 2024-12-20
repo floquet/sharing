@@ -1,0 +1,33 @@
+% typeset: Pdftex
+% Afterwards compile with pdflatex > bibtex > pdflatex > pdflatex.
+% CLI: pdflatex main-hpc-pdes.tex
+% Beamer likes biber
+\documentclass[10pt, oneside]{article}
+\usepackage{enumitem} % List formatting
+\usepackage{pdfpages}
+\usepackage{catchfile}
+
+% Fetch home directory
+\CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
+% Define base paths
+\makeatletter
+\edef\HomePath{\expandafter\zap@space\HomePath \@empty}
+\makeatother
+\newcommand{\pGithub}          {\HomePath/GitHub/}
+\newcommand{\pGithubSharing}   {\pGithub/sharing/}
+\newcommand{\pLocalSetup}      {\pGithubSharing/reports/hpc-pdes/local/}
+\newcommand{\pSections}        {\pGithubSharing/reports/hpc-pdes/sections/}
+% Load Additional Setup Files
+\input{\pLocalSetup/setup-local.tex}
+
+\title{hpc-pdes}
+\author{Daniel Topa}
+\begin{document}
+	%\input{\pSections sec-abstract.tex}
+\maketitle
+\tableofcontents
+
+	\input{\pSections sec-intro.tex}
+	\input{\pSections sec-backup.tex}
+
+\end{document}

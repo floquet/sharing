@@ -26,6 +26,7 @@
 \usepackage{cancel}
 % beaver vs listing styles
 \usepackage{listings}
+%\usepackage{minted}
 \renewcommand{\ttdefault}{cmtt} % Ensure Computer Modern monospaced font
 \lstset{basicstyle=\ttfamily\tiny} % Use tiny monospaced font for Beamer
  
@@ -57,16 +58,19 @@
 
 \newcommand{\fourier}		{\color{blue}{ e^{i n \theta} }} 
 \newcommand*{\theorembreak}{\usebeamertemplate{theorem end}\framebreak\usebeamertemplate{theorem begin}}
-\newcommand{\stl} 	{\href{https://en.wikipedia.org/wiki/STL\_(file\_format)}{\bl{\texttt{*.stl}}}}
-\newcommand{\obj} 	{\href{https://en.wikipedia.org/wiki/Wavefront\_.obj\_file}{\bl{\texttt{*.obj}}}}
-\newcommand{\mtl} 	{\href{https://www.loc.gov/preservation/digital/formats/fdd/fdd000508.shtml}{\texttt{*.mtl}}}
+\newcommand{\stl} 		{\href{https://en.wikipedia.org/wiki/STL\_(file\_format)}{\bl{\texttt{*.stl}}}}
+\newcommand{\obj} 		{\href{https://en.wikipedia.org/wiki/Wavefront\_.obj\_file}{\bl{\texttt{*.obj}}}}
+\newcommand{\mtl} 		{\href{https://www.loc.gov/preservation/digital/formats/fdd/fdd000508.shtml}{\texttt{*.mtl}}}
+%
 \newcommand{\facet }	{\bl{\texttt{*.facet}}}
+\newcommand{\geo} 	{\bl{\texttt{*.geo}}}
+\newcommand{\lib} 	{\bl{\texttt{*.lib}}}
 
 \setbeamercovered{transparent=10} % pause activated text
 \usepackage{transparent}
 \usepackage{seqsplit}
 
-\title[Satellite Radar Cross Sections]{Data Reduction for Modelling\\ Satellite Radar Cross Sections}
+\title[Satellite Radar Cross Sections]{Data Reduction for Modelling\\ Satellite Radar Cross Sections 1/2}
 
 \author[Daniel Topa]{\TopaHII \\ \TopaHIIEmail}
 \institute{\missiontech} 
@@ -96,7 +100,7 @@
 	%\input{\pSections "sec-mesh"}
 	%\input{\pSections "sec-model"}
 	%\appendix
-	\input{\pSections "sec-output.tex"}
+	%\input{\pSections "sec-output.tex"}
 	\input{\pSections "sec-existing.tex"}
 	\input{\pSections "sec-backup.tex"}
 	%\input{\pSections "sec-data-reduction"}

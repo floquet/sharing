@@ -51,7 +51,7 @@ end program esjufjoll
 ! MODS     = m-allocations-special.f08 m-allocations.f08 m-class-averages.f08 m-class-data-collection.f08 m-class-data-file.f08 m-class-electric-fields.f08 m-class-mesh.f08 m-file-handling.f08 m-format-descriptors.f08 m-library-of-constants.f08 m-list-of-mom-files.f08 m-precision-definitions.f08 m-scenarios.f08 m-text-file-utilities.f08
 ! MOD_OBJS = m-allocations-special.o m-allocations.o m-class-averages.o m-class-data-collection.o m-class-data-file.o m-class-electric-fields.o m-class-mesh.o m-file-handling.o m-format-descriptors.o m-library-of-constants.o m-list-of-mom-files.o m-precision-definitions.o m-scenarios.o m-text-file-utilities.o
 
-! dantopa:hot/eriksjokull % make                                                                                     (master)fortran-alpha
+! dantopa:hot/eriksjokull % make 
 ! gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-format-descriptors.o m-format-descriptors.f08
 ! gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-precision-definitions.o m-precision-definitions.f08
 ! gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o m-library-of-constants.o m-library-of-constants.f08
@@ -69,7 +69,7 @@ end program esjufjoll
 ! gfortran -g -c -Og -pedantic -Wall -Warray-temporaries -Wextra -Waliasing -Wsurprising -Wimplicit-procedure -Wintrinsics-std -Wfunction-elimination -Wc-binding-type -Wrealloc-lhs-all -Wuse-without-only -Wconversion-extra -fno-realloc-lhs -ffpe-trap=denormal,invalid,zero -fbacktrace -fmax-errors=5 -fcheck=all -fcheck=do -fcheck=pointer -fno-protect-parens -faggressive-function-elimination -fdiagnostics-color=auto -finit-derived -o eriksjokull.o eriksjokull.f08
 ! gfortran -g -o eriksjokull eriksjokull.o m-allocations-special.o m-allocations.o m-class-averages.o m-class-data-collection.o m-class-data-file.o m-class-electric-fields.o m-class-mesh.o m-file-handling.o m-format-descriptors.o m-library-of-constants.o m-list-of-mom-files.o m-precision-definitions.o m-scenarios.o m-text-file-utilities.o
 
-! dantopa:hot/eriksjokull % ./eriksjokull                                                                                 (master)fortran-alpha
+! dantopa:hot/eriksjokull % ./eriksjokull
 ! List of 10 input files in ../elevations/list-of-files.txt:
 !  1. PTW-elev-0p045.4112.txt.
 !  2. PTW-elev-0p050.4112.txt.

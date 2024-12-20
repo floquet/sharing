@@ -114,32 +114,43 @@ Many Tools For Converting \stl \ to \obj
 \end{frame}
 
 %%%   %%%   %%%   %%%
+\renewcommand{\listingFontSize}{\scriptsize} 
 \subsection{Structure of \facet}
-\begin{frame}{Components of the \obj}
+\begin{frame}[ fragile, allowframebreaks ]{\texttt{short.facet}}
+        \lstset{style=obj} % Use the "obj" style
+        \lstinputlisting[firstline=1]{\pLocalData/short.facet} % Lines 1-16
+\end{frame}
+
+\begin{frame}[ fragile, allowframebreaks ]{\texttt{short.facet}}
+\begin{enumerate}
+	\item \facet \ is organized around \bl{components}
+	\item Components have \bl{distinct electromagnetic properties} 
+	\item Consider \facet \ as \obj \ for each component
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Components of the \facet}
     \begin{enumerate}
-        \item \textbf{Headers and Comments} (\#):
-            \begin{itemize}
-                \item Used for metadata or human-readable information.
-                \item Example: \texttt{\# Created with Wolfram Language}.
-            \end{itemize}
+        \item \bl{Aluminum} substructures
+            \begin{enumerate}
+                \item Header
+                \item Vertex locations.
+                \item Faces by vertex index
+            \end{enumerate}
 
-        \item \bl{Vertex Positions} (\texttt{v}):
-            \begin{itemize}
-                \item Specifies 3D coordinates for vertices.
-                \item Example: \texttt{v 0 0 -1}.
-            \end{itemize}
+        \item \bl{Titanium} substructures
+            \begin{enumerate}
+                \item Header
+                \item Vertex locations.
+                \item Faces by vertex index
+            \end{enumerate}
 
-        \item \bl{Faces} (\texttt{f}):
-            \begin{itemize}
-                \item Defines polygons by referencing vertex indices.
-                \item Example: \texttt{f 1/2/3}.
-            \end{itemize}
+        \item ...
     \end{enumerate}
-        \setcounter{listnumber}{\value{enumi}}
 \end{frame}
 
 %%%   %%%   %%%   %%%
-\subsection{Mesh Delicacies}
+\subsection{Mesh Subtleties}
 
 \begin{frame}
 	\frametitle{Achilles Heel: Minimum triangle size}
@@ -213,5 +224,44 @@ Many Tools For Converting \stl \ to \obj
 \label{tab:features}
 \end{frame}
 
+%%%   %%%   %%%   %%%
+\subsection{Geometry File \geo}
 
+\begin{frame}
+\begin{enumerate}
+\item \geo \ describes model for Mercury MoM analysis
+\item Points to \facet 
+\item Points to Material Library
+\item Configures Mercury MoM
+\end{enumerate}	
+\end{frame}
+
+\renewcommand{\listingFontSize}{\scriptsize} 
+\begin{frame}[ fragile, allowframebreaks ]{\texttt{sph-septum.geo}}
+        \lstset{style=obj} % Use the "obj" style
+        \lstinputlisting[firstline=1]{\pLocalData/sph-septum.geo} % Lines 1-16
+\end{frame}
+
+%%%   %%%   %%%   %%%
+\subsection{Materials Library \lib}
+
+\begin{frame}
+\begin{enumerate}
+\item \lib \ contains electromagnetic properties 
+\item Makes model more realistic
+\item Designed to be a library
+\end{enumerate}	
+\end{frame}
+
+\renewcommand{\listingFontSize}{\scriptsize} 
+\begin{frame}[ fragile, allowframebreaks ]{\texttt{Materials.lib}}
+        \lstset{style=obj} % Use the "obj" style
+        \lstinputlisting[firstline=1]{\pLocalData/Materials.lib} % Lines 1-16
+\end{frame}
+
+\begin{frame}{Running Mercury MoM}
+\centering
+       \Large{ \texttt{./MMoM\_4.1.12 example.geo} }
+\end{frame}
+ 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
