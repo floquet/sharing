@@ -59,6 +59,7 @@ Many Tools For Converting \stl \ to \obj
     numberbychapter=false % Prevent resetting line numbers
 }
 
+\renewcommand{\listingFontSize}{\scriptsize} 
 \begin{frame}[fragile]{\texttt{sp-006.obj}}
     \begin{columns}[T] % Top-aligned columns
         \column{0.48\textwidth}
@@ -114,34 +115,27 @@ Many Tools For Converting \stl \ to \obj
 
 %%%   %%%   %%%   %%%
 \subsection{Structure of \texttt{*.facet}}
+\begin{frame}{Components of the \texttt{*.obj}}
+    \begin{enumerate}
+        \item \textbf{Headers and Comments} (\#):
+            \begin{itemize}
+                \item Used for metadata or human-readable information.
+                \item Example: \texttt{\# Created with Wolfram Language}.
+            \end{itemize}
 
-%%%   %%%   %%%   %%%
-\subsection{Tools: Python}
-\renewcommand{\listingFontSize}{\tiny} 
-\begin{frame}[fragile,allowframebreaks]{Python Tool for \texttt{*.obj} to \texttt{*.facet}}
-    \lstset{style=python} % Use the Python style
-    \lstinputlisting{\pLocalCode/Obj2Facet_Python3.py}
-\end{frame}
+        \item \bl{Vertex Positions} (\texttt{v}):
+            \begin{itemize}
+                \item Specifies 3D coordinates for vertices.
+                \item Example: \texttt{v 0 0 -1}.
+            \end{itemize}
 
-%%%   %%%   %%%   %%%
-\subsection{Tools: Mathematica}
-% nb: /Users/dantopa/Mathematica_files/nb/projects/hii-tsd/radar/obj/obj-02.nb
-\renewcommand{\listingFontSize}{\tiny} 
-\begin{frame}[fragile,allowframebreaks]{Mathematica Commands}
-    \lstset{style=mathematica} % Use the Mathematica style
-    
-    \begin{lstlisting}
-    (* Generate a mesh for a convex hull of points on a sphere *)
-    mesh = ConvexHullMesh[SpherePoints[60]] // Region;
-
-    (* Extract vertex coordinates from the mesh *)
-    vlist = MeshCoordinates[mesh];
-
-    (* Label each point in the mesh *)
-    labeledPoints = MapIndexed[
-        Text[Style[ToString[#2[[1]]], Bold, Black], #1] &, vlist
-    ];
-    \end{lstlisting}
+        \item \bl{Faces} (\texttt{f}):
+            \begin{itemize}
+                \item Defines polygons by referencing vertex indices.
+                \item Example: \texttt{f 1/2/3}.
+            \end{itemize}
+    \end{enumerate}
+        \setcounter{listnumber}{\value{enumi}}
 \end{frame}
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

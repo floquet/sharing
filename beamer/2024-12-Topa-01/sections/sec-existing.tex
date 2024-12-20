@@ -1,0 +1,174 @@
+% \input{\pSections "sec-existing.tex"}
+
+\section{Custom Software Tools}
+\begin{frame}\frametitle{Sprawling Toolset: Languages}
+\begin{enumerate}
+	\item Fortran
+	\item Python
+	\item Mathematica
+	\item Shell scripts
+\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{Sprawling Toolset: Purposes}
+\begin{enumerate}
+	\item Automation
+	\item Conversions
+	\item Data Analysis
+	\item Diagnostics
+\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{Sprawling Toolset: Design}
+\begin{enumerate}
+	\item Object oriented
+	\item Emphasis on error tracking
+	\item Some crude
+	\item Some refined
+\end{enumerate}
+\end{frame}
+
+%%%   %%%   %%%   %%%
+
+%%%   %%%   %%%   %%%
+\subsection{Python}
+\renewcommand{\listingFontSize}{\tiny} 
+\begin{frame}[ fragile, allowframebreaks ]{Python Tool for \texttt{*.obj} to \texttt{*.facet}}
+    \lstset{style=python} % Use the Python style
+    \lstinputlisting{\pLocalCode/Obj2Facet_Python3.py}
+\end{frame}
+
+%%%   %%%   %%%   %%%
+\subsection{Fortran}
+\begin{frame}[ allowframebreaks ]{Major Fortran Tools}
+\begin{enumerate}
+	\item \texttt{aeneas.f08}
+	\item \texttt{createFacetFile.f08}
+	\item \texttt{esjufjoll.08}
+	\item \texttt{facimusFacet.f08}
+	\item \texttt{facet-maker.f08}
+	\item \texttt{geo-writer.f08}
+	\item \texttt{harvestRCSfromMoM.f08}
+	\item \texttt{json-writer.f08}
+	\item \texttt{gather.f08}
+	\item \texttt{revised-reader.f08}
+	\item \texttt{shaeffer.f08}
+	\item \texttt{sigma.f08}
+\end{enumerate}
+\end{frame}
+
+\lstdefinestyle{terminal}{
+    backgroundcolor=\color{white}, % White background
+    basicstyle=\ttfamily\tiny\color{black}, % Monospace font, black text
+    breaklines=true, % Allow line breaks
+    frame=single, % Optional: add a border
+    numbers=left, % Show line numbers
+    numberstyle=\tiny\color{gray}, % Smaller, gray line numbers
+}
+\begin{frame}[ fragile, allowframebreaks ]{\texttt{esjufjollf.f08} Execution}
+\scriptsize
+\lstinputlisting[
+    style=terminal,
+    linerange={72-114},
+    breaklines=true,
+    caption={Excerpt from \texttt{esjufjoll.f08}},
+    label={lst:esjufjoll execution}
+]{\pLocalCode/esjufjoll.f08}
+\end{frame}
+
+\begin{frame}[ fragile, allowframebreaks ]{\texttt{facet-maker.f08} Execution}
+\scriptsize
+\lstinputlisting[
+    style=terminal,
+    linerange={91-101},
+    breaklines=true,
+    caption={Excerpt from \texttt{facet-maker.f08}},
+    label={lst:facet-maker execution}
+]{\pLocalCode/facet-maker.f08}
+\end{frame}
+
+\begin{frame} [fragile, allowframebreaks ]{\texttt{gather.f08} Execution}
+\scriptsize
+\begin{lstlisting}[style=terminal, breaklines=true, caption={Excerpt from \texttt{gather.f08}}, label={lst:gather-execution}]
+! dantopa:3d/xylorimba % ./gather                                                                                                                             (master)fortran-alpha
+! 1. file = PTW-elev-0n179.4112.txt, -179, elevation angle = 0.
+! 2. file = PTW-elev-0n178.4112.txt, -178, elevation angle = 0.
+! 3. file = PTW-elev-0n177.4112.txt, -177, elevation angle = 0.
+
+! 358. file = PTW-elev-0p178.4112.txt, 178, elevation angle = 0.
+! 359. file = PTW-elev-0p179.4112.txt, 179, elevation angle = 0.
+! 360. file = PTW-elev-0p180.4112.txt, 180, elevation angle = 0.
+!
+! completed at 2020-05-12 21:49:23
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile, allowframebreaks]{\texttt{revised-reader.f08} Excerpts}
+\scriptsize
+\lstinputlisting[
+    style=terminal,
+    linerange={39-45},
+    breaklines=true,
+    caption={Excerpt from \texttt{revised-reader.f08} (lines 39-45)},
+    label={lst:revised-reader-39-45}
+]{\pLocalCode/revised-reader.f08}
+
+\lstinputlisting[
+    style=terminal,
+    linerange={123-127},
+    breaklines=true,
+    caption={Excerpt from \texttt{revised-reader.f08} (lines 123-127)},
+    label={lst:revised-reader-123-127}
+]{\pLocalCode/revised-reader.f08}
+\end{frame}
+
+
+\begin{frame}[fragile, allowframebreaks]{\texttt{sigma.f08} Overview}
+\scriptsize
+\begin{lstlisting}[style=terminal, breaklines=true, caption={Excerpt from \texttt{sigma.f08}}, label={lst:sigma-overview}]
+! nb: /Users/dantopa/Mathematica_files/nb/ert/mercury/snake/fortran-01.nb
+program rcs
+
+! Read the Mercury Methods of Moments processed into a table of mean total RCS values
+! Use the method of least squares to find
+!   RCS ( yaw angle )           radar frequency fixed
+!   RCS ( radar frequency )     yaw angle fixed
+
+! Daniel Topa, ERT Corp
+! COVID-19 Prisoner
+
+! Class structure
+!   RCStable: table of mean total RCS ( nu, alpha )
+!   LinearSystem: Sytem Matrix A, data vector b
+!        flavors: Fourier, monomial
+!        tied to RCStable
+!   LeastSquaresResults:
+!        amplitudes
+!        errors
+!        residual error vector
+!        tied to linear system
+\end{lstlisting}
+\end{frame}
+
+%%%   %%%   %%%   %%%
+\subsection{Mathematica}
+% nb: /Users/dantopa/Mathematica_files/nb/projects/hii-tsd/radar/obj/obj-02.nb
+\renewcommand{\listingFontSize}{\tiny} 
+\begin{frame}[fragile,allowframebreaks]{Mathematica Commands}
+    \lstset{style=mathematica} % Use the Mathematica style
+    
+    \begin{lstlisting}
+    (* Generate a mesh for a convex hull of points on a sphere *)
+    mesh = ConvexHullMesh[SpherePoints[60]] // Region;
+
+    (* Extract vertex coordinates from the mesh *)
+    vlist = MeshCoordinates[mesh];
+
+    (* Label each point in the mesh *)
+    labeledPoints = MapIndexed[
+        Text[Style[ToString[#2[[1]]], Bold, Black], #1] &, vlist
+    ];
+    \end{lstlisting}
+\end{frame}
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

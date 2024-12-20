@@ -8,7 +8,7 @@
         \column{0.48\textwidth}
         \textbf{Input: \obj \ File}
         \lstset{style=obj}
-        \lstinputlisting[firstline=1,lastline=8]{\pLocalData/sp-006.obj} % Adjust the path as needed
+        \lstinputlisting[firstline=1,lastline=11]{\pLocalData/sp-006.obj} % Adjust the path as needed
 
         % Right Column: Output (Amplitude Vector)
         \column{0.48\textwidth}
@@ -29,30 +29,49 @@
     \end{columns}
 \end{frame}
 
+
 %%%   %%%   %%%   %%%
 \subsection{Process}
+\begin{frame}[ allowframebreaks ]{Beginning to End}
+Data Creation and Analysis Steps
+\begin{enumerate}
+	\item Start with CAD model: \stl
+	\item Create \obj
+	\item Create \bl{\facet}
+		\begin{itemize}
+			\item Create \bl{\texttt{*.geo}} (geometry)
+			\item Create \bl{\texttt{*.lib}} (EM properties)
+		\end{itemize}
+	\item Generate \bl{\texttt{*.4112.txt}}
+	\item Harvest $\theta, \phi$ fields
+	\item Create \bl{\texttt{*.rcs}}
+	\item Create amplitudes $a$
+\end{enumerate}
+\end{frame}
+
 \begin{frame}{Big Picture: CAD to RCS Table}
 We discuss Step 1 $\Rightarrow$ Step 2
 \begin{enumerate}
 	\item Start with CAD model: \stl
 	\item Finish with table \bl{\texttt{*.rcs}}
-	\item \mg{Resolved to approximate $f\paren{\theta,\phi}$}
+	\item \mg{Resolved to approximate $f\paren{r,\theta,\phi}$}
 \end{enumerate}
+\end{frame}
+
+\begin{frame}{Biggest Challenge}
+Going from a CAD model to a model of \bl{different electromagnetic materials}.
 \end{frame}
 
 %%%   %%%   %%%   %%%
 \subsection{Software Components}
 \begin{frame}\frametitle{Software Components}
 \begin{enumerate}
-	\item converter: \obj $\Rightarrow$ \texttt{*.facet}
-	\item mesh analysis \& repair: \obj $\Rightarrow$ \texttt{*.facet}
+	\item converter: \obj $\Rightarrow$ \facet
+	\item mesh analysis \& repair: \obj $\Rightarrow$ \facet
 	\item extractor: pull backscatter from \texttt{*.4112.txt}
 	\item converter: backscatter to \texttt{*.rcs}
 	\item calculator: \texttt{*.rcs} to spherical harmonic amplitudes
 \end{enumerate}
 \end{frame}
-
-
-
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

@@ -1,0 +1,311 @@
+% \input{\pSections "sec-backup.tex"}
+
+\section{Backup Slides}
+
+%%%   %%%   %%%   %%%
+\subsection{Electromagnetics}
+\begin{frame}{Facet (Face)}
+    \begin{itemize}
+        \item Discretized as small triangular or quadrilateral elements.
+        \item Supports surface currents (\(\vec{J}\)) induced by incident fields.
+        \item Enforces boundary conditions derived from Maxwell’s equations:
+            \begin{itemize}
+                \item PEC: \(\vec{E}_t = \vec{0}\)
+                \item Dielectric: \(\vec{E}_t^{(1)} = \vec{E}_t^{(2)}, \quad \vec{H}_t^{(1)} - \vec{H}_t^{(2)} = \vec{K}\)
+            \end{itemize}
+        \item Surface currents are discretized using basis functions (e.g., RWG).
+        % Rao-Wilton-Glisson (RWG) basis functions are surface currents (J) on triangular mesh elements.
+        \item Integral equations relate \(\vec{J}\) to scattered fields via Green’s functions.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Edges}
+    \begin{itemize}
+        \item Shared boundaries between adjacent facets.
+        \item Enforces physical continuity of surface current, \(\vec{J}\).
+        \item Charge conservation at the edge:
+        \begin{equation}
+             \nabla_s \cdot \vec{J} = -j\omega \rho
+             \label{eq:grad}
+          \end{equation}
+            where \(\rho\) is the surface charge density.
+        \item Used in testing (e.g., Galerkin’s method) to evaluate interaction integrals.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Boundary Conditions}
+    \begin{itemize}
+        \item Maxwell's boundary conditions on facets:
+            \begin{align*}
+                \text{PEC:} & \quad \vec{E}_t = \vec{0} \\
+                \text{Dielectric:} & \quad \vec{E}_t^{(1)} = \vec{E}_t^{(2)} \\
+                & \quad \vec{H}_t^{(1)} - \vec{H}_t^{(2)} = \vec{K}
+            \end{align*}
+            % K is the surface magnetic current density:
+        \item Continuity enforced on edges:
+            \[
+            \vec{J}_\text{facet 1} \cdot \hat{n}_\text{edge} = \vec{J}_\text{facet 2} \cdot \hat{n}_\text{edge}
+            \]
+        \item Ensures no spurious currents or charge accumulation.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Interplay Between Face and Edge}
+    \begin{itemize}
+        \item \bl{Facet}: Supports surface currents \(\vec{J}\) and tangential electric field $\vec{E}_t$.
+        \item \bl{Edge}: Ensures:
+            \begin{itemize}
+                \item Continuity of \(\vec{J}\) across facets.
+                \item Charge conservation, \eqref{eq:grad}:
+            \end{itemize}
+        \item Maxwell’s equations are satisfied numerically:
+            \begin{align*}
+                \nabla \times \vec{H} &= \vec{J} + j\omega \epsilon \vec{E} \\
+                \nabla \cdot \vec{E} &= \frac{\rho}{\epsilon}
+            \end{align*}
+    \end{itemize}
+\end{frame}
+
+%%%   %%%   %%%   %%%
+\subsection{Rao-Wilton-Glisson basis functions}
+\begin{frame}{RWG Basis Functions – Overview}
+    \begin{itemize}
+        \item Used to represent surface currents (\(\vec{J}\)) in MoM simulations.
+        \item Defined on pairs of adjacent triangular elements sharing an edge.
+        \item Ensures:
+            \begin{itemize}
+                \item Continuity of surface current across shared edges.
+                \item Sparse and efficient numerical representation.
+            \end{itemize}
+        \item Piecewise linear variation within triangles.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{RWG Basis Function Definition}
+    \begin{itemize}
+        \item For two adjacent triangles \(T^+\) and \(T^-\) sharing edge \(l_n\):
+        \item RWG function \(\vec{f}_n(\vec{r})\):
+            \[
+            \vec{f}_n(\vec{r}) =
+            \begin{cases}
+            \frac{l_n}{2A^+} (\vec{r} - \vec{r}_+), & \vec{r} \in T^+ \\
+            \frac{l_n}{2A^-} (\vec{r}_- - \vec{r}), & \vec{r} \in T^- \\
+            0, & \text{otherwise}
+            \end{cases} \tag{1}
+            \]
+        \item Parameters:
+            \begin{itemize}
+                \item \(l_n\): Length of the shared edge.
+                \item \(A^+\), \(A^-\): Areas of triangles \(T^+\) and \(T^-\).
+                \item \(\vec{r}_+\), \(\vec{r}_-\): Opposite vertices in \(T^+\), \(T^-\) relative to \(l_n\).
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Surface Current Representation}
+    \begin{itemize}
+        \item Total surface current density \(\vec{J}(\vec{r})\):
+\begin{equation}
+\vec{J}(\vec{r}) = \sum_n I_n \vec{f}_n(\vec{r})
+\end{equation}
+        \item \(I_n\): Coefficients representing the current magnitude for basis function \(n\).
+        \item RWG basis functions provide local support, simplifying matrix assembly.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Matrix Assembly in MoM}
+    \begin{itemize}
+        \item Integral form of Maxwell's equations discretized using RWG functions.
+        \item Resulting system of equations:
+            \begin{equation}
+            \mathbf{Z} \mathbf{I} = \mathbf{V}
+            \end{equation}
+        \item Terms:
+            \begin{itemize}
+                \item \(\mathbf{Z}\): Impedance matrix from basis function interactions.
+                \item \(\mathbf{I}\): Vector of current coefficients (\(I_n\)).
+                \item \(\mathbf{V}\): Excitation vector from incident fields.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Key Properties of RWG}
+    \begin{itemize}
+        \item \bl{Continuity}:
+\begin{equation}
+\vec{J}_\text{facet 1} \cdot \hat{n}_\text{edge} = \vec{J}_\text{facet 2} \cdot \hat{n}_\text{edge} \tag{4}
+\end{equation}
+            Ensures smooth current flow across edges.
+        \item \bl{Sparse Representation}:
+            \begin{itemize}
+                \item Non-zero support only on two triangles sharing an edge.
+            \end{itemize}
+        \item \bl{Accuracy}:
+            \begin{itemize}
+                \item Captures linear current variations.
+                \item Suitable for arbitrary geometries.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Summary of RWG Functions}
+    \begin{itemize}
+        \item Represent surface currents in MoM using triangular mesh discretization.
+        \item Defined on pairs of adjacent triangles sharing a common edge.
+        \item Ensure:
+            \begin{itemize}
+                \item Continuity of surface currents across edges.
+                \item Sparse, efficient representation of \(\vec{J}\).
+            \end{itemize}
+        \item \bl{Efficient matrix assembly} in MoM simulations.
+    \end{itemize}
+\end{frame}
+
+%%%   %%%   %%%   %%%
+\subsection{Linear System and Solution}
+\begin{frame}{Impedance Matrix}
+    \begin{itemize}
+        \item Each element \(Z_{mn}\) evaluates interaction between basis functions:
+            \begin{equation}
+            Z_{mn} = \iint \vec{f}_m(\vec{r}) \cdot \vec{G}(\vec{r}, \vec{r}') \cdot \vec{f}_n(\vec{r}') \, \text{d}S \, \text{d}S' \tag{2}
+            \end{equation}
+        \item Terms:
+            \begin{itemize}
+                \item \(\vec{f}_m(\vec{r})\): RWG basis functions.
+                \item \(\vec{G}(\vec{r}, \vec{r}')\): Green's function coupling source and observation points.
+            \end{itemize}
+        \item Dense matrix, costly to compute and store.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Impedance Matrix}
+    \begin{itemize}
+        \item Each element \(Z_{mn}\) evaluates interaction between basis functions:
+            \begin{equation}
+            Z_{mn} = \iint \vec{f}_m(\vec{r}) \cdot \vec{G}(\vec{r}, \vec{r}') \cdot \vec{f}_n(\vec{r}') \, \text{d}S \, \text{d}S' \tag{2}
+            \end{equation}
+        \item Terms:
+            \begin{itemize}
+                \item \(\vec{f}_m(\vec{r})\): RWG basis functions.
+                \item \(\vec{G}(\vec{r}, \vec{r}')\): Green's function coupling source and observation points.
+            \end{itemize}
+        \item Dense matrix, costly to compute and store.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Excitation Vector}
+    \begin{itemize}
+        \item Represents contribution of incident fields:
+            \begin{equation}
+            V_m = \iint \vec{f}_m(\vec{r}) \cdot \vec{E}_\text{inc}(\vec{r}) \, \text{d}S \tag{3}
+            \end{equation}
+        \item Terms:
+            \begin{itemize}
+                \item \(\vec{E}_\text{inc}(\vec{r})\): Incident electric field.
+                \item \(\vec{f}_m(\vec{r})\): RWG basis function.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Physical and Numerical Behavior}
+    \begin{itemize}
+        \item \bl{Surfaces Reflect}:
+            \begin{itemize}
+                \item Represent scattering and reflection of electromagnetic waves.
+                \item Surface currents (\(\vec{J}\)) induced by incident fields.
+            \end{itemize}
+        \item \bl{Edges Ring}:
+            \begin{itemize}
+                \item Enforce continuity of surface currents across facets.
+                \item Numerical challenges can cause spurious oscillations.
+                \item Proper charge conservation ensures stable edge behavior.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Challenges in Solving the System}
+    \begin{itemize}
+        \item \(\mathbf{Z}\) is dense:
+            \begin{itemize}
+                \item High memory requirement (\(O(N^2)\)).
+                \item Computationally expensive for direct solvers (\(O(N^3)\)).
+            \end{itemize}
+        \item Ill-conditioning may require preconditioning.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Solution Techniques}
+    \begin{itemize}
+        \item \bl{Direct Solvers}:
+            \begin{itemize}
+                \item Gaussian elimination or LU decomposition.
+                \item Cost: \(O(N^3)\).
+            \end{itemize}
+        \item \bl{Iterative Solvers}:
+            \begin{itemize}
+                \item Conjugate Gradient (CG), GMRES.
+                \item Cost per iteration: \(O(N^2)\).
+                \item Requires preconditioning for convergence.
+            \end{itemize}
+        \item \bl{Fast Multipole Method (FMM)}:
+            \begin{itemize}
+                \item Reduces complexity to \(O(N \log N)\).
+                \item Approximates far-field interactions.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Summary of Linear System and Solutions}
+    \begin{itemize}
+        \item Linear system: 
+            \begin{equation}
+            \mathbf{Z} \mathbf{I} = \mathbf{V} \tag{1}
+            \end{equation}
+        \item Key challenges:
+            \begin{itemize}
+                \item Dense, large-scale matrix \(\mathbf{Z}\).
+                \item Computational cost of direct solvers.
+            \end{itemize}
+        \item Efficient techniques:
+            \begin{itemize}
+                \item Iterative solvers for large systems.
+                \item FMM for reducing complexity.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+%%%   %%%   %%%   %%%
+\subsection{Literature Survey}
+\begin{frame}[ allowframebreaks ]{Literature Survey}
+    \begin{itemize}
+        \item \bl{Electromagnetic Scattering and MoM:}
+            \begin{itemize}
+                \item Harrington (1967, 1987): Foundational work on the Method of Moments for electromagnetic problems \cite{harrington1967matrix, harrington1987method}.
+                \item Rao (1980): Triangular patch modeling for arbitrarily shaped surfaces \cite{rao1980electromagnetic}.
+                \item Mosig (2024): Historical insights into MoM and its applications in electrodynamics \cite{10460331}.
+            \end{itemize}
+        \item \bl{Radar Cross Section (RCS):}
+            \begin{itemize}
+                \item Gordon (1975): Far-field approximations for scattered fields \cite{gordon1975far}.
+                \item Knott et al. (2004): Comprehensive guide on RCS prediction and measurement \cite{knott2004radar}.
+                \item Crocker (2020): Dynamic RCS data handling and analysis \cite{osti_1664641}.
+            \end{itemize}
+        \item \bl{Müntz-Szász Theorem and Approximation:}
+            \begin{itemize}
+                \item Siegel (1972), Sedletskii (2008): Extensions of approximation theorems in weighted spaces \cite{siegel1972muntz, sedletskii2008approximation}.
+                \item Szasz (1916): Approximation by aggregates of powers \cite{szasz1916approximation}.
+            \end{itemize}
+        \item \bl{Numerical Integration and Harmonics:}
+            \begin{itemize}
+                \item Colombo (1981): Harmonic analysis on spheres for numerical applications \cite{colombo1981numerical}.
+                \item Bellet et al. (2022): Quadrature techniques on the cubed sphere \cite{bellet2022quadrature}.
+            \end{itemize}
+        \item \bl{Computational Methods and Advancements:}
+            \begin{itemize}
+                \item Newman (1991): Introduction to MoM for computational physics \cite{newman1991introduction}.
+                \item Taddei et al. (2014): Fast MoM algorithms for phased arrays \cite{6986493}.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
