@@ -10,13 +10,15 @@
 % Fetch home directory
 \CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
 % Define base paths
+% relies on symlink  at /Users/dantopa/, e.g.
+% 	GitHub -> /Users/dantopa//repos-xiuhcoatal/github
 \makeatletter
 \edef\HomePath{\expandafter\zap@space\HomePath \@empty}
 \makeatother
 \newcommand{\pGithub}          {\HomePath/GitHub/}
-\newcommand{\pGithubSharing}   {\pGithub/sharing/}
-\newcommand{\pLocalSetup}      {\pGithubSharing/reports/hpc-pdes/local/}
-\newcommand{\pSections}        {\pGithubSharing/reports/hpc-pdes/sections/}
+	\newcommand{\pGithubSharing}	{\pGithub/sharing/}
+	\newcommand{\pLocalSetup}		{\pGithubSharing/reports/hpc-pdes/local/}
+	\newcommand{\pSections}		{\pGithubSharing/reports/hpc-pdes/sections/}
 % Load Additional Setup Files
 \input{\pLocalSetup/setup-local.tex}
 

@@ -1,0 +1,50 @@
+% ===========================================================
+% Enumeration Customization with enumitem
+% The `enumitem` package allows precise control over enumeration styles.
+% This configuration supports both numeric (1, 1.1) and alphabetic (A, B) lists.
+% ===========================================================
+\usepackage{enumitem}
+
+% === Numeric List Customization ===
+% Default styles for numeric lists:
+% Level 1: 1, 2, 3...
+% Level 2: 1.1, 1.2, 1.3...
+\setlist[enumerate,1]{label=\arabic*.} % Top-level: 1, 2, 3...
+\setlist[enumerate,2]{label=\arabic{enumi}.\arabic*, ref=\arabic{enumi}.\arabic*} % Sub-level: 1.1, 1.2...
+
+% === Alphabetic List Customization ===
+% Custom styles for alphabetic lists:
+% Level 1: A, B, C...
+% Level 2: a), b), c)...
+\setlist[enumerate,1]{label=\Alph*.} % Top-level: A, B, C...
+\setlist[enumerate,2]{label=\alph*)} % Sub-level: a), b), c)...
+
+% === Counter Adjustment (if needed) ===
+% Reset counters to customize starting values
+\setcounter{enumi}{1}   % Start enumerate level 1 from 1
+\setcounter{enumii}{1}  % Start enumerate level 2 from a)
+
+% === Usage Examples ===
+% Example for numeric list:
+% \begin{enumerate}
+%   \item First item
+%   \item Second item
+%   \begin{enumerate}
+%     \item Sub-item 1.1
+%     \item Sub-item 1.2
+%   \end{enumerate}
+% \end{enumerate}
+%
+% Example for alphabetic list:
+% \begin{enumerate}[label=\Alph*.]
+%   \item First item
+%   \item Second item
+%   \begin{enumerate}[label=\alph*)]
+%     \item Sub-item a)
+%     \item Sub-item b)
+%   \end{enumerate}
+% \end{enumerate}
+
+% === Notes ===
+% Use `[label=...]` in `\begin{enumerate}` to override defaults if needed.
+% Examples are provided above to demonstrate both numeric and alphabetic lists.
