@@ -1,0 +1,44 @@
+% \input{\pGlobalSetup href-custom-a.tex_
+
+% Configures hyperref with full customization options, including a color map
+
+% === Load Hyperref with Base Settings ===
+% The `colorlinks` option enables colored links. Adjust the colors below as needed.
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=green, urlcolor=red, filecolor=magenta]{hyperref}
+
+% === Custom Color Map ===
+% Redefine colors using xcolor for additional flexibility
+\usepackage[dvipsnames]{xcolor} % Access extended color names
+
+% Define custom colors (optional)
+\definecolor{myLinkColor}{RGB}{0, 102, 204}   % Custom blue for links
+\definecolor{myCiteColor}{RGB}{34, 139, 34}  % Forest Green for citations
+\definecolor{myUrlColor}{RGB}{178, 34, 34}   % Firebrick Red for URLs
+\definecolor{myFileColor}{RGB}{128, 0, 128}  % Purple for file links
+
+% Apply custom colors to hyperref
+\hypersetup{
+    colorlinks=true,         % Enable colored links
+    linkcolor=myLinkColor,   % Internal links (e.g., TOC, references)
+    citecolor=myCiteColor,   % Citations
+    urlcolor=myUrlColor,     % URLs
+    filecolor=myFileColor    % File links
+}
+
+% === Additional Hyperref Options ===
+% Customize PDF metadata (optional)
+\hypersetup{
+    pdfauthor={Daniel Topa},           % Author name
+    pdftitle={Custom Hyperref Setup},  % Document title
+    pdfsubject={Hyperlink Configuration Example}, % Subject
+    pdfkeywords={LaTeX, hyperref, customization}, % Keywords
+    pdfcreator={pdflatex},             % PDF creator
+    pdfproducer={TeXShop}              % Producer software
+}
+
+% === Notes for Users ===
+% - Edit the custom colors above to match your document theme.
+% - You can comment out the `\definecolor` commands if default colors suffice.
+% - PDF metadata settings can be adjusted as needed for your document.
+    
+\endinput  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -

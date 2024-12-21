@@ -1,22 +1,56 @@
 % \input{\pGlobalSetup paths-local}
 
+% ===========================================================
+% Unified Path Definitions Using \pWorkspace
+% ===========================================================
+
+% Workspace root, pWorkspace, defined in main/main-project.tex: 
+%\newcommand{\pWorkspace}              {../} % Root directory for the project
+
+% Main and sections paths
+\newcommand{\pMain}                   {\pWorkspace/main/}
+\newcommand{\pSections}               {\pWorkspace/sections/}
+
+% Local paths based on \pWorkspace
+\newcommand{\pLocal}                  {\pWorkspace/local/}
+    \newcommand{\pLocalCode}          {\pLocal/code/}
+    \newcommand{\pLocalData}          {\pLocal/data/}
+    \newcommand{\pLocalDebug}         {\pLocal/debug/}
+    \newcommand{\pLocalDemos}         {\pLocal/demos/}
+    \newcommand{\pLocalFortran}       {\pLocal/fortran/}
+    \newcommand{\pLocalRefs}          {\pLocal/refs/}
+    \newcommand{\pLocalSlides}        {\pLocal/slides/}
+    \newcommand{\pLocalComponents}    {\pLocal/components-local/}
+    \newcommand{\pLocalFigures}       {\pLocal/figures-local/}
+    \newcommand{\pLocalGraphics}      {\pLocal/graphics-local/}
+    \newcommand{\pLocalSetup}         {\pLocal/setup-local/}
+    \newcommand{\pLocalTables}        {\pLocal/tables-local/}
+    \newcommand{\pLocalTheorems}      {\pLocal/theorems-local/}
+
+% Notes:
+% - \pWorkspace is the root path for the entire project.
+% - \pMain and \pSections now derive directly from \pWorkspace.
+% - All local subpaths (e.g., \pLocalCode, \pLocalFigures) are consistently based on \pLocal.
+
+\endinput  % End of unified path definitions
+
 % Define base paths 
 \newcommand{\pMain}					{../main/}
 \newcommand{\pSections}				{../sections/}
 
 % Local paths
 \newcommand{\pLocal}					{../local/}
-	\newcommand{\pLocalComponents}			{\pLocal/components-local/}
 	\newcommand{\pLocalCode}				{\pLocal/code/}
 	\newcommand{\pLocalData}				{\pLocal/data/}
 	\newcommand{\pLocalDebug}				{\pLocal/debug/}
 	\newcommand{\pLocalDemos}				{\pLocal/demos/}
 	\newcommand{\pLocalFortran}				{\pLocal/fortran/}
+	\newcommand{\pLocalRefs}				{\pLocal/refs/}
+	\newcommand{\pLocalSlides}				{\pLocal/slides/}
+	\newcommand{\pLocalComponents}			{\pLocal/components-local/}
 	\newcommand{\pLocalFigures}				{\pLocal/figures-local/}
 	\newcommand{\pLocalGraphics}			{\pLocal/graphics-local/}
-	\newcommand{\pLocalRefs}				{\pLocal/refs/}
 	\newcommand{\pLocalSetup}				{\pLocal/setup-local/}
-	\newcommand{\pLocalSlides}				{\pLocal/slides/}
 	\newcommand{\pLocalTables}				{\pLocal/tables-local/}
 	\newcommand{\pLocalTheorems}			{\pLocal/theorems-local/}
 	

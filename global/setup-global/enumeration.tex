@@ -24,6 +24,11 @@
 \setcounter{enumi}{1}   % Start enumerate level 1 from 1
 \setcounter{enumii}{1}  % Start enumerate level 2 from a)
 
+% https://tex.stackexchange.com/questions/55000/continuing-enumerate-counters-in-beamer
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+
 % === Usage Examples ===
 % Example for numeric list:
 % \begin{enumerate}

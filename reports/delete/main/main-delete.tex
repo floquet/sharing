@@ -1,6 +1,6 @@
 % typeset: Pdftex
 % Afterwards compile with pdflatex > bibtex > pdflatex > pdflatex.
-% CLI: pdflatex main-hpc-pdes.tex
+% CLI: pdflatex main-delete.tex
 % Beamer likes biber
 \documentclass[10pt, oneside]{article}
 
@@ -13,7 +13,7 @@
 \makeatletter
 \edef\HomePath{\expandafter\zap@space\HomePath \@empty}
 \makeatother
-\newcommand{\pGithub}          			{\HomePath/GitHub/}
+\newcommand{\pGithub}          		{\HomePath/GitHub/}
 	\newcommand{\pGithubSharing}	{\pGithub/sharing/}
 	\newcommand{\pGlobal}			{\pGithubSharing/global/}
 	\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
@@ -34,34 +34,38 @@
 % setup-global-reports.tex
 % 	paths-global.tex
 % 	paths-local.tex
-% 	packages-global-reports.tex
+% 	usepackages-reports.tex
 % 	hyperlinks-global.tex
-%	libraries-global.tex
+%		libraries-global.tex
 
 % Choose hyperlink configuration:
 \input{\pGlobalSetup href-hidden.tex}   % For hidden links (clean, professional)
 % \input{\pGlobalSetup href-visible.tex} % For visible links (debugging, drafts)
 
-\usepackage[printwatermark]{xwatermark}
-	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+%\usepackage[printwatermark]{xwatermark}
+%	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
 
 % Bibliography
-%\usepackage[style=numeric, backend=biber, sorting=nyt, maxnames=3, minnames=1]{biblatex}
 \input{\pGlobalSetup packages-global-bibliography-charlie.tex}
-\addbibresource{\pShareBibliographies/pdes.bib}
-%\addbibresource{\pShareBibliographies/fortran.bib}
+%\addbibresource{\pShareBibliographies/pdes.bib}
+\bibliography{\pShareBibliographies master.bib}
 
-\title{Coarrays on HPC: A Path to\\ Parallel Discrete Event Simulation?}
+\title{delete}
 \author{Daniel Topa}
 \begin{document}
 \maketitle
-	\input{\pSections sec-abstract.tex}
+	%\input{\pSections sec-abstract.tex}
 \tableofcontents
 
 	\input{\pSections sec-intro.tex}
 	\input{\pSections sec-backup.tex}
-	
-%\nocite{*}
+
+\appendix
+
+% Appendices content
+% \input{\pSections app-appendix.tex}
+
+\nocite{*}
 \printbibliography[heading=bibintoc]
 
 \end{document}

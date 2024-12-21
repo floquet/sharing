@@ -88,9 +88,25 @@ cat << EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
 % CLI: pdflatex main-$PROJECT_NAME.tex
 % Beamer likes biber
 \documentclass[10pt, oneside]{article}
-\usepackage{enumitem} % List formatting
-\usepackage{pdfpages}
+
+% Fetch home directory: make this file independent of file system
 \usepackage{catchfile}
+\CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
+% Define base paths
+% relies on symlink  at $HOME, e.g.
+% 	GitHub -> /Users/dantopa//repos-xiuhcoatal/github
+\makeatletter
+\edef\HomePath{\expandafter\zap@space\HomePath \@empty}
+\makeatother
+\newcommand{\pGithub}          		{\HomePath/GitHub/}
+	\newcommand{\pGithubSharing}	{\pGithub/sharing/}
+	\newcommand{\pGlobal}			{\pGithubSharing/global/}
+	\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
+	\newcommand{\pWorkspace}		{\pGithubSharing/reports/hpc-pdes}
+
+% Load standard Setup Files
+\input{\pGlobalSetup/setup-global-reports.tex}
+\input{\pLocalSetup/setup-local.tex}
 
 % ===========================================================
 % Global and Local Resource Setup
@@ -103,28 +119,16 @@ cat << EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
 % setup-global-reports.tex
 % 	paths-global.tex
 % 	paths-local.tex
-% 	packages-global-reports.tex
+% 	usepackages-reports.tex
 % 	hyperlinks-global.tex
-%		libraries-global.tex}
+%		libraries-global.tex
+
+% Choose hyperlink configuration:
+\input{\pGlobalSetup href-hidden.tex}   % For hidden links (clean, professional)
+% \input{\pGlobalSetup href-visible.tex} % For visible links (debugging, drafts)
 
 %\usepackage[printwatermark]{xwatermark}
 %	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
-
-% Fetch home directory: make this file independent of file system
-\CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
-% Define base paths
-% relies on symlink  at $HOME, e.g.
-% 	GitHub -> /Users/dantopa//repos-xiuhcoatal/github
-\makeatletter
-\edef\HomePath{\expandafter\zap@space\HomePath \@empty}
-\makeatother
-\newcommand{\pGithub}          {\HomePath/GitHub/}
-	\newcommand{\pGithubSharing}	{\pGithub/sharing/}
-	\newcommand{\pLocalSetup}		{\pGithubSharing/reports/$PROJECT_NAME/local/}
-	\newcommand{\pSections}		{\pGithubSharing/reports/$PROJECT_NAME/sections/}
-
-% Load Additional Setup Files
-\input{\pLocalSetup/setup-local.tex}
 
 % Bibliography
 \input{\pGlobalSetup packages-global-bibliography-charlie.tex}
@@ -133,18 +137,26 @@ cat << EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
 \title{$PROJECT_NAME}
 \author{Daniel Topa}
 \begin{document}
-	%\input{\pSections sec-abstract.tex}
 \maketitle
+	%\input{\pSections sec-abstract.tex}
 \tableofcontents
 
 	\input{\pSections sec-intro.tex}
 	\input{\pSections sec-backup.tex}
 
+\appendix
+
+% Appendices content
+% \input{\pSections app-appendix.tex}
+
+\nocite{*}
+\printbibliography[heading=bibintoc]
+
 \end{document}
 EOF
 
 new_step "Creating abstract file"
-cat << 'EOF' > "$ABSTRACT_FILE"
+cat << 'EOF' > "$PROJECT_DIR/sections/sec-abstract.tex"
 % \input{\pSections "sec-abstract.tex"}
 
 \begin{abstract}
@@ -204,16 +216,22 @@ Second subsection.
 % -----------------------------------------------------------
 \subsection{C}
 Third subsection.
-
-\endinput  % == End of Introduction Section ==
+	
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
 EOF
 
-new_step "Seed $PROJECT_DIR/local/setup-local.tex"
-cat << 'EOF' > "$PROJECT_DIR/local/setup-local.tex"
-% Local LaTeX setup for $PROJECT_NAME
+new_step "Seed $PROJECT_DIR/local/setup-local/setup-local.tex"
+cat << 'EOF' > "$PROJECT_DIR/local/setup-local/setup-local.tex"
+% \input{\pLocalSetup "setup-local.tex"}
 
-\usepackage{graphicx}
-% Add any project-specific setup here
+% ===========================================================
+% Customize workspace environment beyond generic
+% ===========================================================
+
+% \input{\pLocalSetup macros}
+% \input{\pLocalSetup paths-local.tex
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
 EOF
 
 echo "Project $PROJECT_NAME created successfully!"
