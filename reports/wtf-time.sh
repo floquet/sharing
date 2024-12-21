@@ -10,3 +10,4 @@ echo "${SECONDS}"
 
 # Preferred for clarity in strings:
 echo "Elapsed time: ${elapsed} seconds"
+		

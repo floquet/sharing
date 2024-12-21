@@ -13,11 +13,11 @@
 \makeatletter
 \edef\HomePath{\expandafter\zap@space\HomePath \@empty}
 \makeatother
-\newcommand{\pGithub}          		{\HomePath/GitHub/}
+\newcommand{\pGithub}          			{\HomePath/GitHub/}
 	\newcommand{\pGithubSharing}	{\pGithub/sharing/}
 	\newcommand{\pGlobal}			{\pGithubSharing/global/}
 	\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
-	\newcommand{\pWorkspace}		{\pGithubSharing/reports/hpc-pdes}
+	\newcommand{\pWorkspace}		{\pGithubSharing/reports/delete}
 
 % Load standard Setup Files
 \input{\pGlobalSetup/setup-global-reports.tex}
@@ -47,8 +47,8 @@
 
 % Bibliography
 \input{\pGlobalSetup packages-global-bibliography-charlie.tex}
-%\addbibresource{\pShareBibliographies/pdes.bib}
-\bibliography{\pShareBibliographies master.bib}
+\addbibresource{\pShareBibliographies/pdes.bib}
+\addbibresource{\pShareBibliographies/fortranX.bib}
 
 \title{delete}
 \author{Daniel Topa}
@@ -65,7 +65,6 @@
 % Appendices content
 % \input{\pSections app-appendix.tex}
 
-\nocite{*}
 \printbibliography[heading=bibintoc]
 
 \end{document}

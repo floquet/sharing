@@ -98,11 +98,11 @@ cat << EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
 \makeatletter
 \edef\HomePath{\expandafter\zap@space\HomePath \@empty}
 \makeatother
-\newcommand{\pGithub}          		{\HomePath/GitHub/}
+\newcommand{\pGithub}          		 {\HomePath/GitHub/}
 	\newcommand{\pGithubSharing}	{\pGithub/sharing/}
 	\newcommand{\pGlobal}			{\pGithubSharing/global/}
 	\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
-	\newcommand{\pWorkspace}		{\pGithubSharing/reports/hpc-pdes}
+	\newcommand{\pWorkspace}		{\pGithubSharing/reports/$PROJECT_NAME}
 
 % Load standard Setup Files
 \input{\pGlobalSetup/setup-global-reports.tex}
