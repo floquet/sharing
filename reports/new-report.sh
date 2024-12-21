@@ -104,8 +104,9 @@ cat << EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
 	\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
 	\newcommand{\pWorkspace}		{\pGithubSharing/reports/$PROJECT_NAME}
 
-% Load standard Setup Files
+% Load Global Setup Files
 \input{\pGlobalSetup/setup-global-reports.tex}
+% Excursion Setup Files
 \input{\pLocalSetup/setup-local.tex}
 
 % ===========================================================
@@ -130,12 +131,16 @@ cat << EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
 %\usepackage[printwatermark]{xwatermark}
 %	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
 
-% Bibliography
+%   --   --   --   --   --   --   --   --   --   -- Bibliography
 \input{\pGlobalSetup packages-global-bibliography-charlie.tex}
 \addbibresource{\pShareBibliographies/master.bib}
 
+%   --   --   --   --   --   --   --   --   --   -- Title, Author
 \title{$PROJECT_NAME}
-\author{Daniel Topa}
+\author{Daniel Topa\\\TopaHIIEmail}
+\affil{\missiontech}
+
+%   --   --   --   --   --   --   --   --   --   -- Structure
 \begin{document}
 \maketitle
 	%\input{\pSections sec-abstract.tex}
