@@ -1,0 +1,103 @@
+% \input{\pSections/sec-literature.tex}
+
+\section{Literature Evaluation}
+
+% -----------------------------------------------------------
+\subsection{King et al.: Thrust Vectoring Systems}
+
+This report provides an in-depth exploration of thrust vectoring techniques for a 5 cm mercury bombardment ion thruster, with key findings in vector control precision and scalability. Key contributions include:
+
+\begin{itemize}
+  \item **Evaluation of Thrust Vectoring Systems**:
+  - Three systems were analyzed: dual grid electrostatic, movable screen electrode, and vectorable discharge chamber.
+  - The dual grid electrostatic system showed the most promise due to responsiveness and absence of moving parts.
+
+  \item **Computational and Analytical Models**:
+  - Iterative computational methods evaluated ion beam deflection and system performance.
+  - Analytical comparisons revealed trade-offs in mechanical designs.
+
+  \item **Experimental Validation**:
+  - Experimental results documented thrust vectoring accuracy, providing a foundation for scalable applications in space missions.
+\end{itemize}
+
+\textbf{Relevance to RaVThOughT:}
+- The focus on precise thrust vectoring aligns directly with RaVThOughT’s emphasis on accurate local thrust orientation and maneuvering logic.
+- Analytical and experimental findings support RaVThOughT’s goal of simplifying gravitational effects through decoupled vector mathematics.
+- The scalable thrust vectoring mechanisms can inform multi-vehicle coordination strategies proposed in RaVThOughT.
+
+\textbf{Further Research Topics:}
+- Integration of thrust vectoring systems into machine learning-based guidance frameworks.
+- Exploration of dual grid systems for precise vector control in multi-vehicle coordination.
+- Scalability of thrust vectoring systems for different spacecraft propulsion needs.
+
+\textbf{Citation:} \fullcite{king1971thrust}
+
+% -----------------------------------------------------------
+\subsection{Moutet et al.: Overview of a 2D Thrust Balance}
+
+This paper introduces a novel 2D thrust balance prototype designed for precise measurements of vectorized electrical thrusters. Key contributions include:
+
+\begin{itemize}
+  \item **2D Thrust Measurement Capability**:
+  - Measures thrust vectorization on X and Z axes with a range of 13 \(\mu\text{N}\) to 10 \(\text{mN}\) and accuracy of ±50 \(\mu\text{N}\).
+
+  \item **Improved Measurement Precision**:
+  - High repeatability using counterweights, mechanical end stops, and flexure bearings.
+
+  \item **Scalable and Adaptable Design**:
+  - Future-proofed for 3D thrust balance systems.
+  - Capable of accommodating thrusters up to 3.5 kg.
+
+  \item **Applications in Electric Propulsion**:
+  - Optimizes thrust vector control and propulsion systems.
+  - Relevant for small satellites and constellations requiring precise thrust control.
+\end{itemize}
+
+\textbf{Relevance to RaVThOughT:}
+- The precision in measuring vectorized thrust aligns with RaVThOughT's emphasis on accurate thrust orientation.
+- Experimental data from such balances could validate RaVThOughT's simplified vector mathematics.
+- Potential for integrating high-precision thrust data into machine learning algorithms for guidance systems.
+
+\textbf{Further Research Topics:}
+- Thrust vector control mechanisms in spacecraft propulsion.
+- Integration of experimental thrust measurements with navigation frameworks.
+- Development of multi-dimensional thrust balances.
+
+\textbf{Citation:} \fullcite{moutet2024thrust}
+
+% -----------------------------------------------------------
+\subsection{Schaefermeyer.: Aerodynamic Thrust Vectoring for Attitude Control}
+
+This research discusses the development of a thrust vectoring mechanism for a jet engine to simulate reduced-gravity environments, such as those on extraterrestrial bodies. The study's key contributions include:
+
+\begin{itemize}
+  \item **Thrust Vectoring Mechanism Design**:
+  - Utilizes thin airfoils mounted behind the nozzle to deflect exhaust plumes for precise pitch and yaw control.
+  - Airfoil sections were optimized using XFOIL for compressible flow analysis.
+
+  \item **Reduced-Gravity Simulation**:
+  - Integrates a jet engine that offsets a fraction of Earth's gravity, enabling testing in lunar and Martian gravity analogs.
+  - Provides a platform to test autonomous landing systems and guidance algorithms.
+
+  \item **Experimental Validation**:
+  - Demonstrated stability and control through static and free-flight tests.
+  - Validated the control law with ground-based experiments.
+
+  \item **Applications to Space Exploration**:
+  - Developed for NASA's long-term vision of autonomous extraterrestrial landings.
+  - Provides a basis for future human-piloted and robotic missions requiring precise attitude control.
+\end{itemize}
+
+\textbf{Relevance to RaVThOughT:}
+This research aligns closely with the RaVThOughT framework by addressing similar challenges in thrust vector orientation and control. The use of aerodynamic surfaces to modify thrust direction complements RaVThOughT's emphasis on efficient and simplified vectorized thrust. Moreover, the study's focus on reduced-gravity simulation supports RaVThOughT's potential for extraterrestrial applications, where precise thrust vectoring is critical for maneuvering and landing.
+
+\textbf{Further Research Topics:}
+- Exploration of combining aerodynamic thrust vectoring with RaVThOughT’s left-handed coordinate system.
+- Integration of reduced-gravity experimental data into machine learning frameworks.
+- Development of control systems optimized for multi-vehicle coordination in reduced-gravity environments.
+
+\textbf{Citation:} \fullcite{schaefermeyer2011aerodynamic}
+
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
