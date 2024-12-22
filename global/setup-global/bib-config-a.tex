@@ -1,0 +1,23 @@
+% \input{\pGlobalSetup/bib-config-a.tex}
+
+% Load BibLaTeX with desired options
+\usepackage[
+    style=numeric,          % Citation style (e.g., numeric, authoryear, etc.)
+    backend=biber,          % Use biber for processing
+    sorting=nyt,            % Sort entries by Name, Year, and Title
+    maxnames=3,             % Maximum number of author names to display
+    minnames=1              % Minimum number of author names to display
+]{biblatex}
+
+% Suppress specific fields globally
+\AtEveryBibitem{%
+    \clearfield{eprint}    % Suppress eprint field
+    \clearfield{url}       % Suppress url field
+}
+
+% Configure bibliography layout and formatting
+\setlength{\bibhang}{2em}       % Hanging indent of 2em for each entry
+\setlength{\bibitemsep}{0.5em}  % Space of 0.5em between entries
+\setlength{\bibparsep}{0.2em}   % Space of 0.2em between paragraphs in an entry
+
+% Remove `\defbibenvironment` if unnecessary; use `\AtEveryBibitem` for formatting

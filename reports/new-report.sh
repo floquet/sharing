@@ -82,7 +82,7 @@ done
 new_step "Seed main-$PROJECT_NAME.tex"
 echo "Seeding initial files..."
 # Create main LaTeX file
-cat << EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
+cat << \EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
 % typeset: Pdftex
 % Afterwards compile with pdflatex > bibtex > pdflatex > pdflatex.
 % CLI: pdflatex main-$PROJECT_NAME.tex
@@ -132,8 +132,9 @@ cat << EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
 %	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
 
 %   --   --   --   --   --   --   --   --   --   -- Bibliography
-\input{\pGlobalSetup packages-global-bibliography-charlie.tex}
-\addbibresource{\pShareBibliographies/master.bib}
+\input{\pGlobalSetup bib-config-a.tex}
+\addbibresource{\pShareBibliographies/pdes.bib}
+%\addbibresource{\pShareBibliographies/fortranY.bib}
 
 %   --   --   --   --   --   --   --   --   --   -- Title, Author
 \title{$PROJECT_NAME}

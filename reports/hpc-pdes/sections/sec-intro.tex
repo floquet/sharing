@@ -17,10 +17,69 @@ While we have been witness to anecdotal discusses about the performance portabil
 % -----------------------------------------------------------
 \subsection{PDES}
 PDES references. (\cite{fujimoto1990parallel, fujimoto1993parallel, fujimoto2017parallel})
+\begin{enumerate}
+	\item Can coarrays reduce the development effort required for PDES simulations while maintaining acceptable performance?
+	\item What are the practical limitations of coarrays in handling fine-grained, event-driven communication in PDES?
+\end{enumerate}
+
 
 %%% Subsection C: Methodology
 % -----------------------------------------------------------
-\subsection{Methodology}
-This subsection describes the methodology or approach taken to address the problem and achieve the objectives.
+\subsection{Supercomputing Conference}
+The Supercomputing Conference is one of the premier venues for HPC professionals, blending cutting-edge research with practical insights. Its focus on high-performance computing, networking, storage, and analysis. The audience will expect a connection to performance, scalability, and real-world computing challenges. A paper presenting results and opening the door for research will resonate with themes of innovation and advancement. The goal is to strike a balance between the compelling issues of PDES and  coarrays balanced with an appeal toHPC applications).
 
 \endinput  % == End of Introduction Section ==
+
+Daniel, you’ve laid out an exciting and nuanced opportunity to bring together HPC, coarrays, and PDES into a cohesive and compelling narrative. I can feel the delicate balance you’re trying to strike—making a meaningful contribution without stepping into the treacherous waters of computer science debates. Let me offer some thoughts on how we can approach this.
+Key Questions to Explore
+
+    What does the PDES community value most?
+        Insight: The PDES community likely prioritizes methods that improve scalability, reduce communication overhead, and provide performance portability.
+        Question to Address: Can coarrays offer meaningful advantages in these areas compared to traditional MPI approaches? If so, in what scenarios?
+
+    What are the trade-offs of coarrays in PDES?
+        Insight: Coarrays excel in simplicity and reducing boilerplate code, but their communication model might not match the fine-grained control of MPI.
+        Question to Address: What types of PDES problems align well with coarrays, and where do they fall short?
+
+    What are your initial results?
+        Insight: A clear, honest presentation of preliminary findings (even if basic) can serve as a springboard for future collaboration.
+        Question to Address: What simple PDES methods can you implement with coarrays, and how do they compare to a baseline MPI implementation?
+
+    How does this work fit into the larger HPC landscape?
+        Insight: HPC practitioners love practical results, even if incremental. They’re less interested in theoretical perfection and more in tools that make their work easier or open new avenues.
+        Question to Address: How can your work encourage broader adoption of coarrays while respecting MPI’s legacy and utility?
+
+Paths to Explore
+
+    Create a Focused PDES Use Case:
+        Pick a simple, well-known PDES problem (e.g., epidemic spread, queuing systems, or traffic simulation).
+        Use this as a controlled experiment to demonstrate how coarrays simplify implementation compared to MPI.
+
+    Leverage Compiler Improvements:
+        Showcase the role of modern compilers in narrowing the performance gap between coarrays and hand-tuned MPI. Mention how coarrays might benefit non-expert programmers by hiding the complexity of communication.
+
+    Discuss Scalability in Broad Terms:
+        Without diving too deeply into computer science specifics, present your observations on how coarrays handle scalability (e.g., across 4, 8, or 16 nodes). Focus on practical takeaways rather than theoretical deep-dives.
+
+    Acknowledge Open Questions and Invite Collaboration:
+        Be upfront about what your work doesn’t address (e.g., highly optimized MPI implementations). Frame this as an opportunity for PDES experts to weigh in and help evolve coarrays as a tool.
+
+    Find a Unifying Vision:
+        Position coarrays as a bridge between the HPC and PDES communities—a stepping stone for researchers who want practical, efficient tools without the steep learning curve of MPI.
+        
+        Potential Questions for the Paper
+
+    Can coarrays reduce the development effort required for PDES simulations while maintaining acceptable performance?
+    What are the practical limitations of coarrays in handling fine-grained, event-driven communication in PDES?
+    How does the simplicity of coarrays impact code readability, maintainability, and portability in HPC environments?
+    What compiler features or improvements would most benefit coarray adoption for PDES?
+
+My Views
+
+Your calculus is spot-on. By aligning with HPC and coarray advocates, you can create a presentation that resonates with multiple audiences without stepping on toes. Here’s why this approach works:
+
+    Inclusivity: You’re not claiming coarrays are better than MPI or solving all PDES challenges. Instead, you’re showing how they provide an approachable entry point for scientists and engineers.
+    Pragmatism: By focusing on what worked, what didn’t, and where to go next, you avoid contentious debates and invite collaboration.
+    Vision: This work isn’t just about coarrays or PDES—it’s about fostering a community that values accessibility, simplicity, and progress in parallel computing.
+
+If you take this path, you’ll not only advance coarrays but also create a space for others to contribute, connect, and innovate. Shall we map out specific experiments or simulations to include in the paper? Or refine the narrative further?
