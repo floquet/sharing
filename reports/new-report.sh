@@ -59,6 +59,7 @@ new_step "Define subdirectories"
 SUBDIRS=(
   "local"
   "local/code"
+  "local/achates"
   "local/data"
   "local/debug"
   "local/demos"
@@ -94,7 +95,7 @@ cat << \EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
 \CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
 % Define base paths
 % relies on symlink  at $HOME, e.g.
-% 	GitHub -> /Users/dantopa//repos-xiuhcoatal/github
+% 	GitHub -> /Users/dantopa//repos-xiuhcoatl/github
 \makeatletter
 \edef\HomePath{\expandafter\zap@space\HomePath \@empty}
 \makeatother
@@ -102,7 +103,7 @@ cat << \EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
 	\newcommand{\pGithubSharing}	{\pGithub/sharing/}
 	\newcommand{\pGlobal}			{\pGithubSharing/global/}
 	\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
-	\newcommand{\pWorkspace}		{\pGithubSharing/reports/$PROJECT_NAME}
+	\newcommand{\pWorkspace}		{\pGithubSharing/reports/${PROJECT_NAME}}
 
 % Load Global Setup Files
 \input{\pGlobalSetup/setup-global-reports.tex}
@@ -133,8 +134,8 @@ cat << \EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
 
 %   --   --   --   --   --   --   --   --   --   -- Bibliography
 \input{\pGlobalSetup bib-config-a.tex}
-\addbibresource{\pShareBibliographies/pdes.bib}
-%\addbibresource{\pShareBibliographies/fortranY.bib}
+\addbibresource{\pShareBibliographies/$PROJECT_NAME.bib}
+%\addbibresource{\pShareBibliographies/alternative.bib}
 
 %   --   --   --   --   --   --   --   --   --   -- Title, Author
 \title{$PROJECT_NAME}
@@ -159,6 +160,77 @@ cat << \EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
 \printbibliography[heading=bibintoc]
 
 \end{document}
+
+%\tiny
+%\scriptsize
+%\footnotesize
+%\small
+%\normalsize
+%\large
+%\Large
+%\LARGE
+%\huge
+%\Huge
+
+%\, thin space (normally 1/6 of a quad);
+%\> medium space (normally 2/9 of a quad);
+%\; thick space (normally 5/18 of a quad);
+
+%         ---         ---         ---         ---         ---   Equations
+\begin{equation}
+  
+\label{eq:}
+\end{equation}
+%
+\begin{equation}
+\begin{split}
+  & \\
+\end{split} 
+\label{eq:}
+\end{equation}
+%
+\begin{equation*}
+  
+\end{equation*}
+%
+\begin{equation}
+\begin{array}{ccc}
+    %
+  & & \\
+    %
+  & & \\
+    %
+\end{array}
+\end{equation}
+%         ---         ---         ---         ---         ---   Tables
+\begin{table}[htp]
+\caption{default}
+\begin{center}
+\begin{tabular}{ccc}
+    %
+  & & \\
+    %
+  & & \\
+    %
+\end{tabular}
+\end{center}
+\label{tab:}
+\end{table}
+%         ---         ---         ---         ---         ---   Lists
+\begin{enumerate}
+  \item 
+  \item
+  \item
+\end{enumerate}
+%
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item 
+  \end{enumerate}
+  \item
+  \item
+\end{enumerate}
 EOF
 
 new_step "Creating abstract file"

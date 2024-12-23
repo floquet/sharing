@@ -1,4 +1,40 @@
 % \input{\pGlobalSetup/bib-config-a.tex}
+% Shared BibLaTeX Configuration for Documents and Slides
+
+% Load BibLaTeX with desired options
+\usepackage[
+    style=numeric,          % Citation style
+    backend=biber,          % Use biber for processing
+    sorting=nyt,            % Sort by Name, Year, Title
+    maxnames=3,             % Max author names to display
+    minnames=1              % Min author names to display
+]{biblatex}
+
+% Global Suppressions (applies to both Beamer and Reports)
+\AtEveryBibitem{%
+    \clearfield{eprint}    % Suppress eprint field
+    \clearfield{url}       % Suppress url field
+}
+
+% Conditional Logic for Beamer
+\ifdefined\beamer@rendering
+    % Suppress titles in Beamer for concise presentations
+    \AtEveryBibitem{\clearfield{title}}
+    \setlength{\bibhang}{1em}       % Reduce hanging indent for slides
+    \setlength{\bibitemsep}{0.2em}  % Tighten spacing between entries
+    \setlength{\bibparsep}{0.1em}   % Tighten spacing within entries
+\else
+    % Settings for Reports (non-Beamer)
+    \setlength{\bibhang}{2em}       % Standard hanging indent
+    \setlength{\bibitemsep}{0.5em}  % Space between entries
+    \setlength{\bibparsep}{0.2em}   % Space within entries
+\fi
+
+% Ensure biblatex processing
+\endinput  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+
+
+% \input{\pGlobalSetup/bib-config-a.tex}
 
 % Load BibLaTeX with desired options
 \usepackage[
@@ -21,3 +57,5 @@
 \setlength{\bibparsep}{0.2em}   % Space of 0.2em between paragraphs in an entry
 
 % Remove `\defbibenvironment` if unnecessary; use `\AtEveryBibitem` for formatting
+
+\endinput  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -

@@ -1,5 +1,48 @@
 % \input{\pGlobalSetup setup-global-beamer}
 
+% Packages used by most Beamer presentations, alphabetized for clarity.
+
+% Fancy verbatim text environment
+\usepackage{fancyvrb}
+
+% Hyperlinks and references
+\usepackage{hyperref} % Load after other packages affecting layout
+
+% Overlay graphics (Ensure graphicx is loaded before overpic for compatibility)
+\usepackage{overpic} % For annotations on images
+
+% Table row coloring and styling
+\usepackage{colortbl} % Adds row and column coloring in tables
+
+% Graphics inclusion
+\usepackage{graphicx} % Core package for image handling
+
+% Multicolumn and multirow tables
+\usepackage{multirow} % Table cells spanning multiple rows
+
+% Text positioning with overlays
+\usepackage[ overlay, absolute ]{textpos} % Absolute text block positioning
+
+% TikZ for diagrams and graphics
+\usepackage{tikz}
+	\usetikzlibrary{arrows.meta} % Modern arrow styles
+	\usetikzlibrary{arrows} % Legacy arrow styles (optional)
+	\usetikzlibrary{shapes.geometric} % Geometric shapes for diagrams
+	\usetikzlibrary{positioning} % Simplifies relative positioning
+	\usetikzlibrary{decorations.pathmorphing} % Custom path decorations
+
+% Pass options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor} % Extended color names
+
+% Font configuration for consistency
+% \usepackage{lmodern} % Modern font
+% \renewcommand{\familydefault}{\sfdefault} % Use sans-serif by default
+
+
+\endinput  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+
+% \input{\pGlobalSetup setup-global-beamer}
+
 % packages used by most briefings
 \usepackage{fancyvrb}
 \usepackage{hyperref}

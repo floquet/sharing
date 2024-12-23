@@ -1,0 +1,21 @@
+shared/
+├── bibliographies/
+│   ├── bib-config-a.tex       # Central BibLaTeX configuration
+│   ├── example-references.bib # Shared bibliography file
+│   ├── specialized.bib        # Subject-specific bibliography
+├── graphics/
+│   ├── logos/                 # Logos for Beamer/Reports
+│   │   ├── university.png
+│   │   ├── afrl-logo.png
+│   │   └── hii-logo.png
+│   └── figures/               # Shared figures
+├── setups/
+│   ├── setup-global-beamer.tex    # Beamer-specific setups
+│   ├── setup-global-reports.tex   # Report-specific setups
+│   ├── aesthetics.tex             # Shared aesthetics
+│   ├── macros-global.tex          # Global macros
+│   ├── hyperlinks-global.tex      # Shared hyperlink setup
+│   └── paths-global.tex           # Path configurations
+└── templates/
+    ├── beamer-template.tex        # Beamer template
+    └── report-template.tex        # Report template

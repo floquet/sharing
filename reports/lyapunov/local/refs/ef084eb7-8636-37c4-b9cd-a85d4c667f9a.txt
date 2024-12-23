@@ -1,0 +1,14 @@
+@article{ef084eb7-8636-37c4-b9cd-a85d4c667f9a,
+ ISSN = {00911798, 2168894X},
+ URL = {http://www.jstor.org/stable/2959558},
+ abstract = {We give several examples and examine case studies of linear stochastic functional differential equations. The examples fall into two broad classes: regular and singular, according to whether an underlying stochastic semiflow exists or not. In the singular case, we obtain upper and lower bounds on the maximal exponential growth rate λ̄1(σ) of the trajectories expressed in terms of the noise variance σ. Roughly speaking we show that for small σ, λ̄1(σ) behaves like -σ2/2, while for large σ, it grows like log σ. In the regular case, it is shown that a discrete Oseledec spectrum exists, and upper estimates on the top exponent λ1 are provided. These estimates are sharp in the sense that they reduce to known estimates in the deterministic or nondelay cases.},
+ author = {Salah-Eldin A. Mohammed and Michael K. R. Scheutzow},
+ journal = {The Annals of Probability},
+ number = {3},
+ pages = {1210--1240},
+ publisher = {Institute of Mathematical Statistics},
+ title = {Lyapunov Exponents of Linear Stochastic Functional Differential Equations. Part II. Examples and Case Studies},
+ urldate = {2024-12-22},
+ volume = {25},
+ year = {1997}
+}

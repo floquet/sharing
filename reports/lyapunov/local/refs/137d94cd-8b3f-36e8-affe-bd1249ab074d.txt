@@ -1,0 +1,14 @@
+@article{137d94cd-8b3f-36e8-affe-bd1249ab074d,
+ ISSN = {00029939, 10886826},
+ URL = {http://www.jstor.org/stable/2038601},
+ abstract = {It has been proved that the use of a vector Lyapunov function is more advantageous in certain situations rather than a scalar function. Moreover, each function needs to satisfy less rigid requirements. In this paper a new situation has been considered where vector Lyapunov functions play a further useful role. For this purpose, a new type of stability, namely, strict partial stability has been defined. The principal tool employed is the second method of Lyapunov and a comparison theorem of a more general type.},
+ author = {S. G. Deo},
+ journal = {Proceedings of the American Mathematical Society},
+ number = {3},
+ pages = {575--580},
+ publisher = {American Mathematical Society},
+ title = {On Vector Lyapunov Functions},
+ urldate = {2024-12-22},
+ volume = {29},
+ year = {1971}
+}

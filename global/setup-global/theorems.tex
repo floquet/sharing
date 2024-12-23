@@ -1,36 +1,49 @@
-% ===========================================================
-% Theorem Environments (theorems.tex)
-% This file defines theorem styles and environments for the document.
-% Include it in your main file with:
-% \input{\pGlobalSetup theorems.tex}
-% ===========================================================
+% \input{\pGlobalSetup/theorems.tex}
 
-% Load AMS packages for mathematical environments
-% Required for theorem environments
-\usepackage{amsmath, amssymb, amsthm}
+% File: theorems.tex
+% Purpose: Unified theorem configuration for documents and presentations.
+% Author: Achates, with guidance from Daniel Topa
+% Sun Dec 22 21:33:42 MST 2024
 
-% Define theorem styles
-\theoremstyle{plain} % Default style for theorems
-\newtheorem{theorem}{Theorem}
-\newtheorem{proposition}[theorem]{Proposition}
+% Ensure compatibility with amsthm package
+\usepackage{amsthm}
+
+% Define global theorem styles
+% In Section 2, the numbering restarts, e.g., 2.1, 2.2.
+% Environments like lemma and corollary share numbering with theorem because of [theorem].
+\theoremstyle{plain} % Default style
+\newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
 
-\theoremstyle{definition} % Style for definitions
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{example}[theorem]{Example}
+% Definition style
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}[definition]{Example}
 
-\theoremstyle{remark} % Style for remarks
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem{note}[theorem]{Note}
+% Remark style
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
 
-% Usage Examples:
-% \begin{theorem}[Pythagoras' Theorem]
-% For a right triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides.
+% Beamer-specific customization
+\ifdefined\beamer@rendering
+    % Customizations for splitting theorems in Beamer
+    \newcommand*{\theorembreak}{%
+        \usebeamertemplate{theorem end}%
+        \framebreak%
+        \usebeamertemplate{theorem begin}%
+    }
+\else
+    % No-op for non-Beamer documents
+    \newcommand*{\theorembreak}{}
+\fi
+
+% Usage:
+% In Beamer, use \theorembreak to split a theorem across frames:
+% \begin{theorem}
+% This theorem spans multiple frames.
+% \theorembreak
+% Here is the continuation of the theorem.
 % \end{theorem}
-%
-% \begin{definition}[Group]
-% A group is a set G with a binary operation * satisfying associativity, identity, and invertibility.
-% \end{definition}
 
-\endinput  % Prevent unintended content from being included
+\endinput  %  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -

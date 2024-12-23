@@ -1,0 +1,36 @@
+% ===========================================================
+% Theorem Environments (theorems.tex)
+% This file defines theorem styles and environments for the document.
+% Include it in your main file with:
+% \input{\pGlobalSetup theorems.tex}
+% ===========================================================
+
+% Load AMS packages for mathematical environments
+% Required for theorem environments
+\usepackage{amsmath, amssymb, amsthm}
+
+% Define theorem styles
+\theoremstyle{plain} % Default style for theorems
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition} % Style for definitions
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark} % Style for remarks
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
+
+% Usage Examples:
+% \begin{theorem}[Pythagoras' Theorem]
+% For a right triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides.
+% \end{theorem}
+%
+% \begin{definition}[Group]
+% A group is a set G with a binary operation * satisfying associativity, identity, and invertibility.
+% \end{definition}
+
+\endinput  % Prevent unintended content from being included

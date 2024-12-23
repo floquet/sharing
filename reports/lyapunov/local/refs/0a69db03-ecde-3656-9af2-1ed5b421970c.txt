@@ -1,0 +1,14 @@
+@article{0a69db03-ecde-3656-9af2-1ed5b421970c,
+ ISSN = {00361429},
+ URL = {http://www.jstor.org/stable/4100967},
+ abstract = {Different definitions of spectra have been proposed over the years to characterize the asymptotic behavior of nonautonomous linear systems. Here, we consider the spectrum based on exponential dichotomy of Sacker and Sell [J. Differential Equations, 7 (1978), pp. 320-358] and the spectrum defined in terms of upper and lower Lyapunov exponents. A main goal of ours is to understand to what extent these spectra are computable. By using an orthogonal change of variables transforming the system to upper triangular form, and the assumption of integral separation for the diagonal of the new triangular system, we justify how popular numerical methods, the so-called continuous QR and SVD approaches, can be used to approximate these spectra. We further discuss how to verify the property of integral separation, and hence how to a posteriori infer stability of the attained spectral information. Finally, we discuss the algorithms we have used to approximate the Lyapunov and Sacker-Sell spectra and present some numerical results.},
+ author = {Luca Dieci and Erik S. Van Vleck},
+ journal = {SIAM Journal on Numerical Analysis},
+ number = {2},
+ pages = {516--542},
+ publisher = {Society for Industrial and Applied Mathematics},
+ title = {Lyapunov Spectral Intervals: Theory and Computation},
+ urldate = {2024-12-22},
+ volume = {40},
+ year = {2003}
+}

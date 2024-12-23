@@ -1,0 +1,120 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2820
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww27920\viewh13400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \\documentclass[10pt,a4paper]\{article\}\
+\\usepackage\{amsmath\}\
+\\usepackage\{amsfonts\}\
+\\usepackage\{amssymb\}\
+\\usepackage\{graphicx\}\
+\\usepackage\{hyperref\}\
+\\usepackage\{geometry\}\
+\\geometry\{margin=1in\}\
+\
+\\title\{Intercept Course Analysis in 3D Space\}\
+\\author\{Daniel Topa\}\
+\\date\{\\today\}\
+\
+\\begin\{document\}\
+\
+\\maketitle\
+\
+\\section*\{Abstract\}\
+This document analyzes the intercept course for two particles moving in three-dimensional space. Particle A starts at position \\(\\mathbf\{P\}_a\\) with velocity \\(\\mathbf\{V\}_a\\), while Particle B starts at position \\(\\mathbf\{P\}_b\\) with a speed \\(f|\\mathbf\{V\}_a|\\), where \\(f > 1\\). The intercept time, position, and trajectory are derived.\
+\
+\\section\{Problem Formulation\}\
+\
+\\subsection\{Particle Properties\}\
+\\begin\{itemize\}\
+    \\item \\textbf\{Particle A:\}\
+    \\begin\{itemize\}\
+        \\item Position: \\(\\mathbf\{P\}_a = (x_a, y_a, z_a)\\)\
+        \\item Velocity: \\(\\mathbf\{V\}_a = (v_\{ax\}, v_\{ay\}, v_\{az\})\\)\
+    \\end\{itemize\}\
+    \\item \\textbf\{Particle B:\}\
+    \\begin\{itemize\}\
+        \\item Position: \\(\\mathbf\{P\}_b = (x_b, y_b, z_b)\\)\
+        \\item Velocity: \\(\\mathbf\{V\}_b = f |\\mathbf\{V\}_a| \\cdot \\hat\{\\mathbf\{d\}\}\\), where \\(\\hat\{\\mathbf\{d\}\}\\) is the unit vector toward the intercept point.\
+    \\end\{itemize\}\
+\\end\{itemize\}\
+\
+\\subsection\{Intercept Condition\}\
+For the particles to meet, their positions must coincide at some time \\(t\\):\
+\\begin\{equation\}\
+    \\mathbf\{P\}_a + t \\cdot \\mathbf\{V\}_a = \\mathbf\{P\}_b + t \\cdot \\mathbf\{V\}_b.\
+\\end\{equation\}\
+Expanding \\(\\mathbf\{V\}_b\\):\
+\\begin\{equation\}\
+    \\mathbf\{P\}_a + t \\cdot \\mathbf\{V\}_a = \\mathbf\{P\}_b + t \\cdot f |\\mathbf\{V\}_a| \\cdot \\hat\{\\mathbf\{d\}\}.\
+\\end\{equation\}\
+Rearranging:\
+\\begin\{equation\}\
+    \\mathbf\{P\}_a - \\mathbf\{P\}_b = t \\cdot \\left(f |\\mathbf\{V\}_a| \\cdot \\hat\{\\mathbf\{d\}\} - \\mathbf\{V\}_a\\right).\
+\\end\{equation\}\
+\
+\\subsection\{Unit Vector \\(\\hat\{\\mathbf\{d\}\}\\)\}\
+The direction of \\(\\hat\{\\mathbf\{d\}\}\\) is determined by the relative position \\(\\mathbf\{R\}\\) and time \\(t\\):\
+\\begin\{equation\}\
+    \\hat\{\\mathbf\{d\}\} = \\frac\{\\mathbf\{R\} + t \\cdot \\mathbf\{V\}_a\}\{|\\mathbf\{R\} + t \\cdot \\mathbf\{V\}_a|\}, \\quad \\text\{where \} \\mathbf\{R\} = \\mathbf\{P\}_b - \\mathbf\{P\}_a.\
+\\end\{equation\}\
+\
+\\subsection\{Nonlinear Equation for \\(t\\)\}\
+Substituting \\(\\hat\{\\mathbf\{d\}\}\\) into the intercept condition gives:\
+\\begin\{equation\}\
+    \\mathbf\{R\} = t \\cdot \\left(f |\\mathbf\{V\}_a| \\cdot \\frac\{\\mathbf\{R\} + t \\cdot \\mathbf\{V\}_a\}\{|\\mathbf\{R\} + t \\cdot \\mathbf\{V\}_a|\} - \\mathbf\{V\}_a\\right).\
+\\end\{equation\}\
+This equation is nonlinear and requires numerical methods to solve for \\(t\\).\
+\
+\\section\{Numerical Solution\}\
+\
+\\subsection\{Procedure\}\
+1. Define the initial positions \\(\\mathbf\{P\}_a\\) and \\(\\mathbf\{P\}_b\\), and velocity \\(\\mathbf\{V\}_a\\).\
+2. Compute the relative position \\(\\mathbf\{R\} = \\mathbf\{P\}_b - \\mathbf\{P\}_a\\).\
+3. Use a numerical root-finding method (e.g., Newton's method) to solve for \\(t\\).\
+4. Compute the intercept point:\
+\\begin\{equation\}\
+    \\mathbf\{P\}_i = \\mathbf\{P\}_a + t \\cdot \\mathbf\{V\}_a.\
+\\end\{equation\}\
+5. Determine the direction of \\(\\mathbf\{V\}_b\\):\
+\\begin\{equation\}\
+    \\mathbf\{V\}_b = f |\\mathbf\{V\}_a| \\cdot \\hat\{\\mathbf\{d\}\}.\
+\\end\{equation\}\
+\
+\\subsection\{Python Code\}\
+Below is a Python script to compute the intercept time and position numerically:\
+\\begin\{verbatim\}\
+import numpy as np\
+from scipy.optimize import fsolve\
+\
+# Inputs\
+P_a = np.array([0, 0, 0])   # Position of Particle A\
+V_a = np.array([1, 1, 0])   # Velocity of Particle A\
+P_b = np.array([10, 0, 0])  # Position of Particle B\
+f = 1.2                     # Speed multiplier for Particle B\
+\
+# Relative position\
+R = P_b - P_a\
+\
+# Function to solve\
+def intercept_time(t):\
+    direction = (R + t * V_a) / np.linalg.norm(R + t * V_a)\
+    return np.linalg.norm(R - t * (f * np.linalg.norm(V_a) * direction - V_a))\
+\
+# Solve for t\
+t_intercept = fsolve(intercept_time, 1.0)[0]\
+\
+# Intercept point\
+P_intercept = P_a + t_intercept * V_a\
+\
+print("Intercept Time:", t_intercept)\
+print("Intercept Point:", P_intercept)\
+\\end\{verbatim\}\
+\
+\\section\{Conclusion\}\
+The intercept course and time can be computed by solving a nonlinear equation numerically. The derived equations and Python implementation provide a practical method to determine these values in 3D space.\
+\
+\\end\{document\}\
+}

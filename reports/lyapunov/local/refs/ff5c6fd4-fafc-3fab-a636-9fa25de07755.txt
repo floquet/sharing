@@ -1,0 +1,14 @@
+@article{ff5c6fd4-fafc-3fab-a636-9fa25de07755,
+ ISSN = {00361429},
+ URL = {http://www.jstor.org/stable/2158160},
+ abstract = {This paper considers several methods for calculating low-rank approximate solutions to large-scale Lyapunov equations of the form AP + PA' + BB' = 0. The interest in this problem stems from model reduction where the task is to approximate high-dimensional models by ones of lower order. The two recently developed Krylov subspace methods exploited in this paper are the Arnoldi method [Saad, Math. Comput., 37 (1981), pp. 105-126] and the Generalised Minimum Residual method (GMRES) [Saad and Schultz, SIAM J. Sci. Statist. Comput., 7 (1986), pp. 856-869]. Exact expressions for the approximation errors incurred are derived in both cases. The numerical solution of the low-dimensional linear matrix equation arising from the GMRES method is discussed and an algorithm for its solution is proposed. Low rank solutions of discrete time Lyapunov equations and continuous time algebraic Riccati equations are also considered. Throughout this paper, the authors tackle problems in which B has more than one column with the use of block Krylov schemes.},
+ author = {Imad M. Jaimoukha and Ebrahim M. Kasenally},
+ journal = {SIAM Journal on Numerical Analysis},
+ number = {1},
+ pages = {227--251},
+ publisher = {Society for Industrial and Applied Mathematics},
+ title = {Krylov Subspace Methods for Solving Large Lyapunov Equations},
+ urldate = {2024-12-22},
+ volume = {31},
+ year = {1994}
+}

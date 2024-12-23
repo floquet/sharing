@@ -1,0 +1,299 @@
+% \input{\pSections/sec-literature.tex}
+
+\section{Literature Evaluation}
+
+\subsection{Andrievsky et al.: Modeling and Control of Satellite Formations: A Survey}
+
+This survey paper offers a comprehensive overview of the modeling and control of satellite formations, addressing challenges in autonomous coordination and control within distributed spacecraft systems. Key contributions include:
+
+\begin{itemize}
+  \item \textbf{Architectural Classification}: The paper categorizes formation control architectures into three types:
+  \begin{enumerate}
+    \item Multiple-input–multiple-output (MIMO) systems, treating formations as single entities.
+    \item Leader–follower configurations with hierarchical control.
+    \item Virtual structure formations, modeling spacecraft as rigid bodies within a shared virtual framework.
+  \end{enumerate}
+
+  \item \textbf{Decentralized Control Strategies}: The survey highlights techniques for reducing inter-satellite communication overhead and improving robustness in dynamic environments, including graph-theoretic methods for network design.
+
+  \item \textbf{Advanced Applications}: Examples include Earth observation missions (e.g., CloudCT), gravitational wave detection (e.g., LISA), and autonomous collision avoidance maneuvers for small satellite constellations.
+\end{itemize}
+
+\textbf{Relevance to RaVThOughT:}
+- The RaVThOughT framework’s focus on efficient multi-vehicle coordination aligns with decentralized control methods and hierarchical formations discussed in the paper.
+- Techniques such as Hill–Clohessy–Wiltshire (HCW) equations and sliding mode control provide insights into scalable, precise navigation for RaVThOughT-enabled missions.
+- Advanced error detection and collision avoidance strategies complement RaVThOughT’s emphasis on reliable, simplified guidance in dynamic multi-satellite systems.
+
+\textbf{Further Research Topics:}
+- Integration of RaVThOughT with decentralized filtering for state estimation in satellite formations.
+- Application of virtual structure control to multi-vehicle RaVThOughT deployments.
+- Exploration of consensus algorithms for aligning RaVThOughT mission parameters across spacecraft.
+
+\textbf{Citation:}
+B. Andrievsky, A. M. Popov, I. Kostin, and J. Fadeeva. \textit{Modeling and Control of Satellite Formations: A Survey}. Automation, 2022, Vol. 3, pp. 511–544. DOI: \href{https://doi.org/10.3390/automation3030026}{10.3390/automation3030026}.
+
+\subsection{Crocker \& Swanson: Synchronous Satellite Stationkeeping Simulation}
+
+This technical note, published in May 1968 by Lincoln Laboratory, explores the simulation of east-west stationkeeping for synchronous satellites. The authors developed a program to analyze various thrust strategies, including:
+
+\begin{itemize}
+    \item \textbf{Rocket Motor and Solar Sail Implementation:}
+    - Evaluated solar sails with three designs (Type I, II, III), emphasizing their adaptability and efficiency for stationkeeping.
+    - Discussed automatic stationkeeping strategies like unidirectional and bidirectional firing.
+    
+    \item \textbf{Perturbation Analysis:}
+    - Addressed perturbations from the sun, moon, and Earth's gravitational potential.
+    - Identified equilibrium points for stable stationkeeping without active thrust.
+
+    \item \textbf{Error Analysis:}
+    - Simulated the influence of sensor inaccuracies and clock errors on stationkeeping performance.
+    - Provided insights into bidirectional thrusting schemes, highlighting their applicability for solar sailing.
+
+    \item \textbf{Program Simulation Results:}
+    - Demonstrated stationkeeping feasibility with detailed numerical examples.
+    - Evaluated unidirectional and bidirectional thrusting for reducing fuel consumption and improving accuracy.
+\end{itemize}
+
+\textbf{Relevance to RaVThOughT:} The study aligns closely with the RaVThOughT framework's emphasis on precise vectorized thrusting. The detailed mathematical treatment of perturbations and thrusting logic complements the analytical methods employed in RaVThOughT. Additionally, the program’s capacity to simulate sensor and clock errors parallels the importance of robust error handling in RaVThOughT's navigation framework.
+
+\textbf{Further Research Topics:}
+\begin{itemize}
+    \item Integration of solar sails into modern guidance systems.
+    \item Application of RaVThOughT principles to long-term stationkeeping in geostationary orbits.
+    \item Exploration of sensor error mitigation in autonomous spacecraft navigation.
+\end{itemize}
+
+\textbf{Citation:} \fullcite{crocker1968stationkeeping}
+
+\subsection{Deere: Fluidic Thrust Vectoring for Aircraft and Spacecraft Applications by NASA Langley Research Center}
+
+This report explores fluidic thrust vectoring systems, which manipulate exhaust flows to achieve vector control without moving mechanical parts. Three primary methods—shock vector control, throat shifting, and counterflow—are evaluated for their aerodynamic efficiency, reduced weight, and stealth advantages. Key contributions include:
+
+\begin{itemize}
+  \item \textit{Shock Vector Control}:
+  - Uses secondary air injection to create asymmetric shockwaves, redirecting the primary exhaust flow.
+  - Demonstrated potential for high-speed applications with minimal aerodynamic losses.
+
+  \item \textit{Throat Shifting}:
+  - Adjusts the nozzle throat geometry using injected fluid flows, dynamically altering the direction of thrust.
+  - Offers significant control flexibility with a reduced mechanical footprint.
+
+  \item \textit{Counterflow Techniques}:
+  - Introduces opposing jets into the primary exhaust flow to achieve vector redirection.
+  - Effective for precision adjustments in low-speed and low-thrust scenarios.
+\end{itemize}
+
+\textbf{Relevance to RaVThOughT:}
+- Fluidic thrust vectoring aligns with RaVThOughT's emphasis on simplified and efficient thrust control mechanisms, particularly for short-duration maneuvers.
+- The reduced mechanical complexity of fluidic systems complements RaVThOughT’s goal of minimizing computational and structural overhead.
+- Precision in vector control directly supports the navigation framework's reliance on accurate local maneuvering and simplified vector mathematics.
+
+\textbf{Further Research Topics:}
+- Integration of fluidic vectoring techniques with RaVThOughT's left-handed coordinate system.
+- Exploration of fluidic thrust vectoring for multi-vehicle formation flying and constellation management.
+- Development of hybrid approaches combining fluidic and traditional thrust vectoring for extraterrestrial navigation.
+
+\textbf{Citation:} \fullcite{deere2003summary}
+
+\subsection{Farquhar: The Control and Use of Libration-Point Satellites}
+
+This report by Robert W. Farquhar investigates satellite station-keeping and control strategies in the vicinity of libration points, focusing on the collinear points L1 and L2. It offers a detailed analysis of the translation-control problem, including the development of linear feedback control laws and stability conditions for both constant and periodic coefficient systems.
+
+\textbf{Key Contributions:}
+\begin{itemize}
+    \item \textbf{Linear Feedback Control:} Simple control laws that guarantee stability using only range and range-rate measurements, minimizing station-keeping costs.
+    \item \textbf{Solar-Sail Control:} A novel approach to stabilize satellite positions using varying solar-sail forces.
+    \item \textbf{Station-Keeping Costs:} Analytical estimates of costs as functions of measurement noise, enabling cost-efficient control designs.
+    \item \textbf{Limit-Cycle Analysis:} Exploration of on-off control systems and their stability, including closed-form solutions for special cases.
+    \item \textbf{Applications:} Proposed uses include lunar far-side communications, interplanetary transportation systems, deep-space optical communication, and low-frequency radio astronomy.
+\end{itemize}
+
+\textbf{Relevance to RaVThOughT:}
+- The analytical framework for satellite control complements RaVThOughT’s focus on simplified maneuvering and stability.
+- Solar-sail techniques align with RaVThOughT’s potential applications for spacecraft coordination and propulsion.
+- The limit-cycle analysis provides insights into control systems that could be integrated into RaVThOughT's design.
+
+\textbf{Citation:}\fullcite{farquhar1968libration}
+
+\subsection{Hunter \& Deere: Computational Investigation of Fluidic Counterflow Thrust Vectoring}
+
+This study explores the computational investigation of fluidic counterflow thrust vectoring using Computational Fluid Dynamics (CFD) methods. The research focused on countercurrent shear layer dynamics and their role in efficient thrust vectoring for aerospace applications. Key findings include:
+
+\begin{itemize}
+  \item \textbf{Efficiency of Counterflow Thrust Vectoring}:
+  - Demonstrated thrust vectoring with less than 1\% of the primary flow used as secondary suction.
+  - Highlighted minimal thrust efficiency penalties (under 1.5\%).
+
+  \item \textbf{Shear Layer Dynamics}:
+  - Observed countercurrent shear layers transitioning to absolute instability, enhancing mixing and vectoring efficiency.
+  - Revealed detailed interactions between secondary suction and primary flow dynamics.
+
+  \item \textbf{Computational and Experimental Validation}:
+  - Results from CFD simulations closely matched experimental data, validating the proposed thrust vectoring mechanisms.
+  - Noted discrepancies in jet attachment behavior between computational and experimental setups.
+\end{itemize}
+
+\textbf{Relevance to RaVThOughT:}
+This research aligns with the RaVThOughT framework by providing insights into precision thrust vectoring mechanisms that can be leveraged for local maneuvering in spacecraft navigation. The study’s emphasis on reducing flow complexity and maintaining control efficiency resonates with RaVThOughT’s focus on simplifying guidance algorithms while preserving physical fidelity. Key elements such as countercurrent shear layer dynamics could inspire extensions of RaVThOughT for fluidic propulsion scenarios.
+
+\textbf{Further Research Topics:}
+\begin{itemize}
+  \item Integration of counterflow thrust vectoring dynamics into machine learning models for spacecraft guidance.
+  \item Exploration of secondary suction systems for precision control in multi-vehicle coordination under RaVThOughT.
+  \item Comparative studies on fluidic and mechanical thrust vectoring systems for spacecraft propulsion.
+\end{itemize}
+
+\textbf{Citation:} \fullcite{hunter1999counterflow}
+
+\subsection{King et al.: Thrust Vectoring Systems}
+
+This report provides an in-depth exploration of thrust vectoring techniques for a 5 cm mercury bombardment ion thruster, with key findings in vector control precision and scalability. Key contributions include:
+
+\begin{itemize}
+  \item \textit{Evaluation of Thrust Vectoring Systems}:
+  - Three systems were analyzed: dual grid electrostatic, movable screen electrode, and vectorable discharge chamber.
+  - The dual grid electrostatic system showed the most promise due to responsiveness and absence of moving parts.
+
+  \item \textit{Computational and Analytical Models}:
+  - Iterative computational methods evaluated ion beam deflection and system performance.
+  - Analytical comparisons revealed trade-offs in mechanical designs.
+
+  \item \textit{Experimental Validation}:
+  - Experimental results documented thrust vectoring accuracy, providing a foundation for scalable applications in space missions.
+\end{itemize}
+
+\textbf{Relevance to RaVThOughT:}
+- The focus on precise thrust vectoring aligns directly with RaVThOughT’s emphasis on accurate local thrust orientation and maneuvering logic.
+- Analytical and experimental findings support RaVThOughT’s goal of simplifying gravitational effects through decoupled vector mathematics.
+- The scalable thrust vectoring mechanisms can inform multi-vehicle coordination strategies proposed in RaVThOughT.
+
+\textbf{Further Research Topics:}
+- Integration of thrust vectoring systems into machine learning-based guidance frameworks.
+- Exploration of dual grid systems for precise vector control in multi-vehicle coordination.
+- Scalability of thrust vectoring systems for different spacecraft propulsion needs.
+
+\textbf{Citation:} \fullcite{king1971thrust}
+
+\subsection{Synchronous Satellite Stationkeeping Simulation by M. C. Crocker and E. H. Swenson}
+\subsection{Mand{\i} \& Salamc{\i}:Design of Low-Thrust Control in Station Keeping Maneuver}
+
+This paper explores station-keeping maneuvers for geostationary satellites using low-thrust electric propulsion systems. The authors model satellite dynamics relative to a virtual leader satellite, employing Clohessy-Wiltshire (CW) equations for relative motion and applying a Linear Quadratic Regulator (LQR) framework for optimal control.
+
+\textbf{Key Contributions:}
+\begin{itemize}
+  \item \textbf{Modeling Satellite Dynamics:} Relative motion is modeled using CW equations, treating the real satellite as a "chaser" and the virtual satellite as a "leader."
+  \item \textbf{Control Framework:} An LQR controller minimizes maneuver duration and reduces relative distance errors, ensuring compliance with ITU-defined station-keeping boundaries.
+  \item \textbf{Incorporation of Disturbances:} 
+  - Effects of Earth's gravitational irregularities (e.g., \( J_2 \) perturbations) and solar radiation pressure are integrated.
+  - External forces, such as third-body perturbations from the sun and moon, are considered.
+  \item \textbf{Simulation Results:} 
+  - Achieved a relative distance reduction from 0.4 km to 4.7 meters within 141.6 hours using low-thrust ion propulsion.
+  - Total propellant usage during station-keeping was estimated at 7.5e-04 kg.
+\end{itemize}
+
+\textbf{Relevance to RaVThOughT:}
+- The study aligns with RaVThOughT's emphasis on precision control and simplified navigation through relative motion frameworks.
+- The LQR-based control mechanism complements RaVThOughT's local maneuvering logic by offering robust optimization techniques.
+- The integration of disturbance effects, including solar radiation and \( J_2 \) perturbations, provides a comprehensive model that can enhance RaVThOughT’s gravitational rectification framework.
+
+\textbf{Further Research Topics:}
+\begin{itemize}
+  \item Application of RaVThOughT's simplified framework to geostationary station-keeping maneuvers.
+  \item Integration of relative motion models with machine learning for adaptive control.
+  \item Exploration of low-thrust propulsion in multi-vehicle coordination under RaVThOughT.
+\end{itemize}
+
+\textbf{Citation:} \fullcite{mandidesign}
+
+\subsection{Moutet et al.: Overview of a 2D Thrust Balance}
+
+This paper introduces a novel 2D thrust balance prototype designed for precise measurements of vectorized electrical thrusters. Key contributions include:
+
+\begin{itemize}
+  \item \textit{2D Thrust Measurement Capability}:
+  - Measures thrust vectorization on X and Z axes with a range of 13 \(\mu\text{N}\) to 10 \(\text{mN}\) and accuracy of ±50 \(\mu\text{N}\).
+
+  \item \textit{Improved Measurement Precision}:
+  - High repeatability using counterweights, mechanical end stops, and flexure bearings.
+
+  \item \textit{Scalable and Adaptable Design}:
+  - Future-proofed for 3D thrust balance systems.
+  - Capable of accommodating thrusters up to 3.5 kg.
+
+  \item \textit{Applications in Electric Propulsion}:
+  - Optimizes thrust vector control and propulsion systems.
+  - Relevant for small satellites and constellations requiring precise thrust control.
+\end{itemize}
+
+\textbf{Relevance to RaVThOughT:}
+- The precision in measuring vectorized thrust aligns with RaVThOughT's emphasis on accurate thrust orientation.
+- Experimental data from such balances could validate RaVThOughT's simplified vector mathematics.
+- Potential for integrating high-precision thrust data into machine learning algorithms for guidance systems.
+
+\textbf{Further Research Topics:}
+- Thrust vector control mechanisms in spacecraft propulsion.
+- Integration of experimental thrust measurements with navigation frameworks.
+- Development of multi-dimensional thrust balances.
+
+\textbf{Citation:} \fullcite{moutet2024thrust}
+
+\subsection{Schaefermeyer.: Aerodynamic Thrust Vectoring for Attitude Control}
+
+This research discusses the development of a thrust vectoring mechanism for a jet engine to simulate reduced-gravity environments, such as those on extraterrestrial bodies. The study's key contributions include:
+
+\begin{itemize}
+  \item \textit{Thrust Vectoring Mechanism Design}:
+  - Utilizes thin airfoils mounted behind the nozzle to deflect exhaust plumes for precise pitch and yaw control.
+  - Airfoil sections were optimized using XFOIL for compressible flow analysis.
+
+  \item \textit{Reduced-Gravity Simulation}:
+  - Integrates a jet engine that offsets a fraction of Earth's gravity, enabling testing in lunar and Martian gravity analogs.
+  - Provides a platform to test autonomous landing systems and guidance algorithms.
+
+  \item \textit{Experimental Validation}:
+  - Demonstrated stability and control through static and free-flight tests.
+  - Validated the control law with ground-based experiments.
+
+  \item \textit{Applications to Space Exploration}:
+  - Developed for NASA's long-term vision of autonomous extraterrestrial landings.
+  - Provides a basis for future human-piloted and robotic missions requiring precise attitude control.
+\end{itemize}
+
+\textbf{Relevance to RaVThOughT:}
+This research aligns closely with the RaVThOughT framework by addressing similar challenges in thrust vector orientation and control. The use of aerodynamic surfaces to modify thrust direction complements RaVThOughT's emphasis on efficient and simplified vectorized thrust. Moreover, the study's focus on reduced-gravity simulation supports RaVThOughT's potential for extraterrestrial applications, where precise thrust vectoring is critical for maneuvering and landing.
+
+\textbf{Further Research Topics:}
+- Exploration of combining aerodynamic thrust vectoring with RaVThOughT’s left-handed coordinate system.
+- Integration of reduced-gravity experimental data into machine learning frameworks.
+- Development of control systems optimized for multi-vehicle coordination in reduced-gravity environments.
+
+\textbf{Citation:} \fullcite{schaefermeyer2011aerodynamic}
+
+\subsection{Wu, Kim \& Kim: Numerical Study of Fluidic Thrust Vector Control using Dual Throat Nozzle}
+
+This study examines fluidic thrust vector control (FTVC) techniques utilizing dual throat nozzles for supersonic and hypersonic applications, emphasizing their ability to handle precise vector control in rectangular nozzle geometries. Computational methods using Reynolds-Averaged Navier-Stokes (RANS) equations and the k-omega turbulence model provided insights into the aerodynamic characteristics of dual throat nozzles.
+
+\begin{itemize}
+  \item \textit{Aerodynamic Characterization}:
+  - Thorough analysis of shock wave interactions and vortex formations within dual throat nozzles.
+  - Insights into the relationship between nozzle pressure ratio (NPR), injection-to-mainstream momentum flux ratio, and thrust efficiency.
+
+  \item \textit{Impact of Geometric Parameters}:
+  - Detailed evaluation of divergence/convergence angles and injection setup angles.
+  - Identified optimal setup angles (\( \lambda = 150^\circ \)) and injection parameters for achieving maximum thrust efficiency.
+
+  \item \textit{Comprehensive Performance Metrics}:
+  - Introduced metrics for systemic thrust ratio and thrust efficiency under varying flow conditions.
+\end{itemize}
+
+\textbf{Relevance to RaVThOughT:}
+This study complements the RaVThOughT framework by offering experimental and computational validation of thrust vector control mechanisms. The emphasis on fluidic control systems aligns with RaVThOughT's goal of reducing computational overhead while maintaining precision and efficiency. The dual throat nozzle’s controllability offers practical insights for adapting vectorized thrust orientation in RaVThOughT’s local maneuvering paradigms.
+
+\textbf{Further Research Topics:}
+- Application of dual throat nozzles in multi-vehicle coordination under RaVThOughT.
+- Integration of fluidic control dynamics with machine learning models for predictive thrust control.
+- Comparative studies on the effectiveness of dual throat nozzles vs. traditional thrust vectoring methods.
+
+\textbf{Citation:} \fullcite{wu2021fluidic}
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

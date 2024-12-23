@@ -1,0 +1,13 @@
+@article{d97d37d3-2e83-3f90-9160-d9af1427ba68,
+ ISSN = {00029890, 19300972},
+ URL = {http://www.jstor.org/stable/30037551},
+ author = {David A. Ross},
+ journal = {The American Mathematical Monthly},
+ number = {7},
+ pages = {651--653},
+ publisher = {Mathematical Association of America},
+ title = {An Elementary Proof of Lyapunov's Theorem},
+ urldate = {2024-12-22},
+ volume = {112},
+ year = {2005}
+}
