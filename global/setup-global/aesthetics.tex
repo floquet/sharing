@@ -11,7 +11,7 @@
     \usecolortheme{beaver}                % Color theme
     \usefonttheme[onlysmall]{structurebold} % Bold structure for small text
     \usefonttheme[onlymath]{serif}        % Serif for math fonts
-    \usepackage{beamerthemesplit}         % Custom appearance (activate if needed)
+    % \usepackage{beamerthemesplit}         % Custom appearance (activate if needed)
 }
 \renewcommand{\seriesdefault}{\bfdefault} % Default font series
 
@@ -22,18 +22,19 @@
 \input{\pGlobalSetup slide-numbers}
 
 % Hide navigation symbols
-%\setbeamertemplate{navigation symbols}{}
+% \setbeamertemplate{navigation symbols}{}
 
-% Define Colors
+% Define Custom Colors
 \definecolor{airforceblue}{RGB}{0, 48, 143} % Custom Air Force blue
 
 % Set Beamer Colors
-\setbeamercolor{normal text}{fg=blue!75!black}
-\setbeamercolor{structure}{fg=blue!75!black}
-\setbeamercolor{frametitle}{fg=airforceblue}  % Slide titles
-\setbeamercolor{title}{fg=airforceblue}       % Main title on title page
-\setbeamercolor{section in head/foot}{fg=airforceblue} % Section titles in navigation panel
-\setbeamercolor{subsection in head/foot}{fg=airforceblue} % Subsection titles in navigation panel
+\setbeamercolor{normal text}{fg=black}             % Body text
+\setbeamercolor{structure}{fg=airforceblue}        % Structure (e.g., section/subsection)
+\setbeamercolor{frametitle}{fg=black}              % Slide titles
+\setbeamercolor{title}{fg=black}                   % Main title
+\setbeamercolor{section in head/foot}{fg=airforceblue} % Section in navigation panel
+\setbeamercolor{subsection in head/foot}{fg=airforceblue} % Subsection in navigation panel
+\setbeamercolor{navigation symbols}{fg=airforceblue} % Optional: Navigation symbols
 
 % Add Logos to Slides
 \addtobeamertemplate{headline}{}{
@@ -56,3 +57,4 @@
     \insertauthor\hfill\text{rev 12}}
 
 \endinput  % End of aesthetics.tex
+

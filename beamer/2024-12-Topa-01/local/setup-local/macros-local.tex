@@ -1,55 +1,5 @@
-% called from setup-local
 % \input{\pLocalSetup macros-local}
-
-% combos
-\newcommand{\kernel}[0]		{\sqrt{ 1 - k^{2} \sin^{2} \theta}}
-\newcommand{\bkernel}[0]	{\bl{\kernel}}
-\newcommand{\azero}[0]				{\bl{\alpha_{0}}}
-\newcommand{\atwo}[0]				{\bl{\alpha_{2}}}
-
-\newcommand{\apzero}[0]				{\paren{1 + \bl{\alpha_{0}}}}
-
-\newcommand{\bwexpa}[0]			{1 + \azero + \atwo P_{2}(\cos \theta)}
-\newcommand{\bwexpb}[0]			{1+ \azero + \frac{\atwo}{2} \paren{3\cos^{2} \theta - 1}}
-\newcommand{\bwexpc}[0]			{\underbrace{1 + \azero}_{a} + \underbrace{\frac{\atwo}{2}\paren{3\cos^{2} \theta -1}}_{b}}
-
-\newcommand{\bwint}[0]				{\displaystyle\int r^{2}(\theta) \sin \theta \, d\theta}
-\newcommand{\bwintl}[0]				{\displaystyle\int_{0}^{\pi} r^{2}(\theta) \sin \theta \, d\theta}
-\newcommand{\bwintK}[0]				{\displaystyle\int_{0}^{\pi} r^{3}(\theta) \sin \theta \, d\theta}
-
-\newcommand{\angPot}[0]			{\frac{L^{2}}{2mr^{2}}}
-\newcommand{\gPot}[0]				{\frac{GmM}{r}}
-
-\newcommand{\dV}[0]				{r^{2} \sin \theta\, d\theta \,dr \, d\phi}
-\newcommand{\vElement}[0]			{\bl{dr} \rd{\paren{r d\phi}} \bk{\paren{r\sin{\theta}d\theta}}} 
-\newcommand{\result}[0]				{\paren{1 + \azero}^{3} + \tfrac{3}{5}\atwo^{2}\paren{1 + \azero} + \tfrac{2}{35} \atwo^{3} } 
-\newcommand{\resultA}[0]				{\paren{1 + \azero}^{3} + \tfrac{3}{5}\atwo^{2}\paren{1 + \azero} + \xcancel{\tfrac{2}{35} \atwo^{3}} } 
-\newcommand{\resultB}[0]				{\paren{1 + \azero}^{3} + \tfrac{3}{5}\atwo^{2}\paren{1 + \azero}  } 
-
-\newcommand{\sphereVolume}[0]		{\tfrac{4}{3}\pi R_{0}^{3}}
-\newcommand{\answer}[0]			{\azero \approx -\tfrac{1}{5} \atwo}
-
-\newcommand{\vIntA}[0]				{\int_{\theta=0}^{\pi} \int_{\rho = 0}^{r} \int_{\phi=0}^{2\pi} \vElement} 
-\newcommand{\vIntB}[0]				{\int\limits_{\theta=0}^{\pi} \int\limits_{\rho = 0}^{r} \int\limits_{\phi=0}^{2\pi} \vElement} 
-\newcommand{\vIntC}[0]				{\int\limits_{\theta=0}^{\pi} \int\limits_{r = 0}^{1} \int\limits_{\phi=0}^{2\pi} \vElement} 
-\newcommand{\vIntD}[0]				{\int\limits_{\theta=0}^{\pi} \int\limits_{r = 0}^{R_{0}} \int\limits_{\phi=0}^{2\pi} \vElement} 
-\newcommand{\vIntE}[0]				{\int\limits_{r = 0}^{R_{0}} \int\limits_{\phi=0}^{2\pi}\int\limits_{\theta=0}^{\pi}  \vElement} 
-\newcommand{\vInt}[0]				{\int_{\theta=0}^{\pi} \int_{\rho = 0}^{r(\theta)} \int_{\phi=0}^{2\pi} \rho^{2}\sin \theta d\theta d\rho d\phi} 
-\newcommand{\vIntTheta}[0]			{\displaystyle\int\limits_{\theta=0}^{\pi} \rho \sin \theta d\rho} 
-
-\newcommand{\constant}[0]			{\frac{3}{24}\paren{-\atwo^{3} + 6\atwo^{2} \paren{1 + \azero } + 12 \atwo \paren{-\azero^{2} -2 \azero + 1}}}
-\newcommand{\quadratic}[0]			{\frac{9}{8} \atwo (\atwo-2 \azero - 2)^{2}}
-\newcommand{\quartic}[0]				{\frac{27}{8} \atwo^2 (2 + 2 \azero-\atwo)}
-\newcommand{\sextic}[0]				{\tfrac{27}{8} \atwo^{2}}
-
-\newcommand{\legendreGenerate}[0]	{\frac{1}{\sqrt{1-2xt+t^{2}}} = \displaystyle\sum_{k=0}^{\infty}\bl{P_{k}(x)} t^{n}}
-\newcommand{\legendreFirst}[0]		{\frac{1}{\sqrt{R^{2}+r^{2} -2Rr \cos \theta}} = \displaystyle\sum_{k=0}^{\infty}\frac{r^{k}}{R^{k+1}} \bl{P_{k}}\paren{\cos \theta}}
-\newcommand{\legendreBonnet}[0]		{(n+1)\bl{P_{n+1}(x)} = (2n+1)x\bl{P_{n}(x)}-n\bl{P_{n-1}(x)}}
-\newcommand{\legendreBonnetK}[0]		{(k+1)\bl{P_{k+1}(x)} = (2k+1)x\bl{P_{k}(x)}-n\bl{P_{k-1}(x)}}
-\newcommand{\legendreTerm}[0]		{1 - 2xt + t^{2}}
-\newcommand{\legendreTermA}[0]		{P_{k}(x)t^{k}}
-\newcommand{\legendreTermB}[0]		{kP_{k}(x)t^{k-1}}
-\newcommand{\legendreTermC}[0]		{kP_{k}(x)t^{k}}
+% called from setup-local
 
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

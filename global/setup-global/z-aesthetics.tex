@@ -1,0 +1,58 @@
+% \input{\pGlobalSetup aesthetics.tex}
+
+% Purpose: Defines aesthetics and visual elements for LaTeX documents, including Beamer presentations.
+% Author: Daniel Topa
+% Note: Replaces aesthetics-global.tex and beautify-hii (previously used configurations)
+% Sun Dec 22 20:07:00 MST 2024
+
+% Beamer Presentation Mode and Themes
+\mode<presentation> {
+    \usetheme{Copenhagen}                 % Main theme
+    \usecolortheme{beaver}                % Color theme
+    \usefonttheme[onlysmall]{structurebold} % Bold structure for small text
+    \usefonttheme[onlymath]{serif}        % Serif for math fonts
+    \usepackage{beamerthemesplit}         % Custom appearance (activate if needed)
+}
+\renewcommand{\seriesdefault}{\bfdefault} % Default font series
+
+% Ensure normal text color is black
+\setbeamercolor{normal text}{fg=black}
+
+% Enable Slide Numbers
+\input{\pGlobalSetup slide-numbers}
+
+% Hide navigation symbols
+%\setbeamertemplate{navigation symbols}{}
+
+% Define Colors
+\definecolor{airforceblue}{RGB}{0, 48, 143} % Custom Air Force blue
+
+% Set Beamer Colors
+\setbeamercolor{normal text}{fg=blue!75!black}
+\setbeamercolor{structure}{fg=blue!75!black}
+\setbeamercolor{frametitle}{fg=airforceblue}  % Slide titles
+\setbeamercolor{title}{fg=airforceblue}       % Main title on title page
+\setbeamercolor{section in head/foot}{fg=airforceblue} % Section titles in navigation panel
+\setbeamercolor{subsection in head/foot}{fg=airforceblue} % Subsection titles in navigation panel
+
+% Add Logos to Slides
+\addtobeamertemplate{headline}{}{
+    \begin{tikzpicture}[remember picture,overlay]
+        \node at ([shift={(0.4\paperwidth,-0.42)}]current page.north) 
+            {\href{https://www.wpafb.af.mil/afrl/}{\includegraphics[height=0.50cm]{\pGlobalGraphics logos/afrl-logo}}};
+        \node at ([shift={(0.323\paperwidth,-0.43)}]current page.north) 
+            {\href{https://www.wpafb.af.mil/afrl/}{\includegraphics[height=0.46cm]{\pGlobalGraphics logos/af-01}}};
+        \node at ([shift={(0.475\paperwidth,-0.44)}]current page.north) 
+            {\href{https://www.spaceforce.mil/}{\includegraphics[height=0.57cm]{\pGlobalGraphics logos/sf-best}}};
+        \node at ([shift={(-0.46\paperwidth,-0.41)}]current page.north) 
+            {\href{https://hii.com/what-we-do/divisions/mission-technologies/}{\includegraphics[height=0.5cm]{\pGlobalGraphics logos/hii-01}}};
+    \end{tikzpicture}
+}
+
+% Frame Numbering (Optional)
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+    \insertshorttitle\hfill\insertframenumber\,/\,\inserttotalframenumber}
+\expandafter\def\expandafter\insertauthor\expandafter{%
+    \insertauthor\hfill\text{rev 12}}
+
+\endinput  % End of aesthetics.tex
