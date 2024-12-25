@@ -52,15 +52,18 @@
 \input{\pGlobalSetup href-hidden.tex}   % For hidden links (clean, professional)
 % \input{\pGlobalSetup href-visible.tex} % For visible links (debugging, drafts)
 
-\usepackage[printwatermark]{xwatermark}
-	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
-
 % Debugging with visible slide boundaries
 % \setbeamertemplate{background canvas}[grid][ step = 1cm ]
 
 %   --   --   --   --   --   --   --   --   --   -- Bibliography
 \input{\pGlobalSetup bib-config-a.tex}
-\addbibresource{\pShareBibliographies/pdes-1.bib}
+\addbibresource{\pShareBibliographies/pdes.bib}
+%\addbibresource{\pShareBibliographies/test.bib}
+
+\usepackage[printwatermark]{xwatermark}
+	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+	
+\usepackage{fontawesome5}
 
 %   --   --   --   --   --   --   --   --   --   -- Title, Author
 \title[\pdes]{\pdes:\\A Pedestrian View}
@@ -89,7 +92,7 @@
 % Bibliography
 \begin{frame}[allowframebreaks]
     \frametitle{Bibliography}
-    \nocite{*}
+    %\nocite{*}
     \printbibliography
 \end{frame}
 

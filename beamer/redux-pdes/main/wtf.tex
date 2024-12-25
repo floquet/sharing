@@ -1,0 +1,73 @@
+% typeset: Pdftex
+% Afterwards compile with pdflatex > bibtex > pdflatex > pdflatex
+% TeXShop Settings... > Engine > BibTex Engine > biber
+% beamer likes biber
+% latex likes bibtex
+
+% https://tex.stackexchange.com/questions/270633/beamer-and-the-pause-command
+% https://tex.stackexchange.com/questions/1423/is-there-a-nice-way-to-compile-a-beamer-presentation-without-the-pauses
+% Beamer presentation template for redux-pdes
+% \documentclass[ handout ]{beamer} % for printing
+\documentclass[ ]{beamer}
+
+% Fetch home directory: make this file independent of file system
+\usepackage{catchfile}
+\CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
+% Define base paths
+% relies on symlink  at /Users/dantopa/, e.g.
+% 	GitHub -> /Users/dantopa//repos-xiuhcoatl/github
+\makeatletter
+\edef\HomePath{\expandafter\zap@space\HomePath \@empty}
+\makeatother
+\newcommand{\pGithub}          			{\HomePath/GitHub/}
+	\newcommand{\pGithubSharing}	{\pGithub/sharing/}
+	\newcommand{\pGlobal}			{\pGithubSharing/global/}
+	\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
+	\newcommand{\pWorkspace}		{\pGithubSharing/beamer/redux-pdes}
+
+% ===========================================================
+% Global and Local Resource Setup
+% The following lines load various global and local resource
+% configurations, paths, and package lists required for the 
+% document. These files are part of the shared library located
+% in "~/GitHub/sharing/global/setup-global".
+% ===========================================================
+
+% Load Global Setup Files
+\input{\pGlobalSetup/setup-global-beamer.tex}
+% Excursion Setup Files
+\input{\pLocalSetup/setup-local.tex}
+
+%   --   --   --   --   --   --   --   --   --   -- Bibliography
+\input{\pGlobalSetup bib-config-a.tex}
+%\addbibresource{\pShareBibliographies/pdes-1.bib}
+\addbibresource{\pShareBibliographies/test.bib}
+
+%   --   --   --   --   --   --   --   --   --   -- Title, Author
+\title[\pdes]{\pdes:\\A Pedestrian View}
+\author[Daniel Topa]{\TopaHII \\ \TopaHIIEmail}
+\institute{\missiontech} 
+\date{\today}
+
+%   --   --   --   --   --   --   --   --   --   -- Structure
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}[ allowframebreaks ]\frametitle{Outline}
+	\tableofcontents[ hideallsubsections ]
+Test citation: \cite{10.5555/889797}
+\end{frame}
+
+% Main content
+	\input{\pSections/sec-case.tex}
+
+\begin{frame}[allowframebreaks]
+    \frametitle{Bibliography}
+    \nocite{*}
+    \printbibliography
+\end{frame}
+
+\end{document}

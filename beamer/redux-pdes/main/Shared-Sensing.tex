@@ -1,0 +1,109 @@
+% Shared-Sensing Satellite Network: LaTeX Report
+% Author: Daniel Topa & Achates
+% Date: December 2024
+
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, geometry, graphicx, hyperref}
+\usepackage[dvipsnames]{xcolor}
+\geometry{a4paper, margin=1in}
+
+% Title Information
+\title{Concept: A Shared-Sensing Satellite Network}
+\author{Daniel Topa \\ Achates (AI Collaboration Partner)}
+\date{December 2024}
+
+% Begin Document
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This report explores the concept of a shared-sensing satellite network, emphasizing autonomous collaboration, efficient communication protocols, and the application of advanced discrete simulation techniques. The proposed framework has significant implications for satellite formation flying, orbital debris tracking, and collision avoidance strategies.
+\end{abstract}
+
+\section{Introduction}
+The increasing complexity of satellite missions necessitates robust frameworks for autonomous collaboration. Current Earth-based radar systems are limited in tracking smaller debris and localized phenomena. This report proposes a novel framework for a shared-sensing satellite network, where satellites autonomously detect, prioritize, and share critical information. Inspired by principles of Parallel and Distributed Event Simulation (PDES), this approach optimizes data exchange and decision-making processes.
+
+\section{Conceptual Framework}
+\subsection{Localized Sensing Advantage}
+Satellites equipped with advanced sensors can detect small debris and faint objects beyond the reach of Earth-based systems. By leveraging their unique perspectives, these satellites form a distributed sensing network.
+
+\subsection{Targeted Information Sharing}
+Unlike traditional broadcast systems, the proposed network employs selective communication protocols. Satellites prioritize sharing critical information, reducing redundant data transmissions and conserving bandwidth.
+
+\subsection{Key Components}
+\begin{enumerate}
+    \item \textbf{Obstacle Discovery and Sharing}: Satellites detect objects within their local sensing range and decide on data dissemination based on relevance.
+    \item \textbf{Selective Communication Protocols}: A hierarchical or need-to-know communication structure ensures efficient data exchange.
+    \item \textbf{Latency vs. Bandwidth Optimization}: Critical messages (e.g., collision warnings) are transmitted with low latency, while data-heavy tasks are shared selectively.
+\end{enumerate}
+
+\section{Simulation Challenges and PDES Integration}
+The proposed framework draws heavily from PDES principles to simulate distributed satellite networks:
+\begin{itemize}
+    \item \textbf{Optimistic Synchronization}: Satellites independently simulate future states and reconcile discrepancies through shared data.
+    \item \textbf{Spatial Partitioning}: The orbital domain is divided into regions managed by local satellite nodes, minimizing global communication overhead.
+    \item \textbf{Causal Messaging}: Communication follows logical event chains to ensure relevance and minimize redundancy.
+\end{itemize}
+
+\section{Practical Implications}
+\subsection{Collision Avoidance}
+Real-time shared sensing enables satellites to proactively adjust their orbits, reducing collision risks.
+
+\subsection{Debris Tracking}
+A unified satellite network enhances our ability to track and predict the paths of orbital debris.
+
+\subsection{Autonomous Cooperation}
+Satellites operating autonomously reduce the burden on ground-based operators, improving mission efficiency.
+
+\section{Discussion: Orbital Debris and System Degradation}
+\subsection{Debris Fields and Their Impact}
+One critical challenge in satellite operations is the threat posed by orbital debris. Dust-sized particles, while small, can degrade optical components by obscuring lenses or mirrors. Larger debris fields, particularly those intersecting orbits at high velocity differentials, pose collision risks that can damage or destroy satellites.
+
+\subsection{Debris Detection and Characterization}
+Quantifying the size and velocity spectrum of orbital debris remains an active area of research. Instruments such as radar systems, optical telescopes, and potentially magnetic sensors are employed to map debris of varying sizes and ranges:
+\begin{itemize}
+    \item \textbf{Radar Systems}: Effective for tracking medium to large debris over long ranges.
+    \item \textbf{Optical Telescopes}: Suitable for detecting smaller debris at closer ranges.
+    \item \textbf{Magnetic Sensors}: Hypothetically useful for identifying metallic debris if coupled with strong magnetic fields.
+\end{itemize}
+
+\subsection{Impact on Sensor and Communication Arrays}
+Debris fields can degrade both sensor performance and communication arrays. For instance:
+\begin{itemize}
+    \item \textbf{Optical Degradation}: Fine debris can accumulate on optical surfaces, reducing imaging accuracy.
+    \item \textbf{Antenna Damage}: High-velocity impacts can compromise communication antennas, leading to loss of data transmission.
+\end{itemize}
+
+\subsection{Quantifying Risks to Satellite Formations}
+The scale of satellite formations influences risk levels:
+\begin{itemize}
+    \item \textbf{Small Formations (e.g., 100 meters)}: Reduced risk due to localized operations.
+    \item \textbf{Large Formations (e.g., 100 kilometers)}: Higher risk from distributed debris fields and increased communication latency.
+\end{itemize}
+Quantifying these risks requires integrating size, velocity, and density parameters of debris into simulation models.
+
+\section{The Achates Obstacle Course}
+To validate the proposed framework, we introduce the "Achates Obstacle Course," a simulated environment for satellite formations:
+\begin{itemize}
+    \item \textbf{Scenario Setup}: Satellites navigate through a debris field, sharing localized data to maintain formation.
+    \item \textbf{Objectives}: Test distributed awareness and decision-making algorithms.
+    \item \textbf{Outcomes}: Identify communication bottlenecks and optimize decision latencies.
+\end{itemize}
+
+\section*{Appendix}
+\subsection*{Conference Details: ACM SIGSIM PADS 2025}
+The \textit{39th ACM SIGSIM Conference on Principles of Advanced Discrete Simulation (PADS 2025)} will take place from June 23-26, 2025, at the Drury Plaza Hotel in Santa Fe, New Mexico. For more details, visit \href{https://sigsim.acm.org/conf/pads/2025/}{https://sigsim.acm.org/conf/pads/2025/}.
+
+https://sigsim.acm.org/conf/pads/2025/blog/cfp/
+
+Submission through \href{https://easychair.org/account2/signin?l=8243725740951894750}{EasyChair}
+
+\begin{quotation}
+Papers can also be directly submitted to the second call. A regular review process will occur in this case, with an accept/reject outcome
+\end{quotation}
+
+\section*{Acknowledgments}
+This report reflects the collaborative efforts of Daniel Topa and Achates, leveraging human-AI partnership to push the boundaries of simulation and satellite technology.
+
+\end{document}

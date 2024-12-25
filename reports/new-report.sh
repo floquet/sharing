@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 printf "%s\n" "$(tput bold)$(date) ${BASH_SOURCE[0]}$(tput sgr0)"
 
 # ===========================================================
@@ -32,6 +32,13 @@ printf "%s\n" "$(tput bold)$(date) ${BASH_SOURCE[0]}$(tput sgr0)"
 
 start_time=$SECONDS  # Record the start time
 
+# Ensure the script is called with a PROJECT_NAME argument
+if [ $# -eq 0 ]; then
+    echo "Error: No PROJECT_NAME supplied."
+    echo "Usage: $0 <PROJECT_NAME>"
+    exit 1
+fi
+
 # Counts steps in batch process
 export counter=0
 function new_step() {
@@ -57,7 +64,9 @@ mkdir -p "$PROJECT_DIR"
 new_step "Define subdirectories"
 # Define the array of subdirectories relative to the project directory
 SUBDIRS=(
-  "local"
+  "config"
+  "main"
+  "sections"
   "local/code"
   "local/achates"
   "local/data"
@@ -69,8 +78,6 @@ SUBDIRS=(
   "local/setup-local"
   "local/tables-local"
   "local/theorems-local"
-  "main"
-  "sections"
 )
 
 new_step "Create subdirectories"
@@ -83,7 +90,7 @@ done
 new_step "Seed main-$PROJECT_NAME.tex"
 echo "Seeding initial files..."
 # Create main LaTeX file
-cat << \EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
+cat << EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
 % typeset: Pdftex
 % Afterwards compile with pdflatex > bibtex > pdflatex > pdflatex.
 % CLI: pdflatex main-$PROJECT_NAME.tex
@@ -157,7 +164,7 @@ cat << \EOF > "$PROJECT_DIR/main/main-$PROJECT_NAME.tex"
 % \input{\pSections app-appendix.tex}
 
 \nocite{*}
-\printbibliography[heading=bibintoc]
+\printbibliography
 
 \end{document}
 
@@ -311,6 +318,25 @@ cat << 'EOF' > "$PROJECT_DIR/local/setup-local/setup-local.tex"
 
 \endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
 EOF
+
+
+new_step "Seed $PROJECT_DIR/config/etup-local.tex"
+cat << 'EOF' > "$PROJECT_DIR/config/setup-local.tex"
+% \input{\pLocalSetup "setup-local.tex"}
+
+% ===========================================================
+% Customize workspace environment beyond generic
+% ===========================================================
+
+% \input{\pLocalConfig macros}
+% \input{\pLocalConfig paths-local.tex
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
+
+# Set permissions on the generated file
+new_step "chmod 644 $MAIN_TEX_FILE"
+chmod 644 "$MAIN_TEX_FILE"
+
 
 echo "Project $PROJECT_NAME created successfully!"
 elapsed=$((SECONDS - start_time))  # Calculate the elapsed time

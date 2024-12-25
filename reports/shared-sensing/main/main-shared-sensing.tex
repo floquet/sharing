@@ -1,0 +1,180 @@
+% typeset: Pdftex
+% Afterwards compile with pdflatex > bibtex > pdflatex > pdflatex.
+% CLI: pdflatex main-$PROJECT_NAME.tex
+% Beamer likes biber
+% ACM LaTeX Template
+\documentclass[sigconf]{acmart}
+
+% Fetch home directory: make this file independent of file system
+\usepackage{catchfile}
+\CatchFileDef{\HomePath}{|kpsewhich -var-value=HOME}{}
+% Define base paths
+% relies on symlink  at $HOME, e.g.
+% 	GitHub -> /Users/dantopa//repos-xiuhcoatl/github
+\makeatletter
+\edef\HomePath{\expandafter\zap@space\HomePath \@empty}
+\makeatother
+\newcommand{\pGithub}          		 {\HomePath/GitHub/}
+	\newcommand{\pGithubSharing}	{\pGithub/sharing/}
+	\newcommand{\pGlobal}			{\pGithubSharing/global/}
+	\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
+	\newcommand{\pWorkspace}		{\pGithubSharing/reports/shared-sensing}
+
+% Load Global Setup Files
+\input{\pGlobalSetup/setup-global-reports.tex}
+% Excursion Setup Files
+\input{\pLocalSetup/setup-local.tex}
+
+% ===========================================================
+% Global and Local Resource Setup
+% The following lines load various global and local resource
+% configurations, paths, and package lists required for the 
+% document. These files are part of the shared library located
+% in "~/GitHub/sharing/global/setup-global".
+% ===========================================================
+
+% setup-global-reports.tex
+% 	paths-global.tex
+% 	paths-local.tex
+% 	usepackages-reports.tex
+% 	hyperlinks-global.tex
+%		libraries-global.tex
+
+% Choose hyperlink configuration:
+\input{\pGlobalSetup href-hidden.tex}   % For hidden links (clean, professional)
+% \input{\pGlobalSetup href-visible.tex} % For visible links (debugging, drafts)
+
+%\usepackage[printwatermark]{xwatermark}
+%	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+
+%   --   --   --   --   --   --   --   --   --   -- Bibliography
+\usepackage[style=acmnumeric, backend=biber]{biblatex}
+\addbibresource{\pShareBibliographies/acm.bib}
+
+%   --   --   --   --   --   --   --   --   --   -- Title, Author
+% Metadata Information
+\title{Concept: A Shared-Sensing Satellite Network}
+\author{\TopaHII}
+\email{\TopaHIIEmai}
+\affiliation{%
+  \institution{Huntington Ingalls Industries}
+  \city{Mission Technologies}
+  \country{USA}
+}
+
+\author{Achates (AI Collaboration Partner)}
+\email{achates.ai@openai.com}
+\affiliation{%
+  \institution{OpenAI Collaboration}
+  \city{San Francisco}
+  \country{USA}
+}
+
+\begin{abstract}
+This paper proposes a novel framework for shared-sensing satellite networks, leveraging parallel discrete event simulation principles for autonomous collaboration in space missions.
+\end{abstract}
+
+% CCS Concepts
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10010583.10010682</concept_id>
+<concept_desc>Satellite systems~Autonomous sensing</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Satellite systems~Autonomous sensing}
+
+\keywords{Satellite networks, orbital debris, PDES, collision avoidance}
+
+%   --   --   --   --   --   --   --   --   --   -- Structure
+\begin{document}
+\maketitle
+	%\input{\pSections sec-abstract.tex}
+\tableofcontents
+
+	\input{\pSections sec-intro.tex}
+	\input{\pSections sec-backup.tex}
+
+\appendix
+
+% Appendices content
+% \input{\pSections app-appendix.tex}
+
+%References
+\printbibliography[heading=bibintoc]
+
+\end{document}
+
+%\tiny
+%\scriptsize
+%\footnotesize
+%\small
+%\normalsize
+%\large
+%\Large
+%\LARGE
+%\huge
+%\Huge
+
+%\, thin space (normally 1/6 of a quad);
+%\> medium space (normally 2/9 of a quad);
+%\; thick space (normally 5/18 of a quad);
+
+%         ---         ---         ---         ---         ---   Equations
+\begin{equation}
+  
+\label{eq:}
+\end{equation}
+%
+\begin{equation}
+\begin{split}
+  & \\
+\end{split} 
+\label{eq:}
+\end{equation}
+%
+\begin{equation*}
+  
+\end{equation*}
+%
+\begin{equation}
+\begin{array}{ccc}
+    %
+  & & \\
+    %
+  & & \\
+    %
+\end{array}
+\end{equation}
+%         ---         ---         ---         ---         ---   Tables
+\begin{table}[htp]
+\caption{default}
+\begin{center}
+\begin{tabular}{ccc}
+    %
+  & & \\
+    %
+  & & \\
+    %
+\end{tabular}
+\end{center}
+\label{tab:}
+\end{table}
+%         ---         ---         ---         ---         ---   Lists
+\begin{enumerate}
+  \item 
+  \item
+  \item
+\end{enumerate}
+%
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item 
+  \end{enumerate}
+  \item
+  \item
+\end{enumerate}

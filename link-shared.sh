@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+printf "%s\n" "$(tput bold)$(date) ${BASH_SOURCE[0]}$(tput sgr0)"
+
 # Script to create symlinks to shared resources
 
 SHARED_DIR=~/GitHub/shared

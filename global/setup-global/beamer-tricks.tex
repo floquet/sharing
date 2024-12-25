@@ -1,11 +1,27 @@
 % \input{\pGlobalSetup beamer-tricks.tex}
 
+% Define transition markers for subsections and sections
+\newcommand{\jumpLittle}{\twodots} % Use existing \twodots or customize
+\newcommand{\jumpBig}{\dtwodots}   % Use existing \dtwodots or customize
+
+% Automatically add \jumpBig at the end of a section
+\let\oldsection\section
+\renewcommand{\section}[2][]{%
+    \jumpBig % Add at the end of the previous section
+    \oldsection[#1]{#2} % Call original \section command
+}
+
+% Automatically add \jumpLittle at the end of a subsection
+\let\oldsubsection\subsection
+\renewcommand{\subsection}[2][]{%
+    \jumpLittle % Add at the end of the previous subsection
+    \oldsubsection[#1]{#2} % Call original \subsection command
+}
+
 % transitions to next subsection, next section
-\newcommand{\jumpLittle}			{\textcolor{bg!85}{.}}
-\newcommand{\jumpBig}			{\textcolor{bg!85}{..}}
+%\newcommand{\jumpLittle}			{\textcolor{bg!85}{.}}
+%\newcommand{\jumpBig}			{\textcolor{bg!85}{..}}
 
-
-\newcommand{\ns}				{Navier-Stokes}
 
 
 \newcommand{\onedot}  
