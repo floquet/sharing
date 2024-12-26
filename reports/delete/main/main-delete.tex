@@ -14,17 +14,15 @@
 \edef\HomePath{\expandafter\zap@space\HomePath \@empty}
 \makeatother
 \newcommand{\pGithub}          		 {\HomePath/GitHub/}
-	\newcommand{\pTrunk}		{\pGithub/genesis/}
-		\newcommand{\pGlobalConfig}		{\pTrunk/config/}
-
-	\newcommand{\pGlobal}			{\pTrunk/global/}
-	\newcommand{\pGlobalConfig}		{\pGlobal/setup-global/}
-		\newcommand{\pWorkspace}		{\pTrunk/pres/delete}
+	\newcommand{\pGithubSharing}	{\pGithub/sharing/}
+	\newcommand{\pGlobal}			{\pGithubSharing/global/}
+	\newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
+	\newcommand{\pWorkspace}		{\pGithubSharing/reports/delete}
 
 % Load Global Setup Files
-\input{\pGlobalConfig/pres/config.tex}
+\input{\pGlobalSetup/setup-global-reports.tex}
 % Excursion Setup Files
-\input{\pLocalConfig/config.tex}
+\input{\pLocalSetup/setup-local.tex}
 
 % ===========================================================
 % Global and Local Resource Setup
@@ -73,7 +71,7 @@
 % \input{\pSections app-appendix.tex}
 
 \nocite{*}
-\printbibliography[heading=bibintoc]
+\printbibliography
 
 \end{document}
 

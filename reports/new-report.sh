@@ -71,13 +71,11 @@ SUBDIRS=(
   "local/achates"
   "local/data"
   "local/debug"
-  "local/demos"
+  "local/graphics"
   "local/refs"
-  "local/figures-local"
-  "local/graphics-local"
-  "local/setup-local"
-  "local/tables-local"
-  "local/theorems-local"
+  "local/components/figures"
+  "local/components/tables"
+  "local/components/theorems"
 )
 
 new_step "Create subdirectories"

@@ -1,0 +1,20 @@
+% \input{\pLocalSetup "setup-local.tex"}
+
+% ===========================================================
+% Customize workspace environment beyond generic
+% ===========================================================
+
+% \input{\pLocalConfig macros}
+% \input{\pLocalConfig paths-local.tex
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==
+
+# Set permissions on the generated file
+new_step "chmod 644 $MAIN_TEX_FILE"
+chmod 644 "$MAIN_TEX_FILE"
+
+
+echo "Project $PROJECT_NAME created successfully!"
+elapsed=$((SECONDS - start_time))  # Calculate the elapsed time
+echo "time used = ${elapsed} sec"
+
