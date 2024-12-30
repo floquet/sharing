@@ -1,0 +1,65 @@
+% \input{\pSections "sec-backup"}
+
+\section{Theoretics}
+%     %     %     %     %     %     %     %     %
+\subsection{Incomplete Elliptic Integrals}
+
+\begin{frame}\frametitle{\href{https://en.wikipedia.org/wiki/Computational_mech}{Incomplete Elliptic Integrals}}
+%
+\begin{equation}
+	K(k) = \int_{0}^{\phi} \frac{ d\theta } { \bkernel } \qquad \text{1st kind}
+\label{eq:first}
+\end{equation}
+\\ \
+%
+\begin{equation}
+	E(k) = \int_{0}^{\phi}  \bkernel d\theta \qquad \text{2nd kind}
+\label{eq:second}
+\end{equation}
+\\ \
+%
+\begin{equation}
+	\Pi(n;k,\phi) = \int_{0}^{\phi} \frac{ 1 } { 1 - n^{2} \sin \theta } \frac{ d\theta } {  \bkernel } \qquad \text{3rd kind}
+\label{eq:third}
+\end{equation}
+%
+\end{frame}
+
+\begin{frame}\frametitle{\href{https://mathworld.wolfram.com/EllipticIntegraloftheFirstKind.html}{Incomplete Elliptic Integral of the First Kind}}
+%
+\begin{equation}
+	K(k) = \int_{0}^{\phi} \frac{ d\theta } { \bkernel } \qquad \text{1st kind}
+\tag{\ref{eq:first}}
+\end{equation}
+\\ \
+%
+\begin{table}[htp]
+\begin{center}
+\begin{tabular}{cc}
+	%$Re K(x+ i y)$ & $Im K(x+ i y)$ \\
+	\begin{overpic}[ scale = 0.4 ]
+		{\pLocalGraphics K(z)-re.pdf}
+		\put( 15, 90 ) {$Re \paren{K(x+ i y)}$}
+		\put( 25, 10 ) {$x$}
+		\put( 80, 25 ) {$y$}
+	\end{overpic} &
+	%
+	\begin{overpic}[ scale = 0.4 ]
+		{\pLocalGraphics K(z)-im.pdf}
+		\put( 15, 90 ) {$Im \paren{K(x+ i y)}$}
+		\put( 25, 10 ) {$x$}
+		\put( 80, 25 ) {$y$}
+	\end{overpic} 
+	%\includegraphics[ width = 1.5 in ]{\pLocalGraphics K(z)-re.pdf} &	%\includegraphics[ width = 1.5 in ]{\pLocalGraphics K(z)-im.pdf} \\
+\end{tabular}
+\caption{$K(x+ i y)$ is analytic in the complex plane excluding $[1,\infty)$}
+\end{center}
+\label{tab:K(z)}
+\end{table}
+%
+\tiny{\cite[p. 344]{doi:10.1137/short}}
+%
+\end{frame}
+
+
+\endinput  %  ==  ==  ==  ==  ==  ==  ==  ==  ==

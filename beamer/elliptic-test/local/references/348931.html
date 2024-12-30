@@ -1,0 +1,959 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        <!doctype html>
+
+
+
+
+
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The U.S. Department of Energy's Office of Scientific and Technical Information">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+    <title>Elliptic integrals: Symmetry and symbolic integration (Conference) | OSTI.GOV</title>
+    <link rel="icon" type="image/png" href="https://www.osti.gov/sites/www.osti.gov/files/public/styles/large/public/image-files/OSTI_favicon_32px.png" />
+    <link rel="search" type="application/opensearchdescription+xml" href="/res/ostigovsearch.xml" title="OSTI.GOV Search" />
+    <link rel="canonical" href="https://www.osti.gov/biblio/348931" />
+    
+    <link href="/css/ostigov.241122.2111.css" rel="stylesheet">
+    
+    
+    
+        
+            
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-MP0JFZ283F"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-MP0JFZ283F', {'Product Type':'Conference'});
+                </script>
+            
+        
+    
+
+    <meta name="citation_title" content="Elliptic integrals: Symmetry and symbolic integration" />
+                <meta name="citation_abstract" content="Computation of elliptic integrals, whether numerical or symbolic, has been aided by the contributions of Italian mathematicians. Tricomi had a strong interest in iterative algorithms for computing elliptic integrals and other special functions, and his writings on elliptic functions and elliptic integrals have taught these subjects to many modern readers (including the author). The theory of elliptic integrals began with Fagnano`s duplication theorem, a generalization of which is now used iteratively for numerical computation in major software libraries. One of Lauricella`s multivariate hypergeometric functions has been found to contain all elliptic integrals as special cases and has led to the introduction of symmetric canonical forms. These forms provide major economies in new integral tables and offer a significant advantage also for symbolic integration of elliptic integrals. Although partly expository the present paper includes some new proofs and proposes a new procedure for symbolic integration." />
+                
+                    <meta name="citation_author" content="Carlson, B C" />
+                    
+                    <meta name="citation_author_institution" content="Ames Lab., IA (United States)" />
+                
+                <meta name="citation_date" content="1997/12/31" />
+                <meta name="citation_language" content="English" />
+                <meta name="citation_technical_report_number" content="IS-M-876; CONF-971291-" />
+                <meta name="citation_technical_report_institution" content="Ames Lab., Ames, IA (United States)" />
+                <meta name="citation_pdf_url" content="https://www.osti.gov/servlets/purl/348931" />
+                
+                <meta name="citation_keywords" content=" mathematics, computers, information science, management, law, miscellaneous; integrals; integral calculus; iterative methods; algorithms; functions" />
+                
+                
+                
+                
+                
+                
+                    <meta name="citation_funding_source" content="citation_funder=US Department of Energy; citation_grant_number=W-7405-ENG-82; "/>
+                
+                
+                
+                
+                <script type="application/ld+json">{"datePublished":"1997-12-31","identifier":"https://doi.org/","keywords":["99 MATHEMATICS, COMPUTERS, INFORMATION SCIENCE, MANAGEMENT, LAW, MISCELLANEOUS","INTEGRALS","INTEGRAL CALCULUS","ITERATIVE METHODS","ALGORITHMS","FUNCTIONS"],"@type":"Report","author":[{"name":"Carlson, B C","@type":"Person"},{"name":"Iowa State Univ., Ames, IA","@type":"Person"}],"name":"Elliptic integrals: Symmetry and symbolic integration","sourceOrganization":[{"name":"Ames Lab., Ames, IA (United States)","@type":"Organization"},{"name":"USDOE Office of Energy Research, Washington, DC (United States)","@type":"Organization"}],"description":"Computation of elliptic integrals, whether numerical or symbolic, has been aided by the contributions of Italian mathematicians. Tricomi had a strong interest in iterative algorithms for computing elliptic integrals and other special functions, and his writings on elliptic functions and elliptic integrals have taught these subjects to many modern readers (including the author). The theory of elliptic integrals began with Fagnano`s duplication theorem, a generalization of which is now used iteratively for numerical computation in major software libraries. One of Lauricella`s multivariate hypergeometric functions has been found to contain all elliptic integrals as special cases and has led to the introduction of symmetric canonical forms. These forms provide major economies in new integral tables and offer a significant advantage also for symbolic integration of elliptic integrals. Although partly expository the present paper includes some new proofs and proposes a new procedure for symbolic integration.","@context":"http://schema.org/","headline":"Elliptic integrals: Symmetry and symbolic integration","url":"https://www.osti.gov/biblio/348931"}</script>
+    
+</head>
+<body data-baseurl="https://www.osti.gov" data-context="" data-domain="www.osti.gov" class="">
+<div id="skiptocontent"><a href="#main-body">skip to main content</a></div>
+
+
+<section id="content">
+<header>
+    <div class="header-nav ">
+        <div class="header-nav-container">
+            <div class="container d-none d-md-inline-block" style="/* float:right; */ position:absolute; right:0;">
+                <nav style="position:relative;z-index:2500;">
+    <div class="pure-menu pure-menu-horizontal small text-right">
+        <ul class="pure-menu-list">
+        
+            
+                
+                <li class="pure-menu-item"><span class="nav-user"><a href="/login" class="pure-menu-link"><span class="fa fa-user"></span> Sign In</a></span></li>
+                <li class="pure-menu-item"><span class="nav-user"><a href="/createaccount" class="pure-menu-link">Create Account</a></span></li>
+            
+            
+        
+        </ul>
+    </div>		
+</nav>
+
+            </div>
+            <div class="header-nav-content container">
+                <div class="row header-primary">
+                    <div class="col-md-5 header-primary-title">
+                        <div class="header-nav-mobile d-block d-md-none" style="position: absolute; right: 10px;">
+                            <a href="#" rel="nofollow" class="pure-button" onclick="$('.header-primary-search').toggleClass('d-none');if(!$('.header-primary-search').hasClass('d-none')){$('#search_search').focus();};return false;"><span class="fa fa-search" aria-label="Show search"></span></a>
+                            <a href="#" rel="nofollow" class="pure-button" onclick="$('.header-nav-menu').toggleClass('d-none');return false;"><span class="fa fa-bars" aria-label="Show menu"></span></a>
+                        </div>
+                        <div class="header-nav-title">
+                            <a href="/"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" class="sprite sprite-header-title" alt="OSTI.GOV title logo" style="margin-top:0.6rem; margin-right:0.2rem;" width="220" height="44" /></a>
+                            <span class="subtitle d-none d-xl-inline-block">U.S. Department of Energy<br/>Office of Scientific and Technical Information</span>
+                        </div>
+                    </div>
+                    <div class="col-md-7 d-none d-md-block header-primary-search">
+                        <form action="/search" id="search_form" class="pure-form" method="POST" autocomplete="off">
+    <input type="hidden" id="index_search_act" name="act" value="act"/>
+    <input type="hidden" id="index_search_rows" name="rows" value=""/>
+    <input type="hidden" id="index_search_page" name="page" value=""/>
+    <input type="hidden" id="index_search_sort" name="sort" value=""/>
+    
+    <input type="hidden" id="search_journal_type" name="journal_type" value=""/>
+    <input type="hidden" id="search_data_type" name="data_type" value=""/>
+    <input type="hidden" id="search_availability" name="availability" value=""/>
+
+    <div style="padding: 0.7em 0 0.5em;"><div class="row">
+        <div class="col-11">
+            <div style="position:relative;">
+                <label class="sr-only" for="search_search">Search terms:</label>
+                <input class="pure-input-1" id="search_search" type="text" name="search" value="" placeholder="Search 3+ million Department of Energy research results">
+                <button type='button' class='close-advformoptions' aria-label="Advanced search options" title="Advanced search options" style='position: absolute; top: 7px; right: 5px; z-index: 2;cursor: pointer; background: transparent; border: 0; color:#7cb342; font-size: 1.3rem; margin-top: -0.15rem;'><span class="fa fa-caret-down" aria-hidden="true"></span></button>
+                <div id="adv-search" style="background-color:#f9f9f9; border:1px solid #444; padding:20px; position:absolute; left:0; right: 0; top: 38px; display:none; z-index:2000;">
+
+                <fieldset class="small" style="padding-bottom:0;">
+                    <legend style="padding:0px; margin-bottom:1em;">
+                        <div class="pull-right">
+                            
+                        </div>
+                        Advanced Search Options<small style="display:block;color:#999;">Advanced Search queries use a traditional Term Search.  For more info, see our <a href="/faqs#faq-270584">FAQ</a>.</small>
+                    </legend>
+
+                        <div class="adv_search-row">
+                            <label for="search_term">All Fields: </label>
+                            <input class="pure-input-1" type="text" name="term" id="search_term" value="">
+                        </div>
+                        <div class="adv_search-row">
+                            <label for="search_title">Title: </label>
+                            <input class="pure-input-1" type="text" name="title" id="search_title" value="">
+                        </div>
+                        <div class="adv_search-row">
+                            <label for="search_creators">Author / Contributor: </label>
+                            <input class="pure-input-1" type="text" name="creators" id="search_creators" value="">
+                        </div>
+                        <div class="adv_search-row">
+                            <label for="search_doi">Digital Object Identifier (DOI): </label>
+                            <input class="pure-input-1" type="text" name="doi" id="search_doi" value="">
+                        </div>
+                        <div class="adv_search-row">
+                            <label for="search_idnos">Identifier Numbers: </label>
+                            <input class="pure-input-1" type="text" name="idnos" id="search_idnos" value="">
+                        </div>
+                        <div class="adv_search-row">
+                            <label for="search_pubd_from">Publication Date: </label>
+                            <div style="/* white-space: nowrap; */">
+                                <input type="text" pattern="(0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01])[/]\d\d\d\d" id="search_pubd_from" name="pubd_from" data-toggle="tooltip" data-placement="bottom" title="" class="dateinput pure-u-1-3" value="" placeholder="MM/DD/YYYY" data-original-title="Enter date in MM/DD/YYYY format">
+                                <label for="search_pubd_until" style="margin-right:0.5rem; margin-left:0.5rem;">to</label>
+                                <input type="text" pattern="(0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01])[/]\d\d\d\d" id="search_pubd_until" name="pubd_until" data-toggle="tooltip" data-placement="bottom" title="" class="dateinput pure-u-1-3" value="" placeholder="MM/DD/YYYY" data-original-title="Enter date in MM/DD/YYYY format">
+                            </div>
+                        </div>
+                </fieldset>
+
+                <fieldset class="small" style="padding-bottom:0; margin-top:20px;">
+                    <legend style="padding:0px; margin-bottom:1em;"><a href="#" id="search_search-moreoptions"><span id="more-options-indicator" class="fa fa-plus-squared-alt"></span> More Options ...</a></legend>
+                    <div id="more-options-container" class="hidden">
+                        <div class="adv_search-row">
+                            <label for="search_fulltext">Full Text: </label>
+                            <input class="pure-input-1" type="text" name="fulltext" id="search_fulltext" value="">
+                        </div>
+                        <div class="adv_search-row">
+                            <label for="search_product_type">Resource Type: </label>
+                            <div style="position:relative;" data-jq-dropdown="#product_type_dropdown">
+                                <input class="pure-input-1" type="text" name="product_type" id="search_product_type" value="" style="-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;">
+                                <span style="position: absolute; top: 8px; right: 10px; z-index: 2;cursor: pointer; background: transparent; border: 0; color:#7cb342;"><span class="fa fa-caret-down"></span></span>
+                            </div>
+                            <div style="position:relative;">
+                                <div id="product_type_dropdown" class="jq-dropdown jq-dropdown-tip jq-dropdown-relative" style="width:100%;">
+                                    <div class="jq-dropdown-panel">
+                                        <div class="row" style="display:flex;">
+                                            <div class="col-lg-6 col-md-12 jqd-col">
+                                                <label class="facet-item control control-checkbox" style="white-space: nowrap;">Journal Article
+                                                    <input type="checkbox" name="product_type_option" title="Journal Article" value="Journal Article" /><div class="control-indicator"></div>
+                                                </label>
+                                                <label class="facet-item control control-checkbox" style="white-space: nowrap;">Technical Report
+                                                    <input type="checkbox" name="product_type_option" title="Technical Report" value="Technical Report" /><div class="control-indicator"></div>
+                                                </label>
+                                                <label class="facet-item control control-checkbox">Data
+                                                    <input type="checkbox" name="product_type_option" title="Data" value="Data" /><div class="control-indicator"></div>
+                                                </label>
+                                                <label class="facet-item control control-checkbox">Software
+                                                    <input type="checkbox" name="product_type_option" title="Software" value="Software" /><div class="control-indicator"></div>
+                                                </label>
+                                                <label class="facet-item control control-checkbox">Patent
+                                                    <input type="checkbox" name="product_type_option" title="Patent" value="Patent" /><div class="control-indicator"></div>
+                                                </label>
+                                                <label class="facet-item control control-checkbox" style="white-space: nowrap;">Conference / Event
+                                                    <input type="checkbox" name="product_type_option" title="Conference / Event" value="Conference" /><div class="control-indicator"></div>
+                                                </label>
+                                            </div>
+                                            <div class="col-lg-6 col-md-12 jqd-col">
+                                                <label class="facet-item control control-checkbox" style="white-space: nowrap;">Book / Monograph
+                                                    <input type="checkbox" name="product_type_option" title="Book / Monograph" value="Book" /><div class="control-indicator"></div>
+                                                </label>
+                                                <label class="facet-item control control-checkbox" style="white-space: nowrap;">Program Document
+                                                    <input type="checkbox" name="product_type_option" title="Program Document" value="Program Document" /><div class="control-indicator"></div>
+                                                </label>
+                                                <label class="facet-item control control-checkbox" style="white-space: nowrap;">Thesis / Dissertation
+                                                    <input type="checkbox" name="product_type_option" title="Thesis / Dissertation" value="Thesis/Dissertation" /><div class="control-indicator"></div>
+                                                </label>
+                                                <label class="facet-item control control-checkbox">Video / Audio
+                                                    <input type="checkbox" name="product_type_option" title="Video / Audio" value="Multimedia" /><div class="control-indicator"></div>
+                                                </label>
+                                                <label class="facet-item control control-checkbox">Miscellaneous
+                                                    <input type="checkbox" name="product_type_option" title="Miscellaneous" value="Miscellaneous" /><div class="control-indicator"></div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>                                
+                            </div>
+                        </div>
+                        
+                        <div class="adv_search-row">
+                            <label for="search_subject">Subject: </label>
+                            <input class="pure-input-1" type="text" name="subject" id="search_subject" value="">
+                        </div>
+                        <div class="adv_search-row">
+                            <label for="search_site_code">Site: </label>
+                            <select class="pure-input-1" name="site_code" id="search_site_code">
+                                <option value="">All</option>
+                            </select>
+                        </div>
+                        <div class="adv_search-row">
+                            <label for="search_research_org">Research Org: </label>
+                            <input class="pure-input-1" type="text" name="research_org" id="search_research_org" value="">
+                        </div>
+                        <div class="adv_search-row">
+                            <label for="search_sponsor_org">Sponsoring Org: </label>
+                            <input class="pure-input-1" type="text" name="sponsor_org" id="search_sponsor_org" value="">
+                        </div>
+                        <div class="adv_search-row">
+                            <label for="search_updd_from">Update Date: </label>
+                            <div style="/* white-space: nowrap; */">
+                                <input type="text" pattern="(0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01])[/]\d\d\d\d" id="search_updd_from" name="updd_from" data-toggle="tooltip" data-placement="bottom" title="" class="dateinput pure-u-1-3" value="" placeholder="MM/DD/YYYY" data-original-title="Enter date in MM/DD/YYYY format">
+                                <label for="search_updd_until" style="margin-right:0.5rem; margin-left:0.5rem;">to</label>
+                                <input type="text" pattern="(0[1-9]|1[012])[/](0[1-9]|[12][0-9]|3[01])[/]\d\d\d\d" id="search_updd_until" name="updd_until" data-toggle="tooltip" data-placement="bottom" title="" class="dateinput pure-u-1-3" value="" placeholder="MM/DD/YYYY" data-original-title="Enter date in MM/DD/YYYY format">
+                            </div>
+                        </div>
+                        <div class="adv_search-row">
+                            <label class="control control-checkbox">Limit to INIS / NSA records only 
+                                <input type="checkbox" id="search_inis_nsa" name="inis_nsa" title="Limit to INIS / NSA records only" value="true"/><div class="control-indicator"></div>
+                            </label>
+                        </div>
+                        <div class="adv_search-row">
+                            <label class="control control-checkbox">Limit to Nobel Prize winning researchers only 
+                                <input type="checkbox" id="search_nobel" name="nobel" title="Limit to Nobel Prize winning researchers only" value="true"/><div class="control-indicator"></div>
+                            </label>
+                        </div>
+                        
+                        <hr/>
+                    </div>
+                </fieldset>
+
+                <div class="text-right">
+                    <button type="submit" class="pure-button button-success" style="margin: 1px; margin-left: 5px; padding:0.5em 0.9em;"><span class="fa fa-search" aria-hidden="true"></span> Search</button>
+                </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-1">
+            <button type="submit" class="pure-input-1 pure-button button-search" id="search_submit" aria-label="Submit" title="Submit"><span class="fa fa-search" aria-hidden="true"></span></button>
+        </div>
+
+    </div></div>
+</form>
+
+<form action="/search" id="state_form" method="POST" autocomplete="off">
+    <input type="hidden" id="state_act" name="act" value="act"/>
+    <input type="hidden" id="state_rows" name="rows" value="10"/>
+    <input type="hidden" id="state_page" name="page" value=""/>
+    <input type="hidden" id="state_sort" name="sort" value=""/>
+    <input type="hidden" id="state_return_type" name="return_type" value=""/>
+    <input type="hidden" id="state_search" name="search" value=""/>
+    <input type="hidden" id="state_term" name="term" value=""/>
+    <input type="hidden" id="state_title" name="title" value=""/>
+    <input type="hidden" id="state_creators" name="creators" value=""/>
+    <input type="hidden" id="state_doi" name="doi" value=""/>
+    <input type="hidden" id="state_idnos" name="idnos" value=""/>
+    <input type="hidden" id="state_pubd_from" name="pubd_from" value=""/>
+    <input type="hidden" id="state_pubd_until" name="pubd_until" value=""/>
+    <input type="hidden" id="state_fulltext" name="fulltext" value=""/>
+    <input type="hidden" id="state_doe_contract_number" name="doe_contract_number" value=""/>
+    <input type="hidden" id="state_product_type" name="product_type" value=""/>
+    <input type="hidden" id="state_journal_type" name="journal_type" value=""/>
+    <input type="hidden" id="state_data_type" name="data_type" value=""/>
+    <input type="hidden" id="state_software_type" name="software_type" value=""/>
+    <input type="hidden" id="state_software_license" name="software_license" value=""/>
+    <input type="hidden" id="state_subject" name="subject" value=""/>
+    <input type="hidden" id="state_site_code" name="site_code" value=""/>
+    <input type="hidden" id="state_research_org" name="research_org" value=""/>
+    <input type="hidden" id="state_sponsor_org" name="sponsor_org" value=""/>
+    <input type="hidden" id="state_updd_from" name="updd_from" value=""/>
+    <input type="hidden" id="state_updd_until" name="updd_until" value=""/>
+    <input type="hidden" id="state_availability" name="availability" value=""/>
+    <input type="hidden" id="state_inis_nsa" name="inis_nsa" value=""/>
+    <input type="hidden" id="state_nobel" name="nobel" value=""/>
+    <input type="hidden" id="state_openaccess" name="openaccess" value=""/>
+    <button type="submit" style="display:none;" aria-hidden="true" title="Submit"/>
+</form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-nav-menu d-none d-md-block">
+            <div class="container" style="padding-left:5px; padding-right:5px;">
+                <nav class="text-center">
+                    <div class="pure-menu pure-menu-horizontal">
+                        <ul class="pure-menu-list nav-primary clearfix d-block" style="display:inline-block !important;">
+                            <li class="pure-menu-item"><a href="/submit-sti" class="pure-menu-link"><span class="fa fa-sign-in"></span> Submit<span class="d-sm-inline d-md-none"> Research Results</span></a></li>
+                            <li class="pure-menu-item"><a href="/search-tools" class="pure-menu-link"><span class="fa fa-search"></span> Search<span class="d-sm-inline d-md-none d-lg-inline"> Tools</span></a></li>
+                            <li class="pure-menu-item"><a href="/public-access" class="pure-menu-link"><span class="fa fa-unlock"></span> <span class="d-sm-inline d-md-none d-lg-inline">Public </span>Access<span class="d-sm-inline d-md-none"> Policy</span></a></li>
+                            <li class="pure-menu-item"><a href="/persistent-identifier-services-developer-tools" class="pure-menu-link"><span class="fa fa-database"></span> PID<span class="d-sm-none d-md-inline d-lg-none">s</span><span class="d-sm-inline d-md-none d-lg-inline"> Services</span><span class="d-sm-inline d-md-none d-xl-inline"> &amp; Dev Tools</span></a></li>
+                            <li class="pure-menu-item"><a href="/about" class="pure-menu-link"><span class="fa fa-info"></span> About</a></li>
+                            <li class="pure-menu-item"><a href="/faqs" class="pure-menu-link"><span class="fa fa-question"></span> FAQs</a></li>
+                            <li class="pure-menu-item" style="border-right:0;"><a href="/news" class="pure-menu-link"><span class="fa fa-newspaper-o"></span> News</a></li>
+                            
+                                
+                                    
+                                    <li class="pure-menu-item d-block d-md-none"><a href="/login" class="pure-menu-link"><span class="fa fa-user"></span> Sign In</a></li>
+                                    <li class="pure-menu-item d-block d-md-none"><a href="/createaccount" class="pure-menu-link">Create Account</a></li>
+                                
+                                
+                            
+                        </ul>
+                    </div>		
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="body-breadcrumb container clearfix">
+    
+    <nav class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <a itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item" href="/"><span itemprop="item"><span itemprop="name">OSTI.GOV</span></span><meta itemprop="position" content="1" /></a>
+                
+                
+                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-item text-muted active"><span itemprop="item"><span itemprop="name">Conference: <em>Elliptic integrals: Symmetry and symbolic integration</em></span></span><meta itemprop="position" content="2" /></span>
+    </nav>
+    
+</div>
+
+<div id="main-body" class="body-content container">
+                
+        <div itemprop="mainEntity" itemscope itemtype="http://schema.org/Report" class="biblio-page" data-ostiid="348931" data-doi="" data-type="" data-avail="avail">
+
+        <section id="section-details" class="tab-content-sec osti-curated biblio-section section-scroll" style="scroll-margin-top:10px;">
+            
+            <h1 style="font-size: 1.9rem; margin-bottom:0.5rem; margin-top:1.8rem; font-weight:500;"><span style="font-weight:normal;display:none;">Title: </span><span itemprop="name headline">Elliptic integrals: Symmetry and symbolic integration</span></h1>
+
+            <div class="row mb-2">
+                <div class="col-12 small" style="line-height:1.5rem;">
+                    <span class="biblio-refs-type-badge text-muted">Conference</span>
+                    <span style="padding-left: 0.75rem;padding-right: 0.75rem;">&middot;</span>
+                    <time itemprop="datePublished" datetime="31 December 1997">31 December 1997</time>
+                    
+                    <div style="margin-top: 0.4rem;">
+                        
+                        <span class="text-muted" style="padding-right:0.5em;">OSTI ID:</span>348931
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2" style="margin-bottom:1.5rem;">
+                <div class="col-12 small" style="line-height:1.4rem;">
+                    
+                        
+                            
+                            
+                            
+                                
+                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+        
+        
+        
+        
+    
+
+
+
+    <span class="author-link"><a href="/search/author:&quot;Carlson, B C&quot;" class="biblio-detail-author-link"><span class="author" itemprop="author">Carlson, B C</span>&nbsp;<sup class="text-muted">[1]</sup></a></span>
+    
+
+
+
+
+    <hr style="margin-top:8px;margin-bottom:8px;"/>
+    <ol class="affiliation_list affiliation_list_auth visible-print-block" style="padding-left:15px;">
+        
+            <li>Ames Lab., IA (United States)</li>
+        
+    </ol>
+    <div class="affiliation_toggle affiliation_toggle_auth hidden-print"><a href="#" onclick="$('.affiliation_list_auth').toggleClass('visible-print-block');$('.affiliation_toggle_auth_text').text($('.affiliation_toggle_auth_text').text() == '+ Show' ? '- Hide' : '+ Show');return false;"> <span class="affiliation_toggle_auth_text">+ Show</span> Author Affiliations</a></div>
+
+
+                                
+                                
+                            
+                        
+                        
+                    
+                </div>
+            </div>
+            <div class="row"><div id="metadata-description" class="col-sm-12 mb-2 p-trunc-3">
+                <p class="description mb-0 mt-0" id="citation-abstract" itemprop="description">
+                    Computation of elliptic integrals, whether numerical or symbolic, has been aided by the contributions of Italian mathematicians. Tricomi had a strong interest in iterative algorithms for computing elliptic integrals and other special functions, and his writings on elliptic functions and elliptic integrals have taught these subjects to many modern readers (including the author). The theory of elliptic integrals began with Fagnano`s duplication theorem, a generalization of which is now used iteratively for numerical computation in major software libraries. One of Lauricella`s multivariate hypergeometric functions has been found to contain all elliptic integrals as special cases and has led to the introduction of symmetric canonical forms. These forms provide major economies in new integral tables and offer a significant advantage also for symbolic integration of elliptic integrals. Although partly expository the present paper includes some new proofs and proposes a new procedure for symbolic integration.
+                </p>
+            </div></div>
+        </section>
+
+        
+        <div id="biblio-nav" class="row mb-2 d-md-block position-sticky d-print-none">
+    <div class="container">
+        <div class="row small align-flex-end" id="navbar-top">
+            <div class="col-xs-12 col-lg-6" style="padding:0;padding-top:0.5rem;">
+                <div style="display:inline-block;">
+                        <a style="margin:0.5em;" class="pure-button button-success fulltext-link" data-ostiid="348931" data-product-type="Conference" data-product-subtype="" href="/servlets/purl/348931" target="_blank" rel="noopener"><span class="fa fa-download" style="margin-right:0.25em;"></span>  View Conference</a></div>
+                </div>
+            <div class="col-xs-12 col-lg-6 text-right" style="padding:0;padding-top:0.5rem;">
+                <div class="text-left d-inline-block p-relative">
+                    <a href="#" data-jq-dropdown="#biblio-cite-options" style="padding:1em; white-space:nowrap;" data-vertical-offset="15">Cite <span class="fa fa-angle-down" style="color:#aaa;" aria-hidden="true"></span></a>
+                    <div id="biblio-cite-options" class="jq-dropdown jq-dropdown-tip jq-dropdown-relative" style="display: none; left: 0px; top: 16px;">
+                        <div class="jq-dropdown-menu xs-shift-left-9" style="padding:1em;min-width:400px;">
+                            <div class="biblio-cite" style="padding: 1rem;">
+    
+    <h2 class="title-citeformat mt-0 mb-0-5">Citation Formats</h2>
+    
+    <div class="row mb-2"><div class="col-12">
+        <ul class="nav nav-tabs nav-tabs-cite small clearfix">
+          <li class="active"><a href="#biblio-cite-mla" class="tab-nav tab-nav-cite" data-tab="cite">MLA</a></li>
+          <li><a href="#biblio-cite-apa" class="tab-nav tab-nav-cite" data-tab="cite">APA</a></li>
+          <li><a href="#biblio-cite-chi" class="tab-nav tab-nav-cite" data-tab="cite">Chicago</a></li>
+          <li><a href="#biblio-cite-bib" class="tab-nav tab-nav-cite" data-tab="cite">BibTeX</a></li>
+        </ul>
+    </div></div>
+    <div class="row"><div class="col-12">
+            
+        <section id="biblio-cite-mla" class="tab-content tab-content-cite active" data-tab="cite">
+            <div class="small">
+                <code id="biblio-cite-mla-code" style="display:block; max-height:150px; overflow:scroll; overflow-x:hidden;">
+                    Carlson, B C, and Iowa State Univ., Ames, IA. <i>Elliptic integrals: Symmetry and symbolic integration</i>.  United States: N. p., 1997. 
+        Web.   </code>
+            </div>
+            <div class="text-right small" style="margin-top:1em;"><a href="#" class="clip-cite-bib" data-clipboard-target="biblio-cite-mla-code"><span class="fa fa-files-o"></span> Copy to clipboard</a></div>
+        </section>
+            
+        <section id="biblio-cite-apa" class="tab-content tab-content-cite" data-tab="cite">
+            <div class="small">
+                <code id="biblio-cite-apa-code" style="display:block; max-height:150px; overflow:scroll; overflow-x:hidden;">
+                    Carlson, B C, &amp; Iowa State Univ., Ames, IA. <i>Elliptic integrals: Symmetry and symbolic integration</i>.  United States.   </code>
+            </div>
+            <div class="text-right small" style="margin-top:1em;"><a href="#" class="clip-cite-bib" data-clipboard-target="biblio-cite-apa-code"><span class="fa fa-files-o"></span> Copy to clipboard</a></div>
+        </section>
+                
+        <section id="biblio-cite-chi" class="tab-content tab-content-cite" data-tab="cite">
+            <div class="small">
+                <code id="biblio-cite-chi-code" style="display:block; max-height:150px; overflow:scroll; overflow-x:hidden;">
+                    Carlson, B C, and Iowa State Univ., Ames, IA. 1997.  
+        "Elliptic integrals: Symmetry and symbolic integration".  United States.  https://www.osti.gov/servlets/purl/348931. </code>
+            </div>
+            <div class="text-right small" style="margin-top:1em;"><a href="#" class="clip-cite-bib" data-clipboard-target="biblio-cite-chi-code"><span class="fa fa-files-o"></span> Copy to clipboard</a></div>
+        </section>
+
+        <section id="biblio-cite-bib" class="tab-content tab-content-cite" data-tab="cite">
+            <div class="small">
+                <code id="biblio-cite-bib-code" style="display:block; max-height:150px; overflow:scroll; overflow-x:hidden;">
+                    
+@article{osti_348931,<br/>
+  title        = {Elliptic integrals: Symmetry and symbolic integration},<br/>
+  author       = {Carlson, B C and Iowa State Univ., Ames, IA},<br/>
+  abstractNote = {Computation of elliptic integrals, whether numerical or symbolic, has been aided by the contributions of Italian mathematicians. Tricomi had a strong interest in iterative algorithms for computing elliptic integrals and other special functions, and his writings on elliptic functions and elliptic integrals have taught these subjects to many modern readers (including the author). The theory of elliptic integrals began with Fagnano`s duplication theorem, a generalization of which is now used iteratively for numerical computation in major software libraries. One of Lauricella`s multivariate hypergeometric functions has been found to contain all elliptic integrals as special cases and has led to the introduction of symmetric canonical forms. These forms provide major economies in new integral tables and offer a significant advantage also for symbolic integration of elliptic integrals. Although partly expository the present paper includes some new proofs and proposes a new procedure for symbolic integration.},<br/>
+  doi          = {},<br/>
+  url          = {https://www.osti.gov/biblio/348931},
+  journal      = {},<br/>number       = ,<br/>
+  volume       = ,<br/>
+  place        = {United States},<br/>
+  year         = {1997},<br/>
+  month        = {12}<br/>
+}
+    </code>
+            </div>
+            <div class="text-right small" style="margin-top:1em;"><a href="#" class="clip-cite-bib" data-clipboard-target="biblio-cite-bib-code"><span class="fa fa-files-o"></span> Copy to clipboard</a></div>
+        </section>
+            
+    </div></div>
+
+    
+    
+</div>
+</div>
+                    </div>
+                </div>
+                <div class="text-left d-inline-block p-relative">
+                    <a href="#" data-jq-dropdown="#biblio-save-export" style="padding:1em; white-space:nowrap;" data-vertical-offset="15" class="">Export <span class="fa fa-angle-down" style="color:#aaa;" aria-hidden="true"></span></a>
+                    <div id="biblio-save-export" class="jq-dropdown jq-dropdown-tip jq-dropdown-relative" style="display: none; left: 0px; top: 16px;">
+                        <ul class="jq-dropdown-menu" style="padding:0.5em; line-height: 1em;">
+                            <li><a href="#" class="export-link" data-export="biblio" data-ostiid="348931" data-format="enw" rel="nofollow">Endnote</a></li>
+                            <li><a href="#" class="export-link" data-export="biblio" data-ostiid="348931" data-format="ris" rel="nofollow">RIS</a></li>
+                            <li><a href="#" class="export-link" data-export="biblio" data-ostiid="348931" data-format="csv" rel="nofollow">CSV/Excel</a></li>
+                            <li><a href="#" class="export-link" data-export="biblio" data-ostiid="348931" data-format="xml" rel="nofollow">XML</a></li>
+                            <li><a href="#" class="export-link" data-export="biblio" data-ostiid="348931" data-format="json" rel="nofollow">JSON</a></li>
+                        </ul>
+                    </div>            
+                </div>
+                <div class="text-left d-inline-block p-relative">
+                    <a href="#" data-jq-dropdown="#biblio-save-share" style="padding:1em; white-space:nowrap;" data-vertical-offset="15" class="">Share <span class="fa fa-angle-down" style="color:#aaa;" aria-hidden="true"></span></a>
+                    <div id="biblio-save-share" class="jq-dropdown jq-dropdown-tip jq-dropdown-relative" style="display: none; left: 0px; top: 16px;">
+                        <ul class="jq-dropdown-menu" style="padding:0.5em; line-height: 1em;">
+                            <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.osti.gov/biblio/348931" target="_blank" rel="noopener" class="pure-menu-link social"><span class="fa fa-fw fa-facebook" style=""></span> Facebook</a></li>
+                            <li><a href="https://twitter.com/home?status=DOE%20Research%20from%20OSTI.GOV%3A%20https%3A//www.osti.gov/biblio/348931" target="_blank" rel="noopener" class="pure-menu-link social"><span class="fa fa-fw fa-twitter" style=""></span> Twitter</a></li>
+                            <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.osti.gov/biblio/348931&title=DOE%20Research%20from%20OSTI.GOV&summary=&source=" target="_blank" rel="noopener" class="pure-menu-link social"><span class="fa fa-fw fa-linkedin" style=""></span> LinkedIn</a></li>
+                            <li><a href="mailto:?subject=DOE%20Research%20from%20OSTI.GOV&body=https%3A//www.osti.gov/biblio/348931" class="pure-menu-link social"><span class="fa fa-fw fa-envelope" style=""></span> Email</a></li>
+                        </ul>
+                    </div>            
+                </div>
+                <div class="text-left d-inline-block p-relative">
+                    <a href="#" data-jq-dropdown="#biblio-save-lib" style="padding:1em; white-space:nowrap;" data-vertical-offset="15" class="">Save <span class="fa fa-angle-down" style="color:#aaa;" aria-hidden="true"></span></a>
+                            <div id="biblio-save-lib" class="jq-dropdown jq-dropdown-tip jq-dropdown-relative" style="display: none; left: 0px; top: 16px;">
+                                <div class="jq-dropdown-panel xs-shift-left-9" style="padding:1rem;">
+                                    You must <a class="" href="/login?callback=biblio">Sign In</a> or <a href="/createaccount">Create an Account</a> in order to save documents to your library.
+                                </div>
+                            </div>
+                        </div>
+                <div class="text-left d-none d-sm-inline-block p-relative">
+                    <a href="javascript:window.print();" style="padding:1em; white-space:nowrap;" class="">Print <span class="fa fa-fw fa-print" style="color:#aaa;" aria-hidden="true"></span></a></span></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12" style="padding:0;">
+                <div id="navbar" class="row" style="border: 1px solid #ddd;">
+                    <div class="navbar-item col-auto col-sm"><a href="#section-details" data-scroll="section-details" class="navbar-item-a small"><span class="d-inline-block d-sm-none" style="width:1em;" aria-hidden="true"></span><span class="d-none d-sm-inline">Details</span><span class="d-inline d-sm-none fa fa-angle-up"></span></a></div>
+                    <div class="navbar-item col"><a href="#section-similar" data-scroll="section-similar" class="navbar-item-a small">Similar<span class="d-none d-md-inline"> Records / Subjects</span><span class="d-inline-block d-sm-none" style="width:1em;" aria-hidden="true"></span></a></div></div>
+            </div>
+        </div>
+    </div>
+    <div class="progress-container">
+        <div class="progress-bar" id="nav-progress-bar"></div>
+    </div>        
+</div>
+
+
+        
+        <section id="section-metadata" class="tab-content-sec osti-curated" style="scroll-margin-top:110px;">
+            <div class="row">
+                <div class="col-md-8 biblio-summary biblio-summary-right pl-2" style="border-right:0;border-left:0;">
+                    
+                    <div class="biblio-detail">
+
+    <dl class="dl-horizontal small clearfix">
+            <dt>Research Organization: <span class="infotip-show-hidden d-none"></span></dt>
+            <dd itemprop="sourceOrganization">Ames Lab., Ames, IA (United States)</dd>
+        </dl>
+    <dl class="dl-horizontal small clearfix">
+            <dt>Sponsoring Organization: <span class="infotip-show-hidden d-none"></span></dt>
+            <dd itemprop="sourceOrganization">USDOE Office of Energy Research, Washington, DC (United States)</dd>
+        </dl>
+    <dl class="dl-horizontal small clearfix">
+            <dt>DOE Contract Number:<span class="infotip-show-hidden d-none"></span></dt>
+            <dd>W-7405-ENG-82</dd>
+        </dl>
+    <dl class="dl-horizontal small clearfix">
+        <dt>OSTI ID: <span class="infotip-show-hidden d-none"></span></dt>
+        <dd>348931</dd>
+    </dl>
+    <dl class="dl-horizontal small clearfix">
+                <dt>Report Number(s): <span class="infotip-show-hidden d-none"></span></dt>
+                <dd>IS-M-876; CONF-971291-; ON: DE99002534; TRN: AHC29920%%82</dd>
+            </dl>
+        <dl class="dl-horizontal small clearfix">
+                <dt>Resource Relation: <span class="infotip-show-hidden d-none"></span></dt>
+                <dd>Conference: Tricomi`s ideas and contemporary applied mathematics, Turin (Italy), 1-2 Dec 1997; Other Information: PBD: [1997]</dd>
+            </dl>
+        <dl class="dl-horizontal small clearfix">
+            <dt>Country of Publication: <span class="infotip-show-hidden d-none"></span></dt>
+            <dd>United States</dd>
+        </dl>
+    <dl class="dl-horizontal small clearfix">
+            <dt>Language: <span class="infotip-show-hidden d-none"></span></dt>
+            <dd>English</dd>
+        </dl>
+    </div>
+
+                </div>
+                
+            </div> 
+        </section>
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        <hr class="mt-2 mb-2"/>
+        <section id="section-similar" class="tab-content-sec osti-curated biblio-section section-scroll" style="scroll-margin-top:110px;">
+            <div class="row">
+                <div class="col-8" style="padding-right:40px;">
+                    <h2 class="abstract">Similar Records</h2>
+                    <div class="" style="line-height:1.6rem;">
+                        
+                        
+                            
+                                
+                                <a href="/biblio/1468725" target="_blank">Elliptic symbol calculus: from elliptic polylogarithms to iterated integrals of Eisenstein series</a>
+                                <div class="small" style="line-height:1.4rem;">
+                                    Journal Article
+                                    <span style="padding-left: 0.75rem;padding-right: 0.75rem;">&middot;</span>
+                                    2018
+                                    <span style="padding-left: 0.75rem;padding-right: 0.75rem;">&middot;</span> Journal of High Energy Physics (Online)
+                                    <span style="padding-left: 0.75rem;padding-right: 0.75rem;">&middot;</span>
+                                    <span class="text-muted" style="padding-right:0.5em;">OSTI ID:</span>348931
+                                </div>
+                                
+                                        <div class="small" style="line-height:1.4rem;">
+                                            
+                                                
+                                                <span class="author-link"><a href="/search/author:&quot;Broedel, Johannes&quot;" class="btn btn-link btn-sm"><span class="author" itemprop="author">Broedel, Johannes; </span></a></span>
+                                            
+                                                
+                                                <span class="author-link"><a href="/search/author:&quot;Duhr, Claude&quot;" class="btn btn-link btn-sm"><span class="author" itemprop="author">Duhr, Claude; </span></a></span>
+                                            
+                                                
+                                                <span class="author-link"><a href="/search/author:&quot;Dulat, Falko&quot;" class="btn btn-link btn-sm"><span class="author" itemprop="author">Dulat, Falko; </span></a></span>
+                                            
+                                            <span class="text-muted">+2 more</span>
+                                        </div>
+                                
+                                                
+                                
+                            
+                        
+                            
+                                <hr/>
+                                <a href="/biblio/983485" target="_blank">Review of The SIAM 100-Digit Challenge: A Study in High-Accuracy Numerical Computing</a>
+                                <div class="small" style="line-height:1.4rem;">
+                                    Technical Report
+                                    <span style="padding-left: 0.75rem;padding-right: 0.75rem;">&middot;</span>
+                                    2005
+                                    
+                                    <span style="padding-left: 0.75rem;padding-right: 0.75rem;">&middot;</span>
+                                    <span class="text-muted" style="padding-right:0.5em;">OSTI ID:</span>348931
+                                </div>
+                                
+                                        <div class="small" style="line-height:1.4rem;">
+                                            
+                                                
+                                                <span class="author-link"><a href="/search/author:&quot;Bailey, David&quot;" class="btn btn-link btn-sm"><span class="author" itemprop="author">Bailey, David</span></a></span>
+                                            
+                                            
+                                        </div>
+                                
+                                                
+                                
+                            
+                        
+                            
+                                <hr/>
+                                <a href="/biblio/1458523" target="_blank">Elliptic polylogarithms and iterated integrals on elliptic curves. Part I: general formalism</a>
+                                <div class="small" style="line-height:1.4rem;">
+                                    Journal Article
+                                    <span style="padding-left: 0.75rem;padding-right: 0.75rem;">&middot;</span>
+                                    2018
+                                    <span style="padding-left: 0.75rem;padding-right: 0.75rem;">&middot;</span> Journal of High Energy Physics (Online)
+                                    <span style="padding-left: 0.75rem;padding-right: 0.75rem;">&middot;</span>
+                                    <span class="text-muted" style="padding-right:0.5em;">OSTI ID:</span>348931
+                                </div>
+                                
+                                        <div class="small" style="line-height:1.4rem;">
+                                            
+                                                
+                                                <span class="author-link"><a href="/search/author:&quot;Broedel, Johannes&quot;" class="btn btn-link btn-sm"><span class="author" itemprop="author">Broedel, Johannes; </span></a></span>
+                                            
+                                                
+                                                <span class="author-link"><a href="/search/author:&quot;Duhr, Claude&quot;" class="btn btn-link btn-sm"><span class="author" itemprop="author">Duhr, Claude; </span></a></span>
+                                            
+                                                
+                                                <span class="author-link"><a href="/search/author:&quot;Dulat, Falko&quot;" class="btn btn-link btn-sm"><span class="author" itemprop="author">Dulat, Falko; </span></a></span>
+                                            
+                                            <span class="text-muted">+1 more</span>
+                                        </div>
+                                
+                                                
+                                
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                                                    
+                    </div>
+                </div>
+                <div class="col-4" style="padding-left:40px; border-left:1px solid #ddd;">
+                    <h2 class="abstract">Related Subjects</h2>
+                    <div class="small" style="line-height:1.6rem;">
+                        
+                            
+                                
+                                
+                                    
+                                        <a href="/search/subject:99 MATHEMATICS">99 MATHEMATICS</a><br/>
+                                    
+                                        <a href="/search/subject:COMPUTERS">COMPUTERS</a><br/>
+                                    
+                                        <a href="/search/subject:INFORMATION SCIENCE">INFORMATION SCIENCE</a><br/>
+                                    
+                                        <a href="/search/subject:MANAGEMENT">MANAGEMENT</a><br/>
+                                    
+                                        <a href="/search/subject:LAW">LAW</a><br/>
+                                    
+                                        <a href="/search/subject:MISCELLANEOUS">MISCELLANEOUS</a><br/>
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        <a href="/search/subject:INTEGRALS">INTEGRALS</a><br/>
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        <a href="/search/subject:INTEGRAL CALCULUS">INTEGRAL CALCULUS</a><br/>
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        <a href="/search/subject:ITERATIVE METHODS">ITERATIVE METHODS</a><br/>
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        <a href="/search/subject:ALGORITHMS">ALGORITHMS</a><br/>
+                                    
+                                
+                            
+                        
+                            
+                                
+                                
+                                    
+                                        <a href="/search/subject:FUNCTIONS">FUNCTIONS</a><br/>
+                                    
+                                
+                            
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    
+
+
+
+
+
+
+
+</div>
+</section>
+
+<footer class="" style="background-color:#f9f9f9; /* padding-top: 0.5rem; */">
+
+	<div class="footer-minor">
+		<div class="container">
+                        <hr class="footer-separator" />
+			<div class="text-center" style="margin-top:1.25rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="logo-usdoe" viewBox="0 0 1024 190.9"><defs><style>.c1{fill:#3f474e}.c2{fill:transparent}</style></defs><a href="https://www.energy.gov" target="_blank" rel="noopener noreferrer"><g id="Layer_1"><path d="M148 16h376v91H148V16Z" class="c2"/><path d="M147.9 34.8h49.5v12.9h-34.6v15.4h33.9V76h-33.9v16.4h34.6v13h-49.5zm68 23.1v47.4H201V34.8h15.3l32.4 45.7V34.8h14.9v70.6h-14.4L215.8 58Zm199.6-24.3c14.5 0 23.6 7.1 28.9 15.5L432 55.9c-11-17.3-40-7.2-38.5 14.3-1 21.5 26.4 30.3 37 17.8v-8.6h-18.7V66.5h33.4v27c-20.1 24.9-68.4 12.9-67-23.3 0-22.2 16.9-36.7 37.3-36.5Z" class="c1"/><path d="M464.9 76.5 438 34.8h17l17.4 28.4 17.2-28.4h17l-26.7 41.7v28.9H465V76.5Z" class="c1"/><rect height="20.8" x="321.5" y="34.8" class="c1"/><path d="M321.5 34.8h-53.7v20.7h45.6z" class="c1"/><rect height="7.4" x="321.5" y="59.8" class="c1"/><path d="M311.8 59.8h-44v20.7h35.8zm-44 24.8h53.6v20.8h-53.6zm94.6-6.1c22.9-4.8 19.4-45-8.2-43.7h-32.7v32.4h14.9V47.7c8.1.5 26.5-3.3 26.1 9.8.4 13.1-18 9.2-26.1 9.8l-14.9 38.3h14.9V80.3h10.9l13.7 25.3h17.1l-15.7-26.9ZM248.8 15.9c6.2-1.8-.9 10.5 5.5 10.3 6.3.3-.8-12 5.4-10.3-.3 4.4 1.9 12.9-5.4 12.6-7.3.3-5.2-8.1-5.5-12.6m12.9 9.5c1.9 0 1.9 3 0 3s-1.9-3 0-3" class="c1"/><path d="M265.6 24.5c.8 1.4 6 2.7 6 .3-1-2.5-7.3-1.1-7.1-5.3-1.1-5.5 12.9-4.4 8-.1-1.2-1.3-5-2.3-5.3-.1 1.1 2.4 7.3 1 7 5.2 1.2 6-13.7 4.6-8.7 0Z" class="c1"/><path d="M276.5 25.4c1.9 0 1.9 3 0 3s-1.9-3 0-3m7.4-9.5c14.9-2.8 14.9 15.2 0 12.4zm4.8 10c11-2.4-5-16.9-2.2 0z" class="c1"/><path d="M300.7 19c2.8 0 4.6 2.4 4.4 5.4h-6.6c0 2.2 4 2.7 4.9 1.2l1 1.5c-6.9 5.6-12.8-7.4-3.8-8.1Zm-2.1 3.9h4.4c0-2.5-4.4-2.5-4.4 0m8 8.7V19.2h2.3v1.1c9-7 8.2 13.9 0 6.7v4.6zm4.4-10.5c-2.4-.2-2 2.7-2 4.2 3.3 3.9 6.5-3.9 2-4.2" class="c1"/><path d="M322.8 27.3c-7.5 5.4-7.4-9 0-3.6.7-3-2.8-3.6-4.5-1.7-2.8-3.8 7.6-4.4 6.9.4v5.8h-2.3v-.9Zm0-2.3c-4.6-3.2-4.7 4.4 0 1.2zm4.3-5.7h2.3v1.2c.6-.8 1.7-1.4 2.8-1.4v2.3c-4.1-1.2-2.6 4.9-2.8 6.9h-2.3v-8.9ZM335 26v-4.7h-1.5v-2.1h1.5v-2.5h2.3v2.5h1.8v2.1h-1.8c.2 1-.9 6.4 1.6 4.8 2 3.3-4.4 3-3.9-.2Zm17.2-3.5c.2-2-2.6-1.6-3.1-.4v6h-2.3c1.1-9.8-4.2-9.3-3.1 0h-2.3v-8.9h2.3v1.2c.7-1.5 4.9-2.2 5.3.2 1.2-2.1 5.7-2.5 5.6 1.1v6.5h-2.3v-5.6ZM361 19c2.8 0 4.6 2.4 4.4 5.4h-6.6c0 2.2 4 2.7 4.9 1.2l1 1.5c-6.9 5.6-12.8-7.4-3.8-8.1Zm-2.2 3.9h4.4c0-2.5-4.4-2.5-4.4 0m14.4-.1c.2-2.3-3-1.9-3.6-.6v6h-2.3v-8.9h2.3v1.2c1.3-2 6-2 6 1.5v6.3h-2.3v-5.4Zm5.5 3.2v-4.7h-1.5v-2.1h1.5v-2.5h2.3v2.5h1.8v2.1H381c.2 1-.9 6.4 1.6 4.8 2 3.3-4.4 3-3.9-.2Zm10.5-2.3c-.4-6.1 9.7-6.1 9.4 0 .4 6.1-9.7 6.2-9.4 0m6.9 0c.2-3.4-4.7-3.4-4.5 0-.2 3.4 4.7 3.4 4.5 0m4.8-2.4h-1.5v-2.1h1.5c-1-3.5 6.1-5.4 4.2-1.6-2.1-.9-2.8 2.3 0 1.6v2.1h-1.8v6.9H401v-6.9Zm90.1 79.5h-1.6v-.7h4v.7h-1.6v4.6h-.8zm7.7.4c-2.1 5.3-1.7 5.3-3.7 0v4.2h-.8v-5.3c1.6-.9 2.2 3.1 2.7 3.8.5-.7 1.1-4.7 2.7-3.8v5.3h-.8v-4.2Z" class="c1"/><path d="M523.9 34.8v70.6" style="fill:none;stroke:#3f474e;stroke-miterlimit:10;stroke-width:4px"/></g></a><a href="https://www.energy.gov/science/office-science" target="_blank" rel="noopener noreferrer"><g id="Layer_2"><path d="M539 42h344v54H539V42Z" class="c2"/><path d="M563.6 85.4c-19.4.5-19.5-33.1-.1-32.7 19.3-.5 19.4 33.1.1 32.7m0-5.7c11.8 0 11.7-21.5-.1-21.4-11.9 0-11.8 21.5.1 21.4" class="c1"/><path d="M580.5 67v-4.8h13.8V67zm3.4 17.8c1.5-7.6-6-40.5 11.7-31l-2 4.3c-2.4-1.6-4.6-.3-4.3 2.8v23.9zM596.5 67v-4.8h13.8V67zm3.4 17.8c1.5-7.6-6-40.5 11.7-31l-2 4.3c-2.4-1.6-4.6-.3-4.3 2.8v23.9zm17-26.3c-4 0-4-6.8 0-6.9 4 0 4 6.9 0 6.9m-2.7 26.3V62.2h5.4v22.6zm20.1.6c-9.1.4-13.4-10.8-9.5-18 3.9-11.8 28-1.2 13.6 2.8-2.5-5.5-10.2-2.3-9.5 3.3-.7 5.8 7.3 8.9 9.6 3.1l5.1 2c-1.4 4.1-5 6.8-9.3 6.7Zm21.6 0c-8.9.3-12.6-11.1-8.9-18 5.8-11.2 20.7-4 19.1 7.7h-15.4l.5-.5c-.4 5.3 7.6 7.7 9.6 2.6l4.8 2.1c-1.7 3.9-5.4 6.2-9.7 6.1m-4.4-14.2-.5-.5h9.8l-.4.5c.3-5.9-9.1-5.8-8.9 0m37 14.2c-14 .4-14.1-24 0-23.7 14-.4 14.1 24 0 23.7m0-5.6c6.8 0 6.7-12.7 0-12.7-6.8 0-6.8 12.7 0 12.7M701.3 67v-4.8h13.8V67zm3.4 17.8c1.5-7.6-6-40.5 11.7-31l-2 4.3c-2.4-1.6-4.6-.3-4.3 2.8v23.9zm33.9.6c-6.3.4-16.8-7.7-5.6-9.2 3.5 9.2 21.6-.7-1.3-7-12.8-12.7 11.7-25 17.2-9.3l-5.4 1.9c-3-8.8-15.7 0-6 3.9 13.9 1.1 16.2 19.4 1.1 19.7" class="c1"/><path d="M762.8 85.4c-9.1.4-13.4-10.8-9.5-18 3.9-11.8 28-1.2 13.6 2.8-2.5-5.5-10.2-2.3-9.5 3.3-.7 5.8 7.3 8.9 9.6 3.1l5.1 2c-1.4 4.1-5 6.8-9.3 6.7Zm15.4-26.9c-4 0-4-6.8 0-6.9 4 0 4 6.9 0 6.9m-2.7 26.3V62.2h5.4v22.6zm19.6.6c-8.9.3-12.6-11.1-8.9-18 5.8-11.2 20.7-4 19.1 7.7h-15.4l.5-.5c-.4 5.3 7.6 7.7 9.6 2.6l4.8 2.1c-1.7 3.9-5.4 6.2-9.7 6.1m-4.5-14.2-.5-.5h9.8l-.4.5c.3-5.9-9.1-5.8-8.9 0m17.8 13.6V62.2h5c.5 2.6.3 19.6.3 22.6h-5.4Zm13.5-11.6c1-7.7-8.6-8-8.1-.3H812c-.9-15.1 17.1-15 15.3.3zm0 11.6V73.2h5.4v11.6zm19.5.6c-9.1.4-13.4-10.8-9.5-18 3.9-11.8 28-1.2 13.6 2.8-2.5-5.5-10.2-2.3-9.5 3.3-.7 5.8 7.3 8.9 9.6 3.1l5.1 2c-1.4 4.1-5 6.8-9.3 6.7Zm21.6 0c-8.9.3-12.6-11.1-8.9-18 5.8-11.2 20.7-4 19.1 7.7h-15.4l.5-.5c-.4 5.3 7.6 7.7 9.6 2.6l4.8 2.1c-1.7 3.9-5.4 6.2-9.7 6.1m-4.5-14.2-.5-.5h9.8l-.4.5c.3-5.9-9.1-5.8-8.9 0" class="c1"/></g></a><a href="/"><g id="Layer_3"><path d="M989 174.2H16l19-47.3h973z" class="c1" style="opacity:.2"/><path d="M58.7 167.4c-21.2.6-21.4-32.9-.1-32.3 21.1-.6 21.2 32.8.1 32.3m0-5.6c12.8.3 12.7-21.6-.1-21.2-12.9-.3-12.8 21.6.1 21.2" class="c1"/><path d="M77.2 149.2v-4.7h15.1v4.7zm3.8 17.7c1.3-8.5-5.9-40.3 12.8-30.6l-2.2 4.2c-2.5-1.5-5.1-.5-4.7 2.8v23.6zm13.8-17.7v-4.7h15.1v4.7zm3.7 17.7c1.3-8.5-5.9-40.3 12.8-30.6l-2.2 4.2c-2.5-1.5-5.1-.5-4.7 2.8v23.6zm18.7-26c-4.4 0-4.4-6.8 0-6.8s4.4 6.9 0 6.8m-3 26v-22.4h5.9v22.4zm22.2.5c-25.9-2.6-3.9-38.6 10.1-17l-5.5 2c-2.7-5.3-11-2.6-10.5 3.3-.6 6 8 8.6 10.6 3.1l5.6 2c-1.7 4.2-5.7 6.7-10.2 6.7Zm23.7 0c-9.1.5-14.1-10.5-9.8-17.8 6.1-10.8 22.4-4.7 21 7.6h-16.9l.5-.5c-.3 5.5 8.4 7.5 10.6 2.6l5.3 2.1c-2 4.1-6.1 6.1-10.7 6m-4.9-14-.5-.5h10.8l-.5.5c.2-5.9-9.9-5.8-9.7 0Zm40.7 14c-15.3.7-15.4-24.1 0-23.4 15.3-.7 15.3 24.1 0 23.4m0-5.5c7.4.2 7.3-12.7 0-12.5-7.4-.1-7.4 12.7 0 12.5m14-12.7v-4.7H225v4.7zm3.7 17.7c1.3-8.5-5.9-40.3 12.8-30.6l-2.2 4.2c-2.5-1.5-5.1-.5-4.7 2.8v23.6zm37.4.5c-4.9 0-10.7-2.3-12.1-7.3l6-1.8c1.5 6.3 15.1 3.9 10-2.5-4.1-2.9-11.5-2.1-14.1-7.3-6.6-13.8 17.6-18.9 21.6-6.3l-5.9 1.8c-3.2-8.6-17.3 0-6.6 3.9 15.3 1.1 17.8 19.1 1.2 19.5Z" class="c1"/><path d="M277.5 167.4c-25.9-2.6-3.9-38.6 10.1-17l-5.5 2c-2.7-5.3-11-2.6-10.5 3.3-.6 6 8 8.6 10.6 3.1l5.6 2c-1.7 4.2-5.7 6.7-10.2 6.7Zm17-26.5c-4.4 0-4.4-6.8 0-6.8s4.4 6.9 0 6.8m-3 26v-22.4h5.9v22.4zm21.5.5c-9.1.5-14.1-10.5-9.8-17.8 6.1-10.8 22.4-4.7 21 7.6h-16.9l.5-.5c-.3 5.5 8.4 7.5 10.6 2.6l5.3 2.1c-2 4.1-6.1 6.1-10.7 6m-4.9-14-.5-.5h10.8l-.5.5c.2-5.9-9.9-5.8-9.7 0Zm19.5 13.5v-22.4h5.5c.5 2.6.3 19.4.4 22.4zm14.8-11.5c1.2-7.6-9.6-7.8-8.9-.3h-2c-.9-14.9 18.7-15 16.8.3zm0 11.5v-11.5h5.9v11.5zm8.7-17.4v-5h15.1v5zm11.2 17.9c-12.8 1.5-5.8-23.5-7.5-29.9h5.9c1.3 2.4-3.7 29.5 4.6 23.6 2.5 4.2 2.5 5.7-3 6.3m12-26.5c-4.4 0-4.4-6.8 0-6.8s4.4 6.9 0 6.8m-2.9 26v-22.4h5.9v22.4zm9.9-17.7v-4.7h15.1v4.7zm3.7 17.7c1.3-8.5-5.9-40.3 12.8-30.6l-2.2 4.2c-2.5-1.5-5.1-.5-4.7 2.8v23.6zm18.6-26c-4.4 0-4.4-6.8 0-6.8s4.4 6.9 0 6.8m-2.9 26v-22.4h5.9v22.4zm22.1.5c-25.9-2.6-3.9-38.6 10.1-17l-5.5 2c-2.7-5.3-11-2.6-10.5 3.3-.6 6 8 8.6 10.6 3.1l5.6 2c-1.7 4.2-5.7 6.7-10.2 6.7Zm31.5 0c-11.8.7-10.8-15.2.7-14h5.7v4.4c-18.1-1.4-3.2 11.6-.3 0h1.4c0 5.5-1.6 9.7-7.5 9.7Zm6.3-.5c0-6 1.2-24.8-9-15.2l-5.2-1.8c2.7-7.3 15.5-8.2 18.8-1 1.9 3.3.7 14.1.9 18zm10.3 0v-22.4h5.5c.5 2.6.3 19.4.4 22.4zm14.8-11.5c1.2-7.6-9.6-7.8-8.9-.3h-2c-.9-14.9 18.7-15 16.8.3zm0 11.5v-11.5h5.9v11.5zm19.5.5c-13.5.5-13.5-24 0-23.4 11.9-.2 11.9 23.6 0 23.4m1.5-5.4c7 0 7-12.7 0-12.6-7.3-.1-7.2 12.7 0 12.6m5.5 4.9c-.5-1.7-.3-28.7-.3-31.3h5.9v31.3zm28.8 0v-25.7h-9.4v-5.6h24.9v5.6h-9.3v25.7h-6.1Zm25.8.5c-9.1.5-14.1-10.5-9.8-17.8 6.1-10.8 22.4-4.7 21 7.6h-16.9l.5-.5c-.3 5.5 8.4 7.5 10.6 2.6l5.3 2.1c-2 4.1-6.1 6.1-10.7 6m-4.8-14-.5-.5h10.8l-.5.5c.2-5.9-9.9-5.8-9.7 0Z" class="c1"/><path d="M592.3 167.4c-25.9-2.6-3.9-38.6 10.1-17l-5.5 2c-2.7-5.3-11-2.6-10.5 3.3-.6 6 8 8.6 10.6 3.1l5.6 2c-1.7 4.2-5.7 6.7-10.2 6.7Zm13.7-.5v-31.3h5.9v31.3zm14.8-11.5c1.1-7.6-9.7-7.8-8.9-.3h-2c-.9-14.9 18.6-15 16.8.3zm0 11.5v-11.5h5.9v11.5zm10.6 0v-22.4h5.5c.5 2.6.3 19.4.4 22.4zm14.8-11.5c1.2-7.6-9.6-7.8-8.9-.3h-2c-.9-14.9 18.7-15 16.8.3zm0 11.5v-11.5h5.9v11.5zm13.9-26c-4.4 0-4.4-6.8 0-6.8s4.4 6.9 0 6.8m-2.9 26v-22.4h5.9v22.4zm22.1.5c-25.9-2.6-3.9-38.6 10.1-17l-5.5 2c-2.7-5.3-11-2.6-10.5 3.3-.6 6 8 8.6 10.6 3.1l5.6 2c-1.7 4.2-5.7 6.7-10.2 6.7Z" class="c1"/><path d="M700.2 167.4c-11.8.7-10.8-15.2.7-14h5.7v4.4c-18.1-1.4-3.2 11.6-.3 0h1.4c0 5.5-1.6 9.7-7.5 9.7Zm6.2-.5c0-6 1.2-24.8-9-15.2l-5.2-1.8c2.7-7.3 15.5-8.2 18.8-1 1.9 3.3.7 14.1.9 18zm10.4 0v-31.3h5.9v31.3zm22.5 0v-31.3h6.1v31.3zm12 0v-22.4h5.5c.5 2.6.3 19.4.4 22.4zm14.8-11.5c1.2-7.6-9.6-7.8-8.9-.3h-2c-.9-14.9 18.7-15 16.8.3zm0 11.5v-11.5h5.9v11.5zm9.2-17.7v-4.7h15.1v4.7zm3.7 17.7c1.3-8.5-5.9-40.3 12.8-30.6l-2.2 4.2c-2.5-1.5-5.1-.5-4.7 2.8v23.6zm25.3.5c-15.3.7-15.4-24.1 0-23.4 15.3-.7 15.3 24.1 0 23.4m0-5.5c7.4.2 7.3-12.7 0-12.5-7.4-.1-7.4 12.7 0 12.5m15.4 5v-22.4h5.9v22.4zm4.2-11.8c-.3-5.9 3.9-10.7 9.7-10.7v5.7c-3.3 0-7.9 1-7.9 5H824Zm12.8 11.8v-22.4h5.5l.3 2.9c2.9-5.1 11.8-4.5 13.5 1.3 1.8-5.3 9.7-6.3 12.9-2.3 3.3 3.4 1.7 15.8 2.1 20.4h-5.9c-.8-3.9 2.5-17.3-3.8-17.4-7.3-.3-3.6 13.2-4.5 17.4h-5.9c-.8-3.9 2.5-17.4-3.8-17.4-7.1-.3-3.6 13.2-4.4 17.4h-5.9Zm46.2.5c-11.8.7-10.8-15.2.7-14h5.7v4.4c-18.1-1.4-3.2 11.6-.3 0h1.4c0 5.5-1.6 9.7-7.5 9.7Zm6.3-.5c0-6 1.2-24.8-9-15.2l-5.2-1.8c2.7-7.3 15.5-8.2 18.8-1 1.9 3.3.7 14.1.9 18zm8.4-17.4v-5h15.1v5zm11.1 17.9c-12.8 1.5-5.8-23.5-7.5-29.9h5.9c1.3 2.4-3.7 29.5 4.6 23.6 2.5 4.2 2.5 5.7-3 6.3m12.1-26.5c-4.4 0-4.4-6.8 0-6.8s4.4 6.9 0 6.8m-3 26v-22.4h5.9v22.4zm21.9.5c-15.3.7-15.4-24.1 0-23.4 15.3-.7 15.3 24.1 0 23.4m0-5.5c7.4.2 7.3-12.7 0-12.5-7.4-.1-7.4 12.7 0 12.5m15.5 5v-22.4h5.5c.5 2.6.3 19.4.4 22.4zm14.8-11.5c1.2-7.6-9.6-7.8-8.9-.3h-2c-.9-14.9 18.7-15 16.8.3zm0 11.5v-11.5h5.9v11.5z" class="c1"/></g></a></svg>
+			</div>
+			<div class="text-center small" style="margin-top:0.5em;margin-bottom:2.0rem;">
+			
+                            <div class="pure-menu pure-menu-horizontal">
+                                <ul class="pure-menu-list">
+                                <li class="pure-menu-item"><a href="/disclaim" class="pure-menu-link"><span class="fa fa-institution"></span> Website Policies <span class="d-none d-sm-inline">/ Important Links</span></a></li>
+                                <li class="pure-menu-item"><a href="/contact" class="pure-menu-link"><span class="fa fa-comments-o"></span> Contact Us</a></li>
+                                <li class="d-block d-md-none mb-1"></li>
+                                <li class="pure-menu-item"><a href="https://www.energy.gov/vulnerability-disclosure-policy" target="_blank" class="pure-menu-link">Vulnerability Disclosure Program</a></li>
+                                <li class="d-block d-lg-none mb-1"></li>
+                                <li class="pure-menu-item"><a href="https://www.facebook.com/ostigov" target="_blank" rel="noopener noreferrer" class="pure-menu-link social"><span class="fa fa-facebook"></span><span class="sr-only">Facebook</span></a></li>
+                                <li class="pure-menu-item"><a href="https://twitter.com/OSTIgov" target="_blank" rel="noopener noreferrer" class="pure-menu-link social"><span class="fa fa-twitter"></span><span class="sr-only">Twitter</span></a></li>
+                                <li class="pure-menu-item"><a href="https://www.youtube.com/user/ostigov" target="_blank" rel="noopener noreferrer" class="pure-menu-link social"><span class="fa fa-youtube-play"></span><span class="sr-only">YouTube</span></a></li>
+                                </ul>
+                            </div>
+				
+			</div>
+		</div>	
+	</div>
+
+</footer>
+
+
+    <link href="/css/ostigov.fonts.241122.2111.css" rel="stylesheet">
+    
+
+<script src="/js/ostigov.241122.2111.js"></script><noscript></noscript>
+
+
+<script defer src="/js/ostigov.biblio.241122.2111.js"></script><noscript></noscript>
+<script async type="text/javascript" src="/js/Universal-Federated-Analytics-Min.js?agency=DOE" id="_fed_an_ua_tag"></script><noscript></noscript>
+</body>
+<!-- OSTI.GOV v.241122.2111 -->
+</html>
+
+    
+
+
