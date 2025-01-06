@@ -41,19 +41,21 @@
 
 % Define base paths
 % relies on symlink  at $HOME, e.g.
-% 	GitHub -> /Users/dantopa//repos-xiuhcoatal/github
+% 	GitHub -> /Users/dantopa//repos-xiuhcoatl/github
 \newcommand{\pGithub}			{\HomePath/GitHub/}
 \newcommand{\pGithubSharing}	{\pGithub/sharing/}
 \newcommand{\pGlobal}			{\pGithubSharing/global/}
 \newcommand{\pGlobalSetup}		{\pGlobal/setup-global/}
+\newcommand{\pWorkspace}			{/Users/dantopa/GitHub/sharing/beamer/2024-12-Topa-01}
 % Load Additional Setup Files
 	\input{\pGlobalSetup/setup-global-beamer.tex}
 	\input{\pLocalSetup/setup-local.tex}
 	\input{\pGlobalSetup/listings-global.tex}
 
 % Bibliography
-	%\input{\pGlobalSetup packages-global-bibliography-charlie.tex}
-\addbibresource{\pShareBibliographies/radar.bib} 
+	\input{\pGlobalSetup packages-global-bibliography-charlie.tex}
+%\addbibresource{\pShareBibliographies/radar.bib} 
+\addbibresource{/Users/dantopa/GitHub/sharing/bibliographies/radar.bib} 
 
 \newcommand{\fourier}		{\color{blue}{ e^{i n \theta} }} 
 \newcommand*{\theorembreak}{\usebeamertemplate{theorem end}\framebreak\usebeamertemplate{theorem begin}}

@@ -7,23 +7,31 @@ The Radial Alignment and Vectorized Thrust Orientation in Time (RaVThOughT) navi
 \section{Key Contributions of RaVThOughT}
 
 \subsection{Simplification of Guidance Algorithms}
-- Decouples local maneuvering from gravitational effects.
-- Employs quadratic interpolation for gravitational transformations over 100-second windows.
-- Reduces computational load by an order of magnitude compared to traditional methods.
+\begin{itemize}
+	\item Decouples local maneuvering from gravitational effects.
+	\item Employs quadratic interpolation for gravitational transformations over 100-second windows.
+	\item Reduces computational load by an order of magnitude compared to traditional methods.
+\end{itemize}
 
 \subsection{Machine Learning Compatibility}
-- Simplifies state representation for better action-outcome relationships.
-- Accelerates training of machine learning models while preserving physical meaning.
-- Facilitates reinforcement learning in spacecraft guidance applications.
+\begin{itemize}
+	\item Simplifies state representation for better action-outcome relationships.
+	\item Accelerates training of machine learning models while preserving physical meaning.
+	\item Facilitates reinforcement learning in spacecraft guidance applications.
+\end{itemize}
 
 \subsection{Enhanced Multi-Vehicle Coordination}
-- Introduces hierarchical compound frames for managing constellations and formation flying.
-- Simplifies relative motion and collision avoidance tasks.
-- Scales efficiently for cooperative missions.
+\begin{itemize}
+	\item Introduces hierarchical compound frames for managing constellations and formation flying.
+	\item Simplifies relative motion and collision avoidance tasks.
+	\item Scales efficiently for cooperative missions.
+\end{itemize}
 
 \subsection{Built-in Error Detection}
-- Employs a left-handed coordinate system, unique among standard reference frames.
-- Prevents subtle errors by clearly distinguishing from traditional right-handed systems.
+\begin{itemize}
+	\item Employs a left-handed coordinate system, unique among standard reference frames.
+	\item Prevents subtle errors by clearly distinguishing from traditional right-handed systems.
+\end{itemize}
 
 \section{Comparison with Existing Reference Frames}
 
@@ -46,15 +54,15 @@ Radial-Space-Walk (RSW) & Simplifies relative motion in orbital planes & Complex
 
 RaVThOughT bridges these gaps by combining the simplicity of vectorized maneuvers with manageable gravitational models, making it ideal for discrete guidance algorithms and machine learning.
 
-\section{Mathematical Framework}
+\subsection{Mathematical Framework}
 
-\subsection{Local Reference Frame}
+\subsubsection{Local Reference Frame}
 - Left-handed coordinate system anchored to spacecraft features:
   - \(+X\): Primary thrust vector.
   - \(+Z\): Antenna axis (inward).
   - \(+Y\): Completes the left-handed system \((\mathbf{X} \times \mathbf{Z})\).
 
-\subsection{State Representation}
+\subsubsection{State Representation}
 Each RaVThOughT point specifies:
 \begin{itemize}
   \item \textbf{Position:} \(\mathbf{r} = (x, y, z)\).
@@ -64,7 +72,7 @@ Each RaVThOughT point specifies:
   \item \textbf{Time:} Absolute mission time, \(t_{\text{abs}}\).
 \end{itemize}
 
-\subsection{Gravitational Rectification}
+\subsubsection{Gravitational Rectification}
 Gravitational effects are interpolated using quadratic regression:
 \[
 \mathbf{r}(t) = \mathbf{r}_0 + \mathbf{v}_0 t + \frac{1}{2} \mathbf{a}_g t^2,

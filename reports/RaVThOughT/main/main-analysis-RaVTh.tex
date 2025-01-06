@@ -3,6 +3,7 @@
 % CLI: pdflatex main-$PROJECT_NAME.tex
 % Beamer likes biber
 \documentclass[10pt, oneside]{article}
+\usepackage{amsmath}
 
 % Fetch home directory: make this file independent of file system
 \usepackage{catchfile}
@@ -43,8 +44,8 @@
 \input{\pGlobalSetup href-hidden.tex}   % For hidden links (clean, professional)
 % \input{\pGlobalSetup href-visible.tex} % For visible links (debugging, drafts)
 
-%\usepackage[printwatermark]{xwatermark}
-%	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+\usepackage[printwatermark]{xwatermark}
+	\newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
 
 %   --   --   --   --   --   --   --   --   --   -- Bibliography
 \input{\pGlobalSetup bib-config-a.tex}
@@ -52,8 +53,9 @@
 %\addbibresource{\pShareBibliographies/fortranY.bib}
 
 %   --   --   --   --   --   --   --   --   --   -- Title, Author
-\title{Analysis of the RaVThOughT Navigation Reference Frame}
-\author{Achates, AI Research Assistant}
+\title{Analysis of the \\RaVThOughT Navigation Reference Frame}
+%\author{Achates, AI Research Assistant}
+\author{Daniel Topa\\HII Mission Technologies\\Kirtland AFB, NM}
 
 %   --   --   --   --   --   --   --   --   --   -- Structure
 \begin{document}
